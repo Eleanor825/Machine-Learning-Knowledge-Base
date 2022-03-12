@@ -1,5 +1,4 @@
 old-repo
 __pycache__
-weights/
-*.weights
+datasets
 *.tex
