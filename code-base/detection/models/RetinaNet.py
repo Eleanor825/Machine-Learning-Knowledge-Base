@@ -53,34 +53,37 @@ class FeaturePyramid(tf.keras.layers.Layer):
         return p3_output, p4_output, p5_output, p6_output, p7_output
 
 
-def build_head(output_filters, bias_init):
+def build_head(output_filters, kernel_initializer, bias_initializer):
     """Builds the class/box predictions head.
 
     Arguments:
       output_filters: Number of convolution filters in the final layer.
-      bias_init: Bias Initializer for the final convolution layer.
+      kernel_initializer: kernel initializer for all convolutional layers
+      bias_initializer: bias initializer for the final convolutional layer.
 
     Returns:
       A keras sequential model representing either the classification
         or the box regression head depending on `output_filters`.
     """
     head = tf.keras.Sequential([tf.keras.Input(shape=[None, None, 256])])
-    kernel_init = tf.initializers.RandomNormal(0.0, 0.01)
+
     for _ in range(4):
-        head.add(
-            tf.keras.layers.Conv2D(256, 3, padding="same", kernel_initializer=kernel_init)
-        )
-        head.add(tf.keras.layers.ReLU())
-    head.add(
-        tf.keras.layers.Conv2D(
-            output_filters,
-            3,
-            1,
+        head.add(tf.keras.layers.Conv2D(
+            filters=256,
+            kernel_size=3,
             padding="same",
-            kernel_initializer=kernel_init,
-            bias_initializer=bias_init,
-        )
-    )
+            kernel_initializer=kernel_initializer,
+            bias_initializer='zeros'))
+        head.add(tf.keras.layers.ReLU())
+
+    head.add(tf.keras.layers.Conv2D(
+        filters=output_filters,
+        kernel_size=3,
+        strides=1,
+        padding="same",
+        kernel_initializer=kernel_initializer,
+        bias_initializer=bias_initializer))
+
     return head
 
 
@@ -95,23 +98,21 @@ class RetinaNet(tf.keras.Model):
 
     def __init__(self, num_classes, backbone=None, **kwargs):
         super(RetinaNet, self).__init__(name="RetinaNet", **kwargs)
-        self.fpn = FeaturePyramid(backbone)
-        self.num_classes = num_classes
-
-        prior_probability = tf.constant_initializer(-np.log((1 - 0.01) / 0.01))
-        self.cls_head = build_head(9 * num_classes, prior_probability)
-        self.box_head = build_head(9 * 4, "zeros")
+        self._num_classes = num_classes
+        self._fpn = FeaturePyramid(backbone)
+        kernel_initializer = tf.initializers.RandomNormal(0.0, 0.01)
+        bias_initializer = tf.constant_initializer(-np.log((1 - 0.01) / 0.01))  # prior probability
+        self._cls_head = build_head(9 * self._num_classes, kernel_initializer, bias_initializer)
+        self._box_head = build_head(9 * 4, kernel_initializer, 'zeros')
 
     def call(self, image, training=False):
-        features = self.fpn(image, training=training)
-        N = tf.shape(image)[0]
+        features = self._fpn(image, training=training)
+        batch_size = tf.shape(image)[0]
         cls_outputs = []
         box_outputs = []
         for feature in features:
-            box_outputs.append(tf.reshape(self.box_head(feature), [N, -1, 4]))
-            cls_outputs.append(
-                tf.reshape(self.cls_head(feature), [N, -1, self.num_classes])
-            )
+            box_outputs.append(tf.reshape(self._box_head(feature), [batch_size, -1, 4]))
+            cls_outputs.append(tf.reshape(self._cls_head(feature), [batch_size, -1, self._num_classes]))
         cls_outputs = tf.concat(cls_outputs, axis=1)
         box_outputs = tf.concat(box_outputs, axis=1)
         return tf.concat([box_outputs, cls_outputs], axis=-1)
