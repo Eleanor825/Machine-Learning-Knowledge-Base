@@ -1,0 +1,18 @@
+body {
+    font-family: Consolas;
+    counter-reset: h2counter;
+}
+
+h2 {
+    counter-reset: h3counter;
+}
+
+h2:before {
+    counter-increment: h2counter;
+    content: counter(h2counter) ". ";
+}
+
+h3:before {
+    counter-increment: h3counter;
+    content: counter(h2counter) "." counter(h3counter) ". ";
+}
