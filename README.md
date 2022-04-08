@@ -1,6 +1,6 @@
 <span style="font-family:Consolas">
 
-# Papers in Machine Learning (27)
+# Papers in Machine Learning (28)
 
 ## CNN Architectures
 
@@ -43,6 +43,8 @@
 * (18 Jul 2021) [YOLOX](https://arxiv.org/abs/2107.08430): Exceeding YOLO Series in 2021
 
 ## Optimization
+
+* (22 Dec 2014) [Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980)
 
 ## Normalization
 
