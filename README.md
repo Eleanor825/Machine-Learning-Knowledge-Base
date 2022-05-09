@@ -1,4 +1,4 @@
-<span style="font-family:Consolas">
+<span style="font-family:monospace">
 
 # Papers in Machine Learning (28)
 
@@ -20,6 +20,8 @@
 * (09 Dec 2016) [Feature Pyramid Networks for Object Detection](https://arxiv.org/abs/1612.03144)
 * (07 Aug 2017) [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
 * (08 Dec 2015) [SSD: Single Shot MultiBox Detector](https://arxiv.org/abs/1512.02325)
+    * (08 Dec 2013) [Scalable Object Detection using Deep Neural Networks](https://arxiv.org/abs/1312.2249)
+    * (03 Dec 2014) [Scalable, High-Quality Object Detection](https://arxiv.org/abs/1412.1441)
 * (07 Jan 2019) [Scale-Aware Trident Networks for Object Detection](https://arxiv.org/abs/1901.01892)
 * (03 Jun 2020) [DetectoRS](https://arxiv.org/abs/2006.02334): Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolutions
 
