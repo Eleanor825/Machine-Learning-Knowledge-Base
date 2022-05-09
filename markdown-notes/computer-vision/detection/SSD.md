@@ -6,7 +6,7 @@
 
 ## Default Boxes
 
-* Similar to anchor boxes but apply to several feature maps of different resolutions.
+* Default boxes are similar to anchor boxes but are applied to several feature maps of different resolutions.
 
 ### Choosing Scales
 
@@ -27,7 +27,7 @@ $x_{ij}^{p} \in \{0,1\}$: indicator for matching the $i$-th default box to the $
 
 ### Total Loss
 
-A weighted sum of localization loss ($\mathcal{L}_{\text{loc}}$) and confidence loss ($\mathcal{L}_{\text{conf}}$):
+The overall objective loss is a weighted sum of localization loss ($\mathcal{L}_{\text{loc}}$) and confidence loss ($\mathcal{L}_{\text{conf}}$):
 
 $$\begin{equation*}\boxed{\mathcal{L}(x,c,l,g) := \frac{1}{N}(\mathcal{L}_{\text{conf}}(x,c) + \alpha\mathcal{L}_{\text{loc}}(x,l,g))}\end{equation*}$$
 where $N$ is the number of matched default boxes.
@@ -63,4 +63,4 @@ $$\hat{c}_{i}^{p} := \frac{\exp(c_{i}^{p})}{\sum_{p}\exp(c_{i}^{p})}.$$
 
 * After the matching step, most of the default boxes are negatives, especially when the number of possible default boxes is large.
 * This introduces a significant imbalance between the positive and negative training examples.
-* Instead of using all the negative examples, we sort them using the highest confidence loss for each default box and pick the top ones so that the ratio between the negatives and positives is at most 3:1.
+* Instead of using all the negative examples, we sort them using the highest confidence loss for each default box and pick the top ones so that the ratio between the negatives and positives is at most $3:1$.
