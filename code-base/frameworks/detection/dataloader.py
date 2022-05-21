@@ -1,7 +1,9 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds
-from frameworks.detection.preprocessor import *
-from frameworks.detection.encoder import *
+import logging; logging.getLogger().setLevel(logging.INFO)
+
+from frameworks.detection.preprocessor import Preprocessor
+from frameworks.detection.encoder import Encoder
 
 
 class DataLoader:
@@ -17,17 +19,19 @@ class DataLoader:
 
     def get_train_valid_datasets(self, num_train=None, num_valid=None):
         (train_dataset, valid_dataset), dataset_info = tfds.load(
-            self.DATASET_NAME, split=["train", "validation"], with_info=True, data_dir=self.DATASET_DIR)
+            name=self.DATASET_NAME, split=["train", "validation"], data_dir=self.DATASET_DIR,
+            with_info=True,
+        )
         if num_train:
             train_dataset = train_dataset.take(num_train)
         else:
             num_train = dataset_info.splits['train'].num_examples
-        print(f"Number of training examples: {num_train}")
+        logging.info(f"Number of training examples: {num_train}")
         if num_valid:
             valid_dataset = valid_dataset.take(num_valid)
         else:
             num_valid = dataset_info.splits['validation'].num_examples
-        print(f"Number of validation examples: {num_valid}")
+        logging.info(f"Number of validation examples: {num_valid}")
         autotune = tf.data.AUTOTUNE
         ### Create training dataset
         train_dataset = train_dataset.map(self.preprocessor.preprocess, num_parallel_calls=autotune)

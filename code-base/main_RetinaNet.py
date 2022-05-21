@@ -8,16 +8,16 @@ from frameworks.detection.encoder import *
 from frameworks.detection.dataloader import *
 from frameworks.detection.decoder import *
 
-from losses.RetinaNet_loss import *
+from losses.RetinaNet_loss import RetinaNetLoss
 
-from models.detection.RetinaNet import *
+from models.detection.RetinaNet import get_backbone, RetinaNet
 
 
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
-model_dir = "retinanet/"
+MODEL_DIR = "retinanet/"
 
-DATADIR = "object_detection/datasets"  # using downloaded weights
+DATA_DIR = "datasets"  # using downloaded weights
 
 num_classes = 80
 BATCH_SIZE = 1
@@ -40,7 +40,7 @@ early_stopping = tf.keras.callbacks.EarlyStopping(
 )
 
 model_checkpoint = tf.keras.callbacks.ModelCheckpoint(
-    filepath=os.path.join(model_dir, "weights" + "_epoch_{epoch}"),
+    filepath=os.path.join(MODEL_DIR, "weights" + "_epoch_{epoch}"),
     monitor="loss",
     save_best_only=False,
     save_weights_only=True,
@@ -49,8 +49,9 @@ model_checkpoint = tf.keras.callbacks.ModelCheckpoint(
 
 callbacks_list = [early_stopping, model_checkpoint]
 
-train_dataset, valid_dataset, _ = DataLoader(dataset_dir=DATADIR,
-    image_height=IMAGE_HEIGHT, image_width=IMAGE_WIDTH, batch_size=BATCH_SIZE).get_train_valid_datasets()
+train_dataset, valid_dataset, _ = DataLoader(dataset_dir=DATA_DIR,
+    image_height=IMAGE_HEIGHT, image_width=IMAGE_WIDTH, batch_size=BATCH_SIZE,
+).get_train_valid_datasets()
 image = next(iter(train_dataset))[0]
 print(image.shape)
 
@@ -58,7 +59,8 @@ model.fit(train_dataset,
           validation_data=valid_dataset,
           epochs=50,
           callbacks=callbacks_list,
-          verbose=True)
+          verbose=True,
+)
 
 # latest_checkpoint = tf.train.latest_checkpoint(DATADIR)
 # model.load_weights(latest_checkpoint)
@@ -74,7 +76,7 @@ def prepare_image(image):
     return tf.expand_dims(image, axis=0), ratio
 
 
-val_dataset, dataset_info = tfds.load("coco/2017", split="validation", data_dir=DATADIR, with_info=True)
+val_dataset, dataset_info = tfds.load("coco/2017", split="validation", data_dir=DATA_DIR, with_info=True)
 int2str = dataset_info.features["objects"]["label"].int2str
 
 print("inference")
