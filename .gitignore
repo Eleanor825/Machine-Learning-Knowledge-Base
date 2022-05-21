@@ -1,5 +1,7 @@
-old-repo
 __pycache__
-datasets
-*.tex
 .DS_Store
+datasets
+# virtual environment
+env
+old-repo
+*.tex
