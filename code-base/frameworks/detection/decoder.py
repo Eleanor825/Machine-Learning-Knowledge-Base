@@ -1,6 +1,6 @@
 import tensorflow as tf
-from modulus.detection.utilities import *
-from modulus.detection.anchor_boxes_generator import *
+from frameworks.detection.utilities import *
+from frameworks.detection.anchor_boxes_generator import *
 
 
 class Decoder:

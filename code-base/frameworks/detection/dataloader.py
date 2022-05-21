@@ -1,7 +1,7 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds
-from modulus.detection.preprocessor import *
-from modulus.detection.encoder import *
+from frameworks.detection.preprocessor import *
+from frameworks.detection.encoder import *
 
 
 class DataLoader:

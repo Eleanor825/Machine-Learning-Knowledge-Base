@@ -1,5 +1,5 @@
 import tensorflow as tf
-from detection.losses.smooth_l1_loss import *
+from losses.smooth_l1_loss import *
 
 
 class SSDLoss(tf.losses.Loss):

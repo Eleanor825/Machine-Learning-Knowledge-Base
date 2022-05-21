@@ -1,6 +1,6 @@
 import tensorflow as tf
-from detection.losses.focal_loss import *
-from detection.losses.smooth_l1_loss import *
+from losses.focal_loss import *
+from losses.smooth_l1_loss import *
 
 
 class RetinaNetLoss(tf.losses.Loss):

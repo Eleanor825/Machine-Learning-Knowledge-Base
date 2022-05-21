@@ -1,6 +1,5 @@
 import tensorflow as tf
-import tensorflow_datasets as tfds
-from modulus.detection.utilities import *
+from frameworks.detection.utilities import *
 
 
 class Preprocessor:
