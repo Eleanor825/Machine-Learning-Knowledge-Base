@@ -1,17 +1,16 @@
 import os
-import matplotlib.pyplot as plt
 import tensorflow as tf
 
-from modulus.detection.utilities import *
-from modulus.detection.anchor_boxes_generator import *
-from modulus.detection.preprocessor import *
-from modulus.detection.encoder import *
-from modulus.detection.dataloader import *
-from modulus.detection.decoder import *
+from frameworks.detection.utilities import *
+from frameworks.detection.anchor_boxes_generator import *
+from frameworks.detection.preprocessor import *
+from frameworks.detection.encoder import *
+from frameworks.detection.dataloader import *
+from frameworks.detection.decoder import *
 
-from detection.losses.RetinaNet_loss import *
+from losses.RetinaNet_loss import *
 
-from detection.models.RetinaNet import *
+from models.detection.RetinaNet import *
 
 
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
