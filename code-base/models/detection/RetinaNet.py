@@ -1,4 +1,3 @@
-import numpy as np
 import tensorflow as tf
 
 
@@ -101,7 +100,7 @@ class RetinaNet(tf.keras.Model):
         self._num_classes = num_classes
         self._fpn = FeaturePyramid(backbone)
         kernel_initializer = tf.initializers.RandomNormal(0.0, 0.01)
-        bias_initializer = tf.constant_initializer(-np.log((1 - 0.01) / 0.01))  # prior probability
+        bias_initializer = tf.constant_initializer(-tf.math.log((1 - 0.01) / 0.01))  # prior probability
         self._cls_head = build_head(9 * self._num_classes, kernel_initializer, bias_initializer)
         self._box_head = build_head(9 * 4, kernel_initializer, 'zeros')
 
