@@ -104,9 +104,9 @@ class RetinaNet(tf.keras.Model):
         self._cls_head = build_head(9 * self._num_classes, kernel_initializer, bias_initializer)
         self._box_head = build_head(9 * 4, kernel_initializer, 'zeros')
 
-    def call(self, image, training=False):
-        features = self._fpn(image, training=training)
-        batch_size = tf.shape(image)[0]
+    def call(self, x, training=False):
+        features = self._fpn(x, training=training)
+        batch_size = tf.shape(x)[0]
         cls_outputs = []
         box_outputs = []
         for feature in features:
