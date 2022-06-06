@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - Detection
 
-count: 52
+count: 54
 
 ## General
 
@@ -63,8 +63,16 @@ count: 52
     * Year: 11 Nov `2013`
     * Author: Ross Girshick
     * Abstract: Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30% relative to the previous best result on VOC 2012---achieving a mAP of 53.3%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also compare R-CNN to OverFeat, a recently proposed sliding-window detector based on a similar CNN architecture. We find that R-CNN outperforms OverFeat by a large margin on the 200-class ILSVRC2013 detection dataset. Source code for the complete system is available at [this http URL](http://www.cs.berkeley.edu/~rbg/rcnn).
-* (30 Apr 2015) [Fast R-CNN](https://arxiv.org/abs/1504.08083) (Fast R-CNN)
-* (04 Jun 2015) [Faster R-CNN](https://arxiv.org/abs/1506.01497) (Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks)
+* [Fast R-CNN](https://arxiv.org/abs/1504.08083)
+    * Title: Fast R-CNN
+    * Year: 30 Apr `2015`
+    * Author: Ross Girshick
+    * Abstract: This paper proposes a Fast Region-based Convolutional Network method (Fast R-CNN) for object detection. Fast R-CNN builds on previous work to efficiently classify object proposals using deep convolutional networks. Compared to previous work, Fast R-CNN employs several innovations to improve training and testing speed while also increasing detection accuracy. Fast R-CNN trains the very deep VGG16 network 9x faster than R-CNN, is 213x faster at test-time, and achieves a higher mAP on PASCAL VOC 2012. Compared to SPPnet, Fast R-CNN trains VGG16 3x faster, tests 10x faster, and is more accurate. Fast R-CNN is implemented in Python and C++ (using Caffe) and is available under the open-source MIT License at [this https URL](https://github.com/rbgirshick/fast-rcnn).
+* [Faster R-CNN](https://arxiv.org/abs/1506.01497)
+    * Title: Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks
+    * Year: 04 Jun `2015`
+    * Author: Shaoqing Ren
+    * Abstract: State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet and Fast R-CNN have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN into a single network by sharing their convolutional features---using the recently popular terminology of neural networks with 'attention' mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model, our detection system has a frame rate of 5fps (including all steps) on a GPU, while achieving state-of-the-art object detection accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO 2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.
 * (20 Mar 2017) [Mask R-CNN](https://arxiv.org/abs/1703.06870) (Mask R-CNN)
 * [Cascade R-CNN](https://arxiv.org/abs/1712.00726)
     * Title: Cascade R-CNN: Delving into High Quality Object Detection
