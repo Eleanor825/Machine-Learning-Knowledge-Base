@@ -14,10 +14,3 @@ count: 7
 ## Optimization
 
 * (22 Dec 2014) [Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980)
-
-## Normalization
-
-* (11 Feb 2015) [Batch Normalization](https://arxiv.org/abs/1502.03167)
-* (21 Jul 2016) [Layer Normalization](https://arxiv.org/abs/1607.06450)
-* (27 Jul 2016) [Instance Normalization](https://arxiv.org/abs/1607.08022)
-* (22 Mar 2018) [Group Normalization](https://arxiv.org/abs/1803.08494)
