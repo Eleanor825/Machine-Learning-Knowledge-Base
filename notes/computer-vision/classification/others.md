@@ -1,6 +1,6 @@
 # CNN Models
 
-## LeNet-5 (1998)
+## LeNet-5 (1989)
 
 
 ## AlexNet (2012)
