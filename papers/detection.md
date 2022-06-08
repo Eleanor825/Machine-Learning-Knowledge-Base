@@ -37,6 +37,32 @@ count: 54
 * (03 Jun 2020) [DetectoRS](https://arxiv.org/abs/2006.02334): Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolutions
 * (23 Mar 2021) [Robust and Accurate Object Detection via Adversarial Learning](https://arxiv.org/abs/2103.13886)
 
+## Multi-Layers Detectors
+
+* [ParseNet](https://arxiv.org/abs/1506.04579)
+    * Title: ParseNet: Looking Wider to See Better
+    * Year: 15 Jun `2015`
+    * Author: Wei Liu
+    * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
+* [Inside-Outside Net](https://arxiv.org/abs/1512.04143)
+    * Title: Inside-Outside Net: Detecting Objects in Context with Skip Pooling and Recurrent Neural Networks
+    * Year: 14 Dec `2015`
+    * Author: Sean Bell
+    * Abstract: It is well known that contextual and multi-scale representations are important for accurate visual recognition. In this paper we present the Inside-Outside Net (ION), an object detector that exploits information both inside and outside the region of interest. Contextual information outside the region of interest is integrated using spatial recurrent neural networks. Inside, we use skip pooling to extract information at multiple scales and levels of abstraction. Through extensive experiments we evaluate the design space and provide readers with an overview of what tricks of the trade are important. ION improves state-of-the-art on PASCAL VOC 2012 object detection from 73.9% to 76.4% mAP. On the new and more challenging MS COCO dataset, we improve state-of-art-the from 19.7% to 33.1% mAP. In the 2015 MS COCO Detection Challenge, our ION model won the Best Student Entry and finished 3rd place overall. As intuition suggests, our detection results provide strong evidence that context and multi-scale representations improve small object detection.
+* [HyperNet](https://arxiv.org/abs/1604.00600)
+    * Title: HyperNet: Towards Accurate Region Proposal Generation and Joint Object Detection
+    * Year: 03 Apr `2016`
+    * Author: Tao Kong
+    * Abstract: Almost all of the current top-performing object detection networks employ region proposals to guide the search for object instances. State-of-the-art region proposal methods usually need several thousand proposals to get high recall, thus hurting the detection efficiency. Although the latest Region Proposal Network method gets promising detection accuracy with several hundred proposals, it still struggles in small-size object detection and precise localization (e.g., large IoU thresholds), mainly due to the coarseness of its feature maps. In this paper, we present a deep hierarchical network, namely HyperNet, for handling region proposal generation and object detection jointly. Our HyperNet is primarily based on an elaborately designed Hyper Feature which aggregates hierarchical feature maps first and then compresses them into a uniform space. The Hyper Features well incorporate deep but highly semantic, intermediate but really complementary, and shallow but naturally high-resolution features of the image, thus enabling us to construct HyperNet by sharing them both in generating proposals and detecting objects via an end-to-end joint training strategy. For the deep VGG16 model, our method achieves completely leading recall and state-of-the-art object detection accuracy on PASCAL VOC 2007 and 2012 using only 100 proposals per image. It runs with a speed of 5 fps (including all steps) on a GPU, thus having the potential for real-time processing.
+* [Multi-Scale CNN](https://arxiv.org/abs/1607.07155)
+    * Title: A Unified Multi-scale Deep Convolutional Neural Network for Fast Object Detection
+    * Year: 25 Jul `2016`
+* [FPN](https://arxiv.org/abs/1612.03144)
+    * Title: Feature Pyramid Networks for Object Detection
+    * Year: 09 Dec `2016`
+    * Author: Tsung-Yi Lin
+    * Abstract: Feature pyramids are a basic component in recognition systems for detecting objects at different scales. But recent deep learning object detectors have avoided pyramid representations, in part because they are compute and memory intensive. In this paper, we exploit the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to construct feature pyramids with marginal extra cost. A top-down architecture with lateral connections is developed for building high-level semantic feature maps at all scales. This architecture, called a Feature Pyramid Network (FPN), shows significant improvement as a generic feature extractor in several applications. Using FPN in a basic Faster R-CNN system, our method achieves state-of-the-art single-model results on the COCO detection benchmark without bells and whistles, surpassing all existing single-model entries including those from the COCO 2016 challenge winners. In addition, our method can run at 5 FPS on a GPU and thus is a practical and accurate solution to multi-scale object detection. Code will be made publicly available.
+
 ## SSD and its Variants
 
 * [SSD](https://arxiv.org/abs/1512.02325)
@@ -97,20 +123,13 @@ count: 54
 ----------------------------------------------------------------------------------------------------
 ## Improvements
 
-* [FCN](https://arxiv.org/abs/1411.4038)
-    * Title: Fully Convolutional Networks for Semantic Segmentation
-    * Year: 14 Nov `2014`
-    * Author: Jonathan Long
-    * Abstract: Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, exceed the state-of-the-art in semantic segmentation. Our key insight is to build "fully convolutional" networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet, the VGG net, and GoogLeNet) into fully convolutional networks and transfer their learned representations by fine-tuning to the segmentation task. We then define a novel architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. Our fully convolutional network achieves state-of-the-art segmentation of PASCAL VOC (20% relative improvement to 62.2% mean IU on 2012), NYUDv2, and SIFT Flow, while inference takes one third of a second for a typical image.
 * [OHEM](https://arxiv.org/abs/1604.03540)
     * Title: Training Region-based Object Detectors with Online Hard Example Mining
     * Year: 12 Apr `2016`
     * Author: Abhinav Shrivastava
     * Abstract: The field of object detection has made significant advances riding on the wave of region-based ConvNets, but their training procedure still includes many heuristics and hyperparameters that are costly to tune. We present a simple yet surprisingly effective online hard example mining (OHEM) algorithm for training region-based ConvNet detectors. Our motivation is the same as it has always been -- detection datasets contain an overwhelming number of easy examples and a small number of hard examples. Automatic selection of these hard examples can make training more effective and efficient. OHEM is a simple and intuitive algorithm that eliminates several heuristics and hyperparameters in common use. But more importantly, it yields consistent and significant boosts in detection performance on benchmarks like PASCAL VOC 2007 and 2012. Its effectiveness increases as datasets become larger and more difficult, as demonstrated by the results on the MS COCO dataset. Moreover, combined with complementary advances in the field, OHEM leads to state-of-the-art results of 78.9% and 76.3% mAP on PASCAL VOC 2007 and 2012 respectively.
 * (20 May 2016) [R-FCN](https://arxiv.org/abs/1605.06409) (R-FCN: Object Detection via Region-based Fully Convolutional Networks)
-* (25 Jul 2016) [Multi-Scale CNN](https://arxiv.org/abs/1607.07155) (A Unified Multi-scale Deep Convolutional Neural Network for Fast Object Detection)
 * (29 Aug 2016) [PVANET](https://arxiv.org/abs/1608.08021) (PVANET: Deep but Lightweight Neural Networks for Real-time Object Detection)
-* (09 Dec 2016) [FPN](https://arxiv.org/abs/1612.03144) (Feature Pyramid Networks for Object Detection)
 * (17 Mar 2017) [Deformable](https://arxiv.org/abs/1703.06211) (Deformable Convolutional Networks)
 * (30 Mar 2017) [DeNet](https://arxiv.org/abs/1703.10295) (DeNet: Scalable Real-time Object Detection with Directed Sparse Sampling)
 * (06 Jul 2017) [RON](https://arxiv.org/abs/1707.01691) (RON: Reverse Connection with Objectness Prior Networks for Object Detection)

@@ -2,6 +2,8 @@
 
 # SSD: Single Shot MultiBox Detector
 
+source: https://arxiv.org/abs/1512.02325
+
 * A combination of feature pyramid and anchor mechanism.
 
 ## Default Boxes
@@ -18,6 +20,22 @@ where $s_{\text{min}} = 0.2$ and $s_{\text{max}} = 0.9$.
 ### Choosing Aspect Ratios
 
 $$a_{r} \in \{1, 2, 3, \frac{1}{2}, \frac{1}{3}\}.$$
+
+## Model Architecture
+
+### Base Network
+
+> The early network layers are based on a standard architecture used for high quality image classification (truncated before any classification layers), which we will call the base network.
+
+### Auxiliary Structure
+
+* Multi-Scale Feature Maps for Detection
+
+> We add convolutional feature layers to the end of the truncated base network. These layers decrease in size progessively and allow predictions of detctions at multiple scales. The convolutional model for predicting detections is different for each feature layer.
+
+* Convolutional Predictors for Detection
+
+> Each added feature layer can produce a fixed set of detection predictions using a set of convolutional filters.
 
 ## Loss Function
 
