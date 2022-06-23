@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - Image Segmentation
 
-count: 6
+count: 13
 
 * [U-Net](https://arxiv.org/abs/1505.04597)
     * Title: U-Net: Convolutional Networks for Biomedical Image Segmentation
@@ -22,6 +22,41 @@ count: 6
 
 ## Semantic Segmentation
 
+* [Toward automatic phenotyping of developing embryos from videos](https://ieeexplore.ieee.org/document/1495508)
+    * Title: Toward automatic phenotyping of developing embryos from videos
+    * Year: `2005`
+    * Author: Feng Ning
+    * Abstract: We describe a trainable system for analyzing videos of developing C. elegans embryos. The system automatically detects, segments, and locates cells and nuclei in microscopic images. The system was designed as the central component of a fully automated phenotyping system. The system contains three modules 1) a convolutional network trained to classify each pixel into five categories: cell wall, cytoplasm, nucleus membrane, nucleus, outside medium; 2) an energy-based model, which cleans up the output of the convolutional network by learning local consistency constraints that must be satisfied by label images; 3) a set of elastic models of the embryo at various stages of development that are matched to the label images.
+* [Deep neural networks segment neuronal membranes in electron microscopy images](https://dl.acm.org/doi/10.5555/2999325.2999452)
+    * Title: Deep neural networks segment neuronal membranes in electron microscopy images
+    * Year: 03 Dec `2012`
+    * Author: Dan C. Ciresan
+    * Abstract: We address a central problem of neuroanatomy, namely, the automatic segmentation of neuronal structures depicted in stacks of electron microscopy (EM) images. This is necessary to efficiently map 3D brain structure and connectivity. To segment biological neuron membranes, we use a special type of deep artificial neural network as a pixel classifier. The label of each pixel (membrane or non-membrane) is predicted from raw pixel values in a square window centered on it. The input layer maps each window pixel to a neuron. It is followed by a succession of convolutional and max-pooling layers which preserve 2D information and extract features with increasing levels of abstraction. The output layer produces a calibrated probability for each class. The classifier is trained by plain gradient descent on a 512 × 512 × 30 stack with known ground truth, and tested on a stack of the same size (ground truth unknown to the authors) by the organizers of the ISBI 2012 EM Segmentation Challenge. Even without problem-specific postprocessing, our approach outperforms competing techniques by a large margin in all three considered metrics, i.e. rand error, warping error and pixel error. For pixel error, our approach is the only one outperforming a second human observer.
+* [Learning Hierarchical Features for Scene Labeling](https://ieeexplore.ieee.org/document/6338939)
+    * Title: Learning Hierarchical Features for Scene Labeling
+    * Year: `2013`
+    * Author: Clement Farabet
+    * Abstract: Scene labeling consists of labeling each pixel in an image with the category of the object it belongs to. We propose a method that uses a multiscale convolutional network trained from raw pixels to extract dense feature vectors that encode regions of multiple sizes centered on each pixel. The method alleviates the need for engineered features, and produces a powerful representation that captures texture, shape, and contextual information. We report results using multiple postprocessing methods to produce the final labeling. Among those, we propose a technique to automatically retrieve, from a pool of segmentation components, an optimal set of components that best explain the scene; these components are arbitrary, for example, they can be taken from a segmentation tree or from any family of oversegmentations. The system yields record accuracies on the SIFT Flow dataset (33 classes) and the Barcelona dataset (170 classes) and near-record accuracy on Stanford background dataset (eight classes), while being an order of magnitude faster than competing approaches, producing a 320×240 image labeling in less than a second, including feature extraction.
+* [Recurrent Convolutional Neural Networks for Scene Labeling](https://proceedings.mlr.press/v32/pinheiro14.html)
+    * Title: Recurrent Convolutional Neural Networks for Scene Labeling
+    * Year: Jun `2014`
+    * Author: Pedro Pinheiro
+    * Abstract: The goal of the scene labeling task is to assign a class label to each pixel in an image. To ensure a good visual coherence and a high class accuracy, it is essential for a model to capture long range pixel) label dependencies in images. In a feed-forward architecture, this can be achieved simply by considering a sufficiently large input context patch, around each pixel to be labeled. We propose an approach that consists of a recurrent convolutional neural network which allows us to consider a large input context while limiting the capacity of the model. Contrary to most standard approaches, our method does not rely on any segmentation technique nor any task-specific features. The system is trained in an end-to-end manner over raw pixels, and models complex spatial dependencies with low inference cost. As the context size increases with the built-in recurrence, the system identifies and corrects its own errors. Our approach yields state-of-the-art performance on both the Stanford Background Dataset and the SIFT Flow Dataset, while remaining very fast at test time.
+* [$N^{4}$-Fields: Neural Network Nearest Neighbor Fields for Image Transforms](https://arxiv.org/abs/1406.6558)
+    * Title: $N^{4}$-Fields: Neural Network Nearest Neighbor Fields for Image Transforms
+    * Year: 25 Jun `2014`
+    * Author: Yaroslav Ganin
+    * Abstract: We propose a new architecture for difficult image processing operations, such as natural edge detection or thin object segmentation. The architecture is based on a simple combination of convolutional neural networks with the nearest neighbor search. We focus our attention on the situations when the desired image transformation is too hard for a neural network to learn explicitly. We show that in such situations, the use of the nearest neighbor search on top of the network output allows to improve the results considerably and to account for the underfitting effect during the neural network training. The approach is validated on three challenging benchmarks, where the performance of the proposed architecture matches or exceeds the state-of-the-art.
+* [Simultaneous Detection and Segmentation](https://arxiv.org/abs/1407.1808)
+    * Title: Simultaneous Detection and Segmentation
+    * Year: 07 Jul `2014`
+    * Author: Bharath Hariharan
+    * Abstract: We aim to detect all instances of a category in an image and, for each instance, mark the pixels that belong to it. We call this task Simultaneous Detection and Segmentation (SDS). Unlike classical bounding box detection, SDS requires a segmentation and not just a box. Unlike classical semantic segmentation, we require individual object instances. We build on recent work that uses convolutional neural networks to classify category-independent region proposals (R-CNN [16]), introducing a novel architecture tailored for SDS. We then use category-specific, top- down figure-ground predictions to refine our bottom-up proposals. We show a 7 point boost (16% relative) over our baselines on SDS, a 5 point boost (10% relative) over state-of-the-art on semantic segmentation, and state-of-the-art performance in object detection. Finally, we provide diagnostic tools that unpack performance and provide directions for future work.
+* [Learning Rich Features from RGB-D Images for Object Detection and Segmentation]()
+    * Title: Learning Rich Features from RGB-D Images for Object Detection and Segmentation
+    * Year: 22 Jul `2014`
+    * Author: Saurabh Gupta
+    * Abstract: In this paper we study the problem of object detection for RGB-D images using semantically rich image and depth features. We propose a new geocentric embedding for depth images that encodes height above ground and angle with gravity for each pixel in addition to the horizontal disparity. We demonstrate that this geocentric embedding works better than using raw depth images for learning feature representations with convolutional neural networks. Our final object detection system achieves an average precision of 37.3%, which is a 56% relative improvement over existing methods. We then focus on the task of instance segmentation where we label pixels belonging to object instances found by our detector. For this task, we propose a decision forest approach that classifies pixels in the detection window as foreground or background using a family of unary and binary tests that query shape and geocentric pose features. Finally, we use the output from our object detectors in an existing superpixel classification framework for semantic scene segmentation and achieve a 24% relative improvement over current state-of-the-art for the object categories that we study. We believe advances such as those represented in this paper will facilitate the use of perception in fields like robotics.
 * [FCN](https://arxiv.org/abs/1411.4038)
     * Title: Fully Convolutional Networks for Semantic Segmentation
     * Year: 14 Nov `2014`

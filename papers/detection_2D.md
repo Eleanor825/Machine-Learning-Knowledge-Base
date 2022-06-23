@@ -1,8 +1,8 @@
 <span style="font-family:monospace">
 
-# Papers in Computer Vision - Detection
+# Papers in Computer Vision - 2D Object Detection
 
-count: 54
+count: 55
 
 ## General
 
@@ -16,7 +16,11 @@ count: 54
     * Year: 08 Dec `2013`
     * Author: Dumitru Erhan
     * Abstract: Deep convolutional neural networks have recently achieved state-of-the-art performance on a number of image recognition benchmarks, including the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC-2012). The winning model on the localization sub-task was a network that predicts a single bounding box and a confidence score for each object category in the image. Such a model captures the whole-image context around the objects but cannot handle multiple instances of the same object in the image without naively replicating the number of outputs for each instance. In this work, we propose a saliency-inspired neural network model for detection, which predicts a set of class-agnostic bounding boxes along with a single score for each box, corresponding to its likelihood of containing any object of interest. The model naturally handles a variable number of instances for each class and allows for cross-class generalization at the highest levels of the network. We are able to obtain competitive recognition performance on VOC2007 and ILSVRC2012, while using only the top few predicted locations in each image and a small number of neural network evaluations.
-* (18 Jun 2014) [SPPNet](https://arxiv.org/abs/1406.4729) (Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition)
+* [SPPNet](https://arxiv.org/abs/1406.4729)
+    * Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
+    * Year: 18 Jun 2014
+    * Author: Kaiming He
+    * Abstract: Existing deep convolutional neural networks (CNNs) require a fixed-size (e.g., 224x224) input image. This requirement is "artificial" and may reduce the recognition accuracy for the images or sub-images of an arbitrary size/scale. In this work, we equip the networks with another pooling strategy, "spatial pyramid pooling", to eliminate the above requirement. The new network structure, called SPP-net, can generate a fixed-length representation regardless of image size/scale. Pyramid pooling is also robust to object deformations. With these advantages, SPP-net should in general improve all CNN-based image classification methods. On the ImageNet 2012 dataset, we demonstrate that SPP-net boosts the accuracy of a variety of CNN architectures despite their different designs. On the Pascal VOC 2007 and Caltech101 datasets, SPP-net achieves state-of-the-art classification results using a single full-image representation and no fine-tuning. The power of SPP-net is also significant in object detection. Using SPP-net, we compute the feature maps from the entire image only once, and then pool features in arbitrary regions (sub-images) to generate fixed-length representations for training the detectors. This method avoids repeatedly computing the convolutional features. In processing test images, our method is 24-102x faster than the R-CNN method, while achieving better or comparable accuracy on Pascal VOC 2007. In ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2014, our methods rank #2 in object detection and #3 in image classification among all 38 teams. This manuscript also introduces the improvement made for this competition.
 * [DPM](https://arxiv.org/abs/1409.5403)
     * Title: Deformable Part Models are Convolutional Neural Networks
     * Year: 18 Sep `2014`
@@ -99,7 +103,11 @@ count: 54
     * Year: 04 Jun `2015`
     * Author: Shaoqing Ren
     * Abstract: State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet and Fast R-CNN have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN into a single network by sharing their convolutional features---using the recently popular terminology of neural networks with 'attention' mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model, our detection system has a frame rate of 5fps (including all steps) on a GPU, while achieving state-of-the-art object detection accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO 2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.
-* (20 Mar 2017) [Mask R-CNN](https://arxiv.org/abs/1703.06870) (Mask R-CNN)
+* [Mask R-CNN](https://arxiv.org/abs/1703.06870)
+    * Title: Mask R-CNN
+    * Year: 20 Mar 2017
+    * Author: Kaiming He
+    * Abstract: We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: [this https URL](https://github.com/facebookresearch/Detectron).
 * [Cascade R-CNN](https://arxiv.org/abs/1712.00726)
     * Title: Cascade R-CNN: Delving into High Quality Object Detection
     * Year: 03 Dec `2017`
@@ -130,7 +138,6 @@ count: 54
     * Abstract: The field of object detection has made significant advances riding on the wave of region-based ConvNets, but their training procedure still includes many heuristics and hyperparameters that are costly to tune. We present a simple yet surprisingly effective online hard example mining (OHEM) algorithm for training region-based ConvNet detectors. Our motivation is the same as it has always been -- detection datasets contain an overwhelming number of easy examples and a small number of hard examples. Automatic selection of these hard examples can make training more effective and efficient. OHEM is a simple and intuitive algorithm that eliminates several heuristics and hyperparameters in common use. But more importantly, it yields consistent and significant boosts in detection performance on benchmarks like PASCAL VOC 2007 and 2012. Its effectiveness increases as datasets become larger and more difficult, as demonstrated by the results on the MS COCO dataset. Moreover, combined with complementary advances in the field, OHEM leads to state-of-the-art results of 78.9% and 76.3% mAP on PASCAL VOC 2007 and 2012 respectively.
 * (20 May 2016) [R-FCN](https://arxiv.org/abs/1605.06409) (R-FCN: Object Detection via Region-based Fully Convolutional Networks)
 * (29 Aug 2016) [PVANET](https://arxiv.org/abs/1608.08021) (PVANET: Deep but Lightweight Neural Networks for Real-time Object Detection)
-* (17 Mar 2017) [Deformable](https://arxiv.org/abs/1703.06211) (Deformable Convolutional Networks)
 * (30 Mar 2017) [DeNet](https://arxiv.org/abs/1703.10295) (DeNet: Scalable Real-time Object Detection with Directed Sparse Sampling)
 * (06 Jul 2017) [RON](https://arxiv.org/abs/1707.01691) (RON: Reverse Connection with Objectness Prior Networks for Object Detection)
 * (09 Aug 2017) [CoupleNet](https://arxiv.org/abs/1708.02863) (CoupleNet: Coupling Global Structure with Local Parts for Object Detection)
