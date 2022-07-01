@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../style.css">
+
 # [MobileNetV1](https://arxiv.org/abs/1704.04861)
 
 * Title: MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications

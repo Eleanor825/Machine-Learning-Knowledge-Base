@@ -3,7 +3,7 @@
 The idea is to treat the object detection task as a regression problem.
 Applied weights on the loss for positive/negative examples to tackle the problem of imbalanced positive/negative examples.
 
-## YOLO-v1 (2015)
+## YOLOv1 (2015)
     * confidence = Pr(Object) * IoU \
         confidence being 0 means there is no object.
         confidence being not 0 means the IoU of the predicted bounding box and the ground truth box.
