@@ -4,8 +4,8 @@ from classification.models.cnn.residual_block import *
 
 class ResNet(tf.keras.Model):
 
-    def __init__(self, num_classes=10):
-        super(ResNet, self).__init__()
+    def __init__(self, num_classes=10, **kwargs):
+        super(ResNet, self).__init__(name="ResNet", **kwargs)
         self._input_height = 224
         self._input_width = 224
         self._input_depth = 3

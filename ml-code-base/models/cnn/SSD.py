@@ -7,14 +7,14 @@ class SSD(tf.keras.Model):
         super(SSD, self).__init__(name='SSD', **kwargs)
         self._num_classes = num_classes
 
-    def _conv_layer(self, x, filters, kernel_size, strides=1,
+    def _conv_layer(self, x, filters, kernel_size, conv_strides=1,
                     padding='same', activation='linear',
-                    pool=False, poolsize=2, poolstride=2, conv=True):
+                    pool=False, pool_size=2, pool_strides=2, conv=True):
         if conv == True:
             x = tf.keras.layers.Conv2D(
                 filters=filters,
                 kernel_size=kernel_size,
-                strides=strides,
+                strides=conv_strides,
                 activation=activation,
                 padding=padding,
                 kernel_initializer='he_normal',
@@ -23,8 +23,7 @@ class SSD(tf.keras.Model):
             x = tf.keras.layers.ReLU()(x)
         elif pool == True:
             x = tf.keras.layers.MaxPool2D(
-                pool_size=(poolsize, poolsize),
-                strides=poolstride, padding='same',
+                pool_size=pool_size, strides=pool_strides, padding='same',
             )(x)
         return x
 
@@ -60,7 +59,7 @@ class SSD(tf.keras.Model):
         )
         #Feature Layer 4
         layer = self._conv_layer(128, 1, layer)
-        layer = self._conv_layer(256, 3, layer, strides=2)
+        layer = self._conv_layer(256, 3, layer, conv_strides=2)
         self._get_output(
             x=layer, filters=6*(4+self._num_classes+1), outputs=outputs,
         )

@@ -16,7 +16,7 @@ class ResidualBlock(tf.keras.layers.Layer):
             strides (int, int): strides of the 2nd convolutional layer.
             project_shortcut (bool): use projection on shortcut.
         """
-        super(ResidualBlock, self).__init__(**kwargs)
+        super(ResidualBlock, self).__init__(name="ResidualBlock", **kwargs)
         self._in_channels = in_channels
         self._out_channels = out_channels
         self._strides = strides

@@ -7,7 +7,13 @@
 
 ----------------------------------------------------------------------------------------------------
 
+## 3.1 Depthwise Separable Convolutions
+
+> MobileNetV2 uses $k = 3$ ($3 \times 3$ depthwise separable convolutions) so the computational cost is 8 to 9 times smaller than that of standard convolutions at only a small reduction in accuracy.
+
 ## 3.2 Linear Bottlenecks
+
+> Assuming the manifold of interest is low-dimensional we can capture this by inserting linear bottleneck layers into the convolutional blocks. Experimental evidence suggests that using linear ayers is crucial as it prevents non-linearities from destroying too much information.
 
 Replaced the last layers of ReLU with linear activations.
 
@@ -15,4 +21,4 @@ Replaced the last layers of ReLU with linear activations.
 Expand the depth using 1 by 1 convolution.
 * Inverted Residual Block:
     * ResNet: 0.25 times dimension decrease -> 3 by 3 convolution -> dimension increase
-    * MobileNet v2: 6 times dimension increase -> depth-wise separable convolution -> dimension decrease
+    * MobileNetV2: 6 times dimension increase -> depth-wise separable convolution -> dimension decrease
