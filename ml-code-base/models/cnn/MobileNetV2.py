@@ -38,7 +38,9 @@ class MobileNetV2(tf.keras.Model):
         x = depthwise_conv(x)
         x = relu6(x)
         x = linear_conv(x)
-        return tf.keras.layers.Add()([x, shortcut])
+        if x.shape[-1] == shortcut.shape[-1]:
+            x = tf.keras.layers.Add()([x, shortcut])
+        return x
 
     def _bottleneck_sequence(self, x, input_channels, output_channels, s, t, n):
         """
@@ -61,9 +63,6 @@ class MobileNetV2(tf.keras.Model):
         return x
 
     def call(self, x):
-        x = tf.keras.layers.Conv2D(
-            filters=32, kernel_size=3, strides=2, padding="same",
-        )(x)
         x = tf.keras.layers.Conv2D(
             filters=32, kernel_size=3, strides=2, padding="same",
         )(x)
@@ -97,4 +96,19 @@ class MobileNetV2(tf.keras.Model):
         x = tf.keras.layers.Conv2D(
             filters=self._output_dim, kernel_size=1, strides=1, padding="valid",
         )(x)
+        x = tf.reshape(x, shape=(self._output_dim,))
         return x
+
+    def build(self, input_shape):
+        inputs = tf.keras.Input(shape=input_shape)
+        outputs = self.call(inputs)
+        return tf.keras.Model(inputs=inputs, outputs=outputs,
+            name="MobileNetV2",
+        )
+
+
+if __name__ == "__main__":
+    model = MobileNetV2(output_dim=10)
+    model = model.build(input_shape=(224, 224, 3))
+    model.summary()
+    # tf.keras.utils.plot_model(model, to_file="MobileNetV2.png", show_shapes=True)

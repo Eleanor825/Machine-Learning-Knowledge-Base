@@ -4,7 +4,7 @@ import tensorflow as tf
 class SSD(tf.keras.Model):
 
     def __init__(self, num_classes, **kwargs):
-        super(SSD, self).__init__(name='SSD', **kwargs)
+        super(SSD, self).__init__(name="SSD", **kwargs)
         self._num_classes = num_classes
 
     def _conv_layer(self, x, filters, kernel_size, conv_strides=1,
@@ -77,3 +77,9 @@ class SSD(tf.keras.Model):
         )
 
         return tf.keras.layers.Concatenate(axis=1)(outputs)
+
+
+if __name__ == "__main__":
+    model = SSD(num_classes=10)
+    model.build(input_shape=(1, 224, 224, 3))
+    model.summary()
