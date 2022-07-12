@@ -6,3 +6,7 @@
 * 2022.07.06 Wed: SENet
 * 2022.07.07 Thu: code
 * 2022.07.08 Fri: collected papers in SLAM
+* 2022.07.09 Sat:
+* 2022.07.10 Sun:
+* 2022.07.11 Mon:
+* 2022.07.12 Tue: NIN
