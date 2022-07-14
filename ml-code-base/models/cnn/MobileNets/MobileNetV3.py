@@ -1,5 +1,5 @@
 import tensorflow as tf
-# from models.cnn.SENet import SENet
+from SENet import SENet
 
 
 class MobileNetV3(tf.keras.Model):
@@ -45,8 +45,9 @@ class MobileNetV3(tf.keras.Model):
         x = depthwise_conv(x)
         x = nl(x)
         x = out_conv(x)
+        print("In MobileNetV3.call():", x.shape)
         if use_SE:
-            x = SENet()(x)
+            x = SENet().build(input_shape=x.shape[1:], name=str(exp)+str(out))(x)
         if x.shape == shortcut.shape:
             x = tf.keras.layers.Add()([x, shortcut])
         return x

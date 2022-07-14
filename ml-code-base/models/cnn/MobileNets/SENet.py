@@ -4,10 +4,11 @@ import tensorflow as tf
 class SENet(tf.keras.Model):
 
     def __init__(self, reduction_ratio=16, **kwargs):
-        super(SENet, self).__init__(name="SENet", **kwargs)
+        super(SENet, self).__init__(**kwargs)
         self._reduction_ratio = reduction_ratio
 
     def call(self, x):
+        print("In SENet.call():", x.shape)
         identity = x
         height = x.shape[-3]
         width = x.shape[-2]
@@ -25,11 +26,11 @@ class SENet(tf.keras.Model):
         x = identity * tf.tile(x, multiples=(1, height, width, 1))
         return x
 
-    def build(self, input_shape):
+    def build(self, input_shape, name="SENet"):
         inputs = tf.keras.Input(shape=input_shape)
         outputs = self.call(inputs)
         return tf.keras.Model(inputs=inputs, outputs=outputs,
-            name="SENet",
+            name=name,
         )
 
 
