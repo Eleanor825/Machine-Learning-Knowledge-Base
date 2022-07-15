@@ -11,3 +11,4 @@
 * 2022.07.11 Mon:
 * 2022.07.12 Tue: NIN
 * 2022.07.13 Wed: ResNeXt
+* 2022.07.14 Thu: Deep Roots
