@@ -12,3 +12,5 @@
 * 2022.07.12 Tue: NIN
 * 2022.07.13 Wed: ResNeXt
 * 2022.07.14 Thu: Deep Roots
+* 2022.07.15 Fri:
+* 2022 07.16 Sat: Speeding up Convolutional Neural Networks with Low Rank Expansions
