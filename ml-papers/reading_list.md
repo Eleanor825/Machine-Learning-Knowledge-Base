@@ -14,3 +14,4 @@
 * 2022.07.14 Thu: Deep Roots
 * 2022.07.15 Fri:
 * 2022 07.16 Sat: Speeding up Convolutional Neural Networks with Low Rank Expansions
+* 2022.07.17 Sun: Learning Separable Filters, Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation

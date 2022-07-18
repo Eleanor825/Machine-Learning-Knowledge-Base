@@ -2,10 +2,15 @@
 
 # Papers in Computer Vision - CNN Architectures
 
-count: 48
+count: 52
 
 ## Unclassified
 
+* [Deconvolutional networks](https://ieeexplore.ieee.org/document/5539957)
+    * Title: Deconvolutional networks
+    * Year: `2010`
+    * Author: Matthew D. Zeiler
+    * Abstract: Building robust low and mid-level image representations, beyond edge primitives, is a long-standing goal in vision. Many existing feature detectors spatially pool edge information which destroys cues such as edge intersections, parallelism and symmetry. We present a learning framework where features that capture these mid-level cues spontaneously emerge from image data. Our approach is based on the convolutional decomposition of images under a spar-sity constraint and is totally unsupervised. By building a hierarchy of such decompositions we can learn rich feature sets that are a robust image representation for both the analysis and synthesis of images.
 * [AlexNet](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
     * Title: ImageNet Classification with Deep Convolutional Neural Networks
     * Year: `2012`
@@ -31,11 +36,6 @@ count: 48
     * Year: 17 Dec `2014`
     * Author: Jonghoon Jin
     * Abstract: We present flattened convolutional neural networks that are designed for fast feedforward execution. The redundancy of the parameters, especially weights of the convolutional filters in convolutional neural networks has been extensively studied and different heuristics have been proposed to construct a low rank basis of the filters after training. In this work, we train flattened networks that consist of consecutive sequence of one-dimensional filters across all directions in 3D space to obtain comparable performance as conventional convolutional networks. We tested flattened model on different datasets and found that the flattened layer can effectively substitute for the 3D filters without loss of accuracy. The flattened convolution pipelines provide around two times speed-up during feedforward pass compared to the baseline model due to the significant reduction of learning parameters. Furthermore, the proposed method does not require efforts in manual tuning or post processing once the model is trained.
-* [Highway Networks - Report](https://arxiv.org/abs/1505.00387)
-    * Title: Highway Networks
-    * Year: 03 May `2015`
-    * Author: Rupesh Kumar Srivastava
-    * Abstract: There is plenty of theoretical and empirical evidence that depth of neural networks is a crucial ingredient for their success. However, network training becomes more difficult with increasing depth and training of very deep networks remains an open problem. In this extended abstract, we introduce a new architecture designed to ease gradient-based training of very deep networks. We refer to networks with this architecture as highway networks, since they allow unimpeded information flow across several layers on "information highways". The architecture is characterized by the use of gating units which learn to regulate the flow of information through a network. Highway networks with hundreds of layers can be trained directly using stochastic gradient descent and with a variety of activation functions, opening up the possibility of studying extremely deep and efficient architectures.
 * [FractalNet](https://arxiv.org/abs/1605.07648)
     * Title: FractalNet: Ultra-Deep Neural Networks without Residuals
     * Year: 24 May `2016`
@@ -63,6 +63,11 @@ count: 48
 
 * ResNet, see below.
 * Identity mappings, see below.
+* [Highway Networks - Report](https://arxiv.org/abs/1505.00387)
+    * Title: Highway Networks
+    * Year: 03 May `2015`
+    * Author: Rupesh Kumar Srivastava
+    * Abstract: There is plenty of theoretical and empirical evidence that depth of neural networks is a crucial ingredient for their success. However, network training becomes more difficult with increasing depth and training of very deep networks remains an open problem. In this extended abstract, we introduce a new architecture designed to ease gradient-based training of very deep networks. We refer to networks with this architecture as highway networks, since they allow unimpeded information flow across several layers on "information highways". The architecture is characterized by the use of gating units which learn to regulate the flow of information through a network. Highway networks with hundreds of layers can be trained directly using stochastic gradient descent and with a variety of activation functions, opening up the possibility of studying extremely deep and efficient architectures.
 * [Highway Networks](https://arxiv.org/abs/1507.06228)
     * Title: Training Very Deep Networks
     * Year: 22 Jul `2015`
@@ -236,6 +241,21 @@ count: 48
 
 ## Low-Rank Approximations
 
+* [Deformable kernels for early vision](https://ieeexplore.ieee.org/document/391394)
+    * Title: Deformable kernels for early vision
+    * Year: May `1995`
+    * Author: P. Perona
+    * Abstract: Early vision algorithms often have a first stage of linear-filtering that 'extracts' from the image information at multiple scales of resolution and multiple orientations. A common difficulty in the design and implementation of such schemes is that one feels compelled to discretize coarsely the space of scales and orientations in order to reduce computation and storage costs. A technique is presented that allows: 1) computing the best approximation of a given family using linear combinations of a small number of 'basis' functions; and 2) describing all finite-dimensional families, i.e., the families of filters for which a finite dimensional representation is possible with no error. The technique is based on singular value decomposition and may be applied to generating filters in arbitrary dimensions and subject to arbitrary deformations. The relevant functional analysis results are reviewed and precise conditions for the decomposition to be feasible are stated. Experimental results are presented that demonstrate the applicability of the technique to generating multiorientation multi-scale 2D edge-detection kernels. The implementation issues are also discussed.
+* [A rank minimization heuristic with application to minimum order system approximation](https://ieeexplore.ieee.org/document/945730)
+    * Title: A rank minimization heuristic with application to minimum order system approximation
+    * Year: Jun `2001`
+    * Author: M. Fazel
+    * Abstract: We describe a generalization of the trace heuristic that applies to general nonsymmetric, even non-square, matrices, and reduces to the trace heuristic when the matrix is positive semidefinite. The heuristic is to replace the (nonconvex) rank objective with the sum of the singular values of the matrix, which is the dual of the spectral norm. We show that this problem can be reduced to a semidefinite program, hence efficiently solved. To motivate the heuristic, we, show that the dual spectral norm is the convex envelope of the rank on the set of matrices with norm less than one. We demonstrate the method on the problem of minimum-order system approximation.
+* [Tensor Decompositions and Applications](https://epubs.siam.org/doi/10.1137/07070111X)
+    * Title: Tensor Decompositions and Applications
+    * Year: `2009`
+    * Author: Tamara G. Kolda
+    * Abstract: This survey provides an overview of higher-order tensor decompositions, their applications, and available software. A tensor is a multidimensional or N-way array. Decompositions of higher-order tensors (i.e., N-way arrays with $N \geq 3$) have applications in psycho-metrics, chemometrics, signal processing, numerical linear algebra, computer vision, numerical analysis, data mining, neuroscience, graph analysis, and elsewhere. Two particular tensor decompositions can be considered to be higher-order extensions of the matrix singular value decomposition: CANDECOMP/PARAFAC (CP) decomposes a tensor as a sum of rank-one tensors, and the Tucker decomposition is a higher-order form of principal component analysis. There are many other tensor decompositions, including INDSCAL, PARAFAC2, CANDELINC, DEDICOM, and PARATUCK2 as well as nonnegative variants of all of the above. The N-way Toolbox, Tensor Toolbox, and Multilinear Engine are examples of software packages for working with tensors.
 * [Learning Separable Filters](https://ieeexplore.ieee.org/document/6619199)
     * Title: Learning Separable Filters
     * Year: `2013`
