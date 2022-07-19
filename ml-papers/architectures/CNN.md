@@ -8,7 +8,7 @@ count: 52
 
 * [Deconvolutional networks](https://ieeexplore.ieee.org/document/5539957)
     * Title: Deconvolutional networks
-    * Year: `2010`
+    * Year: 05 Aug `2010`
     * Author: Matthew D. Zeiler
     * Abstract: Building robust low and mid-level image representations, beyond edge primitives, is a long-standing goal in vision. Many existing feature detectors spatially pool edge information which destroys cues such as edge intersections, parallelism and symmetry. We present a learning framework where features that capture these mid-level cues spontaneously emerge from image data. Our approach is based on the convolutional decomposition of images under a spar-sity constraint and is totally unsupervised. By building a hierarchy of such decompositions we can learn rich feature sets that are a robust image representation for both the analysis and synthesis of images.
 * [AlexNet](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
@@ -61,6 +61,14 @@ count: 52
 
 ## Reformulations of the Connections between Network Layers
 
+> Highway networks introduced a gating mechanism to regulate the flow of information along shortcut connections. (SENet, 2017)
+
+> Following these works, there have been further reformulations oof the connections between network layers [DPN], [DenseNets], which show promising improvements to the learning and representational properties of deep networks. (SENet, 2017)
+
+> By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. (DPN, 2017)
+
+> Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet. (DPN, 2017)
+
 * ResNet, see below.
 * Identity mappings, see below.
 * [Highway Networks - Report](https://arxiv.org/abs/1505.00387)
@@ -86,6 +94,8 @@ count: 52
 
 ## Residual Networks
 
+> Deep Residual Network (ResNet) is one of the first works that successfully adopt skip connections, where each micro-block, .k.a. residual function, is associated with a skip connection, called residual path. The residual path element-wisely adds the input features to the output of the same micro-block, making it a residual unit. Depending on the inner structure design of the micro-block, the residual network has developed into a family  of various architectures, including WRN, Inception-resnet, and ResNeXt. (DPN, 2017)
+
 * [ResNet](https://arxiv.org/abs/1512.03385)
     * Title: Deep Residual Learning for Image Recognition
     * Year: 10 Dec `2015`
@@ -103,7 +113,7 @@ count: 52
     * Year: 20 May `2016`
     * Author: Andreas Veit
     * Abstract: In this work we propose a novel interpretation of residual networks showing that they can be seen as a collection of many paths of differing length. Moreover, residual networks seem to enable very deep networks by leveraging only the short paths during training. To support this observation, we rewrite residual networks as an explicit collection of paths. Unlike traditional models, paths through residual networks vary in length. Further, a lesion study reveals that these paths show ensemble-like behavior in the sense that they do not strongly depend on each other. Finally, and most surprising, most paths are shorter than one might expect, and only the short paths are needed during training, as longer paths do not contribute any gradient. For example, most of the gradient in a residual network with 110 layers comes from paths that are only 10-34 layers deep. Our results reveal one of the key characteristics that seem to enable the training of very deep networks: Residual networks avoid the vanishing gradient problem by introducing short paths which can carry gradient throughout the extent of very deep networks.
-* [Wide ResNet](https://arxiv.org/abs/1605.07146)
+* [WRN](https://arxiv.org/abs/1605.07146)
     * Title: Wide Residual Networks
     * Year: 23 May `2016`
     * Author: Sergey Zagoruyko
@@ -112,8 +122,28 @@ count: 52
     * Year: 16 Nov `2016`
     * Author: Saining Xie
     * Abstract: We present a simple, highly modularized network architecture for image classification. Our network is constructed by repeating a building block that aggregates a set of transformations with the same topology. Our simple design results in a homogeneous, multi-branch architecture that has only a few hyper-parameters to set. This strategy exposes a new dimension, which we call "cardinality" (the size of the set of transformations), as an essential factor in addition to the dimensions of depth and width. On the ImageNet-1K dataset, we empirically show that even under the restricted condition of maintaining complexity, increasing cardinality is able to improve classification accuracy. Moreover, increasing cardinality is more effective than going deeper or wider when we increase the capacity. Our models, named ResNeXt, are the foundations of our entry to the ILSVRC 2016 classification task in which we secured 2nd place. We further investigate ResNeXt on an ImageNet-5K set and the COCO detection set, also showing better results than its ResNet counterpart. The code and models are publicly available online.
+* [Sharing Residual Units Through Collective Tensor Factorization in Deep Neural Networks](https://arxiv.org/abs/1703.02180)
+    * Title: Sharing Residual Units Through Collective Tensor Factorization in Deep Neural Networks
+    * Year: 07 Mar `2017`
+    * Author: Chen Yunpeng
+    * Abstract: Residual units are wildly used for alleviating optimization difficulties when building deep neural networks. However, the performance gain does not well compensate the model size increase, indicating low parameter efficiency in these residual units. In this work, we first revisit the residual function in several variations of residual units and demonstrate that these residual functions can actually be explained with a unified framework based on generalized block term decomposition. Then, based on the new explanation, we propose a new architecture, Collective Residual Unit (CRU), which enhances the parameter efficiency of deep neural networks through collective tensor factorization. CRU enables knowledge sharing across different residual units using shared factors. Experimental results show that our proposed CRU Network demonstrates outstanding parameter efficiency, achieving comparable classification performance to ResNet-200 with the model size of ResNet-50. By building a deeper network using CRU, we can achieve state-of-the-art single model classification accuracy on ImageNet-1k and Places365-Standard benchmark datasets. (Code and trained models are available on GitHub)
+
+## Recurrent Networks
+
+* [Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex](https://arxiv.org/abs/1604.03640)
+    * Title: Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex
+    * Year: 13 Apr `2016`
+    * Author: Qianli Liao
+    * Abstract: We discuss relations between Residual Networks (ResNet), Recurrent Neural Networks (RNNs) and the primate visual cortex. We begin with the observation that a special type of shallow RNN is exactly equivalent to a very deep ResNet with weight sharing among the layers. A direct implementation of such a RNN, although having orders of magnitude fewer parameters, leads to a performance similar to the corresponding ResNet. We propose 1) a generalization of both RNN and ResNet architectures and 2) the conjecture that a class of moderately deep RNNs is a biologically-plausible model of the ventral stream in visual cortex. We demonstrate the effectiveness of the architectures by testing them on the CIFAR-10 and ImageNet dataset.
+* [HORNN](https://arxiv.org/abs/1605.00064)
+    * Title: Higher Order Recurrent Neural Networks
+    * Year: 30 Apr `2016`
+    * Author: Rohollah Soltani
+    * Abstract: In this paper, we study novel neural network structures to better model long term dependency in sequential data. We propose to use more memory units to keep track of more preceding states in recurrent neural networks (RNNs), which are all recurrently fed to the hidden layers as feedback through different weighted paths. By extending the popular recurrent structure in RNNs, we provide the models with better short-term memory mechanism to learn long term dependency in sequences. Analogous to digital filters in signal processing, we call these structures as higher order RNNs (HORNNs). Similar to RNNs, HORNNs can also be learned using the back-propagation through time method. HORNNs are generally applicable to a variety of sequence modelling tasks. In this work, we have examined HORNNs for the language modeling task using two popular data sets, namely the Penn Treebank (PTB) and English text8 data sets. Experimental results have shown that the proposed HORNNs yield the state-of-the-art performance on both data sets, significantly outperforming the regular RNNs as well as the popular LSTMs.
 
 ## Grouped Convolutions
+
+> Grouped convolutions have proven to be a popular approach for increasing the cardinality of learned transformations [Deep Roots], [ResNeXt]. (SENet, 2017)
 
 * [Deep Roots](https://arxiv.org/abs/1605.06489)
     * Title: Deep Roots: Improving CNN Efficiency with Hierarchical Filter Groups
@@ -121,13 +151,15 @@ count: 52
     * Author: Yani Ioannou
     * Abstract: We propose a new method for creating computationally efficient and compact convolutional neural networks (CNNs) using a novel sparse connection structure that resembles a tree root. This allows a significant reduction in computational cost and number of parameters compared to state-of-the-art deep CNNs, without compromising accuracy, by exploiting the sparsity of inter-layer filter dependencies. We validate our approach by using it to train more efficient variants of state-of-the-art CNN architectures, evaluated on the CIFAR10 and ILSVRC datasets. Our results show similar or higher accuracy than the baseline architectures with much less computation, as measured by CPU and GPU timings. For example, for ResNet 50, our model has 40% fewer parameters, 45% fewer floating point operations, and is 31% (12%) faster on a CPU (GPU). For the deeper ResNet 200 our model has 25% fewer floating point operations and 44% fewer parameters, while maintaining state-of-the-art accuracy. For GoogLeNet, our model has 7% fewer parameters and is 21% (16%) faster on a CPU (GPU).
 * ResNeXt, see above.
-* More flexible compositions of operators can be achieved with multi-branch convolutions, which can be viewed as a natural extension of the grouping operator: Inception-v1, ..., Inception-v4, see below.
+* Inception-v1, Inception-v2, Inception-v3, Inception-v4, see below.
 
 ## Inception Networks (Multi-Branch Networks)
 
 > The Inception models have evolved over time, but an important common property is a *split-transform-merge* strategy. In an Inception module, the input is split into a few lower-dimensional embeddings (by $1 \times 1$ convolutions), transformed by a set of specialized filters ($3 \times 3$, $5 \times 5$, etc.), and merged by concatenation. It can be shown that the solution space of this architecture is a strict subspace of the solution space of a single large layer (e.g., $5 \times 5$) operating on a high-dimensional embedding. The split-transform-merge behavior of Inception modules is expected to approach the representational power of large and dense layers, but at a considerably lower computational complexity. (ResNeXt, 2016)
 
 > The Inception models are successful multi-branch architectures where each branch is carefully customized. ResNets can be thought of as two-branch networks where one branch is the identity mapping. Deep neural decision forests are tree-patterned multi-branch networks with learned splitting functions. (ResNeXt, 2016)
+
+> More flexible compositions of operators can be achieved with multi-branch convolutions [Inception-v1], [Inception-v2], [Inception-v3], [Inception-v4], which can be viewed as a natural extension of the grouping operator. (SENet, 2017)
 
 * [Inception-v1/GoogLeNet](https://arxiv.org/abs/1409.4842)
     * Title: Going Deeper with Convolutions
@@ -144,7 +176,7 @@ count: 52
     * Year: 02 Dec `2015`
     * Author: Christian Szegedy
     * Abstract: Convolutional networks are at the core of most state-of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we explore ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21.2% top-1 and 5.6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3.5% top-5 error on the validation set (3.6% error on the test set) and 17.3% top-1 error on the validation set.
-* [Inception-v4](https://arxiv.org/abs/1602.07261)
+* [Inception-v4/Inception-ResNet](https://arxiv.org/abs/1602.07261)
     * Title: Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning
     * Year: 23 Feb `2016`
     * Author: Christian Szegedy
@@ -226,6 +258,8 @@ count: 52
 * Deep roots
 
 ## Cross-Channel Correlations
+
+> In prior work, cross channel correlations are typically mapped as new combinations of features, either independently of spatial structure [speeding up], [Xception] or jointly by using standard convolutional filters [Network in Network] with $1 \times 1$ convolutions. (SENet, 2017)
 
 * [Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866)
     * Title: Speeding up Convolutional Neural Networks with Low Rank Expansions
