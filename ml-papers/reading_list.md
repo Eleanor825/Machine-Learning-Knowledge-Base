@@ -16,3 +16,4 @@
 * 2022 07.16 Sat: Speeding up Convolutional Neural Networks with Low Rank Expansions
 * 2022.07.17 Sun: Learning Separable Filters, Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation
 * 2022.07.18 Mon: Dual Path Networks
+* 2022.07.19 Tue: Identity Mappings in Deep Residual Networks

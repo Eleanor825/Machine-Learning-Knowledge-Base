@@ -71,12 +71,12 @@ count: 52
 
 * ResNet, see below.
 * Identity mappings, see below.
-* [Highway Networks - Report](https://arxiv.org/abs/1505.00387)
+* [Highway Networks](https://arxiv.org/abs/1505.00387)
     * Title: Highway Networks
     * Year: 03 May `2015`
     * Author: Rupesh Kumar Srivastava
     * Abstract: There is plenty of theoretical and empirical evidence that depth of neural networks is a crucial ingredient for their success. However, network training becomes more difficult with increasing depth and training of very deep networks remains an open problem. In this extended abstract, we introduce a new architecture designed to ease gradient-based training of very deep networks. We refer to networks with this architecture as highway networks, since they allow unimpeded information flow across several layers on "information highways". The architecture is characterized by the use of gating units which learn to regulate the flow of information through a network. Highway networks with hundreds of layers can be trained directly using stochastic gradient descent and with a variety of activation functions, opening up the possibility of studying extremely deep and efficient architectures.
-* [Highway Networks](https://arxiv.org/abs/1507.06228)
+* [Training Very Deep Networks](https://arxiv.org/abs/1507.06228)
     * Title: Training Very Deep Networks
     * Year: 22 Jul `2015`
     * Author: Rupesh Kumar Srivastava
@@ -86,7 +86,7 @@ count: 52
     * Year: 25 Aug `2016`
     * Author: Gao Huang
     * Abstract: Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at [this https URL](https://github.com/liuzhuang13/DenseNet).
-* [Dual Path Networks](https://arxiv.org/abs/1707.01629)
+* [Dual Path Networks (DPN)](https://arxiv.org/abs/1707.01629)
     * Title: Dual Path Networks
     * Year: 06 Jul `2017`
     * Author: Yunpeng Chen
@@ -113,7 +113,7 @@ count: 52
     * Year: 20 May `2016`
     * Author: Andreas Veit
     * Abstract: In this work we propose a novel interpretation of residual networks showing that they can be seen as a collection of many paths of differing length. Moreover, residual networks seem to enable very deep networks by leveraging only the short paths during training. To support this observation, we rewrite residual networks as an explicit collection of paths. Unlike traditional models, paths through residual networks vary in length. Further, a lesion study reveals that these paths show ensemble-like behavior in the sense that they do not strongly depend on each other. Finally, and most surprising, most paths are shorter than one might expect, and only the short paths are needed during training, as longer paths do not contribute any gradient. For example, most of the gradient in a residual network with 110 layers comes from paths that are only 10-34 layers deep. Our results reveal one of the key characteristics that seem to enable the training of very deep networks: Residual networks avoid the vanishing gradient problem by introducing short paths which can carry gradient throughout the extent of very deep networks.
-* [WRN](https://arxiv.org/abs/1605.07146)
+* [Wide Residual Networks (WRN)](https://arxiv.org/abs/1605.07146)
     * Title: Wide Residual Networks
     * Year: 23 May `2016`
     * Author: Sergey Zagoruyko
@@ -122,7 +122,7 @@ count: 52
     * Year: 16 Nov `2016`
     * Author: Saining Xie
     * Abstract: We present a simple, highly modularized network architecture for image classification. Our network is constructed by repeating a building block that aggregates a set of transformations with the same topology. Our simple design results in a homogeneous, multi-branch architecture that has only a few hyper-parameters to set. This strategy exposes a new dimension, which we call "cardinality" (the size of the set of transformations), as an essential factor in addition to the dimensions of depth and width. On the ImageNet-1K dataset, we empirically show that even under the restricted condition of maintaining complexity, increasing cardinality is able to improve classification accuracy. Moreover, increasing cardinality is more effective than going deeper or wider when we increase the capacity. Our models, named ResNeXt, are the foundations of our entry to the ILSVRC 2016 classification task in which we secured 2nd place. We further investigate ResNeXt on an ImageNet-5K set and the COCO detection set, also showing better results than its ResNet counterpart. The code and models are publicly available online.
-* [Sharing Residual Units Through Collective Tensor Factorization in Deep Neural Networks](https://arxiv.org/abs/1703.02180)
+* [Collective Residual Unit (CRU)](https://arxiv.org/abs/1703.02180)
     * Title: Sharing Residual Units Through Collective Tensor Factorization in Deep Neural Networks
     * Year: 07 Mar `2017`
     * Author: Chen Yunpeng
@@ -181,6 +181,11 @@ count: 52
     * Year: 23 Feb `2016`
     * Author: Christian Szegedy
     * Abstract: Very deep convolutional networks have been central to the largest advances in image recognition performance in recent years. One example is the Inception architecture that has been shown to achieve very good performance at relatively low computational cost. Recently, the introduction of residual connections in conjunction with a more traditional architecture has yielded state-of-the-art performance in the 2015 ILSVRC challenge; its performance was similar to the latest generation Inception-v3 network. This raises the question of whether there are any benefit in combining the Inception architecture with residual connections. Here we give clear empirical evidence that training with residual connections accelerates the training of Inception networks significantly. There is also some evidence of residual Inception networks outperforming similarly expensive Inception networks without residual connections by a thin margin. We also present several new streamlined architectures for both residual and non-residual Inception networks. These variations improve the single-frame recognition performance on the ILSVRC 2012 classification task significantly. We further demonstrate how proper activation scaling stabilizes the training of very wide residual Inception networks. With an ensemble of three residual and one Inception-v4, we achieve 3.08 percent top-5 error on the test set of the ImageNet classification (CLS) challenge.
+* [PolyNet](https://arxiv.org/abs/1611.05725)
+    * Title: PolyNet: A Pursuit of Structural Diversity in Very Deep Networks
+    * Year: 17 Nov `2016`
+    * Author: Xingcheng Zhang
+    * Abstract: A number of studies have shown that increasing the depth or width of convolutional networks is a rewarding approach to improve the performance of image recognition. In our study, however, we observed difficulties along both directions. On one hand, the pursuit for very deep networks is met with a diminishing return and increased training difficulty; on the other hand, widening a network would result in a quadratic growth in both computational cost and memory demand. These difficulties motivate us to explore structural diversity in designing deep networks, a new dimension beyond just depth and width. Specifically, we present a new family of modules, namely the PolyInception, which can be flexibly inserted in isolation or in a composition as replacements of different parts of a network. Choosing PolyInception modules with the guidance of architectural efficiency can improve the expressive power while preserving comparable computational cost. The Very Deep PolyNet, designed following this direction, demonstrates substantial improvements over the state-of-the-art on the ILSVRC 2012 benchmark. Compared to Inception-ResNet-v2, it reduces the top-5 validation error on single crops from 4.9% to 4.25%, and that on multi-crops from 3.7% to 3.45%.
 
 ## Light Weight Networks
 
@@ -285,6 +290,11 @@ count: 52
     * Year: Jun `2001`
     * Author: M. Fazel
     * Abstract: We describe a generalization of the trace heuristic that applies to general nonsymmetric, even non-square, matrices, and reduces to the trace heuristic when the matrix is positive semidefinite. The heuristic is to replace the (nonconvex) rank objective with the sum of the singular values of the matrix, which is the dual of the spectral norm. We show that this problem can be reduced to a semidefinite program, hence efficiently solved. To motivate the heuristic, we, show that the dual spectral norm is the convex envelope of the rank on the set of matrices with norm less than one. We demonstrate the method on the problem of minimum-order system approximation.
+* [Decompositions of a Higher-Order Tensor in Block Terms—Part II: Definitions and Uniqueness](https://epubs.siam.org/doi/10.1137/070690729)
+    * Title: Decompositions of a Higher-Order Tensor in Block Terms—Part II: Definitions and Uniqueness
+    * Year: `2008`
+    * Author: Lieven De Lathauwer
+    * Abstract: In this paper we introduce a new class of tensor decompositions. Intuitively, we decompose a given tensor block into blocks of smaller size, where the size is characterized by a set of mode-n ranks. We study different types of such decompositions. For each type we derive conditions under which essential uniqueness is guaranteed. The parallel factor decomposition and Tucker's decomposition can be considered as special cases in the new framework. The paper sheds new light on fundamental aspects of tensor algebra.
 * [Tensor Decompositions and Applications](https://epubs.siam.org/doi/10.1137/07070111X)
     * Title: Tensor Decompositions and Applications
     * Year: `2009`
