@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - CNN Architectures
 
-count: 52
+count: 58
 
 ## Unclassified
 
@@ -127,6 +127,24 @@ count: 52
     * Year: 07 Mar `2017`
     * Author: Chen Yunpeng
     * Abstract: Residual units are wildly used for alleviating optimization difficulties when building deep neural networks. However, the performance gain does not well compensate the model size increase, indicating low parameter efficiency in these residual units. In this work, we first revisit the residual function in several variations of residual units and demonstrate that these residual functions can actually be explained with a unified framework based on generalized block term decomposition. Then, based on the new explanation, we propose a new architecture, Collective Residual Unit (CRU), which enhances the parameter efficiency of deep neural networks through collective tensor factorization. CRU enables knowledge sharing across different residual units using shared factors. Experimental results show that our proposed CRU Network demonstrates outstanding parameter efficiency, achieving comparable classification performance to ResNet-200 with the model size of ResNet-50. By building a deeper network using CRU, we can achieve state-of-the-art single model classification accuracy on ImageNet-1k and Places365-Standard benchmark datasets. (Code and trained models are available on GitHub)
+
+## ResNet-Like Architectures
+
+* [Exploring the Limits of Weakly Supervised Pretraining](https://arxiv.org/abs/1805.00932)
+    * Title: Exploring the Limits of Weakly Supervised Pretraining
+    * Year: 02 May `2018`
+    * Author: Dhruv Mahajan
+    * Abstract: State-of-the-art visual perception models for a wide range of tasks rely on supervised pretraining. ImageNet classification is the de facto pretraining task for these models. Yet, ImageNet is now nearly ten years old and is by modern standards "small". Even so, relatively little is known about the behavior of pretraining with datasets that are multiple orders of magnitude larger. The reasons are obvious: such datasets are difficult to collect and annotate. In this paper, we present a unique study of transfer learning with large convolutional networks trained to predict hashtags on billions of social media images. Our experiments demonstrate that training for large-scale hashtag prediction leads to excellent results. We show improvements on several image classification and object detection tasks, and report the highest ImageNet-1k single-crop, top-1 accuracy to date: 85.4% (97.6% top-5). We also perform extensive experiments that provide novel empirical data on the relationship between large-scale pretraining and transfer learning performance.
+* [Self-training with Noisy Student improves ImageNet classification](https://arxiv.org/abs/1911.04252)
+    * Title: Self-training with Noisy Student improves ImageNet classification
+    * Year: 11 Nov `2019`
+    * Author: Qizhe Xie
+    * Abstract: We present Noisy Student Training, a semi-supervised learning approach that works well even when labeled data is abundant. Noisy Student Training achieves 88.4% top-1 accuracy on ImageNet, which is 2.0% better than the state-of-the-art model that requires 3.5B weakly labeled Instagram images. On robustness test sets, it improves ImageNet-A top-1 accuracy from 61.0% to 83.7%, reduces ImageNet-C mean corruption error from 45.7 to 28.3, and reduces ImageNet-P mean flip rate from 27.8 to 12.2. Noisy Student Training extends the idea of self-training and distillation with the use of equal-or-larger student models and noise added to the student during learning. On ImageNet, we first train an EfficientNet model on labeled images and use it as a teacher to generate pseudo labels for 300M unlabeled images. We then train a larger EfficientNet as a student model on the combination of labeled and pseudo labeled images. We iterate this process by putting back the student as the teacher. During the learning of the student, we inject noise such as dropout, stochastic depth, and data augmentation via RandAugment to the student so that the student generalizes better than the teacher. Models are available at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet). Code is available at [this https URL](https://github.com/google-research/noisystudent).
+* [Big Transfer (BiT): General Visual Representation Learning](https://arxiv.org/abs/1912.11370)
+    * Title: Big Transfer (BiT): General Visual Representation Learning
+    * Year: 24 Dec `2019`
+    * Author: Alexander Kolesnikov
+    * Abstract: Transfer of pre-trained representations improves sample efficiency and simplifies hyperparameter tuning when training deep neural networks for vision. We revisit the paradigm of pre-training on large supervised datasets and fine-tuning the model on a target task. We scale up pre-training, and propose a simple recipe that we call Big Transfer (BiT). By combining a few carefully selected components, and transferring using a simple heuristic, we achieve strong performance on over 20 datasets. BiT performs well across a surprisingly wide range of data regimes -- from 1 example per class to 1M total examples. BiT achieves 87.5% top-1 accuracy on ILSVRC-2012, 99.4% on CIFAR-10, and 76.3% on the 19 task Visual Task Adaptation Benchmark (VTAB). On small datasets, BiT attains 76.8% on ILSVRC-2012 with 10 examples per class, and 97.0% on CIFAR-10 with 10 examples per class. We conduct detailed analysis of the main components that lead to high transfer performance.
 
 ## Recurrent Networks
 
@@ -287,7 +305,7 @@ count: 52
     * Abstract: Early vision algorithms often have a first stage of linear-filtering that 'extracts' from the image information at multiple scales of resolution and multiple orientations. A common difficulty in the design and implementation of such schemes is that one feels compelled to discretize coarsely the space of scales and orientations in order to reduce computation and storage costs. A technique is presented that allows: 1) computing the best approximation of a given family using linear combinations of a small number of 'basis' functions; and 2) describing all finite-dimensional families, i.e., the families of filters for which a finite dimensional representation is possible with no error. The technique is based on singular value decomposition and may be applied to generating filters in arbitrary dimensions and subject to arbitrary deformations. The relevant functional analysis results are reviewed and precise conditions for the decomposition to be feasible are stated. Experimental results are presented that demonstrate the applicability of the technique to generating multiorientation multi-scale 2D edge-detection kernels. The implementation issues are also discussed.
 * [A rank minimization heuristic with application to minimum order system approximation](https://ieeexplore.ieee.org/document/945730)
     * Title: A rank minimization heuristic with application to minimum order system approximation
-    * Year: Jun `2001`
+    * Year: 07 August `2002`
     * Author: M. Fazel
     * Abstract: We describe a generalization of the trace heuristic that applies to general nonsymmetric, even non-square, matrices, and reduces to the trace heuristic when the matrix is positive semidefinite. The heuristic is to replace the (nonconvex) rank objective with the sum of the singular values of the matrix, which is the dual of the spectral norm. We show that this problem can be reduced to a semidefinite program, hence efficiently solved. To motivate the heuristic, we, show that the dual spectral norm is the convex envelope of the rank on the set of matrices with norm less than one. We demonstrate the method on the problem of minimum-order system approximation.
 * [Decompositions of a Higher-Order Tensor in Block Terms—Part II: Definitions and Uniqueness](https://epubs.siam.org/doi/10.1137/070690729)
@@ -302,7 +320,7 @@ count: 52
     * Abstract: This survey provides an overview of higher-order tensor decompositions, their applications, and available software. A tensor is a multidimensional or N-way array. Decompositions of higher-order tensors (i.e., N-way arrays with $N \geq 3$) have applications in psycho-metrics, chemometrics, signal processing, numerical linear algebra, computer vision, numerical analysis, data mining, neuroscience, graph analysis, and elsewhere. Two particular tensor decompositions can be considered to be higher-order extensions of the matrix singular value decomposition: CANDECOMP/PARAFAC (CP) decomposes a tensor as a sum of rank-one tensors, and the Tucker decomposition is a higher-order form of principal component analysis. There are many other tensor decompositions, including INDSCAL, PARAFAC2, CANDELINC, DEDICOM, and PARATUCK2 as well as nonnegative variants of all of the above. The N-way Toolbox, Tensor Toolbox, and Multilinear Engine are examples of software packages for working with tensors.
 * [Learning Separable Filters](https://ieeexplore.ieee.org/document/6619199)
     * Title: Learning Separable Filters
-    * Year: `2013`
+    * Year: 03 October `2013`
     * Author: Roberto Rigamonti
     * Abstract: Learning filters to produce sparse image representations in terms of over complete dictionaries has emerged as a powerful way to create image features for many different purposes. Unfortunately, these filters are usually both numerous and non-separable, making their use computationally expensive. In this paper, we show that such filters can be computed as linear combinations of a smaller number of separable ones, thus greatly reducing the computational complexity at no cost in terms of performance. This makes filter learning approaches practical even for large images or 3D volumes, and we show that we significantly outperform state-of-the-art methods on the linear structure extraction task, in terms of both accuracy and speed. Moreover, our approach is general and can be used on generic filter banks to reduce the complexity of the convolutions.
 * [Speeding-up Convolutional Neural Networks Using Fine-tuned CP-Decomposition](https://arxiv.org/abs/1412.6553)
