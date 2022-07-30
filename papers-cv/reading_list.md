@@ -17,3 +17,4 @@
 * 2022.07.17 Sun: Learning Separable Filters, Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation
 * 2022.07.18 Mon: Dual Path Networks
 * 2022.07.19 Tue: Identity Mappings in Deep Residual Networks
+* 2022.07.29 Fri: Attention Is All You Need
