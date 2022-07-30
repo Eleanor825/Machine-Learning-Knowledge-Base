@@ -18,3 +18,4 @@
 * 2022.07.18 Mon: Dual Path Networks
 * 2022.07.19 Tue: Identity Mappings in Deep Residual Networks
 * 2022.07.29 Fri: Attention Is All You Need
+* 2022.07.30 Sat: Layer Normalization
