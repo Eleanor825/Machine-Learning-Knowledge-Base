@@ -1,4 +1,4 @@
-# [Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030)
+# [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030)
 
 * Year: 25 Mar `2021`
 * Author: Ze Liu
