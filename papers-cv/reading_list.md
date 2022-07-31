@@ -35,4 +35,6 @@
 * 2022.07.30 Sat:
     * Layer Normalization
     * An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
-    * Swin Transformer
+    * Swin Transformer V1
+* 2022.07.31 Sun:
+    * Swin Transformer V2
