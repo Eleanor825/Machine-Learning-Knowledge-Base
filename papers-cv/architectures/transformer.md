@@ -1,6 +1,6 @@
 <span style="font-family:monospace">
 
-# Papers in Computer Vision - Transformer
+# Papers in Computer Vision - Transformer Architectures
 
 count: 52
 
