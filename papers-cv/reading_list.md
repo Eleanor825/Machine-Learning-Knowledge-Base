@@ -38,3 +38,6 @@
     * Swin Transformer V1
 * 2022.07.31 Sun:
     * Swin Transformer V2
+    * Generative Adversarial Networks (not finished)
+* 2022.08.01 Mon:
+    * MobileViTv1 (not finished)
