@@ -1,0 +1,19 @@
+# [Separable Self-attention for Mobile Vision Transformers](https://arxiv.org/abs/2206.02680)
+
+* Year: 06 Jun `2022`
+* Author: Sachin Mehta, Mohammad Rastegari
+* Abstract: Mobile vision transformers (MobileViT) can achieve state-of-the-art performance across several mobile vision tasks, including classification and detection. Though these models have fewer parameters, they have high latency as compared to convolutional neural network-based models. The main efficiency bottleneck in MobileViT is the multi-headed self-attention (MHA) in transformers, which requires $O(k^{2})$ time complexity with respect to the number of tokens (or patches) $k$. Moreover, MHA requires costly operations (e.g., batch-wise matrix multiplication) for computing self-attention, impacting latency on resource-constrained devices. This paper introduces a separable self-attention method with linear complexity, i.e. $O(k)$. A simple yet effective characteristic of the proposed method is that it uses element-wise operations for computing self-attention, making it a good choice for resource-constrained devices. The improved model, MobileViTv2, is state-of-the-art on several mobile vision tasks, including ImageNet object classification and MS-COCO object detection. With about three million parameters, MobileViTv2 achieves a top-1 accuracy of 75.6% on the ImageNet dataset, outperforming MobileViT by about 1% while running 3.2x faster on a mobile device. Our source code is available at: [this https URL](https://github.com/apple/ml-cvnets).
+
+----------------------------------------------------------------------------------------------------
+
+## 1 Introduction
+
+> At the heart of the ViT-based models, including mobile vision transformers, is the transformer block. The main efficiency bottleneck in ViT-based models, especially for inference on resource-constrained devices, is the multi-headed self-attention (MHA). MHA allows the tokens (or patches) to interact with each other, and is a key for learning global representations. However, the complexity of self-attention in transformer block is $O(k^{2})$, i.e., it is quadratic with respect to the number of tokens (or patches) $k$. Besides this, computationally expensive operations (e.g. batch-wise matrix multiplication) are required to compute attention matrix in MHA.
+> Therefore, this paper seeks to answer this question: can self-attention in transformer block be optimized for resource-constrained devices?
+
+> This paper introduces a novel method, separable self-attention, with $O(k)$ complexity for addressing the bottlenecks in MHA in transformers. For efficient inference, the proposed self-attention method also replaces the computationally expensive operations (e.g., batch-wise matrix multiplication) in MHA with element-wise operations (e.g., summation and multiplication). Experimental results on standard vision datasets and tasks demonstrates the effectiveness of the proposed method.
+
+## 3 MobileViTv2
+
+> The main idea of our separable self-attention approach is to compute context scores with respect to a latent token $L$. These scores are then used to re-weight the input tokens and produce a context vector, which encodes the global information. Because the self-attention is computed with respect to a latent token, the proposed method can reduce the complexity of self-attention in the transformer by a factor $k$. A simple yet effective characteristic of the proposed method is that it uses element-wise operations (e.g., summation and multiplication) for its implementation, making it a good choice for resource-constrained devices. We call the proposed attention method separable self-attention because it allows us to encode global information by replacing the quadratic MHA with two separate linear computations. The improved model, MobileViTv2, is obtained by replacing MHA with separable self-attention in MobileViT.
+

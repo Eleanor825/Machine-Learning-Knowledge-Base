@@ -41,3 +41,6 @@
     * Generative Adversarial Networks (not finished)
 * 2022.08.01 Mon:
     * MobileViTv1 (not finished)
+* 2022.08.02 Tue:
+    * MobileViTv1 (finished)
+    * MobileViTv2

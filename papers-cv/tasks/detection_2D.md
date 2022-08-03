@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - 2D Object Detection
 
-count: 58
+count: 59
 
 ## Unclassified
 
@@ -127,15 +127,51 @@ count: 58
 ----------------------------------------------------------------------------------------------------
 ## YOLO Series
 
-* (08 Jun 2015) [YOLOv1](https://arxiv.org/abs/1506.02640) (You Only Look Once: Unified, Real-Time Object Detection)
-* (25 Dec 2016) [YOLOv2](https://arxiv.org/abs/1612.08242) (YOLO9000: Better, Faster, Stronger)
-* (08 Apr 2018) [YOLOv3](https://arxiv.org/abs/1804.02767) (An Incremental Improvement)
-* (23 Apr 2020) [YOLOv4](https://arxiv.org/abs/2004.10934) (Optimal Speed and Accuracy of Object Detections)
-* (16 Nov 2020) [Scaled-YOLOv4](https://arxiv.org/abs/2011.08036) (Scaled-YOLOv4: Scaling Cross Stage Partial Network)
-* (17 Mar 2021) [YOLOF](https://arxiv.org/abs/2103.09460) (You Only Look One-level Feature)
-* (10 May 2021) [YOLOR](https://arxiv.org/abs/2105.04206) (You Only Learn One Representation)
-* (01 Jun 2021) [YOLOS](https://arxiv.org/abs/2106.00666) (You Only Look at One Sequence)
-* (18 Jul 2021) [YOLOX](https://arxiv.org/abs/2107.08430) (Exceeding YOLO Series in 2021)
+* [YOLOv1](https://arxiv.org/abs/1506.02640)
+    * Title: You Only Look Once: Unified, Real-Time Object Detection
+    * Year: 08 Jun `2015`
+    * Authors: Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
+    * Abstract: We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and class probabilities directly from full images in one evaluation. Since the whole detection pipeline is a single network, it can be optimized end-to-end directly on detection performance. Our unified architecture is extremely fast. Our base YOLO model processes images in real-time at 45 frames per second. A smaller version of the network, Fast YOLO, processes an astounding 155 frames per second while still achieving double the mAP of other real-time detectors. Compared to state-of-the-art detection systems, YOLO makes more localization errors but is far less likely to predict false detections where nothing exists. Finally, YOLO learns very general representations of objects. It outperforms all other detection methods, including DPM and R-CNN, by a wide margin when generalizing from natural images to artwork on both the Picasso Dataset and the People-Art Dataset.
+* [YOLOv2](https://arxiv.org/abs/1612.08242)
+    * Title: YOLO9000: Better, Faster, Stronger
+    * Year: 25 Dec `2016`
+    * Authors: Joseph Redmon, Ali Farhadi
+    * Abstract: We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL VOC and COCO. At 67 FPS, YOLOv2 gets 76.8 mAP on VOC 2007. At 40 FPS, YOLOv2 gets 78.6 mAP, outperforming state-of-the-art methods like Faster RCNN with ResNet and SSD while still running significantly faster. Finally we propose a method to jointly train on object detection and classification. Using this method we train YOLO9000 simultaneously on the COCO detection dataset and the ImageNet classification dataset. Our joint training allows YOLO9000 to predict detections for object classes that don't have labelled detection data. We validate our approach on the ImageNet detection task. YOLO9000 gets 19.7 mAP on the ImageNet detection validation set despite only having detection data for 44 of the 200 classes. On the 156 classes not in COCO, YOLO9000 gets 16.0 mAP. But YOLO can detect more than just 200 classes; it predicts detections for more than 9000 different object categories. And it still runs in real-time.
+* [YOLOv3](https://arxiv.org/abs/1804.02767)
+    * Title: YOLOv3: An Incremental Improvement
+    * Year: 08 Apr `2018`
+    * Authors: Joseph Redmon, Ali Farhadi
+    * Abstract: We present some updates to YOLO! We made a bunch of little design changes to make it better. We also trained this new network that's pretty swell. It's a little bigger than last time but more accurate. It's still fast though, don't worry. At 320x320 YOLOv3 runs in 22 ms at 28.2 mAP, as accurate as SSD but three times faster. When we look at the old .5 IOU mAP detection metric YOLOv3 is quite good. It achieves 57.9 mAP@50 in 51 ms on a Titan X, compared to 57.5 mAP@50 in 198 ms by RetinaNet, similar performance but 3.8x faster. As always, all the code is online at [this https URL](https://pjreddie.com/yolo/).
+* [YOLOv4](https://arxiv.org/abs/2004.10934)
+    * Title: YOLOv4: Optimal Speed and Accuracy of Object Detection
+    * Year: 23 Apr `2020`
+    * Authors: Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao
+    * Abstract: There are a huge number of features which are said to improve Convolutional Neural Network (CNN) accuracy. Practical testing of combinations of such features on large datasets, and theoretical justification of the result, is required. Some features operate on certain models exclusively and for certain problems exclusively, or only for small-scale datasets; while some features, such as batch-normalization and residual-connections, are applicable to the majority of models, tasks, and datasets. We assume that such universal features include Weighted-Residual-Connections (WRC), Cross-Stage-Partial-connections (CSP), Cross mini-Batch Normalization (CmBN), Self-adversarial-training (SAT) and Mish-activation. We use new features: WRC, CSP, CmBN, SAT, Mish activation, Mosaic data augmentation, CmBN, DropBlock regularization, and CIoU loss, and combine some of them to achieve state-of-the-art results: 43.5% AP (65.7% AP50) for the MS COCO dataset at a realtime speed of ~65 FPS on Tesla V100. Source code is at [this https URL](https://github.com/AlexeyAB/darknet).
+* [Scaled-YOLOv4](https://arxiv.org/abs/2011.08036)
+    * Title: Scaled-YOLOv4: Scaling Cross Stage Partial Network
+    * Year: 16 Nov `2020`
+    * Authors: 
+    * Abstract: 
+* [YOLOF](https://arxiv.org/abs/2103.09460)
+    * Title: You Only Look One-level Feature
+    * Year: 17 Mar `2021`
+    * Authors: 
+    * Abstract: 
+* [YOLOR](https://arxiv.org/abs/2105.04206)
+    * Title: You Only Learn One Representation
+    * Year: 10 May `2021`
+    * Authors: 
+    * Abstract: 
+* [YOLOS](https://arxiv.org/abs/2106.00666)
+    * Title: You Only Look at One Sequence
+    * Year: 01 Jun `2021`
+    * Authors: 
+    * Abstract: 
+* [YOLOX](https://arxiv.org/abs/2107.08430)
+    * Title: Exceeding YOLO Series in 2021
+    * Year: 18 Jul `2021`
+    * Authors: 
+    * Abstract: 
 
 ----------------------------------------------------------------------------------------------------
 ## Multi-Layer Networks
@@ -214,4 +250,3 @@ count: 58
 * (02 Mar 2019) [FSAF](https://arxiv.org/abs/1903.00621) (Feature Selective Anchor-Free Module for Single-Shot Object Detection)
 * (16 Apr 2019) [NAS-FPN](https://arxiv.org/abs/1904.07392) (NAS-FPN: Learning Scalable Feature Pyramid Architecture for Object Detection)
 * (26 Mar 2019) [DetNAS](https://arxiv.org/abs/1903.10979) (DetNAS: Backbone Search for Object Detection)
-* (28 May 2019) [EfficientNet](https://arxiv.org/abs/1905.11946) (EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks)
