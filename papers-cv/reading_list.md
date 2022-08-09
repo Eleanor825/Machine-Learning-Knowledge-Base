@@ -44,3 +44,5 @@
 * 2022.08.02 Tue:
     * MobileViTv1 (finished)
     * MobileViTv2
+* 2022.08.03 Wed:
+    * Early Convolutions Help Transformers See Better
