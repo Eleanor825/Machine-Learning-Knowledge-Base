@@ -34,6 +34,11 @@ count: 72
     * Year: 03 Aug `2020`
     * Author: Sachin Mehta, Marjan Ghazvininejad, Srinivasan Iyer, Luke Zettlemoyer, Hannaneh Hajishirzi
     * Abstract: We introduce a deep and light-weight transformer, DeLighT, that delivers similar or better performance than standard transformer-based models with significantly fewer parameters. DeLighT more efficiently allocates parameters both (1) within each Transformer block using the DeLighT transformation, a deep and light-weight transformation, and (2) across blocks using block-wise scaling, which allows for shallower and narrower DeLighT blocks near the input and wider and deeper DeLighT blocks near the output. Overall, DeLighT networks are 2.5 to 4 times deeper than standard transformer models and yet have fewer parameters and operations. Experiments on benchmark machine translation and language modeling tasks show that DeLighT matches or improves the performance of baseline Transformers with 2 to 3 times fewer parameters on average. Our source code is available at: [this https URL](https://github.com/sacmehta/delight).
+* [LambdaNetworks](https://arxiv.org/abs/2102.08602)
+    * Title: LambdaNetworks: Modeling Long-Range Interactions Without Attention
+    * Year: 17 Feb `2021`
+    * Authors: Irwan Bello
+    * Abstract: We present lambda layers -- an alternative framework to self-attention -- for capturing long-range interactions between an input and structured contextual information (e.g. a pixel surrounded by other pixels). Lambda layers capture such interactions by transforming available contexts into linear functions, termed lambdas, and applying these linear functions to each input separately. Similar to linear attention, lambda layers bypass expensive attention maps, but in contrast, they model both content and position-based interactions which enables their application to large structured inputs such as images. The resulting neural network architectures, LambdaNetworks, significantly outperform their convolutional and attentional counterparts on ImageNet classification, COCO object detection and COCO instance segmentation, while being more computationally efficient. Additionally, we design LambdaResNets, a family of hybrid architectures across different scales, that considerably improves the speed-accuracy tradeoff of image classification models. LambdaResNets reach excellent accuracies on ImageNet while being 3.2 - 4.4x faster than the popular EfficientNets on modern machine learning accelerators. When training with an additional 130M pseudo-labeled images, LambdaResNets achieve up to a 9.5x speed-up over the corresponding EfficientNet checkpoints.
 
 ## Self-attention in vision models (4)
 
@@ -51,6 +56,7 @@ count: 72
     * Abstract: Both convolutional and recurrent operations are building blocks that process one local neighborhood at a time. In this paper, we present non-local operations as a generic family of building blocks for capturing long-range dependencies. Inspired by the classical non-local means method [4] in computer vision, our non-local operation computes the response at a position as a weighted sum of the features at all positions. This building block can be plugged into many computer vision architectures. On the task of video classification, even without any bells and whistles, our nonlocal models can compete or outperform current competition winners on both Kinetics and Charades datasets. In static image recognition, our non-local models improve object detection/segmentation and pose estimation on the COCO suite of tasks. Code will be made available.
     * Comments:
         * > Wang et al. show that (single-headed) self-attention is a form of non-local means and that integrating it into a ResNet improves several tasks. Ramachandran et al. explore this direction further with stand-alone self-attention networks for vision. They report difficulties in designing an attention-based network stem and present a bespoke solution that avoids convolutions. (Early Convolutions Help Transformers See Better, 2021)
+        * > The non-local block attempts to model long-range dependencies in both space and time, which has been shown beneficial for accurate video classification. (PVT, )
 * [Stand-Alone Self-Attention](https://arxiv.org/abs/1906.05909)
     * Title: Stand-Alone Self-Attention in Vision Models
     * Year: 13 Jun `2019`
@@ -58,6 +64,7 @@ count: 72
     * Abstract: Convolutions are a fundamental building block of modern computer vision systems. Recent approaches have argued for going beyond convolutions in order to capture long-range dependencies. These efforts focus on augmenting convolutional models with content-based interactions, such as self-attention and non-local means, to achieve gains on a number of vision tasks. The natural question that arises is whether attention can be a stand-alone primitive for vision models instead of serving as just an augmentation on top of convolutions. In developing and testing a pure self-attention vision model, we verify that self-attention can indeed be an effective stand-alone layer. A simple procedure of replacing all instances of spatial convolutions with a form of self-attention applied to ResNet model produces a fully self-attentional model that outperforms the baseline on ImageNet classification with 12% fewer FLOPS and 29% fewer parameters. On COCO object detection, a pure self-attention model matches the mAP of a baseline RetinaNet while having 39% fewer FLOPS and 34% fewer parameters. Detailed ablation studies demonstrate that self-attention is especially impactful when used in later layers. These results establish that stand-alone self-attention is an important addition to the vision practitioner's toolbox.
     * Comments:
         * > Wang et al. show that (single-headed) self-attention is a form of non-local means and that integrating it into a ResNet improves several tasks. Ramachandran et al. explore this direction further with stand-alone self-attention networks for vision. They report difficulties in designing an attention-based network stem and present a bespoke solution that avoids convolutions. (Early Convolutions Help Transformers See Better, 2021)
+        * > Ramachandran et al. proposed the stand-alone self-attention to replace convolutional layers with local self-attention units. (PVT, )
 * [Exploring Self-attention for Image Recognition](https://arxiv.org/abs/2004.13621)
     * Title: Exploring Self-attention for Image Recognition
     * Year: 28 Apr `2020`
@@ -215,6 +222,7 @@ count: 72
     * Abstract: Recently, neural networks purely based on attention were shown to address image understanding tasks such as image classification. However, these visual transformers are pre-trained with hundreds of millions of images using an expensive infrastructure, thereby limiting their adoption. In this work, we produce a competitive convolution-free transformer by training on Imagenet only. We train them on a single computer in less than 3 days. Our reference vision transformer (86M parameters) achieves top-1 accuracy of 83.1% (single-crop evaluation) on ImageNet with no external data. More importantly, we introduce a teacher-student strategy specific to transformers. It relies on a distillation token ensuring that the student learns from the teacher through attention. We show the interest of this token-based distillation, especially when using a convnet as a teacher. This leads us to report results competitive with convnets for both Imagenet (where we obtain up to 85.2% accuracy) and when transferring to other tasks. We share our code and models.
     * Comments:
         * > Touvron et al. show that with more regularization and stronger data augmentation ViT models achieve competitive accuracy on ImageNet-1k alone. (Early Convolutions Help Transformers See Better, 2021)
+        * > DeiT further extends ViT using a novel distillation approach. (PVT, )
 * [Tokens-to-Token ViT](https://arxiv.org/abs/2101.11986)
     * Title: Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
     * Year: 28 Jan `2021`
@@ -337,7 +345,7 @@ count: 72
     * Year: 05 March `2020`
     * Author: Yue Cao
     * Abstract: The Non-Local Network (NLNet) presents a pioneering approach for capturing long-range dependencies, via aggregating query-specific global context to each query position. However, through a rigorous empirical analysis, we have found that the global contexts modeled by non-local network are almost the same for different query positions within an image. In this paper, we take advantage of this finding to create a simplified network based on a query-independent formulation, which maintains the accuracy of NLNet but with significantly less computation. We further observe that this simplified design shares similar structure with Squeeze-Excitation Network (SENet). Hence we unify them into a three-step general framework for global context modeling. Within the general framework, we design a better instantiation, called the global context (GC) block, which is lightweight and can effectively model the global context. The lightweight property allows us to apply it for multiple layers in a backbone network to construct a global context network (GCNet), which generally outperforms both simplified NLNet and SENet on major benchmarks for various recognition tasks.
-* [Attention Augmented Convolutional Networks](https://arxiv.org/abs/1904.09925)
+* [AANet](https://arxiv.org/abs/1904.09925)
     * Title: Attention Augmented Convolutional Networks
     * Year: 22 Apr `2019`
     * Author: Irwan Bello
@@ -402,7 +410,7 @@ count: 72
     * Author: Byeongho Heo
     * Abstract: Vision Transformer (ViT) extends the application range of transformers from language processing to computer vision tasks as being an alternative architecture against the existing convolutional neural networks (CNN). Since the transformer-based architecture has been innovative for computer vision modeling, the design convention towards an effective architecture has been less studied yet. From the successful design principles of CNN, we investigate the role of spatial dimension conversion and its effectiveness on transformer-based architecture. We particularly attend to the dimension reduction principle of CNNs; as the depth increases, a conventional CNN increases channel dimension and decreases spatial dimensions. We empirically show that such a spatial dimension reduction is beneficial to a transformer architecture as well, and propose a novel Pooling-based Vision Transformer (PiT) upon the original ViT model. We show that PiT achieves the improved model capability and generalization performance against ViT. Throughout the extensive experiments, we further show PiT outperforms the baseline on several tasks such as image classification, object detection, and robustness evaluation. Source codes and ImageNet models are available at [this https URL](https://github.com/naver-ai/pit).
 
-## Improving Transformer-Based Models
+## Improving Transformer-Based Models (MobileViTv2)
 
 * Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
 * MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer
@@ -445,10 +453,36 @@ count: 72
     * Author: Ze Liu
     * Abstract: This paper presents a new vision Transformer, called Swin Transformer, that capably serves as a general-purpose backbone for computer vision. Challenges in adapting Transformer from language to vision arise from differences between the two domains, such as large variations in the scale of visual entities and the high resolution of pixels in images compared to words in text. To address these differences, we propose a hierarchical Transformer whose representation is computed with \textbf{S}hifted \textbf{win}dows. The shifted windowing scheme brings greater efficiency by limiting self-attention computation to non-overlapping local windows while also allowing for cross-window connection. This hierarchical architecture has the flexibility to model at various scales and has linear computational complexity with respect to image size. These qualities of Swin Transformer make it compatible with a broad range of vision tasks, including image classification (87.3 top-1 accuracy on ImageNet-1K) and dense prediction tasks such as object detection (58.7 box AP and 51.1 mask AP on COCO test-dev) and semantic segmentation (53.5 mIoU on ADE20K val). Its performance surpasses the previous state-of-the-art by a large margin of +2.7 box AP and +2.6 mask AP on COCO, and +3.2 mIoU on ADE20K, demonstrating the potential of Transformer-based models as vision backbones. The hierarchical design and the shifted window approach also prove beneficial for all-MLP architectures. The code and models are publicly available at [this https URL](https://github.com/microsoft/Swin-Transformer).
 
+## dictionary lookup problem
+
+> Some works model the vision task as a dictionary lookup problem with learnable queries, and use the Transformer decoder as a task-specific head on top of the CNN backbone. (PVT, )
+
+* End-toend object detection with transformers
+* Deformable DETR: deformable transformers for end-to-end object detection.
+* [Segmenting Transparent Object in the Wild with Transformer](https://arxiv.org/abs/2101.08461)
+    * Title: Segmenting Transparent Object in the Wild with Transformer
+    * Year: 21 Jan `2021`
+    * Authors: Enze Xie, Wenjia Wang, Wenhai Wang, Peize Sun, Hang Xu, Ding Liang, Ping Luo
+    * Abstract: This work presents a new fine-grained transparent object segmentation dataset, termed Trans10K-v2, extending Trans10K-v1, the first large-scale transparent object segmentation dataset. Unlike Trans10K-v1 that only has two limited categories, our new dataset has several appealing benefits. (1) It has 11 fine-grained categories of transparent objects, commonly occurring in the human domestic environment, making it more practical for real-world application. (2) Trans10K-v2 brings more challenges for the current advanced segmentation methods than its former version. Furthermore, a novel transformer-based segmentation pipeline termed Trans2Seg is proposed. Firstly, the transformer encoder of Trans2Seg provides the global receptive field in contrast to CNN's local receptive field, which shows excellent advantages over pure CNN architectures. Secondly, by formulating semantic segmentation as a problem of dictionary look-up, we design a set of learnable prototypes as the query of Trans2Seg's transformer decoder, where each prototype learns the statistics of one category in the whole dataset. We benchmark more than 20 recent semantic segmentation methods, demonstrating that Trans2Seg significantly outperforms all the CNN-based methods, showing the proposed algorithm's potential ability to solve transparent object segmentation.
+* [TransTrack: Multiple Object Tracking with Transformer](https://arxiv.org/abs/2012.15460)
+    * Title: TransTrack: Multiple Object Tracking with Transformer
+    * Year: 31 Dec `2020`
+    * Authors: Peize Sun, Jinkun Cao, Yi Jiang, Rufeng Zhang, Enze Xie, Zehuan Yuan, Changhu Wang, Ping Luo
+    * Abstract: In this work, we propose TransTrack, a simple but efficient scheme to solve the multiple object tracking problems. TransTrack leverages the transformer architecture, which is an attention-based query-key mechanism. It applies object features from the previous frame as a query of the current frame and introduces a set of learned object queries to enable detecting new-coming objects. It builds up a novel joint-detection-and-tracking paradigm by accomplishing object detection and object association in a single shot, simplifying complicated multi-step settings in tracking-by-detection methods. On MOT17 and MOT20 benchmark, TransTrack achieves 74.5\% and 64.5\% MOTA, respectively, competitive to the state-of-the-art methods. We expect TransTrack to provide a novel perspective for multiple object tracking. The code is available at: [this https URL](https://github.com/PeizeSun/TransTrack).
+* [UniT](https://arxiv.org/abs/2102.10772)
+    * Title: UniT: Multimodal Multitask Learning with a Unified Transformer
+    * Year: 22 Feb `2021`
+    * Authors: Ronghang Hu, Amanpreet Singh
+    * Abstract: We propose UniT, a Unified Transformer model to simultaneously learn the most prominent tasks across different domains, ranging from object detection to natural language understanding and multimodal reasoning. Based on the transformer encoder-decoder architecture, our UniT model encodes each input modality with an encoder and makes predictions on each task with a shared decoder over the encoded input representations, followed by task-specific output heads. The entire model is jointly trained end-to-end with losses from each task. Compared to previous efforts on multi-task learning with transformers, we share the same model parameters across all tasks instead of separately fine-tuning task-specific models and handle a much higher variety of tasks across different domains. In our experiments, we learn 7 tasks jointly over 8 datasets, achieving strong performance on each task with significantly fewer parameters. Our code is available in MMF at [this https URL](https://mmf.sh/).
+* [Visual Saliency Transformer](https://arxiv.org/abs/2104.12099)
+    * Title: Visual Saliency Transformer
+    * Year: 25 Apr `2021`
+    * Authors: Nian Liu, Ni Zhang, Kaiyuan Wan, Ling Shao, Junwei Han
+    * Abstract: Existing state-of-the-art saliency detection methods heavily rely on CNN-based architectures. Alternatively, we rethink this task from a convolution-free sequence-to-sequence perspective and predict saliency by modeling long-range dependencies, which can not be achieved by convolution. Specifically, we develop a novel unified model based on a pure transformer, namely, Visual Saliency Transformer (VST), for both RGB and RGB-D salient object detection (SOD). It takes image patches as inputs and leverages the transformer to propagate global contexts among image patches. Unlike conventional architectures used in Vision Transformer (ViT), we leverage multi-level token fusion and propose a new token upsampling method under the transformer framework to get high-resolution detection results. We also develop a token-based multi-task decoder to simultaneously perform saliency and boundary detection by introducing task-related tokens and a novel patch-task-attention mechanism. Experimental results show that our model outperforms existing methods on both RGB and RGB-D SOD benchmark datasets. Most importantly, our whole framework not only provides a new perspective for the SOD field but also shows a new paradigm for transformer-based dense prediction models. Code is available at [this https URL](https://github.com/nnizhang/VST).
+
 ## Substandard Optimizability is Due to the Lack of Spatial Inductive Biases in ViTs.
 
 > However, unlike CNNs, ViTs show substandard optimizability and are difficult to train. Subsequenct works shows that this substandard optimizability is due to the lack of spatial inductive biases in ViTs. Incorporating such biases using convolutions in ViTs improves their stability and performance. (MobileViT, 2021)
-
 * LeViT: a Vision Transformer in ConvNet's Clothing for Faster Inference
 * CoAtNet: Marrying Convolution and Attention for All Data Sizes
 * Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
@@ -456,14 +490,14 @@ count: 72
 * Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
 * Mobile-Former: Bridging MobileNet and Transformer
 
-> Different designs have been exxplored to reap the benefits of convolutions and transformers.
+> Different designs have been explored to reap the benefits of convolutions and transformers.
 > * ViT-C of Xiao et al. (2021) adds an early convlution stem to ViT.
 > * CvT (Wu et al., 2021) modifies the multi-head attention in transformers and uses depth-wise separable convolutions instead of linear projections.
 > * BoTNet (Srinivas et al., 2021) replaces the standard 3x3 convolution in the bottleneck unit of ResNetwith multi-head attention.
 > * ConViT (d'Ascoli et al., 2021) incorporates soft convolutional inductive biases using a gated positional self-attention.
 > * PiT (Heo et al, 2021) extends ViT with depth-wise convolution-based pooling layer.
 > Though these models can achieve competitive performance to CNNs with extensive augmentation, the majority of these models are heavy-weight.
-> Also, when these models are scaled down to build light-weight ViT models, their performance is significantly worse than light-weight CNNs.
+> Also, when these models are scaled down to build light-weight ViT models, their performance is significantly worse than light-weight CNNs. (MobileViT, 2021)
 
 ## Transformer Architecture Applied to Object Detection and Instance Segmentation (4)
 
@@ -474,6 +508,8 @@ count: 72
     * Year: 26 May `2020`
     * Author: Nicolas Carion
     * Abstract: We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at [this https URL](https://github.com/facebookresearch/detr).
+    * Comments:
+        * > DETR utilizes the Transformer decoder to model object detection as an end-to-end dictionary lookup problem with learnable queries, successfully removing the need for handcrafted processes such as NMS. (PVT, )
 * [RelationNet++](https://arxiv.org/abs/2010.15831)
     * Title: RelationNet++: Bridging Visual Representations for Object Detection via Transformer Decoder
     * Year: 29 Oct `2020`
@@ -484,6 +520,8 @@ count: 72
     * Year: 08 Oct `2020`
     * Author: Xizhou Zhu
     * Abstract: DETR has been recently proposed to eliminate the need for many hand-designed components in object detection while demonstrating good performance. However, it suffers from slow convergence and limited feature spatial resolution, due to the limitation of Transformer attention modules in processing image feature maps. To mitigate these issues, we proposed Deformable DETR, whose attention modules only attend to a small set of key sampling points around a reference. Deformable DETR can achieve better performance than DETR (especially on small objects) with 10 times less training epochs. Extensive experiments on the COCO benchmark demonstrate the effectiveness of our approach. Code is released at [this https URL](https://github.com/fundamentalvision/Deformable-DETR).
+    * Comments:
+        * > Based on DETR, deeformable DETR further adopts a deformable attention layer to focus on a sparse set of contextual elements, obtaining faster convergence and better performance. (PVT, )
 * [Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
     * Title: Sparse R-CNN: End-to-End Object Detection with Learnable Proposals
     * Year: 25 Nov `2020`
