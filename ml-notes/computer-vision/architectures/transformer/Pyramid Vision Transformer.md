@@ -11,3 +11,8 @@
 > Our PVT overcomes the difficulties of the conventional Transformer by (1) taking fine-grained image patches (i.e., $4 \times 4$ pixels per patch) as input to learn high-resolution representation, which is essential for dense prediction tasks; (2) introducing a progressive shrinking pyramid to reduce the sequence length of Transformer as the network deepens, significantly reducing the computational cost, and (3) adopting a spatial-reduction attention (SRA) layer to further reduce the resource consumption when learning high-resolution features.
 
 > Overall, the proposed PVT possesses the following merits. Firstly, compared to the traditional CNN backbones, which have local receptive fields that increase with the network depth, our PVT always produces a global receptive field, which is more suitable for detection and segmentation. Secondly, compared to ViT, thanks to its advanced pyramid structure, our method can more easily be plugged into many representative dense prediction pipelines, e.g., RetinaNet and Mask R-CNN. Thirdly, we can build a convolution-free pipeline by combining our PVT with other task-specific Transformer decoders, such as PVT+DETR for object detection.
+
+## 3. Pyramid Vision Transformer (PVT)
+
+### 3.1 Overall Architecture
+
