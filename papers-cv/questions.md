@@ -4,7 +4,7 @@
 * what does "append learnable classification token" mean
 * review FPN
 * what is pre-trained position embedding
-* dilated convolution [74]
-* NAS[61]
-* Res2Net [17]
-* ResNeSt [79]
+<!-- * dilated convolution [74] -->
+<!-- * NAS [61] -->
+<!-- * Res2Net [17] -->
+<!-- * ResNeSt [79] -->
