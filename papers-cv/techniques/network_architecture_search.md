@@ -16,7 +16,7 @@ count: 5
     * Year: 07 Nov `2016`
     * Author: Bowen Baker
     * Abstract: At present, designing convolutional neural network (CNN) architectures requires both human expertise and labor. New architectures are handcrafted by careful experimentation or modified from a handful of existing networks. We introduce MetaQNN, a meta-modeling algorithm based on reinforcement learning to automatically generate high-performing CNN architectures for a given learning task. The learning agent is trained to sequentially choose CNN layers using Q-learning with an $\epsilon$-greedy exploration strategy and experience replay. The agent explores a large but finite space of possible architectures and iteratively discovers designs with improved performance on the learning task. On image classification benchmarks, the agent-designed networks (consisting of only standard convolution, pooling, and fully-connected layers) beat existing networks designed with the same layer types and are competitive against the state-of-the-art methods that use more complex layer types. We also outperform existing meta-modeling approaches for network design on image classification tasks.
-* [Learning Transferable Architectures for Scalable Image Recognition](https://arxiv.org/abs/1707.07012)
+* [NASNet](https://arxiv.org/abs/1707.07012)
     * Title: Learning Transferable Architectures for Scalable Image Recognition
     * Year: 21 Jul `2017`
     * Author: Barret Zoph
