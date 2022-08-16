@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - Image Segmentation
 
-count: 16
+count: 23
 
 * [DeepMask](https://arxiv.org/abs/1506.06204)
     * Title: Learning to Segment Object Candidates

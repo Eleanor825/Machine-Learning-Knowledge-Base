@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - Transformer Architectures
 
-count: 72
+count: 80
 
 * [Transformer](https://arxiv.org/abs/1706.03762)
     * Title: Attention Is All You Need

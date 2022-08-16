@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - 2D Object Detection
 
-count: 59
+count: 64
 
 ## Unclassified
 

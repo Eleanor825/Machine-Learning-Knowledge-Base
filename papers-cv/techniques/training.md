@@ -2,7 +2,7 @@
 
 # Papers in Training Methodologies
 
-count: 8
+count: 12
 
 ## Vanishing Gradients
 

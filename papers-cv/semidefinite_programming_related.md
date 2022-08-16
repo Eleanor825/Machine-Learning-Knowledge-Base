@@ -3,6 +3,8 @@
 
 # [Papers] Semidefinite Programming
 
+count: 6
+
 * [Semidefinite relaxations for certifying robustness to adversarial examples](https://arxiv.org/abs/1811.01057)
     * Year: 02 Nov 2018
     * Author: Aditi Raghunathan

@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - CNN Architectures
 
-count: 67
+count: 75
 
 ## Reformulations of the Connections between Network Layers
 
