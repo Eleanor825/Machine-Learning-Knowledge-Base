@@ -1,7 +1,7 @@
 #! https://zhuanlan.zhihu.com/p/553231399
 <span style="font-family:monospace">
 
-# Papers Related to Semidefinite Programming
+# [Papers] Semidefinite Programming
 
 * [Semidefinite relaxations for certifying robustness to adversarial examples](https://arxiv.org/abs/1811.01057)
     * Year: 02 Nov 2018
