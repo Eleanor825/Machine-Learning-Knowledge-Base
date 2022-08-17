@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/554615809
 # [Notes][Vision][CNN] Highway Networks
 
 * url: https://arxiv.org/abs/1507.06228
@@ -23,9 +24,17 @@ Notations:
 * Let $C: \mathbb{R}^{d} \oplus \mathbb{R}^{d \times d} \to \mathbb{R}^{d}$ denote the *carry* gate.
 
 Then the Highway block $\mathbb{R}^{d} \to \mathbb{R}^{d}$ is defined by:
-$$y := H(x, W_{H}) \odot T(x, W_{T}) + x \odot C(x, W_{C}).$$
+$$y := H(x, W_{H}) \odot T(x, W_{T}) + x \odot C(x, W_{C}). \tag{3}$$
 
-## Experiments
+## 2.1 Constructing Highway Networks
+
+> As mentioned earlier, Equation 3 requires that the dimensionality of $x$, $y$, $H(x, W_{H})$, and $T(x, W_{T})$ be the same. To change the size of the intermediate representation, one can replace $x$ with $\hat{x}$ obtained by suitably sub-sampling or zero-padding $x$. Another alternative is to use a plain layer (without highways) to change dimensionality, which is the strategy we use in this study.
+
+## 2.2 Training Deep Highway Networks
+
+> In our experiments, we found that a negative bias initialization for the transform gates was sufficient for training to proceed in very deep networks for various zero-mean initial distributions of $W_{H}$ and different activation functions used by $H$.
+
+## 3 Experiments
 
 ### 3.1 Optimization
 
@@ -33,7 +42,34 @@ $$y := H(x, W_{H}) \odot T(x, W_{T}) + x \odot C(x, W_{C}).$$
 
 > It was also observed that highway networks consistently converged significantly faster than plain ones.
 
+## 4 Analysis
+
+### 4.1 Routing of Information
+
+> One possible advantage of the highway architecture over hard-wired shortcut connections is that the network can learn to dynamically adjust the routing of the information based on the current input.
+
+## 4.2 Layer Importance
+
+> For each layer, we evaluated the network on the full training set with the gates of that layer closed.
+
+> For MNIST (left) it can be seen that the error rises significantly if any one of the early layers is removed, but layers 15-45 seem to have close to no effect on the final performance. About 60% of the layers don't learn to contribute to the final result, likely because MNIST is a simple dataset that doesn't require much depth.
+
+> We see a different picture for the CIFAR-100 dataset (right) with performance degrading noticeably when removing any of the first $\approx$ 40 layers. This suggests that for complex problems a highway
+network can learn to utilize all of its layers, while for simpler problems like MNIST it will keep many of the unneeded layers idle. Such behavior is desirable for deep networks in general, but appears difficult to obtain using plain networks.
+
+## 5 Discussion
+
+> Very deep highway networks, on the other hand, can directly be trained with simple gradient descent methods due to their specific architecture. This property does not rely on specific non-linear transformations, which may be complex convolutional or recurrent transforms, and derivation of a suitable initialization scheme is not essential. The additional parameters required by the gating mechanism help in routing information through the use of multiplicative connections, responding differently to different inputs, unlike fixed “skip” connections.
+
+----------------------------------------------------------------------------------------------------
+
+## References
+
+* Srivastava, Rupesh K., Klaus Greff, and Jürgen Schmidhuber. "Training very deep networks." *Advances in neural information processing systems* 28 (2015).
+
 ## Further Reading
 
-* Maxout Networks
-* Deeply Supervised Nets (DSN)
+* [20] Maxout Networks
+* [24] Deeply-Supervised Nets (DSN)
+* [25] FitNets
+* [35] Network in Network (NIN)

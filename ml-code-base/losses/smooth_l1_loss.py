@@ -2,6 +2,7 @@ import tensorflow as tf
 
 
 class SmoothL1Loss(tf.losses.Loss):
+    """Localization loss function for 2D object detection."""
 
     def __init__(self, delta):
         """
@@ -14,10 +15,10 @@ class SmoothL1Loss(tf.losses.Loss):
     def call(self, y_true, y_pred):
         """
         Arguments:
-            y_true: 3-D tensor of shape (batch_size, , 4).
-            y_pred: 3-D tensor of shape (batch_size, , 4).
+            y_true: 3-D tensor of shape (batch_size, num_pred, 4).
+            y_pred: 3-D tensor of shape (batch_size, num_pred, 4).
         Returns:
-            reduced_loss: 1-D tensor of shape (batch_size,).
+            reduced_loss: 2-D tensor of shape (batch_size, num_pred).
         """
         diff = y_true - y_pred
         absolute = tf.abs(diff)
