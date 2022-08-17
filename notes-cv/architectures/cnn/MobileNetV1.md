@@ -1,7 +1,6 @@
-<link rel="stylesheet" href="../../style.css">
+# [Notes][Vision][CNN] MobileNetV1
 
-# [MobileNetV1](https://arxiv.org/abs/1704.04861)
-
+* url: https://arxiv.org/abs/1704.04861
 * Title: MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications
 * Year: 17 Apr `2017`
 * Author: Andrew G. Howard

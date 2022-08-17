@@ -27,6 +27,16 @@ count: 10
 
 ## LSTM
 
+* [LSTM](https://dl.acm.org/doi/10.1162/neco.1997.9.8.1735)
+    * Title: Long Short-Term Memory
+    * Year: 01 November `1997`
+    * Authors: Sepp Hochreiter, Jürgen Schmidhuber
+    * Abstract: Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O. 1. Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.
+* [Learning to Forget: Continual Prediction with LSTM](https://dl.acm.org/doi/10.1162/089976600300015015)
+    * Title: Learning to Forget: Continual Prediction with LSTM
+    * Year: 01 October 2000
+    * Authors: Felix A. Gers, Jürgen A. Schmidhuber, Fred A. Cummins
+    * Abstract: Long short-term memory (LSTM; Hochreiter & Schmidhuber, 1997) can solve numerous tasks not solvable by previous learning algorithms for recurrent neural networks (RNNs). We identify a weakness of LSTM networks processing continual input streams that are not a priori segmented into subsequences with explicitly marked ends at which the network's internal state could be reset. Without resets, the state may grow indefinitely and eventually cause the network to break down. Our remedy is a novel, adaptive "forget gate" that enables an LSTM cell to learn to reset itself at appropriate times, thus releasing internal resources. We review illustrative benchmark problems on which standard LSTM outperforms other RNN algorithms. All algorithms (including LSTM) fail to solve continual versions of these problems. LSTM with forget gates, however, easily solves them, and in an elegant way.
 * [Factorization tricks for LSTM networks](https://arxiv.org/abs/1703.10722)
     * Title: Factorization tricks for LSTM networks
     * Year: 31 Mar `2017`

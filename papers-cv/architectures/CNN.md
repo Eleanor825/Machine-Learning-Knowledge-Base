@@ -26,12 +26,14 @@ count: 74
 * [Highway Networks](https://arxiv.org/abs/1505.00387)
     * Title: Highway Networks
     * Year: 03 May `2015`
-    * Author: Rupesh Kumar Srivastava
+    * Authors: Rupesh Kumar Srivastava, Klaus Greff, Jürgen Schmidhuber
+    * Institutions: The Swiss AI Lab IDSIA / USI / SUPSI
     * Abstract: There is plenty of theoretical and empirical evidence that depth of neural networks is a crucial ingredient for their success. However, network training becomes more difficult with increasing depth and training of very deep networks remains an open problem. In this extended abstract, we introduce a new architecture designed to ease gradient-based training of very deep networks. We refer to networks with this architecture as highway networks, since they allow unimpeded information flow across several layers on "information highways". The architecture is characterized by the use of gating units which learn to regulate the flow of information through a network. Highway networks with hundreds of layers can be trained directly using stochastic gradient descent and with a variety of activation functions, opening up the possibility of studying extremely deep and efficient architectures.
 * [Training Very Deep Networks](https://arxiv.org/abs/1507.06228)
     * Title: Training Very Deep Networks
     * Year: 22 Jul `2015`
-    * Author: Rupesh Kumar Srivastava
+    * Authors: Rupesh Kumar Srivastava, Klaus Greff, Jürgen Schmidhuber
+    * Institutions: The Swiss AI Lab IDSIA / USI / SUPSI
     * Abstract: Theoretical and empirical evidence indicates that the depth of neural networks is crucial for their success. However, training becomes more difficult as depth increases, and training of very deep networks remains an open problem. Here we introduce a new architecture designed to overcome this. Our so-called highway networks allow unimpeded information flow across many layers on information highways. They are inspired by Long Short-Term Memory recurrent networks and use adaptive gating units to regulate the information flow. Even with hundreds of layers, highway networks can be trained directly through simple gradient descent. This enables the study of extremely deep and efficient architectures.
     * Comments:
         * > Highway networks introduced a gating mechanism to regulate the flow of information along shortcut connections. (SENet, 2017)
@@ -457,3 +459,29 @@ count: 74
     * Title: A ConvNet for the 2020s
     * Year: 10 Jan `2022`
     * Author: Zhuang Liu
+* [Flexible, high performance convolutional neural networks for image classification](https://dl.acm.org/doi/10.5555/2283516.2283603)
+    * Title: Flexible, high performance convolutional neural networks for image classification
+    * Year: 16 July `2011`
+    * Authors: Dan C. Cireşan, Ueli Meier, Jonathan Masci, Luca M. Gambardella, Jürgen Schmidhuber
+    * Abstract: We present a fast, fully parameterizable GPU implementation of Convolutional Neural Network variants. Our feature extractors are neither carefully designed nor pre-wired, but rather learned in a supervised way. Our deep hierarchical architectures achieve the best published results on benchmarks for object classification (NORB, CIFAR10) and handwritten digit recognition (MNIST), with error rates of 2.53%, 19.51%, 0.35%, respectively. Deep nets trained by simple back-propagation perform better than more shallow ones. Learning is surprisingly rapid. NORB is completely trained within five epochs. Test error rates on MNIST drop to 2.42%, 0.97% and 0.48% after 1, 3 and 17 epochs, respectively.
+    * Comments:
+        * > Within just a few years, the top-5 image classification accuracy on the 1000-class ImageNet dataset has increased from ~84% [1] to ~95% [2, 3] using deeper networks with rather small receptive fields [4, 5]. (Training Very Deep Networks, 2015)
+* [Multi-column Deep Neural Networks for Image Classification](https://arxiv.org/abs/1202.2745)
+    * Title: Multi-column Deep Neural Networks for Image Classification
+    * Year: 13 Feb `2012`
+    * Authors: Dan Cireşan, Ueli Meier, Juergen Schmidhuber
+    * Abstract: Traditional methods of computer vision and machine learning cannot match human performance on tasks such as the recognition of handwritten digits or traffic signs. Our biologically plausible deep artificial neural network architectures can. Small (often minimal) receptive fields of convolutional winner-take-all neurons yield large network depth, resulting in roughly as many sparsely connected neural layers as found in mammals between retina and visual cortex. Only winner neurons are trained. Several deep neural columns become experts on inputs preprocessed in different ways; their predictions are averaged. Graphics cards allow for fast training. On the very competitive MNIST handwriting benchmark, our method is the first to achieve near-human performance. On a traffic sign recognition benchmark it outperforms humans by a factor of two. We also improve the state-of-the-art on a plethora of common image classification benchmarks.
+    * Comments:
+        * > Within just a few years, the top-5 image classification accuracy on the 1000-class ImageNet dataset has increased from ~84% [1] to ~95% [2, 3] using deeper networks with rather small receptive fields [4, 5]. (Training Very Deep Networks, 2015)
+* [FitNets](https://arxiv.org/abs/1412.6550)
+    * Title: FitNets: Hints for Thin Deep Nets
+    * Year: 19 Dec `2014`
+    * Authors: Adriana Romero, Nicolas Ballas, Samira Ebrahimi Kahou, Antoine Chassang, Carlo Gatta, Yoshua Bengio
+    * Abstract: While depth tends to improve network performances, it also makes gradient-based training more difficult since deeper networks tend to be more non-linear. The recently proposed knowledge distillation approach is aimed at obtaining small and fast-to-execute models, and it has shown that a student network could imitate the soft output of a larger teacher network or ensemble of networks. In this paper, we extend this idea to allow the training of a student that is deeper and thinner than the teacher, using not only the outputs but also the intermediate representations learned by the teacher as hints to improve the training process and final performance of the student. Because the student intermediate hidden layer will generally be smaller than the teacher's intermediate hidden layer, additional parameters are introduced to map the student hidden layer to the prediction of the teacher hidden layer. This allows one to train deeper students that can generalize better or run faster, a trade-off that is controlled by the chosen student capacity. For example, on CIFAR-10, a deep student network with almost 10.4 times less parameters outperforms a larger, state-of-the-art teacher network.
+    * Comments:
+        * > A related recent technique is based on using soft targets from a shallow teacher network to aid in training deeper student networks in multiple stages [25], similar to the neural history compressor for sequences, where a slowly ticking teacher recurrent net is "distilled" into a quickly ticking student recurrent net by forcing the latter to predict the hidden units of the former [26]. (Training Very Deep Networks, 2015)
+* [DSN](https://arxiv.org/abs/1409.5185)
+    * Title: Deeply-Supervised Nets
+    * Year: 18 Sep 2014
+    * Author: Chen-Yu Lee
+    * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
