@@ -19,13 +19,20 @@ count: 64
 * [MultiBox](https://arxiv.org/abs/1312.2249)
     * Title: Scalable Object Detection using Deep Neural Networks
     * Year: 08 Dec `2013`
-    * Author: Dumitru Erhan
+    * Authors: Dumitru Erhan, Christian Szegedy, Alexander Toshev, Dragomir Anguelov
     * Abstract: Deep convolutional neural networks have recently achieved state-of-the-art performance on a number of image recognition benchmarks, including the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC-2012). The winning model on the localization sub-task was a network that predicts a single bounding box and a confidence score for each object category in the image. Such a model captures the whole-image context around the objects but cannot handle multiple instances of the same object in the image without naively replicating the number of outputs for each instance. In this work, we propose a saliency-inspired neural network model for detection, which predicts a set of class-agnostic bounding boxes along with a single score for each box, corresponding to its likelihood of containing any object of interest. The model naturally handles a variable number of instances for each class and allows for cross-class generalization at the highest levels of the network. We are able to obtain competitive recognition performance on VOC2007 and ILSVRC2012, while using only the top few predicted locations in each image and a small number of neural network evaluations.
+    * Comments:
+        * > Unlike R-CNN, Szegedy et al. train a convolutional neural network to predict regions of interest [8] instead of using Selective Search. MultiBox can also perform single object detection by replacing the confidence prediction with a single class prediction. However, MultiBox cannot perform general object detection and is still just a piece in a larger detection pipeline, requiring further image patch classification. (YOLOv1, 2015)
 * [OverFeat](https://arxiv.org/abs/1312.6229)
     * Title: OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks
     * Year: 21 Dec `2013`
     * Author: Pierre Sermanet
     * Abstract: We present an integrated framework for using Convolutional Networks for classification, localization and detection. We show how a multiscale and sliding window approach can be efficiently implemented within a ConvNet. We also introduce a novel deep learning approach to localization by learning to predict object boundaries. Bounding boxes are then accumulated rather than suppressed in order to increase detection confidence. We show that different tasks can be learned simultaneously using a single shared network. This integrated framework is the winner of the localization task of the ImageNet Large Scale Visual Recognition Challenge 2013 (ILSVRC2013) and obtained very competitive results for the detection and classifications tasks. In post-competition work, we establish a new state of the art for the detection task. Finally, we release a feature extractor from our best model called OverFeat.
+* [MultiGrasp](https://arxiv.org/abs/1412.3128)
+    * Title: Real-Time Grasp Detection Using Convolutional Neural Networks
+    * Year: 09 Dec `2014`
+    * Authors: Joseph Redmon, Anelia Angelova
+    * Abstract: We present an accurate, real-time approach to robotic grasp detection based on convolutional neural networks. Our network performs single-stage regression to graspable bounding boxes without using standard sliding window or region proposal techniques. The model outperforms state-of-the-art approaches by 14 percentage points and runs at 13 frames per second on a GPU. Our network can simultaneously perform classification so that in a single step it recognizes the object and finds a good grasp rectangle. A modification to this model predicts multiple grasps per object by using a locally constrained prediction mechanism. The locally constrained model performs significantly better, especially on objects that can be grasped in a variety of ways.
 <!-- * [DPM](https://arxiv.org/abs/1409.5403) -->
 <!-- * Title: Deformable Part Models are Convolutional Neural Networks -->
 <!-- * Year: 18 Sep `2014` -->
