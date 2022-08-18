@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Review/Survey Papers
+# [Papers] Review/Survey
 
 count: 6
 
@@ -8,7 +6,7 @@ count: 6
 
 * [Representation Learning: A Review and New Perspectives](https://arxiv.org/abs/1206.5538)
     * Title: Representation Learning: A Review and New Perspectives
-    * Year: 24 Jun 2012
+    * Year: 24 Jun `2012`
     * Author: Yoshua Bengio
     * Abstract: The success of machine learning algorithms generally depends on data representation, and we hypothesize that this is because different representations can entangle and hide more or less the different explanatory factors of variation behind the data. Although specific domain knowledge can be used to help design representations, learning with generic priors can also be used, and the quest for AI is motivating the design of more powerful representation-learning algorithms implementing such priors. This paper reviews recent work in the area of unsupervised feature learning and deep learning, covering advances in probabilistic models, auto-encoders, manifold learning, and deep networks. This motivates longer-term unanswered questions about the appropriate objectives for learning good representations, for computing representations (i.e., inference), and the geometrical connections between representation learning, density estimation and manifold learning.
 
@@ -45,5 +43,5 @@ count: 6
 * [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](https://arxiv.org/abs/1606.05830)
     * Title: Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age
     * Year: 19 Jun `2016`
-    * Author: Cesar Cadena
+    * Authors: Cesar Cadena, Luca Carlone, Henry Carrillo, Yasir Latif, Davide Scaramuzza, Jose Neira, Ian Reid, John J. Leonard
     * Abstract: Simultaneous Localization and Mapping (SLAM)consists in the concurrent construction of a model of the environment (the map), and the estimation of the state of the robot moving within it. The SLAM community has made astonishing progress over the last 30 years, enabling large-scale real-world applications, and witnessing a steady transition of this technology to industry. We survey the current state of SLAM. We start by presenting what is now the de-facto standard formulation for SLAM. We then review related work, covering a broad set of topics including robustness and scalability in long-term mapping, metric and semantic representations for mapping, theoretical performance guarantees, active SLAM and exploration, and other new frontiers. This paper simultaneously serves as a position paper and tutorial to those who are users of SLAM. By looking at the published research with a critical eye, we delineate open challenges and new research issues, that still deserve careful scientific investigation. The paper also contains the authors' take on two questions that often animate discussions during robotics conferences: Do robots need SLAM? and Is SLAM solved?
