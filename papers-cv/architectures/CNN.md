@@ -2,7 +2,7 @@
 
 # Papers in Computer Vision - CNN Architectures
 
-count: 74
+count: 77
 
 ## Basics
 
@@ -89,7 +89,8 @@ count: 74
 * [Wide Residual Networks (WRN)](https://arxiv.org/abs/1605.07146)
     * Title: Wide Residual Networks
     * Year: 23 May `2016`
-    * Author: Sergey Zagoruyko
+    * Authors: Sergey Zagoruyko, Nikos Komodakis
+    * Abstract: Deep residual networks were shown to be able to scale up to thousands of layers and still have improving performance. However, each fraction of a percent of improved accuracy costs nearly doubling the number of layers, and so training very deep residual networks has a problem of diminishing feature reuse, which makes these networks very slow to train. To tackle these problems, in this paper we conduct a detailed experimental study on the architecture of ResNet blocks, based on which we propose a novel architecture where we decrease depth and increase width of residual networks. We call the resulting network structures wide residual networks (WRNs) and show that these are far superior over their commonly used thin and very deep counterparts. For example, we demonstrate that even a simple 16-layer-deep wide residual network outperforms in accuracy and efficiency all previous deep residual networks, including thousand-layer-deep networks, achieving new state-of-the-art results on CIFAR, SVHN, COCO, and significant improvements on ImageNet. Our code and models are available at [this https URL](https://github.com/szagoruyko/wide-residual-networks).
 * [ResNeXt](https://arxiv.org/abs/1611.05431)
     * Title: Aggregated Residual Transformations for Deep Neural Networks
     * Year: 16 Nov `2016`
@@ -100,12 +101,12 @@ count: 74
     * Year: 07 Mar `2017`
     * Author: Chen Yunpeng
     * Abstract: Residual units are wildly used for alleviating optimization difficulties when building deep neural networks. However, the performance gain does not well compensate the model size increase, indicating low parameter efficiency in these residual units. In this work, we first revisit the residual function in several variations of residual units and demonstrate that these residual functions can actually be explained with a unified framework based on generalized block term decomposition. Then, based on the new explanation, we propose a new architecture, Collective Residual Unit (CRU), which enhances the parameter efficiency of deep neural networks through collective tensor factorization. CRU enables knowledge sharing across different residual units using shared factors. Experimental results show that our proposed CRU Network demonstrates outstanding parameter efficiency, achieving comparable classification performance to ResNet-200 with the model size of ResNet-50. By building a deeper network using CRU, we can achieve state-of-the-art single model classification accuracy on ImageNet-1k and Places365-Standard benchmark datasets. (Code and trained models are available on GitHub)
-* [Res2Net]
+* [Res2Net](https://arxiv.org/abs/1904.01169)
     * Title: Res2Net: A New Multi-scale Backbone Architecture
     * Year: 02 Apr `2019`
     * Authors: Shang-Hua Gao, Ming-Ming Cheng, Kai Zhao, Xin-Yu Zhang, Ming-Hsuan Yang, Philip Torr
     * Abstract: Representing features at multiple scales is of great importance for numerous vision tasks. Recent advances in backbone convolutional neural networks (CNNs) continually demonstrate stronger multi-scale representation ability, leading to consistent performance gains on a wide range of applications. However, most existing methods represent the multi-scale features in a layer-wise manner. In this paper, we propose a novel building block for CNNs, namely Res2Net, by constructing hierarchical residual-like connections within one single residual block. The Res2Net represents multi-scale features at a granular level and increases the range of receptive fields for each network layer. The proposed Res2Net block can be plugged into the state-of-the-art backbone CNN models, e.g., ResNet, ResNeXt, and DLA. We evaluate the Res2Net block on all these models and demonstrate consistent performance gains over baseline models on widely-used datasets, e.g., CIFAR-100 and ImageNet. Further ablation studies and experimental results on representative computer vision tasks, i.e., object detection, class activation mapping, and salient object detection, further verify the superiority of the Res2Net over the state-of-the-art baseline methods. The source code and trained models are available on [this https URL](https://mmcheng.net/res2net/).
-* [ResNeSt]
+* [ResNeSt](https://arxiv.org/abs/2004.08955)
     * Title: ResNeSt: Split-Attention Networks
     * Year: 19 Apr `2020`
     * Authors: Hang Zhang, Chongruo Wu, Zhongyue Zhang, Yi Zhu, Haibin Lin, Zhi Zhang, Yue Sun, Tong He, Jonas Mueller, R. Manmatha, Mu Li, Alexander Smola
@@ -167,7 +168,7 @@ count: 74
 * [PolyNet](https://arxiv.org/abs/1611.05725)
     * Title: PolyNet: A Pursuit of Structural Diversity in Very Deep Networks
     * Year: 17 Nov `2016`
-    * Author: Xingcheng Zhang
+    * Authors: Xingcheng Zhang, Zhizhong Li, Chen Change Loy, Dahua Lin
     * Abstract: A number of studies have shown that increasing the depth or width of convolutional networks is a rewarding approach to improve the performance of image recognition. In our study, however, we observed difficulties along both directions. On one hand, the pursuit for very deep networks is met with a diminishing return and increased training difficulty; on the other hand, widening a network would result in a quadratic growth in both computational cost and memory demand. These difficulties motivate us to explore structural diversity in designing deep networks, a new dimension beyond just depth and width. Specifically, we present a new family of modules, namely the PolyInception, which can be flexibly inserted in isolation or in a composition as replacements of different parts of a network. Choosing PolyInception modules with the guidance of architectural efficiency can improve the expressive power while preserving comparable computational cost. The Very Deep PolyNet, designed following this direction, demonstrates substantial improvements over the state-of-the-art on the ILSVRC 2012 benchmark. Compared to Inception-ResNet-v2, it reduces the top-5 validation error on single crops from 4.9% to 4.25%, and that on multi-crops from 3.7% to 3.45%.
 
 ## Deformable Convolutions
@@ -175,12 +176,12 @@ count: 74
 * [Deformable ConvNets v1](https://arxiv.org/abs/1703.06211)
     * Title: Deformable Convolutional Networks
     * Year: 17 Mar `2017`
-    * Author: Jifeng Dai
+    * Authors: Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei
     * Abstract: Convolutional neural networks (CNNs) are inherently limited to model geometric transformations due to the fixed geometric structures in its building modules. In this work, we introduce two new modules to enhance the transformation modeling capacity of CNNs, namely, deformable convolution and deformable RoI pooling. Both are based on the idea of augmenting the spatial sampling locations in the modules with additional offsets and learning the offsets from target tasks, without additional supervision. The new modules can readily replace their plain counterparts in existing CNNs and can be easily trained end-to-end by standard back-propagation, giving rise to deformable convolutional networks. Extensive experiments validate the effectiveness of our approach on sophisticated vision tasks of object detection and semantic segmentation. The code would be released.
 * [Deformable ConvNets v2](https://arxiv.org/abs/1811.11168)
     * Title: Deformable ConvNets v2: More Deformable, Better Results
     * Year: 27 Nov `2018`
-    * Author: Xizhou Zhu
+    * Authors: Xizhou Zhu, Han Hu, Stephen Lin, Jifeng Dai
     * Abstract: The superior performance of Deformable Convolutional Networks arises from its ability to adapt to the geometric variations of objects. Through an examination of its adaptive behavior, we observe that while the spatial support for its neural features conforms more closely than regular ConvNets to object structure, this support may nevertheless extend well beyond the region of interest, causing features to be influenced by irrelevant image content. To address this problem, we present a reformulation of Deformable ConvNets that improves its ability to focus on pertinent image regions, through increased modeling power and stronger training. The modeling power is enhanced through a more comprehensive integration of deformable convolution within the network, and by introducing a modulation mechanism that expands the scope of deformation modeling. To effectively harness this enriched modeling capability, we guide network training via a proposed feature mimicking scheme that helps the network to learn features that reflect the object focus and classification power of R-CNN features. With the proposed contributions, this new version of Deformable ConvNets yields significant performance gains over the original model and produces leading results on the COCO benchmark for object detection and instance segmentation.
 
 ## Dilated Convolutions
@@ -188,17 +189,17 @@ count: 74
 * [Dilated Convolutions](https://arxiv.org/abs/1511.07122)
     * Title: Multi-Scale Context Aggregation by Dilated Convolutions
     * Year: 23 Nov `2015`
-    * Author: Fisher Yu, Vladlen Koltun
+    * Authors: Fisher Yu, Vladlen Koltun
     * Abstract: State-of-the-art models for semantic segmentation are based on adaptations of convolutional networks that had originally been designed for image classification. However, dense prediction and image classification are structurally different. In this work, we develop a new convolutional network module that is specifically designed for dense prediction. The presented module uses dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. The architecture is based on the fact that dilated convolutions support exponential expansion of the receptive field without loss of resolution or coverage. We show that the presented context module increases the accuracy of state-of-the-art semantic segmentation systems. In addition, we examine the adaptation of image classification networks to dense prediction and show that simplifying the adapted network can increase accuracy.
-* [ESPNet](https://arxiv.org/abs/1803.06815)
+* [ESPNetv1](https://arxiv.org/abs/1803.06815)
     * Title: ESPNet: Efficient Spatial Pyramid of Dilated Convolutions for Semantic Segmentation
     * Year: 19 Mar `2018`
-    * Author: Sachin Mehta
+    * Authors: Sachin Mehta, Mohammad Rastegari, Anat Caspi, Linda Shapiro, Hannaneh Hajishirzi
     * Abstract: We introduce a fast and efficient convolutional neural network, ESPNet, for semantic segmentation of high resolution images under resource constraints. ESPNet is based on a new convolutional module, efficient spatial pyramid (ESP), which is efficient in terms of computation, memory, and power. ESPNet is 22 times faster (on a standard GPU) and 180 times smaller than the state-of-the-art semantic segmentation network PSPNet, while its category-wise accuracy is only 8% less. We evaluated ESPNet on a variety of semantic segmentation datasets including Cityscapes, PASCAL VOC, and a breast biopsy whole slide image dataset. Under the same constraints on memory and computation, ESPNet outperforms all the current efficient CNN networks such as MobileNet, ShuffleNet, and ENet on both standard metrics and our newly introduced performance metrics that measure efficiency on edge devices. Our network can process high resolution images at a rate of 112 and 9 frames per second on a standard GPU and edge device, respectively.
 * [ESPNetv2](https://arxiv.org/abs/1811.11431)
     * Title: ESPNetv2: A Light-weight, Power Efficient, and General Purpose Convolutional Neural Network
     * Year: 28 Nov `2018`
-    * Author: Sachin Mehta
+    * Authors: Sachin Mehta, Mohammad Rastegari, Linda Shapiro, Hannaneh Hajishirzi
     * Abstract: We introduce a light-weight, power efficient, and general purpose convolutional neural network, ESPNetv2, for modeling visual and sequential data. Our network uses group point-wise and depth-wise dilated separable convolutions to learn representations from a large effective receptive field with fewer FLOPs and parameters. The performance of our network is evaluated on four different tasks: (1) object classification, (2) semantic segmentation, (3) object detection, and (4) language modeling. Experiments on these tasks, including image classification on the ImageNet and language modeling on the PenTree bank dataset, demonstrate the superior performance of our method over the state-of-the-art methods. Our network outperforms ESPNet by 4-5% and has 2-4x fewer FLOPs on the PASCAL VOC and the Cityscapes dataset. Compared to YOLOv2 on the MS-COCO object detection, ESPNetv2 delivers 4.4% higher accuracy with 6x fewer FLOPs. Our experiments show that ESPNetv2 is much more power efficient than existing state-of-the-art efficient methods including ShuffleNets and MobileNets. Our code is open-source and available at [this https URL](https://github.com/sacmehta/ESPNetv2).
 
 ## Light Weight Networks
@@ -206,22 +207,22 @@ count: 74
 * [SqueezeNet](https://arxiv.org/abs/1602.07360)
     * Title: SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size
     * Year: 24 Feb `2016`
-    * Author: Forrest N. Iandola
+    * Authors: Forrest N. Iandola, Song Han, Matthew W. Moskewicz, Khalid Ashraf, William J. Dally, Kurt Keutzer
     * Abstract: Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributed training. (2) Smaller DNNs require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy on FPGAs and other hardware with limited memory. To provide all of these advantages, we propose a small DNN architecture called SqueezeNet. SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. Additionally, with model compression techniques we are able to compress SqueezeNet to less than 0.5MB (510x smaller than AlexNet). The SqueezeNet architecture is available for download here: [this https URL](https://github.com/DeepScale/SqueezeNet).
 * [ShuffleNet V1](https://arxiv.org/abs/1707.01083)
     * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
     * Year: 04 Jul `2017`
-    * Author: Xiangyu Zhang
+    * Authors: Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun
     * Abstract: We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13x actual speedup over AlexNet while maintaining comparable accuracy.
 * [ShiftNet](https://arxiv.org/abs/1711.08141)
     * Title: Shift: A Zero FLOP, Zero Parameter Alternative to Spatial Convolutions
     * Year: 22 Nov `2017`
-    * Author: Bichen Wu
+    * Authors: Bichen Wu, Alvin Wan, Xiangyu Yue, Peter Jin, Sicheng Zhao, Noah Golmant, Amir Gholaminejad, Joseph Gonzalez, Kurt Keutzer
     * Abstract: Neural networks rely on convolutions to aggregate spatial information. However, spatial convolutions are expensive in terms of model size and computation, both of which grow quadratically with respect to kernel size. In this paper, we present a parameter-free, FLOP-free "shift" operation as an alternative to spatial convolutions. We fuse shifts and point-wise convolutions to construct end-to-end trainable shift-based modules, with a hyperparameter characterizing the tradeoff between accuracy and efficiency. To demonstrate the operation's efficacy, we replace ResNet's 3x3 convolutions with shift-based modules for improved CIFAR10 and CIFAR100 accuracy using 60% fewer parameters; we additionally demonstrate the operation's resilience to parameter reduction on ImageNet, outperforming ResNet family members. We finally show the shift operation's applicability across domains, achieving strong performance with fewer parameters on classification, face verification and style transfer.
 * [CondenseNet](https://arxiv.org/abs/1711.09224)
     * Title: CondenseNet: An Efficient DenseNet using Learned Group Convolutions
     * Year: 25 Nov `2017`
-    * Author: Gao Huang
+    * Authors: Gao Huang, Shichen Liu, Laurens van der Maaten, Kilian Q. Weinberger
     * Abstract: Deep neural networks are increasingly used on mobile devices, where computational resources are limited. In this paper we develop CondenseNet, a novel network architecture with unprecedented efficiency. It combines dense connectivity with a novel module called learned group convolution. The dense connectivity facilitates feature re-use in the network, whereas learned group convolutions remove connections between layers for which this feature re-use is superfluous. At test time, our model can be implemented using standard group convolutions, allowing for efficient computation in practice. Our experiments show that CondenseNets are far more efficient than state-of-the-art compact convolutional networks such as MobileNets and ShuffleNets.
 
 ## Light-weight CNNs (MobileViT, 2021) (3 + 7)
@@ -231,20 +232,24 @@ count: 74
 * [Flattened Networks](https://arxiv.org/abs/1412.5474)
     * Title: Flattened Convolutional Neural Networks for Feedforward Acceleration
     * Year: 17 Dec `2014`
-    * Author: Jonghoon Jin
+    * Authors: Jonghoon Jin, Aysegul Dundar, Eugenio Culurciello
     * Abstract: We present flattened convolutional neural networks that are designed for fast feedforward execution. The redundancy of the parameters, especially weights of the convolutional filters in convolutional neural networks has been extensively studied and different heuristics have been proposed to construct a low rank basis of the filters after training. In this work, we train flattened networks that consist of consecutive sequence of one-dimensional filters across all directions in 3D space to obtain comparable performance as conventional convolutional networks. We tested flattened model on different datasets and found that the flattened layer can effectively substitute for the 3D filters without loss of accuracy. The flattened convolution pipelines provide around two times speed-up during feedforward pass compared to the baseline model due to the significant reduction of learning parameters. Furthermore, the proposed method does not require efforts in manual tuning or post processing once the model is trained.
-* Xception: Deep Learning with Depthwise Separable Convolutions
+* [Xception Networks](https://arxiv.org/abs/1610.02357)
+    * Title: Xception: Deep Learning with Depthwise Separable Convolutions
+    * Year: 07 Oct `2016`
+    * Author: François Chollet
+    * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
 * [DiCENet](https://arxiv.org/abs/1906.03516)
     * Title: DiCENet: Dimension-wise Convolutions for Efficient Networks
     * Year: 08 Jun `2019`
-    * Author: Sachin Mehta
+    * Authors: Sachin Mehta, Hannaneh Hajishirzi, Mohammad Rastegari
     * Abstract: We introduce a novel and generic convolutional unit, DiCE unit, that is built using dimension-wise convolutions and dimension-wise fusion. The dimension-wise convolutions apply light-weight convolutional filtering across each dimension of the input tensor while dimension-wise fusion efficiently combines these dimension-wise representations; allowing the DiCE unit to efficiently encode spatial and channel-wise information contained in the input tensor. The DiCE unit is simple and can be seamlessly integrated with any architecture to improve its efficiency and performance. Compared to depth-wise separable convolutions, the DiCE unit shows significant improvements across different architectures. When DiCE units are stacked to build the DiCENet model, we observe significant improvements over state-of-the-art models across various computer vision tasks including image classification, object detection, and semantic segmentation. On the ImageNet dataset, the DiCENet delivers 2-4% higher accuracy than state-of-the-art manually designed models (e.g., MobileNetv2 and ShuffleNetv2). Also, DiCENet generalizes better to tasks (e.g., object detection) that are often used in resource-constrained devices in comparison to state-of-the-art separable convolution-based efficient networks, including neural search-based methods (e.g., MobileNetv3 and MixNet. Our source code in PyTorch is open-source and is available at [this https URL](https://github.com/sacmehta/EdgeNets/).
 
 * MobileNetV1, MobileNetV2, MobileNetV3.
 * [ShuffleNet V2](https://arxiv.org/abs/1807.11164)
     * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
     * Year: 30 Jul `2018`
-    * Author: Ningning Ma
+    * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
     * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
 * ESPNetv2
 * [Mixconv](https://arxiv.org/abs/1907.09595)
@@ -291,12 +296,12 @@ count: 74
 * [EfficientNetV1](https://arxiv.org/abs/1905.11946)
     * Title: EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks
     * Year: 28 May `2019`
-    * Author: Mingxing Tan
+    * Authors: Mingxing Tan, Quoc V. Le
     * Abstract: Convolutional Neural Networks (ConvNets) are commonly developed at a fixed resource budget, and then scaled up for better accuracy if more resources are available. In this paper, we systematically study model scaling and identify that carefully balancing network depth, width, and resolution can lead to better performance. Based on this observation, we propose a new scaling method that uniformly scales all dimensions of depth/width/resolution using a simple yet highly effective compound coefficient. We demonstrate the effectiveness of this method on scaling up MobileNets and ResNet. To go even further, we use neural architecture search to design a new baseline network and scale it up to obtain a family of models, called EfficientNets, which achieve much better accuracy and efficiency than previous ConvNets. In particular, our EfficientNet-B7 achieves state-of-the-art 84.3% top-1 accuracy on ImageNet, while being 8.4x smaller and 6.1x faster on inference than the best existing ConvNet. Our EfficientNets also transfer well and achieve state-of-the-art accuracy on CIFAR-100 (91.7%), Flowers (98.8%), and 3 other transfer learning datasets, with an order of magnitude fewer parameters. Source code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet).
 * [EfficientNetV2](https://arxiv.org/abs/2104.00298)
     * Title: EfficientNetV2: Smaller Models and Faster Training
     * Year: 01 Apr `2021`
-    * Author: Mingxing Tan
+    * Authors: Mingxing Tan, Quoc V. Le
     * Abstract: This paper introduces EfficientNetV2, a new family of convolutional networks that have faster training speed and better parameter efficiency than previous models. To develop this family of models, we use a combination of training-aware neural architecture search and scaling, to jointly optimize training speed and parameter efficiency. The models were searched from the search space enriched with new ops such as Fused-MBConv. Our experiments show that EfficientNetV2 models train much faster than state-of-the-art models while being up to 6.8x smaller. Our training can be further sped up by progressively increasing the image size during training, but it often causes a drop in accuracy. To compensate for this accuracy drop, we propose to adaptively adjust regularization (e.g., dropout and data augmentation) as well, such that we can achieve both fast training and good accuracy. With progressive learning, our EfficientNetV2 significantly outperforms previous models on ImageNet and CIFAR/Cars/Flowers datasets. By pretraining on the same ImageNet21k, our EfficientNetV2 achieves 87.3% top-1 accuracy on ImageNet ILSVRC2012, outperforming the recent ViT by 2.0% accuracy while training 5x-11x faster using the same computing resources. Code will be available at [this https URL](https://github.com/google/automl/tree/master/efficientnetv2).
 
 ## Compressing Convolutional Networks
@@ -323,11 +328,7 @@ count: 74
     * Year: 15 May `2014`
     * Author: Max Jaderberg
     * Abstract: The focus of this paper is speeding up the evaluation of convolutional neural networks. While delivering impressive results across a range of computer vision and machine learning tasks, these networks are computationally demanding, limiting their deployability. Convolutional layers generally consume the bulk of the processing time, and so in this work we present two simple schemes for drastically speeding up these layers. This is achieved by exploiting cross-channel or filter redundancy to construct a low rank basis of filters that are rank-1 in the spatial domain. Our methods are architecture agnostic, and can be easily applied to existing CPU and GPU convolutional frameworks for tuneable speedup performance. We demonstrate this with a real world network designed for scene text character recognition, showing a possible 2.5x speedup with no loss in accuracy, and 4.5x speedup with less than 1% drop in accuracy, still achieving state-of-the-art on standard benchmarks.
-* [Xception Networks](https://arxiv.org/abs/1610.02357)
-    * Title: Xception: Deep Learning with Depthwise Separable Convolutions
-    * Year: 07 Oct `2016`
-    * Author: François Chollet
-    * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
+* Xception: Deep Learning with Depthwise Separable Convolutions
 * NIN, see `mlp.md`.
 
 ## Low-Rank Approximations
@@ -440,11 +441,6 @@ count: 74
     * Year: 31 May `2016`
     * Authors: Bert De Brabandere, Xu Jia, Tinne Tuytelaars, Luc Van Gool
     * Abstract: In a traditional convolutional layer, the learned filters stay fixed after training. In contrast, we introduce a new framework, the Dynamic Filter Network, where filters are generated dynamically conditioned on an input. We show that this architecture is a powerful one, with increased flexibility thanks to its adaptive nature, yet without an excessive increase in the number of model parameters. A wide variety of filtering operations can be learned this way, including local spatial transformations, but also others like selective (de)blurring or adaptive feature extraction. Moreover, multiple such layers can be combined, e.g. in a recurrent architecture. We demonstrate the effectiveness of the dynamic filter network on the tasks of video and stereo prediction, and reach state-of-the-art performance on the moving MNIST dataset with a much smaller model. By visualizing the learned filters, we illustrate that the network has picked up flow information by only looking at unlabelled training data. This suggests that the network can be used to pretrain networks for various supervised tasks in an unsupervised way, like optical flow and depth estimation.
-* [ESPNet](https://arxiv.org/abs/1803.06815)
-    * Title: ESPNet: Efficient Spatial Pyramid of Dilated Convolutions for Semantic Segmentation
-    * Year: 19 Mar `2018`
-    * Author: Sachin Mehta
-    * Abstract: We introduce a fast and efficient convolutional neural network, ESPNet, for semantic segmentation of high resolution images under resource constraints. ESPNet is based on a new convolutional module, efficient spatial pyramid (ESP), which is efficient in terms of computation, memory, and power. ESPNet is 22 times faster (on a standard GPU) and 180 times smaller than the state-of-the-art semantic segmentation network PSPNet, while its category-wise accuracy is only 8% less. We evaluated ESPNet on a variety of semantic segmentation datasets including Cityscapes, PASCAL VOC, and a breast biopsy whole slide image dataset. Under the same constraints on memory and computation, ESPNet outperforms all the current efficient CNN networks such as MobileNet, ShuffleNet, and ENet on both standard metrics and our newly introduced performance metrics that measure efficiency on edge devices. Our network can process high resolution images at a rate of 112 and 9 frames per second on a standard GPU and edge device, respectively.
 * [On Network Design Spaces for Visual Recognition](https://arxiv.org/abs/1905.13214)
     * Title: On Network Design Spaces for Visual Recognition
     * Year: 30 May `2019`

@@ -87,7 +87,7 @@ count: 23
 * [SETR](https://arxiv.org/abs/2012.15840)
     * Title: Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers
     * Year: 31 Dec `2020`
-    * Author: Sixiao Zheng
+    * Authors: Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip H.S. Torr, Li Zhang
     * Abstract: Most recent semantic segmentation methods adopt a fully-convolutional network (FCN) with an encoder-decoder architecture. The encoder progressively reduces the spatial resolution and learns more abstract/semantic visual concepts with larger receptive fields. Since context modeling is critical for segmentation, the latest efforts have been focused on increasing the receptive field, through either dilated/atrous convolutions or inserting attention modules. However, the encoder-decoder based FCN architecture remains unchanged. In this paper, we aim to provide an alternative perspective by treating semantic segmentation as a sequence-to-sequence prediction task. Specifically, we deploy a pure transformer (ie, without convolution and resolution reduction) to encode an image as a sequence of patches. With the global context modeled in every layer of the transformer, this encoder can be combined with a simple decoder to provide a powerful segmentation model, termed SEgmentation TRansformer (SETR). Extensive experiments show that SETR achieves new state of the art on ADE20K (50.28% mIoU), Pascal Context (55.83% mIoU) and competitive results on Cityscapes. Particularly, we achieve the first position in the highly competitive ADE20K test server leaderboard on the day of submission.
 * [Vision Transformers for Dense Prediction](https://arxiv.org/abs/2103.13413)
     * Title: Vision Transformers for Dense Prediction
@@ -110,7 +110,7 @@ count: 23
 * [DeepLabv3](https://arxiv.org/abs/1706.05587)
     * Title: Rethinking Atrous Convolution for Semantic Image Segmentation
     * Year: 17 Jun `2017`
-    * Author: Liang-Chieh Chen
+    * Authors: Liang-Chieh Chen, George Papandreou, Florian Schroff, Hartwig Adam
     * Abstract: In this work, we revisit atrous convolution, a powerful tool to explicitly adjust filter's field-of-view as well as control the resolution of feature responses computed by Deep Convolutional Neural Networks, in the application of semantic image segmentation. To handle the problem of segmenting objects at multiple scales, we design modules which employ atrous convolution in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates. Furthermore, we propose to augment our previously proposed Atrous Spatial Pyramid Pooling module, which probes convolutional features at multiple scales, with image-level features encoding global context and further boost performance. We also elaborate on implementation details and share our experience on training our system. The proposed `DeepLabv3' system significantly improves over our previous DeepLab versions without DenseCRF post-processing and attains comparable performance with other state-of-art models on the PASCAL VOC 2012 semantic image segmentation benchmark.
 * [DeepLabv3+](https://arxiv.org/abs/1802.02611)
     * Title: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation
