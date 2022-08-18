@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - 2D Object Detection
+# [Papers][Vision] 2D Object Detection
 
 count: 64
 

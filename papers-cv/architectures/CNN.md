@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - CNN Architectures
+# [Papers][Vision] CNN Architectures
 
 count: 77
 

@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - GAN
+# [Papers][Vision] GAN
 
 count: 6
 

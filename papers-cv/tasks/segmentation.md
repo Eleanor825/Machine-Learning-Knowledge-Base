@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - Image Segmentation
+# [Papers][Vision] Segmentation
 
 count: 23
 

@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - SLAM
+# [Papers][Vision] SLAM
 
 count: 10
 

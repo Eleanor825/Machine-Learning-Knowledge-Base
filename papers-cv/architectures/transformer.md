@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - Transformer Architectures
+# [Papers][Vision] Transformer Architectures
 
 count: 80
 
