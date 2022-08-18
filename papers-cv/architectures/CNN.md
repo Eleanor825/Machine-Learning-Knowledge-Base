@@ -391,7 +391,7 @@ count: 77
 * [Maxout](https://arxiv.org/abs/1302.4389)
     * Title: Maxout Networks
     * Year: 18 Feb `2013`
-    * Author: Ian J. Goodfellow
+    * Authors: Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio
     * Abstract: We consider the problem of designing models to leverage a recently introduced approximate model averaging technique called dropout. We define a simple new model called maxout (so named because its output is the max of a set of inputs, and because it is a natural companion to dropout) designed to both facilitate optimization by dropout and improve the accuracy of dropout's fast approximate model averaging technique. We empirically verify that the model successfully accomplishes both of these tasks. We use maxout and dropout to demonstrate state of the art classification performance on four benchmark datasets: MNIST, CIFAR-10, CIFAR-100, and SVHN.
 * [Dropout](https://dl.acm.org/doi/10.5555/2627435.2670313)
     * Title: Dropout: a simple way to prevent neural networks from overfitting
