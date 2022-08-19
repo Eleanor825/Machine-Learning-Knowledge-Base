@@ -62,7 +62,7 @@ count: 77
 
 ## Residual Networks
 
-> Deep Residual Network (ResNet) is one of the first works that successfully adopt skip connections, where each micro-block, .k.a. residual function, is associated with a skip connection, called residual path. The residual path element-wisely adds the input features to the output of the same micro-block, making it a residual unit. Depending on the inner structure design of the micro-block, the residual network has developed into a family  of various architectures, including WRN, Inception-resnet, and ResNeXt. (DPN, 2017)
+> Deep Residual Network (ResNet) is one of the first works that successfully adopt skip connections, where each micro-block, a.k.a. residual function, is associated with a skip connection, called residual path. The residual path element-wisely adds the input features to the output of the same micro-block, making it a residual unit. Depending on the inner structure design of the micro-block, the residual network has developed into a family  of various architectures, including WRN, Inception-resnet, and ResNeXt. (DPN, 2017)
 
 * [ResNet](https://arxiv.org/abs/1512.03385)
     * Title: Deep Residual Learning for Image Recognition
@@ -189,6 +189,7 @@ count: 77
     * Title: Multi-Scale Context Aggregation by Dilated Convolutions
     * Year: 23 Nov `2015`
     * Authors: Fisher Yu, Vladlen Koltun
+    * Institution: Princeton University, Intel Labs
     * Abstract: State-of-the-art models for semantic segmentation are based on adaptations of convolutional networks that had originally been designed for image classification. However, dense prediction and image classification are structurally different. In this work, we develop a new convolutional network module that is specifically designed for dense prediction. The presented module uses dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. The architecture is based on the fact that dilated convolutions support exponential expansion of the receptive field without loss of resolution or coverage. We show that the presented context module increases the accuracy of state-of-the-art semantic segmentation systems. In addition, we examine the adaptation of image classification networks to dense prediction and show that simplifying the adapted network can increase accuracy.
 * [ESPNetv1](https://arxiv.org/abs/1803.06815)
     * Title: ESPNet: Efficient Spatial Pyramid of Dilated Convolutions for Semantic Segmentation
@@ -414,7 +415,7 @@ count: 77
     * Authors: Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov
     * Abstract: Deep neural nets with a large number of parameters are very powerful machine learning systems. However, overfitting is a serious problem in such networks. Large networks are also slow to use, making it difficult to deal with overfitting by combining the predictions of many different large neural nets at test time. Dropout is a technique for addressing this problem. The key idea is to randomly drop units (along with their connections) from the neural network during training. This prevents units from co-adapting too much. During training, dropout samples from an exponential number of different "thinned" networks. At test time, it is easy to approximate the effect of averaging the predictions of all these thinned networks by simply using a single unthinned network that has smaller weights. This significantly reduces overfitting and gives major improvements over other regularization methods. We show that dropout improves the performance of neural networks on supervised learning tasks in vision, speech recognition, document classification and computational biology, obtaining state-of-the-art results on many benchmark data sets.
     * Comments:
-        * >  Hinton et al. [5] introduced dropout for regularization of deep networks. When training a network layer with dropout, a random subset of neurons is excluded from both the forward and backward pass for each mini-batch. (Deep Roots, 2016)
+        * > Hinton et al. [5] introduced dropout for regularization of deep networks. When training a network layer with dropout, a random subset of neurons is excluded from both the forward and backward pass for each mini-batch. (Deep Roots, 2016)
 * [DropIn](https://arxiv.org/abs/1511.06951)
     * Title: Gradual DropIn of Layers to Train Very Deep Neural Networks
     * Year: 22 Nov `2015`
