@@ -15,6 +15,8 @@ count: 23
 
 ## Semantic Segmentation
 
+## Patchwise Training (FCN, 2015) (5)
+
 * [Toward automatic phenotyping of developing embryos from videos](https://ieeexplore.ieee.org/document/1495508)
     * Title: Toward automatic phenotyping of developing embryos from videos
     * Year: `2005`
@@ -40,6 +42,9 @@ count: 23
     * Year: 25 Jun `2014`
     * Author: Yaroslav Ganin
     * Abstract: We propose a new architecture for difficult image processing operations, such as natural edge detection or thin object segmentation. The architecture is based on a simple combination of convolutional neural networks with the nearest neighbor search. We focus our attention on the situations when the desired image transformation is too hard for a neural network to learn explicitly. We show that in such situations, the use of the nearest neighbor search on top of the network output allows to improve the results considerably and to account for the underfitting effect during the neural network training. The approach is validated on three challenging benchmarks, where the performance of the proposed architecture matches or exceeds the state-of-the-art.
+
+##
+
 * [Simultaneous Detection and Segmentation](https://arxiv.org/abs/1407.1808)
     * Title: Simultaneous Detection and Segmentation
     * Year: 07 Jul `2014`
@@ -50,6 +55,11 @@ count: 23
     * Year: 22 Jul `2014`
     * Author: Saurabh Gupta
     * Abstract: In this paper we study the problem of object detection for RGB-D images using semantically rich image and depth features. We propose a new geocentric embedding for depth images that encodes height above ground and angle with gravity for each pixel in addition to the horizontal disparity. We demonstrate that this geocentric embedding works better than using raw depth images for learning feature representations with convolutional neural networks. Our final object detection system achieves an average precision of 37.3%, which is a 56% relative improvement over existing methods. We then focus on the task of instance segmentation where we label pixels belonging to object instances found by our detector. For this task, we propose a decision forest approach that classifies pixels in the detection window as foreground or background using a family of unary and binary tests that query shape and geocentric pose features. Finally, we use the output from our object detectors in an existing superpixel classification framework for semantic scene segmentation and achieve a 24% relative improvement over current state-of-the-art for the object categories that we study. We believe advances such as those represented in this paper will facilitate the use of perception in fields like robotics.
+* [Multi-Digit Recognition Using a Space Displacement Neural Network](https://papers.nips.cc/paper/1991/hash/6e2713a6efee97bacb63e52c54f0ada0-Abstract.html)
+    * Title: Multi-Digit Recognition Using a Space Displacement Neural Network
+    * Year: `1991`
+    * Authors: Ofer Matan, Christopher J. C. Burges, Yann LeCun, John Denker
+    * Abstract: We present a feed-forward network architecture for recognizing an uncon(cid:173) strained handwritten multi-digit string. This is an extension of previous work on recognizing isolated digits. In this architecture a single digit rec(cid:173) ognizer is replicated over the input. The output layer of the network is coupled to a Viterbi alignment module that chooses the best interpretation of the input. Training errors are propagated through the Viterbi module. The novelty in this procedure is that segmentation is done on the feature maps developed in the Space Displacement Neural Network (SDNN) rather than the input (pixel) space.
 * [Fully Convolutional Networks (FCN)](https://arxiv.org/abs/1411.4038)
     * Title: Fully Convolutional Networks for Semantic Segmentation
     * Year: 14 Nov `2014`
@@ -69,7 +79,7 @@ count: 23
 * [U-Net](https://arxiv.org/abs/1505.04597)
     * Title: U-Net: Convolutional Networks for Biomedical Image Segmentation
     * Year: 18 May `2015`
-    * Author: Olaf Ronneberger
+    * Authors: Olaf Ronneberger, Philipp Fischer, Thomas Brox
     * Abstract: There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at [this http URL](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net).
     * Comments:
         * > Inspired byy FCN, U-Net was proposed for the medical image segmentation domain specifically, bridging the information flow between corresponding low-level and high-level feature maps of the same spatial sizes. (PVT, 2021)
@@ -141,6 +151,8 @@ count: 23
     * Year: 21 Nov `2014`
     * Author: Bharath Hariharan
     * Abstract: Recognition algorithms based on convolutional networks (CNNs) typically use the output of the last layer as feature representation. However, the information in this layer may be too coarse to allow precise localization. On the contrary, earlier layers may be precise in localization but will not capture semantics. To get the best of both worlds, we define the hypercolumn at a pixel as the vector of activations of all CNN units above that pixel. Using hypercolumns as pixel descriptors, we show results on three fine-grained localization tasks: simultaneous detection and segmentation[22], where we improve state-of-the-art from 49.7[22] mean AP^r to 60.0, keypoint localization, where we get a 3.3 point boost over[20] and part labeling, where we show a 6.6 point gain over a strong baseline.
+    * Comments:
+        * > More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers. (U-Net, 2015)
 
 ## Panoptic Segmentation
 

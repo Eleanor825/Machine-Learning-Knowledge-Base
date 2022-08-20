@@ -4,6 +4,11 @@ count: 77
 
 ## Basics
 
+* [LeNet](https://ieeexplore.ieee.org/document/6795724)
+    * Title: Backpropagation Applied to Handwritten Zip Code Recognition
+    * Year: December `1989`
+    * Authors: Y. LeCun; B. Boser; J. S. Denker; D. Henderson; R. E. Howard; W. Hubbard; L. D. Jackel
+    * Abstract: The ability of learning networks to generalize can be greatly enhanced by providing constraints from the task domain. This paper demonstrates how such constraints can be integrated into a backpropagation network through the architecture of the network. This approach has been successfully applied to the recognition of handwritten zip code digits provided by the U.S. Postal Service. A single network learns the entire recognition operation, going from the normalized image of the character to the final classification.
 * [AlexNet](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
     * Title: ImageNet Classification with Deep Convolutional Neural Networks
     * Year: `2012`
@@ -394,21 +399,6 @@ count: 77
     * Year: 03 Jul `2012`
     * Author: Geoffrey E. Hinton
     * Abstract: When a large feedforward neural network is trained on a small training set, it typically performs poorly on held-out test data. This "overfitting" is greatly reduced by randomly omitting half of the feature detectors on each training case. This prevents complex co-adaptations in which a feature detector is only helpful in the context of several other specific feature detectors. Instead, each neuron learns to detect a feature that is generally helpful for producing the correct answer given the combinatorially large variety of internal contexts in which it must operate. Random "dropout" gives big improvements on many benchmark tasks and sets new records for speech and object recognition.
-* [DropConnect](https://proceedings.mlr.press/v28/wan13.html)
-    * Title: Regularization of Neural Networks using DropConnect
-    * Year: `2013`
-    * Author: Li Wan
-    * Abstract: We introduce DropConnect, a generalization of DropOut, for regularizing large fully-connected layers within neural networks. When training with Dropout, a randomly selected subset of activations are set to zero within each layer. DropConnect instead sets a randomly selected subset of weights within the network to zero. Each unit thus receives input from a random subset of units in the previous layer. We derive a bound on the generalization performance of both Dropout and DropConnect. We then evaluate DropConnect on a range of datasets, comparing to Dropout, and show state-of-the-art results on several image recognition benchmarks can be obtained by aggregating multiple DropConnect-trained models.
-* [Stochastic Pooling](https://arxiv.org/abs/1301.3557)
-    * Title: Stochastic Pooling for Regularization of Deep Convolutional Neural Networks
-    * Year: 16 Jan `2013`
-    * Author: Matthew D. Zeiler
-    * Abstract: We introduce a simple and effective method for regularizing large convolutional neural networks. We replace the conventional deterministic pooling operations with a stochastic procedure, randomly picking the activation within each pooling region according to a multinomial distribution, given by the activities within the pooling region. The approach is hyper-parameter free and can be combined with other regularization approaches, such as dropout and data augmentation. We achieve state-of-the-art performance on four image datasets, relative to other approaches that do not utilize data augmentation.
-* [Maxout](https://arxiv.org/abs/1302.4389)
-    * Title: Maxout Networks
-    * Year: 18 Feb `2013`
-    * Authors: Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio
-    * Abstract: We consider the problem of designing models to leverage a recently introduced approximate model averaging technique called dropout. We define a simple new model called maxout (so named because its output is the max of a set of inputs, and because it is a natural companion to dropout) designed to both facilitate optimization by dropout and improve the accuracy of dropout's fast approximate model averaging technique. We empirically verify that the model successfully accomplishes both of these tasks. We use maxout and dropout to demonstrate state of the art classification performance on four benchmark datasets: MNIST, CIFAR-10, CIFAR-100, and SVHN.
 * [Dropout](https://dl.acm.org/doi/10.5555/2627435.2670313)
     * Title: Dropout: a simple way to prevent neural networks from overfitting
     * Year: 01 Jan `2014`
@@ -416,6 +406,21 @@ count: 77
     * Abstract: Deep neural nets with a large number of parameters are very powerful machine learning systems. However, overfitting is a serious problem in such networks. Large networks are also slow to use, making it difficult to deal with overfitting by combining the predictions of many different large neural nets at test time. Dropout is a technique for addressing this problem. The key idea is to randomly drop units (along with their connections) from the neural network during training. This prevents units from co-adapting too much. During training, dropout samples from an exponential number of different "thinned" networks. At test time, it is easy to approximate the effect of averaging the predictions of all these thinned networks by simply using a single unthinned network that has smaller weights. This significantly reduces overfitting and gives major improvements over other regularization methods. We show that dropout improves the performance of neural networks on supervised learning tasks in vision, speech recognition, document classification and computational biology, obtaining state-of-the-art results on many benchmark data sets.
     * Comments:
         * > Hinton et al. [5] introduced dropout for regularization of deep networks. When training a network layer with dropout, a random subset of neurons is excluded from both the forward and backward pass for each mini-batch. (Deep Roots, 2016)
+* [DropConnect](https://proceedings.mlr.press/v28/wan13.html)
+    * Title: Regularization of Neural Networks using DropConnect
+    * Year: `2013`
+    * Author: Li Wan
+    * Abstract: We introduce DropConnect, a generalization of DropOut, for regularizing large fully-connected layers within neural networks. When training with Dropout, a randomly selected subset of activations are set to zero within each layer. DropConnect instead sets a randomly selected subset of weights within the network to zero. Each unit thus receives input from a random subset of units in the previous layer. We derive a bound on the generalization performance of both Dropout and DropConnect. We then evaluate DropConnect on a range of datasets, comparing to Dropout, and show state-of-the-art results on several image recognition benchmarks can be obtained by aggregating multiple DropConnect-trained models.
+* [Maxout](https://arxiv.org/abs/1302.4389)
+    * Title: Maxout Networks
+    * Year: 18 Feb `2013`
+    * Authors: Ian J. Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, Yoshua Bengio
+    * Abstract: We consider the problem of designing models to leverage a recently introduced approximate model averaging technique called dropout. We define a simple new model called maxout (so named because its output is the max of a set of inputs, and because it is a natural companion to dropout) designed to both facilitate optimization by dropout and improve the accuracy of dropout's fast approximate model averaging technique. We empirically verify that the model successfully accomplishes both of these tasks. We use maxout and dropout to demonstrate state of the art classification performance on four benchmark datasets: MNIST, CIFAR-10, CIFAR-100, and SVHN.
+* [Stochastic Pooling](https://arxiv.org/abs/1301.3557)
+    * Title: Stochastic Pooling for Regularization of Deep Convolutional Neural Networks
+    * Year: 16 Jan `2013`
+    * Author: Matthew D. Zeiler
+    * Abstract: We introduce a simple and effective method for regularizing large convolutional neural networks. We replace the conventional deterministic pooling operations with a stochastic procedure, randomly picking the activation within each pooling region according to a multinomial distribution, given by the activities within the pooling region. The approach is hyper-parameter free and can be combined with other regularization approaches, such as dropout and data augmentation. We achieve state-of-the-art performance on four image datasets, relative to other approaches that do not utilize data augmentation.
 * [DropIn](https://arxiv.org/abs/1511.06951)
     * Title: Gradual DropIn of Layers to Train Very Deep Neural Networks
     * Year: 22 Nov `2015`

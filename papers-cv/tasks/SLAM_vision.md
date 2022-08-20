@@ -2,6 +2,10 @@
 
 count: 16
 
+monocular
+
+fusion SLAM
+
 ## Parallel Tracking and Mapping (PTAM)
 
 * [Parallel Tracking and Mapping for Small AR Workspaces](https://ieeexplore.ieee.org/document/4538852)

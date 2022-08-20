@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/555110412
-# [Notes][Vision][CNN] Maxout
+# [Notes][Vision][CNN] Maxout Networks
 还没读透。。有机会再完善吧
 * url: https://arxiv.org/abs/1302.4389
 * Title: Maxout Networks
