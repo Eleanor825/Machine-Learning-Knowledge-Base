@@ -1,4 +1,4 @@
-# [Notes][Vison][CNN] ESPNetv1
+# [Notes][Vision][CNN] ESPNetv1
 
 * url: https://arxiv.org/abs/1803.06815
 * Title: ESPNet: Efficient Spatial Pyramid of Dilated Convolutions for Semantic Segmentation
