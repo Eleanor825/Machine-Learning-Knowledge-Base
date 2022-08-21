@@ -140,3 +140,5 @@ $$merge(t_{1}, ..., t_{K}) := \operatorname{Concat}(\{\sum_{i=1}^{k}t_{i}: k \in
 * [19] Dilated Residual Networks
 * [22] Flattened Networks
 * [47] ResNet
+
+* ESPNetv2
