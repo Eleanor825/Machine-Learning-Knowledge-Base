@@ -70,7 +70,7 @@ Notations:
 The more filter groups, the fewer the number of connections to the previous layer's outputs.
 * Let $h, w \in \mathbb{Z}_{++}$ denote the height and width of the CNN kernels.
 * Let $K^{(ij)} \in \mathbb{R}^{h \times w \times c_{1}/g}$ denote the kernel that generates the $i$-th feature map in the $j$-th group, for $i \in \{1, ..., c_{2}/g\}$ and $j \in \{1, ..., g\}$.
-* Let $L^{(k)} \in \mathbb{R}^{1 \times 1 \times c_{2}}$ denote the 1x1 kernel that generates the $i$-th output channel, for $k \in \{1, ..., c_{3}\}$.
+* Let $L^{(1)}, ..., L^{(c_{3})} \in \mathbb{R}^{1 \times 1 \times c_{2}}$ denote the point-wise convolutional kernels.
 * Let $H, W \in \mathbb{Z}_{++}$ denote the height and width of the input $x$.
 * Let $x_{j} \in \mathbb{R}^{H \times W \times c_{1}/g}$ denote the $j$-th group of $x$, for $j \in \{1, ..., g\}$.
 
