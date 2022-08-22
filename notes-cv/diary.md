@@ -9,3 +9,4 @@
 
 库存
 * Fully Convolutional Networks
+* ShuffleNet V1

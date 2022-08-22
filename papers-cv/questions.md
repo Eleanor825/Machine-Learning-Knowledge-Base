@@ -8,3 +8,6 @@
 <!-- * NAS [61] -->
 <!-- * Res2Net [17] -->
 <!-- * ResNeSt [79] -->
+
+## others
+* what is the difference between Deep Roots and ResNeXt???
