@@ -80,14 +80,6 @@ $$n_{d}^{l}(Z^{l}) := 5 + \frac{Z^{l}}{7}, \quad Z^{l} \in \{H^{l}, W^{l}\}$$
 
 ## 4. Experiments
 
-### 4.1. Image classification
-
-### 4.2. Semantic segmentation
-
-### 4.3. Object detection
-
-### 4.4. Language modeling
-
 ## 5. Ablation Studies on the ImageNet Dataset
 
 ## 6. Conclusion

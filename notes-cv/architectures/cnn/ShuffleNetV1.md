@@ -74,7 +74,7 @@
 
 ## Further Reading
 
-* [3] Xception
+* [3] [Xception](https://zhuanlan.zhihu.com/p/556794897)
 * [5] R-CNN
 * [9] ResNet
 * [10] Identity Mappings in Deep Residual Networks

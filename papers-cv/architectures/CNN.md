@@ -1,6 +1,6 @@
 # [Papers][Vision] CNN Architectures
 
-count: 92
+count: 97
 
 ## Basics
 
@@ -22,6 +22,11 @@ count: 92
     * Year: 04 Sep `2014`
     * Authors: Karen Simonyan, Andrew Zisserman
     * Abstract: In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
+* [Visualizing and Understanding Convolutional Networks](https://arxiv.org/abs/1311.2901)
+    * Title: Visualizing and Understanding Convolutional Networks
+    * Year: 12 Nov `2013`
+    * Authors: Matthew D Zeiler, Rob Fergus
+    * Abstract: Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky \etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.
 
 ## Reformulations of the Connections between Network Layers
 
@@ -79,6 +84,7 @@ count: 92
     * Comments:
         * > By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. (DPN, 2017)
         * > Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet. (DPN, 2017)
+        * > Although several techniques, such as skip connections (He et al., 2016) and batch normalization (Ioffe & Szegedy, 2015), alleviate the training problem, the accuracy gain of very deep network diminishes: for example, ResNet-1000 has similar accuracy as ResNet-101 even though it has much more layers. (EfficientNetV1, 2019)
 * [ResNet with Pre-Activation](https://arxiv.org/abs/1603.05027)
     * Title: Identity Mappings in Deep Residual Networks
     * Year: 16 Mar `2016`
@@ -152,6 +158,10 @@ count: 92
 
 > The Inception models are successful multi-branch architectures where each branch is carefully customized. ResNets can be thought of as two-branch networks where one branch is the identity mapping. Deep neural decision forests are tree-patterned multi-branch networks with learned splitting functions. (ResNeXt, 2016)
 
+> Inception itself was inspired by the earlier NetworkIn-Network architecture [11]. (Xception, 2016)
+
+> A convolution layer attempts to learn filters in a 3D space, with 2 spatial dimensions (width and height) and a channel dimension; thus a single convolution kernel is tasked with simultaneously mapping cross-channel correlations and spatial correlations. This idea behind the Inception module is to make this process easier and more efficient by explicitly factoring it into a series of operations that would independently look at cross-channel correlations and at spatial correlations. ... In effect, the fundamental hypothesis behind Inception is that cross-channel correlations and spatial correlations are sufficiently decoupled that it is preferable not to map them jointly. (Xception, 2016)
+
 > More flexible compositions of operators can be achieved with multi-branch convolutions [Inception-v1], [Inception-v2], [Inception-v3], [Inception-v4], which can be viewed as a natural extension of the grouping operator. (SENet, 2017)
 
 > Inception modules [11–13] are built on the principle of split-reduce-transform-merge. These modules are usually heterogeneous in number of channels and kernel size (e.g. some of the modules are composed of standard and factored convolutions). (ESPNetv1, 2018)
@@ -159,22 +169,22 @@ count: 92
 * [Inception-v1/GoogLeNet](https://arxiv.org/abs/1409.4842)
     * Title: Going Deeper with Convolutions
     * Year: 17 Sep `2014`
-    * Author: Christian Szegedy
+    * Authors: Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich
     * Abstract: We propose a deep convolutional neural network architecture codenamed "Inception", which was responsible for setting the new state of the art for classification and detection in the ImageNet Large-Scale Visual Recognition Challenge 2014 (ILSVRC 2014). The main hallmark of this architecture is the improved utilization of the computing resources inside the network. This was achieved by a carefully crafted design that allows for increasing the depth and width of the network while keeping the computational budget constant. To optimize quality, the architectural decisions were based on the Hebbian principle and the intuition of multi-scale processing. One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.
 * [Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)
     * Title: Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
     * Year: 11 Feb `2015`
-    * Author: Sergey Ioffe
+    * Authors: Sergey Ioffe, Christian Szegedy
     * Abstract: Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9% top-5 validation error (and 4.8% test error), exceeding the accuracy of human raters.
 * [Inception-v3](https://arxiv.org/abs/1512.00567)
     * Title: Rethinking the Inception Architecture for Computer Vision
     * Year: 02 Dec `2015`
-    * Author: Christian Szegedy
+    * Authors: Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, Zbigniew Wojna
     * Abstract: Convolutional networks are at the core of most state-of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we explore ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21.2% top-1 and 5.6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3.5% top-5 error on the validation set (3.6% error on the test set) and 17.3% top-1 error on the validation set.
 * [Inception-v4/Inception-ResNet](https://arxiv.org/abs/1602.07261)
     * Title: Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning
     * Year: 23 Feb `2016`
-    * Author: Christian Szegedy
+    * Authors: Christian Szegedy, Sergey Ioffe, Vincent Vanhoucke, Alex Alemi
     * Abstract: Very deep convolutional networks have been central to the largest advances in image recognition performance in recent years. One example is the Inception architecture that has been shown to achieve very good performance at relatively low computational cost. Recently, the introduction of residual connections in conjunction with a more traditional architecture has yielded state-of-the-art performance in the 2015 ILSVRC challenge; its performance was similar to the latest generation Inception-v3 network. This raises the question of whether there are any benefit in combining the Inception architecture with residual connections. Here we give clear empirical evidence that training with residual connections accelerates the training of Inception networks significantly. There is also some evidence of residual Inception networks outperforming similarly expensive Inception networks without residual connections by a thin margin. We also present several new streamlined architectures for both residual and non-residual Inception networks. These variations improve the single-frame recognition performance on the ILSVRC 2012 classification task significantly. We further demonstrate how proper activation scaling stabilizes the training of very wide residual Inception networks. With an ensemble of three residual and one Inception-v4, we achieve 3.08 percent top-5 error on the test set of the ImageNet classification (CLS) challenge.
 * [PolyNet](https://arxiv.org/abs/1611.05725)
     * Title: PolyNet: A Pursuit of Structural Diversity in Very Deep Networks
@@ -236,6 +246,11 @@ count: 92
     * Year: 24 Feb `2016`
     * Authors: Forrest N. Iandola, Song Han, Matthew W. Moskewicz, Khalid Ashraf, William J. Dally, Kurt Keutzer
     * Abstract: Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributed training. (2) Smaller DNNs require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy on FPGAs and other hardware with limited memory. To provide all of these advantages, we propose a small DNN architecture called SqueezeNet. SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. Additionally, with model compression techniques we are able to compress SqueezeNet to less than 0.5MB (510x smaller than AlexNet). The SqueezeNet architecture is available for download here: [this https URL](https://github.com/DeepScale/SqueezeNet).
+* [SqueezeNext](https://arxiv.org/abs/1803.10615)
+    * Title: SqueezeNext: Hardware-Aware Neural Network Design
+    * Year: 23 Mar `2018`
+    * Authors: Amir Gholami, Kiseok Kwon, Bichen Wu, Zizheng Tai, Xiangyu Yue, Peter Jin, Sicheng Zhao, Kurt Keutzer
+    * Abstract: One of the main barriers for deploying neural networks on embedded systems has been large memory and power consumption of existing neural networks. In this work, we introduce SqueezeNext, a new family of neural network architectures whose design was guided by considering previous architectures such as SqueezeNet, as well as by simulation results on a neural network accelerator. This new network is able to match AlexNet's accuracy on the ImageNet benchmark with 112x fewer parameters, and one of its deeper variants is able to achieve VGG-19 accuracy with only 4.4 Million parameters, (31x smaller than VGG-19). SqueezeNext also achieves better top-5 classification accuracy with 1.3x fewer parameters as compared to MobileNet, but avoids using depthwise-separable convolutions that are inefficient on some mobile processor platforms. This wide range of accuracy gives the user the ability to make speed-accuracy tradeoffs, depending on the available resources on the target hardware. Using hardware simulation results for power and inference speed on an embedded system has guided us to design variations of the baseline model that are 2.59x/8.26x faster and 2.25x/7.5x more energy efficient as compared to SqueezeNet/AlexNet without any accuracy degradation.
 * [ShuffleNet V1](https://arxiv.org/abs/1707.01083)
     * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
     * Year: 04 Jul `2017`
@@ -278,10 +293,11 @@ count: 92
 * [Xception Networks](https://arxiv.org/abs/1610.02357)
     * Title: Xception: Deep Learning with Depthwise Separable Convolutions
     * Year: 07 Oct `2016`
-    * Author: François Chollet
+    * Authors: François Chollet
+    * Institution: Google, Inc.
     * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
     * Comments:
-        * Depthwise separable convolution proposed in Xception [3] generalizes the ideas of separable convolutions in Inception series [34, 32]. (ShuffleNet v1, 2017)
+        * > Depthwise separable convolution proposed in Xception [3] generalizes the ideas of separable convolutions in Inception series [34, 32]. (ShuffleNet v1, 2017)
 * [DiCENet](https://arxiv.org/abs/1906.03516)
     * Title: DiCENet: Dimension-wise Convolutions for Efficient Networks
     * Year: 08 Jun `2019`
@@ -296,11 +312,7 @@ count: 92
     * Year: 22 Jul `2019`
     * Author: Mingxing Tan
     * Abstract: Depthwise convolution is becoming increasingly popular in modern efficient ConvNets, but its kernel size is often overlooked. In this paper, we systematically study the impact of different kernel sizes, and observe that combining the benefits of multiple kernel sizes can lead to better accuracy and efficiency. Based on this observation, we propose a new mixed depthwise convolution (MixConv), which naturally mixes up multiple kernel sizes in a single convolution. As a simple drop-in replacement of vanilla depthwise convolution, our MixConv improves the accuracy and efficiency for existing MobileNets on both ImageNet classification and COCO object detection. To demonstrate the effectiveness of MixConv, we integrate it into AutoML search space and develop a new family of models, named as MixNets, which outperform previous mobile models including MobileNetV2 [20] (ImageNet top-1 accuracy +4.2%), ShuffleNetV2 [16] (+3.5%), MnasNet [26] (+1.3%), ProxylessNAS [2] (+2.2%), and FBNet [27] (+2.0%). In particular, our MixNet-L achieves a new state-of-the-art 78.9% ImageNet top-1 accuracy under typical mobile settings (<600M FLOPS). Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet/mixnet).
-* [MnasNet](https://arxiv.org/abs/1807.11626)
-    * Title: MnasNet: Platform-Aware Neural Architecture Search for Mobile
-    * Year: 31 Jul `2018`
-    * Author: Mingxing Tan
-    * Abstract: Designing convolutional neural networks (CNN) for mobile devices is challenging because mobile models need to be small and fast, yet still accurate. Although significant efforts have been dedicated to design and improve mobile CNNs on all dimensions, it is very difficult to manually balance these trade-offs when there are so many architectural possibilities to consider. In this paper, we propose an automated mobile neural architecture search (MNAS) approach, which explicitly incorporate model latency into the main objective so that the search can identify a model that achieves a good trade-off between accuracy and latency. Unlike previous work, where latency is considered via another, often inaccurate proxy (e.g., FLOPS), our approach directly measures real-world inference latency by executing the model on mobile phones. To further strike the right balance between flexibility and search space size, we propose a novel factorized hierarchical search space that encourages layer diversity throughout the network. Experimental results show that our approach consistently outperforms state-of-the-art mobile CNN models across multiple vision tasks. On the ImageNet classification task, our MnasNet achieves 75.2% top-1 accuracy with 78ms latency on a Pixel phone, which is 1.8x faster than MobileNetV2 [29] with 0.5% higher accuracy and 2.3x faster than NASNet [36] with 1.2% higher accuracy. Our MnasNet also achieves better mAP quality than MobileNets for COCO object detection. Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet).
+* MnasNet: Platform-Aware Neural Architecture Search for Mobile (see neural_architecture_search.md)
 
 ## Mobile Networks (2 + 3)
 
@@ -456,7 +468,7 @@ count: 92
     * Author: Yani Ioannou
     * Abstract: We propose a new method for creating computationally efficient convolutional neural networks (CNNs) by using low-rank representations of convolutional filters. Rather than approximating filters in previously-trained networks with more efficient versions, we learn a set of small basis filters from scratch; during training, the network learns to combine these basis filters into more complex filters that are discriminative for image classification. To train such networks, a novel weight initialization scheme is used. This allows effective initialization of connection weights in convolutional layers composed of groups of differently-shaped filters. We validate our approach by applying it to several existing CNN architectures and training these networks from scratch using the CIFAR, ILSVRC and MIT Places datasets. Our results show similar or higher accuracy than conventional CNNs with much less compute. Applying our method to an improved version of VGG-11 network using global max-pooling, we achieve comparable validation accuracy using 41% less compute and only 24% of the original VGG-11 model parameters; another variant of our method gives a 1 percentage point increase in accuracy over our improved VGG-11 model, giving a top-5 center-crop validation accuracy of 89.7% while reducing computation by 16% relative to the original VGG-11 model. Applying our method to the GoogLeNet architecture for ILSVRC, we achieved comparable accuracy with 26% less compute and 41% fewer model parameters. Applying our method to a near state-of-the-art network for CIFAR, we achieved comparable accuracy with 46% less compute and 55% fewer parameters.
     * Comments:
-        * > Our approach is connected with that of Ioannou et al. [9] who showed that replacing $3 \times 3 \times c$ filters with linear combinations of filters with smaller spatial extent (e.g. $1 \times 3 \times c$, $3 \times 1 \times c$ filters, see Fig. 3) could reduce the model size and computational complexity of state-of-the-art CNNs, while maintaining or even increasing accuracy. However, that work did not address the channel extent of the filters. (Deep Roots, 2916)
+        * > Our approach is connected with that of Ioannou et al. [9] who showed that replacing $3 \times 3 \times c$ filters with linear combinations of filters with smaller spatial extent (e.g. $1 \times 3 \times c$, $3 \times 1 \times c$ filters, see Fig. 3) could reduce the model size and computational complexity of state-of-the-art CNNs, while maintaining or even increasing accuracy. However, that work did not address the channel extent of the filters. (Deep Roots, 2016)
 
 > Various authors have suggested approximating learned convolutional filters using tensor decomposition [11, 13, 18]. 
 
@@ -496,6 +508,33 @@ count: 92
     * Year: 20 Nov `2016`
     * Authors: Hessam Bagherinezhad, Mohammad Rastegari, Ali Farhadi
     * Abstract: Porting state of the art deep learning algorithms to resource constrained compute platforms (e.g. VR, AR, wearables) is extremely challenging. We propose a fast, compact, and accurate model for convolutional neural networks that enables efficient learning and inference. We introduce LCNN, a lookup-based convolutional neural network that encodes convolutions by few lookups to a dictionary that is trained to cover the space of weights in CNNs. Training LCNN involves jointly learning a dictionary and a small set of linear combinations. The size of the dictionary naturally traces a spectrum of trade-offs between efficiency and accuracy. Our experimental results on ImageNet challenge show that LCNN can offer 3.2x speedup while achieving 55.1% top-1 accuracy using AlexNet architecture. Our fastest LCNN offers 37.6x speed up over AlexNet while maintaining 44.3% top-1 accuracy. LCNN not only offers dramatic speed ups at inference, but it also enables efficient training. In this paper, we show the benefits of LCNN in few-shot learning and few-iteration learning, two crucial aspects of on-device training of deep learning models.
+
+## Expressive Power (EfficientNetV1, 2019) (4)
+
+> In fact, previous theoretical (Raghu et al., 2017; Lu et al., 2018) and empirical results (Zagoruyko & Komodakis, 2016) both show that there exists certain relationship between network width and depth. (EfficientNetV1, 2019)
+
+> Prior studies (Raghu et al., 2017; Lin & Jegelka, 2018; Sharir & Shashua, 2018; Lu et al., 2018) have shown that network depth and width are both important for ConvNets' expressive power. (EfficientNetV1, 2019)
+
+* [On the Expressive Power of Deep Neural Networks](https://arxiv.org/abs/1606.05336)
+    * Title: On the Expressive Power of Deep Neural Networks
+    * Year: 16 Jun `2016`
+    * Authors: Maithra Raghu, Ben Poole, Jon Kleinberg, Surya Ganguli, Jascha Sohl-Dickstein
+    * Abstract: We propose a new approach to the problem of neural network expressivity, which seeks to characterize how structural properties of a neural network family affect the functions it is able to compute. Our approach is based on an interrelated set of measures of expressivity, unified by the novel notion of trajectory length, which measures how the output of a network changes as the input sweeps along a one-dimensional path. Our findings can be summarized as follows: (1) The complexity of the computed function grows exponentially with depth. (2) All weights are not equal: trained networks are more sensitive to their lower (initial) layer weights. (3) Regularizing on trajectory length (trajectory regularization) is a simpler alternative to batch normalization, with the same performance.
+* [The Expressive Power of Neural Networks: A View from the Width](https://arxiv.org/abs/1709.02540)
+    * Title: The Expressive Power of Neural Networks: A View from the Width
+    * Year: 08 Sep `2017`
+    * Authors: Zhou Lu, Hongming Pu, Feicheng Wang, Zhiqiang Hu, Liwei Wang
+    * Abstract: The expressive power of neural networks is important for understanding deep learning. Most existing works consider this problem from the view of the depth of a network. In this paper, we study how width affects the expressiveness of neural networks. Classical results state that depth-bounded (e.g. depth-2) networks with suitable activation functions are universal approximators. We show a universal approximation theorem for width-bounded ReLU networks: width-(n+4) ReLU networks, where n is the input dimension, are universal approximators. Moreover, except for a measure zero set, all functions cannot be approximated by width-n ReLU networks, which exhibits a phase transition. Several recent works demonstrate the benefits of depth by proving the depth-efficiency of neural networks. That is, there are classes of deep networks which cannot be realized by any shallow network whose size is no more than an exponential bound. Here we pose the dual question on the width-efficiency of ReLU networks: Are there wide networks that cannot be realized by narrow networks whose size is not substantially larger? We show that there exist classes of wide networks which cannot be realized by any narrow network whose depth is no more than a polynomial bound. On the other hand, we demonstrate by extensive experiments that narrow networks whose size exceed the polynomial bound by a constant factor can approximate wide and shallow network with high accuracy. Our results provide more comprehensive evidence that depth is more effective than width for the expressiveness of ReLU networks.
+* [On the Expressive Power of Overlapping Architectures of Deep Learning](https://arxiv.org/abs/1703.02065)
+    * Title: On the Expressive Power of Overlapping Architectures of Deep Learning
+    * Year: 06 Mar `2017`
+    * Authors: Or Sharir, Amnon Shashua
+    * Abstract: Expressive efficiency refers to the relation between two architectures A and B, whereby any function realized by B could be replicated by A, but there exists functions realized by A, which cannot be replicated by B unless its size grows significantly larger. For example, it is known that deep networks are exponentially efficient with respect to shallow networks, in the sense that a shallow network must grow exponentially large in order to approximate the functions represented by a deep network of polynomial size. In this work, we extend the study of expressive efficiency to the attribute of network connectivity and in particular to the effect of "overlaps" in the convolutional process, i.e., when the stride of the convolution is smaller than its filter size (receptive field). To theoretically analyze this aspect of network's design, we focus on a well-established surrogate for ConvNets called Convolutional Arithmetic Circuits (ConvACs), and then demonstrate empirically that our results hold for standard ConvNets as well. Specifically, our analysis shows that having overlapping local receptive fields, and more broadly denser connectivity, results in an exponential increase in the expressive capacity of neural networks. Moreover, while denser connectivity can increase the expressive capacity, we show that the most common types of modern architectures already exhibit exponential increase in expressivity, without relying on fully-connected layers.
+* [ResNet with one-neuron hidden layers is a Universal Approximator](https://arxiv.org/abs/1806.10909)
+    * Title: ResNet with one-neuron hidden layers is a Universal Approximator
+    * Year: 28 Jun `2018`
+    * Authors: Hongzhou Lin, Stefanie Jegelka
+    * Abstract: We demonstrate that a very deep ResNet with stacked modules with one neuron per hidden layer and ReLU activation functions can uniformly approximate any Lebesgue integrable function in $d$ dimensions, i.e. $\ell_{1}(\mathbb{R}^{d})$. Because of the identity mapping inherent to ResNets, our network has alternating layers of dimension one and $d$. This stands in sharp contrast to fully connected networks, which are not universal approximators if their width is the input dimension $d$ [Lu et al, 2017; Hanin and Sellke, 2017]. Hence, our result implies an increase in representational power for narrow deep networks by the ResNet architecture.
 
 ## Regularization Techniques
 

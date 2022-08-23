@@ -134,7 +134,7 @@ $$merge(t_{1}, ..., t_{K}) := \operatorname{Concat}(\{\sum_{i=1}^{k}t_{i}: k \in
 * [12] Inception-v3
 * [13] Inception-v4
 * [14] ResNeXt
-* [15] Xception
+* [15] [Xception](https://zhuanlan.zhihu.com/p/556794897)
 * [16] MobileNetV1
 * [17] ShuffleNet V1
 * [18] [Dilated Convolutions](https://zhuanlan.zhihu.com/p/555834549)

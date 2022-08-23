@@ -1,6 +1,6 @@
 # [Papers][Vision] Network Architecture Search (NAS)
 
-count: 5
+count: 6
 
 ## Reinforcement Learning Based (MobileNetV3, 2019) (5)
 
@@ -12,7 +12,7 @@ count: 5
 * [NASNet](https://arxiv.org/abs/1707.07012)
     * Title: Learning Transferable Architectures for Scalable Image Recognition
     * Year: 21 Jul `2017`
-    * Author: Barret Zoph
+    * Authors: Barret Zoph, Vijay Vasudevan, Jonathon Shlens, Quoc V. Le
     * Abstract: Developing neural network image classification models often requires significant architecture engineering. In this paper, we study a method to learn the model architectures directly on the dataset of interest. As this approach is expensive when the dataset is large, we propose to search for an architectural building block on a small dataset and then transfer the block to a larger dataset. The key contribution of this work is the design of a new search space (the "NASNet search space") which enables transferability. In our experiments, we search for the best convolutional layer (or "cell") on the CIFAR-10 dataset and then apply this cell to the ImageNet dataset by stacking together more copies of this cell, each with their own parameters to design a convolutional architecture, named "NASNet architecture". We also introduce a new regularization technique called ScheduledDropPath that significantly improves generalization in the NASNet models. On CIFAR-10 itself, NASNet achieves 2.4% error rate, which is state-of-the-art. On ImageNet, NASNet achieves, among the published works, state-of-the-art accuracy of 82.7% top-1 and 96.2% top-5 on ImageNet. Our model is 1.2% better in top-1 accuracy than the best human-invented architectures while having 9 billion fewer FLOPS - a reduction of 28% in computational demand from the previous state-of-the-art model. When evaluated at different levels of computational cost, accuracies of NASNets exceed those of the state-of-the-art human-designed models. For instance, a small version of NASNet also achieves 74% top-1 accuracy, which is 3.1% better than equivalently-sized, state-of-the-art models for mobile platforms. Finally, the learned features by NASNet used with the Faster-RCNN framework surpass state-of-the-art by 4.0% achieving 43.1% mAP on the COCO dataset.
 * [Designing Neural Network Architectures using Reinforcement Learning](https://arxiv.org/abs/1611.02167)
     * Title: Designing Neural Network Architectures using Reinforcement Learning
@@ -32,8 +32,25 @@ count: 5
 
 ## Block-Level Hierarchical Search (MobileNetV3, 2019) (1)
 
-* MnasNet: Platform-Aware Neural Architecture Search for Mobile (see CNN.md)
+* [MnasNet](https://arxiv.org/abs/1807.11626)
+    * Title: MnasNet: Platform-Aware Neural Architecture Search for Mobile
+    * Year: 31 Jul `2018`
+    * Authors: Mingxing Tan, Bo Chen, Ruoming Pang, Vijay Vasudevan, Mark Sandler, Andrew Howard, Quoc V. Le
+    * Abstract: Designing convolutional neural networks (CNN) for mobile devices is challenging because mobile models need to be small and fast, yet still accurate. Although significant efforts have been dedicated to design and improve mobile CNNs on all dimensions, it is very difficult to manually balance these trade-offs when there are so many architectural possibilities to consider. In this paper, we propose an automated mobile neural architecture search (MNAS) approach, which explicitly incorporate model latency into the main objective so that the search can identify a model that achieves a good trade-off between accuracy and latency. Unlike previous work, where latency is considered via another, often inaccurate proxy (e.g., FLOPS), our approach directly measures real-world inference latency by executing the model on mobile phones. To further strike the right balance between flexibility and search space size, we propose a novel factorized hierarchical search space that encourages layer diversity throughout the network. Experimental results show that our approach consistently outperforms state-of-the-art mobile CNN models across multiple vision tasks. On the ImageNet classification task, our MnasNet achieves 75.2% top-1 accuracy with 78ms latency on a Pixel phone, which is 1.8x faster than MobileNetV2 [29] with 0.5% higher accuracy and 2.3x faster than NASNet [36] with 1.2% higher accuracy. Our MnasNet also achieves better mAP quality than MobileNets for COCO object detection. Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet).
 
 ## Differentiable Architecture Search Frameworks (MobileNetV3, 2019) (3)
 
 ## Network Simplification Algorithms (MobileNetV3, 2019) (3)
+
+## EfficientNetV1, 2019
+
+* [ProxylessNAS](https://arxiv.org/abs/1812.00332)
+    * Title: ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware
+    * Year: 02 Dec `2018`
+    * Authors: Han Cai, Ligeng Zhu, Song Han
+    * Abstract: Neural architecture search (NAS) has a great impact by automatically designing effective neural network architectures. However, the prohibitive computational demand of conventional NAS algorithms (e.g. $10^{4}$ GPU hours) makes it difficult to \emph{directly} search the architectures on large-scale tasks (e.g. ImageNet). Differentiable NAS can reduce the cost of GPU hours via a continuous representation of network architecture but suffers from the high GPU memory consumption issue (grow linearly w.r.t. candidate set size). As a result, they need to utilize~\emph{proxy} tasks, such as training on a smaller dataset, or learning with only a few blocks, or training just for a few epochs. These architectures optimized on proxy tasks are not guaranteed to be optimal on the target task. In this paper, we present \emph{ProxylessNAS} that can \emph{directly} learn the architectures for large-scale target tasks and target hardware platforms. We address the high memory consumption issue of differentiable NAS and reduce the computational cost (GPU hours and GPU memory) to the same level of regular training while still allowing a large candidate set. Experiments on CIFAR-10 and ImageNet demonstrate the effectiveness of directness and specialization. On CIFAR-10, our model achieves 2.08\% test error with only 5.7M parameters, better than the previous state-of-the-art architecture AmoebaNet-B, while using 6x fewer parameters. On ImageNet, our model achieves 3.1\% better top-1 accuracy than MobileNetV2, while being 1.2x faster with measured GPU latency. We also apply ProxylessNAS to specialize neural architectures for hardware with direct hardware metrics (e.g. latency) and provide insights for efficient CNN architecture design.
+* [Regularized Evolution for Image Classifier Architecture Search](https://arxiv.org/abs/1802.01548)
+    * Title: Regularized Evolution for Image Classifier Architecture Search
+    * Year: 05 Feb `2018`
+    * Authors: Esteban Real, Alok Aggarwal, Yanping Huang, Quoc V Le
+    * Abstract: The effort devoted to hand-crafting neural network image classifiers has motivated the use of architecture search to discover them automatically. Although evolutionary algorithms have been repeatedly applied to neural network topologies, the image classifiers thus discovered have remained inferior to human-crafted ones. Here, we evolve an image classifier---AmoebaNet-A---that surpasses hand-designs for the first time. To do this, we modify the tournament selection evolutionary algorithm by introducing an age property to favor the younger genotypes. Matching size, AmoebaNet-A has comparable accuracy to current state-of-the-art ImageNet models discovered with more complex architecture-search methods. Scaled to larger size, AmoebaNet-A sets a new state-of-the-art 83.9% / 96.6% top-5 ImageNet accuracy. In a controlled comparison against a well known reinforcement learning algorithm, we give evidence that evolution can obtain results faster with the same hardware, especially at the earlier stages of the search. This is relevant when fewer compute resources are available. Evolution is, thus, a simple method to effectively discover high-quality architectures.

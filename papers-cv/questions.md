@@ -11,3 +11,6 @@
 
 ## others
 * what is the difference between Deep Roots and ResNeXt???
+
+## EfficientNetV1
+* input/output space of the convolutions? where do $H_{i}$, $W_{i}$, and $C_{i}$ change?

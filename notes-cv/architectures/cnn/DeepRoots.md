@@ -112,7 +112,7 @@ $$f(x) := \operatorname{Concat}\bigg\{\operatorname{Concat}\bigg\{x_{j} * K^{(ij
 
 ## Further Reading
 
-* [2] Inception-v1
+* [2] Inception-v1/GoogLeNet
 * [4] AlexNet
 * [9] Training CNNs with Low-Rank Filters for Efficient Image Classification
-* [19] Network In Network
+* [19] Network In Network (NIN)
