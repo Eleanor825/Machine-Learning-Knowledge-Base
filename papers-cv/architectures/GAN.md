@@ -32,3 +32,19 @@ count: 6
     * Year: 26 Jul `2022`
     * Author: Yiqiao Li
     * Abstract: Graph neural networks (GNNs) have demonstrated a significant boost in prediction performance on graph data. At the same time, the predictions made by these models are often hard to interpret. In that regard, many efforts have been made to explain the prediction mechanisms of these models from perspectives such as GNNExplainer, XGNN and PGExplainer. Although such works present systematic frameworks to interpret GNNs, a holistic review for explainable GNNs is unavailable. In this survey, we present a comprehensive review of explainability techniques developed for GNNs. We focus on explainable graph neural networks and categorize them based on the use of explainable methods. We further provide the common performance metrics for GNNs explanations and point out several future research directions.
+
+## Progressive Learning (EfficientNetV2, 2021)
+
+* [Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://arxiv.org/abs/1710.10196)
+    * Title: Progressive Growing of GANs for Improved Quality, Stability, and Variation
+    * Year: 27 Oct `2017`
+    * Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
+    * Abstract: We describe a new training methodology for generative adversarial networks. The key idea is to grow both the generator and discriminator progressively: starting from a low resolution, we add new layers that model increasingly fine details as training progresses. This both speeds the training up and greatly stabilizes it, allowing us to produce images of unprecedented quality, e.g., CelebA images at 1024^2. We also propose a simple way to increase the variation in generated images, and achieve a record inception score of 8.80 in unsupervised CIFAR10. Additionally, we describe several implementation details that are important for discouraging unhealthy competition between the generator and discriminator. Finally, we suggest a new metric for evaluating GAN results, both in terms of image quality and variation. As an additional contribution, we construct a higher-quality version of the CelebA dataset.
+
+## Adversarial Learning (EfficientNetV2, 2021)
+
+* [PDA](https://arxiv.org/abs/1909.04839)
+    * Title: PDA: Progressive Data Augmentation for General Robustness of Deep Neural Networks
+    * Year: 11 Sep `2019`
+    * Authors: Hang Yu, Aishan Liu, Xianglong Liu, Gengchao Li, Ping Luo, Ran Cheng, Jichen Yang, Chongzhi Zhang
+    * Abstract: Adversarial images are designed to mislead deep neural networks (DNNs), attracting great attention in recent years. Although several defense strategies achieved encouraging robustness against adversarial samples, most of them fail to improve the robustness on common corruptions such as noise, blur, and weather/digital effects (e.g. frost, pixelate). To address this problem, we propose a simple yet effective method, named Progressive Data Augmentation (PDA), which enables general robustness of DNNs by progressively injecting diverse adversarial noises during training. In other words, DNNs trained with PDA are able to obtain more robustness against both adversarial attacks as well as common corruptions than the recent state-of-the-art methods. We also find that PDA is more efficient than prior arts and able to prevent accuracy drop on clean samples without being attacked. Furthermore, we theoretically show that PDA can control the perturbation bound and guarantee better generalization ability than existing work. Extensive experiments on many benchmarks such as CIFAR-10, SVHN, and ImageNet demonstrate that PDA significantly outperforms its counterparts in various experimental setups.

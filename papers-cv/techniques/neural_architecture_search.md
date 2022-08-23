@@ -1,6 +1,14 @@
 # [Papers][Vision] Network Architecture Search (NAS)
 
-count: 6
+count: 9
+
+## Survey
+
+* [Neural Architecture Search: A Survey](https://arxiv.org/abs/1808.05377)
+    * Title: Neural Architecture Search: A Survey
+    * Year: 16 Aug `2018`
+    * Authors: Thomas Elsken, Jan Hendrik Metzen, Frank Hutter
+    * Abstract: Deep Learning has enabled remarkable progress over the last years on a variety of tasks, such as image recognition, speech recognition, and machine translation. One crucial aspect for this progress are novel neural architectures. Currently employed architectures have mostly been developed manually by human experts, which is a time-consuming and error-prone process. Because of this, there is growing interest in automated neural architecture search methods. We provide an overview of existing work in this field of research and categorize them according to three dimensions: search space, search strategy, and performance estimation strategy.
 
 ## Reinforcement Learning Based (MobileNetV3, 2019) (5)
 
@@ -54,3 +62,14 @@ count: 6
     * Year: 05 Feb `2018`
     * Authors: Esteban Real, Alok Aggarwal, Yanping Huang, Quoc V Le
     * Abstract: The effort devoted to hand-crafting neural network image classifiers has motivated the use of architecture search to discover them automatically. Although evolutionary algorithms have been repeatedly applied to neural network topologies, the image classifiers thus discovered have remained inferior to human-crafted ones. Here, we evolve an image classifier---AmoebaNet-A---that surpasses hand-designs for the first time. To do this, we modify the tournament selection evolutionary algorithm by introducing an age property to favor the younger genotypes. Matching size, AmoebaNet-A has comparable accuracy to current state-of-the-art ImageNet models discovered with more complex architecture-search methods. Scaled to larger size, AmoebaNet-A sets a new state-of-the-art 83.9% / 96.6% top-5 ImageNet accuracy. In a controlled comparison against a well known reinforcement learning algorithm, we give evidence that evolution can obtain results faster with the same hardware, especially at the earlier stages of the search. This is relevant when fewer compute resources are available. Evolution is, thus, a simple method to effectively discover high-quality architectures.
+
+## Improving inference efficiency (EfficientNetV2, 2021)
+
+* MnasNet: Platform-Aware Neural Architecture Search for Mobile
+* ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware
+* [FBNet](https://arxiv.org/abs/1812.03443)
+    * Title: FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search
+    * Year: 09 Dec `2018`
+    * Authors: Bichen Wu, Xiaoliang Dai, Peizhao Zhang, Yanghan Wang, Fei Sun, Yiming Wu, Yuandong Tian, Peter Vajda, Yangqing Jia, Kurt Keutzer
+    * Abstract: Designing accurate and efficient ConvNets for mobile devices is challenging because the design space is combinatorially large. Due to this, previous neural architecture search (NAS) methods are computationally expensive. ConvNet architecture optimality depends on factors such as input resolution and target devices. However, existing approaches are too expensive for case-by-case redesigns. Also, previous work focuses primarily on reducing FLOPs, but FLOP count does not always reflect actual latency. To address these, we propose a differentiable neural architecture search (DNAS) framework that uses gradient-based methods to optimize ConvNet architectures, avoiding enumerating and training individual architectures separately as in previous methods. FBNets, a family of models discovered by DNAS surpass state-of-the-art models both designed manually and generated automatically. FBNet-B achieves 74.1% top-1 accuracy on ImageNet with 295M FLOPs and 23.1 ms latency on a Samsung S8 phone, 2.4x smaller and 1.5x faster than MobileNetV2-1.3 with similar accuracy. Despite higher accuracy and lower latency than MnasNet, we estimate FBNet-B's search cost is 420x smaller than MnasNet's, at only 216 GPU-hours. Searched for different resolutions and channel sizes, FBNets achieve 1.5% to 6.4% higher accuracy than MobileNetV2. The smallest FBNet achieves 50.2% accuracy and 2.9 ms latency (345 frames per second) on a Samsung S8. Over a Samsung-optimized FBNet, the iPhone-X-optimized model achieves a 1.4x speedup on an iPhone X.
+* Searching for Fast Model Families on Datacenter Accelerators (See CNN.md)

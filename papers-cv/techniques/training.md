@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Training Methodologies
+# [Papers] Training Methodologies
 
 count: 12
 
