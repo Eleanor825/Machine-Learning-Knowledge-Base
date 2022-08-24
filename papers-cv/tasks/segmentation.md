@@ -1,6 +1,6 @@
 # [Papers][Vision] Segmentation
 
-count: 23
+count: 31
 
 * [DeepMask](https://arxiv.org/abs/1506.06204)
     * Title: Learning to Segment Object Candidates
@@ -30,8 +30,11 @@ count: 23
 * [Learning Hierarchical Features for Scene Labeling](https://ieeexplore.ieee.org/document/6338939)
     * Title: Learning Hierarchical Features for Scene Labeling
     * Year: `2013`
-    * Author: Clement Farabet
+    * Authors: Clement Farabet; Camille Couprie; Laurent Najman; Yann LeCun
     * Abstract: Scene labeling consists of labeling each pixel in an image with the category of the object it belongs to. We propose a method that uses a multiscale convolutional network trained from raw pixels to extract dense feature vectors that encode regions of multiple sizes centered on each pixel. The method alleviates the need for engineered features, and produces a powerful representation that captures texture, shape, and contextual information. We report results using multiple postprocessing methods to produce the final labeling. Among those, we propose a technique to automatically retrieve, from a pool of segmentation components, an optimal set of components that best explain the scene; these components are arbitrary, for example, they can be taken from a segmentation tree or from any family of oversegmentations. The system yields record accuracies on the SIFT Flow dataset (33 classes) and the Barcelona dataset (170 classes) and near-record accuracy on Stanford background dataset (eight classes), while being an order of magnitude faster than competing approaches, producing a 320×240 image labeling in less than a second, including feature extraction.
+    * Comments:
+        * > Among the first have been Farabet et al. (2013) who apply DCNNs at multiple image resolutions and then employ a segmentation tree to smooth the prediction results. (DeepLabv1, 2014)
+        * > Farabet et al. (2013) treat superpixels as nodes for a local pairwise CRF and use graph-cuts for discrete inference. (DeepLabv1, 2014)
 * [Recurrent Convolutional Neural Networks for Scene Labeling](https://proceedings.mlr.press/v32/pinheiro14.html)
     * Title: Recurrent Convolutional Neural Networks for Scene Labeling
     * Year: Jun `2014`
@@ -66,9 +69,17 @@ count: 23
     * Authors: Jonathan Long, Evan Shelhamer, Trevor Darrell
     * Abstract: Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, exceed the state-of-the-art in semantic segmentation. Our key insight is to build "fully convolutional" networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet, the VGG net, and GoogLeNet) into fully convolutional networks and transfer their learned representations by fine-tuning to the segmentation task. We then define a novel architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. Our fully convolutional network achieves state-of-the-art segmentation of PASCAL VOC (20% relative improvement to 62.2% mean IU on 2012), NYUDv2, and SIFT Flow, while inference takes one third of a second for a typical image.
     * Comments:
+        * > More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN. (DeepLabv1, 2014)
         * > Long et al. (2015) showed that convolutional network architectures that had originally been developed for image classification can be successfully repurposed for dense prediction. (Dilated Convolutions, 2015)
         * > In recent work on convolutional networks for semantic segmentation, Long et al. (2015) analyzed filter dilation but chose not to use it. (Dilated Convolutions, 2015)
         * > In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size. (PVT, 2021)
+* [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture](https://arxiv.org/abs/1411.4734)
+    * Title: Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture
+    * Year: 18 Nov `2014`
+    * Authors: David Eigen, Rob Fergus
+    * Abstract: In this paper we address three different computer vision tasks using a single basic architecture: depth prediction, surface normal estimation, and semantic labeling. We use a multiscale convolutional network that is able to adapt easily to each task using only small modifications, regressing from the input image to the output map directly. Our method progressively refines predictions using a sequence of scales, and captures many image details without any superpixels or low-level segmentation. We achieve state-of-the-art performance on benchmarks for all three tasks.
+    * Comments:
+        * > More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN. (DeepLabv1, 2014)
 * [Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)
     * Title: Learning Deconvolution Network for Semantic Segmentation
     * Year: 17 May `2015`
@@ -124,12 +135,33 @@ count: 23
     * Author: René Ranftl
     * Abstract: We introduce dense vision transformers, an architecture that leverages vision transformers in place of convolutional networks as a backbone for dense prediction tasks. We assemble tokens from various stages of the vision transformer into image-like representations at various resolutions and progressively combine them into full-resolution predictions using a convolutional decoder. The transformer backbone processes representations at a constant and relatively high resolution and has a global receptive field at every stage. These properties allow the dense vision transformer to provide finer-grained and more globally coherent predictions when compared to fully-convolutional networks. Our experiments show that this architecture yields substantial improvements on dense prediction tasks, especially when a large amount of training data is available. For monocular depth estimation, we observe an improvement of up to 28% in relative performance when compared to a state-of-the-art fully-convolutional network. When applied to semantic segmentation, dense vision transformers set a new state of the art on ADE20K with 49.02% mIoU. We further show that the architecture can be fine-tuned on smaller datasets such as NYUv2, KITTI, and Pascal Context where it also sets the new state of the art. Our models are available at [this https URL](https://github.com/intel-isl/DPT).
 
+## Conditional Random Fields (CRF) (DeepLabv1, 2014)
+
+* [Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials](https://arxiv.org/abs/1210.5644)
+    * Title: Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials
+    * Year: 20 Oct `2012`
+    * Authors: Philipp Krähenbühl, Vladlen Koltun
+    * Abstract: Most state-of-the-art techniques for multi-class image segmentation and labeling use conditional random fields defined over pixels or image regions. While region-level models often feature dense pairwise connectivity, pixel-level models are considerably larger and have only permitted sparse graph structures. In this paper, we consider fully connected CRF models defined on the complete set of pixels in an image. The resulting graphs have billions of edges, making traditional inference algorithms impractical. Our main contribution is a highly efficient approximate inference algorithm for fully connected CRF models in which the pairwise edge potentials are defined by a linear combination of Gaussian kernels. Our experiments demonstrate that dense connectivity at the pixel level substantially improves segmentation and labeling accuracy.
+* [Combining the Best of Graphical Models and ConvNets for Semantic Segmentation](https://arxiv.org/abs/1412.4313)
+    * Title: Combining the Best of Graphical Models and ConvNets for Semantic Segmentation
+    * Year: 14 Dec `2014`
+    * Authors: Michael Cogswell, Xiao Lin, Senthil Purushwalkam, Dhruv Batra
+    * Abstract: We present a two-module approach to semantic segmentation that incorporates Convolutional Networks (CNNs) and Graphical Models. Graphical models are used to generate a small (5-30) set of diverse segmentations proposals, such that this set has high recall. Since the number of required proposals is so low, we can extract fairly complex features to rank them. Our complex feature of choice is a novel CNN called SegNet, which directly outputs a (coarse) semantic segmentation. Importantly, SegNet is specifically trained to optimize the corpus-level PASCAL IOU loss function. To the best of our knowledge, this is the first CNN specifically designed for semantic segmentation. This two-module approach achieves 52.5% on the PASCAL 2012 segmentation challenge.
+    * Comments:
+        * > Cogswell et al. (2014) use CRFs as a proposal mechanism for a DCNN-based reranking system. (DeepLabv1, 2014)
+* [Conditional Random Fields as Recurrent Neural Networks](https://arxiv.org/abs/1502.03240)
+    * Title: Conditional Random Fields as Recurrent Neural Networks
+    * Year: 11 Feb `2015`
+    * Authors: Shuai Zheng, Sadeep Jayasumana, Bernardino Romera-Paredes, Vibhav Vineet, Zhizhong Su, Dalong Du, Chang Huang, Philip H. S. Torr
+    * Abstract: Pixel-level labelling tasks, such as semantic segmentation, play a central role in image understanding. Recent approaches have attempted to harness the capabilities of deep learning techniques for image recognition to tackle pixel-level labelling tasks. One central issue in this methodology is the limited capacity of deep learning techniques to delineate visual objects. To solve this problem, we introduce a new form of convolutional neural network that combines the strengths of Convolutional Neural Networks (CNNs) and Conditional Random Fields (CRFs)-based probabilistic graphical modelling. To this end, we formulate mean-field approximate inference for the Conditional Random Fields with Gaussian pairwise potentials as Recurrent Neural Networks. This network, called CRF-RNN, is then plugged in as a part of a CNN to obtain a deep network that has desirable properties of both CNNs and CRFs. Importantly, our system fully integrates CRF modelling with CNNs, making it possible to train the whole deep network end-to-end with the usual back-propagation algorithm, avoiding offline post-processing methods for object delineation. We apply the proposed method to the problem of semantic image segmentation, obtaining top results on the challenging Pascal VOC 2012 segmentation benchmark.
+
 ## DeepLab Family
 
-* [DeepLabv1](https://arxiv.org/abs/1412.7062)
+* [[DeepLabv1](https://arxiv.org/abs/1412.7062)][[Vanity](https://www.arxiv-vanity.com/papers/1412.7062/)]
     * Title: Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
     * Year: 22 Dec `2014`
     * Authors: Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, Alan L. Yuille
+    * Institutions: Univ. of California, Google Inc., CentraleSupelec and INRIA
     * Abstract: Deep Convolutional Neural Networks (DCNNs) have recently shown state of the art performance in high level vision tasks, such as image classification and object detection. This work brings together methods from DCNNs and probabilistic graphical models for addressing the task of pixel-level classification (also called "semantic image segmentation"). We show that responses at the final layer of DCNNs are not sufficiently localized for accurate object segmentation. This is due to the very invariance properties that make DCNNs good for high level tasks. We overcome this poor localization property of deep networks by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF). Qualitatively, our "DeepLab" system is able to localize segment boundaries at a level of accuracy which is beyond previous methods. Quantitatively, our method sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 71.6% IOU accuracy in the test set. We show how these results can be obtained efficiently: Careful network re-purposing and a novel application of the 'hole' algorithm from the wavelet community allow dense computation of neural net responses at 8 frames per second on a modern GPU.
     * Comments:
         * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
@@ -164,6 +196,7 @@ count: 23
     * Author: Bharath Hariharan
     * Abstract: Recognition algorithms based on convolutional networks (CNNs) typically use the output of the last layer as feature representation. However, the information in this layer may be too coarse to allow precise localization. On the contrary, earlier layers may be precise in localization but will not capture semantics. To get the best of both worlds, we define the hypercolumn at a pixel as the vector of activations of all CNN units above that pixel. Using hypercolumns as pixel descriptors, we show results on three fine-grained localization tasks: simultaneous detection and segmentation[22], where we improve state-of-the-art from 49.7[22] mean AP^r to 60.0, keypoint localization, where we get a 3.3 point boost over[20] and part labeling, where we show a 6.6 point gain over a strong baseline.
     * Comments:
+        * > More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification. (DeepLabv1, 2014)
         * > More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers. (U-Net, 2015)
 
 ## Panoptic Segmentation

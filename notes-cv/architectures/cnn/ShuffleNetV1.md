@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/557179729
 # [Notes][Vision][CNN] ShuffleNet V1
 
 * url: https://arxiv.org/abs/1707.01083
