@@ -1,6 +1,7 @@
-<span style="font-family:monospace">
-
 # Reading List
+
+Queue:
+* Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials
 
 * 2022.07.05 Tue:
     * MobileNetV2

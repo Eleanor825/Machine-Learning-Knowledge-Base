@@ -28,6 +28,21 @@ count: 100
     * Authors: Matthew D Zeiler, Rob Fergus
     * Abstract: Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky \etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.
 
+## Deconvolution
+
+* [[Deconvolutional networks](https://ieeexplore.ieee.org/document/5539957)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5539957)]
+    * Title: Deconvolutional networks
+    * Year: 05 Aug `2010`
+    * Authors: Matthew D. Zeiler; Dilip Krishnan; Graham W. Taylor; Rob Fergus
+    * Abstract: Building robust low and mid-level image representations, beyond edge primitives, is a long-standing goal in vision. Many existing feature detectors spatially pool edge information which destroys cues such as edge intersections, parallelism and symmetry. We present a learning framework where features that capture these mid-level cues spontaneously emerge from image data. Our approach is based on the convolutional decomposition of images under a sparsity constraint and is totally unsupervised. By building a hierarchy of such decompositions we can learn rich feature sets that are a robust image representation for both the analysis and synthesis of images.
+* [[Adaptive deconvolutional networks for mid and high level feature learning](https://ieeexplore.ieee.org/document/6126474)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6126474)]
+    * Title: Adaptive deconvolutional networks for mid and high level feature learning
+    * Year: 12 January `2012`
+    * Authors: Matthew D. Zeiler; Graham W. Taylor; Rob Fergus
+    * Abstract: We present a hierarchical model that learns image decompositions via alternating layers of convolutional sparse coding and max pooling. When trained on natural images, the layers of our model capture image information in a variety of forms: low-level edges, mid-level edge junctions, high-level object parts and complete objects. To build our model we rely on a novel inference scheme that ensures each layer reconstructs the input, rather than just the output of the layer directly beneath, as is common with existing hierarchical approaches. This makes it possible to learn multiple layers of representation and we show models with 4 layers, trained on images from the Caltech-101 and 256 datasets. When combined with a standard classifier, features extracted from these models outperform SIFT, as well as representations from other feature learning methods.
+
 ## Reformulations of the Connections between Network Layers
 
 > Following these works, there have been further reformulations oof the connections between network layers [DPN], [DenseNets], which show promising improvements to the learning and representational properties of deep networks. (SENet, 2017)
@@ -638,11 +653,6 @@ count: 100
 
 ## Unclassified
 
-* [Deconvolutional networks](https://ieeexplore.ieee.org/document/5539957)
-    * Title: Deconvolutional networks
-    * Year: 05 Aug `2010`
-    * Author: Matthew D. Zeiler
-    * Abstract: Building robust low and mid-level image representations, beyond edge primitives, is a long-standing goal in vision. Many existing feature detectors spatially pool edge information which destroys cues such as edge intersections, parallelism and symmetry. We present a learning framework where features that capture these mid-level cues spontaneously emerge from image data. Our approach is based on the convolutional decomposition of images under a sparsity constraint and is totally unsupervised. By building a hierarchy of such decompositions we can learn rich feature sets that are a robust image representation for both the analysis and synthesis of images.
 * [DeCAF](https://arxiv.org/abs/1310.1531)
     * Title: DeCAF: A Deep Convolutional Activation Feature for Generic Visual Recognition
     * Year: 06 Oct `2013`

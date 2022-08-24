@@ -12,6 +12,47 @@ count: 31
     * Year: 29 Mar `2016`
     * Author: Pedro O. Pinheiro
     * Abstract: Object segmentation requires both object-level information and low-level pixel data. This presents a challenge for feedforward networks: lower layers in convolutional nets capture rich spatial information, while upper layers encode object-level knowledge but are invariant to factors such as pose and appearance. In this work we propose to augment feedforward nets for object segmentation with a novel top-down refinement approach. The resulting bottom-up/top-down architecture is capable of efficiently generating high-fidelity object masks. Similarly to skip connections, our approach leverages features at all layers of the net. Unlike skip connections, our approach does not attempt to output independent predictions at each layer. Instead, we first output a coarse `mask encoding' in a feedforward pass, then refine this mask encoding in a top-down pass utilizing features at successively lower layers. The approach is simple, fast, and effective. Building on the recent DeepMask network for generating object proposals, we show accuracy improvements of 10-20% in average recall for various setups. Additionally, by optimizing the overall network architecture, our approach, which we call SharpMask, is 50% faster than the original DeepMask network (under .8s per image).
+* [[Feedforward semantic segmentation with zoom-out features](https://arxiv.org/abs/1412.0774)]
+    [[pdf](https://arxiv.org/pdf/1412.0774.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1412.0774/)]
+    * Title: Feedforward semantic segmentation with zoom-out features
+    * Year: 02 Dec `2014`
+    * Authors: Mohammadreza Mostajabi, Payman Yadollahpour, Gregory Shakhnarovich
+    * Abstract: We introduce a purely feed-forward architecture for semantic segmentation. We map small image elements (superpixels) to rich feature representations extracted from a sequence of nested regions of increasing extent. These regions are obtained by "zooming out" from the superpixel all the way to scene-level resolution. This approach exploits statistical structure in the image and in the label space without setting up explicit structured prediction mechanisms, and thus avoids complex and expensive inference. Instead superpixels are classified by a feedforward multilayer network. Our architecture achieves new state of the art performance in semantic segmentation, obtaining 64.4% average accuracy on the PASCAL VOC 2012 test set.
+
+## classify region proposals
+
+> Some algorithms [3, 9, 10] classify region proposals and refine the labels in the image-level segmentation map to obtain the final segmentation. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+
+* [Convolutional Feature Masking for Joint Object and Stuff Segmentation](https://arxiv.org/abs/1412.1283)
+    * Title: Convolutional Feature Masking for Joint Object and Stuff Segmentation
+* [Simultaneous Detection and Segmentation](https://arxiv.org/abs/1407.1808)
+    * Title: Simultaneous Detection and Segmentation
+    * Year: 07 Jul `2014`
+    * Author: Bharath Hariharan
+    * Abstract: We aim to detect all instances of a category in an image and, for each instance, mark the pixels that belong to it. We call this task Simultaneous Detection and Segmentation (SDS). Unlike classical bounding box detection, SDS requires a segmentation and not just a box. Unlike classical semantic segmentation, we require individual object instances. We build on recent work that uses convolutional neural networks to classify category-independent region proposals (R-CNN [16]), introducing a novel architecture tailored for SDS. We then use category-specific, top- down figure-ground predictions to refine our bottom-up proposals. We show a 7 point boost (16% relative) over our baselines on SDS, a 5 point boost (10% relative) over state-of-the-art on semantic segmentation, and state-of-the-art performance in object detection. Finally, we provide diagnostic tools that unpack performance and provide directions for future work.
+* Hypercolumns for Object Segmentation and Fine-grained Localization
+
+## Superpixels (Learning Hierarchical Features for Scene Labeling, 2013)
+
+* [[Efficient Graph-Based Image Segmentation](https://link.springer.com/article/10.1023/B:VISI.0000022288.19776.77)]
+    [[pdf](https://link.springer.com/content/pdf/10.1023/B:VISI.0000022288.19776.77.pdf)]
+    * Title: Efficient Graph-Based Image Segmentation
+    * Year: `2004`
+    * Authors: Pedro F. Felzenszwalb & Daniel P. Huttenlocher 
+    * Abstract: This paper addresses the problem of segmenting an image into regions. We define a predicate for measuring the evidence for a boundary between two regions using a graph-based representation of the image. We then develop an efficient segmentation algorithm based on this predicate, and show that although this algorithm makes greedy decisions it produces segmentations that satisfy global properties. We apply the algorithm to image segmentation using two different kinds of local neighborhoods in constructing the graph, and illustrate the results with both real and synthetic images. The algorithm runs in time nearly linear in the number of graph edges and is also fast in practice. An important characteristic of the method is its ability to preserve detail in low-variability image regions while ignoring detail in high-variability regions.
+* [[Class segmentation and object localization with superpixel neighborhoods](https://ieeexplore.ieee.org/document/5459175)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5459175)]
+    * Title: Class segmentation and object localization with superpixel neighborhoods
+    * Year: 29 July `2010`
+    * Authors: Brian Fulkerson; Andrea Vedaldi; Stefano Soatto
+    * Abstract: We propose a method to identify and localize object classes in images. Instead of operating at the pixel level, we advocate the use of superpixels as the basic unit of a class segmentation or pixel localization scheme. To this end, we construct a classifier on the histogram of local features found in each superpixel. We regularize this classifier by aggregating histograms in the neighborhood of each superpixel and then refine our results further by using the classifier in a conditional random field operating on the superpixel graph. Our proposed method exceeds the previously published state-of-the-art on two challenging datasets: Graz-02 and the PASCAL VOC 2007 Segmentation Challenge.
+* [[Multi-Class Segmentation with Relative Location Prior](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.145.6337)]
+    [[pdf](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.145.6337&rep=rep1&type=pdf)]
+    * Title: Multi-Class Segmentation with Relative Location Prior
+    * Year: `2008`
+    * Authors: Stephen Gould , Jim Rodgers , David Cohen , Gal Elidan , Daphne Koller
+    * Abstract: Multi-class image segmentation has made significant advances in recent years through the combination of local and global features. One important type of global feature is that of inter-class spatial relationships. For example, identifying “tree” pixels indicates that pixels above and to the sides are more likely to be “sky” whereas pixels below are more likely to be “grass.” Incorporating such global information across the entire image and between all classes is a computational challenge as it is image-dependent, and hence, cannot be precomputed. In this work we propose a method for capturing global information from inter-class spatial relationships and encoding it as a local feature. We employ a two-stage classification process to label all image pixels. First, we generate predictions which are used to compute a local relative location feature from learned relative location maps. In the second stage, we combine this with appearance-based features to provide a final segmentation. We compare our results to recent published results on several multiclass image segmentation databases and show that the incorporation of relative location information allows us to significantly outperform the current state-of-the-art.
 
 ## Semantic Segmentation
 
@@ -48,11 +89,6 @@ count: 31
 
 ##
 
-* [Simultaneous Detection and Segmentation](https://arxiv.org/abs/1407.1808)
-    * Title: Simultaneous Detection and Segmentation
-    * Year: 07 Jul `2014`
-    * Author: Bharath Hariharan
-    * Abstract: We aim to detect all instances of a category in an image and, for each instance, mark the pixels that belong to it. We call this task Simultaneous Detection and Segmentation (SDS). Unlike classical bounding box detection, SDS requires a segmentation and not just a box. Unlike classical semantic segmentation, we require individual object instances. We build on recent work that uses convolutional neural networks to classify category-independent region proposals (R-CNN [16]), introducing a novel architecture tailored for SDS. We then use category-specific, top- down figure-ground predictions to refine our bottom-up proposals. We show a 7 point boost (16% relative) over our baselines on SDS, a 5 point boost (10% relative) over state-of-the-art on semantic segmentation, and state-of-the-art performance in object detection. Finally, we provide diagnostic tools that unpack performance and provide directions for future work.
 * [Learning Rich Features from RGB-D Images for Object Detection and Segmentation](https://arxiv.org/abs/1407.5736)
     * Title: Learning Rich Features from RGB-D Images for Object Detection and Segmentation
     * Year: 22 Jul `2014`
@@ -63,7 +99,9 @@ count: 31
     * Year: `1991`
     * Authors: Ofer Matan, Christopher J. C. Burges, Yann LeCun, John Denker
     * Abstract: We present a feed-forward network architecture for recognizing an uncon(cid:173) strained handwritten multi-digit string. This is an extension of previous work on recognizing isolated digits. In this architecture a single digit rec(cid:173) ognizer is replicated over the input. The output layer of the network is coupled to a Viterbi alignment module that chooses the best interpretation of the input. Training errors are propagated through the Viterbi module. The novelty in this procedure is that segmentation is done on the feature maps developed in the Space Displacement Neural Network (SDNN) rather than the input (pixel) space.
-* [Fully Convolutional Networks (FCN)](https://arxiv.org/abs/1411.4038)
+* [[Fully Convolutional Networks (FCN)](https://arxiv.org/abs/1411.4038)]
+    [[pdf](https://arxiv.org/pdf/1411.4038.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1411.4038/)]
     * Title: Fully Convolutional Networks for Semantic Segmentation
     * Year: 14 Nov `2014`
     * Authors: Jonathan Long, Evan Shelhamer, Trevor Darrell
@@ -72,6 +110,9 @@ count: 31
         * > More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN. (DeepLabv1, 2014)
         * > Long et al. (2015) showed that convolutional network architectures that had originally been developed for image classification can be successfully repurposed for dense prediction. (Dilated Convolutions, 2015)
         * > In recent work on convolutional networks for semantic segmentation, Long et al. (2015) analyzed filter dilation but chose not to use it. (Dilated Convolutions, 2015)
+        * > The main advantage of the methods based on FCN is that the network accepts a whole image as an input and performs fast and accurate inference. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+        > Semantic segmentation based on FCNs [1, 17] have a couple of critical limitations. First, the network can handle only a single scale semantics within image due to the fixed-size receptive field. Therefore, the object that is substantially larger or smaller than the receptive field may be fragmented or mislabeled. ... Second, the detailed structures of an object are often lost or smoothed because the label map, input to the deconvolutional layer, is too coarse and deconvolution procedure is overly simple. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+        * > In this approach, fully connected layers in the standard CNNs are interpreted as convolutions with large receptive fields, and segmentation is achieved using coarse class score maps obtained by feedforwarding an input image. An interesting idea in this work is that a simple interpolation filter is employed for deconvolution and only the CNN part of the network is fine-tuned to learn deconvolution indirectly. (Learning Deconvolution Network for Semantic Segmentation, 2015)
         * > In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size. (PVT, 2021)
 * [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture](https://arxiv.org/abs/1411.4734)
     * Title: Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture
@@ -80,14 +121,19 @@ count: 31
     * Abstract: In this paper we address three different computer vision tasks using a single basic architecture: depth prediction, surface normal estimation, and semantic labeling. We use a multiscale convolutional network that is able to adapt easily to each task using only small modifications, regressing from the input image to the output map directly. Our method progressively refines predictions using a sequence of scales, and captures many image details without any superpixels or low-level segmentation. We achieve state-of-the-art performance on benchmarks for all three tasks.
     * Comments:
         * > More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN. (DeepLabv1, 2014)
-* [Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)
+* [[Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)]
+    [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1505.04366/)]
     * Title: Learning Deconvolution Network for Semantic Segmentation
     * Year: 17 May `2015`
-    * Author: Hyeonwoo Noh
+    * Authors: Hyeonwoo Noh, Seunghoon Hong, Bohyung Han
+    * Institutions: Department of Computer Science and Engineering, POSTECH, Korea
     * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
-* [U-Net](https://arxiv.org/abs/1505.04597)
+* [[U-Net](https://arxiv.org/abs/1505.04597)]
+    [[pdf](https://arxiv.org/pdf/1505.04597.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1505.04597/)]
     * Title: U-Net: Convolutional Networks for Biomedical Image Segmentation
     * Year: 18 May `2015`
     * Authors: Olaf Ronneberger, Philipp Fischer, Thomas Brox
@@ -104,7 +150,9 @@ count: 31
     * Year: 08 May `2016`
     * Author: Golnaz Ghiasi
     * Abstract: CNN architectures have terrific recognition performance but rely on spatial pooling which makes it difficult to adapt them to tasks that require dense, pixel-accurate labeling. This paper makes two contributions: (1) We demonstrate that while the apparent spatial resolution of convolutional feature maps is low, the high-dimensional feature representation contains significant sub-pixel localization information. (2) We describe a multi-resolution reconstruction architecture based on a Laplacian pyramid that uses skip connections from higher resolution feature maps and multiplicative gating to successively refine segment boundaries reconstructed from lower-resolution maps. This approach yields state-of-the-art semantic segmentation results on the PASCAL VOC and Cityscapes segmentation benchmarks without resorting to more complex random-field inference or instance detection driven architectures.
-* [Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)
+* [[Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)]
+    [[pdf](https://arxiv.org/pdf/1511.03339.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.03339/)]
     * Title: Attention to Scale: Scale-aware Semantic Image Segmentation
     * Year: 10 Nov `2015`
     * Authors: Liang-Chieh Chen, Yi Yang, Jiang Wang, Wei Xu, Alan L. Yuille
@@ -157,7 +205,8 @@ count: 31
 
 ## DeepLab Family
 
-* [[DeepLabv1](https://arxiv.org/abs/1412.7062)][[Vanity](https://www.arxiv-vanity.com/papers/1412.7062/)]
+* [[DeepLabv1](https://arxiv.org/abs/1412.7062)]
+    [[Vanity](https://www.arxiv-vanity.com/papers/1412.7062/)]
     * Title: Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
     * Year: 22 Dec `2014`
     * Authors: Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, Alan L. Yuille
@@ -206,3 +255,27 @@ count: 31
     * Year: 08 Jan `2019`
     * Authors: Alexander Kirillov, Ross Girshick, Kaiming He, Piotr Dollár
     * Abstract: The recently introduced panoptic segmentation task has renewed our community's interest in unifying the tasks of instance segmentation (for thing classes) and semantic segmentation (for stuff classes). However, current state-of-the-art methods for this joint task use separate and dissimilar networks for instance and semantic segmentation, without performing any shared computation. In this work, we aim to unify these methods at the architectural level, designing a single network for both tasks. Our approach is to endow Mask R-CNN, a popular instance segmentation method, with a semantic segmentation branch using a shared Feature Pyramid Network (FPN) backbone. Surprisingly, this simple baseline not only remains effective for instance segmentation, but also yields a lightweight, top-performing method for semantic segmentation. In this work, we perform a detailed study of this minimally extended version of Mask R-CNN with FPN, which we refer to as Panoptic FPN, and show it is a robust and accurate baseline for both tasks. Given its effectiveness and conceptual simplicity, we hope our method can serve as a strong baseline and aid future research in panoptic segmentation.
+
+## Scene Parsing
+
+* [[Deep Convolutional Networks for Scene Parsing](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.183.8571)]
+    [[pdf](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.183.8571&rep=rep1&type=pdf)]
+    * Title: Deep Convolutional Networks for Scene Parsing
+    * Year: `2009`
+    * Authors: David Grangier , Léon Bottou , Ronan Collobert
+    * Abstract: We propose a deep learning strategy for scene parsing, i.e. to asssign a class label to each pixel of an image. We investigate the use of deep convolutional network for modeling the complex scene label structures, relying on a supervised greedy learning strategy. Compared to standard approaches based on CRFs, our strategy does not need hand-crafted features, allows modeling more complex spatial dependencies and has a lower inference cost. Experiments over the MSRC benchmark and the LabelMe dataset show the effectiveness of our approach. 1.
+
+## weakly supervised (Learning Deconvolution Network for Semantic Segmentation, 2015)
+
+* [BoxSup](https://arxiv.org/abs/1503.01640)
+    * Title: BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation
+    * Comments:
+        * > When only bounding box annotations are given for input images, [2, 19] refine the annotations through iterative procedures and obtain accurate segmentation outputs. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+* [Weakly- and Semi-Supervised Learning of a DCNN for Semantic Image Segmentation]
+    * Title: Weakly- and Semi-Supervised Learning of a DCNN for Semantic Image Segmentation
+    * Comments:
+        * > When only bounding box annotations are given for input images, [2, 19] refine the annotations through iterative procedures and obtain accurate segmentation outputs. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+* [From Image-level to Pixel-level Labeling with Convolutional Networks]
+    * Title: From Image-level to Pixel-level Labeling with Convolutional Networks
+    * Comments:
+        * > On the other hand, [20] performs semantic segmentation based only on image-level annotations in a multiple instance learning framework. (Learning Deconvolution Network for Semantic Segmentation, 2015)

@@ -28,6 +28,49 @@
 
 #### 1.2.3 Multilevel Cut with Class Purity Criterion
 
+## 2 RELATED WORK
+
+## 3 MULTISCALE FEATURE EXTRACTION FOR SCENE PARSING
+
+> The model proposed in this paper, depicted in Fig. 1, relies on two complementary image representations.
+
+> In the first representation, an image patch is seen as a point in $\mathbb{R}^{P}$, and we seek to find a transform $f: \mathbb{R}^{P} \to \mathbb{R}^{Q}$ that maps each patch into $\mathbb{R}^{Q}$, a space where it can be classified linearly.
+
+> This first representation typically suffers from two main problems when using a classical ConvNet where the image is divided following a grid pattern:
+> 1. The window considered rarely contains an object that is properly centered and scaled, and therefore offers a poor observation basis to predict the class of the underlying object;
+> 2. integrating a large context involves increasing the grid size and therefore the dimensionality $P$ of the input; given a finite amount of training data, it is then necessary to enforce some invariance in the function $f$ itself. This is usually achieved by using pooling/subsampling layers, which in turn degrades the ability of the model to precisely locate and delineate objects.
+
+> In this paper, f is implemented by a multiscale ConvNet, which allows integrating large contexts (as large as the complete scene) into local decisions, while still remaining manageable in terms of parameters/dimensionality. This multiscale model in which weights are shared across scales allows the model to capture long-range interactions without the penalty of extra parameters to train.
+
+> In the second representation, the image is seen as an edge-weighted graph on which one or several oversegmentations can be constructed.
+
+### 3.1 Scale-Invariant, Scene-Level Feature Extraction
+
+> Good internal representations are hierarchical. In vision, pixels are assembled into edglets, edglets into motifs, motifs into parts, parts into objects, and objects into scenes. This suggests that recognition architectures for vision (and for other modalities such as audio and natural language) should have multiple trainable stages stacked on top of each other, one for each level in the feature hierarchy. ConvNets provide a simple framework to learn such hierarchies of features.
+
+Notations:
+* Let $I$ denote the input image.
+* Let $N \in \mathbb{Z}_{++}$ denote the number of levels in the pyramid.
+* Let $g_{s}: \mathbb{R}^{C \times H \times W} \to \mathbb{R}^{C \times H \times W}$ the scaling/normalization function at level $s$ of the pyramid, for $s \in \{1, ..., N\}$.
+* Define $X_{s} \in \mathbb{R}^{C \times H \times W}$ by $X_{s} := g_{s}(I)$.
+
+### 3.2 Learning Discriminative Scale-Invariant Features
+
+Notations:
+* Let $k \in \mathbb{Z}_{++}$ denote the number of classes.
+* Let $\hat{c}_{i} \in \mathbb{R}^{k}$ denote the normalized prediction vector from the linear classifier for pixel $i$.
+
+## 4 SCENE LABELING STRATEGIES
+
+Notations:
+* Define $l_{i} := \underset{a \in \{1, ..., k\}}{\operatorname{argmax}}\ \hat{c}_{i, a}$ for each pixel $i$.
+
+### 4.1 Superpixels
+
+### 4.2 Conditional Random Fields
+
+### 4.3 Parameter-Free Multilevel Parsing
+
 
 
 ----------------------------------------------------------------------------------------------------
