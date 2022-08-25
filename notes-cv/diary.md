@@ -8,9 +8,9 @@
 * 2022.08.21 Sun: ESPNetv2
 * 2022.08.22 Mon: Xception
 * 2022.08.23 Tue: ShuffleNet V1
+* 2022.08.24 Wed: EfficientNetV1
 
 库存
 * Fully Convolutional Networks
-* 2022.08.22 Mon: EfficientNetV1
 * 2022.08.23 Tue: EfficientNetV2
 * 2022.08.24 Wed: Learning Deconvolution Network for Semantic Segmentation

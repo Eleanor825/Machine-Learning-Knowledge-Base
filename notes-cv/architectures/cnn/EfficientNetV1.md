@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/557565000
 # [Notes][Vision][CNN] EfficientNetV1
 
 * url: https://arxiv.org/abs/1905.11946

@@ -1,6 +1,6 @@
 # [Papers][Vision] 2D Object Detection
 
-count: 64
+count: 67
 
 ## Unclassified
 
@@ -201,11 +201,16 @@ count: 64
     * Year: 25 Jul `2016`
     * Author: Zhaowei Cai
     * Abstract: A unified deep neural network, denoted the multi-scale CNN (MS-CNN), is proposed for fast multi-scale object detection. The MS-CNN consists of a proposal sub-network and a detection sub-network. In the proposal sub-network, detection is performed at multiple output layers, so that receptive fields match objects of different scales. These complementary scale-specific detectors are combined to produce a strong multi-scale object detector. The unified network is learned end-to-end, by optimizing a multi-task loss. Feature upsampling by deconvolution is also explored, as an alternative to input upsampling, to reduce the memory and computation costs. State-of-the-art object detection performance, at up to 15 fps, is reported on datasets, such as KITTI and Caltech, containing a substantial number of small objects.
-* [FPN/Feature Pyramid Networks](https://arxiv.org/abs/1612.03144)
+* [[Feature Pyramid Networks (FPN)](https://arxiv.org/abs/1612.03144)]
+    [[pdf](https://arxiv.org/pdf/1612.03144.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1612.03144/)]
     * Title: Feature Pyramid Networks for Object Detection
     * Year: 09 Dec `2016`
-    * Author: Tsung-Yi Lin
+    * Authors: Tsung-Yi Lin, Piotr Dollár, Ross Girshick, Kaiming He, Bharath Hariharan, Serge Belongie
+    * Institutions: [Facebook AI Research (FAIR)], [Cornell University and Cornell Tech]
     * Abstract: Feature pyramids are a basic component in recognition systems for detecting objects at different scales. But recent deep learning object detectors have avoided pyramid representations, in part because they are compute and memory intensive. In this paper, we exploit the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to construct feature pyramids with marginal extra cost. A top-down architecture with lateral connections is developed for building high-level semantic feature maps at all scales. This architecture, called a Feature Pyramid Network (FPN), shows significant improvement as a generic feature extractor in several applications. Using FPN in a basic Faster R-CNN system, our method achieves state-of-the-art single-model results on the COCO detection benchmark without bells and whistles, surpassing all existing single-model entries including those from the COCO 2016 challenge winners. In addition, our method can run at 5 FPS on a GPU and thus is a practical and accurate solution to multi-scale object detection. Code will be made publicly available.
+    * Comments:
+        * > In contrast to ‘symmetric’ decoders [47], FPN uses a lightweight decoder (see Fig. 5). (Panoptic FPN, 2019)
 * [TDM](https://arxiv.org/abs/1612.06851)
     * Title: Beyond Skip Connections: Top-Down Modulation for Object Detection
     * Year: 20 Dec `2016`
