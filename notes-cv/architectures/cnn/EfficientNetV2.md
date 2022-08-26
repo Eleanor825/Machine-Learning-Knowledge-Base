@@ -112,5 +112,5 @@ Contributions
 
 ## Further Reading
 
-* [Tan & Le, 2019a] EfficientNetV1
+* [Tan & Le, 2019a] [EfficientNetV1](https://zhuanlan.zhihu.com/p/557565000)
 * [Huang et al., 2017] DenseNet

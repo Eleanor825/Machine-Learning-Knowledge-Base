@@ -1,6 +1,6 @@
 # [Papers][Vision] Segmentation
 
-count: 62
+count: 67
 
 ## some papers
 
@@ -72,6 +72,10 @@ count: 62
     * Year: 15 Jun `2015`
     * Author: Wei Liu
     * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
+* [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture](https://arxiv.org/abs/1411.4734)
+    * Title: Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture
+    * Comments:
+        * Introduced median frequency balancing.
 
 ## ----------------------------------------------------------------------------------------------------
 
@@ -175,10 +179,13 @@ count: 62
 
 > As an alternative to dilation, an encoder-decoder [2] or ‘U-Net’ [47] architecture can be used to increase feature resolution [25, 42, 19, 45]. (Panoptic FPN, 2019)
 
-* [Recombinator Networks](https://arxiv.org/abs/1511.07356)
+* [[Recombinator Networks](https://arxiv.org/abs/1511.07356)]
+    [[pdf](https://arxiv.org/pdf/1511.07356.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.07356/)]
     * Title: Recombinator Networks: Learning Coarse-to-Fine Feature Aggregation
     * Year: 23 Nov `2015`
-    * Author: Sina Honari
+    * Authors: Sina Honari, Jason Yosinski, Pascal Vincent, Christopher Pal
+    * Institutions: [University of Montreal], [Cornell University], [Ecole Polytechnique of Montreal], [CIFAR]
     * Abstract: Deep neural networks with alternating convolutional, max-pooling and decimation layers are widely used in state of the art architectures for computer vision. Max-pooling purposefully discards precise spatial information in order to create features that are more robust, and typically organized as lower resolution spatial feature maps. On some tasks, such as whole-image classification, max-pooling derived features are well suited; however, for tasks requiring precise localization, such as pixel level prediction and segmentation, max-pooling destroys exactly the information required to perform well. Precise localization may be preserved by shallow convnets without pooling but at the expense of robustness. Can we have our max-pooled multi-layered cake and eat it too? Several papers have proposed summation and concatenation based methods for combining upsampled coarse, abstract features with finer features to produce robust pixel level predictions. Here we introduce another model --- dubbed Recombinator Networks --- where coarse features inform finer features early in their formation such that finer features can make use of several layers of computation in deciding how to use coarse features. The model is trained once, end-to-end and performs better than summation-based architectures, reducing the error from the previous state of the art on two facial keypoint datasets, AFW and AFLW, by 30\% and beating the current state-of-the-art on 300W without using extra data. We improve performance even further by adding a denoising prediction model based on a novel convnet formulation.
 * Stacked Hourglass Networks for Human Pose Estimation
 * [Laplacian Pyramid](https://arxiv.org/abs/1605.02264)
@@ -239,6 +246,7 @@ count: 62
         * > Cogswell et al. (2014) use CRFs as a proposal mechanism for a DCNN-based reranking system. (DeepLabv1, 2014)
 * [[Conditional Random Fields as Recurrent Neural Networks](https://arxiv.org/abs/1502.03240)]
     [[pdf](https://arxiv.org/pdf/1502.03240.pdf)]
+    [vanity]
     * Title: Conditional Random Fields as Recurrent Neural Networks
     * Year: 11 Feb `2015`
     * Authors: Shuai Zheng, Sadeep Jayasumana, Bernardino Romera-Paredes, Vibhav Vineet, Zhizhong Su, Dalong Du, Chang Huang, Philip H. S. Torr

@@ -17,18 +17,63 @@
 
 ## 2 LITERATURE REVIEW
 
+## 3 ARCHITECTURE
 
+> SegNet has an encoder network and a corresponding decoder network, followed by a final pixelwise classification layer.
+
+> The encoder network consists of 13 convolutional layers which correspond to the first 13 convolutional layers in the VGG16 network [1] designed for object classification.
+
+> Each encoder layer has a corresponding decoder layer and hence the decoder network has 13 layers.
+
+> The final decoder output is fed to a multi-class soft-max classifier to produce class probabilities for each pixel independently.
+
+Encoder
+
+* Conv
+* BatchNormalization
+* ReLU
+* MaxPool(size=(2, 2), strides=(2, 2))
+
+> While several layers of max-pooling and sub-sampling can achieve more translation invariance for robust classification correspondingly there is a loss of spatial resolution of the feature maps.
+
+> The increasingly lossy (boundary detail) image representation is not beneficial for segmentation where boundary delineation is vital. Therefore, it is necessary to capture and store boundary information in the encoder feature maps before sub-sampling is performed.
+
+Decoder
+
+> The appropriate decoder in the decoder network upsamples its input feature map(s) using the memorized max-pooling indices from the corresponding encoder feature map(s). This step produces sparse feature map(s).
+
+> These feature maps are then convolved with a trainable decoder filter bank to produce dense feature maps.
+
+> A batch normalization step is then applied to each of these maps.
+
+### 3.1 Decoder Variants
+
+### 3.2 Training
+
+### 3.3 Analysis
+
+## 4 BENCHMARKING
+
+## 5 DISCUSSION AND FUTURE WORK
+
+## 6 CONCLUSION
 
 ----------------------------------------------------------------------------------------------------
 
 ## References
 
+* Badrinarayanan, Vijay, Alex Kendall, and Roberto Cipolla. "Segnet: A deep convolutional encoder-decoder architecture for image segmentation." *IEEE transactions on pattern analysis and machine intelligence* 39.12 (2017): 2481-2495.
+
 ## Further Reading
 
 * [1] VGG
-* [2] FCN
+* [2] Fully Convolutional Networks (FCN)
 * [3] DeepLabv1
+* [4] DeconvNet
 * [5] Inception-v1/GoogLeNet
 * [6] VGG
 * [15] Dilated Convolutions
 * [16] U-Net
+* [51] Inception-v2/Batch Normalization
+* [53] DeconvNet
+* [58] Fully Convolutional Networks (FCN)

@@ -61,6 +61,13 @@ count: 67
     * Authors: Yunyang Xiong, Hanxiao Liu, Suyog Gupta, Berkin Akin, Gabriel Bender, Yongzhe Wang, Pieter-Jan Kindermans, Mingxing Tan, Vikas Singh, Bo Chen
     * Abstract: Inverted bottleneck layers, which are built upon depthwise convolutions, have been the predominant building blocks in state-of-the-art object detection models on mobile devices. In this work, we investigate the optimality of this design pattern over a broad range of mobile accelerators by revisiting the usefulness of regular convolutions. We discover that regular convolutions are a potent component to boost the latency-accuracy trade-off for object detection on accelerators, provided that they are placed strategically in the network via neural architecture search. By incorporating regular convolutions in the search space and directly optimizing the network architectures for object detection, we obtain a family of object detection models, MobileDets, that achieve state-of-the-art results across mobile accelerators. On the COCO object detection task, MobileDets outperform MobileNetV3+SSDLite by 1.7 mAP at comparable mobile CPU inference latencies. MobileDets also outperform MobileNetV2+SSDLite by 1.9 mAP on mobile CPUs, 3.7 mAP on Google EdgeTPU, 3.4 mAP on Qualcomm Hexagon DSP and 2.7 mAP on Nvidia Jetson GPU without increasing latency. Moreover, MobileDets are comparable with the state-of-the-art MnasFPN on mobile CPUs even without using the feature pyramid, and achieve better mAP scores on both EdgeTPUs and DSPs with up to 2x speedup. Code and models are available in the TensorFlow Object Detection API: [this https URL](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
+## Localization
+
+* [[Efficient Object Localization Using Convolutional Networks](https://arxiv.org/abs/1411.4280)]
+    [[pdf](https://arxiv.org/pdf/1411.4280.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1411.4280/)]
+    * Title: Efficient Object Localization Using Convolutional Networks
+
 ## R-CNN Series
 
 * [R-CNN](https://arxiv.org/abs/1311.2524)

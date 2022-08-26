@@ -150,3 +150,5 @@ $$\begin{aligned}
 * [Sandler et al., 2018] MobileNetV2
 * [Hu et al., 2018] SENet
 * [Tan et al., 2019] MnasNet
+
+* [EfficientNetV2](https://zhuanlan.zhihu.com/p/558323195)

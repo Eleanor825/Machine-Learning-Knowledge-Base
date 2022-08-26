@@ -70,4 +70,4 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 * [21] LeNet
 * [29] OverFeat
 * [31] VGG
-* [32] Inception-v1
+* [32] Inception-v1/GoogLeNet
