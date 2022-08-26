@@ -1,6 +1,7 @@
 # Reading List
 
 Queue:
+* Conditional Random Fields as Recurrent Neural Networks
 * Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials
 
 * 2022.07.05 Tue:

@@ -43,6 +43,8 @@ count: 109
     * Authors: Matthew D. Zeiler; Graham W. Taylor; Rob Fergus
     * Abstract: We present a hierarchical model that learns image decompositions via alternating layers of convolutional sparse coding and max pooling. When trained on natural images, the layers of our model capture image information in a variety of forms: low-level edges, mid-level edge junctions, high-level object parts and complete objects. To build our model we rely on a novel inference scheme that ensures each layer reconstructs the input, rather than just the output of the layer directly beneath, as is common with existing hierarchical approaches. This makes it possible to learn multiple layers of representation and we show models with 4 layers, trained on images from the Caltech-101 and 256 datasets. When combined with a standard classifier, features extracted from these models outperform SIFT, as well as representations from other feature learning methods.
 
+## ----------------------------------------------------------------------------------------------------
+
 ## Reformulations of the Connections between Network Layers
 
 > Following these works, there have been further reformulations oof the connections between network layers [DPN], [DenseNets], which show promising improvements to the learning and representational properties of deep networks. (SENet, 2017)
@@ -234,6 +236,8 @@ count: 109
     * Authors: Xingcheng Zhang, Zhizhong Li, Chen Change Loy, Dahua Lin
     * Abstract: A number of studies have shown that increasing the depth or width of convolutional networks is a rewarding approach to improve the performance of image recognition. In our study, however, we observed difficulties along both directions. On one hand, the pursuit for very deep networks is met with a diminishing return and increased training difficulty; on the other hand, widening a network would result in a quadratic growth in both computational cost and memory demand. These difficulties motivate us to explore structural diversity in designing deep networks, a new dimension beyond just depth and width. Specifically, we present a new family of modules, namely the PolyInception, which can be flexibly inserted in isolation or in a composition as replacements of different parts of a network. Choosing PolyInception modules with the guidance of architectural efficiency can improve the expressive power while preserving comparable computational cost. The Very Deep PolyNet, designed following this direction, demonstrates substantial improvements over the state-of-the-art on the ILSVRC 2012 benchmark. Compared to Inception-ResNet-v2, it reduces the top-5 validation error on single crops from 4.9% to 4.25%, and that on multi-crops from 3.7% to 3.45%.
 
+## ----------------------------------------------------------------------------------------------------
+
 ## Deformable Convolutions
 
 * [Deformable ConvNets v1](https://arxiv.org/abs/1703.06211)
@@ -280,6 +284,8 @@ count: 109
 * Speeding up Convolutional Neural Networks with Low Rank Expansions
 * Xception: Deep Learning with Depthwise Separable Convolutions
 * NIN, see `mlp.md`.
+
+## ----------------------------------------------------------------------------------------------------
 
 ## Light Weight Networks
 
@@ -407,6 +413,8 @@ count: 109
     * Comments:
         * > RegNet (Radosavovic et al., 2020), ResNeSt (Zhang et al., 2020), TResNet (Ridnik et al., 2020), and EfficientNet-X (Li et al., 2021) focus on GPU and/or TPU inference speed. (EfficientNetV2, 2021)
 
+## ----------------------------------------------------------------------------------------------------
+
 ## Compressing Convolutional Networks
 
 * [Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation](https://arxiv.org/abs/1404.0736)
@@ -446,6 +454,8 @@ count: 109
     * Authors: Chong Li, C. J. Richard Shi
     * Abstract: We present COBLA---Constrained Optimization Based Low-rank Approximation---a systematic method of finding an optimal low-rank approximation of a trained convolutional neural network, subject to constraints in the number of multiply-accumulate (MAC) operations and the memory footprint. COBLA optimally allocates the constrained computation resource into each layer of the approximated network. The singular value decomposition of the network weight is computed, then a binary masking variable is introduced to denote whether a particular singular value and the corresponding singular vectors are used in low-rank approximation. With this formulation, the number of the MAC operations and the memory footprint are represented as linear constraints in terms of the binary masking variables. The resulted 0-1 integer programming problem is approximately solved by sequential quadratic programming. COBLA does not introduce any hyperparameter. We empirically demonstrate that COBLA outperforms prior art using the SqueezeNet and VGG-16 architecture on the ImageNet dataset.
 * Learning Structured Sparsity in Deep Neural Networks
+
+## ----------------------------------------------------------------------------------------------------
 
 ## Low-bit Networks (ESPNetv1, 2018) (4) + (ESPNetv2, 2018) (3)
 
@@ -542,6 +552,8 @@ count: 109
 
 * [Efficient and accurate approximations of nonlinear convolutional networks]
 * [Accelerating very deep convolutional networks for classification and detection]
+
+## ----------------------------------------------------------------------------------------------------
 
 ## Sparse Networks (ESPNetv1, 2018) (3)
 
@@ -650,6 +662,11 @@ count: 109
     * Abstract: Convolutional neural networks (CNNs) are commonly trained using a fixed spatial image size predetermined for a given model. Although trained on images of aspecific size, it is well established that CNNs can be used to evaluate a wide range of image sizes at test time, by adjusting the size of intermediate feature maps. In this work, we describe and evaluate a novel mixed-size training regime that mixes several image sizes at training time. We demonstrate that models trained using our method are more resilient to image size changes and generalize well even on small images. This allows faster inference by using smaller images attest time. For instance, we receive a 76.43% top-1 accuracy using ResNet50 with an image size of 160, which matches the accuracy of the baseline model with 2x fewer computations. Furthermore, for a given image size used at test time, we show this method can be exploited either to accelerate training or the final test accuracy. For example, we are able to reach a 79.27% accuracy with a model evaluated at a 288 spatial size for a relative improvement of 14% over the baseline.
     * Comments:
         * > Another closely related work is Mix&Match (Hoffer et al., 2019), which randomly sample different image size for each batch. (EfficientNetV2, 2021)
+
+## Unsupervised Learning
+
+* [Discriminative Unsupervised Feature Learning with Exemplar Convolutional Neural Networks](https://arxiv.org/abs/1406.6909)
+    * Title: Discriminative Unsupervised Feature Learning with Exemplar Convolutional Neural Networks
 
 ## Unclassified
 

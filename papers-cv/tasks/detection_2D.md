@@ -181,11 +181,6 @@ count: 67
 
 ## Multi-Layer Networks
 
-* [ParseNet](https://arxiv.org/abs/1506.04579)
-    * Title: ParseNet: Looking Wider to See Better
-    * Year: 15 Jun `2015`
-    * Author: Wei Liu
-    * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
 * [ION/Inside-Outside Net](https://arxiv.org/abs/1512.04143)
     * Title: Inside-Outside Net: Detecting Objects in Context with Skip Pooling and Recurrent Neural Networks
     * Year: 14 Dec `2015`
