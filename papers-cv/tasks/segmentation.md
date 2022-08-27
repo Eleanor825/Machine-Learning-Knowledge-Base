@@ -4,13 +4,6 @@ count: 67
 
 ## some papers
 
-* [[Feedforward semantic segmentation with zoom-out features](https://arxiv.org/abs/1412.0774)]
-    [[pdf](https://arxiv.org/pdf/1412.0774.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1412.0774/)]
-    * Title: Feedforward semantic segmentation with zoom-out features
-    * Year: 02 Dec `2014`
-    * Authors: Mohammadreza Mostajabi, Payman Yadollahpour, Gregory Shakhnarovich
-    * Abstract: We introduce a purely feed-forward architecture for semantic segmentation. We map small image elements (superpixels) to rich feature representations extracted from a sequence of nested regions of increasing extent. These regions are obtained by "zooming out" from the superpixel all the way to scene-level resolution. This approach exploits statistical structure in the image and in the label space without setting up explicit structured prediction mechanisms, and thus avoids complex and expensive inference. Instead superpixels are classified by a feedforward multilayer network. Our architecture achieves new state of the art performance in semantic segmentation, obtaining 64.4% average accuracy on the PASCAL VOC 2012 test set.
 * [Learning Rich Features from RGB-D Images for Object Detection and Segmentation](https://arxiv.org/abs/1407.5736)
     * Title: Learning Rich Features from RGB-D Images for Object Detection and Segmentation
     * Year: 22 Jul `2014`
@@ -113,6 +106,17 @@ count: 67
     * Authors: Stephen Gould , Jim Rodgers , David Cohen , Gal Elidan , Daphne Koller
     * Abstract: Multi-class image segmentation has made significant advances in recent years through the combination of local and global features. One important type of global feature is that of inter-class spatial relationships. For example, identifying “tree” pixels indicates that pixels above and to the sides are more likely to be “sky” whereas pixels below are more likely to be “grass.” Incorporating such global information across the entire image and between all classes is a computational challenge as it is image-dependent, and hence, cannot be precomputed. In this work we propose a method for capturing global information from inter-class spatial relationships and encoding it as a local feature. We employ a two-stage classification process to label all image pixels. First, we generate predictions which are used to compute a local relative location feature from learned relative location maps. In the second stage, we combine this with appearance-based features to provide a final segmentation. We compare our results to recent published results on several multiclass image segmentation databases and show that the incorporation of relative location information allows us to significantly outperform the current state-of-the-art.
 
+## Superpixels (LRR, 2016) (2)
+
+* Convolutional Feature Masking for Joint Object and Stuff Segmentation
+* [[Feedforward semantic segmentation with zoom-out features](https://arxiv.org/abs/1412.0774)]
+    [[pdf](https://arxiv.org/pdf/1412.0774.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1412.0774/)]
+    * Title: Feedforward semantic segmentation with zoom-out features
+    * Year: 02 Dec `2014`
+    * Authors: Mohammadreza Mostajabi, Payman Yadollahpour, Gregory Shakhnarovich
+    * Abstract: We introduce a purely feed-forward architecture for semantic segmentation. We map small image elements (superpixels) to rich feature representations extracted from a sequence of nested regions of increasing extent. These regions are obtained by "zooming out" from the superpixel all the way to scene-level resolution. This approach exploits statistical structure in the image and in the label space without setting up explicit structured prediction mechanisms, and thus avoids complex and expensive inference. Instead superpixels are classified by a feedforward multilayer network. Our architecture achieves new state of the art performance in semantic segmentation, obtaining 64.4% average accuracy on the PASCAL VOC 2012 test set.
+
 ## ----------------------------------------------------------------------------------------------------
 
 ## Semantic Segmentation
@@ -188,10 +192,16 @@ count: 67
     * Institutions: [University of Montreal], [Cornell University], [Ecole Polytechnique of Montreal], [CIFAR]
     * Abstract: Deep neural networks with alternating convolutional, max-pooling and decimation layers are widely used in state of the art architectures for computer vision. Max-pooling purposefully discards precise spatial information in order to create features that are more robust, and typically organized as lower resolution spatial feature maps. On some tasks, such as whole-image classification, max-pooling derived features are well suited; however, for tasks requiring precise localization, such as pixel level prediction and segmentation, max-pooling destroys exactly the information required to perform well. Precise localization may be preserved by shallow convnets without pooling but at the expense of robustness. Can we have our max-pooled multi-layered cake and eat it too? Several papers have proposed summation and concatenation based methods for combining upsampled coarse, abstract features with finer features to produce robust pixel level predictions. Here we introduce another model --- dubbed Recombinator Networks --- where coarse features inform finer features early in their formation such that finer features can make use of several layers of computation in deciding how to use coarse features. The model is trained once, end-to-end and performs better than summation-based architectures, reducing the error from the previous state of the art on two facial keypoint datasets, AFW and AFLW, by 30\% and beating the current state-of-the-art on 300W without using extra data. We improve performance even further by adding a denoising prediction model based on a novel convnet formulation.
 * Stacked Hourglass Networks for Human Pose Estimation
-* [Laplacian Pyramid](https://arxiv.org/abs/1605.02264)
+* [[The Laplacian Pyramid as a Compact Image Code](https://ieeexplore.ieee.org/document/1095851)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1095851)]
+    * Title: The Laplacian Pyramid as a Compact Image Code
+* [[Laplacian Pyramid Reconstruction and Refinement (LRR)](https://arxiv.org/abs/1605.02264)]
+    [[pdf](https://arxiv.org/pdf/1605.02264.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1605.02264/)]
     * Title: Laplacian Pyramid Reconstruction and Refinement for Semantic Segmentation
     * Year: 08 May `2016`
-    * Author: Golnaz Ghiasi
+    * Authors: Golnaz Ghiasi, Charless C. Fowlkes
+    * Institutions: [Dept. of Computer Science, University of California, Irvine]
     * Abstract: CNN architectures have terrific recognition performance but rely on spatial pooling which makes it difficult to adapt them to tasks that require dense, pixel-accurate labeling. This paper makes two contributions: (1) We demonstrate that while the apparent spatial resolution of convolutional feature maps is low, the high-dimensional feature representation contains significant sub-pixel localization information. (2) We describe a multi-resolution reconstruction architecture based on a Laplacian pyramid that uses skip connections from higher resolution feature maps and multiplicative gating to successively refine segment boundaries reconstructed from lower-resolution maps. This approach yields state-of-the-art semantic segmentation results on the PASCAL VOC and Cityscapes segmentation benchmarks without resorting to more complex random-field inference or instance detection driven architectures.
 * [SharpMask](https://arxiv.org/abs/1603.08695)
     * Title: Learning to Refine Object Segments
@@ -225,6 +235,7 @@ count: 67
         > Semantic segmentation based on FCNs [1, 17] have a couple of critical limitations. First, the network can handle only a single scale semantics within image due to the fixed-size receptive field. Therefore, the object that is substantially larger or smaller than the receptive field may be fragmented or mislabeled. ... Second, the detailed structures of an object are often lost or smoothed because the label map, input to the deconvolutional layer, is too coarse and deconvolution procedure is overly simple. (Learning Deconvolution Network for Semantic Segmentation, 2015)
         * > In this approach, fully connected layers in the standard CNNs are interpreted as convolutions with large receptive fields, and segmentation is achieved using coarse class score maps obtained by feedforwarding an input image. An interesting idea in this work is that a simple interpolation filter is employed for deconvolution and only the CNN part of the network is fine-tuned to learn deconvolution indirectly. (Learning Deconvolution Network for Semantic Segmentation, 2015)
         * > In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size. (PVT, 2021)
+        * skip connections??? where?
 
 ## ----------------------------------------------------------------------------------------------------
 
@@ -311,7 +322,7 @@ count: 67
     * Institutions: [Oxford Brookes], [Microsoft Research]
     * Abstract: Markov and Conditional random fields (CRFs) used in computer vision typically model only local interactions between variables, as this is computationally tractable. In this paper we consider a class of global potentials defined over all variables in the CRF. We show how they can be readily optimised using standard graph cut algorithms at little extra expense compared to a standard pairwise field. This result can be directly used for the problem of class based image segmentation which has seen increasing recent interest within computer vision. Here the aim is to assign a label to each pixel of a given image from a set of possible object classes. Typically these methods use random fields to model local interactions between pixels or super-pixels. One of the cues that helps recognition is global object co-occurrence statistics, a measure of which classes (such as chair or motorbike) are likely to occur in the same image together. There have been several approaches proposed to exploit this property, but all of them suffer from different limitations and typically carry a high computational cost, preventing their application on large images. We find that the new model we propose produces an improvement in the labelling compared to just using a pairwise model.
 
-## MAP and CRF (SegNet, 2015)
+## MAP and CRF (SegNet, 2015) (2)
 
 * [[Fully Connected Deep Structured Networks](https://arxiv.org/abs/1503.02351)]
     [[pdf](https://arxiv.org/pdf/1503.02351.pdf)]
@@ -344,7 +355,11 @@ count: 67
     * Authors: Nadia Payet, Sinisa Todorovic
     * Abstract: We combine random forest (RF) and conditional random field (CRF) into a new computational framework, called random forest random field (RF)^2. Inference of (RF)^2 uses the Swendsen-Wang cut algorithm, characterized by Metropolis-Hastings jumps. A jump from one state to another depends on the ratio of the proposal distributions, and on the ratio of the posterior distributions of the two states. Prior work typically resorts to a parametric estimation of these four distributions, and then computes their ratio. Our key idea is to instead directly estimate these ratios using RF. RF collects in leaf nodes of each decision tree the class histograms of training examples. We use these class histograms for a non-parametric estimation of the distribution ratios. We derive the theoretical error bounds of a two-class (RF)^2. (RF)^2 is applied to a challenging task of multiclass object recognition and segmentation over a random field of input image regions. In our empirical evaluation, we use only the visual information provided by image regions (e.g., color, texture, spatial layout), whereas the competing methods additionally use higher-level cues about the horizon location and 3D layout of surfaces in the scene. Nevertheless, (RF)^2 outperforms the state of the art on benchmark datasets, in terms of accuracy and computation time.
 
-## Conditional Random Fields (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012)
+## Fully Connected CRFs (LRR, 2016)
+
+* Efficient inference in fully connected crfs with gaussian edge potentials
+
+## Conditional Random Fields - Other
 
 * [[Conditional random fields: Probabilistic models for segmenting and labeling sequence data](https://dl.acm.org/doi/10.5555/645530.655813)]
     [[pdf](https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&context=cis_papers)]
@@ -353,6 +368,8 @@ count: 67
     * Authors: John D. Lafferty, Andrew McCallum, Fernando C. N. Pereira
     * Institutions: [Carnegie Mellon University], [WhizBang! Labs], [University of Pennsylvania]
     * Abstract: We present conditional random fields, a framework for building probabilistic models to segment and label sequence data. Conditional random fields offer several advantages over hidden Markov models and stochastic grammars for such tasks, including the ability to relax strong independence assumptions made in those models. Conditional random fields also avoid a fundamental limitation of maximum entropy Markov models (MEMMs) and other discriminative Markov models based on directed graphical models, which can be biased towards states with few successor states. We present iterative parameter estimation algorithms for conditional random fields and compare the performance of the resulting models to HMMs and MEMMs on synthetic and natural-language data.
+* [Semantic Image Segmentation via Deep Parsing Network](https://arxiv.org/abs/1509.02634)
+    * Title: Semantic Image Segmentation via Deep Parsing Network
 
 ## ----------------------------------------------------------------------------------------------------
 

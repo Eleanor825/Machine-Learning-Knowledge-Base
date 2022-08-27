@@ -36,12 +36,14 @@ count: 109
     * Year: 05 Aug `2010`
     * Authors: Matthew D. Zeiler; Dilip Krishnan; Graham W. Taylor; Rob Fergus
     * Abstract: Building robust low and mid-level image representations, beyond edge primitives, is a long-standing goal in vision. Many existing feature detectors spatially pool edge information which destroys cues such as edge intersections, parallelism and symmetry. We present a learning framework where features that capture these mid-level cues spontaneously emerge from image data. Our approach is based on the convolutional decomposition of images under a sparsity constraint and is totally unsupervised. By building a hierarchy of such decompositions we can learn rich feature sets that are a robust image representation for both the analysis and synthesis of images.
-* [[Adaptive deconvolutional networks for mid and high level feature learning](https://ieeexplore.ieee.org/document/6126474)]
+* [[Adaptive Deconvolutional Networks](https://ieeexplore.ieee.org/document/6126474)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6126474)]
     * Title: Adaptive deconvolutional networks for mid and high level feature learning
     * Year: 12 January `2012`
     * Authors: Matthew D. Zeiler; Graham W. Taylor; Rob Fergus
     * Abstract: We present a hierarchical model that learns image decompositions via alternating layers of convolutional sparse coding and max pooling. When trained on natural images, the layers of our model capture image information in a variety of forms: low-level edges, mid-level edge junctions, high-level object parts and complete objects. To build our model we rely on a novel inference scheme that ensures each layer reconstructs the input, rather than just the output of the layer directly beneath, as is common with existing hierarchical approaches. This makes it possible to learn multiple layers of representation and we show models with 4 layers, trained on images from the Caltech-101 and 256 datasets. When combined with a standard classifier, features extracted from these models outperform SIFT, as well as representations from other feature learning methods.
+    * Comments:
+        * > One insight is that spatial information lost during max-pooling can in part be recovered by unpooling and deconvolution [36] providing a useful way to visualize input dependency in feed-forward models [35]. (LRR, 2016)
 
 ## ----------------------------------------------------------------------------------------------------
 

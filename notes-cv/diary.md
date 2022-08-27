@@ -10,7 +10,7 @@
 * 2022.08.23 Tue: ShuffleNet V1
 * 2022.08.24 Wed: EfficientNetV1
 * 2022.08.25 Thu: EfficientNetV2
-* 2022.08.26 Fri: 
+* 2022.08.26 Fri: Recombinator Networks
 
 库存
 * Fully Convolutional Networks
