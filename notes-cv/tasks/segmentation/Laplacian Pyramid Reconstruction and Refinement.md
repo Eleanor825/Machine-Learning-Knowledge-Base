@@ -19,6 +19,16 @@
 
 > A second key insight is that while activation maps at lower-levels of the CNN hierarchy lack object category specificity, they do contain higher spatial resolution information.
 
+## 3 Reconstruction with learned basis functions
+
+**Reconstruction by deconvolution**
+
+**Connection to spline interpolation**
+
+**Learning basis functions**
+
+## 4 Laplacian Pyramid Refinement
+
 ----------------------------------------------------------------------------------------------------
 
 ## References

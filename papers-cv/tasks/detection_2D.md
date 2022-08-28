@@ -4,23 +4,11 @@ count: 67
 
 ## Unclassified
 
-* [DPM](https://ieeexplore.ieee.org/document/5255236)
-    * Title: Object Detection with Discriminatively Trained Part-Based Models
-    * Year: `2010`
-    * Author: Pedro F. Felzenszwalb
-    * Abstract: We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL data sets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin-sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI--SVM in terms of latent variables. A latent SVM is semiconvex, and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function.
 * [Multi-Stage Features](https://arxiv.org/abs/1212.0142)
     * Title: Pedestrian Detection with Unsupervised Multi-Stage Feature Learning
     * Year: 01 Dec `2012`
     * Author: Pierre Sermanet
     * Abstract: Pedestrian detection is a problem of considerable practical interest. Adding to the list of successful applications of deep learning methods to vision, we report state-of-the-art and competitive results on all major pedestrian datasets with a convolutional network model. The model uses a few new twists, such as multi-stage features, connections that skip layers to integrate global shape information with local distinctive motif information, and an unsupervised method based on convolutional sparse coding to pre-train the filters at each stage.
-* [MultiBox](https://arxiv.org/abs/1312.2249)
-    * Title: Scalable Object Detection using Deep Neural Networks
-    * Year: 08 Dec `2013`
-    * Authors: Dumitru Erhan, Christian Szegedy, Alexander Toshev, Dragomir Anguelov
-    * Abstract: Deep convolutional neural networks have recently achieved state-of-the-art performance on a number of image recognition benchmarks, including the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC-2012). The winning model on the localization sub-task was a network that predicts a single bounding box and a confidence score for each object category in the image. Such a model captures the whole-image context around the objects but cannot handle multiple instances of the same object in the image without naively replicating the number of outputs for each instance. In this work, we propose a saliency-inspired neural network model for detection, which predicts a set of class-agnostic bounding boxes along with a single score for each box, corresponding to its likelihood of containing any object of interest. The model naturally handles a variable number of instances for each class and allows for cross-class generalization at the highest levels of the network. We are able to obtain competitive recognition performance on VOC2007 and ILSVRC2012, while using only the top few predicted locations in each image and a small number of neural network evaluations.
-    * Comments:
-        * > Unlike R-CNN, Szegedy et al. train a convolutional neural network to predict regions of interest [8] instead of using Selective Search. MultiBox can also perform single object detection by replacing the confidence prediction with a single class prediction. However, MultiBox cannot perform general object detection and is still just a piece in a larger detection pipeline, requiring further image patch classification. (YOLOv1, 2015)
 * [OverFeat](https://arxiv.org/abs/1312.6229)
     * Title: OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks
     * Year: 21 Dec `2013`
@@ -37,10 +25,8 @@ count: 67
 <!-- * Author: Ross Girshick -->
 <!-- * Abstract: Deformable part models (DPMs) and convolutional neural networks (CNNs) are two widely used tools for visual recognition. They are typically viewed as distinct approaches: DPMs are graphical models (Markov random fields), while CNNs are "black-box" non-linear classifiers. In this paper, we show that a DPM can be formulated as a CNN, thus providing a novel synthesis of the two ideas. Our construction involves unrolling the DPM inference algorithm and mapping each step to an equivalent (and at times novel) CNN layer. From this perspective, it becomes natural to replace the standard image features used in DPM with a learned feature extractor. We call the resulting model DeepPyramid DPM and experimentally validate it on PASCAL VOC. DeepPyramid DPM significantly outperforms DPMs based on histograms of oriented gradients features (HOG) and slightly outperforms a comparable version of the recently introduced R-CNN detection system, while running an order of magnitude faster. -->
 * (07 May 2015) [Multi-Region CNN](https://arxiv.org/abs/1505.01749) (Object detection via a multi-region & semantic segmentation-aware CNN model)
-* (08 May 2015) [DeepBox](https://arxiv.org/abs/1505.02146) (DeepBox: Learning Objectness with Convolutional Networks)
 * (25 Jun 2015) [AttentionNet](https://arxiv.org/abs/1506.07704) (AttentionNet: Aggregating Weak Directions for Accurate Object Detection)
 * (15 Oct 2015) [DeepProposal](https://arxiv.org/abs/1510.04445) (DeepProposal: Hunting Objects by Cascading Deep Convolutional Layers)
-* (03 Dec 2014) [Scalable, High-Quality Object Detection](https://arxiv.org/abs/1412.1441)
 * (07 Jan 2019) [Scale-Aware Trident Networks for Object Detection](https://arxiv.org/abs/1901.01892)
 * (16 Apr 2019) [CenterNet](https://arxiv.org/abs/1904.07850) (Objects as Points)
 * (03 Jun 2020) [DetectoRS](https://arxiv.org/abs/2006.02334): Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolutions
@@ -68,6 +54,104 @@ count: 67
     [[vanity](https://www.arxiv-vanity.com/papers/1411.4280/)]
     * Title: Efficient Object Localization Using Convolutional Networks
 
+## Sliding-Window Framework
+
+* [[HOG](https://ieeexplore.ieee.org/document/1467360)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1467360)]
+    * Title: Histograms of oriented gradients for human detection
+    * Year: 25 July `2005`
+    * Authors: N. Dalal; B. Triggs
+    * Institutions: [INRIA Rhone-Alps]
+    * Abstract: We study the question of feature sets for robust visual object recognition; adopting linear SVM based human detection as a test case. After reviewing existing edge and gradient based descriptors, we show experimentally that grids of histograms of oriented gradient (HOG) descriptors significantly outperform existing feature sets for human detection. We study the influence of each stage of the computation on performance, concluding that fine-scale gradients, fine orientation binning, relatively coarse spatial binning, and high-quality local contrast normalization in overlapping descriptor blocks are all important for good results. The new approach gives near-perfect separation on the original MIT pedestrian database, so we introduce a more challenging dataset containing over 1800 annotated human images with a large range of pose variations and backgrounds.
+* [DPM](https://ieeexplore.ieee.org/document/5255236)
+    * Title: Object Detection with Discriminatively Trained Part-Based Models
+    * Year: `2010`
+    * Author: Pedro F. Felzenszwalb
+    * Abstract: We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL data sets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin-sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI--SVM in terms of latent variables. A latent SVM is semiconvex, and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function.
+
+## Object Proposal Approaches (DeepMask, 2015)
+
+Survey
+
+* [What makes for effective detection proposals?](https://arxiv.org/abs/1502.05082)
+    * Title: What makes for effective detection proposals?
+    * Year: 17 Feb `2015`
+    * Authors: Jan Hosang, Rodrigo Benenson, Piotr Dollár, Bernt Schiele
+    * Abstract: Current top performing object detectors employ detection proposals to guide the search for objects, thereby avoiding exhaustive sliding window search across images. Despite the popularity and widespread use of detection proposals, it is unclear which trade-offs are made when using them during object detection. We provide an in-depth analysis of twelve proposal methods along with four baselines regarding proposal repeatability, ground truth annotation recall on PASCAL, ImageNet, and MS COCO, and their impact on DPM, R-CNN, and Fast R-CNN detection performance. Our analysis shows that for object detection improving proposal localisation accuracy is as important as improving recall. We introduce a novel metric, the average recall (AR), which rewards both high recall and good localisation and correlates surprisingly well with detection performance. Our findings show common strengths and weaknesses of existing methods, and provide insights and metrics for selecting and tuning proposal methods.
+
+> Most object proposal approaches leverage low-level grouping and saliency cues. These approaches usually fall into three categories: (1) objectness scoring [1, 34], in which proposals are extracted by measuring the objectness score of bounding boxes, (2) seed segmentation [14, 16, 17], where models start with multiple seed regions and generate separate foreground-background segmentation for each seed, and (3) superpixel merging [31, 24], where multiple over-segmentations are merged according to various heuristics.
+
+objectness scoring
+
+* [Measuring the Objectness of Image Windows](https://ieeexplore.ieee.org/document/6133291)
+    * Title: Measuring the Objectness of Image Windows
+* [Edge Boxes](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.453.5208)
+    * Title: Edge Boxes: Locating Object Proposals from Edges
+
+seed segmentation
+
+* [RIGOR](https://ieeexplore.ieee.org/document/6909444)
+    * Title: RIGOR: Reusing Inference in Graph Cuts for Generating Object Regions
+* [Geodesic Object Proposals](https://link.springer.com/chapter/10.1007/978-3-319-10602-1_47)
+    * Title: Geodesic Object Proposals
+    * Authors: Philipp Krähenbühl & Vladlen Koltun
+* [Learning to propose objects](https://ieeexplore.ieee.org/abstract/document/7298765)
+    * Title: Learning to propose objects
+    * Authors: Philipp Krähenbühl; Vladlen Koltun
+
+superpixel merging
+
+* [Selective Search](https://link.springer.com/article/10.1007/s11263-013-0620-5)
+    * Title: Selective Search for Object Recognition
+    * Year: 02 April `2013`
+    * Authors: J. R. R. Uijlings, K. E. A. van de Sande, T. Gevers & A. W. M. Smeulders
+    * Institutions: [University of Trento, Trento, Italy], [University of Amsterdam, Amsterdam, The Netherlands]
+    * Abstract: This paper addresses the problem of generating possible object locations for use in object recognition. We introduce selective search which combines the strength of both an exhaustive search and segmentation. Like segmentation, we use the image structure to guide our sampling process. Like exhaustive search, we aim to capture all possible object locations. Instead of a single technique to generate possible object locations, we diversify our search and use a variety of complementary image partitionings to deal with as many image conditions as possible. Our selective search results in a small set of data-driven, class-independent, high quality locations, yielding 99 % recall and a Mean Average Best Overlap of 0.879 at 10,097 locations. The reduced number of locations compared to an exhaustive search enables the use of stronger machine learning techniques and stronger appearance models for object recognition. In this paper we show that our selective search enables the use of the powerful Bag-of-Words model for recognition. The selective search software is made publicly available (Software: http://disi.unitn.it/~uijlings/SelectiveSearch.html).
+* [[Multiscale Combinatorial Grouping (MCG)](https://arxiv.org/abs/1503.00848)]
+    [[pdf](https://arxiv.org/pdf/1503.00848.pdf)]
+    [vanity]
+    * Title: Multiscale Combinatorial Grouping for Image Segmentation and Object Proposal Generation
+    * Year: 03 Mar `2015`
+    * Authors: Jordi Pont-Tuset, Pablo Arbelaez, Jonathan T. Barron, Ferran Marques, Jitendra Malik
+    * Institutions: [Department of Signal Theory and Communications, Universitat Politecnica de Catalunya, BarcelonaTech (UPC), Spain], [Department of Biomedical Engineering, Universidad de los Andes, Colombia], [ Department of Electrical Engineering and Computer Science, University of California at Berkeley, Berkeley]
+    * Abstract: We propose a unified approach for bottom-up hierarchical image segmentation and object proposal generation for recognition, called Multiscale Combinatorial Grouping (MCG). For this purpose, we first develop a fast normalized cuts algorithm. We then propose a high-performance hierarchical segmenter that makes effective use of multiscale information. Finally, we propose a grouping strategy that combines our multiscale regions into highly-accurate object proposals by exploring efficiently their combinatorial space. We also present Single-scale Combinatorial Grouping (SCG), a faster version of MCG that produces competitive proposals in under five second per image. We conduct an extensive and comprehensive empirical validation on the BSDS500, SegVOC12, SBD, and COCO datasets, showing that MCG produces state-of-the-art contours, hierarchical regions, and object proposals.
+
+## Two-Stage Detectors
+
+* [MultiBox](https://arxiv.org/abs/1312.2249)
+    * Title: Scalable Object Detection using Deep Neural Networks
+    * Year: 08 Dec `2013`
+    * Authors: Dumitru Erhan, Christian Szegedy, Alexander Toshev, Dragomir Anguelov
+    * Abstract: Deep convolutional neural networks have recently achieved state-of-the-art performance on a number of image recognition benchmarks, including the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC-2012). The winning model on the localization sub-task was a network that predicts a single bounding box and a confidence score for each object category in the image. Such a model captures the whole-image context around the objects but cannot handle multiple instances of the same object in the image without naively replicating the number of outputs for each instance. In this work, we propose a saliency-inspired neural network model for detection, which predicts a set of class-agnostic bounding boxes along with a single score for each box, corresponding to its likelihood of containing any object of interest. The model naturally handles a variable number of instances for each class and allows for cross-class generalization at the highest levels of the network. We are able to obtain competitive recognition performance on VOC2007 and ILSVRC2012, while using only the top few predicted locations in each image and a small number of neural network evaluations.
+    * Comments:
+        * > Unlike R-CNN, Szegedy et al. train a convolutional neural network to predict regions of interest [8] instead of using Selective Search. MultiBox can also perform single object detection by replacing the confidence prediction with a single class prediction. However, MultiBox cannot perform general object detection and is still just a piece in a larger detection pipeline, requiring further image patch classification. (YOLOv1, 2015)
+* [[MSC-MultiBox](https://arxiv.org/abs/1412.1441)]
+    [[pdf](https://arxiv.org/pdf/1412.1441.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1412.1441/)]
+    * Title: Scalable, High-Quality Object Detection
+    * Year: 03 Dec `2014`
+    * Authors: Christian Szegedy, Scott Reed, Dumitru Erhan, Dragomir Anguelov, Sergey Ioffe
+    * Institutions: [Google Inc.], [University of Michigan]
+    * Abstract: Current high-quality object detection approaches use the scheme of salience-based object proposal methods followed by post-classification using deep convolutional features. This spurred recent research in improving object proposal methods. However, domain agnostic proposal generation has the principal drawback that the proposals come unranked or with very weak ranking, making it hard to trade-off quality for running time. This raises the more fundamental question of whether high-quality proposal generation requires careful engineering or can be derived just from data alone. We demonstrate that learning-based proposal methods can effectively match the performance of hand-engineered methods while allowing for very efficient runtime-quality trade-offs. Using the multi-scale convolutional MultiBox (MSC-MultiBox) approach, we substantially advance the state-of-the-art on the ILSVRC 2014 detection challenge data set, with 0.5 mAP for a single model and 0.52 mAP for an ensemble of two models. MSC-Multibox significantly improves the proposal quality over its predecessor MultiBox~method: AP increases from 0.42 to 0.53 for the ILSVRC detection challenge. Finally, we demonstrate improved bounding-box recall compared to Multiscale Combinatorial Grouping with less proposals on the Microsoft-COCO data set.
+* [DeepBox](https://arxiv.org/abs/1505.02146)
+    * Title: DeepBox: Learning Objectness with Convolutional Networks
+    * Year: 08 May `2015`
+    * Comments:
+        * > Deepbox [19] proposed a ConvNet model that learns to rerank proposals generated by EdgeBox, a bottom-up method for bounding box proposals. (DeepMask, 2015)
+* [[segDeepM](https://arxiv.org/abs/1502.04275)]
+    [[pdf](https://arxiv.org/pdf/1502.04275.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1502.04275/)]
+    * Title: segDeepM: Exploiting Segmentation and Context in Deep Neural Networks for Object Detection
+    * Year: 15 Feb `2015`
+    * Authors: Yukun Zhu, Raquel Urtasun, Ruslan Salakhutdinov, Sanja Fidler
+    * Institutions: [University of Toronto]
+    * Abstract: In this paper, we propose an approach that exploits object segmentation in order to improve the accuracy of object detection. We frame the problem as inference in a Markov Random Field, in which each detection hypothesis scores object appearance as well as contextual information using Convolutional Neural Networks, and allows the hypothesis to choose and score a segment out of a large pool of accurate object segmentation proposals. This enables the detector to incorporate additional evidence when it is available and thus results in more accurate detections. Our experiments show an improvement of 4.1% in mAP over the R-CNN baseline on PASCAL VOC 2010, and 3.4% over the current state-of-the-art, demonstrating the power of our approach.
+* [Spatial Pyramid Pooling (SPP)](https://arxiv.org/abs/1406.4729)
+    * Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
+    * Year: 18 Jun `2014`
+    * Author: Kaiming He
+    * Abstract: Existing deep convolutional neural networks (CNNs) require a fixed-size (e.g., 224x224) input image. This requirement is "artificial" and may reduce the recognition accuracy for the images or sub-images of an arbitrary size/scale. In this work, we equip the networks with another pooling strategy, "spatial pyramid pooling", to eliminate the above requirement. The new network structure, called SPP-net, can generate a fixed-length representation regardless of image size/scale. Pyramid pooling is also robust to object deformations. With these advantages, SPP-net should in general improve all CNN-based image classification methods. On the ImageNet 2012 dataset, we demonstrate that SPP-net boosts the accuracy of a variety of CNN architectures despite their different designs. On the Pascal VOC 2007 and Caltech101 datasets, SPP-net achieves state-of-the-art classification results using a single full-image representation and no fine-tuning. The power of SPP-net is also significant in object detection. Using SPP-net, we compute the feature maps from the entire image only once, and then pool features in arbitrary regions (sub-images) to generate fixed-length representations for training the detectors. This method avoids repeatedly computing the convolutional features. In processing test images, our method is 24-102x faster than the R-CNN method, while achieving better or comparable accuracy on Pascal VOC 2007. In ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2014, our methods rank #2 in object detection and #3 in image classification among all 38 teams. This manuscript also introduces the improvement made for this competition.
+
 ## R-CNN Series
 
 * [R-CNN](https://arxiv.org/abs/1311.2524)
@@ -75,11 +159,8 @@ count: 67
     * Year: 11 Nov `2013`
     * Author: Ross Girshick
     * Abstract: Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30% relative to the previous best result on VOC 2012---achieving a mAP of 53.3%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also compare R-CNN to OverFeat, a recently proposed sliding-window detector based on a similar CNN architecture. We find that R-CNN outperforms OverFeat by a large margin on the 200-class ILSVRC2013 detection dataset. Source code for the complete system is available at [this http URL](http://www.cs.berkeley.edu/~rbg/rcnn).
-* [SPP](https://arxiv.org/abs/1406.4729)
-    * Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
-    * Year: 18 Jun `2014`
-    * Author: Kaiming He
-    * Abstract: Existing deep convolutional neural networks (CNNs) require a fixed-size (e.g., 224x224) input image. This requirement is "artificial" and may reduce the recognition accuracy for the images or sub-images of an arbitrary size/scale. In this work, we equip the networks with another pooling strategy, "spatial pyramid pooling", to eliminate the above requirement. The new network structure, called SPP-net, can generate a fixed-length representation regardless of image size/scale. Pyramid pooling is also robust to object deformations. With these advantages, SPP-net should in general improve all CNN-based image classification methods. On the ImageNet 2012 dataset, we demonstrate that SPP-net boosts the accuracy of a variety of CNN architectures despite their different designs. On the Pascal VOC 2007 and Caltech101 datasets, SPP-net achieves state-of-the-art classification results using a single full-image representation and no fine-tuning. The power of SPP-net is also significant in object detection. Using SPP-net, we compute the feature maps from the entire image only once, and then pool features in arbitrary regions (sub-images) to generate fixed-length representations for training the detectors. This method avoids repeatedly computing the convolutional features. In processing test images, our method is 24-102x faster than the R-CNN method, while achieving better or comparable accuracy on Pascal VOC 2007. In ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2014, our methods rank #2 in object detection and #3 in image classification among all 38 teams. This manuscript also introduces the improvement made for this competition.
+    * Comments:
+        * > Girshick et al. [10] proposed a two-phase approach. First, a rich set of object proposals (i.e., a set of image regions which are likely to contain an object) is generated using a fast (but possibly imprecise) algorithm. Second, a convolutional neural network classifier is applied on each of the proposals. This approach provides a notable gain in object detection accuracy compared to classic sliding window approaches. Since then, most state-of-the-art object detectors for both the PASCAL VOC [7] and ImageNet [5] datasets rely on object proposals as a first preprocessing step [10, 15, 33]. (DeepMask, 2015)
 * [Fast R-CNN](https://arxiv.org/abs/1504.08083)
     * Title: Fast R-CNN
     * Year: 30 Apr `2015`
@@ -306,3 +387,8 @@ count: 67
     * Year: 26 Mar `2019`
     * Authors: Yukang Chen, Tong Yang, Xiangyu Zhang, Gaofeng Meng, Xinyu Xiao, Jian Sun
     * Abstract: Object detectors are usually equipped with backbone networks designed for image classification. It might be sub-optimal because of the gap between the tasks of image classification and object detection. In this work, we present DetNAS to use Neural Architecture Search (NAS) for the design of better backbones for object detection. It is non-trivial because detection training typically needs ImageNet pre-training while NAS systems require accuracies on the target detection task as supervisory signals. Based on the technique of one-shot supernet, which contains all possible networks in the search space, we propose a framework for backbone search on object detection. We train the supernet under the typical detector training schedule: ImageNet pre-training and detection fine-tuning. Then, the architecture search is performed on the trained supernet, using the detection task as the guidance. This framework makes NAS on backbones very efficient. In experiments, we show the effectiveness of DetNAS on various detectors, for instance, one-stage RetinaNet and the two-stage FPN. We empirically find that networks searched on object detection shows consistent superiority compared to those searched on ImageNet classification. The resulting architecture achieves superior performance than hand-crafted networks on COCO with much less FLOPs complexity.
+
+## Weekly-Supervised Learning
+
+* [Is object localization for free? - Weakly-supervised learning with convolutional neural networks](https://ieeexplore.ieee.org/document/7298668)
+    * Title: Is object localization for free? - Weakly-supervised learning with convolutional neural networks

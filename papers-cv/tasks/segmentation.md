@@ -145,10 +145,12 @@ count: 67
     * Comments:
         * > Among the first have been Farabet et al. (2013) who apply DCNNs at multiple image resolutions and then employ a segmentation tree to smooth the prediction results. (DeepLabv1, 2014)
         * > Farabet et al. (2013) treat superpixels as nodes for a local pairwise CRF and use graph-cuts for discrete inference. (DeepLabv1, 2014)
-* [Recurrent Convolutional Neural Networks for Scene Labeling](https://proceedings.mlr.press/v32/pinheiro14.html)
+* [[Recurrent Convolutional Neural Networks for Scene Labeling](https://proceedings.mlr.press/v32/pinheiro14.html)]
+    [[pdf](http://proceedings.mlr.press/v32/pinheiro14.pdf)]
     * Title: Recurrent Convolutional Neural Networks for Scene Labeling
     * Year: Jun `2014`
-    * Author: Pedro Pinheiro
+    * Authors: Pedro Pinheiro, Ronan Collobert
+    * Institutions: [Ecole Polytechnique Fed´ erale de Lausanne (EPFL), Lausanne, Switzerland], [Idiap Research Institute, Martigny, Switzerland]
     * Abstract: The goal of the scene labeling task is to assign a class label to each pixel in an image. To ensure a good visual coherence and a high class accuracy, it is essential for a model to capture long range pixel) label dependencies in images. In a feed-forward architecture, this can be achieved simply by considering a sufficiently large input context patch, around each pixel to be labeled. We propose an approach that consists of a recurrent convolutional neural network which allows us to consider a large input context while limiting the capacity of the model. Contrary to most standard approaches, our method does not rely on any segmentation technique nor any task-specific features. The system is trained in an end-to-end manner over raw pixels, and models complex spatial dependencies with low inference cost. As the context size increases with the built-in recurrence, the system identifies and corrects its own errors. Our approach yields state-of-the-art performance on both the Stanford Background Dataset and the SIFT Flow Dataset, while remaining very fast at test time.
 * [$N^{4}$-Fields: Neural Network Nearest Neighbor Fields for Image Transforms](https://arxiv.org/abs/1406.6558)
     * Title: $N^{4}$-Fields: Neural Network Nearest Neighbor Fields for Image Transforms
@@ -203,10 +205,13 @@ count: 67
     * Authors: Golnaz Ghiasi, Charless C. Fowlkes
     * Institutions: [Dept. of Computer Science, University of California, Irvine]
     * Abstract: CNN architectures have terrific recognition performance but rely on spatial pooling which makes it difficult to adapt them to tasks that require dense, pixel-accurate labeling. This paper makes two contributions: (1) We demonstrate that while the apparent spatial resolution of convolutional feature maps is low, the high-dimensional feature representation contains significant sub-pixel localization information. (2) We describe a multi-resolution reconstruction architecture based on a Laplacian pyramid that uses skip connections from higher resolution feature maps and multiplicative gating to successively refine segment boundaries reconstructed from lower-resolution maps. This approach yields state-of-the-art semantic segmentation results on the PASCAL VOC and Cityscapes segmentation benchmarks without resorting to more complex random-field inference or instance detection driven architectures.
-* [SharpMask](https://arxiv.org/abs/1603.08695)
+* [[SharpMask](https://arxiv.org/abs/1603.08695)]
+    [[pdf](https://arxiv.org/pdf/1603.08695.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1603.08695/)]
     * Title: Learning to Refine Object Segments
     * Year: 29 Mar `2016`
-    * Author: Pedro O. Pinheiro
+    * Authors: Pedro O. Pinheiro, Tsung-Yi Lin, Ronan Collobert, Piotr Dollàr
+    * Institutions: [Facebook AI Research (FAIR)]
     * Abstract: Object segmentation requires both object-level information and low-level pixel data. This presents a challenge for feedforward networks: lower layers in convolutional nets capture rich spatial information, while upper layers encode object-level knowledge but are invariant to factors such as pose and appearance. In this work we propose to augment feedforward nets for object segmentation with a novel top-down refinement approach. The resulting bottom-up/top-down architecture is capable of efficiently generating high-fidelity object masks. Similarly to skip connections, our approach leverages features at all layers of the net. Unlike skip connections, our approach does not attempt to output independent predictions at each layer. Instead, we first output a coarse `mask encoding' in a feedforward pass, then refine this mask encoding in a top-down pass utilizing features at successively lower layers. The approach is simple, fast, and effective. Building on the recent DeepMask network for generating object proposals, we show accuracy improvements of 10-20% in average recall for various setups. Additionally, by optimizing the overall network architecture, our approach, which we call SharpMask, is 50% faster than the original DeepMask network (under .8s per image).
 
 ## Fully Convolutional Networks
@@ -435,10 +440,13 @@ count: 67
     * Comments:
         * > More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification. (DeepLabv1, 2014)
         * > More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers. (U-Net, 2015)
-* [DeepMask](https://arxiv.org/abs/1506.06204)
+* [[DeepMask](https://arxiv.org/abs/1506.06204)]
+    [[pdf](https://arxiv.org/pdf/1506.06204.pdf)]
+    [vanity]
     * Title: Learning to Segment Object Candidates
     * Year: 20 Jun `2015`
-    * Author: Pedro O. Pinheiro
+    * Authors: Pedro O. Pinheiro, Ronan Collobert, Piotr Dollar
+    * Institutions: [Facebook AI Research]
     * Abstract: Recent object detection systems rely on two critical steps: (1) a set of object proposals is predicted as efficiently as possible, and (2) this set of candidate proposals is then passed to an object classifier. Such approaches have been shown they can be fast, while achieving the state of the art in detection performance. In this paper, we propose a new way to generate object proposals, introducing an approach based on a discriminative convolutional network. Our model is trained jointly with two objectives: given an image patch, the first part of the system outputs a class-agnostic segmentation mask, while the second part of the system outputs the likelihood of the patch being centered on a full object. At test time, the model is efficiently applied on the whole test image and generates a set of segmentation masks, each of them being assigned with a corresponding object likelihood score. We show that our model yields significant improvements over state-of-the-art object proposal algorithms. In particular, compared to previous approaches, our model obtains substantially higher object recall using fewer proposals. We also show that our model is able to generalize to unseen categories it has not seen during training. Unlike all previous approaches for generating object masks, we do not rely on edges, superpixels, or any other form of low-level segmentation.
 * [[Fully Convolutional Instance-aware Semantic Segmentation](https://arxiv.org/abs/1611.07709)]
     [[pdf](https://arxiv.org/pdf/1611.07709.pdf)]
