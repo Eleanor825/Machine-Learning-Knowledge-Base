@@ -1,6 +1,8 @@
 # Reading List
 
 Queue:
+* Learning Hierarchical Features for Scene Labeling
+* Recurrent Convolutional Neural Networks for Scene Labeling
 * Conditional Random Fields as Recurrent Neural Networks
 * Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials
 

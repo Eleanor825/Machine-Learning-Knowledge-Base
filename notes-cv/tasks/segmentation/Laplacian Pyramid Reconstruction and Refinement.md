@@ -41,5 +41,5 @@
 * [16] ResNet
 * [17] Identity Mappings
 * [24] Fully Convolutional Networks (FCN)
-* [26] Learning Deconvolution
+* [26] [Learning Deconvolution](https://zhuanlan.zhihu.com/p/558646271)
 * [36] Adaptive Deconvolutional Networks

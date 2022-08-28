@@ -269,7 +269,7 @@ superpixel merging
 
 ## Multi-Layer Networks
 
-* [ION/Inside-Outside Net](https://arxiv.org/abs/1512.04143)
+* [Inside-Outside Net (ION)](https://arxiv.org/abs/1512.04143)
     * Title: Inside-Outside Net: Detecting Objects in Context with Skip Pooling and Recurrent Neural Networks
     * Year: 14 Dec `2015`
     * Author: Sean Bell

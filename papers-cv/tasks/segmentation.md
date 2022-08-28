@@ -14,13 +14,6 @@ count: 67
     * Year: `1991`
     * Authors: Ofer Matan, Christopher J. C. Burges, Yann LeCun, John Denker
     * Abstract: We present a feed-forward network architecture for recognizing an uncon(cid:173) strained handwritten multi-digit string. This is an extension of previous work on recognizing isolated digits. In this architecture a single digit rec(cid:173) ognizer is replicated over the input. The output layer of the network is coupled to a Viterbi alignment module that chooses the best interpretation of the input. Training errors are propagated through the Viterbi module. The novelty in this procedure is that segmentation is done on the feature maps developed in the Space Displacement Neural Network (SDNN) rather than the input (pixel) space.
-* [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture](https://arxiv.org/abs/1411.4734)
-    * Title: Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture
-    * Year: 18 Nov `2014`
-    * Authors: David Eigen, Rob Fergus
-    * Abstract: In this paper we address three different computer vision tasks using a single basic architecture: depth prediction, surface normal estimation, and semantic labeling. We use a multiscale convolutional network that is able to adapt easily to each task using only small modifications, regressing from the input image to the output map directly. Our method progressively refines predictions using a sequence of scales, and captures many image details without any superpixels or low-level segmentation. We achieve state-of-the-art performance on benchmarks for all three tasks.
-    * Comments:
-        * > More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN. (DeepLabv1, 2014)
 * [[Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)]
     [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.04366/)]
@@ -67,8 +60,16 @@ count: 67
     * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
 * [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture](https://arxiv.org/abs/1411.4734)
     * Title: Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture
+    * Year: 18 Nov `2014`
+    * Authors: David Eigen, Rob Fergus
+    * Abstract: In this paper we address three different computer vision tasks using a single basic architecture: depth prediction, surface normal estimation, and semantic labeling. We use a multiscale convolutional network that is able to adapt easily to each task using only small modifications, regressing from the input image to the output map directly. Our method progressively refines predictions using a sequence of scales, and captures many image details without any superpixels or low-level segmentation. We achieve state-of-the-art performance on benchmarks for all three tasks.
     * Comments:
+        * > More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN. (DeepLabv1, 2014)
         * Introduced median frequency balancing.
+* [[Semantic texton forests for image categorization and segmentation](https://ieeexplore.ieee.org/document/4587503)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4587503)]
+    * Title: Semantic texton forests for image categorization and segmentation
+    * Year: Jamie Shotton; Matthew Johnson; Roberto Cipolla
 
 ## ----------------------------------------------------------------------------------------------------
 
@@ -78,11 +79,7 @@ count: 67
 
 * [Convolutional Feature Masking for Joint Object and Stuff Segmentation](https://arxiv.org/abs/1412.1283)
     * Title: Convolutional Feature Masking for Joint Object and Stuff Segmentation
-* [Simultaneous Detection and Segmentation](https://arxiv.org/abs/1407.1808)
-    * Title: Simultaneous Detection and Segmentation
-    * Year: 07 Jul `2014`
-    * Author: Bharath Hariharan
-    * Abstract: We aim to detect all instances of a category in an image and, for each instance, mark the pixels that belong to it. We call this task Simultaneous Detection and Segmentation (SDS). Unlike classical bounding box detection, SDS requires a segmentation and not just a box. Unlike classical semantic segmentation, we require individual object instances. We build on recent work that uses convolutional neural networks to classify category-independent region proposals (R-CNN [16]), introducing a novel architecture tailored for SDS. We then use category-specific, top- down figure-ground predictions to refine our bottom-up proposals. We show a 7 point boost (16% relative) over our baselines on SDS, a 5 point boost (10% relative) over state-of-the-art on semantic segmentation, and state-of-the-art performance in object detection. Finally, we provide diagnostic tools that unpack performance and provide directions for future work.
+* Simultaneous Detection and Segmentation
 * Hypercolumns for Object Segmentation and Fine-grained Localization
 
 ## Superpixels (Learning Hierarchical Features for Scene Labeling, 2013)
@@ -205,14 +202,7 @@ count: 67
     * Authors: Golnaz Ghiasi, Charless C. Fowlkes
     * Institutions: [Dept. of Computer Science, University of California, Irvine]
     * Abstract: CNN architectures have terrific recognition performance but rely on spatial pooling which makes it difficult to adapt them to tasks that require dense, pixel-accurate labeling. This paper makes two contributions: (1) We demonstrate that while the apparent spatial resolution of convolutional feature maps is low, the high-dimensional feature representation contains significant sub-pixel localization information. (2) We describe a multi-resolution reconstruction architecture based on a Laplacian pyramid that uses skip connections from higher resolution feature maps and multiplicative gating to successively refine segment boundaries reconstructed from lower-resolution maps. This approach yields state-of-the-art semantic segmentation results on the PASCAL VOC and Cityscapes segmentation benchmarks without resorting to more complex random-field inference or instance detection driven architectures.
-* [[SharpMask](https://arxiv.org/abs/1603.08695)]
-    [[pdf](https://arxiv.org/pdf/1603.08695.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1603.08695/)]
-    * Title: Learning to Refine Object Segments
-    * Year: 29 Mar `2016`
-    * Authors: Pedro O. Pinheiro, Tsung-Yi Lin, Ronan Collobert, Piotr Dollàr
-    * Institutions: [Facebook AI Research (FAIR)]
-    * Abstract: Object segmentation requires both object-level information and low-level pixel data. This presents a challenge for feedforward networks: lower layers in convolutional nets capture rich spatial information, while upper layers encode object-level knowledge but are invariant to factors such as pose and appearance. In this work we propose to augment feedforward nets for object segmentation with a novel top-down refinement approach. The resulting bottom-up/top-down architecture is capable of efficiently generating high-fidelity object masks. Similarly to skip connections, our approach leverages features at all layers of the net. Unlike skip connections, our approach does not attempt to output independent predictions at each layer. Instead, we first output a coarse `mask encoding' in a feedforward pass, then refine this mask encoding in a top-down pass utilizing features at successively lower layers. The approach is simple, fast, and effective. Building on the recent DeepMask network for generating object proposals, we show accuracy improvements of 10-20% in average recall for various setups. Additionally, by optimizing the overall network architecture, our approach, which we call SharpMask, is 50% faster than the original DeepMask network (under .8s per image).
+* Learning to Refine Object Segments (SharpMask)
 
 ## Fully Convolutional Networks
 
@@ -243,8 +233,10 @@ count: 67
         * skip connections??? where?
 
 ## ----------------------------------------------------------------------------------------------------
+## Graphical model networks
+## ----------------------------------------------------------------------------------------------------
 
-## Conditional Random Fields (CRF) (DeepLabv1, 2014)
+### Conditional Random Fields (CRF) (DeepLabv1, 2014)
 
 * [[Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials](https://arxiv.org/abs/1210.5644)]
     [[pdf](https://arxiv.org/pdf/1210.5644.pdf)]
@@ -270,7 +262,7 @@ count: 67
     * Comments:
         * > The predictive performance of FCN has been improved further by appending the FCN with a recurrent neural network (RNN) [10] and fine-tuning them on large datasets [21],[42]. The RNN layers mimic the sharp boundary delineation capabilities of CRFs while exploiting the feature representation power of FCN’s. (SegNet, 2015)
 
-## MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)
+### MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)
 
 * [[Multiscale conditional random fields for image labeling](https://ieeexplore.ieee.org/document/1315232)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1315232)]
@@ -327,18 +319,19 @@ count: 67
     * Institutions: [Oxford Brookes], [Microsoft Research]
     * Abstract: Markov and Conditional random fields (CRFs) used in computer vision typically model only local interactions between variables, as this is computationally tractable. In this paper we consider a class of global potentials defined over all variables in the CRF. We show how they can be readily optimised using standard graph cut algorithms at little extra expense compared to a standard pairwise field. This result can be directly used for the problem of class based image segmentation which has seen increasing recent interest within computer vision. Here the aim is to assign a label to each pixel of a given image from a set of possible object classes. Typically these methods use random fields to model local interactions between pixels or super-pixels. One of the cues that helps recognition is global object co-occurrence statistics, a measure of which classes (such as chair or motorbike) are likely to occur in the same image together. There have been several approaches proposed to exploit this property, but all of them suffer from different limitations and typically carry a high computational cost, preventing their application on large images. We find that the new model we propose produces an improvement in the labelling compared to just using a pairwise model.
 
-## MAP and CRF (SegNet, 2015) (2)
+### MAP and CRF (SegNet, 2015) (2)
 
 * [[Fully Connected Deep Structured Networks](https://arxiv.org/abs/1503.02351)]
     [[pdf](https://arxiv.org/pdf/1503.02351.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1503.02351/)]
     * Title: Fully Connected Deep Structured Networks
+    * Authors: Alexander G. Schwing, Raquel Urtasun
 * [[Efficient piecewise training of deep structured models for semantic segmentation](https://arxiv.org/abs/1504.01013)]
     [[pdf](https://arxiv.org/pdf/1504.01013.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1504.01013/)]
     * Title: Efficient piecewise training of deep structured models for semantic segmentation
 
-## Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)
+### Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)
 
 * Objects in Context
 * [[Random Field Model for Integration of Local Information and Global Information](https://ieeexplore.ieee.org/document/4497207)]
@@ -360,11 +353,11 @@ count: 67
     * Authors: Nadia Payet, Sinisa Todorovic
     * Abstract: We combine random forest (RF) and conditional random field (CRF) into a new computational framework, called random forest random field (RF)^2. Inference of (RF)^2 uses the Swendsen-Wang cut algorithm, characterized by Metropolis-Hastings jumps. A jump from one state to another depends on the ratio of the proposal distributions, and on the ratio of the posterior distributions of the two states. Prior work typically resorts to a parametric estimation of these four distributions, and then computes their ratio. Our key idea is to instead directly estimate these ratios using RF. RF collects in leaf nodes of each decision tree the class histograms of training examples. We use these class histograms for a non-parametric estimation of the distribution ratios. We derive the theoretical error bounds of a two-class (RF)^2. (RF)^2 is applied to a challenging task of multiclass object recognition and segmentation over a random field of input image regions. In our empirical evaluation, we use only the visual information provided by image regions (e.g., color, texture, spatial layout), whereas the competing methods additionally use higher-level cues about the horizon location and 3D layout of surfaces in the scene. Nevertheless, (RF)^2 outperforms the state of the art on benchmark datasets, in terms of accuracy and computation time.
 
-## Fully Connected CRFs (LRR, 2016)
+### Fully Connected CRFs (LRR, 2016)
 
 * Efficient inference in fully connected crfs with gaussian edge potentials
 
-## Conditional Random Fields - Other
+### Conditional Random Fields - Other
 
 * [[Conditional random fields: Probabilistic models for segmenting and labeling sequence data](https://dl.acm.org/doi/10.5555/645530.655813)]
     [[pdf](https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&context=cis_papers)]
@@ -376,9 +369,7 @@ count: 67
 * [Semantic Image Segmentation via Deep Parsing Network](https://arxiv.org/abs/1509.02634)
     * Title: Semantic Image Segmentation via Deep Parsing Network
 
-## ----------------------------------------------------------------------------------------------------
-
-## DeepLab Family
+### DeepLab Family
 
 * [[DeepLabv1](https://arxiv.org/abs/1412.7062)]
     [[pdf](https://arxiv.org/pdf/1412.7062.pdf)]
@@ -415,6 +406,8 @@ count: 67
     * Authors: Chenxi Liu, Liang-Chieh Chen, Florian Schroff, Hartwig Adam, Wei Hua, Alan Yuille, Li Fei-Fei
     * Abstract: Recently, Neural Architecture Search (NAS) has successfully identified neural network architectures that exceed human designed ones on large-scale image classification. In this paper, we study NAS for semantic image segmentation. Existing works often focus on searching the repeatable cell structure, while hand-designing the outer network structure that controls the spatial resolution changes. This choice simplifies the search space, but becomes increasingly problematic for dense image prediction which exhibits a lot more network level architectural variations. Therefore, we propose to search the network level structure in addition to the cell level structure, which forms a hierarchical architecture search space. We present a network level search space that includes many popular designs, and develop a formulation that allows efficient gradient-based architecture search (3 P100 GPU days on Cityscapes images). We demonstrate the effectiveness of the proposed method on the challenging Cityscapes, PASCAL VOC 2012, and ADE20K datasets. Auto-DeepLab, our architecture searched specifically for semantic image segmentation, attains state-of-the-art performance without any ImageNet pretraining.
 
+## ----------------------------------------------------------------------------------------------------
+
 ## Transformer Architecture Applied to Segmentation
 
 * [SETR](https://arxiv.org/abs/2012.15840)
@@ -432,6 +425,11 @@ count: 67
 
 ## Instance Segmentation
 
+* [Simultaneous Detection and Segmentation (SDS)](https://arxiv.org/abs/1407.1808)
+    * Title: Simultaneous Detection and Segmentation
+    * Year: 07 Jul `2014`
+    * Author: Bharath Hariharan
+    * Abstract: We aim to detect all instances of a category in an image and, for each instance, mark the pixels that belong to it. We call this task Simultaneous Detection and Segmentation (SDS). Unlike classical bounding box detection, SDS requires a segmentation and not just a box. Unlike classical semantic segmentation, we require individual object instances. We build on recent work that uses convolutional neural networks to classify category-independent region proposals (R-CNN [16]), introducing a novel architecture tailored for SDS. We then use category-specific, top- down figure-ground predictions to refine our bottom-up proposals. We show a 7 point boost (16% relative) over our baselines on SDS, a 5 point boost (10% relative) over state-of-the-art on semantic segmentation, and state-of-the-art performance in object detection. Finally, we provide diagnostic tools that unpack performance and provide directions for future work.
 * [Hypercolumns](https://arxiv.org/abs/1411.5752)
     * Title: Hypercolumns for Object Segmentation and Fine-grained Localization
     * Year: 21 Nov `2014`
@@ -448,6 +446,22 @@ count: 67
     * Authors: Pedro O. Pinheiro, Ronan Collobert, Piotr Dollar
     * Institutions: [Facebook AI Research]
     * Abstract: Recent object detection systems rely on two critical steps: (1) a set of object proposals is predicted as efficiently as possible, and (2) this set of candidate proposals is then passed to an object classifier. Such approaches have been shown they can be fast, while achieving the state of the art in detection performance. In this paper, we propose a new way to generate object proposals, introducing an approach based on a discriminative convolutional network. Our model is trained jointly with two objectives: given an image patch, the first part of the system outputs a class-agnostic segmentation mask, while the second part of the system outputs the likelihood of the patch being centered on a full object. At test time, the model is efficiently applied on the whole test image and generates a set of segmentation masks, each of them being assigned with a corresponding object likelihood score. We show that our model yields significant improvements over state-of-the-art object proposal algorithms. In particular, compared to previous approaches, our model obtains substantially higher object recall using fewer proposals. We also show that our model is able to generalize to unseen categories it has not seen during training. Unlike all previous approaches for generating object masks, we do not rely on edges, superpixels, or any other form of low-level segmentation.
+    * Comments:
+        * > DeepMask is trained to jointly generate a class-agnostic object mask and an associated 'objectness' score for each input image patch. At inference time, the model is run convolutionally to generate a dense set of scored segmentation proposals. (SharpMask, 2016)
+        * > DeepMask generates masks that are accurate on the object level but only coarsely align with object boundaries. (SharpMask, 2016)
+* [[SharpMask](https://arxiv.org/abs/1603.08695)]
+    [[pdf](https://arxiv.org/pdf/1603.08695.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1603.08695/)]
+    * Title: Learning to Refine Object Segments
+    * Year: 29 Mar `2016`
+    * Authors: Pedro O. Pinheiro, Tsung-Yi Lin, Ronan Collobert, Piotr Dollàr
+    * Institutions: [Facebook AI Research (FAIR)]
+    * Abstract: Object segmentation requires both object-level information and low-level pixel data. This presents a challenge for feedforward networks: lower layers in convolutional nets capture rich spatial information, while upper layers encode object-level knowledge but are invariant to factors such as pose and appearance. In this work we propose to augment feedforward nets for object segmentation with a novel top-down refinement approach. The resulting bottom-up/top-down architecture is capable of efficiently generating high-fidelity object masks. Similarly to skip connections, our approach leverages features at all layers of the net. Unlike skip connections, our approach does not attempt to output independent predictions at each layer. Instead, we first output a coarse `mask encoding' in a feedforward pass, then refine this mask encoding in a top-down pass utilizing features at successively lower layers. The approach is simple, fast, and effective. Building on the recent DeepMask network for generating object proposals, we show accuracy improvements of 10-20% in average recall for various setups. Additionally, by optimizing the overall network architecture, our approach, which we call SharpMask, is 50% faster than the original DeepMask network (under .8s per image).
+* [Instance-aware Semantic Segmentation via Multi-task Network Cascades](https://arxiv.org/abs/1512.04412)
+    * Title: Instance-aware Semantic Segmentation via Multi-task Network Cascades
+    * Year: 14 Dec `2015`
+    * Authors: Jifeng Dai, Kaiming He, Jian Sun
+    * Abstract: Semantic segmentation research has recently witnessed rapid progress, but many leading methods are unable to identify object instances. In this paper, we present Multi-task Network Cascades for instance-aware semantic segmentation. Our model consists of three networks, respectively differentiating instances, estimating masks, and categorizing objects. These networks form a cascaded structure, and are designed to share their convolutional features. We develop an algorithm for the nontrivial end-to-end training of this causal, cascaded structure. Our solution is a clean, single-step training framework and can be generalized to cascades that have more stages. We demonstrate state-of-the-art instance-aware semantic segmentation accuracy on PASCAL VOC. Meanwhile, our method takes only 360ms testing an image using VGG-16, which is two orders of magnitude faster than previous systems for this challenging problem. As a by product, our method also achieves compelling object detection results which surpass the competitive Fast/Faster R-CNN systems. The method described in this paper is the foundation of our submissions to the MS COCO 2015 segmentation competition, where we won the 1st place.
 * [[Fully Convolutional Instance-aware Semantic Segmentation](https://arxiv.org/abs/1611.07709)]
     [[pdf](https://arxiv.org/pdf/1611.07709.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1611.07709/)]

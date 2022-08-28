@@ -5,3 +5,4 @@
 * Effects of Pooling Layers:
     * Reduce the size of the feature maps and hence reduce computations.
     * Introduce robustness (enforces local invariance).
+> Pooling controls model capacity and increases receptive field size, resulting in a coarse, highly-semantic feature representation. (SharpMask, 2016)
