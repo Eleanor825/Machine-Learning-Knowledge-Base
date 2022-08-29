@@ -99,6 +99,7 @@ count: 109
     * Comments:
         * > By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. (DPN, 2017)
         * > Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet. (DPN, 2017)
+        * > It has been reported that non-bottleneck ResNets gain more accuracy from increased depth than the bottleneck versions, which indicates that they are not entirely equivalent and that the bottleneck design still suffers from the degradation problem. (ERFNet, 2017)
         * > Although several techniques, such as skip connections (He et al., 2016) and batch normalization (Ioffe & Szegedy, 2015), alleviate the training problem, the accuracy gain of very deep network diminishes: for example, ResNet-1000 has similar accuracy as ResNet-101 even though it has much more layers. (EfficientNetV1, 2019)
 * [ResNet with Pre-Activation](https://arxiv.org/abs/1603.05027)
     * Title: Identity Mappings in Deep Residual Networks
@@ -534,6 +535,8 @@ count: 109
     * Year: 03 October `2013`
     * Author: Roberto Rigamonti
     * Abstract: Learning filters to produce sparse image representations in terms of over complete dictionaries has emerged as a powerful way to create image features for many different purposes. Unfortunately, these filters are usually both numerous and non-separable, making their use computationally expensive. In this paper, we show that such filters can be computed as linear combinations of a smaller number of separable ones, thus greatly reducing the computational complexity at no cost in terms of performance. This makes filter learning approaches practical even for large images or 3D volumes, and we show that we significantly outperform state-of-the-art methods on the linear structure extraction task, in terms of both accuracy and speed. Moreover, our approach is general and can be used on generic filter banks to reduce the complexity of the convolutions.
+    * Comments:
+        * > [24] demonstrates that it is possible to relax the rank-1 constraint and essentially rewrite fi as a linear combination of 1D filters.
 * [Training CNNs with Low-Rank Filters for Efficient Image Classification](https://arxiv.org/abs/1511.06744)
     * Title: Training CNNs with Low-Rank Filters for Efficient Image Classification
     * Year: 20 Nov `2015`
@@ -550,7 +553,8 @@ count: 109
     * Author: Max Jaderberg
     * Abstract: The focus of this paper is speeding up the evaluation of convolutional neural networks. While delivering impressive results across a range of computer vision and machine learning tasks, these networks are computationally demanding, limiting their deployability. Convolutional layers generally consume the bulk of the processing time, and so in this work we present two simple schemes for drastically speeding up these layers. This is achieved by exploiting cross-channel or filter redundancy to construct a low rank basis of filters that are rank-1 in the spatial domain. Our methods are architecture agnostic, and can be easily applied to existing CPU and GPU convolutional frameworks for tuneable speedup performance. We demonstrate this with a real world network designed for scene text character recognition, showing a possible 2.5x speedup with no loss in accuracy, and 4.5x speedup with less than 1% drop in accuracy, still achieving state-of-the-art on standard benchmarks.
     * Comments:
-        * >  Jaderberg et al. [11] propose approximating the convolutional filters in a trained network with representations that are low-rank both in the spatial and the channel domains. (Deep Roots, 2016)
+        * > Jaderberg et al. [11] propose approximating the convolutional filters in a trained network with representations that are low-rank both in the spatial and the channel domains. (Deep Roots, 2016)
+        * > Common approaches first learn these filters from data and then find low-rank approximations as a post-processing step [23]. However, this approach requires additional fine tuning and the resulting filters may not be separable. (ERFNet, 2017)
 * [Speeding-up Convolutional Neural Networks Using Fine-tuned CP-Decomposition](https://arxiv.org/abs/1412.6553)
     * Title: Speeding-up Convolutional Neural Networks Using Fine-tuned CP-Decomposition
     * Year: 19 Dec `2014`
