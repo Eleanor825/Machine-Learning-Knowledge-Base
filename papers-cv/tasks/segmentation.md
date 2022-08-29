@@ -1,8 +1,8 @@
 # [Papers][Vision] Segmentation
 
-count: 71
+count: 73
 
-## some papers
+## unclassified
 
 * [Learning Rich Features from RGB-D Images for Object Detection and Segmentation](https://arxiv.org/abs/1407.5736)
     * Title: Learning Rich Features from RGB-D Images for Object Detection and Segmentation
@@ -101,11 +101,6 @@ count: 71
     * Abstract: Incorporating multi-scale features in fully convolutional neural networks (FCNs) has been a key element to achieving state-of-the-art performance on semantic image segmentation. One common way to extract multi-scale features is to feed multiple resized input images to a shared deep network and then merge the resulting features for pixelwise classification. In this work, we propose an attention mechanism that learns to softly weight the multi-scale features at each pixel location. We adapt a state-of-the-art semantic image segmentation model, which we jointly train with multi-scale input images and the attention model. The proposed attention model not only outperforms average- and max-pooling, but allows us to diagnostically visualize the importance of features at different positions and scales. Moreover, we show that adding extra supervision to the output at each scale is essential to achieving excellent performance when merging multi-scale features. We demonstrate the effectiveness of our model with extensive experiments on three challenging datasets, including PASCAL-Person-Part, PASCAL VOC 2012 and a subset of MS-COCO 2014.
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. ... Another approach involves providing multiple rescaled versions of the image as input to the network and combining the predictions obtained for these multiple inputs (Farabet et al., 2013; Lin et al., 2015; Chen et al., 2015b). (Dilated Convolutions, 2015)
-* [ENet](https://arxiv.org/abs/1606.02147)
-    * Title: ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation
-    * Year: 07 Jun `2016`
-    * Authors: Adam Paszke, Abhishek Chaurasia, Sangpil Kim, Eugenio Culurciello
-    * Abstract: The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster.
 * [ERFNet](https://ieeexplore.ieee.org/document/8063438)
     * Title: ERFNet: Efficient Residual Factorized ConvNet for Real-Time Semantic Segmentation
     * Year: 09 October `2017`
@@ -137,6 +132,7 @@ count: 71
         * > Among the first have been Farabet et al. (2013) who apply DCNNs at multiple image resolutions and then employ a segmentation tree to smooth the prediction results. (DeepLabv1, 2014)
         * > Farabet et al. (2013) treat superpixels as nodes for a local pairwise CRF and use graph-cuts for discrete inference. (DeepLabv1, 2014)
         * > Farabet et al. [19] employed a Laplacian pyramid, passed each scale through a shared network, and fused the features from all the scales. (Attention to Scale, 2015)
+        * > color based segmentation (ENet, 2016)
 * [[Recurrent Convolutional Neural Networks for Scene Labeling](https://proceedings.mlr.press/v32/pinheiro14.html)]
     [[pdf](http://proceedings.mlr.press/v32/pinheiro14.pdf)]
     * Title: Recurrent Convolutional Neural Networks for Scene Labeling
@@ -164,6 +160,14 @@ count: 71
     * Abstract: There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at [this http URL](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net).
     * Comments:
         * > Inspired byy FCN, U-Net was proposed for the medical image segmentation domain specifically, bridging the information flow between corresponding low-level and high-level feature maps of the same spatial sizes. (PVT, 2021)
+* [[SegNet-Basic](https://arxiv.org/abs/1505.07293)]
+    [[pdf](https://arxiv.org/pdf/1505.07293.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1505.07293/)]
+    * Title: SegNet: A Deep Convolutional Encoder-Decoder Architecture for Robust Semantic Pixel-Wise Labelling
+    * Year: 27 May `2015`
+    * Authors: Vijay Badrinarayanan, Ankur Handa, Roberto Cipolla
+    * Institutions: [Machine Intelligence Lab, Department of Engineering, University of Cambridge, UK]
+    * Abstract: We propose a novel deep architecture, SegNet, for semantic pixel wise image labelling. SegNet has several attractive properties; (i) it only requires forward evaluation of a fully learnt function to obtain smooth label predictions, (ii) with increasing depth, a larger context is considered for pixel labelling which improves accuracy, and (iii) it is easy to visualise the effect of feature activation(s) in the pixel label space at any depth. SegNet is composed of a stack of encoders followed by a corresponding decoder stack which feeds into a soft-max classification layer. The decoders help map low resolution feature maps at the output of the encoder stack to full input image size feature maps. This addresses an important drawback of recent deep learning approaches which have adopted networks designed for object categorization for pixel wise labelling. These methods lack a mechanism to map deep layer feature maps to input dimensions. They resort to ad hoc methods to upsample features, e.g. by replication. This results in noisy predictions and also restricts the number of pooling layers in order to avoid too much upsampling and thus reduces spatial context. SegNet overcomes these problems by learning to map encoder outputs to image pixel labels. We test the performance of SegNet on outdoor RGB scenes from CamVid, KITTI and indoor scenes from the NYU dataset. Our results show that SegNet achieves state-of-the-art performance even without use of additional cues such as depth, video frames or post-processing with CRF models.
 * [[SegNet](https://arxiv.org/abs/1511.00561)]
     [[pdf](https://arxiv.org/pdf/1511.00561.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1511.00561/)]
@@ -172,6 +176,17 @@ count: 71
     * Authors: Vijay Badrinarayanan, Alex Kendall, Roberto Cipolla
     * Institutions: [Machine Intelligence Lab, Department of Engineering, University of Cambridge, UK]
     * Abstract: We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. This core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer. The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network. The role of the decoder network is to map the low resolution encoder feature maps to full input resolution feature maps for pixel-wise classification. The novelty of SegNet lies is in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference. It is also significantly smaller in the number of trainable parameters than other competing architectures. We also performed a controlled benchmark of SegNet and other architectures on both road scenes and SUN RGB-D indoor scene segmentation tasks. We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures. We also provide a Caffe implementation of SegNet and a web demo at [this http URL](http://mi.eng.cam.ac.uk/projects/segnet/).
+    * Comments:
+        * > Inspired by probabilistic auto-encoders ranzato07 ; ngiam11 , encoder-decoder network architecture has been introduced in SegNet-basic badrinarayanan15basic , and further improved in SegNet badrinarayanan15 . (ENet, 2016)
+        * > SegNet is a very symmetric architecture, as the encoder is an exact mirror of the encoder. (ENet, 2016)
+* [[ENet](https://arxiv.org/abs/1606.02147)]
+    [[pdf](https://arxiv.org/pdf/1606.02147.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1606.02147/)]
+    * Title: ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation
+    * Year: 07 Jun `2016`
+    * Authors: Adam Paszke, Abhishek Chaurasia, Sangpil Kim, Eugenio Culurciello
+    * Institutions: [Faculty of Mathematics, Informatics and Mechanics, University of Warsaw, Poland], [Electrical and Computer Engineering, Purdue University, USA]
+    * Abstract: The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster.
 
 ### Increase feature resolution (Panoptic FPN, 2019) (4)
 
@@ -429,6 +444,7 @@ count: 71
     * Comments:
         * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
         * DeepLab is a variant of FCNs.
+        * > Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 . (ENet, 2016)
 * [DeepLabv2](https://arxiv.org/abs/1606.00915)
     * Title: DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
     * Year: 02 Jun `2016`
