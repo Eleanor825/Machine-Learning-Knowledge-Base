@@ -1,6 +1,6 @@
 # [Papers][Vision] Segmentation
 
-count: 67
+count: 71
 
 ## some papers
 
@@ -24,40 +24,9 @@ count: 67
     * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
-* [PSPNet](https://arxiv.org/abs/1612.01105)
-    * Title: Pyramid Scene Parsing Network
-    * Year: 04 Dec `2016`
-    * Authors: Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, Jiaya Jia
-    * Abstract: Scene parsing is challenging for unrestricted open vocabulary and diverse scenes. In this paper, we exploit the capability of global context information by different-region-based context aggregation through our pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet). Our global prior representation is effective to produce good quality results on the scene parsing task, while PSPNet provides a superior framework for pixel-level prediction tasks. The proposed approach achieves state-of-the-art performance on various datasets. It came first in ImageNet scene parsing challenge 2016, PASCAL VOC 2012 benchmark and Cityscapes benchmark. A single PSPNet yields new record of mIoU accuracy 85.4% on PASCAL VOC 2012 and accuracy 80.2% on Cityscapes.
-    * Comments:
-        * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
-* [[Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)]
-    [[pdf](https://arxiv.org/pdf/1511.03339.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1511.03339/)]
-    * Title: Attention to Scale: Scale-aware Semantic Image Segmentation
-    * Year: 10 Nov `2015`
-    * Authors: Liang-Chieh Chen, Yi Yang, Jiang Wang, Wei Xu, Alan L. Yuille
-    * Abstract: Incorporating multi-scale features in fully convolutional neural networks (FCNs) has been a key element to achieving state-of-the-art performance on semantic image segmentation. One common way to extract multi-scale features is to feed multiple resized input images to a shared deep network and then merge the resulting features for pixelwise classification. In this work, we propose an attention mechanism that learns to softly weight the multi-scale features at each pixel location. We adapt a state-of-the-art semantic image segmentation model, which we jointly train with multi-scale input images and the attention model. The proposed attention model not only outperforms average- and max-pooling, but allows us to diagnostically visualize the importance of features at different positions and scales. Moreover, we show that adding extra supervision to the output at each scale is essential to achieving excellent performance when merging multi-scale features. We demonstrate the effectiveness of our model with extensive experiments on three challenging datasets, including PASCAL-Person-Part, PASCAL VOC 2012 and a subset of MS-COCO 2014.
-    * Comments:
-        * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. ... Another approach involves providing multiple rescaled versions of the image as input to the network and combining the predictions obtained for these multiple inputs (Farabet et al., 2013; Lin et al., 2015; Chen et al., 2015b). (Dilated Convolutions, 2015)
-* [ENet](https://arxiv.org/abs/1606.02147)
-    * Title: ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation
-    * Year: 07 Jun `2016`
-    * Authors: Adam Paszke, Abhishek Chaurasia, Sangpil Kim, Eugenio Culurciello
-    * Abstract: The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster.
-* [ERFNet](https://ieeexplore.ieee.org/document/8063438)
-    * Title: ERFNet: Efficient Residual Factorized ConvNet for Real-Time Semantic Segmentation
-    * Year: 09 October `2017`
-    * Authors: Eduardo Romera; José M. Álvarez; Luis M. Bergasa; Roberto Arroyo
-    * Abstract: Semantic segmentation is a challenging task that addresses most of the perception needs of intelligent vehicles (IVs) in an unified way. Deep neural networks excel at this task, as they can be trained end-to-end to accurately classify multiple object categories in an image at pixel level. However, a good tradeoff between high quality and computational resources is yet not present in the state-of-the-art semantic segmentation approaches, limiting their application in real vehicles. In this paper, we propose a deep architecture that is able to run in real time while providing accurate semantic segmentation. The core of our architecture is a novel layer that uses residual connections and factorized convolutions in order to remain efficient while retaining remarkable accuracy. Our approach is able to run at over 83 FPS in a single Titan X, and 7 FPS in a Jetson TX1 (embedded device). A comprehensive set of experiments on the publicly available Cityscapes data set demonstrates that our system achieves an accuracy that is similar to the state of the art, while being orders of magnitude faster to compute than other architectures that achieve top precision. The resulting tradeoff makes our model an ideal approach for scene understanding in IV applications. The code is publicly available at: https://github.com/Eromera/erfnet.
 * [[Image Segmentation with Cascaded Hierarchical Models and Logistic Disjunctive Normal Networks](https://ieeexplore.ieee.org/document/6751380)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6751380)]
     * Title: Image Segmentation with Cascaded Hierarchical Models and Logistic Disjunctive Normal Networks
-* [ParseNet](https://arxiv.org/abs/1506.04579)
-    * Title: ParseNet: Looking Wider to See Better
-    * Year: 15 Jun `2015`
-    * Author: Wei Liu
-    * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
 * [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture](https://arxiv.org/abs/1411.4734)
     * Title: Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture
     * Year: 18 Nov `2014`
@@ -113,12 +82,37 @@ count: 67
     * Year: 02 Dec `2014`
     * Authors: Mohammadreza Mostajabi, Payman Yadollahpour, Gregory Shakhnarovich
     * Abstract: We introduce a purely feed-forward architecture for semantic segmentation. We map small image elements (superpixels) to rich feature representations extracted from a sequence of nested regions of increasing extent. These regions are obtained by "zooming out" from the superpixel all the way to scene-level resolution. This approach exploits statistical structure in the image and in the label space without setting up explicit structured prediction mechanisms, and thus avoids complex and expensive inference. Instead superpixels are classified by a feedforward multilayer network. Our architecture achieves new state of the art performance in semantic segmentation, obtaining 64.4% average accuracy on the PASCAL VOC 2012 test set.
+    * Comments:
+        * > Mostajabi et al. [41] classified a superpixel with features extracted at zoom-out spatial levels from a small proximal neighborhood to the whole image region. (Attention to Scale, 2015)
 
 ## ----------------------------------------------------------------------------------------------------
-
 ## Semantic Segmentation
+## ----------------------------------------------------------------------------------------------------
 
-## Patchwise Training (FCN, 2015) (5)
+### unclassified
+
+* [[Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)]
+    [[pdf](https://arxiv.org/pdf/1511.03339.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.03339/)]
+    * Title: Attention to Scale: Scale-aware Semantic Image Segmentation
+    * Year: 10 Nov `2015`
+    * Authors: Liang-Chieh Chen, Yi Yang, Jiang Wang, Wei Xu, Alan L. Yuille
+    * Institutions: [Baidu USA]
+    * Abstract: Incorporating multi-scale features in fully convolutional neural networks (FCNs) has been a key element to achieving state-of-the-art performance on semantic image segmentation. One common way to extract multi-scale features is to feed multiple resized input images to a shared deep network and then merge the resulting features for pixelwise classification. In this work, we propose an attention mechanism that learns to softly weight the multi-scale features at each pixel location. We adapt a state-of-the-art semantic image segmentation model, which we jointly train with multi-scale input images and the attention model. The proposed attention model not only outperforms average- and max-pooling, but allows us to diagnostically visualize the importance of features at different positions and scales. Moreover, we show that adding extra supervision to the output at each scale is essential to achieving excellent performance when merging multi-scale features. We demonstrate the effectiveness of our model with extensive experiments on three challenging datasets, including PASCAL-Person-Part, PASCAL VOC 2012 and a subset of MS-COCO 2014.
+    * Comments:
+        * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. ... Another approach involves providing multiple rescaled versions of the image as input to the network and combining the predictions obtained for these multiple inputs (Farabet et al., 2013; Lin et al., 2015; Chen et al., 2015b). (Dilated Convolutions, 2015)
+* [ENet](https://arxiv.org/abs/1606.02147)
+    * Title: ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation
+    * Year: 07 Jun `2016`
+    * Authors: Adam Paszke, Abhishek Chaurasia, Sangpil Kim, Eugenio Culurciello
+    * Abstract: The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster.
+* [ERFNet](https://ieeexplore.ieee.org/document/8063438)
+    * Title: ERFNet: Efficient Residual Factorized ConvNet for Real-Time Semantic Segmentation
+    * Year: 09 October `2017`
+    * Authors: Eduardo Romera; José M. Álvarez; Luis M. Bergasa; Roberto Arroyo
+    * Abstract: Semantic segmentation is a challenging task that addresses most of the perception needs of intelligent vehicles (IVs) in an unified way. Deep neural networks excel at this task, as they can be trained end-to-end to accurately classify multiple object categories in an image at pixel level. However, a good tradeoff between high quality and computational resources is yet not present in the state-of-the-art semantic segmentation approaches, limiting their application in real vehicles. In this paper, we propose a deep architecture that is able to run in real time while providing accurate semantic segmentation. The core of our architecture is a novel layer that uses residual connections and factorized convolutions in order to remain efficient while retaining remarkable accuracy. Our approach is able to run at over 83 FPS in a single Titan X, and 7 FPS in a Jetson TX1 (embedded device). A comprehensive set of experiments on the publicly available Cityscapes data set demonstrates that our system achieves an accuracy that is similar to the state of the art, while being orders of magnitude faster to compute than other architectures that achieve top precision. The resulting tradeoff makes our model an ideal approach for scene understanding in IV applications. The code is publicly available at: https://github.com/Eromera/erfnet.
+
+### Patchwise Training (FCN, 2015) (5)
 
 * [Toward automatic phenotyping of developing embryos from videos](https://ieeexplore.ieee.org/document/1495508)
     * Title: Toward automatic phenotyping of developing embryos from videos
@@ -142,6 +136,7 @@ count: 67
     * Comments:
         * > Among the first have been Farabet et al. (2013) who apply DCNNs at multiple image resolutions and then employ a segmentation tree to smooth the prediction results. (DeepLabv1, 2014)
         * > Farabet et al. (2013) treat superpixels as nodes for a local pairwise CRF and use graph-cuts for discrete inference. (DeepLabv1, 2014)
+        * > Farabet et al. [19] employed a Laplacian pyramid, passed each scale through a shared network, and fused the features from all the scales. (Attention to Scale, 2015)
 * [[Recurrent Convolutional Neural Networks for Scene Labeling](https://proceedings.mlr.press/v32/pinheiro14.html)]
     [[pdf](http://proceedings.mlr.press/v32/pinheiro14.pdf)]
     * Title: Recurrent Convolutional Neural Networks for Scene Labeling
@@ -149,15 +144,15 @@ count: 67
     * Authors: Pedro Pinheiro, Ronan Collobert
     * Institutions: [Ecole Polytechnique Fed´ erale de Lausanne (EPFL), Lausanne, Switzerland], [Idiap Research Institute, Martigny, Switzerland]
     * Abstract: The goal of the scene labeling task is to assign a class label to each pixel in an image. To ensure a good visual coherence and a high class accuracy, it is essential for a model to capture long range pixel) label dependencies in images. In a feed-forward architecture, this can be achieved simply by considering a sufficiently large input context patch, around each pixel to be labeled. We propose an approach that consists of a recurrent convolutional neural network which allows us to consider a large input context while limiting the capacity of the model. Contrary to most standard approaches, our method does not rely on any segmentation technique nor any task-specific features. The system is trained in an end-to-end manner over raw pixels, and models complex spatial dependencies with low inference cost. As the context size increases with the built-in recurrence, the system identifies and corrects its own errors. Our approach yields state-of-the-art performance on both the Stanford Background Dataset and the SIFT Flow Dataset, while remaining very fast at test time.
+    * Comments:
+        * > Pinheiro et al. [45], instead of applying multi-scale input images at once, fed multi-scale images at different stages in a recurrent convolutional neural network. (Attention to Scale, 2015)
 * [$N^{4}$-Fields: Neural Network Nearest Neighbor Fields for Image Transforms](https://arxiv.org/abs/1406.6558)
     * Title: $N^{4}$-Fields: Neural Network Nearest Neighbor Fields for Image Transforms
     * Year: 25 Jun `2014`
     * Author: Yaroslav Ganin
     * Abstract: We propose a new architecture for difficult image processing operations, such as natural edge detection or thin object segmentation. The architecture is based on a simple combination of convolutional neural networks with the nearest neighbor search. We focus our attention on the situations when the desired image transformation is too hard for a neural network to learn explicitly. We show that in such situations, the use of the nearest neighbor search on top of the network output allows to improve the results considerably and to account for the underfitting effect during the neural network training. The approach is validated on three challenging benchmarks, where the performance of the proposed architecture matches or exceeds the state-of-the-art.
 
-## ----------------------------------------------------------------------------------------------------
-
-## Encoder-Decoder Architecture
+### Encoder-Decoder Architecture
 
 * [[U-Net](https://arxiv.org/abs/1505.04597)]
     [[pdf](https://arxiv.org/pdf/1505.04597.pdf)]
@@ -178,7 +173,7 @@ count: 67
     * Institutions: [Machine Intelligence Lab, Department of Engineering, University of Cambridge, UK]
     * Abstract: We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. This core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer. The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network. The role of the decoder network is to map the low resolution encoder feature maps to full input resolution feature maps for pixel-wise classification. The novelty of SegNet lies is in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference. It is also significantly smaller in the number of trainable parameters than other competing architectures. We also performed a controlled benchmark of SegNet and other architectures on both road scenes and SUN RGB-D indoor scene segmentation tasks. We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures. We also provide a Caffe implementation of SegNet and a web demo at [this http URL](http://mi.eng.cam.ac.uk/projects/segnet/).
 
-## Increase feature resolution (Panoptic FPN, 2019) (4)
+### Increase feature resolution (Panoptic FPN, 2019) (4)
 
 > As an alternative to dilation, an encoder-decoder [2] or ‘U-Net’ [47] architecture can be used to increase feature resolution [25, 42, 19, 45]. (Panoptic FPN, 2019)
 
@@ -204,7 +199,7 @@ count: 67
     * Abstract: CNN architectures have terrific recognition performance but rely on spatial pooling which makes it difficult to adapt them to tasks that require dense, pixel-accurate labeling. This paper makes two contributions: (1) We demonstrate that while the apparent spatial resolution of convolutional feature maps is low, the high-dimensional feature representation contains significant sub-pixel localization information. (2) We describe a multi-resolution reconstruction architecture based on a Laplacian pyramid that uses skip connections from higher resolution feature maps and multiplicative gating to successively refine segment boundaries reconstructed from lower-resolution maps. This approach yields state-of-the-art semantic segmentation results on the PASCAL VOC and Cityscapes segmentation benchmarks without resorting to more complex random-field inference or instance detection driven architectures.
 * Learning to Refine Object Segments (SharpMask)
 
-## Fully Convolutional Networks
+### Fully Convolutional Networks (FCN)
 
 > Semantic segmentation datasets have a rich history [35, 23, 9] and helped drive key innovations (e.g., fully convolutional nets [26] were developed using [23, 9]). (Panoptic Segmentation, 2018)
 
@@ -231,6 +226,53 @@ count: 67
         * > In this approach, fully connected layers in the standard CNNs are interpreted as convolutions with large receptive fields, and segmentation is achieved using coarse class score maps obtained by feedforwarding an input image. An interesting idea in this work is that a simple interpolation filter is employed for deconvolution and only the CNN part of the network is fine-tuned to learn deconvolution indirectly. (Learning Deconvolution Network for Semantic Segmentation, 2015)
         * > In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size. (PVT, 2021)
         * skip connections??? where?
+        * > FCN-8s [38] gradually learns finer-scale prediction from lower layers (initialized with coarser-scale prediction). (Attention to Scale, 2015)
+
+### FCN based models (Attention to Scale, 2015) (6)
+
+* Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs (DeepLabv1)
+* BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation
+* Semantic image segmentation via deep parsing network
+* Learning Deconvolution Network for Semantic Segmentation
+* Conditional Random Fields as Recurrent Neural Networks
+* Efficient Piecewise Training of Deep Structured Models for Semantic Segmentation
+
+### Multi Scale Architectures (Attention to Scale, 2015) (1 + 4 + 1 + 4 + 1)
+
+* [Holistically-Nested Edge Detection](https://arxiv.org/abs/1504.06375)
+    [[vanity](https://www.arxiv-vanity.com/papers/1504.06375/)]
+
+> The first type, which we refer to as skip-net, combines features from the intermediate layers of FCNs [27, 38, 41, 11]. Features within a skip-net are multi-scale in nature due to the increasingly large receptive field sizes. During training, a skip-net usually employs a two-step process [27, 38, 41, 11], where it first trains the deep network backbone and then fixes or slightly fine-tunes during multi-scale feature extraction. The problem with this strategy is that the training process is not ideal (i.e., classifier training and feature-extraction are separate) and the training time is usually long (e.g., three to five days [38]). (Attention to Scale, 2015)
+
+* Hypercolumns for Object Segmentation and Fine-grained Localization
+* Fully Convolutional Networks for Semantic Segmentation
+* Feedforward semantic segmentation with zoom-out features
+* Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
+
+> The first type, skip-net, exploits features from different levels of the network. (Attention to Scale, 2015)
+
+* [ParseNet](https://arxiv.org/abs/1506.04579)
+    * Title: ParseNet: Looking Wider to See Better
+    * Year: 15 Jun `2015`
+    * Author: Wei Liu
+    * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
+    * Comments:
+        * > ParseNet [36] aggregated features over the whole image to provide global contextual information. (Attention to Scale, 2015)
+
+> The second type, which we refer to as share-net, resizes the input image to several scales and passes each through a shared deep network. It then computes the final prediction based on the fusion of the resulting multi-scale features [19, 34]. A share-net does not need the two-step training process mentioned above. It usually employs average- or max-pooling over scales [20, 14, 44, 15]. Features at each scale are either equally important or sparsely selected. (Attention to Scale, 2015)
+
+* Learning Hierarchical Features for Scene Labeling
+* Efficient Piecewise Training of Deep Structured Models for Semantic Segmentation
+* [Untangling Local and Global Deformations in Deep Convolutional Networks for Image Classification and Sliding Window Detection](https://arxiv.org/abs/1412.0296)
+    * Title: Untangling Local and Global Deformations in Deep Convolutional Networks for Image Classification and Sliding Window Detection
+    * Year: 30 Nov `2014`
+    * Authors: George Papandreou, Iasonas Kokkinos, Pierre-André Savalle
+    * Abstract: Deep Convolutional Neural Networks (DCNNs) commonly use generic 'max-pooling' (MP) layers to extract deformation-invariant features, but we argue in favor of a more refined treatment. First, we introduce epitomic convolution as a building block alternative to the common convolution-MP cascade of DCNNs; while having identical complexity to MP, Epitomic Convolution allows for parameter sharing across different filters, resulting in faster convergence and better generalization. Second, we introduce a Multiple Instance Learning approach to explicitly accommodate global translation and scaling when training a DCNN exclusively with class labels. For this we rely on a 'patchwork' data structure that efficiently lays out all image scales and positions as candidates to a DCNN. Factoring global and local deformations allows a DCNN to 'focus its resources' on the treatment of non-rigid deformations and yields a substantial classification accuracy improvement. Third, further pursuing this idea, we develop an efficient DCNN sliding window object detector that employs explicit search over position, scale, and aspect ratio. We provide competitive image classification and localization results on the ImageNet dataset and object detection results on the Pascal VOC 2007 benchmark.
+* BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation
+
+> The second type, share-net, applies multi-scale input images to a shared network. (Attention to Scale, 2015)
+
+* Recurrent Convolutional Neural Networks for Scene Labeling
 
 ## ----------------------------------------------------------------------------------------------------
 ## Graphical model networks
@@ -330,6 +372,11 @@ count: 67
     [[pdf](https://arxiv.org/pdf/1504.01013.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1504.01013/)]
     * Title: Efficient piecewise training of deep structured models for semantic segmentation
+    * Year: 04 Apr `2015`
+    * Authors: Guosheng Lin, Chunhua Shen, Anton van dan Hengel, Ian Reid
+    * Abstract: Recent advances in semantic image segmentation have mostly been achieved by training deep convolutional neural networks (CNNs). We show how to improve semantic segmentation through the use of contextual information; specifically, we explore 'patch-patch' context between image regions, and 'patch-background' context. For learning from the patch-patch context, we formulate Conditional Random Fields (CRFs) with CNN-based pairwise potential functions to capture semantic correlations between neighboring patches. Efficient piecewise training of the proposed deep structured model is then applied to avoid repeated expensive CRF inference for back propagation. For capturing the patch-background context, we show that a network design with traditional multi-scale image input and sliding pyramid pooling is effective for improving performance. Our experimental results set new state-of-the-art performance on a number of popular semantic segmentation datasets, including NYUDv2, PASCAL VOC 2012, PASCAL-Context, and SIFT-flow. In particular, we achieve an intersection-over-union score of 78.0 on the challenging PASCAL VOC 2012 dataset.
+    * Comments:
+        * > Lin et al. [34] resized the input image for three scales and concatenated the resulting three-scale features to generate the unary and pairwise potentials of a Conditional Random Field (CRF). (Attention to Scale, 2015)
 
 ### Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)
 
@@ -381,6 +428,7 @@ count: 67
     * Abstract: Deep Convolutional Neural Networks (DCNNs) have recently shown state of the art performance in high level vision tasks, such as image classification and object detection. This work brings together methods from DCNNs and probabilistic graphical models for addressing the task of pixel-level classification (also called "semantic image segmentation"). We show that responses at the final layer of DCNNs are not sufficiently localized for accurate object segmentation. This is due to the very invariance properties that make DCNNs good for high level tasks. We overcome this poor localization property of deep networks by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF). Qualitatively, our "DeepLab" system is able to localize segment boundaries at a level of accuracy which is beyond previous methods. Quantitatively, our method sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 71.6% IOU accuracy in the test set. We show how these results can be obtained efficiently: Careful network re-purposing and a novel application of the 'hole' algorithm from the wavelet community allow dense computation of neural net responses at 8 frames per second on a modern GPU.
     * Comments:
         * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
+        * DeepLab is a variant of FCNs.
 * [DeepLabv2](https://arxiv.org/abs/1606.00915)
     * Title: DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
     * Year: 02 Jun `2016`
@@ -438,6 +486,7 @@ count: 67
     * Comments:
         * > More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification. (DeepLabv1, 2014)
         * > More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers. (U-Net, 2015)
+        * > Hariharan et al. [27] classified a pixel with hypercolumn representation (i.e., concatenation of features from intermediate layers). (Attention to Scale, 2015)
 * [[DeepMask](https://arxiv.org/abs/1506.06204)]
     [[pdf](https://arxiv.org/pdf/1506.06204.pdf)]
     [vanity]
@@ -531,6 +580,13 @@ count: 67
     * Authors: Joseph Tighe; Marc Niethammer; Svetlana Lazebnik
     * Institutions: [University of North Carolina at Chapel Hill], [University of Illinois at Urbana-Champaign]
     * Abstract: This work proposes a method to interpret a scene by assigning a semantic label at every pixel and inferring the spatial extent of individual object instances together with their occlusion relationships. Starting with an initial pixel labeling and a set of candidate object masks for a given test image, we select a subset of objects that explain the image well and have valid overlap relationships and occlusion ordering. This is done by minimizing an integer quadratic program either using a greedy method or a standard solver. Then we alternate between using the object predictions to refine the pixel labels and vice versa. The proposed system obtains promising results on two challenging subsets of the LabelMe and SUN datasets, the largest of which contains 45, 676 images and 232 classes.
+* [PSPNet](https://arxiv.org/abs/1612.01105)
+    * Title: Pyramid Scene Parsing Network
+    * Year: 04 Dec `2016`
+    * Authors: Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, Jiaya Jia
+    * Abstract: Scene parsing is challenging for unrestricted open vocabulary and diverse scenes. In this paper, we exploit the capability of global context information by different-region-based context aggregation through our pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet). Our global prior representation is effective to produce good quality results on the scene parsing task, while PSPNet provides a superior framework for pixel-level prediction tasks. The proposed approach achieves state-of-the-art performance on various datasets. It came first in ImageNet scene parsing challenge 2016, PASCAL VOC 2012 benchmark and Cityscapes benchmark. A single PSPNet yields new record of mIoU accuracy 85.4% on PASCAL VOC 2012 and accuracy 80.2% on Cityscapes.
+    * Comments:
+        * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
 * [[PSANet](https://link.springer.com/chapter/10.1007/978-3-030-01240-3_17)]
     [[pdf](https://link.springer.com/content/pdf/10.1007/978-3-030-01240-3_17.pdf)]
     * Title: PSANet: Point-wise Spatial Attention Network for Scene Parsing

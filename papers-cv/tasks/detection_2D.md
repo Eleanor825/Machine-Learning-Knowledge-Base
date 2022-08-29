@@ -25,7 +25,6 @@ count: 67
 <!-- * Author: Ross Girshick -->
 <!-- * Abstract: Deformable part models (DPMs) and convolutional neural networks (CNNs) are two widely used tools for visual recognition. They are typically viewed as distinct approaches: DPMs are graphical models (Markov random fields), while CNNs are "black-box" non-linear classifiers. In this paper, we show that a DPM can be formulated as a CNN, thus providing a novel synthesis of the two ideas. Our construction involves unrolling the DPM inference algorithm and mapping each step to an equivalent (and at times novel) CNN layer. From this perspective, it becomes natural to replace the standard image features used in DPM with a learned feature extractor. We call the resulting model DeepPyramid DPM and experimentally validate it on PASCAL VOC. DeepPyramid DPM significantly outperforms DPMs based on histograms of oriented gradients features (HOG) and slightly outperforms a comparable version of the recently introduced R-CNN detection system, while running an order of magnitude faster. -->
 * (07 May 2015) [Multi-Region CNN](https://arxiv.org/abs/1505.01749) (Object detection via a multi-region & semantic segmentation-aware CNN model)
-* (25 Jun 2015) [AttentionNet](https://arxiv.org/abs/1506.07704) (AttentionNet: Aggregating Weak Directions for Accurate Object Detection)
 * (15 Oct 2015) [DeepProposal](https://arxiv.org/abs/1510.04445) (DeepProposal: Hunting Objects by Cascading Deep Convolutional Layers)
 * (07 Jan 2019) [Scale-Aware Trident Networks for Object Detection](https://arxiv.org/abs/1901.01892)
 * (16 Apr 2019) [CenterNet](https://arxiv.org/abs/1904.07850) (Objects as Points)
@@ -387,6 +386,22 @@ superpixel merging
     * Year: 26 Mar `2019`
     * Authors: Yukang Chen, Tong Yang, Xiangyu Zhang, Gaofeng Meng, Xinyu Xiao, Jian Sun
     * Abstract: Object detectors are usually equipped with backbone networks designed for image classification. It might be sub-optimal because of the gap between the tasks of image classification and object detection. In this work, we present DetNAS to use Neural Architecture Search (NAS) for the design of better backbones for object detection. It is non-trivial because detection training typically needs ImageNet pre-training while NAS systems require accuracies on the target detection task as supervisory signals. Based on the technique of one-shot supernet, which contains all possible networks in the search space, we propose a framework for backbone search on object detection. We train the supernet under the typical detector training schedule: ImageNet pre-training and detection fine-tuning. Then, the architecture search is performed on the trained supernet, using the detection task as the guidance. This framework makes NAS on backbones very efficient. In experiments, we show the effectiveness of DetNAS on various detectors, for instance, one-stage RetinaNet and the two-stage FPN. We empirically find that networks searched on object detection shows consistent superiority compared to those searched on ImageNet classification. The resulting architecture achieves superior performance than hand-crafted networks on COCO with much less FLOPs complexity.
+
+## Attention Mechanism
+
+* [Multiple Object Recognition with Visual Attention](https://arxiv.org/abs/1412.7755)
+    [[vanity](https://www.arxiv-vanity.com/papers/1412.7755/)]
+    * Title: Multiple Object Recognition with Visual Attention
+    * Authors: Jimmy Ba, Volodymyr Mnih, Koray Kavukcuoglu
+* [Active Object Localization with Deep Reinforcement Learning](https://arxiv.org/abs/1511.06015)
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.06015/)]
+    * Title: Active Object Localization with Deep Reinforcement Learning
+    * Authors: Juan C. Caicedo, Svetlana Lazebnik
+* [AttentionNet](https://arxiv.org/abs/1506.07704)
+    [[vanity](https://www.arxiv-vanity.com/papers/1506.07704/)]
+    * Title: AttentionNet: Aggregating Weak Directions for Accurate Object Detection
+    * Year: 25 Jun `2015`
+    * Authors: Donggeun Yoo, Sunggyun Park, Joon-Young Lee, Anthony S. Paek, In So Kweon
 
 ## Weekly-Supervised Learning
 

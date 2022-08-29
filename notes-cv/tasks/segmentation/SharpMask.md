@@ -91,6 +91,8 @@ Inference
 
 ## References
 
+* Pinheiro, Pedro O., et al. "Learning to refine object segments." *European conference on computer vision*. Springer, Cham, 2016.
+
 ## Further Reading
 
 * [1] DPM

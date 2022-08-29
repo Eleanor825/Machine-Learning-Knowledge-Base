@@ -565,6 +565,29 @@ count: 109
 
 ## ----------------------------------------------------------------------------------------------------
 
+## Attention Mechanism
+
+* [[Look and Think Twice](https://ieeexplore.ieee.org/document/7410695)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7410695)]
+    * Title: Look and Think Twice: Capturing Top-Down Visual Attention with Feedback Convolutional Neural Networks
+    * Year: 18 February `2016`
+    * Authors: Chunshui Cao; Xianming Liu; Yi Yang; Yinan Yu; Jiang Wang; Zilei Wang; Yongzhen Huang; Liang Wang; Chang Huang; Wei Xu; Deva Ramanan; Thomas S. Huang
+    * Abstract: While feedforward deep convolutional neural networks (CNNs) have been a great success in computer vision, it is important to note that the human visual cortex generally contains more feedback than feedforward connections. In this paper, we will briefly introduce the background of feedbacks in the human visual cortex, which motivates us to develop a computational feedback mechanism in deep neural networks. In addition to the feedforward inference in traditional neural networks, a feedback loop is introduced to infer the activation status of hidden layer neurons according to the "goal" of the network, e.g., high-level semantic labels. We analogize this mechanism as "Look and Think Twice." The feedback networks help better visualize and understand how deep neural networks work, and capture visual attention on expected objects, even in images with cluttered background and multiple objects. Experiments on ImageNet dataset demonstrate its effectiveness in solving tasks such as image classification and object localization.
+* [[Deep Recurrent Attentive Writer (DRAW)](https://arxiv.org/abs/1502.04623)]
+    [[pdf](https://arxiv.org/pdf/1502.04623.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1502.04623/)]
+    * Title: DRAW: A Recurrent Neural Network For Image Generation
+    * Year: 16 Feb `2015`
+    * Authors: Karol Gregor, Ivo Danihelka, Alex Graves, Danilo Jimenez Rezende, Daan Wierstra
+    * Abstract: This paper introduces the Deep Recurrent Attentive Writer (DRAW) neural network architecture for image generation. DRAW networks combine a novel spatial attention mechanism that mimics the foveation of the human eye, with a sequential variational auto-encoding framework that allows for the iterative construction of complex images. The system substantially improves on the state of the art for generative models on MNIST, and, when trained on the Street View House Numbers dataset, it generates images that cannot be distinguished from real data with the naked eye.
+    * Comments:
+        * > Gregor et al. [25] employ a differentiable attention model to specify where to read/write image regions for image generation. (Attention to Scale, 2015)
+* [The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification](https://arxiv.org/abs/1411.6447)
+    * Title: The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification
+    * Year: 24 Nov `2014`
+    * Authors: Tianjun Xiao, Yichong Xu, Kuiyuan Yang, Jiaxing Zhang, Yuxin Peng, Zheng Zhang
+    * Abstract: Fine-grained classification is challenging because categories can only be discriminated by subtle and local differences. Variances in the pose, scale or rotation usually make the problem more difficult. Most fine-grained classification systems follow the pipeline of finding foreground object or object parts (where) to extract discriminative features (what). In this paper, we propose to apply visual attention to fine-grained classification task using deep neural network. Our pipeline integrates three types of attention: the bottom-up attention that propose candidate patches, the object-level top-down attention that selects relevant patches to a certain object, and the part-level top-down attention that localizes discriminative parts. We combine these attentions to train domain-specific deep nets, then use it to improve both the what and where aspects. Importantly, we avoid using expensive annotations like bounding box or part information from end-to-end. The weak supervision constraint makes our work easier to generalize. We have verified the effectiveness of the method on the subsets of ILSVRC2012 dataset and CUB200_2011 dataset. Our pipeline delivered significant improvements and achieved the best accuracy under the weakest supervision condition. The performance is competitive against other methods that rely on additional annotations.
+
 ## Sparse Networks (ESPNetv1, 2018) (3)
 
 * [Sparse Decomposition](https://openaccess.thecvf.com/content_cvpr_2015/html/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.html)
