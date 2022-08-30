@@ -24,6 +24,7 @@ count: 73
     * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
+        * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (PSPNet, 2016)
 * [[Image Segmentation with Cascaded Hierarchical Models and Logistic Disjunctive Normal Networks](https://ieeexplore.ieee.org/document/6751380)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6751380)]
     * Title: Image Segmentation with Cascaded Hierarchical Models and Logistic Disjunctive Normal Networks
@@ -93,16 +94,6 @@ count: 73
 
 ### unclassified
 
-* [[Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)]
-    [[pdf](https://arxiv.org/pdf/1511.03339.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1511.03339/)]
-    * Title: Attention to Scale: Scale-aware Semantic Image Segmentation
-    * Year: 10 Nov `2015`
-    * Authors: Liang-Chieh Chen, Yi Yang, Jiang Wang, Wei Xu, Alan L. Yuille
-    * Institutions: [Baidu USA]
-    * Abstract: Incorporating multi-scale features in fully convolutional neural networks (FCNs) has been a key element to achieving state-of-the-art performance on semantic image segmentation. One common way to extract multi-scale features is to feed multiple resized input images to a shared deep network and then merge the resulting features for pixelwise classification. In this work, we propose an attention mechanism that learns to softly weight the multi-scale features at each pixel location. We adapt a state-of-the-art semantic image segmentation model, which we jointly train with multi-scale input images and the attention model. The proposed attention model not only outperforms average- and max-pooling, but allows us to diagnostically visualize the importance of features at different positions and scales. Moreover, we show that adding extra supervision to the output at each scale is essential to achieving excellent performance when merging multi-scale features. We demonstrate the effectiveness of our model with extensive experiments on three challenging datasets, including PASCAL-Person-Part, PASCAL VOC 2012 and a subset of MS-COCO 2014.
-    * Comments:
-        * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. ... Another approach involves providing multiple rescaled versions of the image as input to the network and combining the predictions obtained for these multiple inputs (Farabet et al., 2013; Lin et al., 2015; Chen et al., 2015b). (Dilated Convolutions, 2015)
 * [[RefineNet](https://arxiv.org/abs/1611.06612)]
     [[pdf](https://arxiv.org/pdf/1611.06612.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1611.06612/)]
@@ -297,13 +288,14 @@ count: 73
 
 > The first type, skip-net, exploits features from different levels of the network. (Attention to Scale, 2015)
 
-* [ParseNet](https://arxiv.org/abs/1506.04579)
+* [[ParseNet](https://arxiv.org/abs/1506.04579)]
     * Title: ParseNet: Looking Wider to See Better
     * Year: 15 Jun `2015`
     * Author: Wei Liu
     * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
     * Comments:
         * > ParseNet [36] aggregated features over the whole image to provide global contextual information. (Attention to Scale, 2015)
+        * > Liu et al. [24] proved that global average pooling with FCN can improve semantic segmentation results. (PSPNet, 2016)
 
 > The second type, which we refer to as share-net, resizes the input image to several scales and passes each through a shared deep network. It then computes the final prediction based on the fusion of the resulting multi-scale features [19, 34]. A share-net does not need the two-step training process mentioned above. It usually employs average- or max-pooling over scales [20, 14, 44, 15]. Features at each scale are either equally important or sparsely selected. (Attention to Scale, 2015)
 
@@ -319,6 +311,30 @@ count: 73
 > The second type, share-net, applies multi-scale input images to a shared network. (Attention to Scale, 2015)
 
 * Recurrent Convolutional Neural Networks for Scene Labeling
+
+### Multi-Scale Architectures (PSPNet, 2016) (5)
+
+* Fully Convolutional Networks for Semantic Segmentation
+* Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
+* [[Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)]
+    [[pdf](https://arxiv.org/pdf/1511.03339.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.03339/)]
+    * Title: Attention to Scale: Scale-aware Semantic Image Segmentation
+    * Year: 10 Nov `2015`
+    * Authors: Liang-Chieh Chen, Yi Yang, Jiang Wang, Wei Xu, Alan L. Yuille
+    * Institutions: [Baidu USA]
+    * Abstract: Incorporating multi-scale features in fully convolutional neural networks (FCNs) has been a key element to achieving state-of-the-art performance on semantic image segmentation. One common way to extract multi-scale features is to feed multiple resized input images to a shared deep network and then merge the resulting features for pixelwise classification. In this work, we propose an attention mechanism that learns to softly weight the multi-scale features at each pixel location. We adapt a state-of-the-art semantic image segmentation model, which we jointly train with multi-scale input images and the attention model. The proposed attention model not only outperforms average- and max-pooling, but allows us to diagnostically visualize the importance of features at different positions and scales. Moreover, we show that adding extra supervision to the output at each scale is essential to achieving excellent performance when merging multi-scale features. We demonstrate the effectiveness of our model with extensive experiments on three challenging datasets, including PASCAL-Person-Part, PASCAL VOC 2012 and a subset of MS-COCO 2014.
+    * Comments:
+        * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. ... Another approach involves providing multiple rescaled versions of the image as input to the network and combining the predictions obtained for these multiple inputs (Farabet et al., 2013; Lin et al., 2015; Chen et al., 2015b). (Dilated Convolutions, 2015)
+* [Hierarchical Auto-Zoom Net (HAZN)](https://arxiv.org/abs/1511.06881)
+    [[pdf](https://arxiv.org/pdf/1511.06881.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.06881/)]
+    * Title: Zoom Better to See Clearer: Human and Object Parsing with Hierarchical Auto-Zoom Net
+    * Year: 21 Nov `2015`
+    * Authors: Fangting Xia, Peng Wang, Liang-Chieh Chen, Alan L. Yuille
+    * Institutions: [University of California, Los Angeles]
+    * Abstract: Parsing articulated objects, e.g. humans and animals, into semantic parts (e.g. body, head and arms, etc.) from natural images is a challenging and fundamental problem for computer vision. A big difficulty is the large variability of scale and location for objects and their corresponding parts. Even limited mistakes in estimating scale and location will degrade the parsing output and cause errors in boundary details. To tackle these difficulties, we propose a "Hierarchical Auto-Zoom Net" (HAZN) for object part parsing which adapts to the local scales of objects and parts. HAZN is a sequence of two "Auto-Zoom Net" (AZNs), each employing fully convolutional networks that perform two tasks: (1) predict the locations and scales of object instances (the first AZN) or their parts (the second AZN); (2) estimate the part scores for predicted object instance or part regions. Our model can adaptively "zoom" (resize) predicted image regions into their proper scales to refine the parsing. We conduct extensive experiments over the PASCAL part datasets on humans, horses, and cows. For humans, our approach significantly outperforms the state-of-the-arts by 5% mIOU and is especially better at segmenting small instances and small parts. We obtain similar improvements for parsing cows and horses over alternative methods. In summary, our strategy of first zooming into objects and then zooming into parts is very effective. It also enables us to process different regions of the image at different scales adaptively so that, for example, we do not need to waste computational resources scaling the entire image.
+* Hypercolumns for Object Segmentation and Fine-grained Localization
 
 ### Efficiency
 
@@ -642,10 +658,13 @@ count: 73
     * Authors: Joseph Tighe; Marc Niethammer; Svetlana Lazebnik
     * Institutions: [University of North Carolina at Chapel Hill], [University of Illinois at Urbana-Champaign]
     * Abstract: This work proposes a method to interpret a scene by assigning a semantic label at every pixel and inferring the spatial extent of individual object instances together with their occlusion relationships. Starting with an initial pixel labeling and a set of candidate object masks for a given test image, we select a subset of objects that explain the image well and have valid overlap relationships and occlusion ordering. This is done by minimizing an integer quadratic program either using a greedy method or a standard solver. Then we alternate between using the object predictions to refine the pixel labels and vice versa. The proposed system obtains promising results on two challenging subsets of the LabelMe and SUN datasets, the largest of which contains 45, 676 images and 232 classes.
-* [PSPNet](https://arxiv.org/abs/1612.01105)
+* [[PSPNet](https://arxiv.org/abs/1612.01105)]
+    [[pdf](https://arxiv.org/pdf/1612.01105.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1612.01105/)]
     * Title: Pyramid Scene Parsing Network
     * Year: 04 Dec `2016`
     * Authors: Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, Jiaya Jia
+    * Institutions: [The Chinese University of Hong Kong], [SenseTime Group Limited]
     * Abstract: Scene parsing is challenging for unrestricted open vocabulary and diverse scenes. In this paper, we exploit the capability of global context information by different-region-based context aggregation through our pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet). Our global prior representation is effective to produce good quality results on the scene parsing task, while PSPNet provides a superior framework for pixel-level prediction tasks. The proposed approach achieves state-of-the-art performance on various datasets. It came first in ImageNet scene parsing challenge 2016, PASCAL VOC 2012 benchmark and Cityscapes benchmark. A single PSPNet yields new record of mIoU accuracy 85.4% on PASCAL VOC 2012 and accuracy 80.2% on Cityscapes.
     * Comments:
         * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
