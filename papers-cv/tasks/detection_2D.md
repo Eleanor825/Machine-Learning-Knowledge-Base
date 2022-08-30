@@ -1,6 +1,6 @@
 # [Papers][Vision] 2D Object Detection
 
-count: 80
+count: 82
 
 ## Unclassified
 
