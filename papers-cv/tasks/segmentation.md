@@ -48,6 +48,8 @@ count: 73
 
 * [Convolutional Feature Masking for Joint Object and Stuff Segmentation](https://arxiv.org/abs/1412.1283)
     * Title: Convolutional Feature Masking for Joint Object and Stuff Segmentation
+    * Year: 03 Dec `2014`
+    * Authors: Jifeng Dai, Kaiming He, Jian Sun
 * Simultaneous Detection and Segmentation
 * Hypercolumns for Object Segmentation and Fine-grained Localization
 
@@ -230,6 +232,7 @@ count: 73
 * [[The Laplacian Pyramid as a Compact Image Code](https://ieeexplore.ieee.org/document/1095851)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1095851)]
     * Title: The Laplacian Pyramid as a Compact Image Code
+    * Authors: P. Burt; E. Adelson
 * [[Laplacian Pyramid Reconstruction and Refinement (LRR)](https://arxiv.org/abs/1605.02264)]
     [[pdf](https://arxiv.org/pdf/1605.02264.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1605.02264/)]
@@ -532,10 +535,15 @@ count: 73
     * Year: 07 Jul `2014`
     * Author: Bharath Hariharan
     * Abstract: We aim to detect all instances of a category in an image and, for each instance, mark the pixels that belong to it. We call this task Simultaneous Detection and Segmentation (SDS). Unlike classical bounding box detection, SDS requires a segmentation and not just a box. Unlike classical semantic segmentation, we require individual object instances. We build on recent work that uses convolutional neural networks to classify category-independent region proposals (R-CNN [16]), introducing a novel architecture tailored for SDS. We then use category-specific, top- down figure-ground predictions to refine our bottom-up proposals. We show a 7 point boost (16% relative) over our baselines on SDS, a 5 point boost (10% relative) over state-of-the-art on semantic segmentation, and state-of-the-art performance in object detection. Finally, we provide diagnostic tools that unpack performance and provide directions for future work.
-* [Hypercolumns](https://arxiv.org/abs/1411.5752)
+    * Comments:
+        * > SDS differs from classical bounding box detection in its requirement of a segmentation and from classical semantic segmentation in its requirement of separate instances. (Hypercolumns, 2014)
+* [[Hypercolumns](https://arxiv.org/abs/1411.5752)]
+    [[pdf](https://arxiv.org/pdf/1411.5752.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1411.5752/)]
     * Title: Hypercolumns for Object Segmentation and Fine-grained Localization
     * Year: 21 Nov `2014`
-    * Author: Bharath Hariharan
+    * Authors: Bharath Hariharan, Pablo Arbeláez, Ross Girshick, Jitendra Malik
+    * Institutions: [University of California, Berkeley], [Universidad de los Andes, Colombia], [Microsoft Research, Redmond]
     * Abstract: Recognition algorithms based on convolutional networks (CNNs) typically use the output of the last layer as feature representation. However, the information in this layer may be too coarse to allow precise localization. On the contrary, earlier layers may be precise in localization but will not capture semantics. To get the best of both worlds, we define the hypercolumn at a pixel as the vector of activations of all CNN units above that pixel. Using hypercolumns as pixel descriptors, we show results on three fine-grained localization tasks: simultaneous detection and segmentation[22], where we improve state-of-the-art from 49.7[22] mean AP^r to 60.0, keypoint localization, where we get a 3.3 point boost over[20] and part labeling, where we show a 6.6 point gain over a strong baseline.
     * Comments:
         * > More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification. (DeepLabv1, 2014)

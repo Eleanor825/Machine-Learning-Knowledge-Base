@@ -13,8 +13,9 @@
 * 2022.08.26 Fri: Recombinator Networks
 * 2022.08.27 Sat: Learning Deconvolution Network for Semantic Segmentation
 * 2022.08.28 Sun: DeepMask
+* 2022.08.29 Mon: ENet
 
 库存
 * Fully Convolutional Networks
 * 2022.08.25 Thu: U-Net
-* 2022.08.29 Mon: ENet
+* 2022.08.29 Mon: PSPNet
