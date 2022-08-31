@@ -31,7 +31,7 @@
 
 > We remark that this extreme form of an Inception module is almost identical to a depthwise separable convolution.
 
-> Two minor differences between and “extreme” version of an Inception module and a depthwise separable convolution would be:
+> Two minor differences between and "extreme" version of an Inception module and a depthwise separable convolution would be:
 > * The order of the operations: depthwise separable convolutions as usually implemented (e.g. in TensorFlow) perform first channel-wise spatial convolution and then perform 1x1 convolution, whereas Inception performs the 1x1 convolution first.
 > * The presence or absence of a non-linearity after the first operation. In Inception, both operations are followed by a ReLU non-linearity, however depthwise separable convolutions are usually implemented without non-linearities.
 

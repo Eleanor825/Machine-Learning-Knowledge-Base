@@ -14,17 +14,6 @@ count: 73
     * Year: `1991`
     * Authors: Ofer Matan, Christopher J. C. Burges, Yann LeCun, John Denker
     * Abstract: We present a feed-forward network architecture for recognizing an uncon(cid:173) strained handwritten multi-digit string. This is an extension of previous work on recognizing isolated digits. In this architecture a single digit rec(cid:173) ognizer is replicated over the input. The output layer of the network is coupled to a Viterbi alignment module that chooses the best interpretation of the input. Training errors are propagated through the Viterbi module. The novelty in this procedure is that segmentation is done on the feature maps developed in the Space Displacement Neural Network (SDNN) rather than the input (pixel) space.
-* [[Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)]
-    [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1505.04366/)]
-    * Title: Learning Deconvolution Network for Semantic Segmentation
-    * Year: 17 May `2015`
-    * Authors: Hyeonwoo Noh, Seunghoon Hong, Bohyung Han
-    * Institutions: [Department of Computer Science and Engineering, POSTECH, Korea]
-    * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
-    * Comments:
-        * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
-        * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (PSPNet, 2016)
 * [[Image Segmentation with Cascaded Hierarchical Models and Logistic Disjunctive Normal Networks](https://ieeexplore.ieee.org/document/6751380)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6751380)]
     * Title: Image Segmentation with Cascaded Hierarchical Models and Logistic Disjunctive Normal Networks
@@ -109,6 +98,22 @@ count: 73
     * Year: 15 Apr `2016`
     * Authors: Zifeng Wu, Chunhua Shen, Anton van den Hengel
     * Abstract: We propose a method for high-performance semantic image segmentation (or semantic pixel labelling) based on very deep residual networks, which achieves the state-of-the-art performance. A few design factors are carefully considered to this end. We make the following contributions. (i) First, we evaluate different variations of a fully convolutional residual network so as to find the best configuration, including the number of layers, the resolution of feature maps, and the size of field-of-view. Our experiments show that further enlarging the field-of-view and increasing the resolution of feature maps are typically beneficial, which however inevitably leads to a higher demand for GPU memories. To walk around the limitation, we propose a new method to simulate a high resolution network with a low resolution network, which can be applied during training and/or testing. (ii) Second, we propose an online bootstrapping method for training. We demonstrate that online bootstrapping is critically important for achieving good accuracy. (iii) Third we apply the traditional dropout to some of the residual blocks, which further improves the performance. (iv) Finally, our method achieves the currently best mean intersection-over-union 78.3\% on the PASCAL VOC 2012 dataset, as well as on the recent dataset Cityscapes.
+* [[BiSeNet V1](https://arxiv.org/abs/1808.00897)]
+    [[pdf](https://arxiv.org/pdf/1808.00897.pdf)
+    [[vanity](https://www.arxiv-vanity.com/papers/1808.00897/)]
+    * Title: BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation
+    * Year: 02 Aug `2018`
+    * Authors: Changqian Yu, Jingbo Wang, Chao Peng, Changxin Gao, Gang Yu, Nong Sang
+    * Institutions: [National Key Laboratory of Science and Technology on Multispectral Information Processing, School of Automation, Huazhong University of Science & Technology,China], [Key Laboratory of Machine Perception, Peking University, China], [Megvii Inc. (Face++), China]
+    * Abstract: Semantic segmentation requires both rich spatial information and sizeable receptive field. However, modern approaches usually compromise spatial resolution to achieve real-time inference speed, which leads to poor performance. In this paper, we address this dilemma with a novel Bilateral Segmentation Network (BiSeNet). We first design a Spatial Path with a small stride to preserve the spatial information and generate high-resolution features. Meanwhile, a Context Path with a fast downsampling strategy is employed to obtain sufficient receptive field. On top of the two paths, we introduce a new Feature Fusion Module to combine features efficiently. The proposed architecture makes a right balance between the speed and segmentation performance on Cityscapes, CamVid, and COCO-Stuff datasets. Specifically, for a 2048x1024 input, we achieve 68.4% Mean IOU on the Cityscapes test dataset with speed of 105 FPS on one NVIDIA Titan XP card, which is significantly faster than the existing methods with comparable performance.
+* [[BiSeNet V2](https://arxiv.org/abs/2004.02147)]
+    [[pdf](https://arxiv.org/pdf/2004.02147.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2004.02147/)]
+    * Title: BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation
+    * Year: 05 Apr `2020`
+    * Authors: Changqian Yu, Changxin Gao, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang
+    * Institutions: [National Key Laboratory of Science and Technology on Multispectral Information Processing, School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan, China], [The University of Adelaide, Australia], [The Chinese University of Hong Kong], [Tencent]
+    * Abstract: The low-level details and high-level semantics are both essential to the semantic segmentation task. However, to speed up the model inference, current approaches almost always sacrifice the low-level details, which leads to a considerable accuracy decrease. We propose to treat these spatial details and categorical semantics separately to achieve high accuracy and high efficiency for realtime semantic segmentation. To this end, we propose an efficient and effective architecture with a good trade-off between speed and accuracy, termed Bilateral Segmentation Network (BiSeNet V2). This architecture involves: (i) a Detail Branch, with wide channels and shallow layers to capture low-level details and generate high-resolution feature representation; (ii) a Semantic Branch, with narrow channels and deep layers to obtain high-level semantic context. The Semantic Branch is lightweight due to reducing the channel capacity and a fast-downsampling strategy. Furthermore, we design a Guided Aggregation Layer to enhance mutual connections and fuse both types of feature representation. Besides, a booster training strategy is designed to improve the segmentation performance without any extra inference cost. Extensive quantitative and qualitative evaluations demonstrate that the proposed architecture performs favourably against a few state-of-the-art real-time semantic segmentation approaches. Specifically, for a 2,048x1,024 input, we achieve 72.6% Mean IoU on the Cityscapes test set with a speed of 156 FPS on one NVIDIA GeForce GTX 1080 Ti card, which is significantly faster than existing methods, yet we achieve better segmentation accuracy.
 
 ### Patchwise Training (FCN, 2015) (5)
 
@@ -163,6 +168,20 @@ count: 73
     * Abstract: There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at [this http URL](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net).
     * Comments:
         * > Inspired byy FCN, U-Net was proposed for the medical image segmentation domain specifically, bridging the information flow between corresponding low-level and high-level feature maps of the same spatial sizes. (PVT, 2021)
+* [[Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)]
+    [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1505.04366/)]
+    * Title: Learning Deconvolution Network for Semantic Segmentation
+    * Year: 17 May `2015`
+    * Authors: Hyeonwoo Noh, Seunghoon Hong, Bohyung Han
+    * Institutions: [Department of Computer Science and Engineering, POSTECH, Korea]
+    * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
+    * Comments:
+        * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
+        * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (PSPNet, 2016)
+* [[Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation](https://arxiv.org/abs/1506.04924)]
+    * Title: Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation
+    * Authors: Seunghoon Hong, Hyeonwoo Noh, Bohyung Han
 * [[SegNet-Basic](https://arxiv.org/abs/1505.07293)]
     [[pdf](https://arxiv.org/pdf/1505.07293.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.07293/)]
@@ -695,8 +714,3 @@ count: 73
     * Title: From Image-level to Pixel-level Labeling with Convolutional Networks
     * Comments:
         * > On the other hand, [20] performs semantic segmentation based only on image-level annotations in a multiple instance learning framework. (Learning Deconvolution Network for Semantic Segmentation, 2015)
-
-## Semi-supervised
-
-* [[Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation](https://arxiv.org/abs/1506.04924)]
-    * Title: Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation

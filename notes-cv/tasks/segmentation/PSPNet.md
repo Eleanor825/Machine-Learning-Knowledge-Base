@@ -28,7 +28,7 @@
 
 > Context relationship is universal and important especially for complex scene understanding. There exist co-occurrent visual patterns.
 
-> For example, an airplane is likely to be in runway or fly in sky while not over a road. For the first-row example in Fig. 2, FCN predicts the boat in the yellow box as a “car” based on its appearance. But the common knowledge is that a car is seldom over a river.
+> For example, an airplane is likely to be in runway or fly in sky while not over a road. For the first-row example in Fig. 2, FCN predicts the boat in the yellow box as a "car" based on its appearance. But the common knowledge is that a car is seldom over a river.
 
 > Lack of the ability to collect contextual information increases the chance of misclassification.
 

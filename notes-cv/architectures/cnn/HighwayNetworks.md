@@ -59,7 +59,7 @@ network can learn to utilize all of its layers, while for simpler problems like 
 
 ## 5 Discussion
 
-> Very deep highway networks, on the other hand, can directly be trained with simple gradient descent methods due to their specific architecture. This property does not rely on specific non-linear transformations, which may be complex convolutional or recurrent transforms, and derivation of a suitable initialization scheme is not essential. The additional parameters required by the gating mechanism help in routing information through the use of multiplicative connections, responding differently to different inputs, unlike fixed “skip” connections.
+> Very deep highway networks, on the other hand, can directly be trained with simple gradient descent methods due to their specific architecture. This property does not rely on specific non-linear transformations, which may be complex convolutional or recurrent transforms, and derivation of a suitable initialization scheme is not essential. The additional parameters required by the gating mechanism help in routing information through the use of multiplicative connections, responding differently to different inputs, unlike fixed "skip" connections.
 
 ----------------------------------------------------------------------------------------------------
 

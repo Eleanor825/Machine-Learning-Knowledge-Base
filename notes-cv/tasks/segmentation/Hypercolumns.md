@@ -11,11 +11,11 @@
 
 ## 1. Introduction
 
-> Typically, recognition algorithms use the output of the last layer of the CNN. This makes sense when the task is assigning category labels to images or bounding boxes: the last layer is the most sensitive to category-level semantic information and the most invariant to “nuisance” variables such as pose, illumination, articulation, precise location and so on. However, when the task we are interested in is finer-grained, such as one of segmenting the detected object or estimating its pose, these nuisance variables are precisely what we are interested in. For such applications, the top layer is thus not the optimal representation.
+> Typically, recognition algorithms use the output of the last layer of the CNN. This makes sense when the task is assigning category labels to images or bounding boxes: the last layer is the most sensitive to category-level semantic information and the most invariant to "nuisance" variables such as pose, illumination, articulation, precise location and so on. However, when the task we are interested in is finer-grained, such as one of segmenting the detected object or estimating its pose, these nuisance variables are precisely what we are interested in. For such applications, the top layer is thus not the optimal representation.
 
 > Our hypothesis is that the information of interest is distributed over all levels of the CNN and should be exploited in this way.
 
-> We define the “hypercolumn” at a given input location as the outputs of all units above that location at all layers of the CNN, stacked into one vector.
+> We define the "hypercolumn" at a given input location as the outputs of all units above that location at all layers of the CNN, stacked into one vector.
 
 ## 2. Related work
 

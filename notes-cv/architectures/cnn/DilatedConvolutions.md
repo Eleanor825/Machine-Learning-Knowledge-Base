@@ -31,7 +31,7 @@ $$(F * k)(p) := \sum_{t \in \Omega_{r}}\tilde{F}(p - t)k(t) \tag{1}$$
 and the dilated convolution $F *_{l} k: \mathcal{D} \to \mathbb{R}$ with dilation factor $l$ is given by
 $$(F *_{l} k)(p) := \sum_{t \in \Omega_{r}}\tilde{F}(p - l \cdot t)k(t). \tag{2}$$
 
-> We use the term "dilated convolution" instead of "convolution with a dilated filter" to clarify that no “dilated filter” is constructed or represented. The convolution operator itself is modified to use the filter parameters in a different way. The dilated convolution operator can apply the same filter at different ranges using different dilation factors. Our definition reflects the proper implementation of the dilated convolution operator, which does not involve construction of dilated filters.
+> We use the term "dilated convolution" instead of "convolution with a dilated filter" to clarify that no "dilated filter" is constructed or represented. The convolution operator itself is modified to use the filter parameters in a different way. The dilated convolution operator can apply the same filter at different ranges using different dilation factors. Our definition reflects the proper implementation of the dilated convolution operator, which does not involve construction of dilated filters.
 
 Notations:
 * Let $F_{0}: \mathbb{Z}^{2} \to \mathbb{R}$ denote the input feature map.

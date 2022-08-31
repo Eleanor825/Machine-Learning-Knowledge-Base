@@ -12,21 +12,50 @@
 
 ## 1 Introduction
 
+> Even though CNNs are increasingly successful at classification and categorization tasks, they provide coarse spatial results when applied to pixel-wise labeling of images. Therefore, they are often cascaded with other algorithms to refine the results, such as color based segmentation clement13 or conditional random fields liang14 , to name a few.
+
 > In this paper, we propose a new neural network architecture optimized for fast inference and high accuracy.
 
 ## 2 Related work
 
+> State-of-the-art scene-parsing CNNs use two separate neural network architectures combined together: an encoder and a decoder.
+
+> The encoder is a vanilla CNN (such as VGG16 simonyan14 ) which is trained to classify the input, while the decoder is used to upsample the output of the encoder.
+
+> However, these networks are slow during inference due to their large architectures and numerous parameters.
+
+> Other existing architectures use simpler classifiers and then cascade them with `Conditional Random Field` (CRF) as a post-processing step.
+
+> These techniques use onerous post-processing steps and often fail to label the classes that occupy fewer number of pixels in a frame.
+
+> CNNs can be also combined with `recurrent neural networks` zheng2015conditional to improve accuracy, but then they suffer from speed degradation.
+
 ## 3 Network architecture
 
-> Each block consists of three convolutional layers: a 1x1 projection that reduces the dimensionality, a main convolutional layer (conv in Figure 1(b)), and a 1x1 expansion.
+Input size: 512 x 512.
 
-> We place Batch Normalization ioffe2015batchnorm and PReLU he2015 between all convolutions.
+> We adopt a view of ResNets he2015resnet that describes them as having a single main branch and extensions with convolutional filters that separate from it, and then merge back with an element-wise addition, as shown in Figure 1(b).
+
+> Each block consists of three convolutional layers:
+> * a 1x1 `projection` that reduces the dimensionality,
+> * a main `convolutional` layer (conv in Figure 1(b)), and
+> * a 1x1 `expansion`.
+
+> We place `Batch Normalization` ioffe2015batchnorm and `PReLU` he2015 between all convolutions.
+
+Types of the main convolution:
 
 > If the bottleneck is `downsampling`, a max pooling layer is added to the main branch. Also, the first 1x1 projection is replaced with a 2x2 convolution with stride 2 in both dimensions.
 
 > conv is either a regular, `dilated` or full convolution (also known as `deconvolution` or fractionally strided convolution) with 3x3 filters.
 
 > Sometimes we replace it with `asymmetric` convolution i.e. a sequence of 5x1 and 1x5 convolutions.
+
+Details:
+
+> For the regularizer, we use Spatial Dropout tompson15 , with p=0.01 before bottleneck2.0, and p=0.1 afterwards.
+
+> These three first stages are the encoder. Stage 4 and 5 belong to the decoder.
 
 > In the decoder max pooling is replaced with max unpooling, and padding is replaced with spatial convolution without bias.
 
@@ -68,7 +97,7 @@
 
 > It has been shown that convolutional weights have a fair amount of redundancy, and each $n \times n$ convolution can be decomposed into two smaller ones following each other: one with a $n \times 1$ filter and the other with a $1 \times n$ filter jin2014flattened .
 
-> A sequence of operations used in the bottleneck module (projection, convolution, projection) can be seen as decomposing one large convolutional layer into a series of smaller and simpler operations, that are its low-rank approximation.
+> What’s more, a sequence of operations used in the bottleneck module (projection, convolution, projection) can be seen as decomposing one large convolutional layer into a series of smaller and simpler operations, that are its low-rank approximation.
 
 > Such factorization allows for large speedups, and greatly reduces the number of parameters, making them less redundant jin2014flattened .
 
@@ -92,6 +121,8 @@
 
 ## 6 Conclusion
 
+> We have proposed a novel neural network architecture designed from the ground up specifically for semantic segmentation. Our main aim is to make efficient use of scarce resources available on embedded platforms, compared to fully fledged deep learning workstations. Our work provides large gains in this task, while matching and at times exceeding existing baseline models, that have an order of magnitude larger computational and memory requirements.
+
 ----------------------------------------------------------------------------------------------------
 
 ## References
@@ -100,3 +131,9 @@
 
 ## Further Reading
 
+* [3] VGG
+* [10] SegNet-Basic
+* [11] SegNet
+* [12] Fully Convolutional Networks (FCN)
+* [13] VGG
+* [24] ResNet
