@@ -104,7 +104,7 @@ Inference
 * [7] Faster R-CNN
 * [8] Inside-Outside Net (ION)
 * [17] DeepLabv1
-* [19] [Learning Deconvolution](https://zhuanlan.zhihu.com/p/558646271)
+* [19] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [22] DeepMask
 * [24] Hypercolumns
 * [25] AlexNet

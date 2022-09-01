@@ -94,6 +94,6 @@ $$\mathcal{F}(x) := \operatorname{Concat}\bigg(\{x\} \cup \bigg\{\mathcal{U}_{i}
 * [19] Deeply-Supervised Nets (DSN)
 * [24] ParseNet
 * [26] Fully Convolutional Networks (FCN)
-* [30] Learning Deconvolution
+* [30] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [33] VGG
 * [34] Inception-v1/GoogLeNet
