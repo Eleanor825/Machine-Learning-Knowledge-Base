@@ -64,6 +64,8 @@ Overview
 
 Encoder
 
+> Each encoder in the `encoder network` performs convolution with a filter bank to produce a set of feature maps.
+
 * Conv
 * BatchNormalization
 * ReLU
@@ -75,11 +77,17 @@ Encoder
 
 Decoder
 
-> The appropriate decoder in the decoder network upsamples its input feature map(s) using the memorized max-pooling indices from the corresponding encoder feature map(s). This step produces sparse feature map(s).
+> The appropriate decoder in the `decoder network` upsamples its input feature map(s) using the memorized max-pooling indices from the corresponding encoder feature map(s).
+
+> This step produces sparse feature map(s).
 
 > These feature maps are then convolved with a trainable decoder filter bank to produce dense feature maps.
 
-> A batch normalization step is then applied to each of these maps.
+> Note that the decoder corresponding to the first encoder (closest to the input image) produces a multi-channel feature map, although its encoder input has 3 channels (RGB). This is unlike the other decoders in the network which produce feature maps with the same number of size and channels as their encoder inputs.
+
+Classifier
+
+> The output of the soft-max classifier is a K channel image of probabilities where K is the number of classes.
 
 ### 3.1 Decoder Variants
 
