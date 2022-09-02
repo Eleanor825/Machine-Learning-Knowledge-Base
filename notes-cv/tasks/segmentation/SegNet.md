@@ -11,13 +11,48 @@
 
 ## 1 INTRODUCTION
 
-> The encoder network in SegNet is topologically identical to the convolutional layers in VGG16 [1].
+> Our motivation to design SegNet arises from this need to map low resolution features to input resolution for pixel-wise classification. This mapping must produce features which are useful for accurate boundary localization.
 
-> The key component of SegNet is the decoder network which consists of a hierarchy of decoders one corresponding to each encoder.
+> The `encoder` network in SegNet is topologically identical to the convolutional layers in VGG16 [1].
+
+> The key component of SegNet is the `decoder` network which consists of a hierarchy of decoders one corresponding to each encoder.
+
+> Reusing max-pooling indices in the decoding process has several practical advantages;
+> 1. (i) it improves boundary delineation,
+> 2. (ii) it reduces the number of parameters enabling end-to-end training, and
+> 3. (iii) this form of upsampling can be incorporated into any encoder-decoder architecture such as [2, 10] with only a little modification.
 
 ## 2 LITERATURE REVIEW
 
+Encoder-Decoder Architecture
+
+> Newer deep architectures [2, 4, 13, 18, 10] particularly designed for segmentation have advanced the state-of-the-art by learning to decode or map low resolution image representations to pixel-wise predictions.
+
+> The `encoder` network which produces these low resolution representations in all of these architectures is the VGG16 classification network [1] which has 13 convolutional layers and 3 fully connected layers.
+
+> The `decoder` network varies between these architectures and is the part which is responsible for producing multi-dimensional features for each pixel for classification.
+
+Multi-Scale Architecture
+
+> Multi-scale deep architectures are also being pursued [13, 44]. They come in two flavours,
+> 1. (i) those which use input images at a few scales and corresponding deep feature extraction networks, and
+> 2. (ii) those which combine feature maps from different layers of a single deep architecture [45] [11].
+
+> The common idea is to use features extracted at multiple scales to provide both local and global context [46] and the using feature maps of the early encoding layers retain more high frequency detail leading to sharper class boundaries.
+
+Others
+
+> Several of the recently proposed deep architectures for segmentation are not feed-forward in inference time [4], [3], [18]. They require either MAP inference over a CRF [44], [43] or aids such as region proposals [4] for inference.
+
+> We believe the perceived performance increase obtained by using a CRF is due to the lack of good decoding techniques in their core feed-forward segmentation engine.
+
+> In this work we discard the fully connected layers of the VGG16 encoder network which enables us to train the network using the relevant training set using SGD optimization.
+
+> Here, SegNet differs from these architectures as the deep encoder-decoder network is trained jointly for a supervised learning task and hence the decoders are an integral part of the network in test time.
+
 ## 3 ARCHITECTURE
+
+Overview
 
 > SegNet has an encoder network and a corresponding decoder network, followed by a final pixelwise classification layer.
 
@@ -69,11 +104,11 @@ Decoder
 * [1] VGG
 * [2] Fully Convolutional Networks (FCN)
 * [3] DeepLabv1
-* [4] DeconvNet
+* [4] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [5] Inception-v1/GoogLeNet
 * [6] VGG
 * [15] Dilated Convolutions
 * [16] U-Net
 * [51] Inception-v2/Batch Normalization
-* [53] DeconvNet
+* [53] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [58] Fully Convolutional Networks (FCN)

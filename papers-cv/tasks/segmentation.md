@@ -158,6 +158,8 @@ count: 73
 
 ### Encoder-Decoder Architecture
 
+> Newer deep architectures [2, 4, 13, 18, 10] particularly designed for segmentation have advanced the state-of-the-art by learning to decode or map low resolution image representations to pixel-wise predictions. (SegNet, 2015)
+
 * [[U-Net](https://arxiv.org/abs/1505.04597)]
     [[pdf](https://arxiv.org/pdf/1505.04597.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.04597/)]
@@ -178,10 +180,16 @@ count: 73
     * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
+        * > The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network. (SegNet, 2015)
         * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (PSPNet, 2016)
 * [[Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation](https://arxiv.org/abs/1506.04924)]
     * Title: Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation
+    * Year: 16 Jun `2015`
     * Authors: Seunghoon Hong, Hyeonwoo Noh, Bohyung Han
+    * Abstract: We propose a novel deep neural network architecture for semi-supervised semantic segmentation using heterogeneous annotations. Contrary to existing approaches posing semantic segmentation as a single task of region-based classification, our algorithm decouples classification and segmentation, and learns a separate network for each task. In this architecture, labels associated with an image are identified by classification network, and binary segmentation is subsequently performed for each identified label in segmentation network. The decoupled architecture enables us to learn classification and segmentation networks separately based on the training data with image-level and pixel-wise class labels, respectively. It facilitates to reduce search space for segmentation effectively by exploiting class-specific activation maps obtained from bridging layers. Our algorithm shows outstanding performance compared to other semi-supervised approaches even with much less training images with strong annotations in PASCAL VOC dataset.
+    * Comments:
+        * Semi-supervised variant of the DeconvNet. (SegNet, 2015)
+        * > The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network. (SegNet, 2015)
 * [[SegNet-Basic](https://arxiv.org/abs/1505.07293)]
     [[pdf](https://arxiv.org/pdf/1505.07293.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.07293/)]
@@ -280,9 +288,10 @@ count: 73
         * > The main advantage of the methods based on FCN is that the network accepts a whole image as an input and performs fast and accurate inference. (Learning Deconvolution Network for Semantic Segmentation, 2015)
         > Semantic segmentation based on FCNs [1, 17] have a couple of critical limitations. First, the network can handle only a single scale semantics within image due to the fixed-size receptive field. Therefore, the object that is substantially larger or smaller than the receptive field may be fragmented or mislabeled. ... Second, the detailed structures of an object are often lost or smoothed because the label map, input to the deconvolutional layer, is too coarse and deconvolution procedure is overly simple. (Learning Deconvolution Network for Semantic Segmentation, 2015)
         * > In this approach, fully connected layers in the standard CNNs are interpreted as convolutions with large receptive fields, and segmentation is achieved using coarse class score maps obtained by feedforwarding an input image. An interesting idea in this work is that a simple interpolation filter is employed for deconvolution and only the CNN part of the network is fine-tuned to learn deconvolution indirectly. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+        * > FCN-8s [38] gradually learns finer-scale prediction from lower layers (initialized with coarser-scale prediction). (Attention to Scale, 2015)
+        * > Each decoder in the Fully Convolutional Network (FCN) architecture [2] learns to upsample its input feature map(s) and combines them with the corresponding encoder feature map to produce the input to the next decoder. (SegNet, 2015)
         * > In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size. (PVT, 2021)
         * skip connections??? where?
-        * > FCN-8s [38] gradually learns finer-scale prediction from lower layers (initialized with coarser-scale prediction). (Attention to Scale, 2015)
 
 ### FCN based models (Attention to Scale, 2015) (6)
 
@@ -314,6 +323,7 @@ count: 73
     * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at [this https URL](https://github.com/weiliu89/caffe/tree/fcn).
     * Comments:
         * > ParseNet [36] aggregated features over the whole image to provide global contextual information. (Attention to Scale, 2015)
+        * FCN is the core of ParseNet (SegNet, 2015)
         * > Liu et al. [24] proved that global average pooling with FCN can improve semantic segmentation results. (PSPNet, 2016)
 
 > The second type, which we refer to as share-net, resizes the input image to several scales and passes each through a shared deep network. It then computes the final prediction based on the fusion of the resulting multi-scale features [19, 34]. A share-net does not need the two-step training process mentioned above. It usually employs average- or max-pooling over scales [20, 14, 44, 15]. Features at each scale are either equally important or sparsely selected. (Attention to Scale, 2015)
@@ -517,8 +527,9 @@ count: 73
     * Institutions: [Univ. of California, Los Angeles], [Google Inc.], [CentraleSupélec and INRIA]
     * Abstract: Deep Convolutional Neural Networks (DCNNs) have recently shown state of the art performance in high level vision tasks, such as image classification and object detection. This work brings together methods from DCNNs and probabilistic graphical models for addressing the task of pixel-level classification (also called "semantic image segmentation"). We show that responses at the final layer of DCNNs are not sufficiently localized for accurate object segmentation. This is due to the very invariance properties that make DCNNs good for high level tasks. We overcome this poor localization property of deep networks by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF). Qualitatively, our "DeepLab" system is able to localize segment boundaries at a level of accuracy which is beyond previous methods. Quantitatively, our method sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 71.6% IOU accuracy in the test set. We show how these results can be obtained efficiently: Careful network re-purposing and a novel application of the 'hole' algorithm from the wavelet community allow dense computation of neural net responses at 8 frames per second on a modern GPU.
     * Comments:
-        * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
         * DeepLab is a variant of FCNs.
+        * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
+        * > The method of [3] also use the feature maps of the classification network with an independent CRF post-processing technique to perform segmentation. (SegNet, 2015)
         * > Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 . (ENet, 2016)
 * [DeepLabv2](https://arxiv.org/abs/1606.00915)
     * Title: DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
