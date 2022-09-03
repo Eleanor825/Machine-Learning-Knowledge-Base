@@ -1,0 +1,1920 @@
+Advisable Learning for Self-Driving Vehicles by Internalizing Observation-to-Action Rules
+Jinkyu Kim, Suhong Moon, Anna Rohrbach, Trevor Darrell, John Canny
+[pdf] [supp] [video] [bibtex]
+
+Lightweight Multi-View 3D Pose Estimation Through Camera-Disentangled Representation
+Edoardo Remelli, Shangchen Han, Sina Honari, Pascal Fua, Robert Wang
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Robust Design of Deep Neural Networks Against Adversarial Attacks Based on Lyapunov Theory
+Arash Rahnama, Andre T. Nguyen, Edward Raff
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Cross-Modal Deep Face Normals With Deactivable Skip Connections
+Victoria Fernandez Abrevaya, Adnane Boukhayma, Philip H.S. Torr, Edmond Boyer
+[pdf] [supp] [arXiv] [bibtex]
+
+Progressive Adversarial Networks for Fine-Grained Domain Adaptation
+Sinan Wang, Xinyang Chen, Yunbo Wang, Mingsheng Long, Jianmin Wang
+[pdf] [bibtex]
+
+ActBERT: Learning Global-Local Video-Text Representations
+Linchao Zhu, Yi Yang
+[pdf] [bibtex]
+
+Towards Visually Explaining Variational Autoencoders
+Wenqian Liu, Runze Li, Meng Zheng, Srikrishna Karanam, Ziyan Wu, Bir Bhanu, Richard J. Radke, Octavia Camps
+[pdf] [supp] [arXiv] [bibtex]
+
+CenterMask: Single Shot Instance Segmentation With Point Representation
+Yuqing Wang, Zhaoliang Xu, Hao Shen, Baoshan Cheng, Lirong Yang
+[pdf] [arXiv] [bibtex]
+
+BidNet: Binocular Image Dehazing Without Explicit Disparity Estimation
+Yanwei Pang, Jing Nie, Jin Xie, Jungong Han, Xuelong Li
+[pdf] [bibtex]
+
+Unsupervised Learning From Video With Deep Neural Embeddings
+Chengxu Zhuang, Tianwei She, Alex Andonian, Max Sobol Mark, Daniel Yamins
+[pdf] [supp] [arXiv] [bibtex]
+
+One-Shot Domain Adaptation for Face Generation
+Chao Yang, Ser-Nam Lim
+[pdf] [arXiv] [bibtex]
+
+A Unified Optimization Framework for Low-Rank Inducing Penalties
+Marcus Valtonen Ornhag, Carl Olsson
+[pdf] [supp] [arXiv] [bibtex]
+
+Cost Volume Pyramid Based Depth Inference for Multi-View Stereo
+Jiayu Yang, Wei Mao, Jose M. Alvarez, Miaomiao Liu
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning for Video Compression With Hierarchical Quality and Recurrent Enhancement
+Ren Yang, Fabian Mentzer, Luc Van Gool, Radu Timofte
+[pdf] [supp] [arXiv] [bibtex]
+
+Sub-Frame Appearance and 6D Pose Estimation of Fast Moving Objects
+Denys Rozumnyi, Jan Kotera, Filip Sroubek, Jiri Matas
+[pdf] [supp] [arXiv] [bibtex]
+
+TetraTSDF: 3D Human Reconstruction From a Single Image With a Tetrahedral Outer Shell
+Hayato Onizuka, Zehra Hayirci, Diego Thomas, Akihiro Sugimoto, Hideaki Uchiyama, Rin-ichiro Taniguchi
+[pdf] [arXiv] [video] [bibtex]
+
+Flow2Stereo: Effective Self-Supervised Learning of Optical Flow and Stereo Matching
+Pengpeng Liu, Irwin King, Michael R. Lyu, Jia Xu
+[pdf] [arXiv] [video] [bibtex]
+
+Local Class-Specific and Global Image-Level Generative Adversarial Networks for Semantic-Guided Scene Generation
+Hao Tang, Dan Xu, Yan Yan, Philip H.S. Torr, Nicu Sebe
+[pdf] [arXiv] [video] [bibtex]
+
+Fast Soft Color Segmentation
+Naofumi Akimoto, Huachun Zhu, Yanghua Jin, Yoshimitsu Aoki
+[pdf] [supp] [arXiv] [bibtex]
+
+Partial Weight Adaptation for Robust DNN Inference
+Xiufeng Xie, Kyu-Han Kim
+[pdf] [arXiv] [bibtex]
+
+Deep Facial Non-Rigid Multi-View Stereo
+Ziqian Bai, Zhaopeng Cui, Jamal Ahmed Rahim, Xiaoming Liu, Ping Tan
+[pdf] [supp] [bibtex]
+
+Deep Shutter Unrolling Network
+Peidong Liu, Zhaopeng Cui, Viktor Larsson, Marc Pollefeys
+[pdf] [supp] [bibtex]
+
+BlendMask: Top-Down Meets Bottom-Up for Instance Segmentation
+Hao Chen, Kunyang Sun, Zhi Tian, Chunhua Shen, Yongming Huang, Youliang Yan
+[pdf] [supp] [arXiv] [bibtex]
+
+Towards Learning Structure via Consensus for Face Segmentation and Parsing
+Iacopo Masi, Joe Mathai, Wael AbdAlmageed
+[pdf] [supp] [arXiv] [bibtex]
+
+Pixel Consensus Voting for Panoptic Segmentation
+Haochen Wang, Ruotian Luo, Michael Maire, Greg Shakhnarovich
+[pdf] [arXiv] [bibtex]
+
+Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis
+Yiyi Liao, Katja Schwarz, Lars Mescheder, Andreas Geiger
+[pdf] [arXiv] [video] [bibtex]
+
+Exploit Clues From Views: Self-Supervised and Regularized Learning for Multiview Object Recognition
+Chih-Hui Ho, Bo Liu, Tz-Ying Wu, Nuno Vasconcelos
+[pdf] [supp] [arXiv] [bibtex]
+
+SampleNet: Differentiable Point Cloud Sampling
+Itai Lang, Asaf Manor, Shai Avidan
+[pdf] [supp] [arXiv] [bibtex]
+
+Guided Variational Autoencoder for Disentanglement Learning
+Zheng Ding, Yifan Xu, Weijian Xu, Gaurav Parmar, Yang Yang, Max Welling, Zhuowen Tu
+[pdf] [arXiv] [bibtex]
+
+Online Deep Clustering for Unsupervised Representation Learning
+Xiaohang Zhan, Jiahao Xie, Ziwei Liu, Yew-Soon Ong, Chen Change Loy
+[pdf] [arXiv] [bibtex]
+
+A Disentangling Invertible Interpretation Network for Explaining Latent Representations
+Patrick Esser, Robin Rombach, Bjorn Ommer
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+SynSin: End-to-End View Synthesis From a Single Image
+Olivia Wiles, Georgia Gkioxari, Richard Szeliski, Justin Johnson
+[pdf] [supp] [arXiv] [bibtex]
+
+HOPE-Net: A Graph-Based Model for Hand-Object Pose Estimation
+Bardia Doosti, Shujon Naha, Majid Mirbagheri, David J. Crandall
+[pdf] [bibtex]
+
+Auto-Tuning Structured Light by Optical Stochastic Gradient Descent
+Wenzheng Chen, Parsa Mirdehghan, Sanja Fidler, Kiriakos N. Kutulakos
+[pdf] [supp] [bibtex]
+
+HandVoxNet: Deep Voxel-Based Network for 3D Hand Shape and Pose Estimation From a Single Depth Map
+Jameel Malik, Ibrahim Abdelaziz, Ahmed Elhayek, Soshi Shimada, Sk Aziz Ali, Vladislav Golyanik, Christian Theobalt, Didier Stricker
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Deep 3D Portrait From a Single Image
+Sicheng Xu, Jiaolong Yang, Dong Chen, Fang Wen, Yu Deng, Yunde Jia, Xin Tong
+[pdf] [arXiv] [bibtex]
+
+AnimalWeb: A Large-Scale Hierarchical Dataset of Annotated Animal Faces
+Muhammad Haris Khan, John McDonagh, Salman Khan, Muhammad Shahabuddin, Aditya Arora, Fahad Shahbaz Khan, Ling Shao, Georgios Tzimiropoulos
+[pdf] [arXiv] [dataset] [bibtex]
+
+MANTRA: Memory Augmented Networks for Multiple Trajectory Prediction
+Francesco Marchetti, Federico Becattini, Lorenzo Seidenari, Alberto Del Bimbo
+[pdf] [arXiv] [bibtex]
+
+Neural Point Cloud Rendering via Multi-Plane Projection
+Peng Dai, Yinda Zhang, Zhuwen Li, Shuaicheng Liu, Bing Zeng
+[pdf] [supp] [arXiv] [bibtex]
+
+A2dele: Adaptive and Attentive Depth Distiller for Efficient RGB-D Salient Object Detection
+Yongri Piao, Zhengkun Rong, Miao Zhang, Weisong Ren, Huchuan Lu
+[pdf] [video] [bibtex]
+
+Continual Learning With Extended Kronecker-Factored Approximate Curvature
+Janghyeon Lee, Hyeong Gwon Hong, Donggyu Joo, Junmo Kim
+[pdf] [supp] [arXiv] [bibtex]
+
+Domain Balancing: Face Recognition on Long-Tailed Domains
+Dong Cao, Xiangyu Zhu, Xingyu Huang, Jianzhu Guo, Zhen Lei
+[pdf] [arXiv] [bibtex]
+
+Neural Pose Transfer by Spatially Adaptive Instance Normalization
+Jiashun Wang, Chao Wen, Yanwei Fu, Haitao Lin, Tianyun Zou, Xiangyang Xue, Yinda Zhang
+[pdf] [supp] [arXiv] [bibtex]
+
+RoutedFusion: Learning Real-Time Depth Map Fusion
+Silvan Weder, Johannes Schonberger, Marc Pollefeys, Martin R. Oswald
+[pdf] [supp] [arXiv] [bibtex]
+
+Coherent Reconstruction of Multiple Humans From a Single Image
+Wen Jiang, Nikos Kolotouros, Georgios Pavlakos, Xiaowei Zhou, Kostas Daniilidis
+[pdf] [supp] [arXiv] [bibtex]
+
+High-Performance Long-Term Tracking With Meta-Updater
+Kenan Dai, Yunhua Zhang, Dong Wang, Jianhua Li, Huchuan Lu, Xiaoyun Yang
+[pdf] [arXiv] [bibtex]
+
+Rethinking Class-Balanced Methods for Long-Tailed Visual Recognition From a Domain Adaptation Perspective
+Muhammad Abdullah Jamal, Matthew Brown, Ming-Hsuan Yang, Liqiang Wang, Boqing Gong
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Softmax Splatting for Video Frame Interpolation
+Simon Niklaus, Feng Liu
+[pdf] [supp] [arXiv] [bibtex]
+
+Cross-Domain Correspondence Learning for Exemplar-Based Image Translation
+Pan Zhang, Bo Zhang, Dong Chen, Lu Yuan, Fang Wen
+[pdf] [supp] [arXiv] [bibtex]
+
+A Multi-Task Mean Teacher for Semi-Supervised Shadow Detection
+Zhihao Chen, Lei Zhu, Liang Wan, Song Wang, Wei Feng, Pheng-Ann Heng
+[pdf] [bibtex]
+
+Closed-Loop Matters: Dual Regression Networks for Single Image Super-Resolution
+Yong Guo, Jian Chen, Jingdong Wang, Qi Chen, Jiezhang Cao, Zeshuai Deng, Yanwu Xu, Mingkui Tan
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+ROAM: Recurrently Optimizing Tracking Model
+Tianyu Yang, Pengfei Xu, Runbo Hu, Hua Chai, Antoni B. Chan
+[pdf] [supp] [arXiv] [bibtex]
+
+Wavelet Integrated CNNs for Noise-Robust Image Classification
+Qiufu Li, Linlin Shen, Sheng Guo, Zhihui Lai
+[pdf] [supp] [arXiv] [bibtex]
+
+Towards Causal VQA: Revealing and Reducing Spurious Correlations by Invariant and Covariant Semantic Editing
+Vedika Agarwal, Rakshith Shetty, Mario Fritz
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+FReeNet: Multi-Identity Face Reenactment
+Jiangning Zhang, Xianfang Zeng, Mengmeng Wang, Yusu Pan, Liang Liu, Yong Liu, Yu Ding, Changjie Fan
+[pdf] [arXiv] [bibtex]
+
+Deep Snake for Real-Time Instance Segmentation
+Sida Peng, Wen Jiang, Huaijin Pi, Xiuli Li, Hujun Bao, Xiaowei Zhou
+[pdf] [arXiv] [bibtex]
+
+Learning Identity-Invariant Motion Representations for Cross-ID Face Reenactment
+Po-Hsiang Huang, Fu-En Yang, Yu-Chiang Frank Wang
+[pdf] [video] [bibtex]
+
+Unsupervised Domain Adaptation via Structurally Regularized Deep Clustering
+Hui Tang, Ke Chen, Kui Jia
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Augment Your Batch: Improving Generalization Through Instance Repetition
+Elad Hoffer, Tal Ben-Nun, Itay Hubara, Niv Giladi, Torsten Hoefler, Daniel Soudry
+[pdf] [supp] [bibtex]
+
+AdaCoF: Adaptive Collaboration of Flows for Video Frame Interpolation
+Hyeongmin Lee, Taeoh Kim, Tae-young Chung, Daehyun Pak, Yuseok Ban, Sangyoun Lee
+[pdf] [arXiv] [bibtex]
+
+Blurry Video Frame Interpolation
+Wang Shen, Wenbo Bao, Guangtao Zhai, Li Chen, Xiongkuo Min, Zhiyong Gao
+[pdf] [arXiv] [bibtex]
+
+Self-Learning With Rectification Strategy for Human Parsing
+Tao Li, Zhiyuan Liang, Sanyuan Zhao, Jiahao Gong, Jianbing Shen
+[pdf] [arXiv] [bibtex]
+
+HigherHRNet: Scale-Aware Representation Learning for Bottom-Up Human Pose Estimation
+Bowen Cheng, Bin Xiao, Jingdong Wang, Honghui Shi, Thomas S. Huang, Lei Zhang
+[pdf] [arXiv] [video] [bibtex]
+
+CNN-Generated Images Are Surprisingly Easy to Spot... for Now
+Sheng-Yu Wang, Oliver Wang, Richard Zhang, Andrew Owens, Alexei A. Efros
+[pdf] [supp] [arXiv] [bibtex]
+
+Determinant Regularization for Gradient-Efficient Graph Matching
+Tianshu Yu, Junchi Yan, Baoxin Li
+[pdf] [bibtex]
+
+A Stochastic Conditioning Scheme for Diverse Human Motion Prediction
+Sadegh Aliakbarian, Fatemeh Sadat Saleh, Mathieu Salzmann, Lars Petersson, Stephen Gould
+[pdf] [supp] [bibtex]
+
+Can Facial Pose and Expression Be Separated With Weak Perspective Camera?
+Evangelos Sariyanidi, Casey J. Zampella, Robert T. Schultz, Birkan Tunc
+[pdf] [supp] [bibtex]
+
+Probability Weighted Compact Feature for Domain Adaptive Retrieval
+Fuxiang Huang, Lei Zhang, Yang Yang, Xichuan Zhou
+[pdf] [arXiv] [bibtex]
+
+Compositional Convolutional Neural Networks: A Deep Architecture With Innate Robustness to Partial Occlusion
+Adam Kortylewski, Ju He, Qing Liu, Alan L. Yuille
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Cascade EF-GAN: Progressive Facial Expression Editing With Local Focuses
+Rongliang Wu, Gongjie Zhang, Shijian Lu, Tao Chen
+[pdf] [supp] [bibtex]
+
+TPNet: Trajectory Proposal Network for Motion Prediction
+Liangji Fang, Qinhong Jiang, Jianping Shi, Bolei Zhou
+[pdf] [supp] [arXiv] [bibtex]
+
+Part-Aware Context Network for Human Parsing
+Xiaomei Zhang, Yingying Chen, Bingke Zhu, Jinqiao Wang, Ming Tang
+[pdf] [bibtex]
+
+Lighthouse: Predicting Lighting Volumes for Spatially-Coherent Illumination
+Pratul P. Srinivasan, Ben Mildenhall, Matthew Tancik, Jonathan T. Barron, Richard Tucker, Noah Snavely
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Joint Texture and Geometry Optimization for RGB-D Reconstruction
+Yanping Fu, Qingan Yan, Jie Liao, Chunxia Xiao
+[pdf] [supp] [bibtex]
+
+Hyperbolic Visual Embedding Learning for Zero-Shot Recognition
+Shaoteng Liu, Jingjing Chen, Liangming Pan, Chong-Wah Ngo, Tat-Seng Chua, Yu-Gang Jiang
+[pdf] [bibtex]
+
+LSM: Learning Subspace Minimization for Low-Level Vision
+Chengzhou Tang, Lu Yuan, Ping Tan
+[pdf] [supp] [arXiv] [bibtex]
+
+Erasing Integrated Learning: A Simple Yet Effective Approach for Weakly Supervised Object Localization
+Jinjie Mai, Meng Yang, Wenfeng Luo
+[pdf] [video] [bibtex]
+
+Self-Supervised Deep Visual Odometry With Online Adaptation
+Shunkai Li, Xin Wang, Yingdian Cao, Fei Xue, Zike Yan, Hongbin Zha
+[pdf] [supp] [arXiv] [bibtex]
+
+Weakly-Supervised Semantic Segmentation via Sub-Category Exploration
+Yu-Ting Chang, Qiaosong Wang, Wei-Chih Hung, Robinson Piramuthu, Yi-Hsuan Tsai, Ming-Hsuan Yang
+[pdf] [supp] [arXiv] [bibtex]
+
+Normalizing Flows With Multi-Scale Autoregressive Priors
+Apratim Bhattacharyya, Shweta Mahajan, Mario Fritz, Bernt Schiele, Stefan Roth
+[pdf] [supp] [arXiv] [bibtex]
+
+Dynamic Neural Relational Inference
+Colin Graber, Alexander G. Schwing
+[pdf] [supp] [bibtex]
+
+Embedding Expansion: Augmentation in Embedding Space for Deep Metric Learning
+Byungsoo Ko, Geonmo Gu
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+LT-Net: Label Transfer by Learning Reversible Voxel-Wise Correspondence for One-Shot Medical Image Segmentation
+Shuxin Wang, Shilei Cao, Dong Wei, Renzhen Wang, Kai Ma, Liansheng Wang, Deyu Meng, Yefeng Zheng
+[pdf] [supp] [video] [bibtex]
+
+Transferring Dense Pose to Proximal Animal Classes
+Artsiom Sanakoyeu, Vasil Khalidov, Maureen S. McCarthy, Andrea Vedaldi, Natalia Neverova
+[pdf] [supp] [arXiv] [bibtex]
+
+Suppressing Uncertainties for Large-Scale Facial Expression Recognition
+Kai Wang, Xiaojiang Peng, Jianfei Yang, Shijian Lu, Yu Qiao
+[pdf] [arXiv] [bibtex]
+
+Scale-Space Flow for End-to-End Optimized Video Compression
+Eirikur Agustsson, David Minnen, Nick Johnston, Johannes Balle, Sung Jin Hwang, George Toderici
+[pdf] [supp] [bibtex]
+
+StyleRig: Rigging StyleGAN for 3D Control Over Portrait Images
+Ayush Tewari, Mohamed Elgharib, Gaurav Bharaj, Florian Bernard, Hans-Peter Seidel, Patrick Perez, Michael Zollhofer, Christian Theobalt
+[pdf] [supp] [arXiv] [bibtex]
+
+Semantic Pyramid for Image Generation
+Assaf Shocher, Yossi Gandelsman, Inbar Mosseri, Michal Yarom, Michal Irani, William T. Freeman, Tali Dekel
+[pdf] [arXiv] [bibtex]
+
+Towards Backward-Compatible Representation Learning
+Yantao Shen, Yuanjun Xiong, Wei Xia, Stefano Soatto
+[pdf] [supp] [arXiv] [bibtex]
+
+Global-Local GCN: Large-Scale Label Noise Cleansing for Face Recognition
+Yaobin Zhang, Weihong Deng, Mei Wang, Jiani Hu, Xian Li, Dongyue Zhao, Dongchao Wen
+[pdf] [supp] [bibtex]
+
+Adaptive Graph Convolutional Network With Attention Graph Clustering for Co-Saliency Detection
+Kaihua Zhang, Tengpeng Li, Shiwen Shen, Bo Liu, Jin Chen, Qingshan Liu
+[pdf] [arXiv] [video] [bibtex]
+
+UniPose: Unified Human Pose Estimation in Single Images and Videos
+Bruno Artacho, Andreas Savakis
+[pdf] [arXiv] [bibtex]
+
+Novel View Synthesis of Dynamic Scenes With Globally Coherent Depths From a Monocular Camera
+Jae Shin Yoon, Kihwan Kim, Orazio Gallo, Hyun Soo Park, Jan Kautz
+[pdf] [supp] [arXiv] [video] [dataset] [bibtex]
+
+Cogradient Descent for Bilinear Optimization
+Li'an Zhuo, Baochang Zhang, Linlin Yang, Hanlin Chen, Qixiang Ye, David Doermann, Rongrong Ji, Guodong Guo
+[pdf] [arXiv] [bibtex]
+
+AdversarialNAS: Adversarial Neural Architecture Search for GANs
+Chen Gao, Yunpeng Chen, Si Liu, Zhenxiong Tan, Shuicheng Yan
+[pdf] [arXiv] [bibtex]
+
+Belief Propagation Reloaded: Learning BP-Layers for Labeling Problems
+Patrick Knobelreiter, Christian Sormann, Alexander Shekhovtsov, Friedrich Fraundorfer, Thomas Pock
+[pdf] [supp] [arXiv] [bibtex]
+
+DoveNet: Deep Image Harmonization via Domain Verification
+Wenyan Cong, Jianfu Zhang, Li Niu, Liu Liu, Zhixin Ling, Weiyuan Li, Liqing Zhang
+[pdf] [supp] [arXiv] [bibtex]
+
+Self-Supervised 3D Human Pose Estimation via Part Guided Novel Image Synthesis
+Jogendra Nath Kundu, Siddharth Seth, Varun Jampani, Mugalodi Rakesh, R. Venkatesh Babu, Anirban Chakraborty
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Self-Supervised Learning of Interpretable Keypoints From Unlabelled Videos
+Tomas Jakab, Ankush Gupta, Hakan Bilen, Andrea Vedaldi
+[pdf] [supp] [bibtex]
+
+Distribution-Aware Coordinate Representation for Human Pose Estimation
+Feng Zhang, Xiatian Zhu, Hanbin Dai, Mao Ye, Ce Zhu
+[pdf] [bibtex]
+
+Attention Mechanism Exploits Temporal Contexts: Real-Time 3D Human Pose Reconstruction
+Ruixu Liu, Ju Shen, He Wang, Chen Chen, Sen-ching Cheung, Vijayan Asari
+[pdf] [video] [bibtex]
+
+MaskFlownet: Asymmetric Feature Matching With Learnable Occlusion Mask
+Shengyu Zhao, Yilun Sheng, Yue Dong, Eric I-Chao Chang, Yan Xu
+[pdf] [supp] [arXiv] [bibtex]
+
+3FabRec: Fast Few-Shot Face Alignment by Reconstruction
+Bjorn Browatzki, Christian Wallraven
+[pdf] [supp] [arXiv] [bibtex]
+
+MARMVS: Matching Ambiguity Reduced Multiple View Stereo for Efficient Large Scale Scene Reconstruction
+Zhenyu Xu, Yiguang Liu, Xuelei Shi, Ying Wang, Yunan Zheng
+[pdf] [video] [bibtex]
+
+Bodies at Rest: 3D Human Pose and Shape Estimation From a Pressure Image Using Synthetic Data
+Henry M. Clever, Zackory Erickson, Ariel Kapusta, Greg Turk, Karen Liu, Charles C. Kemp
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Cars Can't Fly Up in the Sky: Improving Urban-Scene Segmentation via Height-Driven Attention Networks
+Sungha Choi, Joanne T. Kim, Jaegul Choo
+[pdf] [supp] [video] [bibtex]
+
+Compressed Volumetric Heatmaps for Multi-Person 3D Pose Estimation
+Matteo Fabbri, Fabio Lanzi, Simone Calderara, Stefano Alletto, Rita Cucchiara
+[pdf] [supp] [arXiv] [bibtex]
+
+3D-MPA: Multi-Proposal Aggregation for 3D Semantic Instance Segmentation
+Francis Engelmann, Martin Bokeloh, Alireza Fathi, Bastian Leibe, Matthias Niessner
+[pdf] [supp] [bibtex]
+
+Domain Adaptive Image-to-Image Translation
+Ying-Cong Chen, Xiaogang Xu, Jiaya Jia
+[pdf] [supp] [bibtex]
+
+Video Playback Rate Perception for Self-Supervised Spatio-Temporal Representation Learning
+Yuan Yao, Chang Liu, Dezhao Luo, Yu Zhou, Qixiang Ye
+[pdf] [video] [bibtex]
+
+Warping Residual Based Image Stitching for Large Parallax
+Kyu-Yul Lee, Jae-Young Sim
+[pdf] [bibtex]
+
+GLU-Net: Global-Local Universal Network for Dense Flow and Correspondences
+Prune Truong, Martin Danelljan, Radu Timofte
+[pdf] [supp] [bibtex]
+
+SAINT: Spatially Aware Interpolation NeTwork for Medical Slice Synthesis
+Cheng Peng, Wei-An Lin, Haofu Liao, Rama Chellappa, S. Kevin Zhou
+[pdf] [supp] [arXiv] [bibtex]
+
+StarGAN v2: Diverse Image Synthesis for Multiple Domains
+Yunjey Choi, Youngjung Uh, Jaejun Yoo, Jung-Woo Ha
+[pdf] [supp] [arXiv] [bibtex]
+
+Local Deep Implicit Functions for 3D Shape
+Kyle Genova, Forrester Cole, Avneesh Sud, Aaron Sarna, Thomas Funkhouser
+[pdf] [arXiv] [bibtex]
+
+Weakly-Supervised Domain Adaptation via GAN and Mesh Model for Estimating 3D Hand Poses Interacting Objects
+Seungryul Baek, Kwang In Kim, Tae-Kyun Kim
+[pdf] [supp] [video] [bibtex]
+
+Global Texture Enhancement for Fake Face Detection in the Wild
+Zhengzhe Liu, Xiaojuan Qi, Philip H.S. Torr
+[pdf] [supp] [arXiv] [bibtex]
+
+C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds
+Albert Pumarola, Stefan Popov, Francesc Moreno-Noguer, Vittorio Ferrari
+[pdf] [bibtex]
+
+Hyperbolic Image Embeddings
+Valentin Khrulkov, Leyla Mirvakhabova, Evgeniya Ustinova, Ivan Oseledets, Victor Lempitsky
+[pdf] [supp] [arXiv] [bibtex]
+
+Nested Scale-Editing for Conditional Image Synthesis
+Lingzhi Zhang, Jiancong Wang, Yinshuang Xu, Jie Min, Tarmily Wen, James C. Gee, Jianbo Shi
+[pdf] [supp] [arXiv] [bibtex]
+
+Joint Spatial-Temporal Optimization for Stereo 3D Object Tracking
+Peiliang Li, Jieqi Shi, Shaojie Shen
+[pdf] [supp] [arXiv] [bibtex]
+
+Reusing Discriminators for Encoding: Towards Unsupervised Image-to-Image Translation
+Runfa Chen, Wenbing Huang, Binghui Huang, Fuchun Sun, Bin Fang
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Learning Representations by Predicting Bags of Visual Words
+Spyros Gidaris, Andrei Bursuc, Nikos Komodakis, Patrick Perez, Matthieu Cord
+[pdf] [supp] [arXiv] [bibtex]
+
+Global-Local Bidirectional Reasoning for Unsupervised Representation Learning of 3D Point Clouds
+Yongming Rao, Jiwen Lu, Jie Zhou
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Knowledge As Priors: Cross-Modal Knowledge Generalization for Datasets Without Superior Knowledge
+Long Zhao, Xi Peng, Yuxiao Chen, Mubbasir Kapadia, Dimitris N. Metaxas
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Large Scale Video Representation Learning via Relational Graph Clustering
+Hyodong Lee, Joonseok Lee, Joe Yue-Hei Ng, Paul Natsev
+[pdf] [bibtex]
+
+ASLFeat: Learning Local Features of Accurate Shape and Localization
+Zixin Luo, Lei Zhou, Xuyang Bai, Hongkai Chen, Jiahui Zhang, Yao Yao, Shiwei Li, Tian Fang, Long Quan
+[pdf] [supp] [arXiv] [bibtex]
+
+Video Super-Resolution With Temporal Group Attention
+Takashi Isobe, Songjiang Li, Xu Jia, Shanxin Yuan, Gregory Slabaugh, Chunjing Xu, Ya-Li Li, Shengjin Wang, Qi Tian
+[pdf] [arXiv] [bibtex]
+
+TailorNet: Predicting Clothing in 3D as a Function of Human Pose, Shape and Garment Style
+Chaitanya Patel, Zhouyingcheng Liao, Gerard Pons-Moll
+[pdf] [supp] [video] [bibtex]
+
+CurricularFace: Adaptive Curriculum Learning Loss for Deep Face Recognition
+Yuge Huang, Yuhan Wang, Ying Tai, Xiaoming Liu, Pengcheng Shen, Shaoxin Li, Jilin Li, Feiyue Huang
+[pdf] [arXiv] [video] [bibtex]
+
+On the Detection of Digital Face Manipulation
+Hao Dang, Feng Liu, Joel Stehouwer, Xiaoming Liu, Anil K. Jain
+[pdf] [arXiv] [bibtex]
+
+Sketch-BERT: Learning Sketch Bidirectional Encoder Representation From Transformers by Self-Supervised Learning of Sketch Gestalt
+Hangyu Lin, Yanwei Fu, Xiangyang Xue, Yu-Gang Jiang
+[pdf] [supp] [video] [bibtex]
+
+Decoupled Representation Learning for Skeleton-Based Gesture Recognition
+Jianbo Liu, Yongcheng Liu, Ying Wang, Veronique Prinet, Shiming Xiang, Chunhong Pan
+[pdf] [bibtex]
+
+Analyzing and Improving the Image Quality of StyleGAN
+Tero Karras, Samuli Laine, Miika Aittala, Janne Hellsten, Jaakko Lehtinen, Timo Aila
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning to Dress 3D People in Generative Clothing
+Qianli Ma, Jinlong Yang, Anurag Ranjan, Sergi Pujades, Gerard Pons-Moll, Siyu Tang, Michael J. Black
+[pdf] [supp] [arXiv] [dataset] [bibtex]
+
+Cross-Modal Pattern-Propagation for RGB-T Tracking
+Chaoqun Wang, Chunyan Xu, Zhen Cui, Ling Zhou, Tong Zhang, Xiaoya Zhang, Jian Yang
+[pdf] [bibtex]
+
+Channel Attention Based Iterative Residual Learning for Depth Map Super-Resolution
+Xibin Song, Yuchao Dai, Dingfu Zhou, Liu Liu, Wei Li, Hongdong Li, Ruigang Yang
+[pdf] [arXiv] [video] [bibtex]
+
+Averaging Essential and Fundamental Matrices in Collinear Camera Settings
+Amnon Geifman, Yoni Kasten, Meirav Galun, Ronen Basri
+[pdf] [supp] [arXiv] [bibtex]
+
+Deep Spatial Gradient and Temporal Depth Learning for Face Anti-Spoofing
+Zezheng Wang, Zitong Yu, Chenxu Zhao, Xiangyu Zhu, Yunxiao Qin, Qiusheng Zhou, Feng Zhou, Zhen Lei
+[pdf] [supp] [arXiv] [bibtex]
+
+Instance-Aware Image Colorization
+Jheng-Wei Su, Hung-Kuo Chu, Jia-Bin Huang
+[pdf] [arXiv] [bibtex]
+
+ReDA:Reinforced Differentiable Attribute for 3D Face Reconstruction
+Wenbin Zhu, HsiangTao Wu, Zeyu Chen, Noranart Vesdapunt, Baoyuan Wang
+[pdf] [bibtex]
+
+Towards Global Explanations of Convolutional Neural Networks With Concept Attribution
+Weibin Wu, Yuxin Su, Xixian Chen, Shenglin Zhao, Irwin King, Michael R. Lyu, Yu-Wing Tai
+[pdf] [supp] [video] [bibtex]
+
+Cross-Domain Face Presentation Attack Detection via Multi-Domain Disentangled Representation Learning
+Guoqing Wang, Hu Han, Shiguang Shan, Xilin Chen
+[pdf] [arXiv] [video] [bibtex]
+
+Time Flies: Animating a Still Image With Time-Lapse Video As Reference
+Chia-Chi Cheng, Hung-Yu Chen, Wei-Chen Chiu
+[pdf] [bibtex]
+
+PandaNet: Anchor-Based Single-Shot Multi-Person 3D Pose Estimation
+Abdallah Benzine, Florian Chabot, Bertrand Luvison, Quoc Cuong Pham, Catherine Achard
+[pdf] [supp] [bibtex]
+
+Modeling the Background for Incremental Learning in Semantic Segmentation
+Fabio Cermelli, Massimiliano Mancini, Samuel Rota Bulo, Elisa Ricci, Barbara Caputo
+[pdf] [supp] [arXiv] [bibtex]
+
+F-BRS: Rethinking Backpropagating Refinement for Interactive Segmentation
+Konstantin Sofiiuk, Ilia Petrov, Olga Barinova, Anton Konushin
+[pdf] [supp] [bibtex]
+
+Steering Self-Supervised Feature Learning Beyond Local Pixel Statistics
+Simon Jenni, Hailin Jin, Paolo Favaro
+[pdf] [supp] [arXiv] [bibtex]
+
+Weakly-Supervised Mesh-Convolutional Hand Reconstruction in the Wild
+Dominik Kulon, Riza Alp Guler, Iasonas Kokkinos, Michael M. Bronstein, Stefanos Zafeiriou
+[pdf] [arXiv] [bibtex]
+
+Reinforced Feature Points: Optimizing Feature Detection and Description for a High-Level Task
+Aritra Bhowmik, Stefan Gumhold, Carsten Rother, Eric Brachmann
+[pdf] [arXiv] [video] [bibtex]
+
+ProAlignNet: Unsupervised Learning for Progressively Aligning Noisy Contours
+VSR Veeravasarapu, Abhishek Goel, Deepak Mittal, Maneesh Singh
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Attentive Normalization for Conditional Image Generation
+Yi Wang, Ying-Cong Chen, Xiangyu Zhang, Jian Sun, Jiaya Jia
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning by Analogy: Reliable Supervision From Transformations for Unsupervised Optical Flow Estimation
+Liang Liu, Jiangning Zhang, Ruifei He, Yong Liu, Yabiao Wang, Ying Tai, Donghao Luo, Chengjie Wang, Jilin Li, Feiyue Huang
+[pdf] [arXiv] [video] [bibtex]
+
+Towards Better Generalization: Joint Depth-Pose Learning Without PoseNet
+Wang Zhao, Shaohui Liu, Yezhi Shu, Yong-Jin Liu
+[pdf] [supp] [arXiv] [bibtex]
+
+Quasi-Newton Solver for Robust Non-Rigid Registration
+Yuxin Yao, Bailin Deng, Weiwei Xu, Juyong Zhang
+[pdf] [supp] [arXiv] [bibtex]
+
+Multi-Scale Progressive Fusion Network for Single Image Deraining
+Kui Jiang, Zhongyuan Wang, Peng Yi, Chen Chen, Baojin Huang, Yimin Luo, Jiayi Ma, Junjun Jiang
+[pdf] [arXiv] [bibtex]
+
+Three-Dimensional Reconstruction of Human Interactions
+Mihai Fieraru, Mihai Zanfir, Elisabeta Oneata, Alin-Ionut Popa, Vlad Olaru, Cristian Sminchisescu
+[pdf] [supp] [bibtex]
+
+Real-Time Panoptic Segmentation From Dense Detections
+Rui Hou, Jie Li, Arjun Bhargava, Allan Raventos, Vitor Guizilini, Chao Fang, Jerome Lynch, Adrien Gaidon
+[pdf] [supp] [arXiv] [bibtex]
+
+NestedVAE: Isolating Common Factors via Weak Supervision
+Matthew J. Vowels, Necati Cihan Camgoz, Richard Bowden
+[pdf] [supp] [arXiv] [bibtex]
+
+Recurrent Feature Reasoning for Image Inpainting
+Jingyuan Li, Ning Wang, Lefei Zhang, Bo Du, Dacheng Tao
+[pdf] [supp] [arXiv] [bibtex]
+
+Harmonizing Transferability and Discriminability for Adapting Object Detectors
+Chaoqi Chen, Zebiao Zheng, Xinghao Ding, Yue Huang, Qi Dou
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Unsupervised Magnification of Posture Deviations Across Subjects
+Michael Dorkenwald, Uta Buchler, Bjorn Ommer
+[pdf] [supp] [bibtex]
+
+PADS: Policy-Adapted Sampling for Visual Similarity Learning
+Karsten Roth, Timo Milbich, Bjorn Ommer
+[pdf] [supp] [arXiv] [bibtex]
+
+Interactive Multi-Label CNN Learning With Partial Labels
+Dat Huynh, Ehsan Elhamifar
+[pdf] [supp] [bibtex]
+
+SketchyCOCO: Image Generation From Freehand Scene Sketches
+Chengying Gao, Qi Liu, Qi Xu, Limin Wang, Jianzhuang Liu, Changqing Zou
+[pdf] [supp] [arXiv] [bibtex]
+
+Effectively Unbiased FID and Inception Score and Where to Find Them
+Min Jin Chong, David Forsyth
+[pdf] [supp] [arXiv] [bibtex]
+
+Controllable Orthogonalization in Training DNNs
+Lei Huang, Li Liu, Fan Zhu, Diwen Wan, Zehuan Yuan, Bo Li, Ling Shao
+[pdf] [supp] [arXiv] [bibtex]
+
+Interpreting the Latent Space of GANs for Semantic Face Editing
+Yujun Shen, Jinjin Gu, Xiaoou Tang, Bolei Zhou
+[pdf] [supp] [arXiv] [bibtex]
+
+Tracking by Instance Detection: A Meta-Learning Approach
+Guangting Wang, Chong Luo, Xiaoyan Sun, Zhiwei Xiong, Wenjun Zeng
+[pdf] [arXiv] [bibtex]
+
+Learned Image Compression With Discretized Gaussian Mixture Likelihoods and Attention Modules
+Zhengxue Cheng, Heming Sun, Masaru Takeuchi, Jiro Katto
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+PointGroup: Dual-Set Point Grouping for 3D Instance Segmentation
+Li Jiang, Hengshuang Zhao, Shaoshuai Shi, Shu Liu, Chi-Wing Fu, Jiaya Jia
+[pdf] [arXiv] [bibtex]
+
+Semantic Drift Compensation for Class-Incremental Learning
+Lu Yu, Bartlomiej Twardowski, Xialei Liu, Luis Herranz, Kai Wang, Yongmei Cheng, Shangling Jui, Joost van de Weijer
+[pdf] [supp] [arXiv] [bibtex]
+
+Generating 3D People in Scenes Without People
+Yan Zhang, Mohamed Hassan, Heiko Neumann, Michael J. Black, Siyu Tang
+[pdf] [supp] [arXiv] [bibtex]
+
+Computing Valid P-Values for Image Segmentation by Selective Inference
+Kosuke Tanizaki, Noriaki Hashimoto, Yu Inatsu, Hidekata Hontani, Ichiro Takeuchi
+[pdf] [supp] [bibtex]
+
+Recursive Least-Squares Estimator-Aided Online Learning for Visual Tracking
+Jin Gao, Weiming Hu, Yan Lu
+[pdf] [supp] [video] [bibtex]
+
+End-to-End Pseudo-LiDAR for Image-Based 3D Object Detection
+Rui Qian, Divyansh Garg, Yan Wang, Yurong You, Serge Belongie, Bharath Hariharan, Mark Campbell, Kilian Q. Weinberger, Wei-Lun Chao
+[pdf] [supp] [arXiv] [bibtex]
+
+A Quantum Computational Approach to Correspondence Problems on Point Sets
+Vladislav Golyanik, Christian Theobalt
+[pdf] [supp] [arXiv] [bibtex]
+
+High-Frequency Component Helps Explain the Generalization of Convolutional Neural Networks
+Haohan Wang, Xindi Wu, Zeyi Huang, Eric P. Xing
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Rotate-and-Render: Unsupervised Photorealistic Face Rotation From Single-View Images
+Hang Zhou, Jihao Liu, Ziwei Liu, Yu Liu, Xiaogang Wang
+[pdf] [supp] [video] [bibtex]
+
+Scene-Adaptive Video Frame Interpolation via Meta-Learning
+Myungsub Choi, Janghoon Choi, Sungyong Baik, Tae Hyun Kim, Kyoung Mu Lee
+[pdf] [supp] [arXiv] [bibtex]
+
+On the Distribution of Minima in Intrinsic-Metric Rotation Averaging
+Kyle Wilson, David Bindel
+[pdf] [supp] [arXiv] [bibtex]
+
+Explainable Object-Induced Action Decision for Autonomous Vehicles
+Yiran Xu, Xiaoyin Yang, Lihang Gong, Hsuan-Chu Lin, Tz-Ying Wu, Yunsheng Li, Nuno Vasconcelos
+[pdf] [arXiv] [bibtex]
+
+DLWL: Improving Detection for Lowshot Classes With Weakly Labelled Data
+Vignesh Ramanathan, Rui Wang, Dhruv Mahajan
+[pdf] [supp] [bibtex]
+
+Robust Partial Matching for Person Search in the Wild
+Yingji Zhong, Xiaoyu Wang, Shiliang Zhang
+[pdf] [arXiv] [bibtex]
+
+Watch Your Up-Convolution: CNN Based Generative Deep Neural Networks Are Failing to Reproduce Spectral Distributions
+Ricard Durall, Margret Keuper, Janis Keuper
+[pdf] [supp] [video] [bibtex]
+
+The Devil Is in the Details: Delving Into Unbiased Data Processing for Human Pose Estimation
+Junjie Huang, Zheng Zhu, Feng Guo, Guan Huang
+[pdf] [arXiv] [video] [bibtex]
+
+GraphTER: Unsupervised Learning of Graph Transformation Equivariant Representations via Auto-Encoding Node-Wise Transformations
+Xiang Gao, Wei Hu, Guo-Jun Qi
+[pdf] [arXiv] [video] [bibtex]
+
+UC-Net: Uncertainty Inspired RGB-D Saliency Detection via Conditional Variational Autoencoders
+Jing Zhang, Deng-Ping Fan, Yuchao Dai, Saeed Anwar, Fatemeh Sadat Saleh, Tong Zhang, Nick Barnes
+[pdf] [video] [bibtex]
+
+4D Visualization of Dynamic Events From Unconstrained Multi-View Videos
+Aayush Bansal, Minh Vo, Yaser Sheikh, Deva Ramanan, Srinivasa Narasimhan
+[pdf] [arXiv] [bibtex]
+
+Factorized Higher-Order CNNs With an Application to Spatio-Temporal Emotion Estimation
+Jean Kossaifi, Antoine Toisoul, Adrian Bulat, Yannis Panagakis, Timothy M. Hospedales, Maja Pantic
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Hardware-in-the-Loop End-to-End Optimization of Camera Image Processing Pipelines
+Ali Mosleh, Avinash Sharma, Emmanuel Onzon, Fahim Mannan, Nicolas Robidoux, Felix Heide
+[pdf] [supp] [video] [bibtex]
+
+VOLDOR: Visual Odometry From Log-Logistic Dense Optical Flow Residuals
+Zhixiang Min, Yiding Yang, Enrique Dunn
+[pdf] [bibtex]
+
+P2B: Point-to-Box Network for 3D Object Tracking in Point Clouds
+Haozhe Qi, Chen Feng, Zhiguo Cao, Feng Zhao, Yang Xiao
+[pdf] [arXiv] [bibtex]
+
+Unsupervised Deep Shape Descriptor With Point Distribution Learning
+Yi Shi, Mengchen Xu, Shuaihang Yuan, Yi Fang
+[pdf] [bibtex]
+
+Learning to Transfer Texture From Clothing Images to 3D Humans
+Aymen Mir, Thiemo Alldieck, Gerard Pons-Moll
+[pdf] [supp] [bibtex]
+
+Disentangled and Controllable Face Image Generation via 3D Imitative-Contrastive Learning
+Yu Deng, Jiaolong Yang, Dong Chen, Fang Wen, Xin Tong
+[pdf] [arXiv] [video] [bibtex]
+
+Multi-Scale Interactive Network for Salient Object Detection
+Youwei Pang, Xiaoqi Zhao, Lihe Zhang, Huchuan Lu
+[pdf] [arXiv] [bibtex]
+
+Correlation-Guided Attention for Corner Detection Based Visual Tracking
+Fei Du, Peng Liu, Wei Zhao, Xianglong Tang
+[pdf] [supp] [bibtex]
+
+Accurate Estimation of Body Height From a Single Depth Image via a Four-Stage Developing Network
+Fukun Yin, Shizhe Zhou
+[pdf] [video] [bibtex]
+
+AD-Cluster: Augmented Discriminative Clustering for Domain Adaptive Person Re-Identification
+Yunpeng Zhai, Shijian Lu, Qixiang Ye, Xuebo Shan, Jie Chen, Rongrong Ji, Yonghong Tian
+[pdf] [video] [bibtex]
+
+Regularizing Neural Networks via Minimizing Hyperspherical Energy
+Rongmei Lin, Weiyang Liu, Zhen Liu, Chen Feng, Zhiding Yu, James M. Rehg, Li Xiong, Le Song
+[pdf] [supp] [arXiv] [bibtex]
+
+Density-Aware Feature Embedding for Face Clustering
+Senhui Guo, Jing Xu, Dapeng Chen, Chao Zhang, Xiaogang Wang, Rui Zhao
+[pdf] [bibtex]
+
+Learning to Manipulate Individual Objects in an Image
+Yanchao Yang, Yutong Chen, Stefano Soatto
+[pdf] [arXiv] [bibtex]
+
+3D Photography Using Context-Aware Layered Depth Inpainting
+Meng-Li Shih, Shih-Yang Su, Johannes Kopf, Jia-Bin Huang
+[pdf] [arXiv] [bibtex]
+
+Grid-GCN for Fast and Scalable Point Cloud Learning
+Qiangeng Xu, Xudong Sun, Cho-Ying Wu, Panqu Wang, Ulrich Neumann
+[pdf] [arXiv] [bibtex]
+
+KFNet: Learning Temporal Camera Relocalization Using Kalman Filtering
+Lei Zhou, Zixin Luo, Tianwei Shen, Jiahui Zhang, Mingmin Zhen, Yao Yao, Tian Fang, Long Quan
+[pdf] [supp] [arXiv] [bibtex]
+
+SuperGlue: Learning Feature Matching With Graph Neural Networks
+Paul-Edouard Sarlin, Daniel DeTone, Tomasz Malisiewicz, Andrew Rabinovich
+[pdf] [supp] [arXiv] [bibtex]
+
+Probabilistic Structural Latent Representation for Unsupervised Embedding
+Mang Ye, Jianbing Shen
+[pdf] [bibtex]
+
+How Useful Is Self-Supervised Pretraining for Visual Tasks?
+Alejandro Newell, Jia Deng
+[pdf] [supp] [arXiv] [bibtex]
+
+Action Segmentation With Joint Self-Supervised Temporal Domain Adaptation
+Min-Hung Chen, Baopu Li, Yingze Bao, Ghassan AlRegib, Zsolt Kira
+[pdf] [supp] [arXiv] [bibtex]
+
+Regularizing Discriminative Capability of CGANs for Semi-Supervised Generative Learning
+Yi Liu, Guangchang Deng, Xiangping Zeng, Si Wu, Zhiwen Yu, Hau-San Wong
+[pdf] [video] [bibtex]
+
+State-Relabeling Adversarial Active Learning
+Beichen Zhang, Liang Li, Shijie Yang, Shuhui Wang, Zheng-Jun Zha, Qingming Huang
+[pdf] [arXiv] [bibtex]
+
+Group Sparsity: The Hinge Between Filter Pruning and Decomposition for Network Compression
+Yawei Li, Shuhang Gu, Christoph Mayer, Luc Van Gool, Radu Timofte
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+P-nets: Deep Polynomial Neural Networks
+Grigorios G. Chrysos, Stylianos Moschoglou, Giorgos Bouritsas, Yannis Panagakis, Jiankang Deng, Stefanos Zafeiriou
+[pdf] [supp] [bibtex]
+
+G3AN: Disentangling Appearance and Motion for Video Generation
+Yaohui Wang, Piotr Bilinski, Francois Bremond, Antitza Dantcheva
+[pdf] [supp] [arXiv] [bibtex]
+
+DeepFaceFlow: In-the-Wild Dense 3D Facial Motion Estimation
+Mohammad Rami Koujan, Anastasios Roussos, Stefanos Zafeiriou
+[pdf] [supp] [arXiv] [bibtex]
+
+TubeTK: Adopting Tubes to Track Multi-Object in a One-Step Training Model
+Bo Pang, Yizhuo Li, Yifan Zhang, Muchen Li, Cewu Lu
+[pdf] [supp] [arXiv] [bibtex]
+
+Few-Shot Open-Set Recognition Using Meta-Learning
+Bo Liu, Hao Kang, Haoxiang Li, Gang Hua, Nuno Vasconcelos
+[pdf] [arXiv] [bibtex]
+
+Sequential 3D Human Pose and Shape Estimation From Point Clouds
+Kangkan Wang, Jin Xie, Guofeng Zhang, Lei Liu, Jian Yang
+[pdf] [supp] [bibtex]
+
+Sequential Mastery of Multiple Visual Tasks: Networks Naturally Learn to Learn and Forget to Forget
+Guy Davidson, Michael C. Mozer
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Siam R-CNN: Visual Tracking by Re-Detection
+Paul Voigtlaender, Jonathon Luiten, Philip H.S. Torr, Bastian Leibe
+[pdf] [supp] [bibtex]
+
+Eternal Sunshine of the Spotless Net: Selective Forgetting in Deep Networks
+Aditya Golatkar, Alessandro Achille, Stefano Soatto
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+MSG-GAN: Multi-Scale Gradients for Generative Adversarial Networks
+Animesh Karnewar, Oliver Wang
+[pdf] [supp] [bibtex]
+
+Transferring Cross-Domain Knowledge for Video Sign Language Recognition
+Dongxu Li, Xin Yu, Chenchen Xu, Lars Petersson, Hongdong Li
+[pdf] [supp] [arXiv] [bibtex]
+
+Flow Contrastive Estimation of Energy-Based Models
+Ruiqi Gao, Erik Nijkamp, Diederik P. Kingma, Zhen Xu, Andrew M. Dai, Ying Nian Wu
+[pdf] [supp] [arXiv] [bibtex]
+
+Improving the Robustness of Capsule Networks to Image Affine Transformations
+Jindong Gu, Volker Tresp
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Interactive Two-Stream Decoder for Accurate and Fast Saliency Detection
+Huajun Zhou, Xiaohua Xie, Jian-Huang Lai, Zixuan Chen, Lingxiao Yang
+[pdf] [bibtex]
+
+ViewAL: Active Learning With Viewpoint Entropy for Semantic Segmentation
+Yawar Siddiqui, Julien Valentin, Matthias Niessner
+[pdf] [supp] [arXiv] [bibtex]
+
+A U-Net Based Discriminator for Generative Adversarial Networks
+Edgar Schonfeld, Bernt Schiele, Anna Khoreva
+[pdf] [supp] [bibtex]
+
+Diversified Arbitrary Style Transfer via Deep Feature Perturbation
+Zhizhong Wang, Lei Zhao, Haibo Chen, Lihong Qiu, Qihang Mo, Sihuan Lin, Wei Xing, Dongming Lu
+[pdf] [arXiv] [bibtex]
+
+15 Keypoints Is All You Need
+Michael Snower, Asim Kadav, Farley Lai, Hans Peter Graf
+[pdf] [supp] [arXiv] [bibtex]
+
+LUVLi Face Alignment: Estimating Landmarks' Location, Uncertainty, and Visibility Likelihood
+Abhinav Kumar, Tim K. Marks, Wenxuan Mou, Ye Wang, Michael Jones, Anoop Cherian, Toshiaki Koike-Akino, Xiaoming Liu, Chen Feng
+[pdf] [supp] [arXiv] [video] [dataset] [bibtex]
+
+Learning to Cartoonize Using White-Box Cartoon Representations
+Xinrui Wang, Jinze Yu
+[pdf] [supp] [bibtex]
+
+PointAugment: An Auto-Augmentation Framework for Point Cloud Classification
+Ruihui Li, Xianzhi Li, Pheng-Ann Heng, Chi-Wing Fu
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Siamese Box Adaptive Network for Visual Tracking
+Zedu Chen, Bineng Zhong, Guorong Li, Shengping Zhang, Rongrong Ji
+[pdf] [arXiv] [bibtex]
+
+Interpretable and Accurate Fine-grained Recognition via Region Grouping
+Zixuan Huang, Yin Li
+[pdf] [arXiv] [bibtex]
+
+Low-Rank Compression of Neural Nets: Learning the Rank of Each Layer
+Yerlan Idelbayev, Miguel A. Carreira-Perpinan
+[pdf] [supp] [bibtex]
+
+There and Back Again: Revisiting Backpropagation Saliency Methods
+Sylvestre-Alvise Rebuffi, Ruth Fong, Xu Ji, Andrea Vedaldi
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning Meta Face Recognition in Unseen Domains
+Jianzhu Guo, Xiangyu Zhu, Chenxu Zhao, Dong Cao, Zhen Lei, Stan Z. Li
+[pdf] [supp] [arXiv] [bibtex]
+
+MineGAN: Effective Knowledge Transfer From GANs to Target Domains With Few Images
+Yaxing Wang, Abel Gonzalez-Garcia, David Berga, Luis Herranz, Fahad Shahbaz Khan, Joost van de Weijer
+[pdf] [supp] [video] [bibtex]
+
+State-Aware Tracker for Real-Time Video Object Segmentation
+Xi Chen, Zuoxin Li, Ye Yuan, Gang Yu, Jianxin Shen, Donglian Qi
+[pdf] [arXiv] [bibtex]
+
+DualSDF: Semantic Shape Manipulation Using a Two-Level Representation
+Zekun Hao, Hadar Averbuch-Elor, Noah Snavely, Serge Belongie
+[pdf] [supp] [bibtex]
+
+Can We Learn Heuristics for Graphical Model Inference Using Reinforcement Learning?
+Safa Messaoud, Maghav Kumar, Alexander G. Schwing
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+D3S - A Discriminative Single Shot Segmentation Tracker
+Alan Lukezic, Jiri Matas, Matej Kristan
+[pdf] [supp] [bibtex]
+
+Cross-Spectral Face Hallucination via Disentangling Independent Factors
+Boyan Duan, Chaoyou Fu, Yi Li, Xingguang Song, Ran He
+[pdf] [arXiv] [bibtex]
+
+Deep Face Super-Resolution With Iterative Collaboration Between Attentive Recovery and Landmark Estimation
+Cheng Ma, Zhenyu Jiang, Yongming Rao, Jiwen Lu, Jie Zhou
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Weakly-Supervised 3D Human Pose Learning via Multi-View Images in the Wild
+Umar Iqbal, Pavlo Molchanov, Jan Kautz
+[pdf] [supp] [arXiv] [bibtex]
+
+Data Uncertainty Learning in Face Recognition
+Jie Chang, Zhonghao Lan, Changmao Cheng, Yichen Wei
+[pdf] [arXiv] [bibtex]
+
+Learning Fast and Robust Target Models for Video Object Segmentation
+Andreas Robinson, Felix Jaremo Lawin, Martin Danelljan, Fahad Shahbaz Khan, Michael Felsberg
+[pdf] [supp] [arXiv] [bibtex]
+
+Transferring and Regularizing Prediction for Semantic Segmentation
+Yiheng Zhang, Zhaofan Qiu, Ting Yao, Chong-Wah Ngo, Dong Liu, Tao Mei
+[pdf] [arXiv] [bibtex]
+
+Adaptive Loss-Aware Quantization for Multi-Bit Networks
+Zhongnan Qu, Zimu Zhou, Yun Cheng, Lothar Thiele
+[pdf] [supp] [arXiv] [bibtex]
+
+MaskGAN: Towards Diverse and Interactive Facial Image Manipulation
+Cheng-Han Lee, Ziwei Liu, Lingyun Wu, Ping Luo
+[pdf] [supp] [arXiv] [bibtex]
+
+ClusterFit: Improving Generalization of Visual Representations
+Xueting Yan, Ishan Misra, Abhinav Gupta, Deepti Ghadiyaram, Dhruv Mahajan
+[pdf] [arXiv] [bibtex]
+
+Robust Homography Estimation via Dual Principal Component Pursuit
+Tianjiao Ding, Yunchen Yang, Zhihui Zhu, Daniel P. Robinson, Rene Vidal, Laurent Kneip, Manolis C. Tsakiris
+[pdf] [bibtex]
+
+Face X-Ray for More General Face Forgery Detection
+Lingzhi Li, Jianmin Bao, Ting Zhang, Hao Yang, Dong Chen, Fang Wen, Baining Guo
+[pdf] [bibtex]
+
+Exploring Unlabeled Faces for Novel Attribute Discovery
+Hyojin Bahng, Sunghyo Chung, Seungjoo Yoo, Jaegul Choo
+[pdf] [arXiv] [bibtex]
+
+Spatially Attentive Output Layer for Image Classification
+Ildoo Kim, Woonhyuk Baek, Sungwoong Kim
+[pdf] [arXiv] [bibtex]
+
+A Shared Multi-Attention Framework for Multi-Label Zero-Shot Learning
+Dat Huynh, Ehsan Elhamifar
+[pdf] [supp] [bibtex]
+
+Optical Flow in the Dark
+Yinqiang Zheng, Mingfang Zhang, Feng Lu
+[pdf] [bibtex]
+
+Painting Many Pasts: Synthesizing Time Lapse Videos of Paintings
+Amy Zhao, Guha Balakrishnan, Kathleen M. Lewis, Fredo Durand, John V. Guttag, Adrian V. Dalca
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning a Neural Solver for Multiple Object Tracking
+Guillem Braso, Laura Leal-Taixe
+[pdf] [supp] [bibtex]
+
+Rethinking Data Augmentation for Image Super-resolution: A Comprehensive Analysis and a New Strategy
+Jaejun Yoo, Namhyuk Ahn, Kyung-Ah Sohn
+[pdf] [supp] [video] [bibtex]
+
+Evade Deep Image Retrieval by Stashing Private Images in the Hash Space
+Yanru Xiao, Cong Wang, Xing Gao
+[pdf] [bibtex]
+
+GanHand: Predicting Human Grasp Affordances in Multi-Object Scenes
+Enric Corona, Albert Pumarola, Guillem Alenya, Francesc Moreno-Noguer, Gregory Rogez
+[pdf] [bibtex]
+
+EventSR: From Asynchronous Events to Image Reconstruction, Restoration, and Super-Resolution via End-to-End Adversarial Learning
+Lin Wang, Tae-Kyun Kim, Kuk-Jin Yoon
+[pdf] [arXiv] [video] [bibtex]
+
+Quaternion Product Units for Deep Learning on 3D Rotation Groups
+Xuan Zhang, Shaofei Qin, Yi Xu, Hongteng Xu
+[pdf] [supp] [arXiv] [bibtex]
+
+3D Human Mesh Regression With Dense Correspondence
+Wang Zeng, Wanli Ouyang, Ping Luo, Wentao Liu, Xiaogang Wang
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning to Shadow Hand-Drawn Sketches
+Qingyuan Zheng, Zhuoru Li, Adam Bargteil
+[pdf] [supp] [arXiv] [bibtex]
+
+Optimizing Rank-Based Metrics With Blackbox Differentiation
+Michal Rolinek, Vit Musil, Anselm Paulus, Marin Vlastelica, Claudio Michaelis, Georg Martius
+[pdf] [supp] [arXiv] [bibtex]
+
+Fast Texture Synthesis via Pseudo Optimizer
+Wu Shi, Yu Qiao
+[pdf] [supp] [bibtex]
+
+ENSEI: Efficient Secure Inference via Frequency-Domain Homomorphic Convolution for Privacy-Preserving Visual Recognition
+Song Bian, Tianchen Wang, Masayuki Hiromoto, Yiyu Shi, Takashi Sato
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Learning Dynamic Relationships for 3D Human Motion Prediction
+Qiongjie Cui, Huaijiang Sun, Fei Yang
+[pdf] [bibtex]
+
+SAM: The Sensitivity of Attribution Methods to Hyperparameters
+Naman Bansal, Chirag Agarwal, Anh Nguyen
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning to Optimize on SPD Manifolds
+Zhi Gao, Yuwei Wu, Yunde Jia, Mehrtash Harandi
+[pdf] [supp] [bibtex]
+
+RGBD-Dog: Predicting Canine Pose from RGBD Sensors
+Sinead Kearney, Wenbin Li, Martin Parsons, Kwang In Kim, Darren Cosker
+[pdf] [supp] [bibtex]
+
+CookGAN: Causality Based Text-to-Image Synthesis
+Bin Zhu, Chong-Wah Ngo
+[pdf] [supp] [bibtex]
+
+Image Based Virtual Try-On Network From Unpaired Data
+Assaf Neuberger, Eran Borenstein, Bar Hilleli, Eduard Oks, Sharon Alpert
+[pdf] [supp] [bibtex]
+
+EventCap: Monocular 3D Capture of High-Speed Human Motions Using an Event Camera
+Lan Xu, Weipeng Xu, Vladislav Golyanik, Marc Habermann, Lu Fang, Christian Theobalt
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Dreaming to Distill: Data-Free Knowledge Transfer via DeepInversion
+Hongxu Yin, Pavlo Molchanov, Jose M. Alvarez, Zhizhong Li, Arun Mallya, Derek Hoiem, Niraj K. Jha, Jan Kautz
+[pdf] [supp] [arXiv] [bibtex]
+
+Spherical Space Domain Adaptation With Robust Pseudo-Label Loss
+Xiang Gu, Jian Sun, Zongben Xu
+[pdf] [supp] [bibtex]
+
+Approximating shapes in images with low-complexity polygons
+Muxingzi Li, Florent Lafarge, Renaud Marlet
+[pdf] [bibtex]
+
+Vec2Face: Unveil Human Faces From Their Blackbox Features in Face Recognition
+Chi Nhan Duong, Thanh-Dat Truong, Khoa Luu, Kha Gia Quach, Hung Bui, Kaushik Roy
+[pdf] [arXiv] [video] [bibtex]
+
+SiamCAR: Siamese Fully Convolutional Classification and Regression for Visual Tracking
+Dongyan Guo, Jun Wang, Ying Cui, Zhenhua Wang, Shengyong Chen
+[pdf] [arXiv] [video] [bibtex]
+
+Deep Image Spatial Transformation for Person Image Generation
+Yurui Ren, Xiaoming Yu, Junming Chen, Thomas H. Li, Ge Li
+[pdf] [arXiv] [bibtex]
+
+Fashion Editing With Adversarial Parsing Learning
+Haoye Dong, Xiaodan Liang, Yixuan Zhang, Xujie Zhang, Xiaohui Shen, Zhenyu Xie, Bowen Wu, Jian Yin
+[pdf] [arXiv] [bibtex]
+
+Multiview-Consistent Semi-Supervised Learning for 3D Human Pose Estimation
+Rahul Mitra, Nitesh B. Gundavarapu, Abhishek Sharma, Arjun Jain
+[pdf] [supp] [arXiv] [bibtex]
+
+Attack to Explain Deep Representation
+Mohammad A. A. K. Jalwana, Naveed Akhtar, Mohammed Bennamoun, Ajmal Mian
+[pdf] [bibtex]
+
+FALCON: A Fourier Transform Based Approach for Fast and Secure Convolutional Neural Network Predictions
+Shaohua Li, Kaiping Xue, Bin Zhu, Chenkai Ding, Xindi Gao, David Wei, Tao Wan
+[pdf] [video] [bibtex]
+
+The Knowledge Within: Methods for Data-Free Model Compression
+Matan Haroush, Itay Hubara, Elad Hoffer, Daniel Soudry
+[pdf] [supp] [arXiv] [bibtex]
+
+PropagationNet: Propagate Points to Curve to Learn Structure Information
+Xiehe Huang, Weihong Deng, Haifeng Shen, Xiubao Zhang, Jieping Ye
+[pdf] [arXiv] [bibtex]
+
+S3VAE: Self-Supervised Sequential VAE for Representation Disentanglement and Data Generation
+Yizhe Zhu, Martin Renqiang Min, Asim Kadav, Hans Peter Graf
+[pdf] [arXiv] [video] [bibtex]
+
+Same Features, Different Day: Weakly Supervised Feature Learning for Seasonal Invariance
+Jaime Spencer, Richard Bowden, Simon Hadfield
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Implicit Functions in Feature Space for 3D Shape Reconstruction and Completion
+Julian Chibane, Thiemo Alldieck, Gerard Pons-Moll
+[pdf] [supp] [video] [bibtex]
+
+AdaCoSeg: Adaptive Shape Co-Segmentation With Group Consistency Loss
+Chenyang Zhu, Kai Xu, Siddhartha Chaudhuri, Li Yi, Leonidas J. Guibas, Hao Zhang
+[pdf] [arXiv] [bibtex]
+
+Learning Combinatorial Solver for Graph Matching
+Tao Wang, He Liu, Yidong Li, Yi Jin, Xiaohui Hou, Haibin Ling
+[pdf] [bibtex]
+
+Nonparametric Object and Parts Modeling With Lie Group Dynamics
+David S. Hayden, Jason Pacheco, John W. Fisher III
+[pdf] [supp] [bibtex]
+
+A Neural Rendering Framework for Free-Viewpoint Relighting
+Zhang Chen, Anpei Chen, Guli Zhang, Chengyuan Wang, Yu Ji, Kiriakos N. Kutulakos, Jingyi Yu
+[pdf] [arXiv] [bibtex]
+
+Attribution in Scale and Space
+Shawn Xu, Subhashini Venugopalan, Mukund Sundararajan
+[pdf] [arXiv] [bibtex]
+
+Probabilistic Regression for Visual Tracking
+Martin Danelljan, Luc Van Gool, Radu Timofte
+[pdf] [supp] [arXiv] [bibtex]
+
+3DRegNet: A Deep Neural Network for 3D Point Registration
+G. Dias Pais, Srikumar Ramalingam, Venu Madhav Govindu, Jacinto C. Nascimento, Rama Chellappa, Pedro Miraldo
+[pdf] [supp] [arXiv] [bibtex]
+
+SEAN: Image Synthesis With Semantic Region-Adaptive Normalization
+Peihao Zhu, Rameen Abdal, Yipeng Qin, Peter Wonka
+[pdf] [supp] [arXiv] [bibtex]
+
+Robust Reference-Based Super-Resolution With Similarity-Aware Deformable Convolution
+Gyumin Shim, Jinsun Park, In So Kweon
+[pdf] [video] [bibtex]
+
+Search to Distill: Pearls Are Everywhere but Not the Eyes
+Yu Liu, Xuhui Jia, Mingxing Tan, Raviteja Vemulapalli, Yukun Zhu, Bradley Green, Xiaogang Wang
+[pdf] [arXiv] [bibtex]
+
+Boosting Semantic Human Matting With Coarse Annotations
+Jinlin Liu, Yuan Yao, Wendi Hou, Miaomiao Cui, Xuansong Xie, Changshui Zhang, Xian-Sheng Hua
+[pdf] [supp] [arXiv] [bibtex]
+
+Few-Shot Learning via Embedding Adaptation With Set-to-Set Functions
+Han-Jia Ye, Hexiang Hu, De-Chuan Zhan, Fei Sha
+[pdf] [supp] [arXiv] [bibtex]
+
+FM2u-Net: Face Morphological Multi-Branch Network for Makeup-Invariant Face Verification
+Wenxuan Wang, Yanwei Fu, Xuelin Qian, Yu-Gang Jiang, Qi Tian, Xiangyang Xue
+[pdf] [video] [bibtex]
+
+Deep Semantic Clustering by Partition Confidence Maximisation
+Jiabo Huang, Shaogang Gong, Xiatian Zhu
+[pdf] [bibtex]
+
+A Transductive Approach for Video Object Segmentation
+Yizhuo Zhang, Zhirong Wu, Houwen Peng, Stephen Lin
+[pdf] [arXiv] [bibtex]
+
+Uncertainty-Aware Mesh Decoder for High Fidelity 3D Face Reconstruction
+Gun-Hee Lee, Seong-Whan Lee
+[pdf] [bibtex]
+
+Object-Occluded Human Shape and Pose Estimation From a Single Color Image
+Tianshu Zhang, Buzhen Huang, Yangang Wang
+[pdf] [supp] [bibtex]
+
+MAST: A Memory-Augmented Self-Supervised Tracker
+Zihang Lai, Erika Lu, Weidi Xie
+[pdf] [supp] [arXiv] [bibtex]
+
+Wish You Were Here: Context-Aware Human Generation
+Oran Gafni, Lior Wolf
+[pdf] [supp] [arXiv] [bibtex]
+
+Attention-Driven Cropping for Very High Resolution Facial Landmark Detection
+Prashanth Chandran, Derek Bradley, Markus Gross, Thabo Beeler
+[pdf] [supp] [video] [bibtex]
+
+Contextual Residual Aggregation for Ultra High-Resolution Image Inpainting
+Zili Yi, Qiang Tang, Shekoofeh Azizi, Daesik Jang, Zhan Xu
+[pdf] [supp] [arXiv] [bibtex]
+
+StructEdit: Learning Structural Shape Variations
+Kaichun Mo, Paul Guerrero, Li Yi, Hao Su, Peter Wonka, Niloy J. Mitra, Leonidas J. Guibas
+[pdf] [supp] [arXiv] [bibtex]
+
+Hierarchical Human Parsing With Typed Part-Relation Reasoning
+Wenguan Wang, Hailong Zhu, Jifeng Dai, Yanwei Pang, Jianbing Shen, Ling Shao
+[pdf] [arXiv] [bibtex]
+
+High-Resolution Daytime Translation Without Domain Labels
+Ivan Anokhin, Pavel Solovev, Denis Korzhenkov, Alexey Kharlamov, Taras Khakhulin, Aleksei Silvestrov, Sergey Nikolenko, Victor Lempitsky, Gleb Sterkin
+[pdf] [supp] [arXiv] [bibtex]
+
+Non-Adversarial Video Synthesis With Learned Priors
+Abhishek Aich, Akash Gupta, Rameswar Panda, Rakib Hyder, M. Salman Asif, Amit K. Roy-Chowdhury
+[pdf] [supp] [arXiv] [bibtex]
+
+Deep Homography Estimation for Dynamic Scenes
+Hoang Le, Feng Liu, Shu Zhang, Aseem Agarwala
+[pdf] [arXiv] [bibtex]
+
+Where Does It End? - Reasoning About Hidden Surfaces by Object Intersection Constraints
+Michael Strecke, Jorg Stuckler
+[pdf] [supp] [video] [bibtex]
+
+Epipolar Transformers
+Yihui He, Rui Yan, Katerina Fragkiadaki, Shoou-I Yu
+[pdf] [supp] [arXiv] [bibtex]
+
+Correlating Edge, Pose With Parsing
+Ziwei Zhang, Chi Su, Liang Zheng, Xiaodong Xie
+[pdf] [arXiv] [bibtex]
+
+Relative Interior Rule in Block-Coordinate Descent
+Tomas Werner, Daniel Prusa, Tomas Dlask
+[pdf] [supp] [bibtex]
+
+Controllable Person Image Synthesis With Attribute-Decomposed GAN
+Yifang Men, Yiming Mao, Yuning Jiang, Wei-Ying Ma, Zhouhui Lian
+[pdf] [supp] [arXiv] [bibtex]
+
+Unpaired Portrait Drawing Generation via Asymmetric Cycle Mapping
+Ran Yi, Yong-Jin Liu, Yu-Kun Lai, Paul L. Rosin
+[pdf] [supp] [bibtex]
+
+Advancing High Fidelity Identity Swapping for Forgery Detection
+Lingzhi Li, Jianmin Bao, Hao Yang, Dong Chen, Fang Wen
+[pdf] [bibtex]
+
+BachGAN: High-Resolution Image Synthesis From Salient Object Layout
+Yandong Li, Yu Cheng, Zhe Gan, Licheng Yu, Liqiang Wang, Jingjing Liu
+[pdf] [arXiv] [bibtex]
+
+SER-FIQ: Unsupervised Estimation of Face Image Quality Based on Stochastic Embedding Robustness
+Philipp Terhorst, Jan Niklas Kolf, Naser Damer, Florian Kirchbuchner, Arjan Kuijper
+[pdf] [video] [bibtex]
+
+Globally Optimal Contrast Maximisation for Event-Based Motion Estimation
+Daqi Liu, Alvaro Parra, Tat-Jun Chin
+[pdf] [supp] [arXiv] [bibtex]
+
+Towards High-Fidelity 3D Face Reconstruction From In-the-Wild Images Using Graph Convolutional Networks
+Jiangke Lin, Yi Yuan, Tianjia Shao, Kun Zhou
+[pdf] [arXiv] [video] [bibtex]
+
+PolyTransform: Deep Polygon Transformer for Instance Segmentation
+Justin Liang, Namdar Homayounfar, Wei-Chiu Ma, Yuwen Xiong, Rui Hu, Raquel Urtasun
+[pdf] [arXiv] [bibtex]
+
+Towards Fairness in Visual Recognition: Effective Strategies for Bias Mitigation
+Zeyu Wang, Klint Qinami, Ioannis Christos Karakozis, Kyle Genova, Prem Nair, Kenji Hata, Olga Russakovsky
+[pdf] [arXiv] [video] [bibtex]
+
+RDCFace: Radial Distortion Correction for Face Recognition
+He Zhao, Xianghua Ying, Yongjie Shi, Xin Tong, Jingsi Wen, Hongbin Zha
+[pdf] [bibtex]
+
+Learning Dynamic Routing for Semantic Segmentation
+Yanwei Li, Lin Song, Yukang Chen, Zeming Li, Xiangyu Zhang, Xingang Wang, Jian Sun
+[pdf] [arXiv] [bibtex]
+
+GNN3DMOT: Graph Neural Network for 3D Multi-Object Tracking With 2D-3D Multi-Feature Learning
+Xinshuo Weng, Yongxin Wang, Yunze Man, Kris M. Kitani
+[pdf] [video] [bibtex]
+
+Searching Central Difference Convolutional Networks for Face Anti-Spoofing
+Zitong Yu, Chenxu Zhao, Zezheng Wang, Yunxiao Qin, Zhuo Su, Xiaobai Li, Feng Zhou, Guoying Zhao
+[pdf] [supp] [arXiv] [bibtex]
+
+PREDICT & CLUSTER: Unsupervised Skeleton Based Action Recognition
+Kun Su, Xiulong Liu, Eli Shlizerman
+[pdf] [supp] [arXiv] [bibtex]
+
+RetinaFace: Single-Shot Multi-Level Face Localisation in the Wild
+Jiankang Deng, Jia Guo, Evangelos Ververas, Irene Kotsia, Stefanos Zafeiriou
+[pdf] [supp] [bibtex]
+
+Monocular Real-Time Hand Shape and Motion Capture Using Multi-Modal Data
+Yuxiao Zhou, Marc Habermann, Weipeng Xu, Ikhsanul Habibie, Christian Theobalt, Feng Xu
+[pdf] [supp] [arXiv] [bibtex]
+
+Mitigating Bias in Face Recognition Using Skewness-Aware Reinforcement Learning
+Mei Wang, Weihong Deng
+[pdf] [arXiv] [video] [bibtex]
+
+Single Image Reflection Removal With Physically-Based Training Images
+Soomin Kim, Yuchi Huo, Sung-Eui Yoon
+[pdf] [arXiv] [bibtex]
+
+Disentangled Image Generation Through Structured Noise Injection
+Yazeed Alharbi, Peter Wonka
+[pdf] [arXiv] [bibtex]
+
+Deep 3D Capture: Geometry and Reflectance From Sparse Multi-View Images
+Sai Bi, Zexiang Xu, Kalyan Sunkavalli, David Kriegman, Ravi Ramamoorthi
+[pdf] [supp] [arXiv] [bibtex]
+
+Multi-Scale Fusion Subspace Clustering Using Similarity Constraint
+Zhiyuan Dang, Cheng Deng, Xu Yang, Heng Huang
+[pdf] [bibtex]
+
+GroupFace: Learning Latent Groups and Constructing Group-Based Representations for Face Recognition
+Yonghyun Kim, Wonpyo Park, Myung-Cheol Roh, Jongju Shin
+[pdf] [arXiv] [video] [bibtex]
+
+Learning to Optimize Non-Rigid Tracking
+Yang Li, Aljaz Bozic, Tianwei Zhang, Yanli Ji, Tatsuya Harada, Matthias Niessner
+[pdf] [supp] [arXiv] [bibtex]
+
+Weakly Supervised Discriminative Feature Learning With State Information for Person Identification
+Hong-Xing Yu, Wei-Shi Zheng
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+An Internal Covariate Shift Bounding Algorithm for Deep Neural Networks by Unitizing Layers' Outputs
+You Huang, Yuanlong Yu
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+MixNMatch: Multifactor Disentanglement and Encoding for Conditional Image Generation
+Yuheng Li, Krishna Kumar Singh, Utkarsh Ojha, Yong Jae Lee
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Parsing-Based View-Aware Embedding Network for Vehicle Re-Identification
+Dechao Meng, Liang Li, Xuejing Liu, Yadong Li, Shijie Yang, Zheng-Jun Zha, Xingyu Gao, Shuhui Wang, Qingming Huang
+[pdf] [arXiv] [bibtex]
+
+PF-Net: Point Fractal Network for 3D Point Cloud Completion
+Zitian Huang, Yikuan Yu, Jiawen Xu, Feng Ni, Xinyi Le
+[pdf] [bibtex]
+
+Stochastic Classifiers for Unsupervised Domain Adaptation
+Zhihe Lu, Yongxin Yang, Xiatian Zhu, Cong Liu, Yi-Zhe Song, Tao Xiang
+[pdf] [bibtex]
+
+CIAGAN: Conditional Identity Anonymization Generative Adversarial Networks
+Maxim Maximov, Ismail Elezi, Laura Leal-Taixe
+[pdf] [supp] [bibtex]
+
+Hierarchically Robust Representation Learning
+Qi Qian, Juhua Hu, Hao Li
+[pdf] [supp] [arXiv] [bibtex]
+
+Towards Robust Image Classification Using Sequential Attention Models
+Daniel Zoran, Mike Chrzanowski, Po-Sen Huang, Sven Gowal, Alex Mott, Pushmeet Kohli
+[pdf] [supp] [arXiv] [bibtex]
+
+A Morphable Face Albedo Model
+William A. P. Smith, Alassane Seck, Hannah Dee, Bernard Tiddeman, Joshua B. Tenenbaum, Bernhard Egger
+[pdf] [supp] [arXiv] [bibtex]
+
+Fast Video Object Segmentation With Temporal Aggregation Network and Dynamic Template Matching
+Xuhua Huang, Jiarui Xu, Yu-Wing Tai, Chi-Keung Tang
+[pdf] [arXiv] [video] [bibtex]
+
+Affinity Graph Supervision for Visual Recognition
+Chu Wang, Babak Samari, Vladimir G. Kim, Siddhartha Chaudhuri, Kaleem Siddiqi
+[pdf] [arXiv] [bibtex]
+
+Distilling Effective Supervision From Severe Label Noise
+Zizhao Zhang, Han Zhang, Sercan O. Arik, Honglak Lee, Tomas Pfister
+[pdf] [arXiv] [bibtex]
+
+Temporally Distributed Networks for Fast Video Semantic Segmentation
+Ping Hu, Fabian Caba, Oliver Wang, Zhe Lin, Stan Sclaroff, Federico Perazzi
+[pdf] [arXiv] [bibtex]
+
+Noise Robust Generative Adversarial Networks
+Takuhiro Kaneko, Tatsuya Harada
+[pdf] [bibtex]
+
+DeepDeform: Learning Non-Rigid RGB-D Reconstruction With Semi-Supervised Data
+Aljaz Bozic, Michael Zollhofer, Christian Theobalt, Matthias Niessner
+[pdf] [supp] [video] [bibtex]
+
+Learning Video Stabilization Using Optical Flow
+Jiyang Yu, Ravi Ramamoorthi
+[pdf] [supp] [bibtex]
+
+Breaking the Cycle - Colleagues Are All You Need
+Ori Nizan, Ayellet Tal
+[pdf] [supp] [bibtex]
+
+Circle Loss: A Unified Perspective of Pair Similarity Optimization
+Yifan Sun, Changmao Cheng, Yuhan Zhang, Chi Zhang, Liang Zheng, Zhongdao Wang, Yichen Wei
+[pdf] [arXiv] [bibtex]
+
+A Characteristic Function Approach to Deep Implicit Generative Modeling
+Abdul Fatir Ansari, Jonathan Scarlett, Harold Soh
+[pdf] [supp] [arXiv] [bibtex]
+
+Bayesian Adversarial Human Motion Synthesis
+Rui Zhao, Hui Su, Qiang Ji
+[pdf] [supp] [bibtex]
+
+On Positive-Unlabeled Classification in GAN
+Tianyu Guo, Chang Xu, Jiajun Huang, Yunhe Wang, Boxin Shi, Chao Xu, Dacheng Tao
+[pdf] [supp] [arXiv] [bibtex]
+
+A Unified Object Motion and Affinity Model for Online Multi-Object Tracking
+Junbo Yin, Wenguan Wang, Qinghao Meng, Ruigang Yang, Jianbing Shen
+[pdf] [arXiv] [video] [bibtex]
+
+Image2StyleGAN++: How to Edit the Embedded Images?
+Rameen Abdal, Yipeng Qin, Peter Wonka
+[pdf] [supp] [bibtex]
+
+Efficient and Robust Shape Correspondence via Sparsity-Enforced Quadratic Assignment
+Rui Xiang, Rongjie Lai, Hongkai Zhao
+[pdf] [arXiv] [video] [bibtex]
+
+PolarNet: An Improved Grid Representation for Online LiDAR Point Clouds Semantic Segmentation
+Yang Zhang, Zixiang Zhou, Philip David, Xiangyu Yue, Zerong Xi, Boqing Gong, Hassan Foroosh
+[pdf] [arXiv] [video] [bibtex]
+
+CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and Local Refinement
+Ho Kei Cheng, Jihoon Chung, Yu-Wing Tai, Chi-Keung Tang
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+GHUM & GHUML: Generative 3D Human Shape and Articulated Pose Models
+Hongyi Xu, Eduard Gabriel Bazavan, Andrei Zanfir, William T. Freeman, Rahul Sukthankar, Cristian Sminchisescu
+[pdf] [bibtex]
+
+Panoptic-Based Image Synthesis
+Aysegul Dundar, Karan Sapra, Guilin Liu, Andrew Tao, Bryan Catanzaro
+[pdf] [arXiv] [bibtex]
+
+Unity Style Transfer for Person Re-Identification
+Chong Liu, Xiaojun Chang, Yi-Dong Shen
+[pdf] [arXiv] [bibtex]
+
+Minimal Solvers for 3D Scan Alignment With Pairs of Intersecting Lines
+Andre Mateus, Srikumar Ramalingam, Pedro Miraldo
+[pdf] [supp] [bibtex]
+
+Distilling Knowledge From Graph Convolutional Networks
+Yiding Yang, Jiayan Qiu, Mingli Song, Dacheng Tao, Xinchao Wang
+[pdf] [arXiv] [bibtex]
+
+Learning Oracle Attention for High-Fidelity Face Completion
+Tong Zhou, Changxing Ding, Shaowen Lin, Xinchao Wang, Dacheng Tao
+[pdf] [supp] [arXiv] [bibtex]
+
+Image Super-Resolution With Cross-Scale Non-Local Attention and Exhaustive Self-Exemplars Mining
+Yiqun Mei, Yuchen Fan, Yuqian Zhou, Lichao Huang, Thomas S. Huang, Honghui Shi
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+On the Regularization Properties of Structured Dropout
+Ambar Pal, Connor Lane, Rene Vidal, Benjamin D. Haeffele
+[pdf] [supp] [arXiv] [bibtex]
+
+Deep Geometric Functional Maps: Robust Feature Learning for Shape Correspondence
+Nicolas Donati, Abhishek Sharma, Maks Ovsjanikov
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Iteratively-Refined Interactive 3D Medical Image Segmentation With Multi-Agent Reinforcement Learning
+Xuan Liao, Wenhao Li, Qisen Xu, Xiangfeng Wang, Bo Jin, Xiaoyun Zhang, Yanfeng Wang, Ya Zhang
+[pdf] [arXiv] [video] [bibtex]
+
+Editing in Style: Uncovering the Local Semantics of GANs
+Edo Collins, Raja Bala, Bob Price, Sabine Susstrunk
+[pdf] [supp] [arXiv] [bibtex]
+
+A Graduated Filter Method for Large Scale Robust Estimation
+Huu Le, Christopher Zach
+[pdf] [supp] [arXiv] [bibtex]
+
+Discovering Synchronized Subsets of Sequences: A Large Scale Solution
+Evangelos Sariyanidi, Casey J. Zampella, Keith G. Bartley, John D. Herrington, Theodore D. Satterthwaite, Robert T. Schultz, Birkan Tunc
+[pdf] [supp] [bibtex]
+
+DeepCap: Monocular Human Performance Capture Using Weak Supervision
+Marc Habermann, Weipeng Xu, Michael Zollhofer, Gerard Pons-Moll, Christian Theobalt
+[pdf] [supp] [bibtex]
+
+Learning Physics-Guided Face Relighting Under Directional Light
+Thomas Nestmeyer, Jean-Francois Lalonde, Iain Matthews, Andreas Lehrmann
+[pdf] [arXiv] [bibtex]
+
+Unsupervised Representation Learning for Gaze Estimation
+Yu Yu, Jean-Marc Odobez
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning Better Lossless Compression Using Lossy Compression
+Fabian Mentzer, Luc Van Gool, Michael Tschannen
+[pdf] [supp] [arXiv] [bibtex]
+
+Dynamic Hierarchical Mimicking Towards Consistent Optimization Objectives
+Duo Li, Qifeng Chen
+[pdf] [supp] [arXiv] [bibtex]
+
+UCTGAN: Diverse Image Inpainting Based on Unsupervised Cross-Space Translation
+Lei Zhao, Qihang Mo, Sihuan Lin, Zhizhong Wang, Zhiwen Zuo, Haibo Chen, Wei Xing, Dongming Lu
+[pdf] [video] [bibtex]
+
+Reciprocal Learning Networks for Human Trajectory Prediction
+Hao Sun, Zhiqun Zhao, Zhihai He
+[pdf] [arXiv] [bibtex]
+
+Towards Universal Representation Learning for Deep Face Recognition
+Yichun Shi, Xiang Yu, Kihyuk Sohn, Manmohan Chandraker, Anil K. Jain
+[pdf] [supp] [arXiv] [bibtex]
+
+Minimal Solutions to Relative Pose Estimation From Two Views Sharing a Common Direction With Unknown Focal Length
+Yaqing Ding, Jian Yang, Jean Ponce, Hui Kong
+[pdf] [supp] [video] [bibtex]
+
+Deep Fair Clustering for Visual Learning
+Peizhao Li, Han Zhao, Hongfu Liu
+[pdf] [supp] [bibtex]
+
+Rotation Consistent Margin Loss for Efficient Low-Bit Face Recognition
+Yudong Wu, Yichao Wu, Ruihao Gong, Yuanhao Lv, Ken Chen, Ding Liang, Xiaolin Hu, Xianglong Liu, Junjie Yan
+[pdf] [bibtex]
+
+Super-BPD: Super Boundary-to-Pixel Direction for Fast Image Segmentation
+Jianqiang Wan, Yang Liu, Donglai Wei, Xiang Bai, Yongchao Xu
+[pdf] [bibtex]
+
+TransMoMo: Invariance-Driven Unsupervised Video Motion Retargeting
+Zhuoqian Yang, Wentao Zhu, Wayne Wu, Chen Qian, Qiang Zhou, Bolei Zhou, Chen Change Loy
+[pdf] [supp] [arXiv] [bibtex]
+
+D3Feat: Joint Learning of Dense Detection and Description of 3D Local Features
+Xuyang Bai, Zixin Luo, Lei Zhou, Hongbo Fu, Long Quan, Chiew-Lan Tai
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Cross-Batch Memory for Embedding Learning
+Xun Wang, Haozhi Zhang, Weilin Huang, Matthew R. Scott
+[pdf] [supp] [arXiv] [bibtex]
+
+Hierarchical Pyramid Diverse Attention Networks for Face Recognition
+Qiangchang Wang, Tianyi Wu, He Zheng, Guodong Guo
+[pdf] [bibtex]
+
+ARShadowGAN: Shadow Generative Adversarial Network for Augmented Reality in Single Light Scenes
+Daquan Liu, Chengjiang Long, Hongpan Zhang, Hanning Yu, Xinzhi Dong, Chunxia Xiao
+[pdf] [supp] [video] [bibtex]
+
+Going Deeper With Lean Point Networks
+Eric-Tuan Le, Iasonas Kokkinos, Niloy J. Mitra
+[pdf] [supp] [arXiv] [bibtex]
+
+Semantic Image Manipulation Using Scene Graphs
+Helisa Dhamo, Azade Farshad, Iro Laina, Nassir Navab, Gregory D. Hager, Federico Tombari, Christian Rupprecht
+[pdf] [supp] [arXiv] [bibtex]
+
+Neural Voxel Renderer: Learning an Accurate and Controllable Rendering Tool
+Konstantinos Rematas, Vittorio Ferrari
+[pdf] [arXiv] [video] [bibtex]
+
+How to Train Your Deep Multi-Object Tracker
+Yihong Xu, Aljosa Osep, Yutong Ban, Radu Horaud, Laura Leal-Taixe, Xavier Alameda-Pineda
+[pdf] [supp] [arXiv] [bibtex]
+
+Cascaded Deep Monocular 3D Human Pose Estimation With Evolutionary Training Data
+Shichao Li, Lei Ke, Kevin Pratama, Yu-Wing Tai, Chi-Keung Tang, Kwang-Ting Cheng
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+An End-to-End Edge Aggregation Network for Moving Object Segmentation
+Prashant W. Patil, Kuldeep M. Biradar, Akshay Dudhane, Subrahmanyam Murala
+[pdf] [bibtex]
+
+Overcoming Multi-Model Forgetting in One-Shot NAS With Diversity Maximization
+Miao Zhang, Huiqi Li, Shirui Pan, Xiaojun Chang, Steven Su
+[pdf] [video] [bibtex]
+
+Fine-Grained Image-to-Image Transformation Towards Visual Recognition
+Wei Xiong, Yutong He, Yixuan Zhang, Wenhan Luo, Lin Ma, Jiebo Luo
+[pdf] [supp] [arXiv] [bibtex]
+
+Self-Supervised Learning of Pretext-Invariant Representations
+Ishan Misra, Laurens van der Maaten
+[pdf] [arXiv] [bibtex]
+
+HyperSTAR: Task-Aware Hyperparameters for Deep Networks
+Gaurav Mittal, Chang Liu, Nikolaos Karianakis, Victor Fragoso, Mei Chen, Yun Fu
+[pdf] [supp] [arXiv] [bibtex]
+
+Deblurring Using Analysis-Synthesis Networks Pair
+Adam Kaufman, Raanan Fattal
+[pdf] [supp] [arXiv] [bibtex]
+
+A Novel Recurrent Encoder-Decoder Structure for Large-Scale Multi-View Stereo Reconstruction From an Open Aerial Dataset
+Jin Liu, Shunping Ji
+[pdf] [arXiv] [video] [bibtex]
+
+Deep Polarization Cues for Transparent Object Segmentation
+Agastya Kalra, Vage Taamazyan, Supreeth Krishna Rao, Kartik Venkataraman, Ramesh Raskar, Achuta Kadambi
+[pdf] [supp] [bibtex]
+
+GAN Compression: Efficient Architectures for Interactive Conditional GANs
+Muyang Li, Ji Lin, Yaoyao Ding, Zhijian Liu, Jun-Yan Zhu, Song Han
+[pdf] [arXiv] [bibtex]
+
+Joint Training of Variational Auto-Encoder and Latent Energy-Based Model
+Tian Han, Erik Nijkamp, Linqi Zhou, Bo Pang, Song-Chun Zhu, Ying Nian Wu
+[pdf] [arXiv] [bibtex]
+
+Data-Efficient Semi-Supervised Learning by Reliable Edge Mining
+Peibin Chen, Tao Ma, Xu Qin, Weidi Xu, Shuchang Zhou
+[pdf] [bibtex]
+
+Stylization-Based Architecture for Fast Deep Exemplar Colorization
+Zhongyou Xu, Tingting Wang, Faming Fang, Yun Sheng, Guixu Zhang
+[pdf] [supp] [bibtex]
+
+PSGAN: Pose and Expression Robust Spatial-Aware GAN for Customizable Makeup Transfer
+Wentao Jiang, Si Liu, Chen Gao, Jie Cao, Ran He, Jiashi Feng, Shuicheng Yan
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Spatial Pyramid Based Graph Reasoning for Semantic Segmentation
+Xia Li, Yibo Yang, Qijie Zhao, Tiancheng Shen, Zhouchen Lin, Hong Liu
+[pdf] [arXiv] [bibtex]
+
+GAMIN: Generative Adversarial Multiple Imputation Network for Highly Missing Data
+Seongwook Yoon, Sanghoon Sull
+[pdf] [video] [bibtex]
+
+When to Use Convolutional Neural Networks for Inverse Problems
+Nathaniel Chodosh, Simon Lucey
+[pdf] [supp] [arXiv] [bibtex]
+
+Dynamic Face Video Segmentation via Reinforcement Learning
+Yujiang Wang, Mingzhi Dong, Jie Shen, Yang Wu, Shiyang Cheng, Maja Pantic
+[pdf] [supp] [arXiv] [bibtex]
+
+ManiGAN: Text-Guided Image Manipulation
+Bowen Li, Xiaojuan Qi, Thomas Lukasiewicz, Philip H.S. Torr
+[pdf] [supp] [arXiv] [bibtex]
+
+The GAN That Warped: Semantic Attribute Editing With Unpaired Data
+Garoe Dorta, Sara Vicente, Neill D. F. Campbell, Ivor J. A. Simpson
+[pdf] [supp] [arXiv] [bibtex]
+
+Detecting Attended Visual Targets in Video
+Eunji Chong, Yongxin Wang, Nataniel Ruiz, James M. Rehg
+[pdf] [arXiv] [dataset] [bibtex]
+
+Total Deep Variation for Linear Inverse Problems
+Erich Kobler, Alexander Effland, Karl Kunisch, Thomas Pock
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning Multi-Object Tracking and Segmentation From Automatic Annotations
+Lorenzo Porzi, Markus Hofinger, Idoia Ruiz, Joan Serrat, Samuel Rota Bulo, Peter Kontschieder
+[pdf] [supp] [arXiv] [bibtex]
+
+GeoDA: A Geometric Framework for Black-Box Adversarial Attacks
+Ali Rahmati, Seyed-Mohsen Moosavi-Dezfooli, Pascal Frossard, Huaiyu Dai
+[pdf] [supp] [bibtex]
+
+Semantically Multi-Modal Image Synthesis
+Zhen Zhu, Zhiliang Xu, Ansheng You, Xiang Bai
+[pdf] [supp] [arXiv] [bibtex]
+
+Copy and Paste GAN: Face Hallucination From Shaded Thumbnails
+Yang Zhang, Ivor W. Tsang, Yawei Luo, Chang-Hui Hu, Xiaobo Lu, Xin Yu
+[pdf] [supp] [arXiv] [bibtex]
+
+Leveraging 2D Data to Learn Textured 3D Mesh Generation
+Paul Henderson, Vagia Tsiminaki, Christoph H. Lampert
+[pdf] [supp] [arXiv] [bibtex]
+
+Bidirectional Graph Reasoning Network for Panoptic Segmentation
+Yangxin Wu, Gengwei Zhang, Yiming Gao, Xiajun Deng, Ke Gong, Xiaodan Liang, Liang Lin
+[pdf] [supp] [arXiv] [bibtex]
+
+High-Order Information Matters: Learning Relation and Topology for Occluded Person Re-Identification
+Guan'an Wang, Shuo Yang, Huanyu Liu, Zhicheng Wang, Yang Yang, Shuliang Wang, Gang Yu, Erjin Zhou, Jian Sun
+[pdf] [arXiv] [video] [bibtex]
+
+Self-Supervised Monocular Scene Flow Estimation
+Junhwa Hur, Stefan Roth
+[pdf] [supp] [arXiv] [bibtex]
+
+End-to-End Model-Free Reinforcement Learning for Urban Driving Using Implicit Affordances
+Marin Toromanoff, Emilie Wirbel, Fabien Moutarde
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Model Adaptation: Unsupervised Domain Adaptation Without Source Data
+Rui Li, Qianfen Jiao, Wenming Cao, Hau-San Wong, Si Wu
+[pdf] [supp] [bibtex]
+
+VecRoad: Point-Based Iterative Graph Exploration for Road Graphs Extraction
+Yong-Qiang Tan, Shang-Hua Gao, Xuan-Yi Li, Ming-Ming Cheng, Bo Ren
+[pdf] [supp] [video] [bibtex]
+
+Uncertainty Based Camera Model Selection
+Michal Polic, Stanislav Steidl, Cenek Albl, Zuzana Kukelova, Tomas Pajdla
+[pdf] [supp] [bibtex]
+
+Learning a Neural 3D Texture Space From 2D Exemplars
+Philipp Henzler, Niloy J. Mitra, Tobias Ritschel
+[pdf] [supp] [arXiv] [bibtex]
+
+Structure-Preserving Super Resolution With Gradient Guidance
+Cheng Ma, Yongming Rao, Yean Cheng, Ce Chen, Jiwen Lu, Jie Zhou
+[pdf] [supp] [arXiv] [bibtex]
+
+Neural Contours: Learning to Draw Lines From 3D Shapes
+Difan Liu, Mohamed Nabail, Aaron Hertzmann, Evangelos Kalogerakis
+[pdf] [supp] [arXiv] [bibtex]
+
+An Efficient PointLSTM for Point Clouds Based Gesture Recognition
+Yuecong Min, Yanxiao Zhang, Xiujuan Chai, Xilin Chen
+[pdf] [supp] [bibtex]
+
+SCOUT: Self-Aware Discriminant Counterfactual Explanations
+Pei Wang, Nuno Vasconcelos
+[pdf] [supp] [arXiv] [bibtex]
+
+Select to Better Learn: Fast and Accurate Deep Learning Using Data Selection From Nonlinear Manifolds
+Mohsen Joneidi, Saeed Vahidian, Ashkan Esmaeili, Weijia Wang, Nazanin Rahnavard, Bill Lin, Mubarak Shah
+[pdf] [supp] [video] [bibtex]
+
+Towards Photo-Realistic Virtual Try-On by Adaptively Generating-Preserving Image Content
+Han Yang, Ruimao Zhang, Xiaobao Guo, Wei Liu, Wangmeng Zuo, Ping Luo
+[pdf] [supp] [bibtex]
+
+Phase Consistent Ecological Domain Adaptation
+Yanchao Yang, Dong Lao, Ganesh Sundaramoorthi, Stefano Soatto
+[pdf] [arXiv] [bibtex]
+
+Information-Driven Direct RGB-D Odometry
+Alejandro Fontan, Javier Civera, Rudolph Triebel
+[pdf] [bibtex]
+
+Single-Side Domain Generalization for Face Anti-Spoofing
+Yunpei Jia, Jie Zhang, Shiguang Shan, Xilin Chen
+[pdf] [arXiv] [bibtex]
+
+Optical Non-Line-of-Sight Physics-Based 3D Human Pose Estimation
+Mariko Isogawa, Ye Yuan, Matthew O'Toole, Kris M. Kitani
+[pdf] [supp] [arXiv] [bibtex]
+
+Barycenters of Natural Images Constrained Wasserstein Barycenters for Image Morphing
+Dror Simon, Aviad Aberdam
+[pdf] [video] [bibtex]
+
+Future Video Synthesis With Object Motion Prediction
+Yue Wu, Rongrong Gao, Jaesik Park, Qifeng Chen
+[pdf] [arXiv] [bibtex]
+
+Reference-Based Sketch Image Colorization Using Augmented-Self Reference and Dense Semantic Correspondence
+Junsoo Lee, Eungyeup Kim, Yunsung Lee, Dongjun Kim, Jaehyuk Chang, Jaegul Choo
+[pdf] [supp] [arXiv] [bibtex]
+
+Collaborative Motion Prediction via Neural Motion Message Passing
+Yue Hu, Siheng Chen, Ya Zhang, Xiao Gu
+[pdf] [supp] [arXiv] [bibtex]
+
+End-to-End Learnable Geometric Vision by Backpropagating PnP Optimization
+Bo Chen, Alvaro Parra, Jiewei Cao, Nan Li, Tat-Jun Chin
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning Texture Transformer Network for Image Super-Resolution
+Fuzhi Yang, Huan Yang, Jianlong Fu, Hongtao Lu, Baining Guo
+[pdf] [supp] [arXiv] [bibtex]
+
+Distribution-Induced Bidirectional Generative Adversarial Network for Graph Representation Learning
+Shuai Zheng, Zhenfeng Zhu, Xingxing Zhang, Zhizhe Liu, Jian Cheng, Yao Zhao
+[pdf] [arXiv] [video] [bibtex]
+
+Benchmarking the Robustness of Semantic Segmentation Models
+Christoph Kamann, Carsten Rother
+[pdf] [supp] [arXiv] [bibtex]
+
+Local Implicit Grid Representations for 3D Scenes
+Chiyu "Max" Jiang, Avneesh Sud, Ameesh Makadia, Jingwei Huang, Matthias Niessner, Thomas Funkhouser
+[pdf] [supp] [arXiv] [bibtex]
+
+Deformable Siamese Attention Networks for Visual Object Tracking
+Yuechen Yu, Yilei Xiong, Weilin Huang, Matthew R. Scott
+[pdf] [supp] [arXiv] [bibtex]
+
+Learning Video Object Segmentation From Unlabeled Videos
+Xiankai Lu, Wenguan Wang, Jianbing Shen, Yu-Wing Tai, David J. Crandall, Steven C. H. Hoi
+[pdf] [arXiv] [bibtex]
+
+ScopeFlow: Dynamic Scene Scoping for Optical Flow
+Aviram Bar-Haim, Lior Wolf
+[pdf] [supp] [bibtex]
+
+Context-Aware Human Motion Prediction
+Enric Corona, Albert Pumarola, Guillem Alenya, Francesc Moreno-Noguer
+[pdf] [arXiv] [bibtex]
+
+MISC: Multi-Condition Injection and Spatially-Adaptive Compositing for Conditional Person Image Synthesis
+Shuchen Weng, Wenbo Li, Dawei Li, Hongxia Jin, Boxin Shi
+[pdf] [bibtex]
+
+Pathological Retinal Region Segmentation From OCT Images Using Geometric Relation Based Augmentation
+Dwarikanath Mahapatra, Behzad Bozorgtabar, Ling Shao
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Filter Grafting for Deep Neural Networks
+Fanxu Meng, Hao Cheng, Ke Li, Zhixin Xu, Rongrong Ji, Xing Sun, Guangming Lu
+[pdf] [supp] [arXiv] [bibtex]
+
+Intuitive, Interactive Beard and Hair Synthesis With Generative Models
+Kyle Olszewski, Duygu Ceylan, Jun Xing, Jose Echevarria, Zhili Chen, Weikai Chen, Hao Li
+[pdf] [supp] [arXiv] [bibtex]
+
+Global Optimality for Point Set Registration Using Semidefinite Programming
+Jose Pedro Iglesias, Carl Olsson, Fredrik Kahl
+[pdf] [video] [bibtex]
+
+SQE: a Self Quality Evaluation Metric for Parameters Optimization in Multi-Object Tracking
+Yanru Huang, Feiyu Zhu, Zheni Zeng, Xi Qiu, Yuan Shen, Jianan Wu
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+PointASNL: Robust Point Clouds Processing Using Nonlocal Neural Networks With Adaptive Sampling
+Xu Yan, Chaoda Zheng, Zhen Li, Sheng Wang, Shuguang Cui
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+Minimizing Discrete Total Curvature for Image Processing
+Qiuxiang Zhong, Yutong Li, Yijie Yang, Yuping Duan
+[pdf] [bibtex]
+
+Unsupervised Learning of Intrinsic Structural Representation Points
+Nenglun Chen, Lingjie Liu, Zhiming Cui, Runnan Chen, Duygu Ceylan, Changhe Tu, Wenping Wang
+[pdf] [supp] [arXiv] [bibtex]
+
+Deep Active Learning for Biased Datasets via Fisher Kernel Self-Supervision
+Denis Gudovskiy, Alec Hodgkinson, Takuya Yamaguchi, Sotaro Tsukizawa
+[pdf] [supp] [arXiv] [video] [bibtex]
+
+FGN: Fully Guided Network for Few-Shot Instance Segmentation
+Zhibo Fan, Jin-Gang Yu, Zhihao Liang, Jiarong Ou, Changxin Gao, Gui-Song Xia, Yuanqing Li
+[pdf] [arXiv] [bibtex]
+
+DualConvMesh-Net: Joint Geodesic and Euclidean Convolutions on 3D Meshes
+Jonas Schult, Francis Engelmann, Theodora Kontogianni, Bastian Leibe
+[pdf] [supp] [bibtex]
+
+Noise Modeling, Synthesis and Classification for Generic Object Anti-Spoofing
+Joel Stehouwer, Amin Jourabloo, Yaojie Liu, Xiaoming Liu
+[pdf] [arXiv] [video] [bibtex]
+
+An Investigation Into the Stochasticity of Batch Whitening
+Lei Huang, Lei Zhao, Yi Zhou, Fan Zhu, Li Liu, Ling Shao
+[pdf] [supp] [arXiv] [bibtex]
+
+VIBE: Video Inference for Human Body Pose and Shape Estimation
+Muhammed Kocabas, Nikos Athanasiou, Michael J. Black
+[pdf] [supp] [arXiv] [bibtex]
+
