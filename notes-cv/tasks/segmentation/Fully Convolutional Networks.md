@@ -10,7 +10,38 @@
 
 ## 1. Introduction
 
+> We show that a fully convolutional network (FCN), trained end-to-end, pixels-to-pixels on semantic segmentation exceeds the state-of-the-art without further machinery.
+
+> Fully convolutional versions of existing networks predict dense outputs from arbitrary-sized inputs.
+
+> Our approach does not make use of pre- and post-processing complications, including superpixels [8, 16], proposals [16, 14], or post-hoc refinement by random fields or local classifiers [8, 16].
+
+> Our model transfers recent success in classification [19, 31, 32] to dense prediction by reinterpreting classification nets as fully convolutional and fine-tuning from their learned representations.
+
+> Semantic segmentation faces an inherent tension between semantics and location: global information resolves what while local information resolves where. Deep feature hierarchies jointly encode location and semantics in a local-to-global pyramid.
+
+> We define a novel “skip” architecture to combine deep, coarse, semantic information and shallow, fine, appearance information in Section 4.2 (see Figure 3).
+
 ## 2. Related work
+
+> We now re-architect and fine-tune classification nets to direct, dense prediction of semantic segmentation.
+
+**Fully convolutional networks**
+
+**Dense prediction with convnets**
+
+> Several recent works have applied convnets to dense prediction problems.
+
+> Common elements of these approaches include
+> * small models restricting capacity and receptive fields;
+> * patchwise training [27, 2, 8, 28, 11];
+> * post-processing by superpixel projection, random field regularization, filtering, or local classification [8, 2, 11];
+> * input shifting and output interlacing for dense output [28, 11] as introduced by OverFeat [29];
+> * multi-scale pyramid processing [8, 28, 11];
+> * saturating tanh nonlinearities [8, 5, 28]; and
+> * ensembles [2, 11].
+
+> Unlike these existing methods, we adapt and extend deep classification architectures, using image classification as supervised pre-training, and fine-tune fully convolutionally to learn simply and efficiently from whole image inputs and whole image ground thruths.
 
 ## 3. Fully convolutional networks
 
@@ -39,7 +70,11 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 
 > The spatial output maps of these convolutionalized models make them a natural choice for dense problems like semantic segmentation. With ground truth available at every output cell, both the forward and backward passes are straightforward, and both take advantage of the inherent computational efficiency (and aggressive optimization) of convolution.
 
+> While our reinterpretation of classification nets as fully convolutional yields output maps for inputs of any size, the output dimensions are typically reduced by subsampling.
+
 ### 3.2. Shift-and-stitch is filter rarefaction
+
+> Input shifting and output interlacing is a trick that yields dense predictions from coarse outputs without interpolation, introduced by OverFeat [29].
 
 ### 3.3. Upsampling is backwards strided convolution
 
@@ -50,6 +85,16 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 ### 4.1. From classifier to dense FCN
 
 ### 4.2. Combining what and where
+
+> We define a new fully convolutional net (FCN) for segmentation that combines layers of the feature hierarchy and refines the spatial precision of the output.
+
+> While fully convolutionalized classifiers can be fine-tuned to segmentation as shown in 4.1, and even score highly on the standard metric, their output is dissatisfyingly coarse (see Figure 4).
+
+> We address this by adding links that combine the final prediction layer with lower layers with finer strides. This turns a line topology into a DAG, with edges that skip ahead from lower layers to higher ones (Figure 3).
+
+> Combining fine layers and coarse layers lets the model make local predictions that respect global structure.
+
+**Refinement by other means**
 
 ### 4.3. Experimental framework
 
@@ -65,6 +110,8 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 
 ## Further Reading
 
+* [12] R-CNN
+* [16] Simultaneous Detection and Segmentation (SDS)
 * [17] Spatial Pyramid Pooling (SPP)
 * [19] AlexNet
 * [21] LeNet

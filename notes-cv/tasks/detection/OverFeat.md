@@ -31,7 +31,11 @@
 
 ### 3.1 Model Design and Training
 
+### 3.2 Feature Extractor
 
+### 3.3 Multi-Scale Classification
+
+> Instead, we explore the entire image by densely running the network at each location and at multiple scales.
 
 ----------------------------------------------------------------------------------------------------
 
