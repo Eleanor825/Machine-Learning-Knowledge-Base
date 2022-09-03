@@ -111,4 +111,4 @@ Inference
 * [26] VGG
 * [27] Inception-v1/GoogLeNet
 * [28] ResNet
-* [29] Fully Convolutional Networks (FCN)
+* [29] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)

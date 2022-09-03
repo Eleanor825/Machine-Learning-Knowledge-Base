@@ -23,6 +23,10 @@
 
 ## 3. Pyramid Scene Parsing Network
 
+<p align="center">
+    <img src="PSPNet_figure_3.png" />
+</p>
+
 ### 3.1. Important Observations
 
 **Mismatched Relationship**
@@ -93,7 +97,7 @@ $$\mathcal{F}(x) := \operatorname{Concat}\bigg(\{x\} \cup \bigg\{\mathcal{U}_{i}
 * [17] AlexNet
 * [19] Deeply-Supervised Nets (DSN)
 * [24] ParseNet
-* [26] Fully Convolutional Networks (FCN)
+* [26] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [30] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [33] VGG
 * [34] Inception-v1/GoogLeNet

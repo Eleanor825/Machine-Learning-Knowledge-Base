@@ -31,4 +31,4 @@
 * [Sermanet et al., 2013] OverFeat
 * [Szegedy et al., 2014] Inception-v1/GoogLeNet
 * [Girshick et al., 2014] R-CNN
-* [Long et al., 2014] Fully Convolutional Networks
+* [Long et al., 2014] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)

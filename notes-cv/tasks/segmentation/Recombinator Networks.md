@@ -89,7 +89,7 @@ $$\mathcal{L}(\textbf{W}) := \frac{1}{N}\sum_{n=1}^{N}\underbrace{\sum_{k=1}^{K}
 
 * [13] Hypercolumn
 * [16] AlexNet
-* [17] Fully Convolutional Networks (FCN)
+* [17] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [19] U-Net
 * [24] VGG
 * [29] Inception-v1/GoogLeNet

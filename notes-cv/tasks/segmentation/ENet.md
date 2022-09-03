@@ -14,9 +14,13 @@
 
 > Even though CNNs are increasingly successful at classification and categorization tasks, they provide coarse spatial results when applied to pixel-wise labeling of images. Therefore, they are often cascaded with other algorithms to refine the results, such as color based segmentation clement13 or conditional random fields liang14 , to name a few.
 
+> In order to both spatially classify and finely segment images, several neural network architectures have been proposed, such as SegNet badrinarayanan15basic ; badrinarayanan15 or fully convolutional networks long15 . All these works are based on a VGG16 simonyan14 architecture, which is a very large model designed for multi-class classification.
+
 > In this paper, we propose a new neural network architecture optimized for fast inference and high accuracy.
 
 ## 2 Related work
+
+Encoder-Decoder Architecture
 
 > State-of-the-art scene-parsing CNNs use two separate neural network architectures combined together: an encoder and a decoder.
 
@@ -24,15 +28,20 @@
 
 > However, these networks are slow during inference due to their large architectures and numerous parameters.
 
+Post-Processing
+
 > Other existing architectures use simpler classifiers and then cascade them with `Conditional Random Field` (CRF) as a post-processing step.
 
-> These techniques use onerous post-processing steps and often fail to label the classes that occupy fewer number of pixels in a frame.
+> As shown in badrinarayanan15 , these techniques use onerous post-processing steps and often fail to label the classes that occupy fewer number of pixels in a frame.
 
 > CNNs can be also combined with `recurrent neural networks` zheng2015conditional to improve accuracy, but then they suffer from speed degradation.
 
 ## 3 Network architecture
 
-Input size: 512 x 512.
+<p align="center">
+    <img src="ENet_figure_2a.png" />
+    <img src="ENet_figure_2b.png" />
+</p>
 
 > We adopt a view of ResNets he2015resnet that describes them as having a single main branch and extensions with convolutional filters that separate from it, and then merge back with an element-wise addition, as shown in Figure 1(b).
 
@@ -45,7 +54,7 @@ Input size: 512 x 512.
 
 Types of the main convolution:
 
-> If the bottleneck is `downsampling`, a max pooling layer is added to the main branch. Also, the first 1x1 projection is replaced with a 2x2 convolution with stride 2 in both dimensions.
+> If the bottleneck is `downsampling`, a max pooling layer is added to the main branch. Also, the first 1x1 projection is replaced with a 2x2 convolution with stride 2 in both dimensions. We zero pad the activations, to match the number of feature maps.
 
 > conv is either a regular, `dilated` or full convolution (also known as `deconvolution` or fractionally strided convolution) with 3x3 filters.
 
@@ -134,6 +143,6 @@ Details:
 * [3] VGG
 * [10] SegNet-Basic
 * [11] SegNet
-* [12] Fully Convolutional Networks (FCN)
+* [12] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [13] VGG
 * [24] ResNet

@@ -110,7 +110,7 @@ Classifier
 ## Further Reading
 
 * [1] VGG
-* [2] Fully Convolutional Networks (FCN)
+* [2] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [3] DeepLabv1
 * [4] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [5] Inception-v1/GoogLeNet
@@ -119,4 +119,4 @@ Classifier
 * [16] U-Net
 * [51] Inception-v2/Batch Normalization
 * [53] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
-* [58] Fully Convolutional Networks (FCN)
+* [58] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
