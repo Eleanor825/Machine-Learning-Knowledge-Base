@@ -7,7 +7,7 @@ class SegNet(tf.keras.Model):
         super(SegNet, self).__init__(name="SegNet", **kwargs)
         self._num_classes = num_classes
 
-    def _conv_block(self, x, filters):
+    def _conv_layer(self, x, filters):
         """
         conv + bn + relu.
         """
@@ -28,6 +28,8 @@ class SegNet(tf.keras.Model):
         )
 
     def _max_unpool_from_argmax(self, x, argmax):
+        if x.shape[1:] != argmax.shape[1:]:
+            raise ValueError(f"[ERROR] x.shape {x.shape} and argmax.shape {argmax.shape} do not match.")
         return tf.reshape(
             tensor=tf.scatter_nd(
                 indices=tf.expand_dims(tf.reshape(argmax, [-1]), axis=-1),
@@ -39,7 +41,7 @@ class SegNet(tf.keras.Model):
 
     def _encoder_block(self, x, filters_list):
         for filters in filters_list:
-            x = self._conv_block(x, filters)
+            x = self._conv_layer(x, filters)
         x, argmax = self._max_pool_with_argmax(x)
         return x, argmax
 
@@ -47,7 +49,7 @@ class SegNet(tf.keras.Model):
         assert x.shape[1:] == argmax.shape[1:], f"{x.shape} != {argmax.shape}"
         x = self._max_unpool_from_argmax(x, argmax)
         for filters in filters_list:
-            x = self._conv_block(x, filters)
+            x = self._conv_layer(x, filters)
         return x
 
     def _encoder_network(self, x):
