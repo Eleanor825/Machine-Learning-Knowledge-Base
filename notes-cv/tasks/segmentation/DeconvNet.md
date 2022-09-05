@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/558646271
-# [Notes][Vision][Segmentation] Learning Deconvolution Network for Semantic Segmentation
+# [Notes][Vision][Segmentation] DeconvNet
 
 * url: https://arxiv.org/abs/1505.04366
 * Title: Learning Deconvolution Network for Semantic Segmentation
