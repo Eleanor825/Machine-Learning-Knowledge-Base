@@ -34,7 +34,7 @@ count: 73
 
 ## classify region proposals
 
-> Some algorithms [3, 9, 10] classify region proposals and refine the labels in the image-level segmentation map to obtain the final segmentation. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+> (2015, DeconvNet) Some algorithms [3, 9, 10] classify region proposals and refine the labels in the image-level segmentation map to obtain the final segmentation.
 
 * [Convolutional Feature Masking for Joint Object and Stuff Segmentation](https://arxiv.org/abs/1412.1283)
     * Title: Convolutional Feature Masking for Joint Object and Stuff Segmentation
@@ -170,7 +170,7 @@ count: 73
     * Abstract: There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at [this http URL](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net).
     * Comments:
         * > Inspired byy FCN, U-Net was proposed for the medical image segmentation domain specifically, bridging the information flow between corresponding low-level and high-level feature maps of the same spatial sizes. (PVT, 2021)
-* [[Learning Deconvolution Network for Semantic Segmentation](https://arxiv.org/abs/1505.04366)]
+* [[DeconvNet](https://arxiv.org/abs/1505.04366)]
     [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.04366/)]
     * Title: Learning Deconvolution Network for Semantic Segmentation
@@ -285,9 +285,9 @@ count: 73
         * > (2014, DeepLabv1) More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN.
         * > (2015, Dilated Convolutions) Long et al. (2015) showed that convolutional network architectures that had originally been developed for image classification can be successfully repurposed for dense prediction.
         * > (2015, Dilated Convolutions) In recent work on convolutional networks for semantic segmentation, Long et al. (2015) analyzed filter dilation but chose not to use it.
-        * > (2015, Learning Deconvolution Network for Semantic Segmentation) The main advantage of the methods based on FCN is that the network accepts a whole image as an input and performs fast and accurate inference.
-        * > (2015, Learning Deconvolution Network for Semantic Segmentation) Semantic segmentation based on FCNs [1, 17] have a couple of critical limitations. First, the network can handle only a single scale semantics within image due to the fixed-size receptive field. Therefore, the object that is substantially larger or smaller than the receptive field may be fragmented or mislabeled. ... Second, the detailed structures of an object are often lost or smoothed because the label map, input to the deconvolutional layer, is too coarse and deconvolution procedure is overly simple.
-        * > (2015, Learning Deconvolution Network for Semantic Segmentation) In this approach, fully connected layers in the standard CNNs are interpreted as convolutions with large receptive fields, and segmentation is achieved using coarse class score maps obtained by feedforwarding an input image. An interesting idea in this work is that a simple interpolation filter is employed for deconvolution and only the CNN part of the network is fine-tuned to learn deconvolution indirectly.
+        * > (2015, DeconvNet) The main advantage of the methods based on FCN is that the network accepts a whole image as an input and performs fast and accurate inference.
+        * > (2015, DeconvNet) Semantic segmentation based on FCNs [1, 17] have a couple of critical limitations. First, the network can handle only a single scale semantics within image due to the fixed-size receptive field. Therefore, the object that is substantially larger or smaller than the receptive field may be fragmented or mislabeled. ... Second, the detailed structures of an object are often lost or smoothed because the label map, input to the deconvolutional layer, is too coarse and deconvolution procedure is overly simple.
+        * > (2015, DeconvNet) In this approach, fully connected layers in the standard CNNs are interpreted as convolutions with large receptive fields, and segmentation is achieved using coarse class score maps obtained by feedforwarding an input image. An interesting idea in this work is that a simple interpolation filter is employed for deconvolution and only the CNN part of the network is fine-tuned to learn deconvolution indirectly.
         * > (2015, Attention to Scale) FCN-8s [38] gradually learns finer-scale prediction from lower layers (initialized with coarser-scale prediction).
         * > (2015, U-Net) The main idea in [9] is to supplement a usual contracting network by successive layers, where pooling operators are replaced by upsampling operators. Hence, these layers increase the resolution of the output. In order to localize, high resolution features from the contracting path are combined with the upsampled output. A successive convolution layer can then learn to assemble a more precise output based on this information.
         * > (2015, SegNet) Each decoder in the Fully Convolutional Network (FCN) architecture [2] learns to upsample its input feature map(s) and combines them with the corresponding encoder feature map to produce the input to the next decoder.
@@ -712,17 +712,17 @@ count: 73
     * Comments:
         * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
 
-## weakly supervised (Learning Deconvolution Network for Semantic Segmentation, 2015)
+## weakly supervised (2015, DeconvNet)
 
 * [BoxSup](https://arxiv.org/abs/1503.01640)
     * Title: BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation
     * Comments:
-        * > When only bounding box annotations are given for input images, [2, 19] refine the annotations through iterative procedures and obtain accurate segmentation outputs. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+        * > (2015, DeconvNet) When only bounding box annotations are given for input images, [2, 19] refine the annotations through iterative procedures and obtain accurate segmentation outputs.
 * [Weakly- and Semi-Supervised Learning of a DCNN for Semantic Image Segmentation]
     * Title: Weakly- and Semi-Supervised Learning of a DCNN for Semantic Image Segmentation
     * Comments:
-        * > When only bounding box annotations are given for input images, [2, 19] refine the annotations through iterative procedures and obtain accurate segmentation outputs. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+        * > (2015, DeconvNet) When only bounding box annotations are given for input images, [2, 19] refine the annotations through iterative procedures and obtain accurate segmentation outputs.
 * [From Image-level to Pixel-level Labeling with Convolutional Networks]
     * Title: From Image-level to Pixel-level Labeling with Convolutional Networks
     * Comments:
-        * > On the other hand, [20] performs semantic segmentation based only on image-level annotations in a multiple instance learning framework. (Learning Deconvolution Network for Semantic Segmentation, 2015)
+        * > (2015, DeconvNet) On the other hand, [20] performs semantic segmentation based only on image-level annotations in a multiple instance learning framework.
