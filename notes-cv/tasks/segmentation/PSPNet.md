@@ -24,7 +24,7 @@
 ## 3. Pyramid Scene Parsing Network
 
 <p align="center">
-    <img src="PSPNet_figure_3.png" />
+    <img src="PSPNet_figure_3.png">
 </p>
 
 ### 3.1. Important Observations

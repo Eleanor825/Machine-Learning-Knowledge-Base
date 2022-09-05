@@ -11,6 +11,10 @@
 
 ## 1. Introduction
 
+<p align="center">
+    <img src="FPN_figure_1.png">
+</p>
+
 > These pyramids are scale-invariant in the sense that an object’s scale change is offset by shifting its level in the pyramid. Intuitively, this property enables a model to detect objects across a large range of scales by scanning the model over both positions and pyramid levels.
 
 Featurized Image Pyramids
@@ -55,31 +59,73 @@ Our Approach: Feature Pyramid Network
 
 ## 3. Feature Pyramid Networks
 
+> Our goal is to leverage a ConvNet’s pyramidal feature hierarchy, which has semantics from low to high levels, and build a feature pyramid with high-level semantics throughout.
+
+> Our method takes a single-scale image of an arbitrary size as input, and outputs proportionally sized feature maps at multiple levels, in a fully convolutional fashion.
+
+> The construction of our pyramid involves a bottom-up pathway, a top-down pathway, and lateral connections, as introduced in the following.
+
 **Bottom-up pathway**
 
-> The bottom-up pathway is the feed-forward computation of the `backbone` ConvNet, which computes a `feature hierarchy` consisting of feature maps at several scales with a scaling step of 2. There are often many layers producing output maps of the same size and we say these layers are in the same `network stage`. For our feature pyramid, we define one pyramid level for each stage. We choose the output of the last layer of each stage as our reference set of feature maps, which we will enrich to create our pyramid. This choice is natural since the deepest layer of each stage should have the strongest features.
+> The bottom-up pathway is the feed-forward computation of the `backbone` ConvNet, which computes a `feature hierarchy` consisting of feature maps at several scales with a scaling step of 2.
+
+> There are often many layers producing output maps of the same size and we say these layers are in the same `network stage`. For our feature pyramid, we define one pyramid level for each stage. We choose the output of the last layer of each stage as our reference set of feature maps, which we will enrich to create our pyramid. This choice is natural since the deepest layer of each stage should have the strongest features.
+
+> We do not include conv1 into the pyramid due to its large memory footprint.
 
 **Top-down pathway and lateral connections**
 
-> The top-down pathway hallucinates higher resolution features by upsamping spatially coarser, but semantically stronger, feature maps from higher pyramid levels. These features are then enhanced with features from the bottom-up pathway via lateral connections. Each lateral connection merges feature maps of the same spatial size from the bottom-up pathway and the top-down pathway. The bottom-up feature map is of lower-level semantics, but its activations are more accurately localized as it was subsampled fewer times.
+<p align="center">
+    <img src="FPN_figure_3.png">
+</p>
 
-* The higher resolution features is upsampled spatially coarser, but semantically stronger, feature maps from higher pyramid levels.
-* Specifically, the feature maps from bottom-up pathway undergoes 1×1 convolutions to reduce the channel dimensions.
-* Lateral Connection:
-    * Each lateral connection merges feature maps of the same spatial size from the bottom-up pathway and the top-down pathway.
-    * The feature maps from the bottom-up pathway and the top-down pathway are merged by element-wise addition.
+> The top-down pathway hallucinates higher resolution features by upsampling spatially coarser, but semantically stronger, feature maps from higher pyramid levels. These features are then enhanced with features from the bottom-up pathway via lateral connections. Each lateral connection merges feature maps of the same spatial size from the bottom-up pathway and the top-down pathway. The bottom-up feature map is of lower-level semantics, but its activations are more accurately localized as it was subsampled fewer times.
+
+> With a coarser-resolution feature map, we upsample the spatial resolution by a factor of 2 (using nearest neighbor upsampling for simplicity).
+
+> The upsampled map is then merged with the corresponding bottom-up map (which undergoes a 1x1 convolutional layer to `reduce channel dimensions`) by element-wise addition.
+
+> Finally, we append a 3x3 convolution on each merged map to generate the final feature map, which is to `reduce the aliasing effect of upsampling`.
+
+Extra layers
+
+> Because all levels of the pyramid use shared classifiers/regressors as in a traditional featurized image pyramid, we fix the feature dimension (numbers of channels, denoted as $d$) in all the feature maps. We set $d = 256$ in this paper and thus all extra convolutional layers have 256-channel outputs.
+
+> There are no non-linearities in these extra layers, which we have empirically found to have minor impacts.
 
 ## 4. Applications
 
+## 5. Experiments on Object Detection
+
+## 6. Extensions: Segmentation Proposals
+
+## 7. Conclusion
+
+----------------------------------------------------------------------------------------------------
+
+## References
+
+* Lin, Tsung-Yi, et al. "Feature pyramid networks for object detection." *Proceedings of the IEEE conference on computer vision and pattern recognition*. 2017.
+
 ## Further Reading
 
+* [2] ION
+* [3] MS-CNN
 * [8] LRR
 * [11] Fast R-CNN
+* [13] Hypercolumns
 * [15] Spatial Pyramid Pooling (SPP)
 * [16] ResNet
 * [17] Recombinator Networks
+* [18] HyperNet
 * [19] AlexNet
+* [22] SSD
+* [23] ParseNet
+* [24] FCN
 * [26] Stacked Hourglass Networks
+* [27] DeepMask
 * [28] SharpMask
 * [29] Faster R-CNN
+* [31] U-Net
+* [36] VGG
 * [37] Selective Search

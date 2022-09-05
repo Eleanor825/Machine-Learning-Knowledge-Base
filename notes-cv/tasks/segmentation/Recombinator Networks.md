@@ -29,7 +29,7 @@
 ### 3.1. Summation based Networks
 
 <p align="center">
-  <img src="SumNet.png" />
+  <img src="SumNet.png">
 </p>
 
 > The finest resolution layers keep positional information and use it to guide the coarser layers within the patch that they cannot have any preference, while the coarser resolution layers help finer layers to get rid of false positives.
@@ -60,7 +60,7 @@ $$\mathcal{L}(\textbf{W}) := \frac{1}{N}\sum_{n=1}^{N}\underbrace{\sum_{k=1}^{K}
 ### 3.2. The Recombinator Networks
 
 <p align="center">
-  <img src="RecombinatorNetworks.png" />
+  <img src="RecombinatorNetworks.png">
 </p>
 
 > In the SumNet model, different branches can only communicate through the updates received from the output layer and the features are merged linearly through summation.

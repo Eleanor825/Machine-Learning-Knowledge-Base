@@ -29,7 +29,7 @@
 
 **Low-Dimensional Embeddings**
 
-> Lin et al. [19] proposed a method to reduce the dimensionality of convolutional feature maps. By using relatively cheap '1×1' convolutional layers (i.e. layers comprising $d$ filters of size $1 \times 1 \times c$, where $d < c$), they learn to map feature maps into lower dimensional spaces, i.e. to new feature maps with fewer channels. Subsequent spatial filters operating on this lower dimensional input space require significantly less computation.
+> Lin et al. [19] proposed a method to reduce the dimensionality of convolutional feature maps. By using relatively cheap '1x1' convolutional layers (i.e. layers comprising $d$ filters of size $1 \times 1 \times c$, where $d < c$), they learn to map feature maps into lower dimensional spaces, i.e. to new feature maps with fewer channels. Subsequent spatial filters operating on this lower dimensional input space require significantly less computation.
 
 > This method is used in most state of the art networks for image classification to reduce computation [2, 20]. Our method is complementary.
 

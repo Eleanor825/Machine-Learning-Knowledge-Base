@@ -39,8 +39,8 @@ Post-Processing
 ## 3 Network architecture
 
 <p align="center">
-    <img src="ENet_figure_2a.png" />
-    <img src="ENet_figure_2b.png" />
+    <img src="ENet_figure_2a.png">
+    <img src="ENet_figure_2b.png">
 </p>
 
 > We adopt a view of ResNets he2015resnet that describes them as having a single main branch and extensions with convolutional filters that separate from it, and then merge back with an element-wise addition, as shown in Figure 1(b).

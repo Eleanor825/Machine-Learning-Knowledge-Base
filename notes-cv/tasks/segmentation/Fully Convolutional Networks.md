@@ -84,7 +84,7 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 ## 4. Segmentation Architecture
 
 <p align="center">
-    <img src="FCN_figure_1.png" />
+    <img src="FCN_figure_1.png">
 </p>
 
 ### 4.1. From classifier to dense FCN
@@ -92,7 +92,7 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 ### 4.2. Combining what and where
 
 <p align="center">
-    <img src="FCN_figure_3.png" />
+    <img src="FCN_figure_3.png">
 </p>
 
 > We define a new fully convolutional net (FCN) for segmentation that combines layers of the feature hierarchy and refines the spatial precision of the output.
