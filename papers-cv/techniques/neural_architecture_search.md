@@ -50,7 +50,7 @@ count: 9
 
 ## Network Simplification Algorithms (MobileNetV3, 2019) (3)
 
-## EfficientNetV1, 2019
+## 2019, EfficientNetV1
 
 * [ProxylessNAS](https://arxiv.org/abs/1812.00332)
     * Title: ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware

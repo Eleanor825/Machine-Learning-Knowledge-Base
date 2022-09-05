@@ -92,7 +92,7 @@ count: 73
     * Institutions: [The University of Adelaide], [Australian Centre for Robotic Vision]
     * Abstract: Recently, very deep convolutional neural networks (CNNs) have shown outstanding performance in object recognition and have also been the first choice for dense classification problems such as semantic segmentation. However, repeated subsampling operations like pooling or convolution striding in deep CNNs lead to a significant decrease in the initial image resolution. Here, we present RefineNet, a generic multi-path refinement network that explicitly exploits all the information available along the down-sampling process to enable high-resolution prediction using long-range residual connections. In this way, the deeper layers that capture high-level semantic features can be directly refined using fine-grained features from earlier convolutions. The individual components of RefineNet employ residual connections following the identity mapping mindset, which allows for effective end-to-end training. Further, we introduce chained residual pooling, which captures rich background context in an efficient manner. We carry out comprehensive experiments and set new state-of-the-art results on seven public datasets. In particular, we achieve an intersection-over-union score of 83.4 on the challenging PASCAL VOC 2012 dataset, which is the best reported result to date.
     * Comments:
-        * > Lin et al. [9] (RefineNet) propose a multi-path refinement network that exploits all the information available along the downsampling process to enable high-resolution predictions using long-range residual connections. (ERFNet, 2017)
+        * > Lin et al. [9] (RefineNet) propose a multi-path refinement network that exploits all the information available along the downsampling process to enable high-resolution predictions using long-range residual connections. (2017, ERFNet)
 * [High-performance Semantic Segmentation Using Very Deep Fully Convolutional Networks](https://arxiv.org/abs/1604.04339)
     * Title: High-performance Semantic Segmentation Using Very Deep Fully Convolutional Networks
     * Year: 15 Apr `2016`
@@ -181,7 +181,7 @@ count: 73
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
         * > The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network. (SegNet, 2015)
-        * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (PSPNet, 2016)
+        * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (2016, PSPNet)
 * [[Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation](https://arxiv.org/abs/1506.04924)]
     * Title: Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation
     * Year: 16 Jun `2015`
@@ -218,7 +218,7 @@ count: 73
     * Institutions: [Faculty of Mathematics, Informatics and Mechanics, University of Warsaw, Poland], [Electrical and Computer Engineering, Purdue University, USA]
     * Abstract: The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster.
     * Comments:
-        * > The recent ENet [11] sits on the opposite side in terms of efficiency, in which authors also adapt ResNet to the segmentation task, but make important sacrifices in the network layers to gain efficiency at the expense of a lower accuracy compared to the other approaches. (ERFNet, 2017)
+        * > The recent ENet [11] sits on the opposite side in terms of efficiency, in which authors also adapt ResNet to the segmentation task, but make important sacrifices in the network layers to gain efficiency at the expense of a lower accuracy compared to the other approaches. (2017, ERFNet)
 * [[Efficient ConvNet for real-time semantic segmentation](https://ieeexplore.ieee.org/document/7995966)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7995966)]
     * Title: Efficient ConvNet for real-time semantic segmentation
@@ -262,7 +262,7 @@ count: 73
     * Institutions: [Dept. of Computer Science, University of California, Irvine]
     * Abstract: CNN architectures have terrific recognition performance but rely on spatial pooling which makes it difficult to adapt them to tasks that require dense, pixel-accurate labeling. This paper makes two contributions: (1) We demonstrate that while the apparent spatial resolution of convolutional feature maps is low, the high-dimensional feature representation contains significant sub-pixel localization information. (2) We describe a multi-resolution reconstruction architecture based on a Laplacian pyramid that uses skip connections from higher resolution feature maps and multiplicative gating to successively refine segment boundaries reconstructed from lower-resolution maps. This approach yields state-of-the-art semantic segmentation results on the PASCAL VOC and Cityscapes segmentation benchmarks without resorting to more complex random-field inference or instance detection driven architectures.
     * Comments:
-        * > Ghiasi and Fowlkes [19] (LRR) propose a complex architecture that constructs a Laplacian pyramid to process and combine features at multiple scales. (ERFNet, 2017)
+        * > Ghiasi and Fowlkes [19] (LRR) propose a complex architecture that constructs a Laplacian pyramid to process and combine features at multiple scales. (2017, ERFNet)
 * Learning to Refine Object Segments (SharpMask)
 
 ### Fully Convolutional Networks (FCN)
@@ -346,7 +346,7 @@ count: 73
 
 * Recurrent Convolutional Neural Networks for Scene Labeling
 
-### Multi-Scale Architectures (PSPNet, 2016) (5)
+### Multi-Scale Architectures (2016, PSPNet) (5)
 
 * Fully Convolutional Networks for Semantic Segmentation
 * Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
@@ -542,7 +542,7 @@ count: 73
     * Authors: Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, Alan L. Yuille
     * Abstract: In this work we address the task of semantic image segmentation with Deep Learning and make three main contributions that are experimentally shown to have substantial practical merit. First, we highlight convolution with upsampled filters, or 'atrous convolution', as a powerful tool in dense prediction tasks. Atrous convolution allows us to explicitly control the resolution at which feature responses are computed within Deep Convolutional Neural Networks. It also allows us to effectively enlarge the field of view of filters to incorporate larger context without increasing the number of parameters or the amount of computation. Second, we propose atrous spatial pyramid pooling (ASPP) to robustly segment objects at multiple scales. ASPP probes an incoming convolutional feature layer with filters at multiple sampling rates and effective fields-of-views, thus capturing objects as well as image context at multiple scales. Third, we improve the localization of object boundaries by combining methods from DCNNs and probabilistic graphical models. The commonly deployed combination of max-pooling and downsampling in DCNNs achieves invariance but has a toll on localization accuracy. We overcome this by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF), which is shown both qualitatively and quantitatively to improve localization performance. Our proposed "DeepLab" system sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 79.7% mIOU in the test set, and advances the results on three other datasets: PASCAL-Context, PASCAL-Person-Part, and Cityscapes. All of our code is made publicly available online.
     * Comments:
-        * > The work in [8] (DeepLab2) combines a ResNet-101 with spatial pyramid pooling and CRF to reach state-of-the-art segmentation accuracy. (ERFNet, 2017)
+        * > The work in [8] (DeepLab2) combines a ResNet-101 with spatial pyramid pooling and CRF to reach state-of-the-art segmentation accuracy. (2017, ERFNet)
         * > An ASP module [3], shown in Fig. 3e, is built on the principle of split-transform-merge. The ASP module involves branching with each branch learning kernel at a different receptive field (using dilated convolutions). (ESPNetv1, 2018)
 * [DeepLabv3](https://arxiv.org/abs/1706.05587)
     * Title: Rethinking Atrous Convolution for Semantic Image Segmentation
