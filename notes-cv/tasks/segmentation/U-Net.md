@@ -12,10 +12,14 @@
 ## 1 Introduction
 
 > Ciresan et al. [1] trained a network in a sliding-window setup to predict the class label of each pixel by providing a local region (patch) around that pixel as input.
+> 1. First, this network can localize.
+> 2. Secondly, the training data in terms of patches is much larger than the number of training images.
 
-> First, this network can localize. Secondly, the training data in terms of patches is much larger than the number of training images.
+> Obviously, the strategy in Ciresan et al. [1] has two drawbacks.
+> 1. First, it is quite slow because the network must be run separately for each patch, and there is a lot of redundancy due to overlapping patches.
+> 2. Secondly, there is a trade-off between localization accuracy and the use of context. Larger patches require more max-pooling layers that reduce the localization accuracy, while small patches allow the network to see only little context.
 
-> Obviously, the strategy in Ciresan et al. [1] has two drawbacks. First, it is quite slow because the network must be run separately for each patch, and there is a lot of redundancy due to overlapping patches. Secondly, there is a trade-off between localization accuracy and the use of context. Larger patches require more max-pooling layers that reduce the localization accuracy, while small patches allow the network to see only little context.
+> More recent approaches [11, 4] proposed a classifier output that takes into account the features from multiple layers. Good localization and the use of context are possible at the same time.
 
 Model Architecture
 
@@ -37,15 +41,29 @@ Loss Function
 
 > It consists of a `contracting` path (left side) and an `expansive` path (right side).
 
+Contracting Path
+
 > The contracting path follows the typical architecture of a convolutional network. It consists of the repeated application of two 3x3 convolutions (unpadded convolutions), each followed by a rectified linear unit (ReLU) and a 2x2 max pooling operation with stride 2 for downsampling. At each downsampling step we double the number of feature channels.
 
+Expansive Path
+
 > Every step in the expansive path consists of an upsampling of the feature map followed by a 2x2 convolution ("up-convolution") that halves the number of feature channels, a concatenation with the correspondingly cropped feature map from the contracting path, and two 3x3 convolutions, each followed by a ReLU. The cropping is necessary due to the loss of border pixels in every convolution.
+
+Final Layer
 
 > At the final layer a 1x1 convolution is used to map each 64-component feature vector to the desired number of classes.
 
 ## 3 Training
 
 > Due to the unpadded convolutions, the output image is smaller than the input by a constant border width.
+
+> The energy function is computed by a pixel-wise soft-max over the final feature map combined with the cross entropy loss function.
+
+Weight Map
+
+> We pre-compute the weight map for each ground truth segmentation to compensate the different frequency of pixels from a certain class in the training data set, and to force the network to learn the small separation borders that we introduce between touching cells (See Figure 3c and d).
+
+Network Initialization
 
 ### 3.1 Data Augmentation
 
