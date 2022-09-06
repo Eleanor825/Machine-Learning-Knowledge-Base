@@ -64,7 +64,7 @@
 * [4] ResNet
 * [7] Inception-v2/Batch Normalization
 * [9] AlexNet
-* [11] NIN
+* [11] Network In Network (NIN)
 * [18] VGG
 * [19] Inception-v4
 * [20] Inception-v1/GoogLeNet
