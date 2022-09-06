@@ -67,7 +67,8 @@ count: 109
     * Institutions: The Swiss AI Lab IDSIA / USI / SUPSI
     * Abstract: Theoretical and empirical evidence indicates that the depth of neural networks is crucial for their success. However, training becomes more difficult as depth increases, and training of very deep networks remains an open problem. Here we introduce a new architecture designed to overcome this. Our so-called highway networks allow unimpeded information flow across many layers on information highways. They are inspired by Long Short-Term Memory recurrent networks and use adaptive gating units to regulate the information flow. Even with hundreds of layers, highway networks can be trained directly through simple gradient descent. This enables the study of extremely deep and efficient architectures.
     * Comments:
-        * > Highway networks introduced a gating mechanism to regulate the flow of information along shortcut connections. (SENet, 2017)
+        * > (2015, ResNet) Concurrent with our work, “highway networks” [42, 43] present shortcut connections with gating functions [15].
+        * > (2017, SENet) Highway networks introduced a gating mechanism to regulate the flow of information along shortcut connections.
 * [DenseNet](https://arxiv.org/abs/1608.06993)
     * Title: Densely Connected Convolutional Networks
     * Year: 25 Aug `2016`
@@ -218,6 +219,9 @@ count: 109
     * Authors: Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich
     * Institutions: Google Inc., University of North Carolina, University of Michigan
     * Abstract: We propose a deep convolutional neural network architecture codenamed "Inception", which was responsible for setting the new state of the art for classification and detection in the ImageNet Large-Scale Visual Recognition Challenge 2014 (ILSVRC 2014). The main hallmark of this architecture is the improved utilization of the computing resources inside the network. This was achieved by a carefully crafted design that allows for increasing the depth and width of the network while keeping the computational budget constant. To optimize quality, the architectural decisions were based on the Hebbian principle and the intuition of multi-scale processing. One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.
+    * Comments:
+        * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
+        * > (2015, ResNet) In [44], an "inception" layer is composed of a shortcut branch and a few deeper branches.
 * [Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)
     * Title: Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
     * Year: 11 Feb `2015`
@@ -767,11 +771,13 @@ count: 109
     * Abstract: While depth tends to improve network performances, it also makes gradient-based training more difficult since deeper networks tend to be more non-linear. The recently proposed knowledge distillation approach is aimed at obtaining small and fast-to-execute models, and it has shown that a student network could imitate the soft output of a larger teacher network or ensemble of networks. In this paper, we extend this idea to allow the training of a student that is deeper and thinner than the teacher, using not only the outputs but also the intermediate representations learned by the teacher as hints to improve the training process and final performance of the student. Because the student intermediate hidden layer will generally be smaller than the teacher's intermediate hidden layer, additional parameters are introduced to map the student hidden layer to the prediction of the teacher hidden layer. This allows one to train deeper students that can generalize better or run faster, a trade-off that is controlled by the chosen student capacity. For example, on CIFAR-10, a deep student network with almost 10.4 times less parameters outperforms a larger, state-of-the-art teacher network.
     * Comments:
         * > A related recent technique is based on using soft targets from a shallow teacher network to aid in training deeper student networks in multiple stages [25], similar to the neural history compressor for sequences, where a slowly ticking teacher recurrent net is "distilled" into a quickly ticking student recurrent net by forcing the latter to predict the hidden units of the former [26]. (Training Very Deep Networks, 2015)
-* [DSN](https://arxiv.org/abs/1409.5185)
+* [[Deeply-Supervised Nets (DSN)](https://arxiv.org/abs/1409.5185)]
     * Title: Deeply-Supervised Nets
     * Year: 18 Sep 2014
     * Author: Chen-Yu Lee
     * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
+    * Comments:
+        * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
 * [RegNet](https://arxiv.org/abs/2003.13678)
     * Title: Designing Network Design Spaces
     * Year: 30 Mar `2020`

@@ -238,7 +238,7 @@ count: 73
 
 > As an alternative to dilation, an encoder-decoder [2] or ‘U-Net’ [47] architecture can be used to increase feature resolution [25, 42, 19, 45]. (Panoptic FPN, 2019)
 
-* [[Recombinator Networks](https://arxiv.org/abs/1511.07356)]
+* [[Recombinator Networks (RCN)](https://arxiv.org/abs/1511.07356)]
     [[pdf](https://arxiv.org/pdf/1511.07356.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1511.07356/)]
     * Title: Recombinator Networks: Learning Coarse-to-Fine Feature Aggregation
