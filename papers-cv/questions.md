@@ -18,3 +18,7 @@
 ## DeepMask
 * in segmentation loss, what is the range of i and j? Do we use the full ground truth segmentation mask or a crop of size $w^{o} \times h^{o}$ of it?
 * how's low-rank achieved? SVD?
+
+## R-CNN
+* Did R-CNN refine spatial locations? Fast R-CNN seemed to say yes.
+* It has a third training stage? to train the bounding box regressors?
