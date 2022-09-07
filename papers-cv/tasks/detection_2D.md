@@ -9,16 +9,6 @@ count: 82
     * Year: 01 Dec `2012`
     * Author: Pierre Sermanet
     * Abstract: Pedestrian detection is a problem of considerable practical interest. Adding to the list of successful applications of deep learning methods to vision, we report state-of-the-art and competitive results on all major pedestrian datasets with a convolutional network model. The model uses a few new twists, such as multi-stage features, connections that skip layers to integrate global shape information with local distinctive motif information, and an unsupervised method based on convolutional sparse coding to pre-train the filters at each stage.
-* [[OverFeat](https://arxiv.org/abs/1312.6229)]
-    [[pdf](https://arxiv.org/pdf/1312.6229.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1312.6229/)]
-    * Title: OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks
-    * Year: 21 Dec `2013`
-    * Authors: Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, Yann LeCun
-    * Institutions: [Courant Institute of Mathematical Sciences, New York University]
-    * Abstract: We present an integrated framework for using Convolutional Networks for classification, localization and detection. We show how a multiscale and sliding window approach can be efficiently implemented within a ConvNet. We also introduce a novel deep learning approach to localization by learning to predict object boundaries. Bounding boxes are then accumulated rather than suppressed in order to increase detection confidence. We show that different tasks can be learned simultaneously using a single shared network. This integrated framework is the winner of the localization task of the ImageNet Large Scale Visual Recognition Challenge 2013 (ILSVRC2013) and obtained very competitive results for the detection and classifications tasks. In post-competition work, we establish a new state of the art for the detection task. Finally, we release a feature extractor from our best model called OverFeat.
-    * Comments:
-        * > (2016, FPN) OverFeat adopted a strategy similar to early neural network face detectors by applying a ConvNet as a sliding window detector on an image pyramid.
 * [MultiGrasp](https://arxiv.org/abs/1412.3128)
     * Title: Real-Time Grasp Detection Using Convolutional Neural Networks
     * Year: 09 Dec `2014`
@@ -70,7 +60,7 @@ count: 82
     * Institutions: [New York University]
     * Abstract: Recent state-of-the-art performance on human-body pose estimation has been achieved with Deep Convolutional Networks (ConvNets). Traditional ConvNet architectures include pooling and sub-sampling layers which reduce computational requirements, introduce invariance and prevent over-training. These benefits of pooling come at the cost of reduced localization accuracy. We introduce a novel architecture which includes an efficient `position refinement' model that is trained to estimate the joint offset location within a small region of the image. This refinement model is jointly trained in cascade with a state-of-the-art ConvNet model to achieve improved accuracy in human joint location estimation. We show that the variance of our detector approaches the variance of human annotations on the FLIC dataset and outperforms all existing approaches on the MPII-human-pose dataset.
 
-## Sliding-Window Framework
+## Sliding-Window Approaches
 
 * [[HOG](https://ieeexplore.ieee.org/document/1467360)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1467360)]
@@ -86,6 +76,18 @@ count: 82
     * Abstract: We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL data sets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin-sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI--SVM in terms of latent variables. A latent SVM is semiconvex, and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function.
     * Comments:
         * > (2016, FPN) DPM [7] required dense scale sampling to achieve good results (e.g., 10 scales per octave).
+* [[OverFeat](https://arxiv.org/abs/1312.6229)]
+    [[pdf](https://arxiv.org/pdf/1312.6229.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1312.6229/)]
+    * Title: OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks
+    * Year: 21 Dec `2013`
+    * Authors: Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, Yann LeCun
+    * Institutions: [Courant Institute of Mathematical Sciences, New York University]
+    * Abstract: We present an integrated framework for using Convolutional Networks for classification, localization and detection. We show how a multiscale and sliding window approach can be efficiently implemented within a ConvNet. We also introduce a novel deep learning approach to localization by learning to predict object boundaries. Bounding boxes are then accumulated rather than suppressed in order to increase detection confidence. We show that different tasks can be learned simultaneously using a single shared network. This integrated framework is the winner of the localization task of the ImageNet Large Scale Visual Recognition Challenge 2013 (ILSVRC2013) and obtained very competitive results for the detection and classifications tasks. In post-competition work, we establish a new state of the art for the detection task. Finally, we release a feature extractor from our best model called OverFeat.
+    * Comments:
+        * > (2013, R-CNN) OverFeat uses a sliding-window CNN for detection and until now was the best performing method on ILSVRC2013 detection.
+        * > (2013, R-CNN) OverFeat can be seen (roughly) as a special case of R-CNN. If one were to replace selective search region proposals with a multi-scale pyramid of regular square regions and change the per-class bounding-box regressors to a single bounding-box regressor, then the systems would be very similar (modulo some potentially significant differences in how they are trained: CNN detection fine-tuning, using SVMs, etc.).
+        * > (2016, FPN) OverFeat adopted a strategy similar to early neural network face detectors by applying a ConvNet as a sliding window detector on an image pyramid.
 
 ## Object Proposal Approaches (DeepMask, 2015)
 
@@ -133,6 +135,23 @@ superpixel merging
     * Authors: Jordi Pont-Tuset, Pablo Arbelaez, Jonathan T. Barron, Ferran Marques, Jitendra Malik
     * Institutions: [Department of Signal Theory and Communications, Universitat Politecnica de Catalunya, BarcelonaTech (UPC), Spain], [Department of Biomedical Engineering, Universidad de los Andes, Colombia], [ Department of Electrical Engineering and Computer Science, University of California at Berkeley, Berkeley]
     * Abstract: We propose a unified approach for bottom-up hierarchical image segmentation and object proposal generation for recognition, called Multiscale Combinatorial Grouping (MCG). For this purpose, we first develop a fast normalized cuts algorithm. We then propose a high-performance hierarchical segmenter that makes effective use of multiscale information. Finally, we propose a grouping strategy that combines our multiscale regions into highly-accurate object proposals by exploring efficiently their combinatorial space. We also present Single-scale Combinatorial Grouping (SCG), a faster version of MCG that produces competitive proposals in under five second per image. We conduct an extensive and comprehensive empirical validation on the BSDS500, SegVOC12, SBD, and COCO datasets, showing that MCG produces state-of-the-art contours, hierarchical regions, and object proposals.
+
+## Region Proposals (2013, R-CNN)
+
+* Measuring the Objectness of Image Windows
+* Selective Search for Object Recognition
+* [[Category independent object proposals](https://link.springer.com/chapter/10.1007/978-3-642-15555-0_42)]
+    [[pdf](https://link.springer.com/content/pdf/10.1007/978-3-642-15555-0_42.pdf)]
+    * Title: Category independent object proposals
+    * Authors: Ian Endres & Derek Hoiem
+    * Year: `2010`
+    * Abstract: We propose a category-independent method to produce a bag of regions and rank them, such that top-ranked regions are likely to be good segmentations of different objects. Our key objectives are completeness and diversity: every object should have at least one good proposed region, and a diverse set should be top-ranked. Our approach is to generate a set of segmentations by performing graph cuts based on a seed region and a learned affinity function. Then, the regions are ranked using structured learning based on various cues. Our experiments on BSDS and PASCAL VOC 2008 demonstrate our ability to find most objects within a small bag of proposed regions.
+* [[CPMC](https://ieeexplore.ieee.org/document/6095566)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6095566)]
+    * Title: CPMC: Automatic Object Segmentation Using Constrained Parametric Min-Cuts
+    * Year: 06 December `2011`
+    * Authors: Joao Carreira; Cristian Sminchisescu
+    * Abstract: We present a novel framework to generate and rank plausible hypotheses for the spatial extent of objects in images using bottom-up computational processes and mid-level selection cues. The object hypotheses are represented as figure-ground segmentations, and are extracted automatically, without prior knowledge of the properties of individual object classes, by solving a sequence of Constrained Parametric Min-Cut problems (CPMC) on a regular image grid. In a subsequent step, we learn to rank the corresponding segments by training a continuous model to predict how likely they are to exhibit real-world regularities (expressed as putative overlap with ground truth) based on their mid-level region properties, then diversify the estimated overlap score using maximum marginal relevance measures. We show that this algorithm significantly outperforms the state of the art for low-level segmentation in the VOC 2009 and 2010 data sets. In our companion papers [1], [2], we show that the algorithm can be used, successfully, in a segmentation-based visual object category recognition pipeline. This architecture ranked first in the VOC2009 and VOC2010 image segmentation and labeling challenges.
 
 ## ----------------------------------------------------------------------------------------------------
 ## Two-Stage Detectors
@@ -187,17 +206,23 @@ superpixel merging
 ### R-CNN Series
 
 * [[R-CNN](https://arxiv.org/abs/1311.2524)]
+    [[pdf](https://arxiv.org/pdf/1311.2524.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1311.2524/)]
     * Title: Rich feature hierarchies for accurate object detection and semantic segmentation
     * Year: 11 Nov `2013`
-    * Author: Ross Girshick
+    * Authors: Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik
+    * Institutions: [UC Berkeley]
     * Abstract: Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30% relative to the previous best result on VOC 2012---achieving a mAP of 53.3%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also compare R-CNN to OverFeat, a recently proposed sliding-window detector based on a similar CNN architecture. We find that R-CNN outperforms OverFeat by a large margin on the 200-class ILSVRC2013 detection dataset. Source code for the complete system is available at [this http URL](http://www.cs.berkeley.edu/~rbg/rcnn).
     * Comments:
         * > Girshick et al. [10] proposed a two-phase approach. First, a rich set of object proposals (i.e., a set of image regions which are likely to contain an object) is generated using a fast (but possibly imprecise) algorithm. Second, a convolutional neural network classifier is applied on each of the proposals. This approach provides a notable gain in object detection accuracy compared to classic sliding window approaches. Since then, most state-of-the-art object detectors for both the PASCAL VOC [7] and ImageNet [5] datasets rely on object proposals as a first preprocessing step [10, 15, 33]. (DeepMask, 2015)
         * > (2016, FPN) R-CNN adopted a region proposal-based strategy [37] in which each proposal was scale-normalized before classifying with a ConvNet.
 * [Fast R-CNN](https://arxiv.org/abs/1504.08083)
+    [[pdf](https://arxiv.org/pdf/1504.08083.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1504.08083/)]
     * Title: Fast R-CNN
     * Year: 30 Apr `2015`
-    * Author: Ross Girshick
+    * Authors: Ross Girshick
+    * Institutions: [Microsoft Research]
     * Abstract: This paper proposes a Fast Region-based Convolutional Network method (Fast R-CNN) for object detection. Fast R-CNN builds on previous work to efficiently classify object proposals using deep convolutional networks. Compared to previous work, Fast R-CNN employs several innovations to improve training and testing speed while also increasing detection accuracy. Fast R-CNN trains the very deep VGG16 network 9x faster than R-CNN, is 213x faster at test-time, and achieves a higher mAP on PASCAL VOC 2012. Compared to SPPnet, Fast R-CNN trains VGG16 3x faster, tests 10x faster, and is more accurate. Fast R-CNN is implemented in Python and C++ (using Caffe) and is available under the open-source MIT License at [this https URL](https://github.com/rbgirshick/fast-rcnn).
     * Comments:
         * > (2016, FPN) Recent and more accurate detection methods like Fast R-CNN [11] and Faster R-CNN [29] advocate using features computed from a single scale, because it offers a good trade-off between accuracy and speed.
