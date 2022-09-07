@@ -30,6 +30,8 @@ Spatial Pyramid Pooling
 
 > The SPPnet method computes a convolutional feature map for the entire input image and then classifies each object proposal using a feature vector extracted from the shared feature map.
 
+> Features are extracted for a proposal by max-pooling the portion of the feature map inside the proposal into a fixed-size output (\eg, 6×6). Multiple output sizes are pooled and then concatenated as in spatial pyramid pooling [15].
+
 ----------------------------------------------------------------------------------------------------
 
 ## References
