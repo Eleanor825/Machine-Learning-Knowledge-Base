@@ -65,6 +65,13 @@ Advantages of Fast R-CNN
 
 ### 2.2. Initializing from pre-trained networks
 
+> When a pre-trained network initializes a Fast R-CNN network, it undergoes three transformations.
+> 1. First, the last max pooling layer is replaced by a RoI pooling layer that is configured by setting $H$ and $W$ to be compatible with the net's first fully connected layer (\eg, $H=W=7$ for VGG16).
+> 2. Second, the network's last fully connected layer and softmax (which were trained for 1000-way ImageNet classification) are replaced with the two sibling layers described earlier (a fully connected layer and softmax over $K+1$ categories and category-specific bounding-box regressors).
+> 3. Third, the network is modified to take two data inputs: a list of images and a list of RoIs in those images.
+
+### 2.3. Fine-tuning for detection
+
 
 
 ----------------------------------------------------------------------------------------------------
