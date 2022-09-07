@@ -220,8 +220,14 @@ superpixel merging
     * Comments:
         * > (2016, FPN) Recent and more accurate detection methods like Fast R-CNN [11] and Faster R-CNN [29] advocate using features computed from a single scale, because it offers a good trade-off between accuracy and speed.
 
-### Other Improvements of the R-CNN
+### Spatial Pyramid Pooling Related
 
+* [[The pyramid match kernel](https://ieeexplore.ieee.org/document/1544890)]
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1544890)]
+    * Title: The pyramid match kernel: discriminative classification with sets of image features
+    * Year: 05 December `2005`
+    * Authors: K. Grauman; T. Darrell
+    * Abstract: Discriminative learning is challenging when examples are sets of features, and the sets vary in cardinality and lack any sort of meaningful ordering. Kernel-based classification methods can learn complex decision boundaries, but a kernel over unordered set inputs must somehow solve for correspondences epsivnerally a computationally expensive task that becomes impractical for large set sizes. We present a new fast kernel function which maps unordered feature sets to multi-resolution histograms and computes a weighted histogram intersection in this space. This "pyramid match" computation is linear in the number of features, and it implicitly finds correspondences based on the finest resolution histogram cell where a matched pair first appears. Since the kernel does not penalize the presence of extra features, it is robust to clutter. We show the kernel function is positive-definite, making it valid for use in learning algorithms whose optimal solutions are guaranteed only for Mercer kernels. We demonstrate our algorithm on object recognition tasks and show it to be accurate and dramatically faster than current approaches.
 * [[Spatial Pyramid Matching](https://ieeexplore.ieee.org/document/1641019)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1641019)]
     * Title: Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories
@@ -229,13 +235,17 @@ superpixel merging
     * Authors: S. Lazebnik; C. Schmid; J. Ponce
     * Abstract: This paper presents a method for recognizing scene categories based on approximate global geometric correspondence. This technique works by partitioning the image into increasingly fine sub-regions and computing histograms of local features found inside each sub-region. The resulting "spatial pyramid" is a simple and computationally efficient extension of an orderless bag-of-features image representation, and it shows significantly improved performance on challenging scene categorization tasks. Specifically, our proposed method exceeds the state of the art on the Caltech-101 database and achieves high accuracy on a large database of fifteen natural scene categories. The spatial pyramid framework also offers insights into the success of several recently proposed image descriptions, including Torralba’s "gist" and Lowe’s SIFT descriptors.
 * [[Spatial Pyramid Pooling (SPP)](https://arxiv.org/abs/1406.4729)]
+    [[pdf](https://arxiv.org/pdf/1406.4729.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1406.4729/)]
     * Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
     * Year: 18 Jun `2014`
-    * Author: Kaiming He
+    * Authors: Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+    * Institutions: [Microsoft Research, Beijing, China], [Xi'an Jiaotong University, Xi'an, China], [University of Science and Technology of China, Hefei, China]
     * Abstract: Existing deep convolutional neural networks (CNNs) require a fixed-size (e.g., 224x224) input image. This requirement is "artificial" and may reduce the recognition accuracy for the images or sub-images of an arbitrary size/scale. In this work, we equip the networks with another pooling strategy, "spatial pyramid pooling", to eliminate the above requirement. The new network structure, called SPP-net, can generate a fixed-length representation regardless of image size/scale. Pyramid pooling is also robust to object deformations. With these advantages, SPP-net should in general improve all CNN-based image classification methods. On the ImageNet 2012 dataset, we demonstrate that SPP-net boosts the accuracy of a variety of CNN architectures despite their different designs. On the Pascal VOC 2007 and Caltech101 datasets, SPP-net achieves state-of-the-art classification results using a single full-image representation and no fine-tuning. The power of SPP-net is also significant in object detection. Using SPP-net, we compute the feature maps from the entire image only once, and then pool features in arbitrary regions (sub-images) to generate fixed-length representations for training the detectors. This method avoids repeatedly computing the convolutional features. In processing test images, our method is 24-102x faster than the R-CNN method, while achieving better or comparable accuracy on Pascal VOC 2007. In ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2014, our methods rank #2 in object detection and #3 in image classification among all 38 teams. This manuscript also introduces the improvement made for this competition.
     * Comments:
-        * > He et al. [17] discard the non-convolutional portion of classification nets to make a feature extractor. They combine proposals and spatial pyramid pooling to yield a localized, fixed-length feature for classification. While fast and effective, this hybrid model cannot be learned end-to-end. (FCN, 2014)
-        * > In [12], feature maps in different levels generated by pyramid pooling were finally flattened and concatenated to be fed into a fully connected layer for classification. (2016, PSPNet)
+        * > (2014, FCN) He et al. [17] discard the non-convolutional portion of classification nets to make a feature extractor. They combine proposals and spatial pyramid pooling to yield a localized, fixed-length feature for classification. While fast and effective, this hybrid model cannot be learned end-to-end.
+        * > (2015, Fast R-CNN) Spatial pyramid pooling networks (SPPnets) [11] were proposed to speed up R-CNN by sharing computation.
+        * > (2016, PSPNet) In [12], feature maps in different levels generated by pyramid pooling were finally flattened and concatenated to be fed into a fully connected layer for classification.
         * > (2016, FPN) SPPnet [15] demonstrated that such region-based detectors could be applied much more efficiently on feature maps extracted on a single image scale.
 
 ### Further Improvements of R-CNN

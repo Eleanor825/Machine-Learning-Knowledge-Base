@@ -15,7 +15,7 @@
 
 ### 1.1. R-CNN and SPPnet
 
-R-CNN
+Drawbacks of R-CNN
 
 > R-CNN, however, has notable drawbacks:
 > 1. **Training is a multi-stage pipeline**. R-CNN first fine-tunes a ConvNet on object proposals using log loss. Then, it fits SVMs to ConvNet features. These SVMs act as object detectors, replacing the softmax classifier learnt by fine-tuning. In the third training stage, bounding-box regressors are learned.
@@ -24,13 +24,48 @@ R-CNN
 
 > R-CNN is slow because it performs a ConvNet forward pass for each object proposal, without sharing computation.
 
-Spatial Pyramid Pooling
+Advantages of Spatial Pyramid Pooling
 
 > Spatial pyramid pooling networks (SPPnets) [11] were proposed to speed up R-CNN by sharing computation.
 
 > The SPPnet method computes a convolutional feature map for the entire input image and then classifies each object proposal using a feature vector extracted from the shared feature map.
 
-> Features are extracted for a proposal by max-pooling the portion of the feature map inside the proposal into a fixed-size output (\eg, 6×6). Multiple output sizes are pooled and then concatenated as in spatial pyramid pooling [15].
+> Features are extracted for a proposal by max-pooling the portion of the feature map inside the proposal into a fixed-size output (\eg, 6x6). Multiple output sizes are pooled and then concatenated as in spatial pyramid pooling [15].
+
+Drawbacks of Spatial Pyramid Pooling
+
+> SPPnet also has notable drawbacks. Like R-CNN, training is a multi-stage pipeline that involves extracting features, fine-tuning a network with log loss, training SVMs, and finally fitting bounding-box regressors. Features are also written to disk.
+
+> But unlike R-CNN, the fine-tuning algorithm proposed in [11] cannot update the convolutional layers that precede the spatial pyramid pooling.
+
+### 1.2. Contributions
+
+Advantages of Fast R-CNN
+
+> The Fast R-CNN method has several advantages:
+> 1. Higher detection quality (mAP) than R-CNN, SPPnet
+> 2. Training is single-stage, using a multi-task loss
+> 3. Training can update all network layers
+> 4. No disk storage is required for feature caching
+
+## 2. Fast R-CNN architecture and training
+
+> 1. A Fast R-CNN network takes as input an entire image and a set of `object proposals`.
+> 2. The network first processes the whole image with several convolutional (conv) and max pooling layers to produce a conv `feature map`.
+> 3. Then, for each object proposal a region of interest (RoI) pooling layer extracts a fixed-length `feature vector` from the feature map.
+> 4. Each feature vector is fed into a sequence of fully connected (fc) layers that finally branch into two sibling output layers:
+> 5. one that produces softmax probability estimates over K object classes plus a catch-all "background" class
+> 6. and another layer that outputs four real-valued numbers for each of the K object classes. Each set of 4 values encodes refined bounding-box positions for one of the K classes.
+
+### 2.1. The RoI pooling layer
+
+> The RoI pooling layer uses max pooling to convert the features inside any valid region of interest into a small feature map with a fixed spatial extent of $H \times W$ (\eg, 7x7), where H and W are layer hyper-parameters that are independent of any particular RoI.
+
+> The RoI layer is simply the special-case of the spatial pyramid pooling layer used in SPPnets [11] in which there is only one pyramid level.
+
+### 2.2. Initializing from pre-trained networks
+
+
 
 ----------------------------------------------------------------------------------------------------
 
