@@ -33,6 +33,13 @@
 
 **Model Scaling**
 
+> There are many ways to scale a ConvNet for different resource constraints:
+> 1. ResNet (He et al., 2016) can be scaled down (e.g., ResNet-18) or up (e.g., ResNet-200) by adjusting `network depth` (#layers),
+> 2. while WideResNet (Zagoruyko & Komodakis, 2016) and MobileNets (Howard et al., 2017) can be scaled by `network width` (#channels).
+> 3. It is also well-recognized that bigger input image size will help accuracy with the overhead of more FLOPS.
+
+> Our work systematically and empirically studies ConvNet scaling for all three dimensions of network `width`, `depth`, and `resolutions`.
+
 ## 3. Compound Model Scaling
 
 ### 3.1. Problem Formulation

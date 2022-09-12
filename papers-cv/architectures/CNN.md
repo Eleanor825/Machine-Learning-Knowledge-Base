@@ -219,25 +219,33 @@ count: 113
 
 > Inception modules [11–13] are built on the principle of split-reduce-transform-merge. These modules are usually heterogeneous in number of channels and kernel size (e.g. some of the modules are composed of standard and factored convolutions). (ESPNetv1, 2018)
 
-* [Inception-v1/GoogLeNet](https://arxiv.org/abs/1409.4842)
+* [[Inception-v1/GoogLeNet](https://arxiv.org/abs/1409.4842)]
+    [[pdf](https://arxiv.org/pdf/1409.4842.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1409.4842/)]
     * Title: Going Deeper with Convolutions
     * Year: 17 Sep `2014`
     * Authors: Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich
-    * Institutions: Google Inc., University of North Carolina, University of Michigan
+    * Institutions: [Google Inc.], [University of North Carolina, Chapel Hill], [University of Michigan]
     * Abstract: We propose a deep convolutional neural network architecture codenamed "Inception", which was responsible for setting the new state of the art for classification and detection in the ImageNet Large-Scale Visual Recognition Challenge 2014 (ILSVRC 2014). The main hallmark of this architecture is the improved utilization of the computing resources inside the network. This was achieved by a carefully crafted design that allows for increasing the depth and width of the network while keeping the computational budget constant. To optimize quality, the architectural decisions were based on the Hebbian principle and the intuition of multi-scale processing. One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.
     * Comments:
         * > (2014, VGG) The spatial resolution of the feature maps is reduced more aggressively in the first layers to decrease the amount of computation.
         * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
         * > (2015, ResNet) In [44], an "inception" layer is composed of a shortcut branch and a few deeper branches.
-* [Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)
+* [[Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)]
+    [[pdf](https://arxiv.org/pdf/1502.03167.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1502.03167/)]
     * Title: Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
     * Year: 11 Feb `2015`
     * Authors: Sergey Ioffe, Christian Szegedy
+    * Institutions: [Google Inc.]
     * Abstract: Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9% top-5 validation error (and 4.8% test error), exceeding the accuracy of human raters.
-* [Inception-v3](https://arxiv.org/abs/1512.00567)
+* [[Inception-v3](https://arxiv.org/abs/1512.00567)]
+    [[pdf](https://arxiv.org/pdf/1512.00567.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1512.00567/)]
     * Title: Rethinking the Inception Architecture for Computer Vision
     * Year: 02 Dec `2015`
     * Authors: Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, Zbigniew Wojna
+    * Institutions: [Google Inc.], [University College London]
     * Abstract: Convolutional networks are at the core of most state-of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we explore ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21.2% top-1 and 5.6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3.5% top-5 error on the validation set (3.6% error on the test set) and 17.3% top-1 error on the validation set.
 * [Inception-v4/Inception-ResNet](https://arxiv.org/abs/1602.07261)
     * Title: Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning
@@ -423,18 +431,23 @@ count: 113
 
 ### Efficient Networks (3)
 
-* [EfficientNetV1](https://arxiv.org/abs/1905.11946)
+* [[EfficientNetV1](https://arxiv.org/abs/1905.11946)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1905.11946/)]
     * Title: EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks
     * Year: 28 May `2019`
     * Authors: Mingxing Tan, Quoc V. Le
+    * Institutions: [Google Research, Brain Team]
     * Abstract: Convolutional Neural Networks (ConvNets) are commonly developed at a fixed resource budget, and then scaled up for better accuracy if more resources are available. In this paper, we systematically study model scaling and identify that carefully balancing network depth, width, and resolution can lead to better performance. Based on this observation, we propose a new scaling method that uniformly scales all dimensions of depth/width/resolution using a simple yet highly effective compound coefficient. We demonstrate the effectiveness of this method on scaling up MobileNets and ResNet. To go even further, we use neural architecture search to design a new baseline network and scale it up to obtain a family of models, called EfficientNets, which achieve much better accuracy and efficiency than previous ConvNets. In particular, our EfficientNet-B7 achieves state-of-the-art 84.3% top-1 accuracy on ImageNet, while being 8.4x smaller and 6.1x faster on inference than the best existing ConvNet. Our EfficientNets also transfer well and achieve state-of-the-art accuracy on CIFAR-100 (91.7%), Flowers (98.8%), and 3 other transfer learning datasets, with an order of magnitude fewer parameters. Source code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet).
     * Comments:
         * > Our study shows in EfficientNets: (1) training with very large image sizes is slow; (2) depthwise convolutions are slow in early layers. (3) equally scaling up every stage is sub-optimal. (EfficientNetV2, 2021)
         * > Many works, such as DenseNet (Huang et al., 2017) and EfficientNet (Tan & Le, 2019a), focus on parameter efficiency, aiming to achieve better accuracy with less parameters. (EfficientNetV2, 2021)
-* [EfficientNetV2](https://arxiv.org/abs/2104.00298)
+* [[EfficientNetV2](https://arxiv.org/abs/2104.00298)]
+    [[pdf](https://arxiv.org/pdf/2104.00298.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2104.00298/)]
     * Title: EfficientNetV2: Smaller Models and Faster Training
     * Year: 01 Apr `2021`
     * Authors: Mingxing Tan, Quoc V. Le
+    * Institutions: [Google Research, Brain Team]
     * Abstract: This paper introduces EfficientNetV2, a new family of convolutional networks that have faster training speed and better parameter efficiency than previous models. To develop this family of models, we use a combination of training-aware neural architecture search and scaling, to jointly optimize training speed and parameter efficiency. The models were searched from the search space enriched with new ops such as Fused-MBConv. Our experiments show that EfficientNetV2 models train much faster than state-of-the-art models while being up to 6.8x smaller. Our training can be further sped up by progressively increasing the image size during training, but it often causes a drop in accuracy. To compensate for this accuracy drop, we propose to adaptively adjust regularization (e.g., dropout and data augmentation) as well, such that we can achieve both fast training and good accuracy. With progressive learning, our EfficientNetV2 significantly outperforms previous models on ImageNet and CIFAR/Cars/Flowers datasets. By pretraining on the same ImageNet21k, our EfficientNetV2 achieves 87.3% top-1 accuracy on ImageNet ILSVRC2012, outperforming the recent ViT by 2.0% accuracy while training 5x-11x faster using the same computing resources. Code will be available at [this https URL](https://github.com/google/automl/tree/master/efficientnetv2).
 * [EfficientNet-X](https://arxiv.org/abs/2102.05610)
     * Title: Searching for Fast Model Families on Datacenter Accelerators
@@ -632,9 +645,9 @@ count: 113
 
 ## Expressive Power (2019, EfficientNetV1) (4)
 
-> In fact, previous theoretical (Raghu et al., 2017; Lu et al., 2018) and empirical results (Zagoruyko & Komodakis, 2016) both show that there exists certain relationship between network width and depth. (2019, EfficientNetV1)
+> (2019, EfficientNetV1) In fact, previous theoretical (Raghu et al., 2017; Lu et al., 2018) and empirical results (Zagoruyko & Komodakis, 2016) both show that there exists certain relationship between network width and depth.
 
-> Prior studies (Raghu et al., 2017; Lin & Jegelka, 2018; Sharir & Shashua, 2018; Lu et al., 2018) have shown that network depth and width are both important for ConvNets' expressive power. (2019, EfficientNetV1)
+> (2019, EfficientNetV1) Prior studies (Raghu et al., 2017; Lin & Jegelka, 2018; Sharir & Shashua, 2018; Lu et al., 2018) have shown that network depth and width are both important for ConvNets' expressive power.
 
 * [On the Expressive Power of Deep Neural Networks](https://arxiv.org/abs/1606.05336)
     * Title: On the Expressive Power of Deep Neural Networks
@@ -796,3 +809,11 @@ count: 113
     * Abstract: In this work, we present a new network design paradigm. Our goal is to help advance the understanding of network design and discover design principles that generalize across settings. Instead of focusing on designing individual network instances, we design network design spaces that parametrize populations of networks. The overall process is analogous to classic manual design of networks, but elevated to the design space level. Using our methodology we explore the structure aspect of network design and arrive at a low-dimensional design space consisting of simple, regular networks that we call RegNet. The core insight of the RegNet parametrization is surprisingly simple: widths and depths of good networks can be explained by a quantized linear function. We analyze the RegNet design space and arrive at interesting findings that do not match the current practice of network design. The RegNet design space provides simple and fast networks that work well across a wide range of flop regimes. Under comparable training settings and flops, the RegNet models outperform the popular EfficientNet models while being up to 5x faster on GPUs.
     * Comments:
         * > RegNet (Radosavovic et al., 2020), ResNeSt (Zhang et al., 2020), TResNet (Ridnik et al., 2020), and EfficientNet-X (Li et al., 2021) focus on GPU and/or TPU inference speed. (EfficientNetV2, 2021)
+* [Provable Bounds for Learning Some Deep Representations](https://arxiv.org/abs/1310.6343)
+    [[pdf](https://arxiv.org/pdf/1310.6343.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1310.6343/)]
+    * Title: Provable Bounds for Learning Some Deep Representations
+    * Year: 23 Oct `2013`
+    * Authors: Sanjeev Arora, Aditya Bhaskara, Rong Ge, Tengyu Ma
+    * Institutions: [Princeton University, Computer Science Department and Center for Computational Intractability], [Google Research NYC], [Microsoft Research, New England]
+    * Abstract: We give algorithms with provable guarantees that learn a class of deep nets in the generative model view popularized by Hinton and others. Our generative model is an n node multilayer neural net that has degree at most nγ for some γ<1 and each edge has a random edge weight in [−1,1]. Our algorithm learns {\em almost all} networks in this class with polynomial running time. The sample complexity is quadratic or cubic depending upon the details of the model. The algorithm uses layerwise learning. It is based upon a novel idea of observing correlations among features and using these to infer the underlying edge structure via a global graph recovery procedure. The analysis of the algorithm reveals interesting structure of neural networks with random edge weights.
