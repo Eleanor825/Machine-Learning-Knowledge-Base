@@ -21,3 +21,8 @@
 
 ## Further Reading
 
+* [5] R-CNN
+* [9] AlexNet
+* [12] Fully Convolutional Networks (FCN)
+* [18] VGG
+* [20] Inception-v1/GoogLeNet
