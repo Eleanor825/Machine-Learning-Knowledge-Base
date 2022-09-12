@@ -237,6 +237,8 @@ count: 113
         * > (2014, VGG) The spatial resolution of the feature maps is reduced more aggressively in the first layers to decrease the amount of computation.
         * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
         * > (2015, ResNet) In [44], an "inception" layer is composed of a shortcut branch and a few deeper branches.
+        * > (2015, Inception-v3) Much of the original gains of the GoogLeNet network [20] arise from a very generous use of dimension reduction. This can be viewed as a special case of factorizing convolutions in a computationally efficient manner.
+        * > (2015, Inception-v3) [20] has introduced the notion of auxiliary classifiers to improve the convergence of very deep networks. The original motivation was to push useful gradients to the lower layers to make them immediately useful and improve the convergence during training by combating the vanishing gradient problem in very deep networks.
 * [[Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)]
     [[pdf](https://arxiv.org/pdf/1502.03167.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1502.03167/)]
@@ -808,6 +810,7 @@ count: 113
     * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
     * Comments:
         * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
+        * > (2015, Inception-v3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
 * [RegNet](https://arxiv.org/abs/2003.13678)
     * Title: Designing Network Design Spaces
     * Year: 30 Mar `2020`
