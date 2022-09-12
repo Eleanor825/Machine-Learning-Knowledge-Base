@@ -13,6 +13,22 @@
 
 > The convolutional layers accept arbitrary input sizes, but they produce outputs of variable sizes.
 
+> Spatial pyramid pooling [14, 15] improves BoW in that it can maintain spatial information by pooling in local spatial bins. These spatial bins have sizes proportional to the image size, so the number of bins is fixed regardless of the image size.
+
+> This is in contrast to the sliding window pooling of the previous deep networks [3], where the number of sliding windows depends on the input size.
+
+> To adopt the deep network for images of arbitrary sizes, we replace the last pooling layer (e.g., pool5, after the last convolutional layer) with a spatial pyramid pooling layer.
+
+> The fixed-dimensional vectors are the input to the fully-connected layer.
+
+> With spatial pyramid pooling, the input image can be of any sizes. This not only allows arbitrary aspect ratios, but also allows arbitrary scales. We can resize the input image to any scale (e.g., min(w,h)=180, 224, ...) and apply the same deep network.
+
+> When the input image is at different scales, the network (with the same filter sizes) will extract features at different scales.
+
+> Interestingly, the coarsest pyramid level has a single bin that covers the entire image. This is in fact a “global pooling” operation, which is also investigated in several concurrent works.
+
+### 2.3 Training the Network
+
 ----------------------------------------------------------------------------------------------------
 
 ## References
@@ -20,3 +36,7 @@
 * He, Kaiming, et al. "Spatial pyramid pooling in deep convolutional networks for visual recognition." *IEEE transactions on pattern analysis and machine intelligence* 37.9 (2015): 1904-1916.
 
 ## Further Reading
+
+* [5] OverFeat
+* [31] Network In Network (NIN)
+* [32] Inception-v1/GoogLeNet
