@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/564141144
 # [Notes][Vision][CNN] Inception-v1/GoogLeNet
 
 * url: https://arxiv.org/abs/1409.4842

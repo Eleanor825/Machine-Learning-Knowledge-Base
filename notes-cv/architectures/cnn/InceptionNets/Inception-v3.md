@@ -142,4 +142,4 @@ $$q'(k | x) := (1-\epsilon)\delta_{k, y} + \epsilon u(k),$$
 * [9] AlexNet
 * [12] Fully Convolutional Networks (FCN)
 * [18] VGGNet
-* [20] Inception-v1/GoogLeNet
+* [20] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)

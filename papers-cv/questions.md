@@ -26,3 +26,5 @@
 ## For CS 484 Prof.
 
 * Is it a good thing to train a fully convolutional network on a dataset that contains images of various sizes, without preprocessing to unify them?
+* Point processing using activation from different channels but at the same location? Does pointwise convolution count as point processing?
+* What is $L$ in those diagrams?
