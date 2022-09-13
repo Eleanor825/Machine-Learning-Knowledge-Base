@@ -22,3 +22,7 @@
 ## R-CNN
 * Did R-CNN refine spatial locations? Fast R-CNN seemed to say yes.
 * It has a third training stage? to train the bounding box regressors?
+
+## For CS 484 Prof.
+
+* Is it a good thing to train a fully convolutional network on a dataset that contains images of various sizes, without preprocessing to unify them?

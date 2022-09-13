@@ -65,7 +65,67 @@ The dimension reduction factor of both of the 3x3 kernels is $\beta := n / \sqrt
 
 ## 5. Efficient Grid Size Reduction
 
+## 6. Inception-v2
 
+## 7. Model Regularization via Label Smoothing
+
+> For brevity, let us omit the dependence of $p$ and $q$ on example $x$.
+
+Notations:
+* Let $K \in \mathbb{Z}_{++}$ denote the number of classes.
+* Let $x$ denote a traning example.
+* Let $z_{1}, ..., z_{K} \in \mathbb{R}$ denote the logits for $x$.
+* Let $p(k | x) := \frac{\exp(z_{k})}{\sum_{i=1}^{K}\exp(z_{i})}$, for $k \in \{1, ..., K\}$.
+* Let $q(k | x) \in [0, 1]$ denote the ground truth distribution, for $k \in \{1, ..., K\}$, normalized so that $\sum_{i=1}^{K}q(k | x) = 1$.
+* Define the loss for $x$ by $\ell(x) := -\sum_{i=1}^{K}\log(p(i))q(i)$.
+
+Then the gradient of $\ell(x)$ with respect to $z_{k}$ is:
+$$\begin{align*}
+\frac{\partial  \ell(x)}{\partial z_{k}} & = \frac{\partial}{\partial z_{k}}\bigg[-\sum_{i=1}^{K}\log(p(i))q(i)\bigg] \\
+& = -\sum_{i=1}^{K}q(i)\frac{\partial}{\partial z_{k}}\log(p(i)) \\
+& = -\sum_{i=1}^{K}\frac{q(i)}{p(i)}\frac{\partial}{\partial z_{k}}\bigg[\frac{\exp(z_{i})}{\sum_{j=1}^{K}\exp(z_{j})}\bigg] \\
+& = -\frac{q(k)}{p(k)}\frac{\partial}{\partial z_{k}}\frac{\exp(z_{k})}{\sum_{j=1}^{K}\exp(z_{j})} - \sum_{i \neq k}\frac{q(i)}{p(i)}\frac{\partial}{\partial z_{k}}\bigg[\frac{\exp(z_{i})}{\sum_{j=1}^{K}\exp(z_{j})}\bigg] \\
+& = -\frac{q(k)}{p(k)}\frac{\exp(z_{k})(\sum_{j=1}^{K}\exp(z_{j})) - \exp(z_{k})\exp(z_{k})}{(\sum_{j=1}^{K}\exp(z_{j}))^{2}} + \sum_{i \neq k}\frac{q(i)}{p(i)}\exp(z_{i})\frac{\exp(z_{k})}{(\sum_{j=1}^{K}\exp(z_{j}))^{2}} \\
+& = -\frac{q(k)}{p(k)}p(k) + \frac{q(k)}{p(k)}(p(k))^{2} + \sum_{i \neq k}\frac{q(i)}{p(i)}p(i)p(k) \\
+& = -q(k) + \sum_{i=1}^{K}q(i)p(k) = p(k) - q(k).
+\end{align*}$$
+
+> Consider the case of a single ground-truth label $y$ so that $q(y) = 1$ and $q(k) = 0$ for all $k \neq y$.
+
+> This, however, can cause two problems.
+> 1. it may result in over-fitting: if the model learns to assign full probability to the ground-truth label for each training example, it is not guaranteed to generalize.
+> 2. it encourages the differences between the largest logit and all others to become large, and this, combined with the bounded gradient $\frac{\partial \ell}{\partial z_{k}}$, reduces the ability of the model to adapt.
+
+> Intuitively, this happens because the model becomes too confident about its predictions.
+
+> We propose a mechanism for encouraging the model to be less confident. While this may not be desired if the goal is to maximize the log-likelihood of training labels, it does regularize the model and makes it more adaptable.
+
+Notations:
+* Let $\epsilon \in (0, 1)$ denote the smoothing parameter.
+* Let $u(k) \in [0, 1]$ denote some probability distribution over the labels $\{1, ..., K\}$.
+* Let $x$ denote a training example with ground truth $y$.
+
+Then we define the smoothed label distribution $q'(k | x)$ by
+$$q'(k | x) := (1-\epsilon)\delta_{k, y} + \epsilon u(k),$$
+> which is a mixture of the original ground-truth distribution $q(k|x)$ and the fixed distribution $u(k)$, with weights $1−\epsilon$ and $\epsilon$, respectively.
+
+## 8. Training Methodology
+
+## 9. Performance on Lower Resolution Input
+
+## 10. Experimental Results and Comparisons
+
+## 11. Conclusions
+
+> We have provided several design principles to scale up convolutional networks and studied them in the context of the Inception architecture.
+
+> We have studied how factorizing convolutions and aggressive dimension reductions inside neural network can result in networks with relatively low computational cost while maintaining high quality.
+
+> We have also demonstrated that high quality results can be reached with receptive field resolution as low as 79x79.
+
+> We have studied how factorizing convolutions and aggressive dimension reductions inside neural network can result in networks with relatively low computational cost while maintaining high quality.
+
+> The combination of lower parameter count and additional regularization with batch-normalized auxiliary classifiers and label-smoothing allows for training high quality networks on relatively modest sized training sets.
 
 ----------------------------------------------------------------------------------------------------
 
@@ -75,9 +135,11 @@ The dimension reduction factor of both of the 3x3 kernels is $\beta := n / \sqrt
 
 ## Further Reading
 
+* [4] MultiBox
 * [5] R-CNN
+* [6] PReLU
 * [7] Inception-v2/Batch Normalization
 * [9] AlexNet
 * [12] Fully Convolutional Networks (FCN)
-* [18] VGG
+* [18] VGGNet
 * [20] Inception-v1/GoogLeNet
