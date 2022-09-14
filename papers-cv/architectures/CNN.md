@@ -114,12 +114,13 @@ count: 113
     * Institutions: [Microsoft Research]
     * Abstract: Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
     * Comments:
+        * > (2016, Inception-v4) In [5], it is argued that residual connections are of inherent importance for training very deep architectures.
         * > (2016, PSPNet) Although theoretically the receptive field of ResNet [13] is already larger than the input image, it is shown by Zhou et al. [42] that the empirical receptive field of CNN is much smaller than the theoretical one especially on high-level layers.
         * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
         * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
         * > (2017, ERFNet) It has been reported that non-bottleneck ResNets gain more accuracy from increased depth than the bottleneck versions, which indicates that they are not entirely equivalent and that the bottleneck design still suffers from the degradation problem.
         * > (2019, EfficientNetV1) Although several techniques, such as skip connections (He et al., 2016) and batch normalization (Ioffe & Szegedy, 2015), alleviate the training problem, the accuracy gain of very deep network diminishes: for example, ResNet-1000 has similar accuracy as ResNet-101 even though it has much more layers.
-* [ResNet with Pre-Activation](https://arxiv.org/abs/1603.05027)
+* [[ResNet v2](https://arxiv.org/abs/1603.05027)]
     * Title: Identity Mappings in Deep Residual Networks
     * Year: 16 Mar `2016`
     * Author: Kaiming He
@@ -239,6 +240,7 @@ count: 113
         * > (2015, ResNet) In [44], an "inception" layer is composed of a shortcut branch and a few deeper branches.
         * > (2015, Inception-v3) Much of the original gains of the GoogLeNet network [20] arise from a very generous use of dimension reduction. This can be viewed as a special case of factorizing convolutions in a computationally efficient manner.
         * > (2015, Inception-v3) [20] has introduced the notion of auxiliary classifiers to improve the convergence of very deep networks. The original motivation was to push useful gradients to the lower layers to make them immediately useful and improve the convergence during training by combating the vanishing gradient problem in very deep networks.
+        * > (2016, Inception-v4) Later the architecture was improved by additional factorization ideas in the third iteration [15] which will be referred to as Inception-v3 in this report.
 * [[Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)]
     [[pdf](https://arxiv.org/pdf/1502.03167.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1502.03167/)]
@@ -255,12 +257,17 @@ count: 113
     * Authors: Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, Zbigniew Wojna
     * Institutions: [Google Inc.], [University College London]
     * Abstract: Convolutional networks are at the core of most state-of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we explore ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21.2% top-1 and 5.6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3.5% top-5 error on the validation set (3.6% error on the test set) and 17.3% top-1 error on the validation set.
-* [Inception-v4/Inception-ResNet](https://arxiv.org/abs/1602.07261)
+* [[Inception-v4/Inception-ResNet](https://arxiv.org/abs/1602.07261)]
+    [[pdf](https://arxiv.org/pdf/1602.07261.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1602.07261/)]
     * Title: Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning
     * Year: 23 Feb `2016`
     * Authors: Christian Szegedy, Sergey Ioffe, Vincent Vanhoucke, Alex Alemi
+    * Institutions: [Google Inc.]
     * Abstract: Very deep convolutional networks have been central to the largest advances in image recognition performance in recent years. One example is the Inception architecture that has been shown to achieve very good performance at relatively low computational cost. Recently, the introduction of residual connections in conjunction with a more traditional architecture has yielded state-of-the-art performance in the 2015 ILSVRC challenge; its performance was similar to the latest generation Inception-v3 network. This raises the question of whether there are any benefit in combining the Inception architecture with residual connections. Here we give clear empirical evidence that training with residual connections accelerates the training of Inception networks significantly. There is also some evidence of residual Inception networks outperforming similarly expensive Inception networks without residual connections by a thin margin. We also present several new streamlined architectures for both residual and non-residual Inception networks. These variations improve the single-frame recognition performance on the ILSVRC 2012 classification task significantly. We further demonstrate how proper activation scaling stabilizes the training of very wide residual Inception networks. With an ensemble of three residual and one Inception-v4, we achieve 3.08 percent top-5 error on the test set of the ImageNet classification (CLS) challenge.
-* [PolyNet](https://arxiv.org/abs/1611.05725)
+* [[PolyInception](https://arxiv.org/abs/1611.05725)]
+    [[pdf](https://arxiv.org/pdf/1611.05725.pdf)]
+    [vanity]
     * Title: PolyNet: A Pursuit of Structural Diversity in Very Deep Networks
     * Year: 17 Nov `2016`
     * Authors: Xingcheng Zhang, Zhizhong Li, Chen Change Loy, Dahua Lin
@@ -370,10 +377,13 @@ count: 113
     * Year: 25 Nov `2017`
     * Authors: Gao Huang, Shichen Liu, Laurens van der Maaten, Kilian Q. Weinberger
     * Abstract: Deep neural networks are increasingly used on mobile devices, where computational resources are limited. In this paper we develop CondenseNet, a novel network architecture with unprecedented efficiency. It combines dense connectivity with a novel module called learned group convolution. The dense connectivity facilitates feature re-use in the network, whereas learned group convolutions remove connections between layers for which this feature re-use is superfluous. At test time, our model can be implemented using standard group convolutions, allowing for efficient computation in practice. Our experiments show that CondenseNets are far more efficient than state-of-the-art compact convolutional networks such as MobileNets and ShuffleNets.
-* [Design of Efficient Convolutional Layers using Single Intra-channel Convolution, Topological Subdivisioning and Spatial "Bottleneck" Structure](https://arxiv.org/abs/1608.04337)
+* [[Factorized Networks](https://arxiv.org/abs/1608.04337)]
+    [[pdf](https://arxiv.org/pdf/1608.04337.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1608.04337/)]
     * Title: Design of Efficient Convolutional Layers using Single Intra-channel Convolution, Topological Subdivisioning and Spatial "Bottleneck" Structure
     * Year: 15 Aug `2016`
     * Authors: Min Wang, Baoyuan Liu, Hassan Foroosh
+    * Institutions: [Department of EECS, University of Central Florida]
     * Abstract: Deep convolutional neural networks achieve remarkable visual recognition performance, at the cost of high computational complexity. In this paper, we have a new design of efficient convolutional layers based on three schemes. The 3D convolution operation in a convolutional layer can be considered as performing spatial convolution in each channel and linear projection across channels simultaneously. By unravelling them and arranging the spatial convolution sequentially, the proposed layer is composed of a single intra-channel convolution, of which the computation is negligible, and a linear channel projection. A topological subdivisioning is adopted to reduce the connection between the input channels and output channels. Additionally, we also introduce a spatial "bottleneck" structure that utilizes a convolution-projection-deconvolution pipeline to take advantage of the correlation between adjacent pixels in the input. Our experiments demonstrate that the proposed layers remarkably outperform the standard convolutional layers with regard to accuracy/complexity ratio. Our models achieve similar accuracy to VGG, ResNet-50, ResNet-101 while requiring 42, 4.5, 6.5 times less computation respectively.
 
 ### Light-Weight CNNs (MobileViT, 2021) (3 + 7)
@@ -421,10 +431,13 @@ count: 113
     * Year: 05 Sep `2017`
     * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
     * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at [this https URL](https://github.com/hujie-frank/SENet).
-* [MobileNetV1](https://arxiv.org/abs/1704.04861)
+* [[MobileNetV1](https://arxiv.org/abs/1704.04861)]
+    [[pdf](https://arxiv.org/pdf/1704.04861.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1704.04861/)]
     * Title: MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications
     * Year: 17 Apr `2017`
-    * Author: Andrew G. Howard
+    * Authors: Andrew G. Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam
+    * Institutions: [Google Inc.]
     * Abstract: We present a class of efficient models called MobileNets for mobile and embedded vision applications. MobileNets are based on a streamlined architecture that uses depth-wise separable convolutions to build light weight deep neural networks. We introduce two simple global hyper-parameters that efficiently trade off between latency and accuracy. These hyper-parameters allow the model builder to choose the right sized model for their application based on the constraints of the problem. We present extensive experiments on resource and accuracy tradeoffs and show strong performance compared to other popular models on ImageNet classification. We then demonstrate the effectiveness of MobileNets across a wide range of applications and use cases including object detection, finegrain classification, face attributes and large scale geo-localization.
 * [MobileNetV2](https://arxiv.org/abs/1801.04381)
     * Title: MobileNetV2: Inverted Residuals and Linear Bottlenecks

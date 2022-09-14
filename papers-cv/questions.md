@@ -15,6 +15,10 @@
 ## EfficientNetV1
 * input/output space of the convolutions? where do $H_{i}$, $W_{i}$, and $C_{i}$ change?
 
+## Inception-v4/Inception-ResNet
+
+* Uniform simplified architecture of Inception-v4?
+
 ## DeepMask
 * in segmentation loss, what is the range of i and j? Do we use the full ground truth segmentation mask or a crop of size $w^{o} \times h^{o}$ of it?
 * how's low-rank achieved? SVD?
