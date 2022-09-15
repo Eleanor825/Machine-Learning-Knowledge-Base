@@ -249,6 +249,8 @@ count: 113
     * Authors: Sergey Ioffe, Christian Szegedy
     * Institutions: [Google Inc.]
     * Abstract: Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9% top-5 validation error (and 4.8% test error), exceeding the accuracy of human raters.
+    * Comments:
+        * > (2017, MobileNetV1) MobileNets are built primarily from depthwise separable convolutions initially introduced in [26] and subsequently used in Inception models [13] to reduce the computation in the first few layers.
 * [[Inception-v3](https://arxiv.org/abs/1512.00567)]
     [[pdf](https://arxiv.org/pdf/1512.00567.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1512.00567/)]
@@ -338,16 +340,85 @@ count: 113
 * NIN, see `mlp.md`.
 
 ## ----------------------------------------------------------------------------------------------------
-## More Efficient Kernels
+## Light-Weight Networks
 ## ----------------------------------------------------------------------------------------------------
 
-### Light Weight Networks
+### Light-Weight Networks (2017, MobileNetV1) (count=7)
 
+* InceptionNets
+* [Flattened Networks](https://arxiv.org/abs/1412.5474)
+    * Title: Flattened Convolutional Neural Networks for Feedforward Acceleration
+    * Year: 17 Dec `2014`
+    * Authors: Jonghoon Jin, Aysegul Dundar, Eugenio Culurciello
+    * Abstract: We present flattened convolutional neural networks that are designed for fast feedforward execution. The redundancy of the parameters, especially weights of the convolutional filters in convolutional neural networks has been extensively studied and different heuristics have been proposed to construct a low rank basis of the filters after training. In this work, we train flattened networks that consist of consecutive sequence of one-dimensional filters across all directions in 3D space to obtain comparable performance as conventional convolutional networks. We tested flattened model on different datasets and found that the flattened layer can effectively substitute for the 3D filters without loss of accuracy. The flattened convolution pipelines provide around two times speed-up during feedforward pass compared to the baseline model due to the significant reduction of learning parameters. Furthermore, the proposed method does not require efforts in manual tuning or post processing once the model is trained.
+    * Comments:
+        * > (2017, MobileNetV1) Flattened networks [16] build a network out of fully factorized convolutions and showed the potential of extremely factorized networks.
+* [[Factorized Networks](https://arxiv.org/abs/1608.04337)]
+    [[pdf](https://arxiv.org/pdf/1608.04337.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1608.04337/)]
+    * Title: Design of Efficient Convolutional Layers using Single Intra-channel Convolution, Topological Subdivisioning and Spatial "Bottleneck" Structure
+    * Year: 15 Aug `2016`
+    * Authors: Min Wang, Baoyuan Liu, Hassan Foroosh
+    * Institutions: [Department of EECS, University of Central Florida]
+    * Abstract: Deep convolutional neural networks achieve remarkable visual recognition performance, at the cost of high computational complexity. In this paper, we have a new design of efficient convolutional layers based on three schemes. The 3D convolution operation in a convolutional layer can be considered as performing spatial convolution in each channel and linear projection across channels simultaneously. By unravelling them and arranging the spatial convolution sequentially, the proposed layer is composed of a single intra-channel convolution, of which the computation is negligible, and a linear channel projection. A topological subdivisioning is adopted to reduce the connection between the input channels and output channels. Additionally, we also introduce a spatial "bottleneck" structure that utilizes a convolution-projection-deconvolution pipeline to take advantage of the correlation between adjacent pixels in the input. Our experiments demonstrate that the proposed layers remarkably outperform the standard convolutional layers with regard to accuracy/complexity ratio. Our models achieve similar accuracy to VGG, ResNet-50, ResNet-101 while requiring 42, 4.5, 6.5 times less computation respectively.
+    * Comments:
+        * > (2017, MobileNetV1) Independent of this current paper, Factorized Networks[34] introduces a similar factorized convolution as well as the use of topological connections.
+* [Xception Networks](https://arxiv.org/abs/1610.02357)
+    * Title: Xception: Deep Learning with Depthwise Separable Convolutions
+    * Year: 07 Oct `2016`
+    * Authors: François Chollet
+    * Institution: Google, Inc.
+    * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
+    * Comments:
+        * > (2017, MobileNetV1) Subsequently, the Xception network [3] demonstrated how to scale up depthwise separable filters to out perform Inception V3 networks.
+        * > (2017, ShuffleNet v1) Depthwise separable convolution proposed in Xception [3] generalizes the ideas of separable convolutions in Inception series [34, 32].
 * [SqueezeNet](https://arxiv.org/abs/1602.07360)
     * Title: SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size
     * Year: 24 Feb `2016`
     * Authors: Forrest N. Iandola, Song Han, Matthew W. Moskewicz, Khalid Ashraf, William J. Dally, Kurt Keutzer
     * Abstract: Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributed training. (2) Smaller DNNs require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy on FPGAs and other hardware with limited memory. To provide all of these advantages, we propose a small DNN architecture called SqueezeNet. SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. Additionally, with model compression techniques we are able to compress SqueezeNet to less than 0.5MB (510x smaller than AlexNet). The SqueezeNet architecture is available for download here: [this https URL](https://github.com/DeepScale/SqueezeNet).
+    * Comments:
+        * (2017, MobileNetV1) Another small network is Squeezenet [12] which uses a bottleneck approach to design a very small network.
+* [[Structured Transforms for Small-Footprint Deep Learning](https://arxiv.org/abs/1510.01722)]
+    [[pdf](https://arxiv.org/pdf/1510.01722.pdf)]
+    [vanity]
+    * Title: Structured Transforms for Small-Footprint Deep Learning
+    * Year: 06 Oct `2015`
+    * Authors: Vikas Sindhwani, Tara N. Sainath, Sanjiv Kumar
+    * Institutions: [Google, New York]
+    * Abstract: We consider the task of building compact deep learning pipelines suitable for deployment on storage and power constrained mobile devices. We propose a unified framework to learn a broad family of structured parameter matrices that are characterized by the notion of low displacement rank. Our structured transforms admit fast function and gradient evaluation, and span a rich range of parameter sharing configurations whose statistical modeling capacity can be explicitly tuned along a continuum from structured to unstructured. Experimental results show that these transforms can significantly accelerate inference and forward/backward passes during training, and offer superior accuracy-compactness-speed tradeoffs in comparison to a number of existing techniques. In keyword spotting applications in mobile speech recognition, our methods are much more effective than standard linear low-rank bottleneck layers and nearly retain the performance of state of the art models, while providing more than 3.5-fold compression.
+* [[Deep Fried Convnets](https://arxiv.org/abs/1412.7149)]
+    [[pdf](https://arxiv.org/pdf/1412.7149.pdf)]
+    * Title: Deep Fried Convnets
+    * Year: 22 Dec `2014`
+    * Authors: Zichao Yang, Marcin Moczulski, Misha Denil, Nando de Freitas, Alex Smola, Le Song, Ziyu Wang
+    * Institutions: [Carnegie Mellon University], [University of Oxford], [Georgia Institute of Technology], [Google], [Google DeepMind], [Canadian Institute for Advanced Research]
+    * Abstract: The fully connected layers of a deep convolutional neural network typically contain over 90% of the network parameters, and consume the majority of the memory required to store the network parameters. Reducing the number of parameters while preserving essentially the same predictive performance is critically important for operating deep neural networks in memory constrained environments such as GPUs or embedded devices. In this paper we show how kernel methods, in particular a single Fastfood layer, can be used to replace all fully connected layers in a deep convolutional neural network. This novel Fastfood layer is also end-to-end trainable in conjunction with convolutional layers, allowing us to combine them into a new architecture, named deep fried convolutional networks, which substantially reduces the memory footprint of convolutional networks trained on MNIST and ImageNet with no drop in predictive performance.
+
+### Light-Weight Networks (2021, MobileViT) (3 + 7)
+
+> The basic building layer in CNNs is a standard convolutional layer. Because this layer is computationally expensive, several factorization-based methods have been proposed to make it light-weight and mobile-friendly (e.g., Jin et al., 2014; Chollet, 2017; Mehta et al., 2020). Of these, separable convolutions of Chollet (2017) have gained interest, and are widely used across state-of-the-art light-weight CNNs for mobile vision tasks, including MobileNets (Howard et al., 2017; Sandler et al., 2018; Howard et al., 2019), ShuffleNetv2 (Ma et al., 2018), ESPNetv2 (Mehta et al., 2019), MixNet (Tan & Le, 2019b), and MNASNet (Tan et al., 2019). These light-weight CNNs are versatile and easy to train. For example, these networks can easily replace the heavy-weight backbones (e.g., ResNet) in existing task-specific models (e.g., DeepLabv3) to reduce the network size and improve latency. Despite these benefits, one major drawback of these methods is that they are spatially local. (MobileViT, 2021)
+
+* Flattened Networks
+* Xception Networks
+* [DiCENet](https://arxiv.org/abs/1906.03516)
+    * Title: DiCENet: Dimension-wise Convolutions for Efficient Networks
+    * Year: 08 Jun `2019`
+    * Authors: Sachin Mehta, Hannaneh Hajishirzi, Mohammad Rastegari
+    * Abstract: We introduce a novel and generic convolutional unit, DiCE unit, that is built using dimension-wise convolutions and dimension-wise fusion. The dimension-wise convolutions apply light-weight convolutional filtering across each dimension of the input tensor while dimension-wise fusion efficiently combines these dimension-wise representations; allowing the DiCE unit to efficiently encode spatial and channel-wise information contained in the input tensor. The DiCE unit is simple and can be seamlessly integrated with any architecture to improve its efficiency and performance. Compared to depth-wise separable convolutions, the DiCE unit shows significant improvements across different architectures. When DiCE units are stacked to build the DiCENet model, we observe significant improvements over state-of-the-art models across various computer vision tasks including image classification, object detection, and semantic segmentation. On the ImageNet dataset, the DiCENet delivers 2-4% higher accuracy than state-of-the-art manually designed models (e.g., MobileNetv2 and ShuffleNetv2). Also, DiCENet generalizes better to tasks (e.g., object detection) that are often used in resource-constrained devices in comparison to state-of-the-art separable convolution-based efficient networks, including neural search-based methods (e.g., MobileNetv3 and MixNet. Our source code in PyTorch is open-source and is available at [this https URL](https://github.com/sacmehta/EdgeNets/).
+
+* MobileNetV1, MobileNetV2, MobileNetV3.
+* ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
+* ESPNetv2: A Light-weight, Power Efficient, and General Purpose Convolutional Neural Network
+* [Mixconv](https://arxiv.org/abs/1907.09595)
+    * Title: Mixconv: Mixed depthwise convolutional kernels
+    * Year: 22 Jul `2019`
+    * Author: Mingxing Tan
+    * Abstract: Depthwise convolution is becoming increasingly popular in modern efficient ConvNets, but its kernel size is often overlooked. In this paper, we systematically study the impact of different kernel sizes, and observe that combining the benefits of multiple kernel sizes can lead to better accuracy and efficiency. Based on this observation, we propose a new mixed depthwise convolution (MixConv), which naturally mixes up multiple kernel sizes in a single convolution. As a simple drop-in replacement of vanilla depthwise convolution, our MixConv improves the accuracy and efficiency for existing MobileNets on both ImageNet classification and COCO object detection. To demonstrate the effectiveness of MixConv, we integrate it into AutoML search space and develop a new family of models, named as MixNets, which outperform previous mobile models including MobileNetV2 [20] (ImageNet top-1 accuracy +4.2%), ShuffleNetV2 [16] (+3.5%), MnasNet [26] (+1.3%), ProxylessNAS [2] (+2.2%), and FBNet [27] (+2.0%). In particular, our MixNet-L achieves a new state-of-the-art 78.9% ImageNet top-1 accuracy under typical mobile settings (<600M FLOPS). Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet/mixnet).
+* MnasNet: Platform-Aware Neural Architecture Search for Mobile (see neural_architecture_search.md)
+
+### Light-Weight Networks (Others)
+
 * [SqueezeNext](https://arxiv.org/abs/1803.10615)
     * Title: SqueezeNext: Hardware-Aware Neural Network Design
     * Year: 23 Mar `2018`
@@ -377,47 +448,6 @@ count: 113
     * Year: 25 Nov `2017`
     * Authors: Gao Huang, Shichen Liu, Laurens van der Maaten, Kilian Q. Weinberger
     * Abstract: Deep neural networks are increasingly used on mobile devices, where computational resources are limited. In this paper we develop CondenseNet, a novel network architecture with unprecedented efficiency. It combines dense connectivity with a novel module called learned group convolution. The dense connectivity facilitates feature re-use in the network, whereas learned group convolutions remove connections between layers for which this feature re-use is superfluous. At test time, our model can be implemented using standard group convolutions, allowing for efficient computation in practice. Our experiments show that CondenseNets are far more efficient than state-of-the-art compact convolutional networks such as MobileNets and ShuffleNets.
-* [[Factorized Networks](https://arxiv.org/abs/1608.04337)]
-    [[pdf](https://arxiv.org/pdf/1608.04337.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1608.04337/)]
-    * Title: Design of Efficient Convolutional Layers using Single Intra-channel Convolution, Topological Subdivisioning and Spatial "Bottleneck" Structure
-    * Year: 15 Aug `2016`
-    * Authors: Min Wang, Baoyuan Liu, Hassan Foroosh
-    * Institutions: [Department of EECS, University of Central Florida]
-    * Abstract: Deep convolutional neural networks achieve remarkable visual recognition performance, at the cost of high computational complexity. In this paper, we have a new design of efficient convolutional layers based on three schemes. The 3D convolution operation in a convolutional layer can be considered as performing spatial convolution in each channel and linear projection across channels simultaneously. By unravelling them and arranging the spatial convolution sequentially, the proposed layer is composed of a single intra-channel convolution, of which the computation is negligible, and a linear channel projection. A topological subdivisioning is adopted to reduce the connection between the input channels and output channels. Additionally, we also introduce a spatial "bottleneck" structure that utilizes a convolution-projection-deconvolution pipeline to take advantage of the correlation between adjacent pixels in the input. Our experiments demonstrate that the proposed layers remarkably outperform the standard convolutional layers with regard to accuracy/complexity ratio. Our models achieve similar accuracy to VGG, ResNet-50, ResNet-101 while requiring 42, 4.5, 6.5 times less computation respectively.
-
-### Light-Weight CNNs (MobileViT, 2021) (3 + 7)
-
-> The basic building layer in CNNs is a standard convolutional layer. Because this layer is computationally expensive, several factorization-based methods have been proposed to make it light-weight and mobile-friendly (e.g., Jin et al., 2014; Chollet, 2017; Mehta et al., 2020). Of these, separable convolutions of Chollet (2017) have gained interest, and are widely used across state-of-the-art light-weight CNNs for mobile vision tasks, including MobileNets (Howard et al., 2017; Sandler et al., 2018; Howard et al., 2019), ShuffleNetv2 (Ma et al., 2018), ESPNetv2 (Mehta et al., 2019), MixNet (Tan & Le, 2019b), and MNASNet (Tan et al., 2019). These light-weight CNNs are versatile and easy to train. For example, these networks can easily replace the heavy-weight backbones (e.g., ResNet) in existing task-specific models (e.g., DeepLabv3) to reduce the network size and improve latency. Despite these benefits, one major drawback of these methods is that they are spatially local. (MobileViT, 2021)
-
-* [Flattened Networks](https://arxiv.org/abs/1412.5474)
-    * Title: Flattened Convolutional Neural Networks for Feedforward Acceleration
-    * Year: 17 Dec `2014`
-    * Authors: Jonghoon Jin, Aysegul Dundar, Eugenio Culurciello
-    * Abstract: We present flattened convolutional neural networks that are designed for fast feedforward execution. The redundancy of the parameters, especially weights of the convolutional filters in convolutional neural networks has been extensively studied and different heuristics have been proposed to construct a low rank basis of the filters after training. In this work, we train flattened networks that consist of consecutive sequence of one-dimensional filters across all directions in 3D space to obtain comparable performance as conventional convolutional networks. We tested flattened model on different datasets and found that the flattened layer can effectively substitute for the 3D filters without loss of accuracy. The flattened convolution pipelines provide around two times speed-up during feedforward pass compared to the baseline model due to the significant reduction of learning parameters. Furthermore, the proposed method does not require efforts in manual tuning or post processing once the model is trained.
-* [Xception Networks](https://arxiv.org/abs/1610.02357)
-    * Title: Xception: Deep Learning with Depthwise Separable Convolutions
-    * Year: 07 Oct `2016`
-    * Authors: François Chollet
-    * Institution: Google, Inc.
-    * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
-    * Comments:
-        * > Depthwise separable convolution proposed in Xception [3] generalizes the ideas of separable convolutions in Inception series [34, 32]. (ShuffleNet v1, 2017)
-* [DiCENet](https://arxiv.org/abs/1906.03516)
-    * Title: DiCENet: Dimension-wise Convolutions for Efficient Networks
-    * Year: 08 Jun `2019`
-    * Authors: Sachin Mehta, Hannaneh Hajishirzi, Mohammad Rastegari
-    * Abstract: We introduce a novel and generic convolutional unit, DiCE unit, that is built using dimension-wise convolutions and dimension-wise fusion. The dimension-wise convolutions apply light-weight convolutional filtering across each dimension of the input tensor while dimension-wise fusion efficiently combines these dimension-wise representations; allowing the DiCE unit to efficiently encode spatial and channel-wise information contained in the input tensor. The DiCE unit is simple and can be seamlessly integrated with any architecture to improve its efficiency and performance. Compared to depth-wise separable convolutions, the DiCE unit shows significant improvements across different architectures. When DiCE units are stacked to build the DiCENet model, we observe significant improvements over state-of-the-art models across various computer vision tasks including image classification, object detection, and semantic segmentation. On the ImageNet dataset, the DiCENet delivers 2-4% higher accuracy than state-of-the-art manually designed models (e.g., MobileNetv2 and ShuffleNetv2). Also, DiCENet generalizes better to tasks (e.g., object detection) that are often used in resource-constrained devices in comparison to state-of-the-art separable convolution-based efficient networks, including neural search-based methods (e.g., MobileNetv3 and MixNet. Our source code in PyTorch is open-source and is available at [this https URL](https://github.com/sacmehta/EdgeNets/).
-
-* MobileNetV1, MobileNetV2, MobileNetV3.
-* ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
-* ESPNetv2: A Light-weight, Power Efficient, and General Purpose Convolutional Neural Network
-* [Mixconv](https://arxiv.org/abs/1907.09595)
-    * Title: Mixconv: Mixed depthwise convolutional kernels
-    * Year: 22 Jul `2019`
-    * Author: Mingxing Tan
-    * Abstract: Depthwise convolution is becoming increasingly popular in modern efficient ConvNets, but its kernel size is often overlooked. In this paper, we systematically study the impact of different kernel sizes, and observe that combining the benefits of multiple kernel sizes can lead to better accuracy and efficiency. Based on this observation, we propose a new mixed depthwise convolution (MixConv), which naturally mixes up multiple kernel sizes in a single convolution. As a simple drop-in replacement of vanilla depthwise convolution, our MixConv improves the accuracy and efficiency for existing MobileNets on both ImageNet classification and COCO object detection. To demonstrate the effectiveness of MixConv, we integrate it into AutoML search space and develop a new family of models, named as MixNets, which outperform previous mobile models including MobileNetV2 [20] (ImageNet top-1 accuracy +4.2%), ShuffleNetV2 [16] (+3.5%), MnasNet [26] (+1.3%), ProxylessNAS [2] (+2.2%), and FBNet [27] (+2.0%). In particular, our MixNet-L achieves a new state-of-the-art 78.9% ImageNet top-1 accuracy under typical mobile settings (<600M FLOPS). Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet/mixnet).
-* MnasNet: Platform-Aware Neural Architecture Search for Mobile (see neural_architecture_search.md)
 
 ### Mobile Networks (2 + 3)
 
@@ -479,23 +509,21 @@ count: 113
         * > RegNet (Radosavovic et al., 2020), ResNeSt (Zhang et al., 2020), TResNet (Ridnik et al., 2020), and EfficientNet-X (Li et al., 2021) focus on GPU and/or TPU inference speed. (EfficientNetV2, 2021)
 
 ## ----------------------------------------------------------------------------------------------------
+## Compressing Pretrained Networks
+## ----------------------------------------------------------------------------------------------------
 
-## Compressing Convolutional Networks
+### Compressing Convolutional Networks
 
 * [Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation](https://arxiv.org/abs/1404.0736)
     * Title: Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation
     * Year: 02 Apr `2014`
     * Author: Emily Denton
     * Abstract: We present techniques for speeding up the test-time evaluation of large convolutional networks, designed for object recognition tasks. These models deliver impressive accuracy but each image evaluation requires millions of floating point operations, making their deployment on smartphones and Internet-scale clusters problematic. The computation is dominated by the convolution operations in the lower layers of the model. We exploit the linear structure present within the convolutional filters to derive approximations that significantly reduce the required computation. Using large state-of-the-art models, we demonstrate we demonstrate speedups of convolutional layers on both CPU and GPU by a factor of 2x, while keeping the accuracy within 1% of the original model.
-* [Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications](https://arxiv.org/abs/1511.06530)
-    * Title: Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications
-    * Year: 20 Nov `2015`
-    * Author: Yong-Deok Kim
-    * Abstract: Although the latest high-end smartphone has powerful CPU and GPU, running deeper convolutional neural networks (CNNs) for complex tasks such as ImageNet classification on mobile devices is challenging. To deploy deep CNNs on mobile devices, we present a simple and effective scheme to compress the entire CNN, which we call one-shot whole network compression. The proposed scheme consists of three steps: (1) rank selection with variational Bayesian matrix factorization, (2) Tucker decomposition on kernel tensor, and (3) fine-tuning to recover accumulated loss of accuracy, and each step can be easily implemented using publicly available tools. We demonstrate the effectiveness of the proposed scheme by testing the performance of various compressed CNNs (AlexNet, VGGS, GoogLeNet, and VGG-16) on the smartphone. Significant reductions in model size, runtime, and energy consumption are obtained, at the cost of small loss in accuracy. In addition, we address the important implementation level issue on 1?1 convolution, which is a key operation of inception module of GoogLeNet as well as CNNs compressed by our proposed scheme.
+* Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications
 * Speeding up Convolutional Neural Networks with Low Rank Expansions
 * Deep roots
 
-## Compressing Convolutional Networks (ESPNetv1, 2018) (3) + (ESPNetv2, 2018) (2)
+### Compressing Convolutional Networks (ESPNetv1, 2018) (3) + (ESPNetv2, 2018) (2)
 
 * [Hashing](https://arxiv.org/abs/1504.04788)
     * Title: Compressing Neural Networks with the Hashing Trick
@@ -521,14 +549,34 @@ count: 113
 * Learning Structured Sparsity in Deep Neural Networks
 
 ## ----------------------------------------------------------------------------------------------------
+## Low-bit Networks
+## ----------------------------------------------------------------------------------------------------
 
-## Low-bit Networks (ESPNetv1, 2018) (4) + (ESPNetv2, 2018) (3)
+### Low-bit Networks (2017, MobileNetV1) (count=3)
 
+* [[Training deep neural networks with low precision multiplications](https://arxiv.org/abs/1412.7024)]
+    [[pdf](https://arxiv.org/pdf/1412.7024.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1412.7024/)]
+    * Title: Training deep neural networks with low precision multiplications
+    * Year: 22 Dec `2014`
+    * Authors: Matthieu Courbariaux, Yoshua Bengio, Jean-Pierre David
+    * Institutions: [École Polytechnique de Montréal], [Université de Montréal, CIFAR Senior Fellow]
+    * Abstract: Multipliers are the most space and power-hungry arithmetic operators of the digital implementation of deep neural networks. We train a set of state-of-the-art neural networks (Maxout networks) on three benchmark datasets: MNIST, CIFAR-10 and SVHN. They are trained with three distinct formats: floating point, fixed point and dynamic fixed point. For each of those datasets and for each of those formats, we assess the impact of the precision of the multiplications on the final error after training. We find that very low precision is sufficient not just for running trained networks but also for training them. For example, it is possible to train Maxout networks with 10 bits multiplications.
 * [XNOR-Net](https://arxiv.org/abs/1603.05279)
     * Title: XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks
     * Year: 16 Mar `2016`
     * Authors: Mohammad Rastegari, Vicente Ordonez, Joseph Redmon, Ali Farhadi
     * Abstract: We propose two efficient approximations to standard convolutional neural networks: Binary-Weight-Networks and XNOR-Networks. In Binary-Weight-Networks, the filters are approximated with binary values resulting in 32x memory saving. In XNOR-Networks, both the filters and the input to convolutional layers are binary. XNOR-Networks approximate convolutions using primarily binary operations. This results in 58x faster convolutional operations and 32x memory savings. XNOR-Nets offer the possibility of running state-of-the-art networks on CPUs (rather than GPUs) in real-time. Our binary networks are simple, accurate, efficient, and work on challenging visual tasks. We evaluate our approach on the ImageNet classification task. The classification accuracy with a Binary-Weight-Network version of AlexNet is only 2.9% less than the full-precision AlexNet (in top-1 measure). We compare our method with recent network binarization methods, BinaryConnect and BinaryNets, and outperform these methods by large margins on ImageNet, more than 16% in top-1 accuracy.
+* [Quantized Neural Networks](https://arxiv.org/abs/1609.07061)
+    * Title: Quantized Neural Networks: Training Neural Networks with Low Precision Weights and Activations
+    * Year: 22 Sep `2016`
+    * Authors: Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Ran El-Yaniv, Yoshua Bengio
+    * Abstract: We introduce a method to train Quantized Neural Networks (QNNs) --- neural networks with extremely low precision (e.g., 1-bit) weights and activations, at run-time. At train-time the quantized weights and activations are used for computing the parameter gradients. During the forward pass, QNNs drastically reduce memory size and accesses, and replace most arithmetic operations with bit-wise operations. As a result, power consumption is expected to be drastically reduced. We trained QNNs over the MNIST, CIFAR-10, SVHN and ImageNet datasets. The resulting QNNs achieve prediction accuracy comparable to their 32-bit counterparts. For example, our quantized version of AlexNet with 1-bit weights and 2-bit activations achieves 51% top-1 accuracy. Moreover, we quantize the parameter gradients to 6-bits as well which enables gradients computation using only bit-wise operation. Quantized recurrent neural networks were tested over the Penn Treebank dataset, and achieved comparable accuracy as their 32-bit counterparts using only 4-bits. Last but not least, we programmed a binary matrix multiplication GPU kernel with which it is possible to run our MNIST QNN 7 times faster than with an unoptimized GPU kernel, without suffering any loss in classification accuracy. The QNN code is available online.
+
+### Low-bit Networks (2018, ESPNetv1) (4)
+
+* XNOR-Net
+* Quantized Neural Networks
 * [Fixed-point Networks](https://ieeexplore.ieee.org/document/6986082)
     * Title: Fixed-point feedforward deep neural network design using weights +1, 0, and −1
     * Year: 18 December `2014`
@@ -539,21 +587,22 @@ count: 113
     * Year: 09 Feb `2016`
     * Authors: Matthieu Courbariaux, Itay Hubara, Daniel Soudry, Ran El-Yaniv, Yoshua Bengio
     * Abstract: We introduce a method to train Binarized Neural Networks (BNNs) - neural networks with binary weights and activations at run-time. At training-time the binary weights and activations are used for computing the parameters gradients. During the forward pass, BNNs drastically reduce memory size and accesses, and replace most arithmetic operations with bit-wise operations, which is expected to substantially improve power-efficiency. To validate the effectiveness of BNNs we conduct two sets of experiments on the Torch7 and Theano frameworks. On both, BNNs achieved nearly state-of-the-art results over the MNIST, CIFAR-10 and SVHN datasets. Last but not least, we wrote a binary matrix multiplication GPU kernel with which it is possible to run our MNIST BNN 7 times faster than with an unoptimized GPU kernel, without suffering any loss in classification accuracy. The code for training and running our BNNs is available on-line.
-* [Low-bit Networks](https://arxiv.org/abs/1609.07061)
-    * Title: Quantized Neural Networks: Training Neural Networks with Low Precision Weights and Activations
-    * Year: 22 Sep `2016`
-    * Authors: Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Ran El-Yaniv, Yoshua Bengio
-    * Abstract: We introduce a method to train Quantized Neural Networks (QNNs) --- neural networks with extremely low precision (e.g., 1-bit) weights and activations, at run-time. At train-time the quantized weights and activations are used for computing the parameter gradients. During the forward pass, QNNs drastically reduce memory size and accesses, and replace most arithmetic operations with bit-wise operations. As a result, power consumption is expected to be drastically reduced. We trained QNNs over the MNIST, CIFAR-10, SVHN and ImageNet datasets. The resulting QNNs achieve prediction accuracy comparable to their 32-bit counterparts. For example, our quantized version of AlexNet with 1-bit weights and 2-bit activations achieves 51% top-1 accuracy. Moreover, we quantize the parameter gradients to 6-bits as well which enables gradients computation using only bit-wise operation. Quantized recurrent neural networks were tested over the Penn Treebank dataset, and achieved comparable accuracy as their 32-bit counterparts using only 4-bits. Last but not least, we programmed a binary matrix multiplication GPU kernel with which it is possible to run our MNIST QNN 7 times faster than with an unoptimized GPU kernel, without suffering any loss in classification accuracy. The QNN code is available online.
 
-* Quantized Neural Networks: Training Neural Networks with Low Precision Weights and Activations
-* XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks
+### Low-bit Networks (2018, ESPNetv2) (3)
+
+* XNOR-Net
+* Quantized Neural Networks
 * [Expectation Backpropagation](https://proceedings.neurips.cc/paper/2014/hash/076a0c97d09cf1a0ec3e19c7f2529f2b-Abstract.html)
     * Title: Expectation Backpropagation: Parameter-Free Training of Multilayer Neural Networks with Continuous or Discrete Weights
     * Year: `2014`
     * Authors: Daniel Soudry, Itay Hubara, Ron Meir
     * Abstract: Multilayer Neural Networks (MNNs) are commonly trained using gradient descent-based methods, such as BackPropagation (BP). Inference in probabilistic graphical models is often done using variational Bayes methods, such as Expectation Propagation (EP). We show how an EP based approach can also be used to train deterministic MNNs. Specifically, we approximate the posterior of the weights given the data using a “mean-field” factorized distribution, in an online setting. Using online EP and the central limit theorem we find an analytical approximation to the Bayes update of this posterior, as well as the resulting Bayes estimates of the weights and outputs. Despite a different origin, the resulting algorithm, Expectation BackPropagation (EBP), is very similar to BP in form and efficiency. However, it has several additional advantages: (1) Training is parameter-free, given initial conditions (prior) and the MNN architecture. This is useful for large-scale problems, where parameter tuning is a major challenge. (2) The weights can be restricted to have discrete values. This is especially useful for implementing trained MNNs in precision limited hardware chips, thus improving their speed and energy efficiency by several orders of magnitude. We test the EBP algorithm numerically in eight binary text classification tasks. In all tasks, EBP outperforms: (1) standard BP with the optimal constant learning rate (2) previously reported state of the art. Interestingly, EBP-trained MNNs with binary weights usually perform better than MNNs with continuous (real) weights - if we average the MNN output using the inferred posterior.
 
+## ----------------------------------------------------------------------------------------------------
 ## Low-Rank Approximations
+## ----------------------------------------------------------------------------------------------------
+
+### Low-Rank Approximations
 
 * [Deformable kernels for early vision](https://ieeexplore.ieee.org/document/391394)
     * Title: Deformable kernels for early vision
@@ -577,7 +626,7 @@ count: 113
     * Abstract: This survey provides an overview of higher-order tensor decompositions, their applications, and available software. A tensor is a multidimensional or N-way array. Decompositions of higher-order tensors (i.e., N-way arrays with $N \geq 3$) have applications in psycho-metrics, chemometrics, signal processing, numerical linear algebra, computer vision, numerical analysis, data mining, neuroscience, graph analysis, and elsewhere. Two particular tensor decompositions can be considered to be higher-order extensions of the matrix singular value decomposition: CANDECOMP/PARAFAC (CP) decomposes a tensor as a sum of rank-one tensors, and the Tucker decomposition is a higher-order form of principal component analysis. There are many other tensor decompositions, including INDSCAL, PARAFAC2, CANDELINC, DEDICOM, and PARATUCK2 as well as nonnegative variants of all of the above. The N-way Toolbox, Tensor Toolbox, and Multilinear Engine are examples of software packages for working with tensors.
 * Exploiting Linear Structure
 
-## Low-Rank Approximations (Deep Roots) (3 + 3)
+### Low-Rank Approximations (2016, Deep Roots) (count=3+3)
 
 * [Simplifying convnets for fast learning](https://dl.acm.org/doi/10.1007/978-3-642-33266-1_8)
     * Title: Simplifying convnets for fast learning
@@ -614,9 +663,13 @@ count: 113
     * Year: 19 Dec `2014`
     * Author: Vadim Lebedev
     * Abstract: We propose a simple two-step approach for speeding up convolution layers within large convolutional neural networks based on tensor decomposition and discriminative fine-tuning. Given a layer, we use non-linear least squares to compute a low-rank CP-decomposition of the 4D convolution kernel tensor into a sum of a small number of rank-one tensors. At the second step, this decomposition is used to replace the original convolutional layer with a sequence of four convolutional layers with small kernels. After such replacement, the entire network is fine-tuned on the training data using standard backpropagation process. We evaluate this approach on two CNNs and show that it is competitive with previous approaches, leading to higher obtained CPU speedups at the cost of lower accuracy drops for the smaller of the two networks. Thus, for the 36-class character classification CNN, our approach obtains a 8.5x CPU speedup of the whole network with only minor accuracy drop (1% from 91% to 90%). For the standard ImageNet architecture (AlexNet), the approach speeds up the second convolution layer by a factor of 4x at the cost of 1% increase of the overall top-5 classification error.
-* Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications
+* [Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications](https://arxiv.org/abs/1511.06530)
+    * Title: Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications
+    * Year: 20 Nov `2015`
+    * Author: Yong-Deok Kim
+    * Abstract: Although the latest high-end smartphone has powerful CPU and GPU, running deeper convolutional neural networks (CNNs) for complex tasks such as ImageNet classification on mobile devices is challenging. To deploy deep CNNs on mobile devices, we present a simple and effective scheme to compress the entire CNN, which we call one-shot whole network compression. The proposed scheme consists of three steps: (1) rank selection with variational Bayesian matrix factorization, (2) Tucker decomposition on kernel tensor, and (3) fine-tuning to recover accumulated loss of accuracy, and each step can be easily implemented using publicly available tools. We demonstrate the effectiveness of the proposed scheme by testing the performance of various compressed CNNs (AlexNet, VGGS, GoogLeNet, and VGG-16) on the smartphone. Significant reductions in model size, runtime, and energy consumption are obtained, at the cost of small loss in accuracy. In addition, we address the important implementation level issue on 1?1 convolution, which is a key operation of inception module of GoogLeNet as well as CNNs compressed by our proposed scheme.
 
-## Tensor Decomposition (ShuffleNet V2, 2018)
+### Tensor Decomposition (ShuffleNet V2, 2018)
 
 * [Efficient and accurate approximations of nonlinear convolutional networks]
 * [Accelerating very deep convolutional networks for classification and detection]

@@ -15,6 +15,10 @@
 ## EfficientNetV1
 * input/output space of the convolutions? where do $H_{i}$, $W_{i}$, and $C_{i}$ change?
 
+## Inception-v2/Batch Normalization
+
+* The Inception Networks used depthwise separable convolution?
+
 ## Inception-v4/Inception-ResNet
 
 * Uniform simplified architecture of Inception-v4?
