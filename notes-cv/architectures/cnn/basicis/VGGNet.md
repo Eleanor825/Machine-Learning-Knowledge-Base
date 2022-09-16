@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/563314926
-# [Notes][Vision][CNN] VGG
+# [Notes][Vision][CNN] VGGNet
 
 * url: https://arxiv.org/abs/1409.1556
 * Title: Very Deep Convolutional Networks for Large-Scale Image Recognition
