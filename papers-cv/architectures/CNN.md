@@ -275,6 +275,25 @@ count: 113
     * Authors: Xingcheng Zhang, Zhizhong Li, Chen Change Loy, Dahua Lin
     * Abstract: A number of studies have shown that increasing the depth or width of convolutional networks is a rewarding approach to improve the performance of image recognition. In our study, however, we observed difficulties along both directions. On one hand, the pursuit for very deep networks is met with a diminishing return and increased training difficulty; on the other hand, widening a network would result in a quadratic growth in both computational cost and memory demand. These difficulties motivate us to explore structural diversity in designing deep networks, a new dimension beyond just depth and width. Specifically, we present a new family of modules, namely the PolyInception, which can be flexibly inserted in isolation or in a composition as replacements of different parts of a network. Choosing PolyInception modules with the guidance of architectural efficiency can improve the expressive power while preserving comparable computational cost. The Very Deep PolyNet, designed following this direction, demonstrates substantial improvements over the state-of-the-art on the ILSVRC 2012 benchmark. Compared to Inception-ResNet-v2, it reduces the top-5 validation error on single crops from 4.9% to 4.25%, and that on multi-crops from 3.7% to 3.45%.
 
+### Multi-Column Networks
+
+* [[Multi-Column Networks](https://arxiv.org/abs/1202.2745)]
+    [[pdf](https://arxiv.org/pdf/1202.2745.pdf)]
+    * Title: Multi-column Deep Neural Networks for Image Classification
+    * Year: 13 Feb `2012`
+    * Authors: Dan Cireşan, Ueli Meier, Juergen Schmidhuber
+    * Abstract: Traditional methods of computer vision and machine learning cannot match human performance on tasks such as the recognition of handwritten digits or traffic signs. Our biologically plausible deep artificial neural network architectures can. Small (often minimal) receptive fields of convolutional winner-take-all neurons yield large network depth, resulting in roughly as many sparsely connected neural layers as found in mammals between retina and visual cortex. Only winner neurons are trained. Several deep neural columns become experts on inputs preprocessed in different ways; their predictions are averaged. Graphics cards allow for fast training. On the very competitive MNIST handwriting benchmark, our method is the first to achieve near-human performance. On a traffic sign recognition benchmark it outperforms humans by a factor of two. We also improve the state-of-the-art on a plethora of common image classification benchmarks.
+    * Comments:
+        * > Within just a few years, the top-5 image classification accuracy on the 1000-class ImageNet dataset has increased from ~84% [1] to ~95% [2, 3] using deeper networks with rather small receptive fields [4, 5]. (Training Very Deep Networks, 2015)
+* [High-Performance Neural Networks for Visual Object Classification](https://arxiv.org/abs/1102.0183)
+    * Title: High-Performance Neural Networks for Visual Object Classification
+    * Year: 01 Feb `2011`
+    * Authors: Dan C. Cireşan, Ueli Meier, Jonathan Masci, Luca M. Gambardella, Jürgen Schmidhuber
+    * Abstract: We present a fast, fully parameterizable GPU implementation of Convolutional Neural Network variants. Our feature extractors are neither carefully designed nor pre-wired, but rather learned in a supervised way. Our deep hierarchical architectures achieve the best published results on benchmarks for object classification (NORB, CIFAR10) and handwritten digit recognition (MNIST), with error rates of 2.53%, 19.51%, 0.35%, respectively. Deep nets trained by simple back-propagation perform better than more shallow ones. Learning is surprisingly rapid. NORB is completely trained within five epochs. Test error rates on MNIST drop to 2.42%, 0.97% and 0.48% after 1, 3 and 17 epochs, respectively.
+* [[Deep Columnar Convolutional Neural Network](https://www.researchgate.net/publication/305361867_Deep_Columnar_Convolutional_Neural_Network)]
+    [[pdf](https://www.researchgate.net/profile/Somshubra-Majumdar/publication/305361867_Deep_Columnar_Convolutional_Neural_Network/links/5795972508aec89db7b462d5/Deep-Columnar-Convolutional-Neural-Network.pdf)]
+    * Title: Deep Columnar Convolutional Neural Network
+
 ## ----------------------------------------------------------------------------------------------------
 ## More Robust Kernels
 ## ----------------------------------------------------------------------------------------------------
@@ -746,7 +765,7 @@ count: 113
 
 ## Regularization Techniques
 
-* [Improving neural networks by preventing co-adaptation of feature detectors](https://arxiv.org/abs/1207.0580)
+* [[Dropout](https://arxiv.org/abs/1207.0580)]
     * Title: Improving neural networks by preventing co-adaptation of feature detectors
     * Year: 03 Jul `2012`
     * Author: Geoffrey E. Hinton
@@ -853,13 +872,6 @@ count: 113
     * Year: 16 July `2011`
     * Authors: Dan C. Cireşan, Ueli Meier, Jonathan Masci, Luca M. Gambardella, Jürgen Schmidhuber
     * Abstract: We present a fast, fully parameterizable GPU implementation of Convolutional Neural Network variants. Our feature extractors are neither carefully designed nor pre-wired, but rather learned in a supervised way. Our deep hierarchical architectures achieve the best published results on benchmarks for object classification (NORB, CIFAR10) and handwritten digit recognition (MNIST), with error rates of 2.53%, 19.51%, 0.35%, respectively. Deep nets trained by simple back-propagation perform better than more shallow ones. Learning is surprisingly rapid. NORB is completely trained within five epochs. Test error rates on MNIST drop to 2.42%, 0.97% and 0.48% after 1, 3 and 17 epochs, respectively.
-    * Comments:
-        * > Within just a few years, the top-5 image classification accuracy on the 1000-class ImageNet dataset has increased from ~84% [1] to ~95% [2, 3] using deeper networks with rather small receptive fields [4, 5]. (Training Very Deep Networks, 2015)
-* [Multi-column Deep Neural Networks for Image Classification](https://arxiv.org/abs/1202.2745)
-    * Title: Multi-column Deep Neural Networks for Image Classification
-    * Year: 13 Feb `2012`
-    * Authors: Dan Cireşan, Ueli Meier, Juergen Schmidhuber
-    * Abstract: Traditional methods of computer vision and machine learning cannot match human performance on tasks such as the recognition of handwritten digits or traffic signs. Our biologically plausible deep artificial neural network architectures can. Small (often minimal) receptive fields of convolutional winner-take-all neurons yield large network depth, resulting in roughly as many sparsely connected neural layers as found in mammals between retina and visual cortex. Only winner neurons are trained. Several deep neural columns become experts on inputs preprocessed in different ways; their predictions are averaged. Graphics cards allow for fast training. On the very competitive MNIST handwriting benchmark, our method is the first to achieve near-human performance. On a traffic sign recognition benchmark it outperforms humans by a factor of two. We also improve the state-of-the-art on a plethora of common image classification benchmarks.
     * Comments:
         * > Within just a few years, the top-5 image classification accuracy on the 1000-class ImageNet dataset has increased from ~84% [1] to ~95% [2, 3] using deeper networks with rather small receptive fields [4, 5]. (Training Very Deep Networks, 2015)
 * [FitNets](https://arxiv.org/abs/1412.6550)
