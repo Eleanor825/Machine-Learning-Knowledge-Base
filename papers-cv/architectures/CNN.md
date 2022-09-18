@@ -449,6 +449,8 @@ count: 113
     * Authors: Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun
     * Abstract: We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13x actual speedup over AlexNet while maintaining comparable accuracy.
     * Comments:
+        * > (2018, MobileNetV2) Depthwise Separable Convolutions are a key building block for many efficient neural network architectures [26, 27, 19].
+        * > (2018, MobileNetV2) ShuffleNet uses Group Convolutions [19] and shuffling, it also uses conventional residual approach where inner blocks are narrower than output.
         * > The ShuffleNet module [17], shown in Fig. 3b, is based on the principle of reduce-transform-expand. It is an optimized version of the bottleneck block in ResNet [47]. (ESPNetv1, 2018)
 * [ShuffleNet V2](https://arxiv.org/abs/1807.11164)
     * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
@@ -456,7 +458,7 @@ count: 113
     * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
     * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
     * Comments:
-        * > In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29]. (ESPNetv2, 2018)
+        * > (2018, ESPNetv2) In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29].
 * [ShiftNet](https://arxiv.org/abs/1711.08141)
     * Title: Shift: A Zero FLOP, Zero Parameter Alternative to Spatial Convolutions
     * Year: 22 Nov `2017`
@@ -468,18 +470,8 @@ count: 113
     * Authors: Gao Huang, Shichen Liu, Laurens van der Maaten, Kilian Q. Weinberger
     * Abstract: Deep neural networks are increasingly used on mobile devices, where computational resources are limited. In this paper we develop CondenseNet, a novel network architecture with unprecedented efficiency. It combines dense connectivity with a novel module called learned group convolution. The dense connectivity facilitates feature re-use in the network, whereas learned group convolutions remove connections between layers for which this feature re-use is superfluous. At test time, our model can be implemented using standard group convolutions, allowing for efficient computation in practice. Our experiments show that CondenseNets are far more efficient than state-of-the-art compact convolutional networks such as MobileNets and ShuffleNets.
 
-### Mobile Networks (2 + 3)
+### Mobile Networks (count=3+2)
 
-* [Swish](https://arxiv.org/abs/1702.03118)
-    * Title: Sigmoid-Weighted Linear Units for Neural Network Function Approximation in Reinforcement Learning
-    * Year: 10 Feb `2017`
-    * Author: Stefan Elfwing, Eiji Uchibe, Kenji Doya
-    * Abstract: In recent years, neural networks have enjoyed a renaissance as function approximators in reinforcement learning. Two decades after Tesauro's TD-Gammon achieved near top-level human performance in backgammon, the deep reinforcement learning algorithm DQN achieved human-level performance in many Atari 2600 games. The purpose of this study is twofold. First, we propose two activation functions for neural network function approximation in reinforcement learning: the sigmoid-weighted linear unit (SiLU) and its derivative function (dSiLU). The activation of the SiLU is computed by the sigmoid function multiplied by its input. Second, we suggest that the more traditional approach of using on-policy learning with eligibility traces, instead of experience replay, and softmax action selection with simple annealing can be competitive with DQN, without the need for a separate target network. We validate our proposed approach by, first, achieving new state-of-the-art results in both stochastic SZ-Tetris and Tetris with a small 10x10 board, using TD($\lambda$)) learning and shallow dSiLU network agents, and, then, by outperforming DQN in the Atari 2600 domain by using a deep Sarsa($\lambda$) agent with SiLU and dSiLU hidden units.
-* [SENet](https://arxiv.org/abs/1709.01507)
-    * Title: Squeeze-and-Excitation Networks
-    * Year: 05 Sep `2017`
-    * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
-    * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at [this https URL](https://github.com/hujie-frank/SENet).
 * [[MobileNetV1](https://arxiv.org/abs/1704.04861)]
     [[pdf](https://arxiv.org/pdf/1704.04861.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1704.04861/)]
@@ -488,16 +480,31 @@ count: 113
     * Authors: Andrew G. Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam
     * Institutions: [Google Inc.]
     * Abstract: We present a class of efficient models called MobileNets for mobile and embedded vision applications. MobileNets are based on a streamlined architecture that uses depth-wise separable convolutions to build light weight deep neural networks. We introduce two simple global hyper-parameters that efficiently trade off between latency and accuracy. These hyper-parameters allow the model builder to choose the right sized model for their application based on the constraints of the problem. We present extensive experiments on resource and accuracy tradeoffs and show strong performance compared to other popular models on ImageNet classification. We then demonstrate the effectiveness of MobileNets across a wide range of applications and use cases including object detection, finegrain classification, face attributes and large scale geo-localization.
-* [MobileNetV2](https://arxiv.org/abs/1801.04381)
+* [[MobileNetV2](https://arxiv.org/abs/1801.04381)]
+    [[pdf](https://arxiv.org/pdf/1801.04381.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1801.04381/)]
     * Title: MobileNetV2: Inverted Residuals and Linear Bottlenecks
     * Year: 13 Jan `2018`
-    * Author: Mark Sandler
+    * Authors: Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, Liang-Chieh Chen
+    * Institutions: [Google Inc.]
     * Abstract: In this paper we describe a new mobile architecture, MobileNetV2, that improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. We also describe efficient ways of applying these mobile models to object detection in a novel framework we call SSDLite. Additionally, we demonstrate how to build mobile semantic segmentation models through a reduced form of DeepLabv3 which we call Mobile DeepLabv3. The MobileNetV2 architecture is based on an inverted residual structure where the input and output of the residual block are thin bottleneck layers opposite to traditional residual models which use expanded representations in the input an MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. Additionally, we find that it is important to remove non-linearities in the narrow layers in order to maintain representational power. We demonstrate that this improves performance and provide an intuition that led to this design. Finally, our approach allows decoupling of the input/output domains from the expressiveness of the transformation, which provides a convenient framework for further analysis. We measure our performance on Imagenet classification, COCO object detection, VOC image segmentation. We evaluate the trade-offs between accuracy, and number of operations measured by multiply-adds (MAdd), as well as the number of parameters
 * [MobileNetV3](https://arxiv.org/abs/1905.02244)
     * Title: Searching for MobileNetV3
     * Year: 06 May `2019`
     * Author: Andrew Howard
     * Abstract: We present the next generation of MobileNets based on a combination of complementary search techniques as well as a novel architecture design. MobileNetV3 is tuned to mobile phone CPUs through a combination of hardware-aware network architecture search (NAS) complemented by the NetAdapt algorithm and then subsequently improved through novel architecture advances. This paper starts the exploration of how automated search algorithms and network design can work together to harness complementary approaches improving the overall state of the art. Through this process we create two new MobileNet models for release: MobileNetV3-Large and MobileNetV3-Small which are targeted for high and low resource use cases. These models are then adapted and applied to the tasks of object detection and semantic segmentation. For the task of semantic segmentation (or any dense pixel prediction), we propose a new efficient segmentation decoder Lite Reduced Atrous Spatial Pyramid Pooling (LR-ASPP). We achieve new state of the art results for mobile classification, detection and segmentation. MobileNetV3-Large is 3.2\% more accurate on ImageNet classification while reducing latency by 15\% compared to MobileNetV2. MobileNetV3-Small is 4.6\% more accurate while reducing latency by 5\% compared to MobileNetV2. MobileNetV3-Large detection is 25\% faster at roughly the same accuracy as MobileNetV2 on COCO detection. MobileNetV3-Large LR-ASPP is 30\% faster than MobileNetV2 R-ASPP at similar accuracy for Cityscapes segmentation.
+* [Swish](https://arxiv.org/abs/1702.03118)
+    * Title: Sigmoid-Weighted Linear Units for Neural Network Function Approximation in Reinforcement Learning
+    * Year: 10 Feb `2017`
+    * Author: Stefan Elfwing, Eiji Uchibe, Kenji Doya
+    * Abstract: In recent years, neural networks have enjoyed a renaissance as function approximators in reinforcement learning. Two decades after Tesauro's TD-Gammon achieved near top-level human performance in backgammon, the deep reinforcement learning algorithm DQN achieved human-level performance in many Atari 2600 games. The purpose of this study is twofold. First, we propose two activation functions for neural network function approximation in reinforcement learning: the sigmoid-weighted linear unit (SiLU) and its derivative function (dSiLU). The activation of the SiLU is computed by the sigmoid function multiplied by its input. Second, we suggest that the more traditional approach of using on-policy learning with eligibility traces, instead of experience replay, and softmax action selection with simple annealing can be competitive with DQN, without the need for a separate target network. We validate our proposed approach by, first, achieving new state-of-the-art results in both stochastic SZ-Tetris and Tetris with a small 10x10 board, using TD($\lambda$)) learning and shallow dSiLU network agents, and, then, by outperforming DQN in the Atari 2600 domain by using a deep Sarsa($\lambda$) agent with SiLU and dSiLU hidden units.
+* [[SENet](https://arxiv.org/abs/1709.01507)]
+    [[pdf](https://arxiv.org/pdf/1709.01507.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1709.01507/)]
+    * Title: Squeeze-and-Excitation Networks
+    * Year: 05 Sep `2017`
+    * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
+    * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at [this https URL](https://github.com/hujie-frank/SENet).
 
 ### Efficient Networks (3)
 
@@ -830,6 +837,36 @@ count: 113
 
 * [Discriminative Unsupervised Feature Learning with Exemplar Convolutional Neural Networks](https://arxiv.org/abs/1406.6909)
     * Title: Discriminative Unsupervised Feature Learning with Exemplar Convolutional Neural Networks
+
+## Connectivity Learning (2018, MobileNetV2) (2)
+
+* [Connectivity Learning in Multi-Branch Networks](https://arxiv.org/abs/1709.09582)
+    [[pdf](https://arxiv.org/pdf/1709.09582.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1709.09582/)]
+    * Title: Connectivity Learning in Multi-Branch Networks
+    * Year: 27 Sep `2017`
+    * Authors: Karim Ahmed, Lorenzo Torresani
+    * Institutions: [Department of Computer Science, Dartmouth College]
+    * Abstract: While much of the work in the design of convolutional networks over the last five years has revolved around the empirical investigation of the importance of depth, filter sizes, and number of feature channels, recent studies have shown that branching, i.e., splitting the computation along parallel but distinct threads and then aggregating their outputs, represents a new promising dimension for significant improvements in performance. To combat the complexity of design choices in multi-branch architectures, prior work has adopted simple strategies, such as a fixed branching factor, the same input being fed to all parallel branches, and an additive combination of the outputs produced by all branches at aggregation points. In this work we remove these predefined choices and propose an algorithm to learn the connections between branches in the network. Instead of being chosen a priori by the human designer, the multi-branch connectivity is learned simultaneously with the weights of the network by optimizing a single loss function defined with respect to the end task. We demonstrate our approach on the problem of multi-class image classification using three different datasets where it yields consistently higher accuracy compared to the state-of-the-art "ResNeXt" multi-branch network given the same learning capacity.
+* [[Learning Time/Memory-Efficient Deep Architectures with Budgeted Super Networks](https://arxiv.org/abs/1706.00046)]
+    [[pdf](https://arxiv.org/pdf/1706.00046.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1706.00046/)]
+    * Title: Learning Time/Memory-Efficient Deep Architectures with Budgeted Super Networks
+    * Year: 31 May `2017`
+    * Authors: Tom Veniat, Ludovic Denoyer
+    * Institutions: [Sorbonne Universités]
+    * Abstract: We propose to focus on the problem of discovering neural network architectures efficient in terms of both prediction quality and cost. For instance, our approach is able to solve the following tasks: learn a neural network able to predict well in less than 100 milliseconds or learn an efficient model that fits in a 50 Mb memory. Our contribution is a novel family of models called Budgeted Super Networks (BSN). They are learned using gradient descent techniques applied on a budgeted learning objective function which integrates a maximum authorized cost, while making no assumption on the nature of this cost. We present a set of experiments on computer vision problems and analyze the ability of our technique to deal with three different costs: the computation cost, the memory consumption cost and a distributed computation cost. We particularly show that our model can discover neural network architectures that have a better accuracy than the ResNet and Convolutional Neural Fabrics architectures on CIFAR-10 and CIFAR-100, at a lower cost.
+
+## Sparsity (2018, MobileNetV2) (1)
+
+* [[The Power of Sparsity in Convolutional Neural Networks](https://arxiv.org/abs/1702.06257)]
+    [[pdf](https://arxiv.org/pdf/1702.06257.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1702.06257/)]
+    * Title: The Power of Sparsity in Convolutional Neural Networks
+    * Year: 21 Feb `2017`
+    * Authors: Soravit Changpinyo, Mark Sandler, Andrey Zhmoginov
+    * Institusion: [University of Southern California, Los Angeles]
+    * Abstract: Deep convolutional networks are well-known for their high computational and memory demands. Given limited resources, how does one design a network that balances its size, training time, and prediction accuracy? A surprisingly effective approach to trade accuracy for size and speed is to simply reduce the number of channels in each convolutional layer by a fixed fraction and retrain the network. In many cases this leads to significantly smaller networks with only minimal changes to accuracy. In this paper, we take a step further by empirically examining a strategy for deactivating connections between filters in convolutional layers in a way that allows us to harvest savings both in run-time and memory for many network architectures. More specifically, we generalize 2D convolution to use a channel-wise sparse connection structure and show that this leads to significantly better results than the baseline approach for large networks including VGG and Inception V3.
 
 ## Unclassified
 

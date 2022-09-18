@@ -11,7 +11,7 @@
 
 ## Summary of Main Contributions
 
-* New model: MobileNet
+* New model architecture MobileNet based on depthwise separable convolutions.
 * New ideas: width multiplier, resolution multiplier
 * Improvement in not only size but also speed due to efficient GEMM.
 
@@ -31,7 +31,7 @@
 
 ### 3.1. Depthwise Separable Convolution
 
-> The MobileNet model is based on depthwise separable convolutions which is a form of factorized convolutions which factorize a standard convolution into a depthwise convolution and a 1x1 convolution called a pointwise convolution.
+> The MobileNet model is based on depthwise separable convolutions which is a form of factorized convolutions which factorize a standard convolution into a `depthwise convolution` and a 1x1 convolution called a `pointwise convolution`.
 
 > A standard convolution both filters and combines inputs into a new set of outputs in one step. The depthwise separable convolution splits this into two layers, a separate layer for filtering and a separate layer for combining.
 
@@ -57,9 +57,9 @@ Then the number of parameters in the three layers are:
 
 | Layer | Parameters |
 |-------|------------|
-| Standard Convolution | $K_{H}K_{W}F_{H}F_{W}MN$ |
-| Depthwise Convolution | $K_{H}K_{W}F_{H}F_{W}M$ |
-| Pointwise Convolution | $F_{H}F_{W}MN$ |
+| Standard | $K_{H}K_{W}F_{H}F_{W}MN$ |
+| Depthwise | $K_{H}K_{W}F_{H}F_{W}M$ |
+| Pointwise | $F_{H}F_{W}MN$ |
 
 </center>
 
@@ -89,7 +89,47 @@ Training Methodologies
 
 ### 3.3. Width Multiplier: Thinner Models
 
+> The role of the width multiplier $\alpha$ is to thin a network uniformly at each layer. For a given layer and width multiplier $\alpha$, the number of input channels $M$ becomes $\alpha M$ and the number of output channels $N$ becomes $\alpha N$.
 
+Notations:
+* Let $\alpha \in (0, 1]$ denote the width multiplier.
+
+Then the number of parameters in different kinds of layers are:
+
+<center>
+
+| Layer | Parameters |
+|-------|------------|
+| Standard, $\alpha$ | $K_{H}K_{W}F_{H}F_{W}\alpha M\alpha N$ |
+| Depthwise, $\alpha$ | $K_{H}K_{W}F_{H}F_{W}\alpha M$ |
+| Pointwise, $\alpha$ | $F_{H}F_{W}\alpha M\alpha N$ |
+
+</center>
+
+> Width multiplier has the effect of reducing computational cost and the number of parameters quadratically by roughly $\alpha^{2}$. Width multiplier can be applied to any model structure to define a new smaller model with a reasonable accuracy, latency and size trade off. It is used to define a new reduced structure that needs to be trained from scratch.
+
+### 3.4. Resolution Multiplier: Reduced Representation
+
+Notations:
+* Let $\rho \in (0, 1]$ denote the resolution multiplier.
+
+Then the number of parameters in different kinds of layers are:
+
+<center>
+
+| Layer | Parameters |
+|-------|------------|
+| Standard, $\alpha$, $\rho$ | $K_{H}K_{W}\rho F_{H}\rho F_{W}\alpha M\alpha N$ |
+| Depthwise, $\alpha$, $\rho$ | $K_{H}K_{W}\rho F_{H}\rho F_{W}\alpha M$ |
+| Pointwise, $\alpha$, $\rho$ | $\rho F_{H}\rho F_{W}\alpha M\alpha N$ |
+
+</center>
+
+> Resolution multiplier has the effect of reducing computational cost by $\rho^{2}$.
+
+## 4. Experiments
+
+## 5. Conclusion
 
 ----------------------------------------------------------------------------------------------------
 
@@ -99,13 +139,16 @@ Training Methodologies
 
 ## Further Reading
 
-* [3] Xception Networks
+* [3] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
 * [8] ResNet
 * [12] SqueezeNet
 * [13] Inception-v2/Batch Normalization
 * [16] Flattened Networks
 * [19] AlexNet
+* [21] SSD
+* [23] Faster R-CNN
 * [27] VGGNet
 * [29] Inception-v4/Inception-ResNet
+* [30] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [31] Inception-v3
 * [34] Factorized Networks

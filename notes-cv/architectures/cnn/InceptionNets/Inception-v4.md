@@ -26,7 +26,9 @@
 
 ## 2. Related Work
 
-> Residual connection were introduced by He et al. in [5] in which they give convincing theoretical and practical evidence for the advantages of utilizing additive merging of signals both for image recognition, and especially for object detection. The authors argue that residual connections are inherently necessary for training very deep convolutional models. Our findings do not seem to support this view, at least for image recognition. However it might require more measurement points with deeper architectures to understand the true extent of beneficial aspects offered by residual connections. In the experimental section we demonstrate that it is not very difficult to train competitive very deep networks without utilizing residual connections. However the use of residual connections seems to improve the training speed greatly, which is alone a great argument for their use.
+> Residual connection were introduced by He et al. in [5] in which they give convincing theoretical and practical evidence for the advantages of utilizing additive merging of signals both for image recognition, and especially for object detection. The authors argue that residual connections are inherently necessary for training very deep convolutional models.
+
+> Our findings do not seem to support this view, at least for image recognition. However it might require more measurement points with deeper architectures to understand the true extent of beneficial aspects offered by residual connections. In the experimental section we demonstrate that it is not very difficult to train competitive very deep networks without utilizing residual connections. However the use of residual connections seems to improve the training speed greatly, which is alone a great argument for their use.
 
 ## 3. Architectural Choices
 
@@ -69,6 +71,6 @@
 * [9] Network In Network (NIN)
 * [10] Fully Convolutional Networks (FCN)
 * [12] VGGNet
-* [14] Inception-v1/GoogLeNet
+* [14] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [15] Inception-v3
 * [17] DeepPose
