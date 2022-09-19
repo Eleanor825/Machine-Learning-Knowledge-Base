@@ -1,3 +1,5 @@
+# Interview
+
 ## CNN Architectures
 
 * AlexNet
@@ -12,6 +14,17 @@
 * SqueezeNet
 * EfficientNets
 * ShuffleNets
+
+## Transformer Architectures
+
+* Transformer
+* ViT
+* DeiT
+* Swin Transformer
+* MobileViT
+* PVT
+* DETR
+* Deformable DETR
 
 ## Detection
 

@@ -498,6 +498,24 @@ superpixel merging
     * Year: 25 Jun `2015`
     * Authors: Donggeun Yoo, Sunggyun Park, Joon-Young Lee, Anthony S. Paek, In So Kweon
 
+## Transformer Architectures Applied to Detection
+
+* * [DETR](https://arxiv.org/abs/2005.12872)
+    * Title: End-to-End Object Detection with Transformers
+    * Year: 26 May `2020`
+    * Author: Nicolas Carion
+    * Abstract: We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at [this https URL](https://github.com/facebookresearch/detr).
+    * Comments:
+        * > Inspired by NLP successes, multiple works try combining CNN-like architectures with self-attention (Wang et al., 2018; Carion et al., 2020), some replacing the convolutions entirely (Ramachandran et al., 2019, Wang et al., 2020). The latter models, while theoretically efficient, have not yet been scaled effectively on modern hardware accelerators due to the use of specialized attention patterns. (ViT, 2020)
+        * > DETR utilizes the Transformer decoder to model object detection as an end-to-end dictionary lookup problem with learnable queries, successfully removing the need for handcrafted processes such as NMS. (PVT, )
+* [Deformable DETR](https://arxiv.org/abs/2010.04159)
+    * Title: Deformable DETR: Deformable Transformers for End-to-End Object Detection
+    * Year: 08 Oct `2020`
+    * Authors: Xizhou Zhu, Weijie Su, Lewei Lu, Bin Li, Xiaogang Wang, Jifeng Dai
+    * Abstract: DETR has been recently proposed to eliminate the need for many hand-designed components in object detection while demonstrating good performance. However, it suffers from slow convergence and limited feature spatial resolution, due to the limitation of Transformer attention modules in processing image feature maps. To mitigate these issues, we proposed Deformable DETR, whose attention modules only attend to a small set of key sampling points around a reference. Deformable DETR can achieve better performance than DETR (especially on small objects) with 10 times less training epochs. Extensive experiments on the COCO benchmark demonstrate the effectiveness of our approach. Code is released at [this https URL](https://github.com/fundamentalvision/Deformable-DETR).
+    * Comments:
+        * > Based on DETR, deeformable DETR further adopts a deformable attention layer to focus on a sparse set of contextual elements, obtaining faster convergence and better performance. (PVT, )
+
 ## Weekly-Supervised Learning
 
 * [Is object localization for free? - Weakly-supervised learning with convolutional neural networks](https://ieeexplore.ieee.org/document/7298668)

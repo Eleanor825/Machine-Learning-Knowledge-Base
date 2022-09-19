@@ -564,18 +564,36 @@ count: 73
 
 ## ----------------------------------------------------------------------------------------------------
 
-## Transformer Architecture Applied to Segmentation
+## Transformer Architectures Applied to Segmentation
 
 * [SETR](https://arxiv.org/abs/2012.15840)
     * Title: Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers
     * Year: 31 Dec `2020`
     * Authors: Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip H.S. Torr, Li Zhang
     * Abstract: Most recent semantic segmentation methods adopt a fully-convolutional network (FCN) with an encoder-decoder architecture. The encoder progressively reduces the spatial resolution and learns more abstract/semantic visual concepts with larger receptive fields. Since context modeling is critical for segmentation, the latest efforts have been focused on increasing the receptive field, through either dilated/atrous convolutions or inserting attention modules. However, the encoder-decoder based FCN architecture remains unchanged. In this paper, we aim to provide an alternative perspective by treating semantic segmentation as a sequence-to-sequence prediction task. Specifically, we deploy a pure transformer (ie, without convolution and resolution reduction) to encode an image as a sequence of patches. With the global context modeled in every layer of the transformer, this encoder can be combined with a simple decoder to provide a powerful segmentation model, termed SEgmentation TRansformer (SETR). Extensive experiments show that SETR achieves new state of the art on ADE20K (50.28% mIoU), Pascal Context (55.83% mIoU) and competitive results on Cityscapes. Particularly, we achieve the first position in the highly competitive ADE20K test server leaderboard on the day of submission.
+    * Comments:
+        * > (2022, Recent Advances) Zheng et al. (2021) introduced a sequence-to-sequence approach and replaced the conv-encoder with a pure transformer.
 * [Vision Transformers for Dense Prediction](https://arxiv.org/abs/2103.13413)
     * Title: Vision Transformers for Dense Prediction
     * Year: 24 Mar `2021`
     * Author: René Ranftl
     * Abstract: We introduce dense vision transformers, an architecture that leverages vision transformers in place of convolutional networks as a backbone for dense prediction tasks. We assemble tokens from various stages of the vision transformer into image-like representations at various resolutions and progressively combine them into full-resolution predictions using a convolutional decoder. The transformer backbone processes representations at a constant and relatively high resolution and has a global receptive field at every stage. These properties allow the dense vision transformer to provide finer-grained and more globally coherent predictions when compared to fully-convolutional networks. Our experiments show that this architecture yields substantial improvements on dense prediction tasks, especially when a large amount of training data is available. For monocular depth estimation, we observe an improvement of up to 28% in relative performance when compared to a state-of-the-art fully-convolutional network. When applied to semantic segmentation, dense vision transformers set a new state of the art on ADE20K with 49.02% mIoU. We further show that the architecture can be fine-tuned on smaller datasets such as NYUv2, KITTI, and Pascal Context where it also sets the new state of the art. Our models are available at [this https URL](https://github.com/intel-isl/DPT).
+* [Segmenter](https://arxiv.org/abs/2105.05633)
+    * Title: Segmenter: transformer for semantic segmentation
+    * Authors: Robin Strudel, Ricardo Garcia, Ivan Laptev, Cordelia Schmid
+* [SegFormer](https://arxiv.org/abs/2105.15203)
+    * Title: SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers
+    * Authors: Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose M. Alvarez, Ping Luo
+    * Comments:
+        * (2022, Recent Advances) Xie et al. (2021) presented SegFormer, a simple yet powerful method with lightweight MLP decoders. An encoder is based on a hierarchical structure that gives multi-scale features and does not require any positional encoding scheme. SegFormer gets rid of complex decoders combining local attention and global attention to gender representation.
+* [Fully Transformer Networks for Semantic Image Segmentation](https://arxiv.org/abs/2106.04108)
+    * Title: Fully Transformer Networks for Semantic Image Segmentation
+    * Authors: Sitong Wu, Tianyi Wu, Fangjian Lin, Shengwei Tian, Guodong Guo
+    * Comments:
+        * > (2022, Recent Advances) Wu et al. (2021b) proposed a fully transformer network which relies on pyramid group transformer encoder to progress learned hierarchical features, while reducing the computational cost of standard ViT.
+* [Cross-Modal Self-Attention Network for Referring Image Segmentation](https://arxiv.org/abs/1904.04745)
+    * Title: Cross-Modal Self-Attention Network for Referring Image Segmentation
+    * Authors: Linwei Ye, Mrigank Rochan, Zhi Liu, Yang Wang
 
 ## ----------------------------------------------------------------------------------------------------
 
