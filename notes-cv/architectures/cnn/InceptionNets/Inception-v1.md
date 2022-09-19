@@ -10,6 +10,12 @@
 
 ----------------------------------------------------------------------------------------------------
 
+## Summary of Main Contributions
+
+* Smaller model.
+
+----------------------------------------------------------------------------------------------------
+
 ## 1 Introduction
 
 > In general, one can view the Inception model as a logical culmination of  [12] while taking inspiration and guidance from the theoretical work by Arora et al [2].
@@ -27,13 +33,37 @@
 
 > The most straightforward way of improving the performance of deep neural networks is by increasing their size. This includes both increasing the depth – the number of levels – of the network and its width: the number of units at each level.
 
+> The fundamental way of solving both issues would be by ultimately moving from fully connected to sparsely connected architectures, even inside the convolutions. Besides mimicking biological systems, this would also have the advantage of firmer theoretical underpinnings due to the groundbreaking work of Arora et al. [2].
+
+> On the downside, today’s computing infrastructures are very inefficient when it comes to numerical calculation on non-uniform sparse data structures.
+
+> However, convolutions are implemented as collections of dense connections to the patches in the earlier layer.
+
 > This raises the question whether there is any hope for a next, intermediate step: an architecture that makes use of the extra sparsity, even at filter level, as suggested by the theory, but exploits our current hardware by utilizing computations on dense matrices.
 
 ## 4 Architectural Details
 
 > The main idea of the Inception architecture is based on finding out how an optimal local sparse structure in a convolutional vision network can be approximated and covered by readily available dense components.
 
+> This leads to the second idea of the proposed architecture: judiciously applying dimension reductions and projections wherever the computational requirements would increase too much otherwise.
+
+> That is, 1x1 convolutions are used to compute reductions before the expensive 3x3 and 5x5 convolutions. Besides being used as reductions, they also include the use of rectified linear activation which makes them dual-purpose.
+
 ## 5 GoogLeNet
+
+> All the convolutions, including those inside the Inception modules, use rectified linear activation.
+
+> All these reduction/projection layers use rectified linear activation as well.
+
+Auxiliary Networks
+
+> One interesting insight is that the strong performance of relatively shallower networks on this task suggests that the features produced by the layers in the middle of the network should be very discriminative.
+
+> By adding auxiliary classifiers connected to these intermediate layers, we would expect to encourage discrimination in the lower stages in the classifier, increase the gradient signal that gets propagated back, and provide additional regularization.
+
+> During training, their loss gets added to the total loss of the network with a discount weight (the losses of the auxiliary classifiers were weighted by 0.3).
+
+> At inference time, these auxiliary networks are discarded.
 
 ## 6 Training Methodology
 
