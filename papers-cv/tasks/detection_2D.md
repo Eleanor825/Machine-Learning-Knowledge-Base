@@ -261,16 +261,21 @@ superpixel merging
     * Year: 16 Apr `2016`
     * Author: Yu Xiang
     * Abstract: In CNN-based object detection methods, region proposal becomes a bottleneck when objects exhibit significant scale variation, occlusion or truncation. In addition, these methods mainly focus on 2D object detection and cannot estimate detailed properties of objects. In this paper, we propose subcategory-aware CNNs for object detection. We introduce a novel region proposal network that uses subcategory information to guide the proposal generating process, and a new detection network for joint detection and subcategory classification. By using subcategories related to object pose, we achieve state-of-the-art performance on both detection and pose estimation on commonly used benchmarks.
-* [Mask R-CNN](https://arxiv.org/abs/1703.06870)
+* [[Mask R-CNN](https://arxiv.org/abs/1703.06870)]
     * Title: Mask R-CNN
     * Year: 20 Mar `2017`
     * Author: Kaiming He
     * Abstract: We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: [this https URL](https://github.com/facebookresearch/Detectron).
-* [Cascade R-CNN](https://arxiv.org/abs/1712.00726)
+* [[Cascade R-CNN](https://arxiv.org/abs/1712.00726)]
     * Title: Cascade R-CNN: Delving into High Quality Object Detection
     * Year: 03 Dec `2017`
     * Author: Zhaowei Cai
     * Abstract: In object detection, an intersection over union (IoU) threshold is required to define positives and negatives. An object detector, trained with low IoU threshold, e.g. 0.5, usually produces noisy detections. However, detection performance tends to degrade with increasing the IoU thresholds. Two main factors are responsible for this: 1) overfitting during training, due to exponentially vanishing positive samples, and 2) inference-time mismatch between the IoUs for which the detector is optimal and those of the input hypotheses. A multi-stage object detection architecture, the Cascade R-CNN, is proposed to address these problems. It consists of a sequence of detectors trained with increasing IoU thresholds, to be sequentially more selective against close false positives. The detectors are trained stage by stage, leveraging the observation that the output of a detector is a good distribution for training the next higher quality detector. The resampling of progressively improved hypotheses guarantees that all detectors have a positive set of examples of equivalent size, reducing the overfitting problem. The same cascade procedure is applied at inference, enabling a closer match between the hypotheses and the detector quality of each stage. A simple implementation of the Cascade R-CNN is shown to surpass all single-model object detectors on the challenging COCO dataset. Experiments also show that the Cascade R-CNN is widely applicable across detector architectures, achieving consistent gains independently of the baseline detector strength. The code will be made available at [this https URL](https://github.com/zhaoweicai/cascade-rcnn).
+* [Sparse R-CNN](https://arxiv.org/abs/2011.12450)
+    * Title: Sparse R-CNN: End-to-End Object Detection with Learnable Proposals
+    * Year: 25 Nov `2020`
+    * Authors: Peize Sun, Rufeng Zhang, Yi Jiang, Tao Kong, Chenfeng Xu, Wei Zhan, Masayoshi Tomizuka, Lei Li, Zehuan Yuan, Changhu Wang, Ping Luo
+    * Abstract: We present Sparse R-CNN, a purely sparse method for object detection in images. Existing works on object detection heavily rely on dense object candidates, such as $k$ anchor boxes pre-defined on all grids of image feature map of size $H \times W$. In our method, however, a fixed sparse set of learned object proposals, total length of $N$, are provided to object recognition head to perform classification and location. By eliminating $HWk$ (up to hundreds of thousands) hand-designed object candidates to $N$ (e.g. 100) learnable proposals, Sparse R-CNN completely avoids all efforts related to object candidates design and many-to-one label assignment. More importantly, final predictions are directly output without non-maximum suppression post-procedure. Sparse R-CNN demonstrates accuracy, run-time and training convergence performance on par with the well-established detector baselines on the challenging COCO dataset, e.g., achieving 45.0 AP in standard $3 \times$ training schedule and running at 22 fps using ResNet-50 FPN model. We hope our work could inspire re-thinking the convention of dense prior in object detectors. The code is available at: [this https URL](https://github.com/PeizeSun/SparseR-CNN).
 * [Feature Selective Networks](https://arxiv.org/abs/1711.08879)
     * Title: Feature Selective Networks for Object Detection
     * Year: 24 Nov `2017`
@@ -303,6 +308,7 @@ superpixel merging
     * Year: 20 Dec `2016`
     * Author: Abhinav Shrivastava
     * Abstract: In recent years, we have seen tremendous progress in the field of object detection. Most of the recent improvements have been achieved by targeting deeper feedforward networks. However, many hard object categories such as bottle, remote, etc. require representation of fine details and not just coarse, semantic representations. But most of these fine details are lost in the early convolutional layers. What we need is a way to incorporate finer details from lower layers into the detection architecture. Skip connections have been proposed to combine high-level and low-level features, but we argue that selecting the right features from low-level requires top-down contextual information. Inspired by the human visual pathway, in this paper we propose top-down modulations as a way to incorporate fine details into the detection framework. Our approach supplements the standard bottom-up, feedforward ConvNet with a top-down modulation (TDM) network, connected using lateral connections. These connections are responsible for the modulation of lower layer filters, and the top-down network handles the selection and integration of contextual information and low-level features. The proposed TDM architecture provides a significant boost on the COCO testdev benchmark, achieving 28.6 AP for VGG16, 35.2 AP for ResNet101, and 37.3 for InceptionResNetv2 network, without any bells and whistles (e.g., multi-scale, iterative box refinement, etc.).
+* FCOS: Fully Convolutional One-Stage Object Detection
 
 ### SSD and its Variants
 
@@ -425,7 +431,7 @@ superpixel merging
 
 ### Focal Loss
 
-* [Focal Loss](https://arxiv.org/abs/1708.02002)
+* [[Focal Loss/RetinaNet](https://arxiv.org/abs/1708.02002)]
     * Title: Focal Loss for Dense Object Detection
     * Year: 07 Aug `2017`
     * Authors: Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár
@@ -514,7 +520,7 @@ superpixel merging
     * Authors: Xizhou Zhu, Weijie Su, Lewei Lu, Bin Li, Xiaogang Wang, Jifeng Dai
     * Abstract: DETR has been recently proposed to eliminate the need for many hand-designed components in object detection while demonstrating good performance. However, it suffers from slow convergence and limited feature spatial resolution, due to the limitation of Transformer attention modules in processing image feature maps. To mitigate these issues, we proposed Deformable DETR, whose attention modules only attend to a small set of key sampling points around a reference. Deformable DETR can achieve better performance than DETR (especially on small objects) with 10 times less training epochs. Extensive experiments on the COCO benchmark demonstrate the effectiveness of our approach. Code is released at [this https URL](https://github.com/fundamentalvision/Deformable-DETR).
     * Comments:
-        * > Based on DETR, deeformable DETR further adopts a deformable attention layer to focus on a sparse set of contextual elements, obtaining faster convergence and better performance. (PVT, )
+        * > (2021, PVT) Based on DETR, deformable DETR [64] further introduces a deformable attention layer to focus on a sparse set of contextual elements which obtains fast convergence and better performance.
 
 ## Weekly-Supervised Learning
 

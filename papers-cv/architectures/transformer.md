@@ -67,6 +67,9 @@ count: 80
     * Abstract: Recent trends of incorporating attention mechanisms in vision have led researchers to reconsider the supremacy of convolutional layers as a primary building block. Beyond helping CNNs to handle long-range dependencies, Ramachandran et al. (2019) showed that attention can completely replace convolution and achieve state-of-the-art performance on vision tasks. This raises the question: do learned attention layers operate similarly to convolutional layers? This work provides evidence that attention layers can perform convolution and, indeed, they often learn to do so in practice. Specifically, we prove that a multi-head self-attention layer with sufficient number of heads is at least as expressive as any convolutional layer. Our numerical experiments then show that self-attention layers attend to pixel-grid patterns similarly to CNN layers, corroborating our analysis. Our code is publicly available.
     * Comments:
         * > Transformers are revolutionizing natural language processing by enabling scalable training. Transformers use multi-headed self-attention, which performs global information processing and is strictly more general than convolution. (Early Convolutions Help Transformers See Better, 2021)
+    
+## Incorporate Attention Module into CNN (2021, PVT) (count=3)
+
 * [Non-local Neural Networks](https://ieeexplore.ieee.org/document/8578911)
     * Title: Non-local Neural Networks
     * Year: 16 December `2018`
@@ -84,7 +87,7 @@ count: 80
     * Comments:
         * > Inspired by NLP successes, multiple works try combining CNN-like architectures with self-attention (Wang et al., 2018; Carion et al., 2020), some replacing the convolutions entirely (Ramachandran et al., 2019, Wang et al., 2020). The latter models, while theoretically efficient, have not yet been scaled effectively on modern hardware accelerators due to the use of specialized attention patterns. (ViT, 2020)
         * > Wang et al. show that (single-headed) self-attention is a form of non-local means and that integrating it into a ResNet improves several tasks. Ramachandran et al. explore this direction further with stand-alone self-attention networks for vision. They report difficulties in designing an attention-based network stem and present a bespoke solution that avoids convolutions. (Early Convolutions Help Transformers See Better, 2021)
-        * > Ramachandran et al. proposed the stand-alone self-attention to replace convolutional layers with local self-attention units. (PVT, )
+        * > (2021, PVT) Ramachandran et al. [35] proposed stand-alone self-attention was propose to replace convolutional layers with local self-attention units.
 * [Exploring Self-attention for Image Recognition](https://arxiv.org/abs/2004.13621)
     * Title: Exploring Self-attention for Image Recognition
     * Year: 28 Apr `2020`
@@ -157,7 +160,7 @@ count: 80
 
 > A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers. The shifted windows bridge the windows of the preceding layer, providing connections among them that significantly enhance modeling power. This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set, which facilitates memory access in hardware. In contrast, earlier sliding window based self-attention approaches suffer from low latency on general hardware due to different key sets for different query pixels. Our experiments show that the proposed *shifted window* approach has much lower latency than the *sliding window* method, yet is similar in modeling power. The shifted window approach also proves beneficial for all-MLP architectures. (Swin Transformer V1, 2021)
 
-* [Vision Transformer](https://arxiv.org/abs/2010.11929)
+* [Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)
     * Title: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
     * Year: 22 Oct `2020`
     * Author: Alexey Dosovitskiy
@@ -165,7 +168,9 @@ count: 80
     * Comments:
         * > Vision Transformers (Dosovitskiy et al., 2021) improves training efficiency on large-scale datasets by using Transformer blocks. (EfficientNetV2, 2021)
         * > ViT first partitions an input image into non-overlapping $p \times p$ patches and linearly projects each patch to a $d$-dimensional feature vector using a learned weight matrix. A patch size of $p = 16$ and an image size of $224 \times 224$ are typical. The resulting patch embeddings (plus positional embeddings and a learned classification token embedding) are processed by a standard transformer encoder followed by a classification head. Using common network nomenclature, we refer to the portion of ViT before the transformer blocks as the network's stem. ViT's stem is a specific case of convolution (stride-$p$, $p \times p$ kernel), but we will refer to it as the patchify stem and reserve the terminology of convolutional stem for stems with a more conventional CNN design with multiple layers of overlapping convolutions (i.e., with stride smaller tha the kernel size). (Early Convolutions Help Transformers See Better, 2021)
-        * > Recently, Desovitskiy et al. introduced the Vision Transformer (ViT) for image classification. This is an interesting and meaningful attempt to replace the CNN backbone with a convolution-free model. ViT has a columnar structure with coarse image patches as input. Algthough ViT is applicable to image classification, it is challenging to directly adapt it to pixel-level dense predictions such as object detectionand segmentation, because (1) its output feature map is single-scale and low-resolution, and (2) its computational and memory costs are relatively high even for common input image sizes. (Pyramid Vision Transformer, 2021)
+        * > (2021, PVT) ViT has a columnar structure with coarse image patches (i.e., dividing image with a large patch size) as input. Although ViT is applicable to image classification, it is challenging to be directly adapted to pixel-level dense predictions, e.g., object detection and segmentation, because (1) its output feature map has only a single scale with low resolution and (2) its computations and memory cost are relatively high even for common input image size (e.g., shorter edge of 800 pixels in COCO detection benchmark).
+        * > (2021, PVT) Similar to the traditional Transformer [51], the length of ViT’s output sequence is the same as the input, which means that the output of ViT is single-scale (see Figure 1 (b)).
+        * > (2021, PVT) Due to the limited resource., the output of ViT is coarse-grained (e.g., the patch size is 16 or 32 pixels), and thus its output resolution is relatively low (e.g., 16-stride or 32-stride). As a result, it is difficult to directly apply ViT in dense prediction tasks that require high-resolution or multi-scale feature maps.
 
 ## Scaling up of vision models (3 + 5 + 3)
 
@@ -259,7 +264,7 @@ count: 80
     * Comments:
         * > (2022, Recent Advances) Touvron et al. (2020) proposed a competitive visual transformer that only trained on 1.2 million images Image-Net dataset regardless of external data.
         * > Touvron et al. show that with more regularization and stronger data augmentation ViT models achieve competitive accuracy on ImageNet-1k alone. (Early Convolutions Help Transformers See Better, 2021)
-        * > DeiT further extends ViT using a novel distillation approach. (PVT, )
+        * > (2021, PVT) DeiT [50] further extends ViT by using a novel distillation approach.
 * [Tokens-to-Token ViT](https://arxiv.org/abs/2101.11986)
     * Title: Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
     * Year: 28 Jan `2021`
@@ -275,10 +280,13 @@ count: 80
     * Year: 27 Feb `2021`
     * Author: Kai Han
     * Abstract: Transformer is a new kind of neural architecture which encodes the input data as powerful features via the attention mechanism. Basically, the visual transformers first divide the input images into several local patches and then calculate both representations and their relationship. Since natural images are of high complexity with abundant detail and color information, the granularity of the patch dividing is not fine enough for excavating features of objects in different scales and locations. In this paper, we point out that the attention inside these local patches are also essential for building visual transformers with high performance and we explore a new architecture, namely, Transformer iN Transformer (TNT). Specifically, we regard the local patches (e.g., 16x16) as "visual sentences" and present to further divide them into smaller patches (e.g., 4x4) as "visual words". The attention of each word will be calculated with other words in the given visual sentence with negligible computational costs. Features of both words and sentences will be aggregated to enhance the representation ability. Experiments on several benchmarks demonstrate the effectiveness of the proposed TNT architecture, e.g., we achieve an 81.5% top-1 accuracy on the ImageNet, which is about 1.7% higher than that of the state-of-the-art visual transformer with similar computational cost. The PyTorch code is available at [this https URL](https://github.com/huawei-noah/CV-Backbones), and the MindSpore code is available at [this https URL](https://gitee.com/mindspore/models/tree/master/research/cv/TNT).
-* [Pyramid Vision Transformer (PVT)](https://arxiv.org/abs/2102.12122)
+* [[Pyramid Vision Transformer (PVT)](https://arxiv.org/abs/2102.12122)]
+    [[pdf](https://arxiv.org/pdf/2102.12122.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2102.12122/)]
     * Title: Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions
     * Year: 24 Feb `2021`
-    * Author: Wenhai Wang
+    * Authors: Wenhai Wang, Enze Xie, Xiang Li, Deng-Ping Fan, Kaitao Song, Ding Liang, Tong Lu, Ping Luo, Ling Shao
+    * Institutions: [Nanjing University], [The University of Hong Kong], [Nanjing University of Science and Technology], [IIAI], [SenseTime Research]
     * Abstract: Although using convolutional neural networks (CNNs) as backbones achieves great successes in computer vision, this work investigates a simple backbone network useful for many dense prediction tasks without convolutions. Unlike the recently-proposed Transformer model (e.g., ViT) that is specially designed for image classification, we propose Pyramid Vision Transformer~(PVT), which overcomes the difficulties of porting Transformer to various dense prediction tasks. PVT has several merits compared to prior arts. (1) Different from ViT that typically has low-resolution outputs and high computational and memory cost, PVT can be not only trained on dense partitions of the image to achieve high output resolution, which is important for dense predictions but also using a progressive shrinking pyramid to reduce computations of large feature maps. (2) PVT inherits the advantages from both CNN and Transformer, making it a unified backbone in various vision tasks without convolutions by simply replacing CNN backbones. (3) We validate PVT by conducting extensive experiments, showing that it boosts the performance of many downstream tasks, e.g., object detection, semantic, and instance segmentation. For example, with a comparable number of parameters, RetinaNet+PVT achieves 40.4 AP on the COCO dataset, surpassing RetinaNet+ResNet50 (36.3 AP) by 4.1 absolute AP. We hope PVT could serve as an alternative and useful backbone for pixel-level predictions and facilitate future researches. Code is available at [this https URL](https://github.com/whai362/PVT).
 
 ## Vision Transformer Variants at Relatively Small Scale (11)
@@ -483,12 +491,12 @@ count: 80
 * Local Relation Networks for Image Recognition
 * Stand-Alone Self-Attention in Vision Models
 
-## dictionary lookup problem
+## Dictionary lookup problem (2021, PVT) (count=5)
 
-> Some works model the vision task as a dictionary lookup problem with learnable queries, and use the Transformer decoder as a task-specific head on top of the CNN backbone. (PVT, )
+> (2021, PVT) Some works [4, 64, 55, 43, 17] model the vision task as a dictionary lookup problem with learnable queries, and use the Transformer decoder as a task-specific head on the top of the CNN backbone, such as VGG [41] and ResNet [15].
 
-* End-toend object detection with transformers
-* Deformable DETR: deformable transformers for end-to-end object detection.
+* DETR
+* Deformable DETR
 * [Segmenting Transparent Object in the Wild with Transformer](https://arxiv.org/abs/2101.08461)
     * Title: Segmenting Transparent Object in the Wild with Transformer
     * Year: 21 Jan `2021`
@@ -504,6 +512,7 @@ count: 80
     * Year: 22 Feb `2021`
     * Authors: Ronghang Hu, Amanpreet Singh
     * Abstract: We propose UniT, a Unified Transformer model to simultaneously learn the most prominent tasks across different domains, ranging from object detection to natural language understanding and multimodal reasoning. Based on the transformer encoder-decoder architecture, our UniT model encodes each input modality with an encoder and makes predictions on each task with a shared decoder over the encoded input representations, followed by task-specific output heads. The entire model is jointly trained end-to-end with losses from each task. Compared to previous efforts on multi-task learning with transformers, we share the same model parameters across all tasks instead of separately fine-tuning task-specific models and handle a much higher variety of tasks across different domains. In our experiments, we learn 7 tasks jointly over 8 datasets, achieving strong performance on each task with significantly fewer parameters. Our code is available in MMF at [this https URL](https://mmf.sh/).
+
 * [Visual Saliency Transformer](https://arxiv.org/abs/2104.12099)
     * Title: Visual Saliency Transformer
     * Year: 25 Apr `2021`
@@ -540,11 +549,7 @@ count: 80
     * Author: Cheng Chi
     * Abstract: Existing object detection frameworks are usually built on a single format of object/part representation, i.e., anchor/proposal rectangle boxes in RetinaNet and Faster R-CNN, center points in FCOS and RepPoints, and corner points in CornerNet. While these different representations usually drive the frameworks to perform well in different aspects, e.g., better classification or finer localization, it is in general difficult to combine these representations in a single framework to make good use of each strength, due to the heterogeneous or non-grid feature extraction by different representations. This paper presents an attention-based decoder module similar as that in Transformer~\cite{vaswani2017attention} to bridge other representations into a typical object detector built on a single representation format, in an end-to-end fashion. The other representations act as a set of \emph{key} instances to strengthen the main \emph{query} representation features in the vanilla detectors. Novel techniques are proposed towards efficient computation of the decoder module, including a \emph{key sampling} approach and a \emph{shared location embedding} approach. The proposed module is named \emph{bridging visual representations} (BVR). It can perform in-place and we demonstrate its broad effectiveness in bridging other representations into prevalent object detection frameworks, including RetinaNet, Faster R-CNN, FCOS and ATSS, where about 1.5 ~ 3.0 AP improvements are achieved. In particular, we improve a state-of-the-art framework with a strong backbone by about 2.0 AP, reaching 52.7 AP on COCO test-dev. The resulting network is named RelationNet++. The code will be available at [this https URL](https://github.com/microsoft/RelationNet2).
 * Deformable DETR (see detection.md)
-* [Sparse R-CNN: End-to-End Object Detection with Learnable Proposals](https://arxiv.org/abs/2011.12450)
-    * Title: Sparse R-CNN: End-to-End Object Detection with Learnable Proposals
-    * Year: 25 Nov `2020`
-    * Author: Peize Sun
-    * Abstract: We present Sparse R-CNN, a purely sparse method for object detection in images. Existing works on object detection heavily rely on dense object candidates, such as $k$ anchor boxes pre-defined on all grids of image feature map of size $H \times W$. In our method, however, a fixed sparse set of learned object proposals, total length of $N$, are provided to object recognition head to perform classification and location. By eliminating $HWk$ (up to hundreds of thousands) hand-designed object candidates to $N$ (e.g. 100) learnable proposals, Sparse R-CNN completely avoids all efforts related to object candidates design and many-to-one label assignment. More importantly, final predictions are directly output without non-maximum suppression post-procedure. Sparse R-CNN demonstrates accuracy, run-time and training convergence performance on par with the well-established detector baselines on the challenging COCO dataset, e.g., achieving 45.0 AP in standard $3 \times$ training schedule and running at 22 fps using ResNet-50 FPN model. We hope our work could inspire re-thinking the convention of dense prior in object detectors. The code is available at: [this https URL](https://github.com/PeizeSun/SparseR-CNN).
+* Sparse R-CNN (see detection_2D.md)
 
 ## MobileViT
 
