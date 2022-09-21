@@ -163,13 +163,34 @@ where $pos$ is the position and $i$ is the dimension.
 
 ## 4 Why Self-Attention
 
+> Motivating our use of self-attention we consider three desiderata.
+> 1. One is the total computational complexity per layer.
+> 2. Another is the amount of computation that can be parallelized, as measured by the minimum number of sequential operations required.
+> 3. The third is the path length between long-range dependencies in the network.
+
+Recurrent Neural Networks
+
+> As noted in Table 1, a self-attention layer connects all positions with a constant number of sequentially executed operations, whereas a recurrent layer requires $O(n)$ sequential operations.
+
+> In terms of computational complexity, self-attention layers are faster than recurrent layers when the sequence length n is smaller than the representation dimensionality d, which is most often the case with sentence representations used by state-of-the-art models in machine translations, such as word-piece [38] and byte-pair [31] representations.
+
+Convolutional Neural Networks
+
+> A single convolutional layer with kernel width $k < n$ does not connect all pairs of input and output positions.
+
+> Doing so requires a stack of $O(n/k)$ convolutional layers in the case of `contiguous kernels`, or $O(\log_{k}(n))$ in the case of `dilated convolutions` [18], increasing the length of the longest paths between any two positions in the network.
+
+> Convolutional layers are generally more expensive than recurrent layers, by a factor of k.
+
+> `Separable convolutions` [6], however, decrease the complexity considerably, to $O(k \cdot n \cdot d + n \cdot d^{2} )$. Even with $k = n$, however, the complexity of a separable convolution is equal to the combination of a self-attention layer and a point-wise feed-forward layer, the approach we take in our model.
+
 ## 5 Training
 
 ### 5.4 Regularization
 
 **Residual Dropout**
 
-> We apply dropout (srivastava2014dropout, ) to the output of each sub-layer, before it is added to the sub-layer input and normalized.
+> We apply dropout [33] to the output of each sub-layer, before it is added to the sub-layer input and normalized.
 
 > In addition, we apply dropout to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks.
 
@@ -191,5 +212,6 @@ $$\operatorname{AttentionDropout}(Q, K, V) = \operatorname{dropout}\bigg(\operat
 
 ## Further Reading
 
+* [6] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
 * [33] Dropout
 * [36] Inception-v3

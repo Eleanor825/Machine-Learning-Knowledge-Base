@@ -390,15 +390,16 @@ count: 113
     * Abstract: Deep convolutional neural networks achieve remarkable visual recognition performance, at the cost of high computational complexity. In this paper, we have a new design of efficient convolutional layers based on three schemes. The 3D convolution operation in a convolutional layer can be considered as performing spatial convolution in each channel and linear projection across channels simultaneously. By unravelling them and arranging the spatial convolution sequentially, the proposed layer is composed of a single intra-channel convolution, of which the computation is negligible, and a linear channel projection. A topological subdivisioning is adopted to reduce the connection between the input channels and output channels. Additionally, we also introduce a spatial "bottleneck" structure that utilizes a convolution-projection-deconvolution pipeline to take advantage of the correlation between adjacent pixels in the input. Our experiments demonstrate that the proposed layers remarkably outperform the standard convolutional layers with regard to accuracy/complexity ratio. Our models achieve similar accuracy to VGG, ResNet-50, ResNet-101 while requiring 42, 4.5, 6.5 times less computation respectively.
     * Comments:
         * > (2017, MobileNetV1) Independent of this current paper, Factorized Networks[34] introduces a similar factorized convolution as well as the use of topological connections.
-* [Xception Networks](https://arxiv.org/abs/1610.02357)
+* [[Xception Networks](https://arxiv.org/abs/1610.02357)]
     * Title: Xception: Deep Learning with Depthwise Separable Convolutions
     * Year: 07 Oct `2016`
     * Authors: François Chollet
-    * Institution: Google, Inc.
+    * Institution: [Google, Inc.]
     * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
     * Comments:
         * > (2017, MobileNetV1) Subsequently, the Xception network [3] demonstrated how to scale up depthwise separable filters to out perform Inception V3 networks.
         * > (2017, ShuffleNet v1) Depthwise separable convolution proposed in Xception [3] generalizes the ideas of separable convolutions in Inception series [34, 32].
+        * (2017, Transformer) dilated convolutions.
 * [SqueezeNet](https://arxiv.org/abs/1602.07360)
     * Title: SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size
     * Year: 24 Feb `2016`
