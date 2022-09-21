@@ -1,6 +1,6 @@
 # [Papers][Vision] CNN Architectures
 
-count: 113
+count: 123
 
 ## Basics
 
@@ -32,7 +32,7 @@ count: 113
     * Authors: Matthew D Zeiler, Rob Fergus
     * Institutions: [Dept. of Computer Science, Courant Institute, New York University]
     * Abstract: Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky \etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.
-* [[VGG](https://arxiv.org/abs/1409.1556)]
+* [[VGGNet](https://arxiv.org/abs/1409.1556)]
     [[pdf](https://arxiv.org/pdf/1409.1556.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1409.1556/)]
     * Title: Very Deep Convolutional Networks for Large-Scale Image Recognition
@@ -136,6 +136,7 @@ count: 113
     * Comments:
         * > The concept of group convolution, which was first introduced in AlexNet [21] for distributing the model over two GPUs, has been well demonstrated its effectiveness in ResNeXt [40]. (ShuffleNet V1, 2017)
         * > A ResNext module [14], shown in Fig. 3d, is a parallel version of the bottleneck module in ResNet [47] and is based on the principle of split-reduce-transform-expand-merge. (ESPNetv1, 2018)
+        * > (2021, Swin Transformer V1) used depthwise convolutions.
 * [Collective Residual Unit (CRU)](https://arxiv.org/abs/1703.02180)
     * Title: Sharing Residual Units Through Collective Tensor Factorization in Deep Neural Networks
     * Year: 07 Mar `2017`
@@ -276,7 +277,7 @@ count: 113
     * Year: 06 Jul `2017`
     * Author: Yunpeng Chen
     * Abstract: In this work, we present a simple, highly efficient and modularized Dual Path Network (DPN) for image classification which presents a new topology of connection paths internally. By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. To enjoy the benefits from both path topologies, our proposed Dual Path Network shares common features while maintaining the flexibility to explore new features through dual path architectures. Extensive experiments on three benchmark datasets, ImagNet-1k, Places365 and PASCAL VOC, clearly demonstrate superior performance of the proposed DPN over state-of-the-arts. In particular, on the ImagNet-1k dataset, a shallow DPN surpasses the best ResNeXt-101(64x4d) with 26% smaller model size, 25% less computational cost and 8% lower memory consumption, and a deeper DPN (DPN-131) further pushes the state-of-the-art single model performance with about 2 times faster training speed. Experiments on the Places365 large-scale scene dataset, PASCAL VOC detection dataset, and PASCAL VOC segmentation dataset also demonstrate its consistently better performance than DenseNet, ResNet and the latest ResNeXt model over various applications.
-* [[MixNet](https://arxiv.org/abs/1802.01808)]
+* [[Mixed Link Networks](https://arxiv.org/abs/1802.01808)]
     * Title: Mixed Link Networks
     * Year: 06 Feb `2018`
     * Authors: Wenhai Wang, Xiang Li, Jian Yang, Tong Lu
@@ -372,7 +373,9 @@ count: 113
 
 ### Light-Weight Networks (2017, MobileNetV1) (count=7)
 
-* InceptionNets
+> MobileNets are built primarily from depthwise separable convolutions initially introduced in [26] and subsequently used in Inception models [13] to reduce the computation in the first few layers. Flattened networks [16] build a network out of fully factorized convolutions and showed the potential of extremely factorized networks. Independent of this current paper, Factorized Networks [34] introduces a similar factorized convolution as well as the use of topological connections. Subsequently, the Xception network [3] demonstrated how to scale up depthwise separable filters to out perform Inception V3 networks. Another small network is Squeezenet [12] which uses a bottleneck approach to design a very small network. Other reduced computation networks include structured transform networks [28] and deep fried convnets [37].
+
+* Inception Networks
 * [Flattened Networks](https://arxiv.org/abs/1412.5474)
     * Title: Flattened Convolutional Neural Networks for Feedforward Acceleration
     * Year: 17 Dec `2014`
@@ -389,7 +392,7 @@ count: 113
     * Institutions: [Department of EECS, University of Central Florida]
     * Abstract: Deep convolutional neural networks achieve remarkable visual recognition performance, at the cost of high computational complexity. In this paper, we have a new design of efficient convolutional layers based on three schemes. The 3D convolution operation in a convolutional layer can be considered as performing spatial convolution in each channel and linear projection across channels simultaneously. By unravelling them and arranging the spatial convolution sequentially, the proposed layer is composed of a single intra-channel convolution, of which the computation is negligible, and a linear channel projection. A topological subdivisioning is adopted to reduce the connection between the input channels and output channels. Additionally, we also introduce a spatial "bottleneck" structure that utilizes a convolution-projection-deconvolution pipeline to take advantage of the correlation between adjacent pixels in the input. Our experiments demonstrate that the proposed layers remarkably outperform the standard convolutional layers with regard to accuracy/complexity ratio. Our models achieve similar accuracy to VGG, ResNet-50, ResNet-101 while requiring 42, 4.5, 6.5 times less computation respectively.
     * Comments:
-        * > (2017, MobileNetV1) Independent of this current paper, Factorized Networks[34] introduces a similar factorized convolution as well as the use of topological connections.
+        * > (2017, MobileNetV1) Independent of this current paper, Factorized Networks [34] introduces a similar factorized convolution as well as the use of topological connections.
 * [[Xception Networks](https://arxiv.org/abs/1610.02357)]
     [[pdf](https://arxiv.org/pdf/1610.02357.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1610.02357/)]
@@ -409,7 +412,7 @@ count: 113
     * Abstract: Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributed training. (2) Smaller DNNs require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy on FPGAs and other hardware with limited memory. To provide all of these advantages, we propose a small DNN architecture called SqueezeNet. SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. Additionally, with model compression techniques we are able to compress SqueezeNet to less than 0.5MB (510x smaller than AlexNet). The SqueezeNet architecture is available for download here: [this https URL](https://github.com/DeepScale/SqueezeNet).
     * Comments:
         * (2017, MobileNetV1) Another small network is Squeezenet [12] which uses a bottleneck approach to design a very small network.
-* [[Structured Transforms for Small-Footprint Deep Learning](https://arxiv.org/abs/1510.01722)]
+* [[Structured Transform Networks](https://arxiv.org/abs/1510.01722)]
     [[pdf](https://arxiv.org/pdf/1510.01722.pdf)]
     [vanity]
     * Title: Structured Transforms for Small-Footprint Deep Learning
@@ -879,8 +882,21 @@ count: 113
     * Institusion: [University of Southern California, Los Angeles]
     * Abstract: Deep convolutional networks are well-known for their high computational and memory demands. Given limited resources, how does one design a network that balances its size, training time, and prediction accuracy? A surprisingly effective approach to trade accuracy for size and speed is to simply reduce the number of channels in each convolutional layer by a fixed fraction and retrain the network. In many cases this leads to significantly smaller networks with only minimal changes to accuracy. In this paper, we take a step further by empirically examining a strategy for deactivating connections between filters in convolutional layers in a way that allows us to harvest savings both in run-time and memory for many network architectures. More specifically, we generalize 2D convolution to use a channel-wise sparse connection structure and show that this leads to significantly better results than the baseline approach for large networks including VGG and Inception V3.
 
-## Unclassified
+## Unclassified (listed in to be read order)
 
+* [[Deeply-Supervised Nets (DSN)](https://arxiv.org/abs/1409.5185)]
+    * Title: Deeply-Supervised Nets
+    * Year: 18 Sep 2014
+    * Author: Chen-Yu Lee
+    * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
+    * Comments:
+        * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
+        * > (2015, Inception-v3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
+* [HRNet](https://arxiv.org/abs/1908.07919)
+    * Title: Deep High-Resolution Representation Learning for Visual Recognition
+    * Year: 20 Aug `2019`
+    * Author: Jingdong Wang
+    * Abstract: High-resolution representations are essential for position-sensitive vision problems, such as human pose estimation, semantic segmentation, and object detection. Existing state-of-the-art frameworks first encode the input image as a low-resolution representation through a subnetwork that is formed by connecting high-to-low resolution convolutions \emph{in series} (e.g., ResNet, VGGNet), and then recover the high-resolution representation from the encoded low-resolution representation. Instead, our proposed network, named as High-Resolution Network (HRNet), maintains high-resolution representations through the whole process. There are two key characteristics: (i) Connect the high-to-low resolution convolution streams \emph{in parallel}; (ii) Repeatedly exchange the information across resolutions. The benefit is that the resulting representation is semantically richer and spatially more precise. We show the superiority of the proposed HRNet in a wide range of applications, including human pose estimation, semantic segmentation, and object detection, suggesting that the HRNet is a stronger backbone for computer vision problems. All the codes are available at [this https URL](https://github.com/HRNet).
 * [DeCAF](https://arxiv.org/abs/1310.1531)
     * Title: DeCAF: A Deep Convolutional Activation Feature for Generic Visual Recognition
     * Year: 06 Oct `2013`
@@ -906,11 +922,6 @@ count: 113
     * Year: 30 May `2019`
     * Authors: Ilija Radosavovic, Justin Johnson, Saining Xie, Wan-Yen Lo, Piotr Dollár
     * Abstract: Over the past several years progress in designing better neural network architectures for visual recognition has been substantial. To help sustain this rate of progress, in this work we propose to reexamine the methodology for comparing network architectures. In particular, we introduce a new comparison paradigm of distribution estimates, in which network design spaces are compared by applying statistical techniques to populations of sampled models, while controlling for confounding factors like network complexity. Compared to current methodologies of comparing point and curve estimates of model families, distribution estimates paint a more complete picture of the entire design landscape. As a case study, we examine design spaces used in neural architecture search (NAS). We find significant statistical differences between recent NAS design space variants that have been largely overlooked. Furthermore, our analysis reveals that the design spaces for standard model families like ResNeXt can be comparable to the more complex ones used in recent NAS work. We hope these insights into distribution analysis will enable more robust progress toward discovering better networks for visual recognition.
-* [HRNet](https://arxiv.org/abs/1908.07919)
-    * Title: Deep High-Resolution Representation Learning for Visual Recognition
-    * Year: 20 Aug `2019`
-    * Author: Jingdong Wang
-    * Abstract: High-resolution representations are essential for position-sensitive vision problems, such as human pose estimation, semantic segmentation, and object detection. Existing state-of-the-art frameworks first encode the input image as a low-resolution representation through a subnetwork that is formed by connecting high-to-low resolution convolutions \emph{in series} (e.g., ResNet, VGGNet), and then recover the high-resolution representation from the encoded low-resolution representation. Instead, our proposed network, named as High-Resolution Network (HRNet), maintains high-resolution representations through the whole process. There are two key characteristics: (i) Connect the high-to-low resolution convolution streams \emph{in parallel}; (ii) Repeatedly exchange the information across resolutions. The benefit is that the resulting representation is semantically richer and spatially more precise. We show the superiority of the proposed HRNet in a wide range of applications, including human pose estimation, semantic segmentation, and object detection, suggesting that the HRNet is a stronger backbone for computer vision problems. All the codes are available at [this https URL](https://github.com/HRNet).
 * [ConvNeXt](https://arxiv.org/abs/2201.03545)
     * Title: A ConvNet for the 2020s
     * Year: 10 Jan `2022`
@@ -929,14 +940,6 @@ count: 113
     * Abstract: While depth tends to improve network performances, it also makes gradient-based training more difficult since deeper networks tend to be more non-linear. The recently proposed knowledge distillation approach is aimed at obtaining small and fast-to-execute models, and it has shown that a student network could imitate the soft output of a larger teacher network or ensemble of networks. In this paper, we extend this idea to allow the training of a student that is deeper and thinner than the teacher, using not only the outputs but also the intermediate representations learned by the teacher as hints to improve the training process and final performance of the student. Because the student intermediate hidden layer will generally be smaller than the teacher's intermediate hidden layer, additional parameters are introduced to map the student hidden layer to the prediction of the teacher hidden layer. This allows one to train deeper students that can generalize better or run faster, a trade-off that is controlled by the chosen student capacity. For example, on CIFAR-10, a deep student network with almost 10.4 times less parameters outperforms a larger, state-of-the-art teacher network.
     * Comments:
         * > A related recent technique is based on using soft targets from a shallow teacher network to aid in training deeper student networks in multiple stages [25], similar to the neural history compressor for sequences, where a slowly ticking teacher recurrent net is "distilled" into a quickly ticking student recurrent net by forcing the latter to predict the hidden units of the former [26]. (Training Very Deep Networks, 2015)
-* [[Deeply-Supervised Nets (DSN)](https://arxiv.org/abs/1409.5185)]
-    * Title: Deeply-Supervised Nets
-    * Year: 18 Sep 2014
-    * Author: Chen-Yu Lee
-    * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
-    * Comments:
-        * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
-        * > (2015, Inception-v3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
 * [RegNet](https://arxiv.org/abs/2003.13678)
     * Title: Designing Network Design Spaces
     * Year: 30 Mar `2020`
