@@ -391,6 +391,8 @@ count: 113
     * Comments:
         * > (2017, MobileNetV1) Independent of this current paper, Factorized Networks[34] introduces a similar factorized convolution as well as the use of topological connections.
 * [[Xception Networks](https://arxiv.org/abs/1610.02357)]
+    [[pdf](https://arxiv.org/pdf/1610.02357.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1610.02357/)]
     * Title: Xception: Deep Learning with Depthwise Separable Convolutions
     * Year: 07 Oct `2016`
     * Authors: François Chollet

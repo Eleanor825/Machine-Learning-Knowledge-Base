@@ -4,8 +4,15 @@
 * url: https://arxiv.org/abs/1610.02357
 * Title: Xception: Deep Learning with Depthwise Separable Convolutions
 * Year: 07 Oct `2016`
-* Author: François Chollet
+* Authors: François Chollet
+* Institution: [Google, Inc.]
 * Abstract: We present an interpretation of Inception modules in convolutional neural networks as being an intermediate step in-between regular convolution and the depthwise separable convolution operation (a depthwise convolution followed by a pointwise convolution). In this light, a depthwise separable convolution can be understood as an Inception module with a maximally large number of towers. This observation leads us to propose a novel deep convolutional neural network architecture inspired by Inception, where Inception modules have been replaced with depthwise separable convolutions. We show that this architecture, dubbed Xception, slightly outperforms Inception V3 on the ImageNet dataset (which Inception V3 was designed for), and significantly outperforms Inception V3 on a larger image classification dataset comprising 350 million images and 17,000 classes. Since the Xception architecture has the same number of parameters as Inception V3, the performance gains are not due to increased capacity but rather to a more efficient use of model parameters.
+
+----------------------------------------------------------------------------------------------------
+
+## Summary of Main Contributions
+
+* Proposed Xception Network that is based entirely on depthwise separable convolution layers.
 
 ----------------------------------------------------------------------------------------------------
 
@@ -43,9 +50,16 @@
 
 ## 3. The Xception architecture
 
-> In effect, we make the following hypothesis: that the mapping of cross-channels correlations and spatial correlations in the feature maps of convolutional neural networks can be entirely decoupled.
+<figure align="center">
+    <img src="Xception_figure_5.png">
+    <figcaption> Figure 5. The Xception architecture </figcaption>
+</figure>
 
-> In short, the Xception architecture is a linear stack of depthwise separable convolution layers with residual connections.
+> We propose a convolutional neural network architecture based entirely on depthwise separable convolution layers.
+
+> In effect, we make the following hypothesis: that the mapping of `cross-channels correlations` and `spatial correlations` in the feature maps of convolutional neural networks can be entirely `decoupled`. Because this hypothesis is a stronger version of the hypothesis underlying the Inception architecture, we name our proposed architecture Xception, which stands for "Extreme Inception".
+
+> In short, the Xception architecture is a linear stack of `depthwise separable convolution` layers with `residual connections`.
 
 ## 4. Experimental evaluation
 
@@ -63,9 +77,9 @@
 
 * [4] ResNet
 * [7] Inception-v2/Batch Normalization
-* [9] AlexNet
+* [9] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [11] Network In Network (NIN)
-* [18] VGG
-* [19] Inception-v4
-* [20] Inception-v1/GoogLeNet
+* [18] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [19] Inception-v4/Inception-ResNet
+* [20] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [21] Inception-v3
