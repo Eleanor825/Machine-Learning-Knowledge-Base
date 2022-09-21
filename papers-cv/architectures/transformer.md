@@ -6,15 +6,44 @@ count: 80
 > (a) The first one is self-supervision, which is used to pre-train transformer models on a large unlabeled corpus, subsequently fine-tuning them to the target task with a small labeled dataset [35, 96, 150].
 > (b) The second key idea is that of self-attention which allows capturing 'long-term' information and dependencies between sequence elements as compared to conventional recurrent models that find it challenging to encode such relationships.
 
-## Unknown
+## Basics
 
-* [Transformer](https://arxiv.org/abs/1706.03762)
+* [[Convolutional Sequence to Sequence Learning](https://arxiv.org/abs/1705.03122)]
+    [[pdf](https://arxiv.org/pdf/1705.03122.pdf)]
+    [vanity]
+    * Title: Convolutional Sequence to Sequence Learning
+    * Year: 08 May `2017`
+    * Authors: Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, Yann N. Dauphin
+    * Abstract: The prevalent approach to sequence to sequence learning maps an input sequence to a variable length output sequence via recurrent neural networks. We introduce an architecture based entirely on convolutional neural networks. Compared to recurrent models, computations over all elements can be fully parallelized during training and optimization is easier since the number of non-linearities is fixed and independent of the input length. Our use of gated linear units eases gradient propagation and we equip each decoder layer with a separate attention module. We outperform the accuracy of the deep LSTM setup of Wu et al. (2016) on both WMT'14 English-German and WMT'14 English-French translation at an order of magnitude faster speed, both on GPU and CPU.
+    * Comments:
+        * (2017, Transformer) introduced learned positional embeddings.
+* [[Transformer](https://arxiv.org/abs/1706.03762)]
+    [[pdf](https://arxiv.org/pdf/1706.03762.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1706.03762/)]
     * Title: Attention Is All You Need
     * Year: 12 Jun `2017`
-    * Author: Ashish Vaswani
+    * Authors: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin
+    * Institutions: [Google Brain], [Google Research], [University of Toronto]
     * Abstract: The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.
     * Comments:
         * > (2022, Recent Advances) This transformer is solely based on attention mechanism, instead of convolution layers.
+* [[Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)]
+    [[pdf](https://arxiv.org/pdf/2010.11929.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2010.11929/)]
+    * Title: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+    * Year: 22 Oct `2020`
+    * Authors: Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby
+    * Institutions: [Google Research, Brain Team]
+    * Abstract: While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.
+    * Comments:
+        * > Vision Transformers (Dosovitskiy et al., 2021) improves training efficiency on large-scale datasets by using Transformer blocks. (EfficientNetV2, 2021)
+        * > ViT first partitions an input image into non-overlapping $p \times p$ patches and linearly projects each patch to a $d$-dimensional feature vector using a learned weight matrix. A patch size of $p = 16$ and an image size of $224 \times 224$ are typical. The resulting patch embeddings (plus positional embeddings and a learned classification token embedding) are processed by a standard transformer encoder followed by a classification head. Using common network nomenclature, we refer to the portion of ViT before the transformer blocks as the network's stem. ViT's stem is a specific case of convolution (stride-$p$, $p \times p$ kernel), but we will refer to it as the patchify stem and reserve the terminology of convolutional stem for stems with a more conventional CNN design with multiple layers of overlapping convolutions (i.e., with stride smaller tha the kernel size). (Early Convolutions Help Transformers See Better, 2021)
+        * > (2021, PVT) ViT has a columnar structure with coarse image patches (i.e., dividing image with a large patch size) as input. Although ViT is applicable to image classification, it is challenging to be directly adapted to pixel-level dense predictions, e.g., object detection and segmentation, because (1) its output feature map has only a single scale with low resolution and (2) its computations and memory cost are relatively high even for common input image size (e.g., shorter edge of 800 pixels in COCO detection benchmark).
+        * > (2021, PVT) Similar to the traditional Transformer [51], the length of ViT’s output sequence is the same as the input, which means that the output of ViT is single-scale (see Figure 1 (b)).
+        * > (2021, PVT) Due to the limited resource., the output of ViT is coarse-grained (e.g., the patch size is 16 or 32 pixels), and thus its output resolution is relatively low (e.g., 16-stride or 32-stride). As a result, it is difficult to directly apply ViT in dense prediction tasks that require high-resolution or multi-scale feature maps.
+
+## Unknown
+
 * [Rethinking and Improving Relative Position Encoding for Vision Transformer](https://arxiv.org/abs/2107.14222)
     * Title: Rethinking and Improving Relative Position Encoding for Vision Transformer
     * Year: 29 Jul `2021`
@@ -155,25 +184,6 @@ count: 80
     * Year: 30 Sep `2020`
     * Authors: Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, David Belanger, Lucy Colwell, Adrian Weller
     * Abstract: We introduce Performers, Transformer architectures which can estimate regular (softmax) full-rank-attention Transformers with provable accuracy, but using only linear (as opposed to quadratic) space and time complexity, without relying on any priors such as sparsity or low-rankness. To approximate softmax attention-kernels, Performers use a novel Fast Attention Via positive Orthogonal Random features approach (FAVOR+), which may be of independent interest for scalable kernel methods. FAVOR+ can be also used to efficiently model kernelizable attention mechanisms beyond softmax. This representational power is crucial to accurately compare softmax with other kernels for the first time on large-scale tasks, beyond the reach of regular Transformers, and investigate optimal attention-kernels. Performers are linear architectures fully compatible with regular Transformers and with strong theoretical guarantees: unbiased or nearly-unbiased estimation of the attention matrix, uniform convergence and low estimation variance. We tested Performers on a rich set of tasks stretching from pixel-prediction through text models to protein sequence modeling. We demonstrate competitive results with other examined efficient sparse and dense attention methods, showcasing effectiveness of the novel attention-learning paradigm leveraged by Performers.
-
-## Vision Transformer
-
-> A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers. The shifted windows bridge the windows of the preceding layer, providing connections among them that significantly enhance modeling power. This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set, which facilitates memory access in hardware. In contrast, earlier sliding window based self-attention approaches suffer from low latency on general hardware due to different key sets for different query pixels. Our experiments show that the proposed *shifted window* approach has much lower latency than the *sliding window* method, yet is similar in modeling power. The shifted window approach also proves beneficial for all-MLP architectures. (Swin Transformer V1, 2021)
-
-* [[Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)]
-    [[pdf](https://arxiv.org/pdf/2010.11929.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2010.11929/)]
-    * Title: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
-    * Year: 22 Oct `2020`
-    * Authors: Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby
-    * Institutions: [Google Research, Brain Team]
-    * Abstract: While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.
-    * Comments:
-        * > Vision Transformers (Dosovitskiy et al., 2021) improves training efficiency on large-scale datasets by using Transformer blocks. (EfficientNetV2, 2021)
-        * > ViT first partitions an input image into non-overlapping $p \times p$ patches and linearly projects each patch to a $d$-dimensional feature vector using a learned weight matrix. A patch size of $p = 16$ and an image size of $224 \times 224$ are typical. The resulting patch embeddings (plus positional embeddings and a learned classification token embedding) are processed by a standard transformer encoder followed by a classification head. Using common network nomenclature, we refer to the portion of ViT before the transformer blocks as the network's stem. ViT's stem is a specific case of convolution (stride-$p$, $p \times p$ kernel), but we will refer to it as the patchify stem and reserve the terminology of convolutional stem for stems with a more conventional CNN design with multiple layers of overlapping convolutions (i.e., with stride smaller tha the kernel size). (Early Convolutions Help Transformers See Better, 2021)
-        * > (2021, PVT) ViT has a columnar structure with coarse image patches (i.e., dividing image with a large patch size) as input. Although ViT is applicable to image classification, it is challenging to be directly adapted to pixel-level dense predictions, e.g., object detection and segmentation, because (1) its output feature map has only a single scale with low resolution and (2) its computations and memory cost are relatively high even for common input image size (e.g., shorter edge of 800 pixels in COCO detection benchmark).
-        * > (2021, PVT) Similar to the traditional Transformer [51], the length of ViT’s output sequence is the same as the input, which means that the output of ViT is single-scale (see Figure 1 (b)).
-        * > (2021, PVT) Due to the limited resource., the output of ViT is coarse-grained (e.g., the patch size is 16 or 32 pixels), and thus its output resolution is relatively low (e.g., 16-stride or 32-stride). As a result, it is difficult to directly apply ViT in dense prediction tasks that require high-resolution or multi-scale feature maps.
 
 ## Scaling up of vision models (3 + 5 + 3)
 
@@ -571,6 +581,8 @@ count: 80
 
 
 ## Swin Transformer
+
+> A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers. The shifted windows bridge the windows of the preceding layer, providing connections among them that significantly enhance modeling power. This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set, which facilitates memory access in hardware. In contrast, earlier sliding window based self-attention approaches suffer from low latency on general hardware due to different key sets for different query pixels. Our experiments show that the proposed *shifted window* approach has much lower latency than the *sliding window* method, yet is similar in modeling power. The shifted window approach also proves beneficial for all-MLP architectures. (Swin Transformer V1, 2021)
 
 * [Swin Transformer](https://arxiv.org/abs/2103.14030)
     * Title: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
