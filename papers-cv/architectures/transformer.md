@@ -160,10 +160,13 @@ count: 80
 
 > A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers. The shifted windows bridge the windows of the preceding layer, providing connections among them that significantly enhance modeling power. This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set, which facilitates memory access in hardware. In contrast, earlier sliding window based self-attention approaches suffer from low latency on general hardware due to different key sets for different query pixels. Our experiments show that the proposed *shifted window* approach has much lower latency than the *sliding window* method, yet is similar in modeling power. The shifted window approach also proves beneficial for all-MLP architectures. (Swin Transformer V1, 2021)
 
-* [Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)
+* [[Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)]
+    [[pdf](https://arxiv.org/pdf/2010.11929.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2010.11929/)]
     * Title: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
     * Year: 22 Oct `2020`
-    * Author: Alexey Dosovitskiy
+    * Authors: Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby
+    * Institutions: [Google Research, Brain Team]
     * Abstract: While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.
     * Comments:
         * > Vision Transformers (Dosovitskiy et al., 2021) improves training efficiency on large-scale datasets by using Transformer blocks. (EfficientNetV2, 2021)
@@ -232,7 +235,7 @@ count: 80
     * Author: Haiping Wu
     * Abstract: We present in this paper a new architecture, named Convolutional vision Transformer (CvT), that improves Vision Transformer (ViT) in performance and efficiency by introducing convolutions into ViT to yield the best of both designs. This is accomplished through two primary modifications: a hierarchy of Transformers containing a new convolutional token embedding, and a convolutional Transformer block leveraging a convolutional projection. These changes introduce desirable properties of convolutional neural networks (CNNs) to the ViT architecture (\ie shift, scale, and distortion invariance) while maintaining the merits of Transformers (\ie dynamic attention, global context, and better generalization). We validate CvT by conducting extensive experiments, showing that this approach achieves state-of-the-art performance over other Vision Transformers and ResNets on ImageNet-1k, with fewer parameters and lower FLOPs. In addition, performance gains are maintained when pretrained on larger datasets (\eg ImageNet-22k) and fine-tuned to downstream tasks. Pre-trained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7\% on the ImageNet-1k val set. Finally, our results show that the positional encoding, a crucial component in existing Vision Transformers, can be safely removed in our model, simplifying the design for higher resolution vision tasks. Code will be released at [this https URL](https://github.com/leoxiaobin/CvT).
 
-## ResNet-Like Architectures
+## ResNet-Like Architectures (2020, ViT) (count=3)
 
 * [Exploring the Limits of Weakly Supervised Pretraining](https://arxiv.org/abs/1805.00932)
     * Title: Exploring the Limits of Weakly Supervised Pretraining
@@ -256,7 +259,7 @@ count: 80
 
 > While ViT requires large-scale training datasets (i.e., JFT-300M) to perform well, DeiT introduces several training strategies that allow ViT to also be effective using the smaller ImageNet-1K dataset. (Swin Transformer V1, 2021)
 
-* [DeiT](https://arxiv.org/abs/2012.12877)
+* [[DeiT](https://arxiv.org/abs/2012.12877)]
     * Title: Training data-efficient image transformers & distillation through attention
     * Year: 23 Dec `2020`
     * Author: Hugo Touvron
