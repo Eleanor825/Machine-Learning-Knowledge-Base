@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/567335485
 # [Notes][Vision][Transformer] Swin Transformer V1
 
 * url: https://arxiv.org/abs/2103.14030
@@ -12,9 +13,10 @@
 ## Summary of Main Contributions
 
 * Proposed Swin Transformer, a general-purpose Transformer backbone.
+* Linear complexity w.r.t. input image size.
 * Key design: shift of the window partition between consecutive self-attention layers.
 * Replaced the standard Multi-Head Self-Attention (MSA) with shifted-window based MSA.
-* Techniques used: GELU activation, layer normalization.
+* Techniques used: GELU activation, layer normalization, cyclic-shifting, relative position bias.
 
 ----------------------------------------------------------------------------------------------------
 
@@ -80,8 +82,8 @@ are referred to as "Stage 1".
 
 Notations:
 * Let $C \in \mathbb{Z}_{++}$ denote the dimension of the patch embedding.
-* Let $h, w \in \mathbb{Z}_{++}$ denote the number patches per row/col.
-* Let $M \in \mathbb{Z}_{++}$ denote the number of patches a window contains per row/col.
+* Let $h, w \in \mathbb{Z}_{++}$ denote the number patches per col/row.
+* Let $M \in \mathbb{Z}_{++}$ denote the number of patches in a winder per row/col.
 
 Then the computational complexity of MSA and W-MSA are:
 
@@ -96,15 +98,58 @@ Then the computational complexity of MSA and W-MSA are:
 
 **Shifted window partitioning in successive blocks**
 
-> The window-based self-attention module lacks connections across windows, which limits its modeling power. To introduce cross-window connections while maintaining the efficient computation of non-overlapping windows, we propose a shifted window partitioning approach which alternates between two partitioning configurations in consecutive Swin Transformer blocks.
+> The window-based self-attention module lacks connections across windows, which limits its modeling power. To introduce cross-window connections while maintaining the efficient computation of non-overlapping windows, we propose a `shifted window partitioning` approach which alternates between two partitioning configurations in consecutive Swin Transformer blocks.
 
-> $$\hat{\textbf{z}}^{l} = \text{W-MSA}(\text{LN}(\textbf{z}^{l-1})) + \textbf{z}^{l-1},$$
-> $$\textbf{z}^{l} = \text{MLP}(\text{LN}(\hat{\textbf{z}}^{l})) + \hat{\textbf{z}}^{l},$$
-> $$\hat{\textbf{z}}^{l+1} = \text{SW-MSA}(\text{LN}(\textbf{z}^{l})) + \textbf{z}^{l},$$
-> $$\textbf{z}^{l+1} = \text{MLP}(\text{LN}(\hat{\textbf{z}}^{l+1})) + \hat{\textbf{z}}^{l+1}, \tag{3}$$
+$$\begin{align*}
+    \hat{\textbf{z}}^{l} & = \operatorname{W-MSA}(\operatorname{LN}(\textbf{z}^{l-1})) + \textbf{z}^{l-1}, \\
+    \textbf{z}^{l} & = \operatorname{MLP}(\operatorname{LN}(\hat{\textbf{z}}^{l})) + \hat{\textbf{z}}^{l}, \\
+    \hat{\textbf{z}}^{l+1} & = \operatorname{SW-MSA}(\operatorname{LN}(\textbf{z}^{l})) + \textbf{z}^{l}, \\
+    \textbf{z}^{l+1} & = \operatorname{MLP}(\operatorname{LN}(\hat{\textbf{z}}^{l+1})) + \hat{\textbf{z}}^{l+1}.
+    \end{align*}$$
 where $\hat{\textbf{z}}^{l}$ and $\textbf{z}^{l}$ denote the output features of the (S)W-MSA module and the MLP module for block $l$, respectively; W-MSA and SW-MSA denote window based multi-head self-attention using regular and shifted window partitioning configurations, respectively.
 
 > The shifted window partitioning approach introduces connections between neighboring non-overlapping windows in the previous layer and is found to be effective in image classification, object detection, and semantic segmentation.
+
+**Efficient batch computation for shifted configuration**
+
+> Here, we propose a more efficient batch computation approach by cyclic-shifting toward the top-left direction, as illustrated in Figure 4.
+
+> After this shift, a batched window may be composed of several sub-windows that are not adjacent in the feature map, so a masking mechanism is employed to limit self-attention computation to within each sub-window.
+
+> With the cyclic-shift, the number of batched windows remains the same as that of regular window partitioning, and thus is also efficient.
+
+**Relative position bias**
+
+Notations:
+* Let $M \in \mathbb{Z}_{++}$ denote the number of patches in a winder per row/col.
+* Let $Q, K, V \in \mathbb{R}^{M^{2} \times d}$ denote the query, key, and value matrices.
+* Let $B \in \mathbb{R}^{M^{2} \times M^{2}}$ denote the relative position bias.
+
+$$\operatorname{Attention}(Q, K, V) = \operatorname{SoftMax}(\frac{QK^{\top}}{\sqrt{d}} + B)V$$
+
+> We observe significant improvements over counterparts without this bias term or that use absolute position embedding, as shown in Table 4.
+
+### 3.3. Architecture Variants
+
+## 4. Experiments
+
+### 4.4. Ablation Study
+
+**Shifted windows**
+
+**Relative position bias**
+
+**Different self-attention methods**
+
+> The self-attention modules built on the proposed shifted window approach are 40.8x/2.5x, 20.2x/2.5x, 9.3x/2.1x, and 7.6x/1.8x more efficient than those of sliding windows in naive/kernel implementations on four network stages, respectively.
+
+> Overall, the Swin Transformer architectures built on shifted windows are 4.1/1.5, 4.0/1.5, 3.6/1.5 times faster than variants built on sliding windows for Swin-T, Swin-S, and Swin-B, respectively.
+
+## 5. Conclusion
+
+> This paper presents Swin Transformer, a new vision Transformer which produces a hierarchical feature representation and has linear computational complexity with respect to input image size.
+
+> As a key element of Swin Transformer, the shifted window based self-attention is shown to be effective and efficient on vision problems, and we look forward to investigating its use in natural language processing as well.
 
 ----------------------------------------------------------------------------------------------------
 
