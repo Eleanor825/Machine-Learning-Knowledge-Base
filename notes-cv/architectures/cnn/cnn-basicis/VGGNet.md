@@ -10,9 +10,15 @@
 
 ----------------------------------------------------------------------------------------------------
 
+## Summary of Main Contributions
+
+* Proposed to use small kernel size and 1x1 convolutions.
+
+----------------------------------------------------------------------------------------------------
+
 ## 1 INTRODUCTION
 
-> In this paper, we address another important aspect of ConvNet architecture design – its depth.
+> In this paper, we address another important aspect of ConvNet architecture design - its depth.
 
 > To this end, we fix other parameters of the architecture, and steadily increase the depth of the network by adding more convolutional layers, which is feasible due to the use of very small (3x3) convolution filters in all layers.
 
@@ -20,13 +26,31 @@
 
 ### 2.1 ARCHITECTURE
 
+Preprocessing
+
 > The only pre-processing we do is subtracting the mean RGB value, computed on the training set, from each pixel.
+
+Convolutional Layers
 
 > The image is passed through a stack of convolutional (conv.) layers, where we use filters with a very small receptive field: 3x3 (which is the smallest size to capture the notion of left/right, up/down, center).
 
+> In one of the configurations we also utilise 1×1 convolution filters, which can be seen as a linear transformation of the input channels (followed by non-linearity).
+
+> The convolution stride is fixed to 1 pixel; the spatial padding of conv. layer input is such that the spatial resolution is preserved after convolution, i.e. the padding is 1 pixel for 3×3 conv. layers.
+
+Pooling Layers
+
+> Spatial pooling is carried out by five max-pooling layers, which follow some of the conv. layers (not all the conv. layers are followed by max-pooling).
+
 > Max-pooling is performed over a 2x2 pixel window, with stride 2.
 
+Activation Functions
+
 > All hidden layers are equipped with the rectification (ReLU (Krizhevsky et al., 2012)) non-linearity.
+
+Local Response Normalization
+
+> We note that none of our networks (except for one) contain Local Response Normalisation (LRN) normalisation (Krizhevsky et al., 2012): as will be shown in Sect. 4, such normalisation does not improve the performance on the ILSVRC dataset, but leads to increased memory consumption and computation time.
 
 ### 2.2 CONFIGURATIONS
 
@@ -48,7 +72,7 @@ Smaller Kernel Size
 
 1x1 Convolutions
 
-> The incorporation of 1x1 conv. layers (configuration C, Table 1) is a way to increase the non-linearity of the decision function without affecting the receptive fields of the conv. layers. Even though in our case the 1x1 convolution is essentially a linear projection onto the space of the same dimensionality (the number of input and output channels is the same), an additional non-linearity is introduced by the rectification function.
+> The incorporation of 1x1 conv. layers (configuration C, Table 1) is a way to `increase the non-linearity` of the decision function without affecting the receptive fields of the conv. layers. Even though in our case the 1x1 convolution is essentially a linear projection onto the space of the same dimensionality (the number of input and output channels is the same), an additional non-linearity is introduced by the rectification function.
 
 ## 3 CLASSIFICATION FRAMEWORK
 
