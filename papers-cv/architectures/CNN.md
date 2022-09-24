@@ -129,14 +129,17 @@ count: 123
     * Authors: Sergey Zagoruyko, Nikos Komodakis
     * Abstract: Deep residual networks were shown to be able to scale up to thousands of layers and still have improving performance. However, each fraction of a percent of improved accuracy costs nearly doubling the number of layers, and so training very deep residual networks has a problem of diminishing feature reuse, which makes these networks very slow to train. To tackle these problems, in this paper we conduct a detailed experimental study on the architecture of ResNet blocks, based on which we propose a novel architecture where we decrease depth and increase width of residual networks. We call the resulting network structures wide residual networks (WRNs) and show that these are far superior over their commonly used thin and very deep counterparts. For example, we demonstrate that even a simple 16-layer-deep wide residual network outperforms in accuracy and efficiency all previous deep residual networks, including thousand-layer-deep networks, achieving new state-of-the-art results on CIFAR, SVHN, COCO, and significant improvements on ImageNet. Our code and models are available at [this https URL](https://github.com/szagoruyko/wide-residual-networks).
 * [[ResNeXt](https://arxiv.org/abs/1611.05431)]
+    [[pdf](https://arxiv.org/pdf/1611.05431.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1611.05431/)]
     * Title: Aggregated Residual Transformations for Deep Neural Networks
     * Year: 16 Nov `2016`
-    * Author: Saining Xie
+    * Authors: Saining Xie, Ross Girshick, Piotr Dollár, Zhuowen Tu, Kaiming He
+    * Institutions: [UC San Diego], [Facebook AI Research]
     * Abstract: We present a simple, highly modularized network architecture for image classification. Our network is constructed by repeating a building block that aggregates a set of transformations with the same topology. Our simple design results in a homogeneous, multi-branch architecture that has only a few hyper-parameters to set. This strategy exposes a new dimension, which we call "cardinality" (the size of the set of transformations), as an essential factor in addition to the dimensions of depth and width. On the ImageNet-1K dataset, we empirically show that even under the restricted condition of maintaining complexity, increasing cardinality is able to improve classification accuracy. Moreover, increasing cardinality is more effective than going deeper or wider when we increase the capacity. Our models, named ResNeXt, are the foundations of our entry to the ILSVRC 2016 classification task in which we secured 2nd place. We further investigate ResNeXt on an ImageNet-5K set and the COCO detection set, also showing better results than its ResNet counterpart. The code and models are publicly available online.
     * Comments:
-        * > The concept of group convolution, which was first introduced in AlexNet [21] for distributing the model over two GPUs, has been well demonstrated its effectiveness in ResNeXt [40]. (ShuffleNet V1, 2017)
-        * > A ResNext module [14], shown in Fig. 3d, is a parallel version of the bottleneck module in ResNet [47] and is based on the principle of split-reduce-transform-expand-merge. (ESPNetv1, 2018)
-        * > (2021, Swin Transformer V1) used depthwise convolutions.
+        * > (2017, ShuffleNetV1) The concept of group convolution, which was first introduced in AlexNet [21] for distributing the model over two GPUs, has been well demonstrated its effectiveness in ResNeXt [40].
+        * > (2018, ESPNetV1) A ResNext module [14], shown in Fig. 3d, is a parallel version of the bottleneck module in ResNet [47] and is based on the principle of split-reduce-transform-expand-merge.
+        * (2021, Swin Transformer V1) used depthwise convolutions.
 * [Collective Residual Unit (CRU)](https://arxiv.org/abs/1703.02180)
     * Title: Sharing Residual Units Through Collective Tensor Factorization in Deep Neural Networks
     * Year: 07 Mar `2017`
@@ -168,8 +171,8 @@ count: 123
     * Authors: Andrew Brock, Soham De, Samuel L. Smith, Karen Simonyan
     * Abstract: Batch normalization is a key component of most image classification models, but it has many undesirable properties stemming from its dependence on the batch size and interactions between examples. Although recent work has succeeded in training deep ResNets without normalization layers, these models do not match the test accuracies of the best batch-normalized networks, and are often unstable for large learning rates or strong data augmentations. In this work, we develop an adaptive gradient clipping technique which overcomes these instabilities, and design a significantly improved class of Normalizer-Free ResNets. Our smaller models match the test accuracy of an EfficientNet-B7 on ImageNet while being up to 8.7x faster to train, and our largest models attain a new state-of-the-art top-1 accuracy of 86.5%. In addition, Normalizer-Free models attain significantly better performance than their batch-normalized counterparts when finetuning on ImageNet after large-scale pre-training on a dataset of 300 million labeled images, with our best models obtaining an accuracy of 89.2%. Our code is available at [this https URL](https://github.com/deepmind/deepmind-research/tree/master/nfnets).
     * Comments:
-        * > NFNets (Brock et al., 2021) aim to improve training efficiency by removing the expensive batch normalization. (EfficientNetV2, 2021)
-        * > Lambda Networks (Bello, 2021), NFNets (Brock et al., 2021), BoTNets (Srinivas et al., 2021), ResNet-RS (Bello et al., 2021) focus on TPU training speed. (EfficientNetV2, 2021)
+        * > (2021, EfficientNetV2) NFNets (Brock et al., 2021) aim to improve training efficiency by removing the expensive batch normalization.
+        * > (2021, EfficientNetV2) Lambda Networks (Bello, 2021), NFNets (Brock et al., 2021), BoTNets (Srinivas et al., 2021), ResNet-RS (Bello et al., 2021) focus on TPU training speed.
 * [TResNet](https://arxiv.org/abs/2003.13630)
     * Title: TResNet: High Performance GPU-Dedicated Architecture
     * Year: 30 Mar `2020`
@@ -201,7 +204,7 @@ count: 123
     * Authors: Yani Ioannou, Duncan Robertson, Roberto Cipolla, Antonio Criminisi
     * Abstract: We propose a new method for creating computationally efficient and compact convolutional neural networks (CNNs) using a novel sparse connection structure that resembles a tree root. This allows a significant reduction in computational cost and number of parameters compared to state-of-the-art deep CNNs, without compromising accuracy, by exploiting the sparsity of inter-layer filter dependencies. We validate our approach by using it to train more efficient variants of state-of-the-art CNN architectures, evaluated on the CIFAR10 and ILSVRC datasets. Our results show similar or higher accuracy than the baseline architectures with much less computation, as measured by CPU and GPU timings. For example, for ResNet 50, our model has 40% fewer parameters, 45% fewer floating point operations, and is 31% (12%) faster on a CPU (GPU). For the deeper ResNet 200 our model has 25% fewer floating point operations and 44% fewer parameters, while maintaining state-of-the-art accuracy. For GoogLeNet, our model has 7% fewer parameters and is 21% (16%) faster on a CPU (GPU).
 * Aggregated Residual Transformations for Deep Neural Networks (ResNeXt)
-* Inception-v1, Inception-v2, Inception-v3, Inception-v4.
+* Inception Networks.
 
 ### Inception Networks (Multi-Branch Networks)
 
@@ -226,7 +229,7 @@ count: 123
     * Institutions: [Google Inc.], [University of North Carolina, Chapel Hill], [University of Michigan]
     * Abstract: We propose a deep convolutional neural network architecture codenamed "Inception", which was responsible for setting the new state of the art for classification and detection in the ImageNet Large-Scale Visual Recognition Challenge 2014 (ILSVRC 2014). The main hallmark of this architecture is the improved utilization of the computing resources inside the network. This was achieved by a carefully crafted design that allows for increasing the depth and width of the network while keeping the computational budget constant. To optimize quality, the architectural decisions were based on the Hebbian principle and the intuition of multi-scale processing. One particular incarnation used in our submission for ILSVRC 2014 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.
     * Comments:
-        * > (2014, VGG) The spatial resolution of the feature maps is reduced more aggressively in the first layers to decrease the amount of computation.
+        * > (2014, VGGNet) The spatial resolution of the feature maps is reduced more aggressively in the first layers to decrease the amount of computation.
         * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
         * > (2015, ResNet) In [44], an "inception" layer is composed of a shortcut branch and a few deeper branches.
         * > (2015, Inception-v3) Much of the original gains of the GoogLeNet network [20] arise from a very generous use of dimension reduction. This can be viewed as a special case of factorizing convolutions in a computationally efficient manner.

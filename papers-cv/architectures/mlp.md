@@ -2,12 +2,13 @@
 
 count: 2
 
-* [NIN](https://arxiv.org/abs/1312.4400)
+* [Network In Network (NIN)](https://arxiv.org/abs/1312.4400)
     * Title: Network In Network
     * Year: 16 Dec `2013`
     * Authors: Min Lin, Qiang Chen, Shuicheng Yan
     * Abstract: We propose a novel deep network structure called "Network In Network" (NIN) to enhance model discriminability for local patches within the receptive field. The conventional convolutional layer uses linear filters followed by a nonlinear activation function to scan the input. Instead, we build micro neural networks with more complex structures to abstract the data within the receptive field. We instantiate the micro neural network with a multilayer perceptron, which is a potent function approximator. The feature maps are obtained by sliding the micro networks over the input in a similar manner as CNN; they are then fed into the next layer. Deep NIN can be implemented by stacking multiple of the above described structure. With enhanced local modeling via the micro network, we are able to utilize global average pooling over feature maps in the classification layer, which is easier to interpret and less prone to overfitting than traditional fully connected layers. We demonstrated the state-of-the-art classification performances with NIN on CIFAR-10 and CIFAR-100, and reasonable performances on SVHN and MNIST datasets.
     * Comments:
+        * > (2014, VGGNet) It should be noted that 1x1 conv. layers have recently been utilised in the “Network in Network” architecture of Lin et al. (2014).
         * > (2014, Inception-v1/GoogLeNet) Network-in-Network is an approach proposed by Lin et al. [12] in order to increase the representational power of neural networks. When applied to convolutional layers, the method could be viewed as additional 1x1 convolutional layers followed typically by the rectified linear activation [9].
         * > (2016, Deep Roots) Lin et al. [19] proposed a method to reduce the dimensionality of convolutional feature maps. By using relatively cheap '1×1' convolutional layers (i.e. layers comprising $d$ filters of size $1 \times 1 \times c$, where $d < c$), they learn to map feature maps into lower dimensional spaces, i.e. to new feature maps with fewer channels. Subsequent spatial filters operating on this lower dimensional input space require significantly less computation.
 * [MLP-Mixer](https://arxiv.org/abs/2105.01601)
