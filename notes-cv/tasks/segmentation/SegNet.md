@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/568804052
 # [Notes][Vision][Segmentation] SegNet
 
 * url: https://arxiv.org/abs/1511.00561
@@ -6,6 +7,13 @@
 * Authors: Vijay Badrinarayanan, Alex Kendall, Roberto Cipolla
 * Institutions: [Machine Intelligence Lab, Department of Engineering, University of Cambridge, UK]
 * Abstract: We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. This core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer. The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network. The role of the decoder network is to map the low resolution encoder feature maps to full input resolution feature maps for pixel-wise classification. The novelty of SegNet lies is in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference. It is also significantly smaller in the number of trainable parameters than other competing architectures. We also performed a controlled benchmark of SegNet and other architectures on both road scenes and SUN RGB-D indoor scene segmentation tasks. We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures. We also provide a Caffe implementation of SegNet and a web demo at [this http URL](http://mi.eng.cam.ac.uk/projects/segnet/).
+
+----------------------------------------------------------------------------------------------------
+
+## Summary of Main Contributions
+
+* Network architecture: symmetric encoder and decoder.
+* Techniques used: upsample from max indices.
 
 ----------------------------------------------------------------------------------------------------
 
@@ -109,14 +117,14 @@ Classifier
 
 ## Further Reading
 
-* [1] VGG
+* [1] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [2] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [3] DeepLabv1
 * [4] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
-* [5] Inception-v1/GoogLeNet
-* [6] VGG
+* [5] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [6] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [15] Dilated Convolutions
-* [16] U-Net
+* [16] [U-Net](https://zhuanlan.zhihu.com/p/568803926)
 * [51] Inception-v2/Batch Normalization
 * [53] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [58] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
