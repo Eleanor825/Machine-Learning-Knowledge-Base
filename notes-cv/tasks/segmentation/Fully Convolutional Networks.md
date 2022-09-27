@@ -9,6 +9,13 @@
 
 ----------------------------------------------------------------------------------------------------
 
+## Summary of Main Contributions
+
+* Reinterpretation of fully connected layers as fully convolutional layers.
+* Combining outputs of different pooling layers in different backbones including AlexNet, VGGNet, and GoogLeNet.
+
+----------------------------------------------------------------------------------------------------
+
 ## 1. Introduction
 
 > We show that a fully convolutional network (FCN), trained end-to-end, pixels-to-pixels on semantic segmentation exceeds the state-of-the-art without further machinery.
