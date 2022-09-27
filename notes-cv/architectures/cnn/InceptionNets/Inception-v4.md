@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/568801341
 # [Notes][Vision][CNN] Inception-v4/Inception-ResNet
 
 * url: https://arxiv.org/abs/1602.07261
@@ -67,10 +68,10 @@
 * [4] R-CNN
 * [5] ResNet
 * [6] Inception-v2/Batch Normalization
-* [8] AlexNet
+* [8] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [9] Network In Network (NIN)
-* [10] Fully Convolutional Networks (FCN)
-* [12] VGGNet
+* [10] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
+* [12] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [14] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [15] Inception-v3
 * [17] DeepPose
