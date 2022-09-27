@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/568803926
 # [Notes][Vision][Segmentation] U-Net
 
 * url: https://arxiv.org/abs/1505.04597
@@ -86,6 +87,6 @@ Network Initialization
 ## Further Reading
 
 * [3] R-CNN
-* [7] AlexNet
-* [9] FCN
-* [12] VGG
+* [7] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
+* [9] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
+* [12] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
