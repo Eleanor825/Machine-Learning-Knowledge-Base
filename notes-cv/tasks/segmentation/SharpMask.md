@@ -107,8 +107,8 @@ Inference
 * [19] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [22] DeepMask
 * [24] Hypercolumns
-* [25] AlexNet
-* [26] VGG
-* [27] Inception-v1/GoogLeNet
+* [25] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
+* [26] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [27] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [28] ResNet
 * [29] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
