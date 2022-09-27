@@ -1,6 +1,6 @@
 # [Papers][Vision] 2D Object Detection
 
-count: 82
+count: 88
 
 ## Unclassified
 
@@ -506,7 +506,7 @@ superpixel merging
 
 ## Transformer Architectures Applied to Detection
 
-* * [DETR](https://arxiv.org/abs/2005.12872)
+* [[DETR](https://arxiv.org/abs/2005.12872)]
     * Title: End-to-End Object Detection with Transformers
     * Year: 26 May `2020`
     * Author: Nicolas Carion
