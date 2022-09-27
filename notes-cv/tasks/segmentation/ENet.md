@@ -140,9 +140,9 @@ Details:
 
 ## Further Reading
 
-* [3] VGG
+* [3] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [10] SegNet-Basic
-* [11] SegNet
+* [11] [SegNet](https://zhuanlan.zhihu.com/p/568804052)
 * [12] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
-* [13] VGG
+* [13] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [24] ResNet
