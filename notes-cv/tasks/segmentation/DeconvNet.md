@@ -127,7 +127,7 @@ $$P(x, y, c) := \sum_{i}G_{i}(x, y, c). \tag{2}$$
 * [1] DeepLabv1
 * [7] R-CNN
 * [11] Inception-v2/Batch Normalization
-* [15] AlexNet
-* [17] FCN
-* [22] VGG
-* [23] Inception-v1/GoogLeNet
+* [15] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
+* [17] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
+* [22] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [23] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
