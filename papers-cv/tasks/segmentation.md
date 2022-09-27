@@ -563,8 +563,8 @@ count: 73
     * Abstract: Recently, Neural Architecture Search (NAS) has successfully identified neural network architectures that exceed human designed ones on large-scale image classification. In this paper, we study NAS for semantic image segmentation. Existing works often focus on searching the repeatable cell structure, while hand-designing the outer network structure that controls the spatial resolution changes. This choice simplifies the search space, but becomes increasingly problematic for dense image prediction which exhibits a lot more network level architectural variations. Therefore, we propose to search the network level structure in addition to the cell level structure, which forms a hierarchical architecture search space. We present a network level search space that includes many popular designs, and develop a formulation that allows efficient gradient-based architecture search (3 P100 GPU days on Cityscapes images). We demonstrate the effectiveness of the proposed method on the challenging Cityscapes, PASCAL VOC 2012, and ADE20K datasets. Auto-DeepLab, our architecture searched specifically for semantic image segmentation, attains state-of-the-art performance without any ImageNet pretraining.
 
 ## ----------------------------------------------------------------------------------------------------
-
 ## Transformer Architectures Applied to Segmentation
+## ----------------------------------------------------------------------------------------------------
 
 * [SETR](https://arxiv.org/abs/2012.15840)
     * Title: Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers
@@ -596,8 +596,8 @@ count: 73
     * Authors: Linwei Ye, Mrigank Rochan, Zhi Liu, Yang Wang
 
 ## ----------------------------------------------------------------------------------------------------
-
 ## Instance Segmentation
+## ----------------------------------------------------------------------------------------------------
 
 * [[Simultaneous Detection and Segmentation (SDS)](https://arxiv.org/abs/1407.1808)]
     [[pdf](https://arxiv.org/pdf/1407.1808.pdf)]
@@ -682,7 +682,9 @@ count: 73
     * Institutions: [The Robotics Institute, Carnegie Mellon University]
     * Abstract: Multi-task learning in Convolutional Networks has displayed remarkable success in the field of recognition. This success can be largely attributed to learning shared representations from multiple supervisory tasks. However, existing multi-task approaches rely on enumerating multiple network architectures specific to the tasks at hand, that do not generalize. In this paper, we propose a principled approach to learn shared representations in ConvNets using multi-task learning. Specifically, we propose a new sharing unit: "cross-stitch" unit. These units combine the activations from multiple networks and can be trained end-to-end. A network with cross-stitch units can learn an optimal combination of shared and task-specific representations. Our proposed method generalizes across multiple tasks and shows dramatically improved performance over baseline methods for categories with few training examples.
 
+## ----------------------------------------------------------------------------------------------------
 ## Panoptic Segmentation
+## ----------------------------------------------------------------------------------------------------
 
 * [[Panoptic Segmentation](https://arxiv.org/abs/1801.00868)]
     [[pdf](https://arxiv.org/pdf/1801.00868.pdf)]
@@ -703,7 +705,9 @@ count: 73
     * Comments:
         * > (2021, PVT) Kirillov et al. [21] develop a lightweight segmentation head termed Semantic FPN, based on FPN [26].
 
+## ----------------------------------------------------------------------------------------------------
 ## Scene Parsing
+## ----------------------------------------------------------------------------------------------------
 
 * [[Deep Convolutional Networks for Scene Parsing](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.183.8571)]
     [[pdf](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.183.8571&rep=rep1&type=pdf)]
@@ -739,7 +743,9 @@ count: 73
     * Comments:
         * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
 
+## ----------------------------------------------------------------------------------------------------
 ## weakly supervised (2015, DeconvNet)
+## ----------------------------------------------------------------------------------------------------
 
 * [BoxSup](https://arxiv.org/abs/1503.01640)
     * Title: BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation
