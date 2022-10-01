@@ -2,8 +2,9 @@
 
 ## CNN Architectures
 
-* AlexNet
-* VGGNet
+* (2012) AlexNet
+* (2014) VGGNet
+* (2015) ResNet
 * InceptionNets
 * Xception
 * MobileNets
@@ -34,7 +35,16 @@
 
 ## Segmentation
 
+* Fully Convolutional Networks (FCN)
+
 ## Questions
+
+> What are some ways to reduce overfitting?
+
+Answer:
+1. (2012, AlexNet) The easiest and most common method to reduce overfitting on image data is to artificially enlarge the dataset using label-preserving transformations (e.g., [25, 4, 5]).
+1. (2012, AlexNet) Dropout.
+1. Early stopping
 
 > What are some regularization techniques?
 
@@ -42,15 +52,9 @@ Answer:
 1. (2012, Dropout) Dropout.
 1. (2012, AlexNet) Weight decay.
 1. (2014, VGGNet) Implicit regularization: replace 7x7 kernels with stacks of 3x3 kernels, forcing them to be decomposable into 3x3 kernels.
-2. Auxiliary classifiers (Inception-v3, section 4)
-3. Batch Normalization (a conjecture, Inception-v3, section 4)
-4. Label smoothing regularization (LSR) (Inception-v3, section 7)
-
-> What are some ways to reduce overfitting?
-
-Answer:
-1. (2012, AlexNet) The easiest and most common method to reduce overfitting on image data is to artificially enlarge the dataset using label-preserving transformations (e.g., [25, 4, 5]).
-2. (2012, AlexNet) Dropout.
+1. Auxiliary classifiers (Inception-v3, section 4)
+1. Batch Normalization (a conjecture, Inception-v3, section 4)
+1. Label smoothing regularization (LSR) (Inception-v3, section 7)
 
 > What are some ways to augment data?
 
