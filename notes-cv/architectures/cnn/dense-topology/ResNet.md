@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/570072614
 # [Notes][Vision][CNN] ResNet
 
 * url: https://arxiv.org/abs/1512.03385
@@ -27,9 +28,10 @@ Our Approach
 
 > Formally, denoting the desired underlying mapping as $\mathcal{H}(\textbf{x})$, we let the stacked nonlinear layers fit another mapping of $\mathcal{F}(\textbf{x}) := \mathcal{H}(\textbf{x}) - \textbf{x}$. The original mapping is recast into $\mathcal{F}(\textbf{x}) + \textbf{x}$. We hypothesize that it is easier to optimize the residual mapping than to optimize the original, unreferenced mapping. To the extreme, if an identity mapping were optimal, it would be easier to push the residual to zero than to fit an identity mapping by a stack of nonlinear layers.
 
-<p align="center">
+<figure align="center">
     <img src="ResNet_figure_2.png">
-</p>
+    <figcaption> Figure 2. Residual learning: a building block. </figcaption>
+</figure>
 
 > We show that:
 > 1. Our extremely deep residual nets are easy to optimize, but the counterpart “plain” nets (that simply stack layers) exhibit higher training error when the depth increases;
@@ -93,14 +95,16 @@ So don't use the third one.
 
 **Deeper Bottleneck Architectures**
 
-<p align="center">
+<figure align="center">
     <img src="ResNet_figure_5.png">
-</p>
+    <figcaption>
+        Figure 5. A deeper residual function $\mathcal{F}$ for ImageNet.
+        Left: a building block (on 56x56 feature maps) as in Fig. 3 for ResNet34.
+        Right: a "bottleneck" building block for ResNet-50/101/152.
+    </figcaption>
+</figure>
 
-* Each residual block consists of 3 convolutional layers.
-    * 1st layer: $1 \times 1$. Responsible for decreasing dimensions.
-    * 2nd layer: $3 \times 3$.
-    * 3rd layer: $1 \times 1$. Responsible for increasing dimensions.
+> For each residual function $\mathcal{F}$, we use a stack of 3 layers instead of 2 (Fig. 5). The three layers are 1x1, 3x3, and 1x1 convolutions, where the 1x1 layers are responsible for reducing and then increasing (restoring) dimensions, leaving the 3x3 layer a bottleneck with smaller input/output dimensions.
 
 > The parameter-free identity shortcuts are particularly important for the bottleneck architectures. If the identity shortcut in Fig. 5 (right) is replaced with projection, one can show that the time complexity and model size are doubled, as the shortcut is connected to the two high-dimensional ends. So identity shortcuts lead to more efficient models for the bottleneck designs.
 
@@ -121,13 +125,13 @@ So don't use the third one.
 * [10] Maxout
 * [12] Spatial Pyramid Pooling (SPP)
 * [16] Inception-v2/Batch Normalization
-* [21] AlexNet
+* [21] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [24] Deeply-Supervised Nets (DSN)
 * [25] Network In Network (NIN)
 * [27] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [32] Faster R-CNN
 * [35] FitNet
 * [40] OverFeat
-* [41] VGG
+* [41] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [42] [Highway Networks](https://zhuanlan.zhihu.com/p/554615809)
-* [44] Inception-v1/GoogLeNet
+* [44] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
