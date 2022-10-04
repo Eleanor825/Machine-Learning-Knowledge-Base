@@ -52,9 +52,9 @@ Answer:
 1. (2012, Dropout) Dropout.
 1. (2012, AlexNet) Weight decay.
 1. (2014, VGGNet) Implicit regularization: replace 7x7 kernels with stacks of 3x3 kernels, forcing them to be decomposable into 3x3 kernels.
-1. Auxiliary classifiers (Inception-v3, section 4)
-1. Batch Normalization (a conjecture, Inception-v3, section 4)
-1. Label smoothing regularization (LSR) (Inception-v3, section 7)
+1. (2015, InceptionNetV3, Section 4) Auxiliary classifiers
+1. (2015, InceptionNetV3, Section 4) Batch Normalization (a conjecture)
+1. (2015, InceptionNetV3, Section 7) Label smoothing regularization (LSR)
 
 > What are some ways to augment data?
 
