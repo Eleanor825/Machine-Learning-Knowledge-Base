@@ -4,7 +4,7 @@ count: 123
 
 ## Basics
 
-* [LeNet](https://ieeexplore.ieee.org/document/6795724)
+* [[Backpropagation Applied to Handwritten Zip Code Recognition](https://ieeexplore.ieee.org/document/6795724)]
     * Title: Backpropagation Applied to Handwritten Zip Code Recognition
     * Year: December `1989`
     * Authors: Y. LeCun; B. Boser; J. S. Denker; D. Henderson; R. E. Howard; W. Hubbard; L. D. Jackel
