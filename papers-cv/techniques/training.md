@@ -15,10 +15,13 @@ count: 12
 > Applying either weight normalization or batch normalization using expected statistics is equivalent to have a different parameterization of the original feed-forward neural network. Re-parameterization in the ReLU network was studied in the Path-normalized SGD. Our proposed layer normalization method, however, is not a re-parameterization of the original neural network. The layer normalized model, thus, has different invariance properties than the other methods. (Layer Normalization, 2016)
 
 * Batch Normalization
-* [Layer Normalization](https://arxiv.org/abs/1607.06450)
+* [[Layer Normalization](https://arxiv.org/abs/1607.06450)]
+    [[pdf](https://arxiv.org/pdf/1607.06450.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1607.06450/)]
     * Title: Layer Normalization
     * Year: 21 Jul `2016`
-    * Author: Jimmy Lei Ba
+    * Authors: Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton
+    * Institutions: [University of Toronto], [Google Inc.]
     * Abstract: Training state-of-the-art, deep neural networks is computationally expensive. One way to reduce the training time is to normalize the activities of the neurons. A recently introduced technique called batch normalization uses the distribution of the summed input to a neuron over a mini-batch of training cases to compute a mean and variance which are then used to normalize the summed input to that neuron on each training case. This significantly reduces the training time in feed-forward neural networks. However, the effect of batch normalization is dependent on the mini-batch size and it is not obvious how to apply it to recurrent neural networks. In this paper, we transpose batch normalization into layer normalization by computing the mean and variance used for normalization from all of the summed inputs to the neurons in a layer on a single training case. Like batch normalization, we also give each neuron its own adaptive bias and gain which are applied after the normalization but before the non-linearity. Unlike batch normalization, layer normalization performs exactly the same computation at training and test times. It is also straightforward to apply to recurrent neural networks by computing the normalization statistics separately at each time step. Layer normalization is very effective at stabilizing the hidden state dynamics in recurrent networks. Empirically, we show that layer normalization can substantially reduce the training time compared with previously published techniques.
 * [Instance Normalization](https://arxiv.org/abs/1607.08022)
     * Title: Instance Normalization: The Missing Ingredient for Fast Stylization
