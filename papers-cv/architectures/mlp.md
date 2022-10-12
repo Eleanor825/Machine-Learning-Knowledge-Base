@@ -2,7 +2,7 @@
 
 count: 2
 
-* [Network In Network (NIN)](https://arxiv.org/abs/1312.4400)
+* [[Network In Network (NIN)](https://arxiv.org/abs/1312.4400)] <!-- printed -->
     * Title: Network In Network
     * Year: 16 Dec `2013`
     * Authors: Min Lin, Qiang Chen, Shuicheng Yan

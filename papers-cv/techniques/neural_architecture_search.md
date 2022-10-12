@@ -63,7 +63,7 @@ count: 9
 
 ## Block-Level Hierarchical Search (MobileNetV3, 2019) (1)
 
-* [MnasNet](https://arxiv.org/abs/1807.11626)
+* [[MnasNet](https://arxiv.org/abs/1807.11626)] <!-- printed -->
     * Title: MnasNet: Platform-Aware Neural Architecture Search for Mobile
     * Year: 31 Jul `2018`
     * Authors: Mingxing Tan, Bo Chen, Ruoming Pang, Vijay Vasudevan, Mark Sandler, Andrew Howard, Quoc V. Le

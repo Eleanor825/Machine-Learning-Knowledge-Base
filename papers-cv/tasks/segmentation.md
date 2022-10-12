@@ -160,7 +160,7 @@ count: 73
 
 > Newer deep architectures [2, 4, 13, 18, 10] particularly designed for segmentation have advanced the state-of-the-art by learning to decode or map low resolution image representations to pixel-wise predictions. (SegNet, 2015)
 
-* [[U-Net](https://arxiv.org/abs/1505.04597)]
+* [[U-Net](https://arxiv.org/abs/1505.04597)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1505.04597.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.04597/)]
     * Title: U-Net: Convolutional Networks for Biomedical Image Segmentation
@@ -275,7 +275,7 @@ count: 73
     * Year: 19 August `2010`
     * Authors: Ce Liu; Jenny Yuen; Antonio Torralba
     * Abstract: While image alignment has been studied in different areas of computer vision for decades, aligning images depicting different scenes remains a challenging problem. Analogous to optical flow, where an image is aligned to its temporally adjacent frame, we propose SIFT flow, a method to align an image to its nearest neighbors in a large image corpus containing a variety of scenes. The SIFT flow algorithm consists of matching densely sampled, pixelwise SIFT features between two images while preserving spatial discontinuities. The SIFT features allow robust matching across different scene/object appearances, whereas the discontinuity-preserving spatial model allows matching of objects located at different parts of the scene. Experiments show that the proposed approach robustly aligns complex scene pairs containing significant spatial differences. Based on SIFT flow, we propose an alignment-based large database framework for image analysis and synthesis, where image information is transferred from the nearest neighbors to a query image according to the dense scene correspondence. This framework is demonstrated through concrete applications such as motion field prediction from a single image, motion synthesis via object transfer, satellite image registration, and face recognition.
-* [[Fully Convolutional Networks (FCN)](https://arxiv.org/abs/1411.4038)]
+* [[Fully Convolutional Networks (FCN)](https://arxiv.org/abs/1411.4038)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1411.4038.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1411.4038/)]
     * Title: Fully Convolutional Networks for Semantic Segmentation
@@ -523,7 +523,7 @@ count: 73
 
 ### DeepLab Family
 
-* [[DeepLabv1](https://arxiv.org/abs/1412.7062)]
+* [[DeepLabv1](https://arxiv.org/abs/1412.7062)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1412.7062.pdf)]
     [[Vanity](https://www.arxiv-vanity.com/papers/1412.7062/)]
     * Title: Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
@@ -536,7 +536,7 @@ count: 73
         * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
         * > The method of [3] also use the feature maps of the classification network with an independent CRF post-processing technique to perform segmentation. (SegNet, 2015)
         * > Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 . (ENet, 2016)
-* [DeepLabv2](https://arxiv.org/abs/1606.00915)
+* [[DeepLabv2](https://arxiv.org/abs/1606.00915)] <!-- printed -->
     * Title: DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
     * Year: 02 Jun `2016`
     * Authors: Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, Alan L. Yuille
@@ -544,12 +544,12 @@ count: 73
     * Comments:
         * > The work in [8] (DeepLab2) combines a ResNet-101 with spatial pyramid pooling and CRF to reach state-of-the-art segmentation accuracy. (2017, ERFNet)
         * > An ASP module [3], shown in Fig. 3e, is built on the principle of split-transform-merge. The ASP module involves branching with each branch learning kernel at a different receptive field (using dilated convolutions). (ESPNetv1, 2018)
-* [DeepLabv3](https://arxiv.org/abs/1706.05587)
+* [[DeepLabv3](https://arxiv.org/abs/1706.05587)] <!-- printed -->
     * Title: Rethinking Atrous Convolution for Semantic Image Segmentation
     * Year: 17 Jun `2017`
     * Authors: Liang-Chieh Chen, George Papandreou, Florian Schroff, Hartwig Adam
     * Abstract: In this work, we revisit atrous convolution, a powerful tool to explicitly adjust filter's field-of-view as well as control the resolution of feature responses computed by Deep Convolutional Neural Networks, in the application of semantic image segmentation. To handle the problem of segmenting objects at multiple scales, we design modules which employ atrous convolution in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates. Furthermore, we propose to augment our previously proposed Atrous Spatial Pyramid Pooling module, which probes convolutional features at multiple scales, with image-level features encoding global context and further boost performance. We also elaborate on implementation details and share our experience on training our system. The proposed `DeepLabv3' system significantly improves over our previous DeepLab versions without DenseCRF post-processing and attains comparable performance with other state-of-art models on the PASCAL VOC 2012 semantic image segmentation benchmark.
-* [DeepLabv3+](https://arxiv.org/abs/1802.02611)
+* [[DeepLabv3+](https://arxiv.org/abs/1802.02611)] <!-- printed -->
     * Title: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation
     * Year: 07 Feb `2018`
     * Authors: Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, Hartwig Adam
@@ -566,7 +566,7 @@ count: 73
 ## Transformer Architectures Applied to Segmentation
 ## ----------------------------------------------------------------------------------------------------
 
-* [SETR](https://arxiv.org/abs/2012.15840)
+* [[SETR](https://arxiv.org/abs/2012.15840)] <!-- printed -->
     * Title: Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers
     * Year: 31 Dec `2020`
     * Authors: Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip H.S. Torr, Li Zhang
@@ -694,7 +694,7 @@ count: 73
     * Authors: Alexander Kirillov, Kaiming He, Ross Girshick, Carsten Rother, Piotr Dollár
     * Institutions: [Facebook AI Research (FAIR)], [HCI/IWR, Heidelberg University, Germany]
     * Abstract: We propose and study a task we name panoptic segmentation (PS). Panoptic segmentation unifies the typically distinct tasks of semantic segmentation (assign a class label to each pixel) and instance segmentation (detect and segment each object instance). The proposed task requires generating a coherent scene segmentation that is rich and complete, an important step toward real-world vision systems. While early work in computer vision addressed related image/scene parsing tasks, these are not currently popular, possibly due to lack of appropriate metrics or associated recognition challenges. To address this, we propose a novel panoptic quality (PQ) metric that captures performance for all classes (stuff and things) in an interpretable and unified manner. Using the proposed metric, we perform a rigorous study of both human and machine performance for PS on three existing datasets, revealing interesting insights about the task. The aim of our work is to revive the interest of the community in a more unified view of image segmentation.
-* [[Panoptic FPN](https://arxiv.org/abs/1901.02446)]
+* [[Panoptic FPN](https://arxiv.org/abs/1901.02446)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1901.02446.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1901.02446/)]
     * Title: Panoptic Feature Pyramid Networks

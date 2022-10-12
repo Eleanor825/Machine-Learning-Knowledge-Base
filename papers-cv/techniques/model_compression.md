@@ -6,12 +6,12 @@ count: 2
 
 ## Knowledge Distillation
 
-* [Model Compression](https://dl.acm.org/doi/10.1145/1150402.1150464)
+* [[Model Compression](https://dl.acm.org/doi/10.1145/1150402.1150464)] <!-- printed -->
     * Title: Model compression
     * Year: 20 Aug `2006`
     * Author: Cristian Bucilua
     * Abstract: Often the best performing supervised learning models are ensembles of hundreds or thousands of base-level classifiers. Unfortunately, the space required to store this many classifiers, and the time required to execute them at run-time, prohibits their use in applications where test sets are large (e.g. Google), where storage space is at a premium (e.g. PDAs), and where computational power is limited (e.g. hea-ring aids). We present a method for "compressing" large, complex ensembles into smaller, faster models, usually without significant loss in performance.
-* [Distillation](https://arxiv.org/abs/1503.02531)
+* [[Distillation](https://arxiv.org/abs/1503.02531)] <!-- printed -->
     * Title: Distilling the Knowledge in a Neural Network
     * Year: 09 Mar `2015`
     * Author: Geoffrey Hinton

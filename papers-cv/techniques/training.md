@@ -15,7 +15,7 @@ count: 12
 > Applying either weight normalization or batch normalization using expected statistics is equivalent to have a different parameterization of the original feed-forward neural network. Re-parameterization in the ReLU network was studied in the Path-normalized SGD. Our proposed layer normalization method, however, is not a re-parameterization of the original neural network. The layer normalized model, thus, has different invariance properties than the other methods. (Layer Normalization, 2016)
 
 * Batch Normalization
-* [[Layer Normalization](https://arxiv.org/abs/1607.06450)]
+* [[Layer Normalization](https://arxiv.org/abs/1607.06450)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1607.06450.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1607.06450/)]
     * Title: Layer Normalization

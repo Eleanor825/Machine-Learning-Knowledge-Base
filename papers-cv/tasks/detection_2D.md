@@ -235,7 +235,7 @@ superpixel merging
     * Year: 09 October `2006`
     * Authors: S. Lazebnik; C. Schmid; J. Ponce
     * Abstract: This paper presents a method for recognizing scene categories based on approximate global geometric correspondence. This technique works by partitioning the image into increasingly fine sub-regions and computing histograms of local features found inside each sub-region. The resulting "spatial pyramid" is a simple and computationally efficient extension of an orderless bag-of-features image representation, and it shows significantly improved performance on challenging scene categorization tasks. Specifically, our proposed method exceeds the state of the art on the Caltech-101 database and achieves high accuracy on a large database of fifteen natural scene categories. The spatial pyramid framework also offers insights into the success of several recently proposed image descriptions, including Torralba’s "gist" and Lowe’s SIFT descriptors.
-* [[Spatial Pyramid Pooling (SPP)](https://arxiv.org/abs/1406.4729)]
+* [[Spatial Pyramid Pooling (SPP)](https://arxiv.org/abs/1406.4729)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1406.4729.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1406.4729/)]
     * Title: Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
@@ -251,7 +251,7 @@ superpixel merging
 
 ### Further Improvements of R-CNN
 
-* [R-FCN](https://arxiv.org/abs/1605.06409)
+* [R-FCN](https://arxiv.org/abs/1605.06409) <!-- printed -->
     * Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks
     * Year: 20 May `2016`
     * Author: Jifeng Dai
@@ -312,7 +312,7 @@ superpixel merging
 
 ### SSD and its Variants
 
-* [SSD](https://arxiv.org/abs/1512.02325)
+* [SSD](https://arxiv.org/abs/1512.02325) <!-- printed -->
     * Title: SSD: Single Shot MultiBox Detector
     * Year: 08 Dec `2015`
     * Author: Wei Liu
@@ -333,22 +333,22 @@ superpixel merging
 
 ### YOLO Series
 
-* [YOLOv1](https://arxiv.org/abs/1506.02640)
+* [[YOLOv1](https://arxiv.org/abs/1506.02640)] <!-- printed -->
     * Title: You Only Look Once: Unified, Real-Time Object Detection
     * Year: 08 Jun `2015`
     * Authors: Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
     * Abstract: We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and class probabilities directly from full images in one evaluation. Since the whole detection pipeline is a single network, it can be optimized end-to-end directly on detection performance. Our unified architecture is extremely fast. Our base YOLO model processes images in real-time at 45 frames per second. A smaller version of the network, Fast YOLO, processes an astounding 155 frames per second while still achieving double the mAP of other real-time detectors. Compared to state-of-the-art detection systems, YOLO makes more localization errors but is far less likely to predict false detections where nothing exists. Finally, YOLO learns very general representations of objects. It outperforms all other detection methods, including DPM and R-CNN, by a wide margin when generalizing from natural images to artwork on both the Picasso Dataset and the People-Art Dataset.
-* [YOLOv2](https://arxiv.org/abs/1612.08242)
+* [[YOLOv2](https://arxiv.org/abs/1612.08242)] <!-- printed -->
     * Title: YOLO9000: Better, Faster, Stronger
     * Year: 25 Dec `2016`
     * Authors: Joseph Redmon, Ali Farhadi
     * Abstract: We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL VOC and COCO. At 67 FPS, YOLOv2 gets 76.8 mAP on VOC 2007. At 40 FPS, YOLOv2 gets 78.6 mAP, outperforming state-of-the-art methods like Faster RCNN with ResNet and SSD while still running significantly faster. Finally we propose a method to jointly train on object detection and classification. Using this method we train YOLO9000 simultaneously on the COCO detection dataset and the ImageNet classification dataset. Our joint training allows YOLO9000 to predict detections for object classes that don't have labelled detection data. We validate our approach on the ImageNet detection task. YOLO9000 gets 19.7 mAP on the ImageNet detection validation set despite only having detection data for 44 of the 200 classes. On the 156 classes not in COCO, YOLO9000 gets 16.0 mAP. But YOLO can detect more than just 200 classes; it predicts detections for more than 9000 different object categories. And it still runs in real-time.
-* [YOLOv3](https://arxiv.org/abs/1804.02767)
+* [[YOLOv3](https://arxiv.org/abs/1804.02767)] <!-- printed -->
     * Title: YOLOv3: An Incremental Improvement
     * Year: 08 Apr `2018`
     * Authors: Joseph Redmon, Ali Farhadi
     * Abstract: We present some updates to YOLO! We made a bunch of little design changes to make it better. We also trained this new network that's pretty swell. It's a little bigger than last time but more accurate. It's still fast though, don't worry. At 320x320 YOLOv3 runs in 22 ms at 28.2 mAP, as accurate as SSD but three times faster. When we look at the old .5 IOU mAP detection metric YOLOv3 is quite good. It achieves 57.9 mAP@50 in 51 ms on a Titan X, compared to 57.5 mAP@50 in 198 ms by RetinaNet, similar performance but 3.8x faster. As always, all the code is online at [this https URL](https://pjreddie.com/yolo/).
-* [YOLOv4](https://arxiv.org/abs/2004.10934)
+* [[YOLOv4](https://arxiv.org/abs/2004.10934)] <!-- printed -->
     * Title: YOLOv4: Optimal Speed and Accuracy of Object Detection
     * Year: 23 Apr `2020`
     * Authors: Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao
@@ -381,7 +381,7 @@ superpixel merging
 
 ### Methods using multiple layers (2016, FPN)
 
-* [Inside-Outside Net (ION)](https://arxiv.org/abs/1512.04143)
+* [Inside-Outside Net (ION)](https://arxiv.org/abs/1512.04143) <!-- printed -->
     * Title: Inside-Outside Net: Detecting Objects in Context with Skip Pooling and Recurrent Neural Networks
     * Year: 14 Dec `2015`
     * Author: Sean Bell
@@ -402,7 +402,7 @@ superpixel merging
     * Abstract: A unified deep neural network, denoted the multi-scale CNN (MS-CNN), is proposed for fast multi-scale object detection. The MS-CNN consists of a proposal sub-network and a detection sub-network. In the proposal sub-network, detection is performed at multiple output layers, so that receptive fields match objects of different scales. These complementary scale-specific detectors are combined to produce a strong multi-scale object detector. The unified network is learned end-to-end, by optimizing a multi-task loss. Feature upsampling by deconvolution is also explored, as an alternative to input upsampling, to reduce the memory and computation costs. State-of-the-art object detection performance, at up to 15 fps, is reported on datasets, such as KITTI and Caltech, containing a substantial number of small objects.
     * Comments:
         * > (2016, FPN) SSD [22] and MS-CNN [3] predict objects at multiple layers of the feature hierarchy without combining features or scores.
-* [[Feature Pyramid Networks (FPN)](https://arxiv.org/abs/1612.03144)]
+* [[Feature Pyramid Networks (FPN)](https://arxiv.org/abs/1612.03144)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1612.03144.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1612.03144/)]
     * Title: Feature Pyramid Networks for Object Detection
@@ -431,7 +431,7 @@ superpixel merging
 
 ### Focal Loss
 
-* [[Focal Loss/RetinaNet](https://arxiv.org/abs/1708.02002)]
+* [[Focal Loss/RetinaNet](https://arxiv.org/abs/1708.02002)] <!-- printed -->
     * Title: Focal Loss for Dense Object Detection
     * Year: 07 Aug `2017`
     * Authors: Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár
@@ -506,7 +506,7 @@ superpixel merging
 
 ## Transformer Architectures Applied to Detection
 
-* [[DETR](https://arxiv.org/abs/2005.12872)]
+* [[DETR](https://arxiv.org/abs/2005.12872)] <!-- printed -->
     * Title: End-to-End Object Detection with Transformers
     * Year: 26 May `2020`
     * Author: Nicolas Carion
@@ -514,7 +514,7 @@ superpixel merging
     * Comments:
         * > Inspired by NLP successes, multiple works try combining CNN-like architectures with self-attention (Wang et al., 2018; Carion et al., 2020), some replacing the convolutions entirely (Ramachandran et al., 2019, Wang et al., 2020). The latter models, while theoretically efficient, have not yet been scaled effectively on modern hardware accelerators due to the use of specialized attention patterns. (ViT, 2020)
         * > DETR utilizes the Transformer decoder to model object detection as an end-to-end dictionary lookup problem with learnable queries, successfully removing the need for handcrafted processes such as NMS. (PVT, )
-* [Deformable DETR](https://arxiv.org/abs/2010.04159)
+* [[Deformable DETR](https://arxiv.org/abs/2010.04159)] <!-- printed -->
     * Title: Deformable DETR: Deformable Transformers for End-to-End Object Detection
     * Year: 08 Oct `2020`
     * Authors: Xizhou Zhu, Weijie Su, Lewei Lu, Bin Li, Xiaogang Wang, Jifeng Dai

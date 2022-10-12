@@ -8,7 +8,7 @@ count: 80
 
 ## Basics
 
-* [[Convolutional Sequence to Sequence Learning](https://arxiv.org/abs/1705.03122)]
+* [[Convolutional Sequence to Sequence Learning](https://arxiv.org/abs/1705.03122)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1705.03122.pdf)]
     [vanity]
     * Title: Convolutional Sequence to Sequence Learning
@@ -17,7 +17,7 @@ count: 80
     * Abstract: The prevalent approach to sequence to sequence learning maps an input sequence to a variable length output sequence via recurrent neural networks. We introduce an architecture based entirely on convolutional neural networks. Compared to recurrent models, computations over all elements can be fully parallelized during training and optimization is easier since the number of non-linearities is fixed and independent of the input length. Our use of gated linear units eases gradient propagation and we equip each decoder layer with a separate attention module. We outperform the accuracy of the deep LSTM setup of Wu et al. (2016) on both WMT'14 English-German and WMT'14 English-French translation at an order of magnitude faster speed, both on GPU and CPU.
     * Comments:
         * (2017, Transformer) introduced learned positional embeddings.
-* [[Transformer](https://arxiv.org/abs/1706.03762)]
+* [[Transformer](https://arxiv.org/abs/1706.03762)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1706.03762.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1706.03762/)]
     * Title: Attention Is All You Need
@@ -27,7 +27,7 @@ count: 80
     * Abstract: The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.
     * Comments:
         * > (2022, Recent Advances) This transformer is solely based on attention mechanism, instead of convolution layers.
-* [[Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)]
+* [[Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/2010.11929.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2010.11929/)]
     * Title: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
@@ -90,7 +90,7 @@ count: 80
 
 ## Self-attention in vision models (4)
 
-* [On the Relationship between Self-Attention and Convolutional Layers](https://arxiv.org/abs/1911.03584)
+* [[On the Relationship between Self-Attention and Convolutional Layers](https://arxiv.org/abs/1911.03584)] <!-- printed -->
     * Title: On the Relationship between Self-Attention and Convolutional Layers
     * Year: 08 Nov `2019`
     * Authors: Jean-Baptiste Cordonnier, Andreas Loukas, Martin Jaggi
@@ -100,7 +100,7 @@ count: 80
     
 ## Incorporate Attention Module into CNN (2021, PVT) (count=3)
 
-* [Non-local Neural Networks](https://ieeexplore.ieee.org/document/8578911)
+* [[Non-local Neural Networks](https://ieeexplore.ieee.org/document/8578911)] <!-- printed -->
     * Title: Non-local Neural Networks
     * Year: 16 December `2018`
     * Author: Xiaolong Wang
@@ -109,7 +109,7 @@ count: 80
         * > Inspired by NLP successes, multiple works try combining CNN-like architectures with self-attention (Wang et al., 2018; Carion et al., 2020), some replacing the convolutions entirely (Ramachandran et al., 2019, Wang et al., 2020). The latter models, while theoretically efficient, have not yet been scaled effectively on modern hardware accelerators due to the use of specialized attention patterns. (ViT, 2020)
         * > Wang et al. show that (single-headed) self-attention is a form of non-local means and that integrating it into a ResNet improves several tasks. Ramachandran et al. explore this direction further with stand-alone self-attention networks for vision. They report difficulties in designing an attention-based network stem and present a bespoke solution that avoids convolutions. (Early Convolutions Help Transformers See Better, 2021)
         * > The non-local block attempts to model long-range dependencies in both space and time, which has been shown beneficial for accurate video classification. (PVT, )
-* [Stand-Alone Self-Attention](https://arxiv.org/abs/1906.05909)
+* [[Stand-Alone Self-Attention](https://arxiv.org/abs/1906.05909)] <!-- printed -->
     * Title: Stand-Alone Self-Attention in Vision Models
     * Year: 13 Jun `2019`
     * Author: Prajit Ramachandran
@@ -118,7 +118,7 @@ count: 80
         * > Inspired by NLP successes, multiple works try combining CNN-like architectures with self-attention (Wang et al., 2018; Carion et al., 2020), some replacing the convolutions entirely (Ramachandran et al., 2019, Wang et al., 2020). The latter models, while theoretically efficient, have not yet been scaled effectively on modern hardware accelerators due to the use of specialized attention patterns. (ViT, 2020)
         * > Wang et al. show that (single-headed) self-attention is a form of non-local means and that integrating it into a ResNet improves several tasks. Ramachandran et al. explore this direction further with stand-alone self-attention networks for vision. They report difficulties in designing an attention-based network stem and present a bespoke solution that avoids convolutions. (Early Convolutions Help Transformers See Better, 2021)
         * > (2021, PVT) Ramachandran et al. [35] proposed stand-alone self-attention was propose to replace convolutional layers with local self-attention units.
-* [Exploring Self-attention for Image Recognition](https://arxiv.org/abs/2004.13621)
+* [[Exploring Self-attention for Image Recognition](https://arxiv.org/abs/2004.13621)] <!-- printed -->
     * Title: Exploring Self-attention for Image Recognition
     * Year: 28 Apr `2020`
     * Author: Hengshuang Zhao
@@ -175,7 +175,7 @@ count: 80
 
 > The third line of research improves the efficiency of MHA via low-rank approximation. The main idea is to approximate the self-attention matrix with a low-rank matrix, reducing the computational cost from $O(k^{2})$ to $O(k)$. Even though these methods speed-up the self-attention operation significantly, they still use expensive operations for computing attention, which may hinder the deployment of these models on resource-constrained devices. (MobileViTv2, 2022)
 
-* [Linformer](https://arxiv.org/abs/2006.04768)
+* [[Linformer](https://arxiv.org/abs/2006.04768)] <!-- printed -->
     * Title: Linformer: Self-Attention with Linear Complexity
     * Year: 08 Jun `2020`
     * Author: Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, Hao Ma
@@ -288,7 +288,7 @@ count: 80
     * Abstract: We study how to introduce locality mechanisms into vision transformers. The transformer network originates from machine translation and is particularly good at modelling long-range dependencies within a long sequence. Although the global interaction between the token embeddings could be well modelled by the self-attention mechanism of transformers, what is lacking a locality mechanism for information exchange within a local region. Yet, locality is essential for images since it pertains to structures like lines, edges, shapes, and even objects. We add locality to vision transformers by introducing depth-wise convolution into the feed-forward network. This seemingly simple solution is inspired by the comparison between feed-forward networks and inverted residual blocks. The importance of locality mechanisms is validated in two ways: 1) A wide range of design choices (activation function, layer placement, expansion ratio) are available for incorporating locality mechanisms and all proper choices can lead to a performance gain over the baseline, and 2) The same locality mechanism is successfully applied to 4 vision transformers, which shows the generalization of the locality concept. In particular, for ImageNet2012 classification, the locality-enhanced transformers outperform the baselines DeiT-T and PVT-T by 2.6\% and 3.1\% with a negligible increase in the number of parameters and computational effort. Code is available at [this https URL](https://github.com/ofsoundof/LocalViT).
 * DeiT
 * Pyramid Vision Transformer
-* [Early Convolutions Help Transformers See Better](https://arxiv.org/abs/2106.14881)
+* [[Early Convolutions Help Transformers See Better](https://arxiv.org/abs/2106.14881)] <!-- printed -->
     * Title: Early Convolutions Help Transformers See Better
     * Year: 28 Jun `2021`
     * Author: Tete Xiao
@@ -442,7 +442,7 @@ count: 80
     * Abstract: Transformer is a new kind of neural architecture which encodes the input data as powerful features via the attention mechanism. Basically, the visual transformers first divide the input images into several local patches and then calculate both representations and their relationship. Since natural images are of high complexity with abundant detail and color information, the granularity of the patch dividing is not fine enough for excavating features of objects in different scales and locations. In this paper, we point out that the attention inside these local patches are also essential for building visual transformers with high performance and we explore a new architecture, namely, Transformer iN Transformer (TNT). Specifically, we regard the local patches (e.g., 16x16) as "visual sentences" and present to further divide them into smaller patches (e.g., 4x4) as "visual words". The attention of each word will be calculated with other words in the given visual sentence with negligible computational costs. Features of both words and sentences will be aggregated to enhance the representation ability. Experiments on several benchmarks demonstrate the effectiveness of the proposed TNT architecture, e.g., we achieve an 81.5% top-1 accuracy on the ImageNet, which is about 1.7% higher than that of the state-of-the-art visual transformer with similar computational cost. The PyTorch code is available at [this https URL](https://github.com/huawei-noah/CV-Backbones), and the MindSpore code is available at [this https URL](https://gitee.com/mindspore/models/tree/master/research/cv/TNT).
     * Comments:
         * > (2021, Swin Transformer V1) Concurrent to our work are some that modify the ViT architecture [69, 14, 27] for better image classification.
-* [[Pyramid Vision Transformer (PVT)](https://arxiv.org/abs/2102.12122)]
+* [[Pyramid Vision Transformer (PVT)](https://arxiv.org/abs/2102.12122)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/2102.12122.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2102.12122/)]
     * Title: Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions
@@ -581,12 +581,12 @@ count: 80
 
 > MobileViT is a hybrid netowrk that combines the strengths of CNNs and ViTs. MobileViT views transormers as cconvoluions which allows it to leverage the merits of both convolutions (e.g., inductive biases) and transformers (e.g., long-range dependencies) to build a light-weight network for mobile devices. Though MobileViT networks have significtantly fewer parameters and deliver better performance as compared to light-weight CNNs (e.g., MobileNets), they have high latency. The main efficiency botttleneck in MobileViT is the multi-headed self-attention. (MobileViTv2, 2022)
 
-* [MobileViTv1](https://arxiv.org/abs/2110.02178)
+* [[MobileViTv1](https://arxiv.org/abs/2110.02178)] <!-- printed -->
     * Title: MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer
     * Year: 05 Oct `2021`
     * Author: Sachin Mehta, Mohammad Rastegari
     * Abstract: Light-weight convolutional neural networks (CNNs) are the de-facto for mobile vision tasks. Their spatial inductive biases allow them to learn representations with fewer parameters across different vision tasks. However, these networks are spatially local. To learn global representations, self-attention-based vision trans-formers (ViTs) have been adopted. Unlike CNNs, ViTs are heavy-weight. In this paper, we ask the following question: is it possible to combine the strengths of CNNs and ViTs to build a light-weight and low latency network for mobile vision tasks? Towards this end, we introduce MobileViT, a light-weight and general-purpose vision transformer for mobile devices. MobileViT presents a different perspective for the global processing of information with transformers, i.e., transformers as convolutions. Our results show that MobileViT significantly outperforms CNN- and ViT-based networks across different tasks and datasets. On the ImageNet-1k dataset, MobileViT achieves top-1 accuracy of 78.4% with about 6 million parameters, which is 3.2% and 6.2% more accurate than MobileNetv3 (CNN-based) and DeIT (ViT-based) for a similar number of parameters. On the MS-COCO object detection task, MobileViT is 5.7% more accurate than MobileNetv3 for a similar number of parameters. Our source code is open-source and available at: [this https URL](https://github.com/apple/ml-cvnets).
-* [MobileViTv2](https://arxiv.org/abs/2206.02680)
+* [[MobileViTv2](https://arxiv.org/abs/2206.02680)] <!-- printed -->
     * Title: Separable Self-attention for Mobile Vision Transformers
     * Year: 06 Jun `2022`
     * Author: Sachin Mehta, Mohammad Rastegari
@@ -597,7 +597,7 @@ count: 80
 
 > A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers. The shifted windows bridge the windows of the preceding layer, providing connections among them that significantly enhance modeling power. This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set, which facilitates memory access in hardware. In contrast, earlier sliding window based self-attention approaches suffer from low latency on general hardware due to different key sets for different query pixels. Our experiments show that the proposed *shifted window* approach has much lower latency than the *sliding window* method, yet is similar in modeling power. The shifted window approach also proves beneficial for all-MLP architectures. (Swin Transformer V1, 2021)
 
-* [[Swin Transformer V1](https://arxiv.org/abs/2103.14030)]
+* [[Swin Transformer V1](https://arxiv.org/abs/2103.14030)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/2103.14030.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2103.14030/)]
     * Title: Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
@@ -607,7 +607,7 @@ count: 80
     * Abstract: This paper presents a new vision Transformer, called Swin Transformer, that capably serves as a general-purpose backbone for computer vision. Challenges in adapting Transformer from language to vision arise from differences between the two domains, such as large variations in the scale of visual entities and the high resolution of pixels in images compared to words in text. To address these differences, we propose a hierarchical Transformer whose representation is computed with \textbf{S}hifted \textbf{win}dows. The shifted windowing scheme brings greater efficiency by limiting self-attention computation to non-overlapping local windows while also allowing for cross-window connection. This hierarchical architecture has the flexibility to model at various scales and has linear computational complexity with respect to image size. These qualities of Swin Transformer make it compatible with a broad range of vision tasks, including image classification (87.3 top-1 accuracy on ImageNet-1K) and dense prediction tasks such as object detection (58.7 box AP and 51.1 mask AP on COCO test-dev) and semantic segmentation (53.5 mIoU on ADE20K val). Its performance surpasses the previous state-of-the-art by a large margin of +2.7 box AP and +2.6 mask AP on COCO, and +3.2 mIoU on ADE20K, demonstrating the potential of Transformer-based models as vision backbones. The hierarchical design and the shifted window approach also prove beneficial for all-MLP architectures. The code and models are publicly available at [this https URL](https://github.com/microsoft/Swin-Transformer).
     * Comments:
         * > (2021, Swin Transformer V2) Swin Transformer is a general-purpose computer vision backbone that has achieved strong performance in various granular recognition tasks such as region-level object detection, pixel-level semantic segmentation, and image-level image classification. The main idea of Swin Transformer is to introduce several important visual priors into the vanilla Transformer encoder, including hierarchy, locality, and translation invariance, which combines the strength of both: the basic Transformer unit has strong modeling capabilities, and the visual priors make it friendly to a variety of visual tasks.
-* [[Swin Transformer V2](https://arxiv.org/abs/2111.09883)]
+* [[Swin Transformer V2](https://arxiv.org/abs/2111.09883)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/2111.09883.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2111.09883/)]
     * Title: Swin Transformer V2: Scaling Up Capacity and Resolution
