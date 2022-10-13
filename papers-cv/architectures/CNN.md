@@ -218,7 +218,7 @@ count: 123
 
 > More flexible compositions of operators can be achieved with multi-branch convolutions [5], [6], [20], [21], which can be viewed as a natural extension of the grouping operator. (SENet, 2017)
 
-> Inception modules [11–13] are built on the principle of split-reduce-transform-merge. These modules are usually heterogeneous in number of channels and kernel size (e.g. some of the modules are composed of standard and factored convolutions). (ESPNetv1, 2018)
+> Inception modules [11–13] are built on the principle of split-reduce-transform-merge. These modules are usually heterogeneous in number of channels and kernel size (e.g. some of the modules are composed of standard and factored convolutions). (ESPNetV1, 2018)
 
 * [[Inception-v1/GoogLeNet](https://arxiv.org/abs/1409.4842)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1409.4842.pdf)]
@@ -332,8 +332,8 @@ count: 123
     * Institution: Princeton University, Intel Labs
     * Abstract: State-of-the-art models for semantic segmentation are based on adaptations of convolutional networks that had originally been designed for image classification. However, dense prediction and image classification are structurally different. In this work, we develop a new convolutional network module that is specifically designed for dense prediction. The presented module uses dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. The architecture is based on the fact that dilated convolutions support exponential expansion of the receptive field without loss of resolution or coverage. We show that the presented context module increases the accuracy of state-of-the-art semantic segmentation systems. In addition, we examine the adaptation of image classification networks to dense prediction and show that simplifying the adapted network can increase accuracy.
     * Comments:
-        * > Yu and Koltun [18] stacked dilated convolution layers with increasing dilation rate to learn contextual representations from a large effective receptive field. (ESPNetv1, 2018)
-* [[ESPNetv1](https://arxiv.org/abs/1803.06815)] <!-- printed -->
+        * > Yu and Koltun [18] stacked dilated convolution layers with increasing dilation rate to learn contextual representations from a large effective receptive field. (ESPNetV1, 2018)
+* [[ESPNetV1](https://arxiv.org/abs/1803.06815)] <!-- printed -->
     * Title: ESPNet: Efficient Spatial Pyramid of Dilated Convolutions for Semantic Segmentation
     * Year: 19 Mar `2018`
     * Authors: Sachin Mehta, Mohammad Rastegari, Anat Caspi, Linda Shapiro, Hannaneh Hajishirzi
@@ -373,6 +373,40 @@ count: 123
 ## ----------------------------------------------------------------------------------------------------
 ## Light-Weight Networks
 ## ----------------------------------------------------------------------------------------------------
+
+### Light-Weight Networks (Others)
+
+* [[SqueezeNext](https://arxiv.org/abs/1803.10615)] <!-- printed -->
+    * Title: SqueezeNext: Hardware-Aware Neural Network Design
+    * Year: 23 Mar `2018`
+    * Authors: Amir Gholami, Kiseok Kwon, Bichen Wu, Zizheng Tai, Xiangyu Yue, Peter Jin, Sicheng Zhao, Kurt Keutzer
+    * Abstract: One of the main barriers for deploying neural networks on embedded systems has been large memory and power consumption of existing neural networks. In this work, we introduce SqueezeNext, a new family of neural network architectures whose design was guided by considering previous architectures such as SqueezeNet, as well as by simulation results on a neural network accelerator. This new network is able to match AlexNet's accuracy on the ImageNet benchmark with 112x fewer parameters, and one of its deeper variants is able to achieve VGG-19 accuracy with only 4.4 Million parameters, (31x smaller than VGG-19). SqueezeNext also achieves better top-5 classification accuracy with 1.3x fewer parameters as compared to MobileNet, but avoids using depthwise-separable convolutions that are inefficient on some mobile processor platforms. This wide range of accuracy gives the user the ability to make speed-accuracy tradeoffs, depending on the available resources on the target hardware. Using hardware simulation results for power and inference speed on an embedded system has guided us to design variations of the baseline model that are 2.59x/8.26x faster and 2.25x/7.5x more energy efficient as compared to SqueezeNet/AlexNet without any accuracy degradation.
+* [[ShuffleNetV1](https://arxiv.org/abs/1707.01083)] <!-- printed -->
+    * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
+    * Year: 04 Jul `2017`
+    * Authors: Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun
+    * Abstract: We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13x actual speedup over AlexNet while maintaining comparable accuracy.
+    * Comments:
+        * > (2018, MobileNetV2) Depthwise Separable Convolutions are a key building block for many efficient neural network architectures [26, 27, 19].
+        * > (2018, MobileNetV2) ShuffleNet uses Group Convolutions [19] and shuffling, it also uses conventional residual approach where inner blocks are narrower than output.
+        * > The ShuffleNet module [17], shown in Fig. 3b, is based on the principle of reduce-transform-expand. It is an optimized version of the bottleneck block in ResNet [47]. (ESPNetV1, 2018)
+* [[ShuffleNetV2](https://arxiv.org/abs/1807.11164)] <!-- printed -->
+    * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
+    * Year: 30 Jul `2018`
+    * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
+    * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
+    * Comments:
+        * > (2018, ESPNetV2) In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29].
+* [[ShiftNet](https://arxiv.org/abs/1711.08141)] <!-- printed -->
+    * Title: Shift: A Zero FLOP, Zero Parameter Alternative to Spatial Convolutions
+    * Year: 22 Nov `2017`
+    * Authors: Bichen Wu, Alvin Wan, Xiangyu Yue, Peter Jin, Sicheng Zhao, Noah Golmant, Amir Gholaminejad, Joseph Gonzalez, Kurt Keutzer
+    * Abstract: Neural networks rely on convolutions to aggregate spatial information. However, spatial convolutions are expensive in terms of model size and computation, both of which grow quadratically with respect to kernel size. In this paper, we present a parameter-free, FLOP-free "shift" operation as an alternative to spatial convolutions. We fuse shifts and point-wise convolutions to construct end-to-end trainable shift-based modules, with a hyperparameter characterizing the tradeoff between accuracy and efficiency. To demonstrate the operation's efficacy, we replace ResNet's 3x3 convolutions with shift-based modules for improved CIFAR10 and CIFAR100 accuracy using 60% fewer parameters; we additionally demonstrate the operation's resilience to parameter reduction on ImageNet, outperforming ResNet family members. We finally show the shift operation's applicability across domains, achieving strong performance with fewer parameters on classification, face verification and style transfer.
+* [[CondenseNet](https://arxiv.org/abs/1711.09224)] <!-- printed -->
+    * Title: CondenseNet: An Efficient DenseNet using Learned Group Convolutions
+    * Year: 25 Nov `2017`
+    * Authors: Gao Huang, Shichen Liu, Laurens van der Maaten, Kilian Q. Weinberger
+    * Abstract: Deep neural networks are increasingly used on mobile devices, where computational resources are limited. In this paper we develop CondenseNet, a novel network architecture with unprecedented efficiency. It combines dense connectivity with a novel module called learned group convolution. The dense connectivity facilitates feature re-use in the network, whereas learned group convolutions remove connections between layers for which this feature re-use is superfluous. At test time, our model can be implemented using standard group convolutions, allowing for efficient computation in practice. Our experiments show that CondenseNets are far more efficient than state-of-the-art compact convolutional networks such as MobileNets and ShuffleNets.
 
 ### (2017, MobileNetV1) Light-Weight Networks (count=7)
 
@@ -459,40 +493,6 @@ count: 123
     * Abstract: Depthwise convolution is becoming increasingly popular in modern efficient ConvNets, but its kernel size is often overlooked. In this paper, we systematically study the impact of different kernel sizes, and observe that combining the benefits of multiple kernel sizes can lead to better accuracy and efficiency. Based on this observation, we propose a new mixed depthwise convolution (MixConv), which naturally mixes up multiple kernel sizes in a single convolution. As a simple drop-in replacement of vanilla depthwise convolution, our MixConv improves the accuracy and efficiency for existing MobileNets on both ImageNet classification and COCO object detection. To demonstrate the effectiveness of MixConv, we integrate it into AutoML search space and develop a new family of models, named as MixNets, which outperform previous mobile models including MobileNetV2 [20] (ImageNet top-1 accuracy +4.2%), ShuffleNetV2 [16] (+3.5%), MnasNet [26] (+1.3%), ProxylessNAS [2] (+2.2%), and FBNet [27] (+2.0%). In particular, our MixNet-L achieves a new state-of-the-art 78.9% ImageNet top-1 accuracy under typical mobile settings (<600M FLOPS). Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet/mixnet).
 * MnasNet (see neural_architecture_search.md)
 
-### Light-Weight Networks (Others)
-
-* [[SqueezeNext](https://arxiv.org/abs/1803.10615)] <!-- printed -->
-    * Title: SqueezeNext: Hardware-Aware Neural Network Design
-    * Year: 23 Mar `2018`
-    * Authors: Amir Gholami, Kiseok Kwon, Bichen Wu, Zizheng Tai, Xiangyu Yue, Peter Jin, Sicheng Zhao, Kurt Keutzer
-    * Abstract: One of the main barriers for deploying neural networks on embedded systems has been large memory and power consumption of existing neural networks. In this work, we introduce SqueezeNext, a new family of neural network architectures whose design was guided by considering previous architectures such as SqueezeNet, as well as by simulation results on a neural network accelerator. This new network is able to match AlexNet's accuracy on the ImageNet benchmark with 112x fewer parameters, and one of its deeper variants is able to achieve VGG-19 accuracy with only 4.4 Million parameters, (31x smaller than VGG-19). SqueezeNext also achieves better top-5 classification accuracy with 1.3x fewer parameters as compared to MobileNet, but avoids using depthwise-separable convolutions that are inefficient on some mobile processor platforms. This wide range of accuracy gives the user the ability to make speed-accuracy tradeoffs, depending on the available resources on the target hardware. Using hardware simulation results for power and inference speed on an embedded system has guided us to design variations of the baseline model that are 2.59x/8.26x faster and 2.25x/7.5x more energy efficient as compared to SqueezeNet/AlexNet without any accuracy degradation.
-* [[ShuffleNetV1](https://arxiv.org/abs/1707.01083)] <!-- printed -->
-    * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
-    * Year: 04 Jul `2017`
-    * Authors: Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun
-    * Abstract: We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13x actual speedup over AlexNet while maintaining comparable accuracy.
-    * Comments:
-        * > (2018, MobileNetV2) Depthwise Separable Convolutions are a key building block for many efficient neural network architectures [26, 27, 19].
-        * > (2018, MobileNetV2) ShuffleNet uses Group Convolutions [19] and shuffling, it also uses conventional residual approach where inner blocks are narrower than output.
-        * > The ShuffleNet module [17], shown in Fig. 3b, is based on the principle of reduce-transform-expand. It is an optimized version of the bottleneck block in ResNet [47]. (ESPNetv1, 2018)
-* [[ShuffleNetV2](https://arxiv.org/abs/1807.11164)] <!-- printed -->
-    * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
-    * Year: 30 Jul `2018`
-    * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
-    * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
-    * Comments:
-        * > (2018, ESPNetv2) In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29].
-* [[ShiftNet](https://arxiv.org/abs/1711.08141)] <!-- printed -->
-    * Title: Shift: A Zero FLOP, Zero Parameter Alternative to Spatial Convolutions
-    * Year: 22 Nov `2017`
-    * Authors: Bichen Wu, Alvin Wan, Xiangyu Yue, Peter Jin, Sicheng Zhao, Noah Golmant, Amir Gholaminejad, Joseph Gonzalez, Kurt Keutzer
-    * Abstract: Neural networks rely on convolutions to aggregate spatial information. However, spatial convolutions are expensive in terms of model size and computation, both of which grow quadratically with respect to kernel size. In this paper, we present a parameter-free, FLOP-free "shift" operation as an alternative to spatial convolutions. We fuse shifts and point-wise convolutions to construct end-to-end trainable shift-based modules, with a hyperparameter characterizing the tradeoff between accuracy and efficiency. To demonstrate the operation's efficacy, we replace ResNet's 3x3 convolutions with shift-based modules for improved CIFAR10 and CIFAR100 accuracy using 60% fewer parameters; we additionally demonstrate the operation's resilience to parameter reduction on ImageNet, outperforming ResNet family members. We finally show the shift operation's applicability across domains, achieving strong performance with fewer parameters on classification, face verification and style transfer.
-* [[CondenseNet](https://arxiv.org/abs/1711.09224)] <!-- printed -->
-    * Title: CondenseNet: An Efficient DenseNet using Learned Group Convolutions
-    * Year: 25 Nov `2017`
-    * Authors: Gao Huang, Shichen Liu, Laurens van der Maaten, Kilian Q. Weinberger
-    * Abstract: Deep neural networks are increasingly used on mobile devices, where computational resources are limited. In this paper we develop CondenseNet, a novel network architecture with unprecedented efficiency. It combines dense connectivity with a novel module called learned group convolution. The dense connectivity facilitates feature re-use in the network, whereas learned group convolutions remove connections between layers for which this feature re-use is superfluous. At test time, our model can be implemented using standard group convolutions, allowing for efficient computation in practice. Our experiments show that CondenseNets are far more efficient than state-of-the-art compact convolutional networks such as MobileNets and ShuffleNets.
-
 ### Mobile Networks (count=3+2)
 
 * [[MobileNetV1](https://arxiv.org/abs/1704.04861)] <!-- printed -->
@@ -529,7 +529,7 @@ count: 123
     * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
     * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at [this https URL](https://github.com/hujie-frank/SENet).
 
-### Efficient Networks (3)
+### Efficient Networks (count=3)
 
 * [[EfficientNetV1](https://arxiv.org/abs/1905.11946)] <!-- printed -->
     [[vanity](https://www.arxiv-vanity.com/papers/1905.11946/)]
@@ -572,7 +572,7 @@ count: 123
 * Speeding up Convolutional Neural Networks with Low Rank Expansions
 * Deep roots
 
-### Compressing Convolutional Networks (ESPNetv1, 2018) (3) + (ESPNetv2, 2018) (2)
+### Compressing Convolutional Networks (ESPNetV1, 2018) (3) + (ESPNetV2, 2018) (2)
 
 * [Hashing](https://arxiv.org/abs/1504.04788)
     * Title: Compressing Neural Networks with the Hashing Trick
@@ -622,7 +622,7 @@ count: 123
     * Authors: Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Ran El-Yaniv, Yoshua Bengio
     * Abstract: We introduce a method to train Quantized Neural Networks (QNNs) --- neural networks with extremely low precision (e.g., 1-bit) weights and activations, at run-time. At train-time the quantized weights and activations are used for computing the parameter gradients. During the forward pass, QNNs drastically reduce memory size and accesses, and replace most arithmetic operations with bit-wise operations. As a result, power consumption is expected to be drastically reduced. We trained QNNs over the MNIST, CIFAR-10, SVHN and ImageNet datasets. The resulting QNNs achieve prediction accuracy comparable to their 32-bit counterparts. For example, our quantized version of AlexNet with 1-bit weights and 2-bit activations achieves 51% top-1 accuracy. Moreover, we quantize the parameter gradients to 6-bits as well which enables gradients computation using only bit-wise operation. Quantized recurrent neural networks were tested over the Penn Treebank dataset, and achieved comparable accuracy as their 32-bit counterparts using only 4-bits. Last but not least, we programmed a binary matrix multiplication GPU kernel with which it is possible to run our MNIST QNN 7 times faster than with an unoptimized GPU kernel, without suffering any loss in classification accuracy. The QNN code is available online.
 
-### Low-bit Networks (2018, ESPNetv1) (4)
+### Low-bit Networks (2018, ESPNetV1) (4)
 
 * XNOR-Net
 * Quantized Neural Networks
@@ -637,7 +637,7 @@ count: 123
     * Authors: Matthieu Courbariaux, Itay Hubara, Daniel Soudry, Ran El-Yaniv, Yoshua Bengio
     * Abstract: We introduce a method to train Binarized Neural Networks (BNNs) - neural networks with binary weights and activations at run-time. At training-time the binary weights and activations are used for computing the parameters gradients. During the forward pass, BNNs drastically reduce memory size and accesses, and replace most arithmetic operations with bit-wise operations, which is expected to substantially improve power-efficiency. To validate the effectiveness of BNNs we conduct two sets of experiments on the Torch7 and Theano frameworks. On both, BNNs achieved nearly state-of-the-art results over the MNIST, CIFAR-10 and SVHN datasets. Last but not least, we wrote a binary matrix multiplication GPU kernel with which it is possible to run our MNIST BNN 7 times faster than with an unoptimized GPU kernel, without suffering any loss in classification accuracy. The code for training and running our BNNs is available on-line.
 
-### Low-bit Networks (2018, ESPNetv2) (3)
+### Low-bit Networks (2018, ESPNetV2) (3)
 
 * XNOR-Net
 * Quantized Neural Networks
@@ -748,7 +748,7 @@ count: 123
     * Authors: Tianjun Xiao, Yichong Xu, Kuiyuan Yang, Jiaxing Zhang, Yuxin Peng, Zheng Zhang
     * Abstract: Fine-grained classification is challenging because categories can only be discriminated by subtle and local differences. Variances in the pose, scale or rotation usually make the problem more difficult. Most fine-grained classification systems follow the pipeline of finding foreground object or object parts (where) to extract discriminative features (what). In this paper, we propose to apply visual attention to fine-grained classification task using deep neural network. Our pipeline integrates three types of attention: the bottom-up attention that propose candidate patches, the object-level top-down attention that selects relevant patches to a certain object, and the part-level top-down attention that localizes discriminative parts. We combine these attentions to train domain-specific deep nets, then use it to improve both the what and where aspects. Importantly, we avoid using expensive annotations like bounding box or part information from end-to-end. The weak supervision constraint makes our work easier to generalize. We have verified the effectiveness of the method on the subsets of ILSVRC2012 dataset and CUB200_2011 dataset. Our pipeline delivered significant improvements and achieved the best accuracy under the weakest supervision condition. The performance is competitive against other methods that rely on additional annotations.
 
-## Sparse Networks (ESPNetv1, 2018) (3)
+## Sparse Networks (ESPNetV1, 2018) (3)
 
 * [Sparse Decomposition](https://openaccess.thecvf.com/content_cvpr_2015/html/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.html)
     * Title: Sparse Convolutional Neural Networks
