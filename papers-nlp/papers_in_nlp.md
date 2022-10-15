@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in NLP
+# [Papers] Natural Language Processing
 
 count: 10
 

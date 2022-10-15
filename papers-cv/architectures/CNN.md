@@ -79,17 +79,21 @@ count: 123
     * Institutions: The Swiss AI Lab IDSIA / USI / SUPSI
     * Abstract: Theoretical and empirical evidence indicates that the depth of neural networks is crucial for their success. However, training becomes more difficult as depth increases, and training of very deep networks remains an open problem. Here we introduce a new architecture designed to overcome this. Our so-called highway networks allow unimpeded information flow across many layers on information highways. They are inspired by Long Short-Term Memory recurrent networks and use adaptive gating units to regulate the information flow. Even with hundreds of layers, highway networks can be trained directly through simple gradient descent. This enables the study of extremely deep and efficient architectures.
     * Comments:
-        * > (2015, ResNet) Concurrent with our work, “highway networks” [42, 43] present shortcut connections with gating functions [15].
+        * > (2015, ResNet) Concurrent with our work, "highway networks" [42, 43] present shortcut connections with gating functions [15].
+        * > (2016, DenseNet) ResNets [11] and Highway Networks [33] bypass signal from one layer to the next via identity connections.
         * > (2017, SENet) Highway networks introduced a gating mechanism to regulate the flow of information along shortcut connections.
 * [[DenseNet](https://arxiv.org/abs/1608.06993)] <!-- printed -->
+    [[pdf](https://arxiv.org/pdf/1608.06993)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1608.06993/)]
     * Title: Densely Connected Convolutional Networks
     * Year: 25 Aug `2016`
-    * Author: Gao Huang
+    * Authors: Gao Huang, Zhuang Liu, Laurens van der Maaten, Kilian Q. Weinberger
+    * Institutions: [Cornell University], [Tsinghua University], [Facebook AI Research]
     * Abstract: Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at [this https URL](https://github.com/liuzhuang13/DenseNet).
     * Comments:
-        * > By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. (2017, DPN)
-        * > Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet. (2017, DPN)
-        * > Many works, such as DenseNet (Huang et al., 2017) and EfficientNet (Tan & Le, 2019a), focus on parameter efficiency, aiming to achieve better accuracy with less parameters. (EfficientNetV2, 2021)
+        * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
+        * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
+        * > (2021, EfficientNetV2) Many works, such as DenseNet (Huang et al., 2017) and EfficientNet (Tan & Le, 2019a), focus on parameter efficiency, aiming to achieve better accuracy with less parameters.
 
 ### Residual Networks
 
@@ -104,6 +108,7 @@ count: 123
     * Institutions: [Microsoft Research]
     * Abstract: Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
     * Comments:
+        * > (2016, DenseNet) ResNets [11] and Highway Networks [33] bypass signal from one layer to the next via identity connections.
         * > (2016, Inception-v4) In [5], it is argued that residual connections are of inherent importance for training very deep architectures.
         * > (2016, PSPNet) Although theoretically the receptive field of ResNet [13] is already larger than the input image, it is shown by Zhou et al. [42] that the empirical receptive field of CNN is much smaller than the theoretical one especially on high-level layers.
         * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
@@ -832,6 +837,8 @@ count: 123
     * Year: 30 Mar `2016`
     * Author: Gao Huang
     * Abstract: Very deep convolutional networks with hundreds of layers have led to significant reductions in error on competitive benchmarks. Although the unmatched expressiveness of the many layers can be highly desirable at test time, training very deep networks comes with its own set of challenges. The gradients can vanish, the forward flow often diminishes, and the training time can be painfully slow. To address these problems, we propose stochastic depth, a training procedure that enables the seemingly contradictory setup to train short networks and use deep networks at test time. We start with very deep networks but during training, for each mini-batch, randomly drop a subset of layers and bypass them with the identity function. This simple approach complements the recent success of residual networks. It reduces training time substantially and improves the test error significantly on almost all data sets that we used for evaluation. With stochastic depth we can increase the depth of residual networks even beyond 1200 layers and still yield meaningful improvements in test error (4.91% on CIFAR-10).
+    * Comments:
+        * > (2016, DenseNet) Stochastic depth [13] shortens ResNets by randomly dropping layers during training to allow better information and gradient flow.
 
 ## Data Augmentation
 
@@ -921,6 +928,8 @@ count: 123
     * Year: 24 May `2016`
     * Authors: Gustav Larsson, Michael Maire, Gregory Shakhnarovich
     * Abstract: We introduce a design strategy for neural network macro-architecture based on self-similarity. Repeated application of a simple expansion rule generates deep networks whose structural layouts are precisely truncated fractals. These networks contain interacting subpaths of different lengths, but do not include any pass-through or residual connections; every internal signal is transformed by a filter and nonlinearity before being seen by subsequent layers. In experiments, fractal networks match the excellent performance of standard residual networks on both CIFAR and ImageNet classification tasks, thereby demonstrating that residual representations may not be fundamental to the success of extremely deep convolutional neural networks. Rather, the key may be the ability to transition, during training, from effectively shallow to deep. We note similarities with student-teacher behavior and develop drop-path, a natural extension of dropout, to regularize co-adaptation of subpaths in fractal architectures. Such regularization allows extraction of high-performance fixed-depth subnetworks. Additionally, fractal networks exhibit an anytime property: shallow subnetworks provide a quick answer, while deeper subnetworks, with higher latency, provide a more accurate answer.
+    * Comments:
+        * > (2016, DenseNet) FractalNets [17] repeatedly combine several parallel layer sequences with different number of convolutional blocks to obtain a large nominal depth, while maintaining many short paths in the network.
 * [DFN](https://arxiv.org/abs/1605.07716)
     * Title: Deeply-Fused Nets
     * Year: 25 May `2016`

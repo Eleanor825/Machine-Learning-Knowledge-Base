@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Model Compression
+# [Papers] Model Compression
 
 count: 2
 
