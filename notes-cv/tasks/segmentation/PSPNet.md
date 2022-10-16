@@ -53,22 +53,23 @@
 
 > With above analysis, in what follows, we introduce the pyramid pooling module, which empirically proves to be an effective `global contextual prior`.
 
-> Global average pooling is a good baseline model as the global contextual prior, which is commonly used in image classification tasks [34, 13].
+> `Global average pooling` is a good baseline model as the `global contextual prior`, which is commonly used in image classification tasks [34, 13].
 
 > To further reduce context information loss between different sub-regions, we propose a `hierarchical global prior`, containing information with different scales and varying among different sub-regions. We call it pyramid pooling module for global scene prior construction upon the final-layer-feature-map of the deep neural network, as illustrated in part (c) of Fig. 3.
 
 Notations:
+* Let $H, W \in \mathbb{Z}_{++}$ denote the height and width of the input feature map.
 * Let $x \in \mathbb{R}^{H \times W \times N}$ denote the input feature map to the pyramid pooling module.
 * Let $L \in \mathbb{Z}_{++}$ denote the number of levels in the pyramid.
 * Let $B_{1}, ..., B_{L} \in \mathbb{Z}_{++}$ denote the bin sizes for each pyramid level.
-* Let $H_{i}, W_{i} \in \mathbb{Z}_{++}$ given by $$H_{i} := H / B_{i} \text{ and } W_{i} := W / B_{i}$$ denote the height and width of the feature maps at the $i$-th level.
+* Define for each $i \in \{1, ..., L\}$ the height and width $H_{i}, W_{i} \in \mathbb{Z}_{++}$ of the feature maps at the $i$-th level by
+$$H_{i} := H / B_{i} \text{ and } W_{i} := W / B_{i}.$$
 * Let $\mathcal{P}_{i}: \mathbb{R}^{H \times W \times N} \to \mathbb{R}^{H_{i} \times W_{i} \times N}$ denote the average/max pooling layer at the $i$-th level.
 * Let $K_{1}, ..., K_{L} \in \mathbb{R}^{1 \times 1 \times N}$ denote the 1x1 convolutional kernels.
 * Let $\mathcal{U}_{i}: \mathbb{R}^{H_{i} \times W_{i} \times 1} \to \mathbb{R}^{H \times W \times 1}$ denote the upsampling layer at the $i$-th level.
-* Let $\mathcal{F}: \mathbb{R}^{H \times W \times N} \to \mathbb{R}^{H \times W \times (N+L)}$ denote the pyramid pooling module.
 
-Then $\mathcal{F}$ is given by:
-$$\mathcal{F}(x) := \operatorname{Concat}\bigg(\{x\} \cup \bigg\{\mathcal{U}_{i}(\mathcal{P}_{i}(x) * K_{i}): i \in \{1, ..., L\}\bigg\}\bigg).$$
+Then the pyramid pooling module $\mathcal{F}: \mathbb{R}^{H \times W \times N} \to \mathbb{R}^{H \times W \times (N+L)}$ is given by:
+$$\mathcal{F}(x) := \operatorname{Concatenate}\bigg(\{x\} \cup \bigg\{\mathcal{U}_{i}(\mathcal{P}_{i}(x) * K_{i}): i \in \{1, ..., L\}\bigg\}\bigg).$$
 
 ### 3.3. Network Architecture
 
@@ -93,11 +94,11 @@ $$\mathcal{F}(x) := \operatorname{Concat}\bigg(\{x\} \cup \bigg\{\mathcal{U}_{i}
 ## Further Reading
 
 * [12] Spatial Pyramid Pooling (SPP)
-* [13] ResNet
-* [17] AlexNet
+* [13] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
+* [17] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [19] Deeply-Supervised Nets (DSN)
 * [24] ParseNet
 * [26] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [30] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
-* [33] VGG
-* [34] Inception-v1/GoogLeNet
+* [33] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [34] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
