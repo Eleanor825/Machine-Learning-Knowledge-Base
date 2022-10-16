@@ -6,6 +6,8 @@ class ResNet(tf.keras.Model):
     def __init__(self, num_classes, version, **kwargs):
         super(ResNet, self).__init__(name=f"ResNet{version}", **kwargs)
         self._num_classes = num_classes
+        if version not in [18, 34, 50, 101, 152]:
+            raise ValueError(f"[ERROR] Version {version} of ResNet not defined.")
         self.version = version
 
     def _stage_1_and_max_pool(self, x):
@@ -20,6 +22,15 @@ class ResNet(tf.keras.Model):
         return x
 
     def _conv_layer(self, x, filters, strides, layer_id):
+        """
+        Perform 3x3 convolution + batch normalization + ReLU activation on input tensor x.
+        Strides of convolution can vary.
+        Arguments:
+            filters (int): number of filters for the 3x3 convolution.
+            layer_id (str): id of the current layer.
+        Returns:
+            x: processed input.
+        """
         conv = tf.keras.layers.Conv2D(
             filters=filters, kernel_size=(3, 3), strides=strides, padding="SAME",
             name=layer_id + '_conv',
@@ -33,6 +44,11 @@ class ResNet(tf.keras.Model):
         return relu(batch_normalization(conv(x)))
 
     def _reduction_layer(self, x, filters, layer_id):
+        """
+        Perform 1x1 convolution + batch normalization + ReLU activation on input tensor x
+        to decrease dimension.
+        Strides of convolution is fixed to (1, 1).
+        """
         conv = tf.keras.layers.Conv2D(
             filters=filters, kernel_size=(1, 1), strides=(1, 1), padding="SAME",
             name=layer_id + '_projection',
@@ -46,6 +62,11 @@ class ResNet(tf.keras.Model):
         return relu(batch_normalization(conv(x)))
 
     def _expansion_layer(self, x, filters, layer_id):
+        """
+        Perform 1x1 convolution + batch normalization on input tensor x
+        to increase dimension.
+        Strides of convolution is fixed to (1, 1).
+        """
         conv = tf.keras.layers.Conv2D(
             filters=filters, kernel_size=(1, 1), strides=(1, 1), padding="SAME",
             name=layer_id + '_projection',
@@ -59,7 +80,7 @@ class ResNet(tf.keras.Model):
         """
         Arguments:
             filters (int): number of filters for both conv layers.
-            strides (int): strides for the Conv2D in the first self._conv_layer.
+            strides (int): strides for the 3x3 convolution in the first self._conv_layer.
         """
         shortcut = x
         x = self._conv_layer(x, filters=filters, strides=strides, layer_id=block_id + '_layer_1')
@@ -68,8 +89,9 @@ class ResNet(tf.keras.Model):
             assert x.shape[3] == shortcut.shape[3] * 2
             assert shortcut.shape[1] == x.shape[1] * 2
             assert shortcut.shape[2] == x.shape[2] * 2
+            assert strides in [2, (2, 2)]
             shortcut = tf.keras.layers.Conv2D(
-                filters=x.shape[3], kernel_size=(1, 1), strides=(2, 2), padding="SAME",
+                filters=x.shape[3], kernel_size=(1, 1), strides=strides, padding="SAME",
                 name=block_id + '_projection',
             )(shortcut)
         x = tf.keras.layers.Add(
@@ -80,18 +102,19 @@ class ResNet(tf.keras.Model):
         )(x)
         return x
 
-    def _bottleneck_block(self, x, filters, block_id):
+    def _bottleneck_block(self, x, filters, strides, block_id):
         """
         Arguments:
-            filters (int): number of filters for reduction and conv. The number of filters for expansion is 4 * filters.
+            filters (int): number of filters for reduction and conv. The number of filters for
+                           expansion is 4 * filters.
         """
         shortcut = x
         x = self._reduction_layer(x, filters=filters, layer_id=block_id + '_layer_1')
-        x = self._conv_layer(x, filters=filters, layer_id=block_id + '_layer_2')
+        x = self._conv_layer(x, filters=filters, strides=strides, layer_id=block_id + '_layer_2')
         x = self._expansion_layer(x, filters=filters * 4, layer_id=block_id + '_layer_3')
         if x.shape[3] != shortcut.shape[3]:
             shortcut = tf.keras.layers.Conv2D(
-                filters=x.shape[3], kernel_size=(1, 1), strides=(1, 1), padding="SAME",
+                filters=x.shape[3], kernel_size=(1, 1), strides=strides, padding="SAME",
                 name=block_id + '_projection',
             )(shortcut)
         x = tf.keras.layers.Add(
@@ -102,16 +125,21 @@ class ResNet(tf.keras.Model):
         )(x)
         return x
 
-    def _regular_stage(self, x, filters, strides, num_blocks, stage_id):
-        for block_idx in range(num_blocks):
-            strides = strides if block_idx == 0 else (1, 1)
-            x = self._regular_block(x, filters=filters, strides=strides, block_id=stage_id + f"{block_idx+1}")
-        return x
-
-    def _bottleneck_stage(self, x, filters, num_blocks, stage_id):
-        for block_idx in range(num_blocks):
-            strides = (2, 2) if block_idx == 0 else (1, 1)
-            x = self._bottleneck_block(x, filters=filters, block_id=stage_id + f"{block_idx+1}")
+    def _call_stage(self, x, block_type, filters, first_strides, num_blocks, stage_id):
+        """
+        Arguments:
+            filters (int): uniform number of filters for the convolution layers in each of the blocks.
+            first_strides (int): strides of the convolution in the first self._conv_layer in the first block.
+            num_blocks (int): number of times the block is repeated.
+        """
+        if block_type not in ['regular', 'bottleneck']:
+            raise ValueError(f"[ERROR] block_type must be in ['regular', 'bottleneck']. Got {block_type}.")
+        block = self._regular_block if block_type == 'regular' else self._bottleneck_block
+        for idx in range(num_blocks):
+            strides = first_strides if idx == 0 else (1, 1)
+            x = block(
+                x, filters=filters, strides=strides, block_id=stage_id + f"{idx+1}",
+            )
         return x
 
     def _classifier(self, x):
@@ -128,18 +156,24 @@ class ResNet(tf.keras.Model):
         return x
 
     def _call_config(self, x, block_type, num_blocks_list):
-        if block_type == 'regular':
-            func = self._regular_stage
-        elif block_type == 'bottleneck':
-            func = self._bottleneck_stage
-        else:
-            raise ValueError(f"[ERROR] block_type must be in ['regular', 'bottleneck']. Got {block_type}.")
         assert len(num_blocks_list) == 4
         x = self._stage_1_and_max_pool(x)
-        x = func(x, filters=64, strides=(1, 1), num_blocks=num_blocks_list[0], stage_id="block_2.")
-        x = func(x, filters=128, strides=(2, 2), num_blocks=num_blocks_list[1], stage_id="block_3.")
-        x = func(x, filters=256, strides=(2, 2), num_blocks=num_blocks_list[2], stage_id="block_4.")
-        x = func(x, filters=512, strides=(2, 2), num_blocks=num_blocks_list[3], stage_id="block_5.")
+        x = self._call_stage(
+            x, block_type=block_type, filters=64, first_strides=(1, 1),
+            num_blocks=num_blocks_list[0], stage_id="block_2.",
+        )
+        x = self._call_stage(
+            x, block_type=block_type, filters=128, first_strides=(2, 2),
+            num_blocks=num_blocks_list[1], stage_id="block_3.",
+        )
+        x = self._call_stage(
+            x, block_type=block_type, filters=256, first_strides=(2, 2),
+            num_blocks=num_blocks_list[2], stage_id="block_4.",
+        )
+        x = self._call_stage(
+            x, block_type=block_type, filters=512, first_strides=(2, 2),
+            num_blocks=num_blocks_list[3], stage_id="block_5.",
+        )
         x = self._classifier(x)
         return x
 
@@ -168,6 +202,6 @@ class ResNet(tf.keras.Model):
 
 
 if __name__ == "__main__":
-    model = ResNet(num_classes=1000, version=18)
+    model = ResNet(num_classes=1000, version=50)
     model = model.build(input_shape=(224, 224, 3))
     model.summary()
