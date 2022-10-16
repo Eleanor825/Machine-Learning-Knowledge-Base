@@ -64,9 +64,9 @@ count: 123
 
 ### Reformulations of the Connections between Network Layers
 
-> Following these works, there have been further reformulations oof the connections between network layers [DPN], [DenseNets], which show promising improvements to the learning and representational properties of deep networks. (SENet, 2017)
+> Following these works, there have been further reformulations of the connections between network layers [DPN], [DenseNets], which show promising improvements to the learning and representational properties of deep networks. (SENet, 2017)
 
-* [Highway Networks](https://arxiv.org/abs/1505.00387)
+* [[Highway Networks](https://arxiv.org/abs/1505.00387)]
     * Title: Highway Networks
     * Year: 03 May `2015`
     * Authors: Rupesh Kumar Srivastava, Klaus Greff, Jürgen Schmidhuber
@@ -81,7 +81,65 @@ count: 123
     * Comments:
         * > (2015, ResNet) Concurrent with our work, "highway networks" [42, 43] present shortcut connections with gating functions [15].
         * > (2016, DenseNet) ResNets [11] and Highway Networks [33] bypass signal from one layer to the next via identity connections.
+        * > (2016, DenseNet) Highway Networks [33] were amongst the first architectures that provided a means to effectively train end-to-end networks with more than 100 layers. Using bypassing paths along with gating units, Highway Networks with hundreds of layers can be optimized with SGD effectively. The bypassing paths are presumed to be the key factor that eases the training of these very deep networks.
         * > (2017, SENet) Highway networks introduced a gating mechanism to regulate the flow of information along shortcut connections.
+* [[Stochastic Depth](https://arxiv.org/abs/1603.09382)] <!-- printed -->
+    * Title: Deep Networks with Stochastic Depth
+    * Year: 30 Mar `2016`
+    * Author: Gao Huang
+    * Abstract: Very deep convolutional networks with hundreds of layers have led to significant reductions in error on competitive benchmarks. Although the unmatched expressiveness of the many layers can be highly desirable at test time, training very deep networks comes with its own set of challenges. The gradients can vanish, the forward flow often diminishes, and the training time can be painfully slow. To address these problems, we propose stochastic depth, a training procedure that enables the seemingly contradictory setup to train short networks and use deep networks at test time. We start with very deep networks but during training, for each mini-batch, randomly drop a subset of layers and bypass them with the identity function. This simple approach complements the recent success of residual networks. It reduces training time substantially and improves the test error significantly on almost all data sets that we used for evaluation. With stochastic depth we can increase the depth of residual networks even beyond 1200 layers and still yield meaningful improvements in test error (4.91% on CIFAR-10).
+    * Comments:
+        * > (2016, DenseNet) Stochastic depth [13] shortens ResNets by randomly dropping layers during training to allow better information and gradient flow.
+        * > (2016, DenseNet) Recent variations of ResNets [13] show that many layers contribute very little and can in fact be randomly dropped during training.
+        * > (2016, DenseNet) Stochastic depth improves the training of deep residual networks by dropping layers randomly during training.
+* [FractalNet](https://arxiv.org/abs/1605.07648)
+    * Title: FractalNet: Ultra-Deep Neural Networks without Residuals
+    * Year: 24 May `2016`
+    * Authors: Gustav Larsson, Michael Maire, Gregory Shakhnarovich
+    * Abstract: We introduce a design strategy for neural network macro-architecture based on self-similarity. Repeated application of a simple expansion rule generates deep networks whose structural layouts are precisely truncated fractals. These networks contain interacting subpaths of different lengths, but do not include any pass-through or residual connections; every internal signal is transformed by a filter and nonlinearity before being seen by subsequent layers. In experiments, fractal networks match the excellent performance of standard residual networks on both CIFAR and ImageNet classification tasks, thereby demonstrating that residual representations may not be fundamental to the success of extremely deep convolutional neural networks. Rather, the key may be the ability to transition, during training, from effectively shallow to deep. We note similarities with student-teacher behavior and develop drop-path, a natural extension of dropout, to regularize co-adaptation of subpaths in fractal architectures. Such regularization allows extraction of high-performance fixed-depth subnetworks. Additionally, fractal networks exhibit an anytime property: shallow subnetworks provide a quick answer, while deeper subnetworks, with higher latency, provide a more accurate answer.
+    * Comments:
+        * > (2016, DenseNet) FractalNets [17] repeatedly combine several parallel layer sequences with different number of convolutional blocks to obtain a large nominal depth, while maintaining many short paths in the network.
+        * > (2016, DenseNet) FractalNets also achieve competitive results on several benchmark datasets using a wide network structure [17].
+* [[DAG-CNN](https://arxiv.org/abs/1505.05232)]
+    [[pdf](https://arxiv.org/pdf/1505.05232)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1505.05232/)]
+    * Title: Multi-scale recognition with DAG-CNNs
+    * Year: 20 May `2015`
+    * Authors: Songfan Yang, Deva Ramanan
+    * Institutions: [College of Electronics and Information Engineering, Sichuan University], [Deptment of Computer Science, University of California]
+    * Abstract: We explore multi-scale convolutional neural nets (CNNs) for image classification. Contemporary approaches extract features from a single output layer. By extracting features from multiple layers, one can simultaneously reason about high, mid, and low-level features during classification. The resulting multi-scale architecture can itself be seen as a feed-forward model that is structured as a directed acyclic graph (DAG-CNNs). We use DAG-CNNs to learn a set of multiscale features that can be effectively shared between coarse and fine-grained classification tasks. While fine-tuning such models helps performance, we show that even "off-the-self" multiscale features perform quite well. We present extensive analysis and demonstrate state-of-the-art classification performance on three standard scene benchmarks (SUN397, MIT67, and Scene15). In terms of the heavily benchmarked MIT67 and Scene15 datasets, our results reduce the lowest previously-reported error by 23.9% and 9.5%, respectively.
+    * Comments:
+        * > (2016, DenseNet) In [9, 23, 30, 40], utilizing multi-level features in CNNs through skip-connnections has been found to be effective for various vision tasks.
+* [[AdaNet](https://arxiv.org/abs/1607.01097)]
+    [[pdf](https://arxiv.org/pdf/1607.01097)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1607.01097/)]
+    * Title: AdaNet: Adaptive Structural Learning of Artificial Neural Networks
+    * Year: 05 Jul `2016`
+    * Authors: Corinna Cortes, Xavi Gonzalvo, Vitaly Kuznetsov, Mehryar Mohri, Scott Yang
+    * Institutions: [Google Research, New York], [Courant Institute, New York]
+    * Abstract: We present new algorithms for adaptively learning artificial neural networks. Our algorithms (AdaNet) adaptively learn both the structure of the network and its weights. They are based on a solid theoretical analysis, including data-dependent generalization guarantees that we prove and discuss in detail. We report the results of large-scale experiments with one of our algorithms on several binary classification tasks extracted from the CIFAR-10 dataset. The results demonstrate that our algorithm can automatically learn network structures with very competitive performance accuracies when compared with those achieved for neural networks found by standard approaches.
+    * Comments:
+        * > (2016, DenseNet) Parallel to our work, [1] derived a purely theoretical framework for networks with cross-layer connections similar to ours.
+* [[Deeply-Supervised Networks (DSN)](https://arxiv.org/abs/1409.5185)] <!-- printed -->
+    * Title: Deeply-Supervised Nets
+    * Year: 18 Sep 2014
+    * Author: Chen-Yu Lee
+    * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
+    * Comments:
+        * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
+        * > (2015, Inception-v3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
+        * > (2016, DenseNet) In Deeply Supervised Network (DSN) [20], internal layers are directly supervised by auxiliary classifiers, which can strengthen the gradients received by earlier layers.
+* [[Deeply-Fused Networks (DFN)](https://arxiv.org/abs/1605.07716)]
+    * Title: Deeply-Fused Nets
+    * Year: 25 May `2016`
+    * Authors: Jingdong Wang, Zhen Wei, Ting Zhang, Wenjun Zeng
+    * Abstract: In this paper, we present a novel deep learning approach, deeply-fused nets. The central idea of our approach is deep fusion, i.e., combine the intermediate representations of base networks, where the fused output serves as the input of the remaining part of each base network, and perform such combinations deeply over several intermediate representations. The resulting deeply fused net enjoys several benefits. First, it is able to learn multi-scale representations as it enjoys the benefits of more base networks, which could form the same fused network, other than the initial group of base networks. Second, in our suggested fused net formed by one deep and one shallow base networks, the flows of the information from the earlier intermediate layer of the deep base network to the output and from the input to the later intermediate layer of the deep base network are both improved. Last, the deep and shallow base networks are jointly learnt and can benefit from each other. More interestingly, the essential depth of a fused net composed from a deep base network and a shallow base network is reduced because the fused net could be composed from a less deep base network, and thus training the fused net is less difficult than training the initial deep base network. Empirical results demonstrate that our approach achieves superior performance over two closely-related methods, ResNet and Highway, and competitive performance compared to the state-of-the-arts.
+    * Comments:
+        * > (2016, DenseNet) In [38], Deeply-Fused Nets (DFNs) were proposed to improve information flow by combining intermediate layers of different base networks.
+* [[Augmenting Supervised Neural Networks with Unsupervised Objectives for Large-scale Image Classification](https://arxiv.org/abs/1606.06582)]
+    * Title: Augmenting Supervised Neural Networks with Unsupervised Objectives for Large-scale Image Classification
+    * Year: 21 Jun `2016`
+    * Authors: Unsupervised learning and supervised learning are key research topics in deep learning. However, as high-capacity supervised neural networks trained with a large amount of labels have achieved remarkable success in many computer vision tasks, the availability of large-scale labeled images reduced the significance of unsupervised learning. Inspired by the recent trend toward revisiting the importance of unsupervised learning, we investigate joint supervised and unsupervised learning in a large-scale setting by augmenting existing neural networks with decoding pathways for reconstruction. First, we demonstrate that the intermediate activations of pretrained large-scale classification networks preserve almost all the information of input images except a portion of local spatial details. Then, by end-to-end training of the entire augmented architecture with the reconstructive objective, we show improvement of the network performance for supervised tasks. We evaluate several variants of autoencoders, including the recently proposed "what-where" autoencoder that uses the encoder pooling switches, to study the importance of the architecture design. Taking the 16-layer VGGNet trained under the ImageNet ILSVRC 2012 protocol as a strong baseline for image classification, our methods improve the validation-set accuracy by a noticeable margin.
 * [[DenseNet](https://arxiv.org/abs/1608.06993)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1608.06993)]
     [[vanity](https://www.arxiv-vanity.com/papers/1608.06993/)]
@@ -94,6 +152,17 @@ count: 123
         * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
         * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
         * > (2021, EfficientNetV2) Many works, such as DenseNet (Huang et al., 2017) and EfficientNet (Tan & Le, 2019a), focus on parameter efficiency, aiming to achieve better accuracy with less parameters.
+
+### Ladder Networks
+
+* [Semi-Supervised Learning with Ladder Networks](https://arxiv.org/abs/1507.02672)
+    * Title: Semi-Supervised Learning with Ladder Networks
+    * Year: 09 Jul `2015`
+    * Authors: Antti Rasmus, Harri Valpola, Mikko Honkala, Mathias Berglund, Tapani Raiko
+* [Deconstructing the Ladder Network Architecture](https://arxiv.org/abs/1511.06430)
+    * Title: Deconstructing the Ladder Network Architecture
+    * Year: 19 Nov `2015`
+    * Authors: Mohammad Pezeshki, Linxi Fan, Philemon Brakel, Aaron Courville, Yoshua Bengio
 
 ### Residual Networks
 
@@ -115,7 +184,7 @@ count: 123
         * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
         * > (2017, ERFNet) It has been reported that non-bottleneck ResNets gain more accuracy from increased depth than the bottleneck versions, which indicates that they are not entirely equivalent and that the bottleneck design still suffers from the degradation problem.
         * > (2019, EfficientNetV1) Although several techniques, such as skip connections (He et al., 2016) and batch normalization (Ioffe & Szegedy, 2015), alleviate the training problem, the accuracy gain of very deep network diminishes: for example, ResNet-1000 has similar accuracy as ResNet-101 even though it has much more layers.
-* [[ResNet v2](https://arxiv.org/abs/1603.05027)] <!-- printed -->
+* [[ResNetV2](https://arxiv.org/abs/1603.05027)] <!-- printed -->
     * Title: Identity Mappings in Deep Residual Networks
     * Year: 16 Mar `2016`
     * Author: Kaiming He
@@ -133,6 +202,8 @@ count: 123
     * Year: 23 May `2016`
     * Authors: Sergey Zagoruyko, Nikos Komodakis
     * Abstract: Deep residual networks were shown to be able to scale up to thousands of layers and still have improving performance. However, each fraction of a percent of improved accuracy costs nearly doubling the number of layers, and so training very deep residual networks has a problem of diminishing feature reuse, which makes these networks very slow to train. To tackle these problems, in this paper we conduct a detailed experimental study on the architecture of ResNet blocks, based on which we propose a novel architecture where we decrease depth and increase width of residual networks. We call the resulting network structures wide residual networks (WRNs) and show that these are far superior over their commonly used thin and very deep counterparts. For example, we demonstrate that even a simple 16-layer-deep wide residual network outperforms in accuracy and efficiency all previous deep residual networks, including thousand-layer-deep networks, achieving new state-of-the-art results on CIFAR, SVHN, COCO, and significant improvements on ImageNet. Our code and models are available at [this https URL](https://github.com/szagoruyko/wide-residual-networks).
+    * Comments:
+        * > (2016, DenseNet) In fact, simply increasing the number of filters in each layer of ResNets can improve its performance provided the depth is sufficient [41].
 * [[ResNeXt](https://arxiv.org/abs/1611.05431)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1611.05431.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1611.05431/)]
@@ -832,13 +903,6 @@ count: 123
     * Year: 22 Nov `2015`
     * Author: Leslie N. Smith
     * Abstract: We introduce the concept of dynamically growing a neural network during training. In particular, an untrainable deep network starts as a trainable shallow network and newly added layers are slowly, organically added during training, thereby increasing the network's depth. This is accomplished by a new layer, which we call DropIn. The DropIn layer starts by passing the output from a previous layer (effectively skipping over the newly added layers), then increasingly including units from the new layers for both feedforward and backpropagation. We show that deep networks, which are untrainable with conventional methods, will converge with DropIn layers interspersed in the architecture. In addition, we demonstrate that DropIn provides regularization during training in an analogous way as dropout. Experiments are described with the MNIST dataset and various expanded LeNet architectures, CIFAR-10 dataset with its architecture expanded from 3 to 11 layers, and on the ImageNet dataset with the AlexNet architecture expanded to 13 layers and the VGG 16-layer architecture.
-* [[Stochastic Depth](https://arxiv.org/abs/1603.09382)] <!-- printed -->
-    * Title: Deep Networks with Stochastic Depth
-    * Year: 30 Mar `2016`
-    * Author: Gao Huang
-    * Abstract: Very deep convolutional networks with hundreds of layers have led to significant reductions in error on competitive benchmarks. Although the unmatched expressiveness of the many layers can be highly desirable at test time, training very deep networks comes with its own set of challenges. The gradients can vanish, the forward flow often diminishes, and the training time can be painfully slow. To address these problems, we propose stochastic depth, a training procedure that enables the seemingly contradictory setup to train short networks and use deep networks at test time. We start with very deep networks but during training, for each mini-batch, randomly drop a subset of layers and bypass them with the identity function. This simple approach complements the recent success of residual networks. It reduces training time substantially and improves the test error significantly on almost all data sets that we used for evaluation. With stochastic depth we can increase the depth of residual networks even beyond 1200 layers and still yield meaningful improvements in test error (4.91% on CIFAR-10).
-    * Comments:
-        * > (2016, DenseNet) Stochastic depth [13] shortens ResNets by randomly dropping layers during training to allow better information and gradient flow.
 
 ## Data Augmentation
 
@@ -900,14 +964,6 @@ count: 123
 
 ## Unclassified (listed in to be read order)
 
-* [[Deeply-Supervised Nets (DSN)](https://arxiv.org/abs/1409.5185)] <!-- printed -->
-    * Title: Deeply-Supervised Nets
-    * Year: 18 Sep 2014
-    * Author: Chen-Yu Lee
-    * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
-    * Comments:
-        * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
-        * > (2015, Inception-v3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
 * [HRNet](https://arxiv.org/abs/1908.07919)
     * Title: Deep High-Resolution Representation Learning for Visual Recognition
     * Year: 20 Aug `2019`
@@ -923,18 +979,6 @@ count: 123
     * Year: 06 Dec `2013`
     * Author: David Eigen
     * Abstract: A key challenge in designing convolutional network models is sizing them appropriately. Many factors are involved in these decisions, including number of layers, feature maps, kernel sizes, etc. Complicating this further is the fact that each of these influence not only the numbers and dimensions of the activation units, but also the total number of parameters. In this paper we focus on assessing the independent contributions of three of these linked variables: The numbers of layers, feature maps, and parameters. To accomplish this, we employ a recursive convolutional network whose weights are tied between layers; this allows us to vary each of the three factors in a controlled setting. We find that while increasing the numbers of layers and parameters each have clear benefit, the number of feature maps (and hence dimensionality of the representation) appears ancillary, and finds most of its benefit through the introduction of more weights. Our results (i) empirically confirm the notion that adding layers alone increases computational power, within the context of convolutional layers, and (ii) suggest that precise sizing of convolutional feature map dimensions is itself of little concern; more attention should be paid to the number of parameters in these layers instead.
-* [FractalNet](https://arxiv.org/abs/1605.07648)
-    * Title: FractalNet: Ultra-Deep Neural Networks without Residuals
-    * Year: 24 May `2016`
-    * Authors: Gustav Larsson, Michael Maire, Gregory Shakhnarovich
-    * Abstract: We introduce a design strategy for neural network macro-architecture based on self-similarity. Repeated application of a simple expansion rule generates deep networks whose structural layouts are precisely truncated fractals. These networks contain interacting subpaths of different lengths, but do not include any pass-through or residual connections; every internal signal is transformed by a filter and nonlinearity before being seen by subsequent layers. In experiments, fractal networks match the excellent performance of standard residual networks on both CIFAR and ImageNet classification tasks, thereby demonstrating that residual representations may not be fundamental to the success of extremely deep convolutional neural networks. Rather, the key may be the ability to transition, during training, from effectively shallow to deep. We note similarities with student-teacher behavior and develop drop-path, a natural extension of dropout, to regularize co-adaptation of subpaths in fractal architectures. Such regularization allows extraction of high-performance fixed-depth subnetworks. Additionally, fractal networks exhibit an anytime property: shallow subnetworks provide a quick answer, while deeper subnetworks, with higher latency, provide a more accurate answer.
-    * Comments:
-        * > (2016, DenseNet) FractalNets [17] repeatedly combine several parallel layer sequences with different number of convolutional blocks to obtain a large nominal depth, while maintaining many short paths in the network.
-* [DFN](https://arxiv.org/abs/1605.07716)
-    * Title: Deeply-Fused Nets
-    * Year: 25 May `2016`
-    * Authors: Jingdong Wang, Zhen Wei, Ting Zhang, Wenjun Zeng
-    * Abstract: In this paper, we present a novel deep learning approach, deeply-fused nets. The central idea of our approach is deep fusion, i.e., combine the intermediate representations of base networks, where the fused output serves as the input of the remaining part of each base network, and perform such combinations deeply over several intermediate representations. The resulting deeply fused net enjoys several benefits. First, it is able to learn multi-scale representations as it enjoys the benefits of more base networks, which could form the same fused network, other than the initial group of base networks. Second, in our suggested fused net formed by one deep and one shallow base networks, the flows of the information from the earlier intermediate layer of the deep base network to the output and from the input to the later intermediate layer of the deep base network are both improved. Last, the deep and shallow base networks are jointly learnt and can benefit from each other. More interestingly, the essential depth of a fused net composed from a deep base network and a shallow base network is reduced because the fused net could be composed from a less deep base network, and thus training the fused net is less difficult than training the initial deep base network. Empirical results demonstrate that our approach achieves superior performance over two closely-related methods, ResNet and Highway, and competitive performance compared to the state-of-the-arts.
 * [On Network Design Spaces for Visual Recognition](https://arxiv.org/abs/1905.13214)
     * Title: On Network Design Spaces for Visual Recognition
     * Year: 30 May `2019`
