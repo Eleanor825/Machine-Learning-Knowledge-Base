@@ -26,6 +26,9 @@ count: 6
 * [[Recent Advances in Vision Transformer](https://arxiv.org/abs/2203.01536)]
     [[pdf](https://arxiv.org/pdf/2203.01536.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2203.01536/)]
+    * Title: 
+    * Year: 
+    * Authors: Khawar Islam
 * [[Transformers in Vision]()]
     [[pdf](https://arxiv.org/pdf/2101.01169.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2101.01169/)]

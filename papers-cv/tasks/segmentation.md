@@ -1,6 +1,6 @@
 # [Papers][Vision] Segmentation
 
-count: 73
+count: 85
 
 ## unclassified
 
@@ -585,7 +585,7 @@ count: 73
     * Title: SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers
     * Authors: Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose M. Alvarez, Ping Luo
     * Comments:
-        * (2022, Recent Advances) Xie et al. (2021) presented SegFormer, a simple yet powerful method with lightweight MLP decoders. An encoder is based on a hierarchical structure that gives multi-scale features and does not require any positional encoding scheme. SegFormer gets rid of complex decoders combining local attention and global attention to gender representation.
+        * > (2022, Recent Advances) Xie et al. (2021) presented SegFormer, a simple yet powerful method with lightweight MLP decoders. An encoder is based on a hierarchical structure that gives multi-scale features and does not require any positional encoding scheme. SegFormer gets rid of complex decoders combining local attention and global attention to gender representation.
 * [Fully Transformer Networks for Semantic Image Segmentation](https://arxiv.org/abs/2106.04108)
     * Title: Fully Transformer Networks for Semantic Image Segmentation
     * Authors: Sitong Wu, Tianyi Wu, Fangjian Lin, Shengwei Tian, Guodong Guo
@@ -731,8 +731,8 @@ count: 73
     * Institutions: [The Chinese University of Hong Kong], [SenseTime Group Limited]
     * Abstract: Scene parsing is challenging for unrestricted open vocabulary and diverse scenes. In this paper, we exploit the capability of global context information by different-region-based context aggregation through our pyramid pooling module together with the proposed pyramid scene parsing network (PSPNet). Our global prior representation is effective to produce good quality results on the scene parsing task, while PSPNet provides a superior framework for pixel-level prediction tasks. The proposed approach achieves state-of-the-art performance on various datasets. It came first in ImageNet scene parsing challenge 2016, PASCAL VOC 2012 benchmark and Cityscapes benchmark. A single PSPNet yields new record of mIoU accuracy 85.4% on PASCAL VOC 2012 and accuracy 80.2% on Cityscapes.
     * Comments:
+        * > (2019, Panoptic FPN) To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used.
         * > (2021, PVT) Zhao et al. [62] designs a pyramid pooling module over various pooling scales.
-        * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
 * [[PSANet](https://link.springer.com/chapter/10.1007/978-3-030-01240-3_17)]
     [[pdf](https://link.springer.com/content/pdf/10.1007/978-3-030-01240-3_17.pdf)]
     * Title: PSANet: Point-wise Spatial Attention Network for Scene Parsing

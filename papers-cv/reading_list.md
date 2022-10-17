@@ -1,10 +1,13 @@
 # Reading List
 
-Queue:
+## Queue
+
 * Learning Hierarchical Features for Scene Labeling
 * Recurrent Convolutional Neural Networks for Scene Labeling
 * Conditional Random Fields as Recurrent Neural Networks
 * Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials
+
+## Spring 2022
 
 * 2022.07.05 Tue:
     * MobileNetV2
@@ -50,3 +53,10 @@ Queue:
     * MobileViTv2
 * 2022.08.03 Wed:
     * Early Convolutions Help Transformers See Better
+
+## Fall 2022
+
+* 2022.10.16 Sun:
+    * Dynamic Filter Networks
+* 2022.10.17 Mon:
+    * FitNet

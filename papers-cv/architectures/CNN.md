@@ -1,6 +1,6 @@
 # [Papers][Vision] CNN Architectures
 
-count: 123
+count: 128
 
 ## Basics
 

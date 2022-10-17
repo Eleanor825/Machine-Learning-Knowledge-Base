@@ -1,6 +1,4 @@
-<span style="font-family:monospace">
-
-# Papers in Computer Vision - 3D Object Detection
+# [Papers][Vision] 3D Object Detection
 
 count: 16
 
