@@ -1,6 +1,6 @@
 import csv
 
-filename = "scripts\extract-paper-info.csv"
+filename = "scripts\extract-paper-info-2.csv"
 
 
 def abs_to_pdf(url_abs):
@@ -46,7 +46,6 @@ string = ""
 with open(filename, mode='r') as f:
     reader = csv.reader(f)
     reader = list(reader)
-    print(reader[0])
     reader = reader[1:]  # skip title line
     for row in reader:
         url_abs = row[1]
@@ -65,3 +64,4 @@ with open(filename, mode='r') as f:
 
 with open('scripts/parsed_paper_info.md', 'w') as f:
     f.write(string)
+print("Parsed markdown string saved to parsed_paper_info.md.")
