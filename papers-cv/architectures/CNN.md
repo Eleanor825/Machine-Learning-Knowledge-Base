@@ -1,6 +1,55 @@
-# [Papers][Vision] CNN Architectures
+# [Papers][Vision] CNN Architectures <!-- omit in toc -->
 
-count: 128
+count=128
+
+## Table of Contents <!-- omit in toc -->
+
+- [Basics](#basics)
+- [Deconvolution](#deconvolution)
+- [Research on Network Topology](#research-on-network-topology)
+  - [Reformulations of the Connections between Network Layers](#reformulations-of-the-connections-between-network-layers)
+  - [Ladder Networks](#ladder-networks)
+  - [Residual Networks Family](#residual-networks-family)
+  - [Dense Topology Framework](#dense-topology-framework)
+  - [Grouped Convolutions](#grouped-convolutions)
+  - [InceptionNet Series](#inceptionnet-series)
+  - [Multi-Column Networks](#multi-column-networks)
+- [Research on Convolutional Kernels](#research-on-convolutional-kernels)
+  - [Deformable Kernels](#deformable-kernels)
+  - [Dilated Kernels](#dilated-kernels)
+  - [Adaptive Kernels](#adaptive-kernels)
+  - [Cross-Channel Correlations](#cross-channel-correlations)
+- [Research on Attention Mechanism](#research-on-attention-mechanism)
+- [Light-Weight Networks](#light-weight-networks)
+  - [Light-Weight Networks (Others)](#light-weight-networks-others)
+  - [(2017, MobileNetV1) Light-Weight Networks (count=7)](#2017-mobilenetv1-light-weight-networks-count7)
+  - [(2021, MobileViTv1) Light-Weight Networks (count=3+5)](#2021-mobilevitv1-light-weight-networks-count35)
+  - [MobileNet Series (count=3+2)](#mobilenet-series-count32)
+  - [EfficientNets (count=3)](#efficientnets-count3)
+  - [ShuffleNets (count=2)](#shufflenets-count2)
+- [Model Compression](#model-compression)
+  - [Compressing Convolutional Networks](#compressing-convolutional-networks)
+  - [Compressing Convolutional Networks (ESPNetV1, 2018) (3) + (ESPNetV2, 2018) (2)](#compressing-convolutional-networks-espnetv1-2018-3--espnetv2-2018-2)
+- [Low-bit Networks](#low-bit-networks)
+  - [Low-bit Networks (2017, MobileNetV1) (count=3)](#low-bit-networks-2017-mobilenetv1-count3)
+  - [Low-bit Networks (2018, ESPNetV1) (4)](#low-bit-networks-2018-espnetv1-4)
+  - [Low-bit Networks (2018, ESPNetV2) (3)](#low-bit-networks-2018-espnetv2-3)
+- [Low-Rank Approximations](#low-rank-approximations)
+  - [Low-Rank Approximations](#low-rank-approximations-1)
+  - [Low-Rank Approximations (2016, Deep Roots) (count=3+3)](#low-rank-approximations-2016-deep-roots-count33)
+  - [Tensor Decomposition (ShuffleNet V2, 2018)](#tensor-decomposition-shufflenet-v2-2018)
+- [Sparsity](#sparsity)
+  - [(2018, ESPNetV1) (count=3)](#2018-espnetv1-count3)
+  - [(2018, MobileNetV2) (count=1)](#2018-mobilenetv2-count1)
+- [Expressive Power (2019, EfficientNetV1) (4)](#expressive-power-2019-efficientnetv1-4)
+- [Regularization Techniques](#regularization-techniques)
+- [Data Augmentation](#data-augmentation)
+- [Progressive Learning](#progressive-learning)
+- [Unsupervised Learning](#unsupervised-learning)
+- [Connectivity Learning (2018, MobileNetV2) (2)](#connectivity-learning-2018-mobilenetv2-2)
+- [Unclassified (listed in to be read order)](#unclassified-listed-in-to-be-read-order)
+
+----------------------------------------------------------------------------------------------------
 
 ## Basics
 
@@ -58,9 +107,7 @@ count: 128
     * Comments:
         * > One insight is that spatial information lost during max-pooling can in part be recovered by unpooling and deconvolution [36] providing a useful way to visualize input dependency in feed-forward models [35]. (LRR, 2016)
 
-## ----------------------------------------------------------------------------------------------------
-## Network Topology
-## ----------------------------------------------------------------------------------------------------
+## Research on Network Topology
 
 ### Reformulations of the Connections between Network Layers
 
@@ -140,18 +187,6 @@ count: 128
     * Title: Augmenting Supervised Neural Networks with Unsupervised Objectives for Large-scale Image Classification
     * Year: 21 Jun `2016`
     * Authors: Unsupervised learning and supervised learning are key research topics in deep learning. However, as high-capacity supervised neural networks trained with a large amount of labels have achieved remarkable success in many computer vision tasks, the availability of large-scale labeled images reduced the significance of unsupervised learning. Inspired by the recent trend toward revisiting the importance of unsupervised learning, we investigate joint supervised and unsupervised learning in a large-scale setting by augmenting existing neural networks with decoding pathways for reconstruction. First, we demonstrate that the intermediate activations of pretrained large-scale classification networks preserve almost all the information of input images except a portion of local spatial details. Then, by end-to-end training of the entire augmented architecture with the reconstructive objective, we show improvement of the network performance for supervised tasks. We evaluate several variants of autoencoders, including the recently proposed "what-where" autoencoder that uses the encoder pooling switches, to study the importance of the architecture design. Taking the 16-layer VGGNet trained under the ImageNet ILSVRC 2012 protocol as a strong baseline for image classification, our methods improve the validation-set accuracy by a noticeable margin.
-* [[DenseNet](https://arxiv.org/abs/1608.06993)] <!-- printed -->
-    [[pdf](https://arxiv.org/pdf/1608.06993)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1608.06993/)]
-    * Title: Densely Connected Convolutional Networks
-    * Year: 25 Aug `2016`
-    * Authors: Gao Huang, Zhuang Liu, Laurens van der Maaten, Kilian Q. Weinberger
-    * Institutions: [Cornell University], [Tsinghua University], [Facebook AI Research]
-    * Abstract: Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at [this https URL](https://github.com/liuzhuang13/DenseNet).
-    * Comments:
-        * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
-        * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
-        * > (2021, EfficientNetV2) Many works, such as DenseNet (Huang et al., 2017) and EfficientNet (Tan & Le, 2019a), focus on parameter efficiency, aiming to achieve better accuracy with less parameters.
 
 ### Ladder Networks
 
@@ -164,7 +199,7 @@ count: 128
     * Year: 19 Nov `2015`
     * Authors: Mohammad Pezeshki, Linxi Fan, Philemon Brakel, Aaron Courville, Yoshua Bengio
 
-### Residual Networks
+### Residual Networks Family
 
 > Deep Residual Network (ResNet) is one of the first works that successfully adopt skip connections, where each micro-block, a.k.a. residual function, is associated with a skip connection, called residual path. The residual path element-wisely adds the input features to the output of the same micro-block, making it a residual unit. Depending on the inner structure design of the micro-block, the residual network has developed into a family  of various architectures, including WRN, Inception-resnet, and ResNeXt. (2017, DPN)
 
@@ -257,18 +292,40 @@ count: 128
     * Comments:
         * > RegNet (Radosavovic et al., 2020), ResNeSt (Zhang et al., 2020), TResNet (Ridnik et al., 2020), and EfficientNet-X (Li et al., 2021) focus on GPU and/or TPU inference speed. (EfficientNetV2, 2021)
 
-### Recurrent Networks
+### Dense Topology Framework
 
-* [Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex](https://arxiv.org/abs/1604.03640)
+* [[DenseNet](https://arxiv.org/abs/1608.06993)] <!-- printed -->
+    [[pdf](https://arxiv.org/pdf/1608.06993)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1608.06993/)]
+    * Title: Densely Connected Convolutional Networks
+    * Year: 25 Aug `2016`
+    * Authors: Gao Huang, Zhuang Liu, Laurens van der Maaten, Kilian Q. Weinberger
+    * Institutions: [Cornell University], [Tsinghua University], [Facebook AI Research]
+    * Abstract: Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at [this https URL](https://github.com/liuzhuang13/DenseNet).
+    * Comments:
+        * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
+        * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
+        * > (2021, EfficientNetV2) Many works, such as DenseNet (Huang et al., 2017) and EfficientNet (Tan & Le, 2019a), focus on parameter efficiency, aiming to achieve better accuracy with less parameters.
+* [[Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex](https://arxiv.org/abs/1604.03640)]
     * Title: Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex
     * Year: 13 Apr `2016`
     * Author: Qianli Liao
     * Abstract: We discuss relations between Residual Networks (ResNet), Recurrent Neural Networks (RNNs) and the primate visual cortex. We begin with the observation that a special type of shallow RNN is exactly equivalent to a very deep ResNet with weight sharing among the layers. A direct implementation of such a RNN, although having orders of magnitude fewer parameters, leads to a performance similar to the corresponding ResNet. We propose 1) a generalization of both RNN and ResNet architectures and 2) the conjecture that a class of moderately deep RNNs is a biologically-plausible model of the ventral stream in visual cortex. We demonstrate the effectiveness of the architectures by testing them on the CIFAR-10 and ImageNet dataset.
-* [HORNN](https://arxiv.org/abs/1605.00064)
+* [[HORNN](https://arxiv.org/abs/1605.00064)]
     * Title: Higher Order Recurrent Neural Networks
     * Year: 30 Apr `2016`
     * Author: Rohollah Soltani
     * Abstract: In this paper, we study novel neural network structures to better model long term dependency in sequential data. We propose to use more memory units to keep track of more preceding states in recurrent neural networks (RNNs), which are all recurrently fed to the hidden layers as feedback through different weighted paths. By extending the popular recurrent structure in RNNs, we provide the models with better short-term memory mechanism to learn long term dependency in sequences. Analogous to digital filters in signal processing, we call these structures as higher order RNNs (HORNNs). Similar to RNNs, HORNNs can also be learned using the back-propagation through time method. HORNNs are generally applicable to a variety of sequence modelling tasks. In this work, we have examined HORNNs for the language modeling task using two popular data sets, namely the Penn Treebank (PTB) and English text8 data sets. Experimental results have shown that the proposed HORNNs yield the state-of-the-art performance on both data sets, significantly outperforming the regular RNNs as well as the popular LSTMs.
+* [[Dual Path Networks (DPN)](https://arxiv.org/abs/1707.01629)] <!-- printed -->
+    * Title: Dual Path Networks
+    * Year: 06 Jul `2017`
+    * Author: Yunpeng Chen
+    * Abstract: In this work, we present a simple, highly efficient and modularized Dual Path Network (DPN) for image classification which presents a new topology of connection paths internally. By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. To enjoy the benefits from both path topologies, our proposed Dual Path Network shares common features while maintaining the flexibility to explore new features through dual path architectures. Extensive experiments on three benchmark datasets, ImagNet-1k, Places365 and PASCAL VOC, clearly demonstrate superior performance of the proposed DPN over state-of-the-arts. In particular, on the ImagNet-1k dataset, a shallow DPN surpasses the best ResNeXt-101(64x4d) with 26% smaller model size, 25% less computational cost and 8% lower memory consumption, and a deeper DPN (DPN-131) further pushes the state-of-the-art single model performance with about 2 times faster training speed. Experiments on the Places365 large-scale scene dataset, PASCAL VOC detection dataset, and PASCAL VOC segmentation dataset also demonstrate its consistently better performance than DenseNet, ResNet and the latest ResNeXt model over various applications.
+* [[Mixed Link Networks](https://arxiv.org/abs/1802.01808)] <!-- printed -->
+    * Title: Mixed Link Networks
+    * Year: 06 Feb `2018`
+    * Authors: Wenhai Wang, Xiang Li, Jian Yang, Tong Lu
+    * Abstract: Basing on the analysis by revealing the equivalence of modern networks, we find that both ResNet and DenseNet are essentially derived from the same "dense topology", yet they only differ in the form of connection -- addition (dubbed "inner link") vs. concatenation (dubbed "outer link"). However, both two forms of connections have the superiority and insufficiency. To combine their advantages and avoid certain limitations on representation learning, we present a highly efficient and modularized Mixed Link Network (MixNet) which is equipped with flexible inner link and outer link modules. Consequently, ResNet, DenseNet and Dual Path Network (DPN) can be regarded as a special case of MixNet, respectively. Furthermore, we demonstrate that MixNets can achieve superior efficiency in parameter over the state-of-the-art architectures on many competitive datasets like CIFAR-10/100, SVHN and ImageNet.
 
 ### Grouped Convolutions
 
@@ -282,7 +339,7 @@ count: 128
 * Aggregated Residual Transformations for Deep Neural Networks (ResNeXt)
 * Inception Networks.
 
-### Inception Networks (Multi-Branch Networks)
+### InceptionNet Series
 
 > The Inception models have evolved over time, but an important common property is a *split-transform-merge* strategy. In an Inception module, the input is split into a few lower-dimensional embeddings (by $1 \times 1$ convolutions), transformed by a set of specialized filters ($3 \times 3$, $5 \times 5$, etc.), and merged by concatenation. It can be shown that the solution space of this architecture is a strict subspace of the solution space of a single large layer (e.g., $5 \times 5$) operating on a high-dimensional embedding. The split-transform-merge behavior of Inception modules is expected to approach the representational power of large and dense layers, but at a considerably lower computational complexity. (ResNeXt, 2016)
 
@@ -345,24 +402,6 @@ count: 128
     * Authors: Xingcheng Zhang, Zhizhong Li, Chen Change Loy, Dahua Lin
     * Abstract: A number of studies have shown that increasing the depth or width of convolutional networks is a rewarding approach to improve the performance of image recognition. In our study, however, we observed difficulties along both directions. On one hand, the pursuit for very deep networks is met with a diminishing return and increased training difficulty; on the other hand, widening a network would result in a quadratic growth in both computational cost and memory demand. These difficulties motivate us to explore structural diversity in designing deep networks, a new dimension beyond just depth and width. Specifically, we present a new family of modules, namely the PolyInception, which can be flexibly inserted in isolation or in a composition as replacements of different parts of a network. Choosing PolyInception modules with the guidance of architectural efficiency can improve the expressive power while preserving comparable computational cost. The Very Deep PolyNet, designed following this direction, demonstrates substantial improvements over the state-of-the-art on the ILSVRC 2012 benchmark. Compared to Inception-ResNet-v2, it reduces the top-5 validation error on single crops from 4.9% to 4.25%, and that on multi-crops from 3.7% to 3.45%.
 
-### Multi-Path Convolutional Block (2021, PVT) (count=5)
-
-> (2021, PVT) GoogLeNet [46] demonstrated that a convolutional operator containing multiple kernel paths can achieve very competitive performance. The effectiveness of multi-path convolutional block was further validated in Inception series [47, 45], ResNeXt [56], DPN [8], MixNet [52] and SKNet [24].
-
-* Inception Networks
-* ResNeXt
-* [[Dual Path Networks (DPN)](https://arxiv.org/abs/1707.01629)] <!-- printed -->
-    * Title: Dual Path Networks
-    * Year: 06 Jul `2017`
-    * Author: Yunpeng Chen
-    * Abstract: In this work, we present a simple, highly efficient and modularized Dual Path Network (DPN) for image classification which presents a new topology of connection paths internally. By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations. To enjoy the benefits from both path topologies, our proposed Dual Path Network shares common features while maintaining the flexibility to explore new features through dual path architectures. Extensive experiments on three benchmark datasets, ImagNet-1k, Places365 and PASCAL VOC, clearly demonstrate superior performance of the proposed DPN over state-of-the-arts. In particular, on the ImagNet-1k dataset, a shallow DPN surpasses the best ResNeXt-101(64x4d) with 26% smaller model size, 25% less computational cost and 8% lower memory consumption, and a deeper DPN (DPN-131) further pushes the state-of-the-art single model performance with about 2 times faster training speed. Experiments on the Places365 large-scale scene dataset, PASCAL VOC detection dataset, and PASCAL VOC segmentation dataset also demonstrate its consistently better performance than DenseNet, ResNet and the latest ResNeXt model over various applications.
-* [[Mixed Link Networks](https://arxiv.org/abs/1802.01808)] <!-- printed -->
-    * Title: Mixed Link Networks
-    * Year: 06 Feb `2018`
-    * Authors: Wenhai Wang, Xiang Li, Jian Yang, Tong Lu
-    * Abstract: Basing on the analysis by revealing the equivalence of modern networks, we find that both ResNet and DenseNet are essentially derived from the same "dense topology", yet they only differ in the form of connection -- addition (dubbed "inner link") vs. concatenation (dubbed "outer link"). However, both two forms of connections have the superiority and insufficiency. To combine their advantages and avoid certain limitations on representation learning, we present a highly efficient and modularized Mixed Link Network (MixNet) which is equipped with flexible inner link and outer link modules. Consequently, ResNet, DenseNet and Dual Path Network (DPN) can be regarded as a special case of MixNet, respectively. Furthermore, we demonstrate that MixNets can achieve superior efficiency in parameter over the state-of-the-art architectures on many competitive datasets like CIFAR-10/100, SVHN and ImageNet.
-* Selective Kernel Networks
-
 ### Multi-Column Networks
 
 * [[Multi-Column Networks](https://arxiv.org/abs/1202.2745)]
@@ -382,11 +421,9 @@ count: 128
     [[pdf](https://www.researchgate.net/profile/Somshubra-Majumdar/publication/305361867_Deep_Columnar_Convolutional_Neural_Network/links/5795972508aec89db7b462d5/Deep-Columnar-Convolutional-Neural-Network.pdf)]
     * Title: Deep Columnar Convolutional Neural Network
 
-## ----------------------------------------------------------------------------------------------------
-## More Robust Kernels
-## ----------------------------------------------------------------------------------------------------
+## Research on Convolutional Kernels
 
-### Deformable Convolutions
+### Deformable Kernels
 
 * [[Deformable ConvNets v1](https://arxiv.org/abs/1703.06211)] <!-- printed -->
     * Title: Deformable Convolutional Networks
@@ -399,7 +436,7 @@ count: 128
     * Authors: Xizhou Zhu, Han Hu, Stephen Lin, Jifeng Dai
     * Abstract: The superior performance of Deformable Convolutional Networks arises from its ability to adapt to the geometric variations of objects. Through an examination of its adaptive behavior, we observe that while the spatial support for its neural features conforms more closely than regular ConvNets to object structure, this support may nevertheless extend well beyond the region of interest, causing features to be influenced by irrelevant image content. To address this problem, we present a reformulation of Deformable ConvNets that improves its ability to focus on pertinent image regions, through increased modeling power and stronger training. The modeling power is enhanced through a more comprehensive integration of deformable convolution within the network, and by introducing a modulation mechanism that expands the scope of deformation modeling. To effectively harness this enriched modeling capability, we guide network training via a proposed feature mimicking scheme that helps the network to learn features that reflect the object focus and classification power of R-CNN features. With the proposed contributions, this new version of Deformable ConvNets yields significant performance gains over the original model and produces leading results on the COCO benchmark for object detection and instance segmentation.
 
-### Dilated Convolutions
+### Dilated Kernels
 
 * [[Dilated Convolutions](https://arxiv.org/abs/1511.07122)] <!-- printed -->
     * Title: Multi-Scale Context Aggregation by Dilated Convolutions
@@ -446,9 +483,30 @@ count: 128
 * Xception: Deep Learning with Depthwise Separable Convolutions
 * NIN, see `mlp.md`.
 
-## ----------------------------------------------------------------------------------------------------
+## Research on Attention Mechanism
+
+* [[Look and Think Twice](https://ieeexplore.ieee.org/document/7410695)] <!-- printed -->
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7410695)]
+    * Title: Look and Think Twice: Capturing Top-Down Visual Attention with Feedback Convolutional Neural Networks
+    * Year: 18 February `2016`
+    * Authors: Chunshui Cao; Xianming Liu; Yi Yang; Yinan Yu; Jiang Wang; Zilei Wang; Yongzhen Huang; Liang Wang; Chang Huang; Wei Xu; Deva Ramanan; Thomas S. Huang
+    * Abstract: While feedforward deep convolutional neural networks (CNNs) have been a great success in computer vision, it is important to note that the human visual cortex generally contains more feedback than feedforward connections. In this paper, we will briefly introduce the background of feedbacks in the human visual cortex, which motivates us to develop a computational feedback mechanism in deep neural networks. In addition to the feedforward inference in traditional neural networks, a feedback loop is introduced to infer the activation status of hidden layer neurons according to the "goal" of the network, e.g., high-level semantic labels. We analogize this mechanism as "Look and Think Twice." The feedback networks help better visualize and understand how deep neural networks work, and capture visual attention on expected objects, even in images with cluttered background and multiple objects. Experiments on ImageNet dataset demonstrate its effectiveness in solving tasks such as image classification and object localization.
+* [[Deep Recurrent Attentive Writer (DRAW)](https://arxiv.org/abs/1502.04623)]
+    [[pdf](https://arxiv.org/pdf/1502.04623.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1502.04623/)]
+    * Title: DRAW: A Recurrent Neural Network For Image Generation
+    * Year: 16 Feb `2015`
+    * Authors: Karol Gregor, Ivo Danihelka, Alex Graves, Danilo Jimenez Rezende, Daan Wierstra
+    * Abstract: This paper introduces the Deep Recurrent Attentive Writer (DRAW) neural network architecture for image generation. DRAW networks combine a novel spatial attention mechanism that mimics the foveation of the human eye, with a sequential variational auto-encoding framework that allows for the iterative construction of complex images. The system substantially improves on the state of the art for generative models on MNIST, and, when trained on the Street View House Numbers dataset, it generates images that cannot be distinguished from real data with the naked eye.
+    * Comments:
+        * > Gregor et al. [25] employ a differentiable attention model to specify where to read/write image regions for image generation. (Attention to Scale, 2015)
+* [The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification](https://arxiv.org/abs/1411.6447)
+    * Title: The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification
+    * Year: 24 Nov `2014`
+    * Authors: Tianjun Xiao, Yichong Xu, Kuiyuan Yang, Jiaxing Zhang, Yuxin Peng, Zheng Zhang
+    * Abstract: Fine-grained classification is challenging because categories can only be discriminated by subtle and local differences. Variances in the pose, scale or rotation usually make the problem more difficult. Most fine-grained classification systems follow the pipeline of finding foreground object or object parts (where) to extract discriminative features (what). In this paper, we propose to apply visual attention to fine-grained classification task using deep neural network. Our pipeline integrates three types of attention: the bottom-up attention that propose candidate patches, the object-level top-down attention that selects relevant patches to a certain object, and the part-level top-down attention that localizes discriminative parts. We combine these attentions to train domain-specific deep nets, then use it to improve both the what and where aspects. Importantly, we avoid using expensive annotations like bounding box or part information from end-to-end. The weak supervision constraint makes our work easier to generalize. We have verified the effectiveness of the method on the subsets of ILSVRC2012 dataset and CUB200_2011 dataset. Our pipeline delivered significant improvements and achieved the best accuracy under the weakest supervision condition. The performance is competitive against other methods that rely on additional annotations.
+
 ## Light-Weight Networks
-## ----------------------------------------------------------------------------------------------------
 
 ### Light-Weight Networks (Others)
 
@@ -457,22 +515,6 @@ count: 128
     * Year: 23 Mar `2018`
     * Authors: Amir Gholami, Kiseok Kwon, Bichen Wu, Zizheng Tai, Xiangyu Yue, Peter Jin, Sicheng Zhao, Kurt Keutzer
     * Abstract: One of the main barriers for deploying neural networks on embedded systems has been large memory and power consumption of existing neural networks. In this work, we introduce SqueezeNext, a new family of neural network architectures whose design was guided by considering previous architectures such as SqueezeNet, as well as by simulation results on a neural network accelerator. This new network is able to match AlexNet's accuracy on the ImageNet benchmark with 112x fewer parameters, and one of its deeper variants is able to achieve VGG-19 accuracy with only 4.4 Million parameters, (31x smaller than VGG-19). SqueezeNext also achieves better top-5 classification accuracy with 1.3x fewer parameters as compared to MobileNet, but avoids using depthwise-separable convolutions that are inefficient on some mobile processor platforms. This wide range of accuracy gives the user the ability to make speed-accuracy tradeoffs, depending on the available resources on the target hardware. Using hardware simulation results for power and inference speed on an embedded system has guided us to design variations of the baseline model that are 2.59x/8.26x faster and 2.25x/7.5x more energy efficient as compared to SqueezeNet/AlexNet without any accuracy degradation.
-* [[ShuffleNetV1](https://arxiv.org/abs/1707.01083)] <!-- printed -->
-    * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
-    * Year: 04 Jul `2017`
-    * Authors: Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun
-    * Abstract: We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13x actual speedup over AlexNet while maintaining comparable accuracy.
-    * Comments:
-        * > (2018, MobileNetV2) Depthwise Separable Convolutions are a key building block for many efficient neural network architectures [26, 27, 19].
-        * > (2018, MobileNetV2) ShuffleNet uses Group Convolutions [19] and shuffling, it also uses conventional residual approach where inner blocks are narrower than output.
-        * > The ShuffleNet module [17], shown in Fig. 3b, is based on the principle of reduce-transform-expand. It is an optimized version of the bottleneck block in ResNet [47]. (ESPNetV1, 2018)
-* [[ShuffleNetV2](https://arxiv.org/abs/1807.11164)] <!-- printed -->
-    * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
-    * Year: 30 Jul `2018`
-    * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
-    * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
-    * Comments:
-        * > (2018, ESPNetV2) In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29].
 * [[ShiftNet](https://arxiv.org/abs/1711.08141)] <!-- printed -->
     * Title: Shift: A Zero FLOP, Zero Parameter Alternative to Spatial Convolutions
     * Year: 22 Nov `2017`
@@ -569,7 +611,7 @@ count: 128
     * Abstract: Depthwise convolution is becoming increasingly popular in modern efficient ConvNets, but its kernel size is often overlooked. In this paper, we systematically study the impact of different kernel sizes, and observe that combining the benefits of multiple kernel sizes can lead to better accuracy and efficiency. Based on this observation, we propose a new mixed depthwise convolution (MixConv), which naturally mixes up multiple kernel sizes in a single convolution. As a simple drop-in replacement of vanilla depthwise convolution, our MixConv improves the accuracy and efficiency for existing MobileNets on both ImageNet classification and COCO object detection. To demonstrate the effectiveness of MixConv, we integrate it into AutoML search space and develop a new family of models, named as MixNets, which outperform previous mobile models including MobileNetV2 [20] (ImageNet top-1 accuracy +4.2%), ShuffleNetV2 [16] (+3.5%), MnasNet [26] (+1.3%), ProxylessNAS [2] (+2.2%), and FBNet [27] (+2.0%). In particular, our MixNet-L achieves a new state-of-the-art 78.9% ImageNet top-1 accuracy under typical mobile settings (<600M FLOPS). Code is at [this https URL](https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet/mixnet).
 * MnasNet (see neural_architecture_search.md)
 
-### Mobile Networks (count=3+2)
+### MobileNet Series (count=3+2)
 
 * [[MobileNetV1](https://arxiv.org/abs/1704.04861)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1704.04861.pdf)]
@@ -592,7 +634,7 @@ count: 128
     * Year: 06 May `2019`
     * Author: Andrew Howard
     * Abstract: We present the next generation of MobileNets based on a combination of complementary search techniques as well as a novel architecture design. MobileNetV3 is tuned to mobile phone CPUs through a combination of hardware-aware network architecture search (NAS) complemented by the NetAdapt algorithm and then subsequently improved through novel architecture advances. This paper starts the exploration of how automated search algorithms and network design can work together to harness complementary approaches improving the overall state of the art. Through this process we create two new MobileNet models for release: MobileNetV3-Large and MobileNetV3-Small which are targeted for high and low resource use cases. These models are then adapted and applied to the tasks of object detection and semantic segmentation. For the task of semantic segmentation (or any dense pixel prediction), we propose a new efficient segmentation decoder Lite Reduced Atrous Spatial Pyramid Pooling (LR-ASPP). We achieve new state of the art results for mobile classification, detection and segmentation. MobileNetV3-Large is 3.2\% more accurate on ImageNet classification while reducing latency by 15\% compared to MobileNetV2. MobileNetV3-Small is 4.6\% more accurate while reducing latency by 5\% compared to MobileNetV2. MobileNetV3-Large detection is 25\% faster at roughly the same accuracy as MobileNetV2 on COCO detection. MobileNetV3-Large LR-ASPP is 30\% faster than MobileNetV2 R-ASPP at similar accuracy for Cityscapes segmentation.
-* [Swish](https://arxiv.org/abs/1702.03118)
+* [[Swish](https://arxiv.org/abs/1702.03118)]
     * Title: Sigmoid-Weighted Linear Units for Neural Network Function Approximation in Reinforcement Learning
     * Year: 10 Feb `2017`
     * Author: Stefan Elfwing, Eiji Uchibe, Kenji Doya
@@ -605,7 +647,7 @@ count: 128
     * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
     * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at [this https URL](https://github.com/hujie-frank/SENet).
 
-### Efficient Networks (count=3)
+### EfficientNets (count=3)
 
 * [[EfficientNetV1](https://arxiv.org/abs/1905.11946)] <!-- printed -->
     [[vanity](https://www.arxiv-vanity.com/papers/1905.11946/)]
@@ -633,9 +675,26 @@ count: 128
     * Comments:
         * > RegNet (Radosavovic et al., 2020), ResNeSt (Zhang et al., 2020), TResNet (Ridnik et al., 2020), and EfficientNet-X (Li et al., 2021) focus on GPU and/or TPU inference speed. (EfficientNetV2, 2021)
 
-## ----------------------------------------------------------------------------------------------------
-## Compressing Pretrained Networks
-## ----------------------------------------------------------------------------------------------------
+### ShuffleNets (count=2)
+
+* [[ShuffleNetV1](https://arxiv.org/abs/1707.01083)] <!-- printed -->
+    * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
+    * Year: 04 Jul `2017`
+    * Authors: Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun
+    * Abstract: We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially for mobile devices with very limited computing power (e.g., 10-150 MFLOPs). The new architecture utilizes two new operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1 error (absolute 7.8%) than recent MobileNet on ImageNet classification task, under the computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ~13x actual speedup over AlexNet while maintaining comparable accuracy.
+    * Comments:
+        * > (2018, MobileNetV2) Depthwise Separable Convolutions are a key building block for many efficient neural network architectures [26, 27, 19].
+        * > (2018, MobileNetV2) ShuffleNet uses Group Convolutions [19] and shuffling, it also uses conventional residual approach where inner blocks are narrower than output.
+        * > The ShuffleNet module [17], shown in Fig. 3b, is based on the principle of reduce-transform-expand. It is an optimized version of the bottleneck block in ResNet [47]. (ESPNetV1, 2018)
+* [[ShuffleNetV2](https://arxiv.org/abs/1807.11164)] <!-- printed -->
+    * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
+    * Year: 30 Jul `2018`
+    * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
+    * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
+    * Comments:
+        * > (2018, ESPNetV2) In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29].
+
+## Model Compression
 
 ### Compressing Convolutional Networks
 
@@ -673,9 +732,7 @@ count: 128
     * Abstract: We present COBLA---Constrained Optimization Based Low-rank Approximation---a systematic method of finding an optimal low-rank approximation of a trained convolutional neural network, subject to constraints in the number of multiply-accumulate (MAC) operations and the memory footprint. COBLA optimally allocates the constrained computation resource into each layer of the approximated network. The singular value decomposition of the network weight is computed, then a binary masking variable is introduced to denote whether a particular singular value and the corresponding singular vectors are used in low-rank approximation. With this formulation, the number of the MAC operations and the memory footprint are represented as linear constraints in terms of the binary masking variables. The resulted 0-1 integer programming problem is approximately solved by sequential quadratic programming. COBLA does not introduce any hyperparameter. We empirically demonstrate that COBLA outperforms prior art using the SqueezeNet and VGG-16 architecture on the ImageNet dataset.
 * Learning Structured Sparsity in Deep Neural Networks
 
-## ----------------------------------------------------------------------------------------------------
 ## Low-bit Networks
-## ----------------------------------------------------------------------------------------------------
 
 ### Low-bit Networks (2017, MobileNetV1) (count=3)
 
@@ -723,9 +780,7 @@ count: 128
     * Authors: Daniel Soudry, Itay Hubara, Ron Meir
     * Abstract: Multilayer Neural Networks (MNNs) are commonly trained using gradient descent-based methods, such as BackPropagation (BP). Inference in probabilistic graphical models is often done using variational Bayes methods, such as Expectation Propagation (EP). We show how an EP based approach can also be used to train deterministic MNNs. Specifically, we approximate the posterior of the weights given the data using a “mean-field” factorized distribution, in an online setting. Using online EP and the central limit theorem we find an analytical approximation to the Bayes update of this posterior, as well as the resulting Bayes estimates of the weights and outputs. Despite a different origin, the resulting algorithm, Expectation BackPropagation (EBP), is very similar to BP in form and efficiency. However, it has several additional advantages: (1) Training is parameter-free, given initial conditions (prior) and the MNN architecture. This is useful for large-scale problems, where parameter tuning is a major challenge. (2) The weights can be restricted to have discrete values. This is especially useful for implementing trained MNNs in precision limited hardware chips, thus improving their speed and energy efficiency by several orders of magnitude. We test the EBP algorithm numerically in eight binary text classification tasks. In all tasks, EBP outperforms: (1) standard BP with the optimal constant learning rate (2) previously reported state of the art. Interestingly, EBP-trained MNNs with binary weights usually perform better than MNNs with continuous (real) weights - if we average the MNN output using the inferred posterior.
 
-## ----------------------------------------------------------------------------------------------------
 ## Low-Rank Approximations
-## ----------------------------------------------------------------------------------------------------
 
 ### Low-Rank Approximations
 
@@ -799,32 +854,9 @@ count: 128
 * [Efficient and accurate approximations of nonlinear convolutional networks]
 * [Accelerating very deep convolutional networks for classification and detection]
 
-## ----------------------------------------------------------------------------------------------------
+## Sparsity
 
-## Attention Mechanism
-
-* [[Look and Think Twice](https://ieeexplore.ieee.org/document/7410695)] <!-- printed -->
-    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7410695)]
-    * Title: Look and Think Twice: Capturing Top-Down Visual Attention with Feedback Convolutional Neural Networks
-    * Year: 18 February `2016`
-    * Authors: Chunshui Cao; Xianming Liu; Yi Yang; Yinan Yu; Jiang Wang; Zilei Wang; Yongzhen Huang; Liang Wang; Chang Huang; Wei Xu; Deva Ramanan; Thomas S. Huang
-    * Abstract: While feedforward deep convolutional neural networks (CNNs) have been a great success in computer vision, it is important to note that the human visual cortex generally contains more feedback than feedforward connections. In this paper, we will briefly introduce the background of feedbacks in the human visual cortex, which motivates us to develop a computational feedback mechanism in deep neural networks. In addition to the feedforward inference in traditional neural networks, a feedback loop is introduced to infer the activation status of hidden layer neurons according to the "goal" of the network, e.g., high-level semantic labels. We analogize this mechanism as "Look and Think Twice." The feedback networks help better visualize and understand how deep neural networks work, and capture visual attention on expected objects, even in images with cluttered background and multiple objects. Experiments on ImageNet dataset demonstrate its effectiveness in solving tasks such as image classification and object localization.
-* [[Deep Recurrent Attentive Writer (DRAW)](https://arxiv.org/abs/1502.04623)]
-    [[pdf](https://arxiv.org/pdf/1502.04623.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1502.04623/)]
-    * Title: DRAW: A Recurrent Neural Network For Image Generation
-    * Year: 16 Feb `2015`
-    * Authors: Karol Gregor, Ivo Danihelka, Alex Graves, Danilo Jimenez Rezende, Daan Wierstra
-    * Abstract: This paper introduces the Deep Recurrent Attentive Writer (DRAW) neural network architecture for image generation. DRAW networks combine a novel spatial attention mechanism that mimics the foveation of the human eye, with a sequential variational auto-encoding framework that allows for the iterative construction of complex images. The system substantially improves on the state of the art for generative models on MNIST, and, when trained on the Street View House Numbers dataset, it generates images that cannot be distinguished from real data with the naked eye.
-    * Comments:
-        * > Gregor et al. [25] employ a differentiable attention model to specify where to read/write image regions for image generation. (Attention to Scale, 2015)
-* [The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification](https://arxiv.org/abs/1411.6447)
-    * Title: The Application of Two-level Attention Models in Deep Convolutional Neural Network for Fine-grained Image Classification
-    * Year: 24 Nov `2014`
-    * Authors: Tianjun Xiao, Yichong Xu, Kuiyuan Yang, Jiaxing Zhang, Yuxin Peng, Zheng Zhang
-    * Abstract: Fine-grained classification is challenging because categories can only be discriminated by subtle and local differences. Variances in the pose, scale or rotation usually make the problem more difficult. Most fine-grained classification systems follow the pipeline of finding foreground object or object parts (where) to extract discriminative features (what). In this paper, we propose to apply visual attention to fine-grained classification task using deep neural network. Our pipeline integrates three types of attention: the bottom-up attention that propose candidate patches, the object-level top-down attention that selects relevant patches to a certain object, and the part-level top-down attention that localizes discriminative parts. We combine these attentions to train domain-specific deep nets, then use it to improve both the what and where aspects. Importantly, we avoid using expensive annotations like bounding box or part information from end-to-end. The weak supervision constraint makes our work easier to generalize. We have verified the effectiveness of the method on the subsets of ILSVRC2012 dataset and CUB200_2011 dataset. Our pipeline delivered significant improvements and achieved the best accuracy under the weakest supervision condition. The performance is competitive against other methods that rely on additional annotations.
-
-## Sparse Networks (ESPNetV1, 2018) (3)
+### (2018, ESPNetV1) (count=3)
 
 * [Sparse Decomposition](https://openaccess.thecvf.com/content_cvpr_2015/html/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.html)
     * Title: Sparse Convolutional Neural Networks
@@ -841,6 +873,17 @@ count: 128
     * Year: 20 Nov `2016`
     * Authors: Hessam Bagherinezhad, Mohammad Rastegari, Ali Farhadi
     * Abstract: Porting state of the art deep learning algorithms to resource constrained compute platforms (e.g. VR, AR, wearables) is extremely challenging. We propose a fast, compact, and accurate model for convolutional neural networks that enables efficient learning and inference. We introduce LCNN, a lookup-based convolutional neural network that encodes convolutions by few lookups to a dictionary that is trained to cover the space of weights in CNNs. Training LCNN involves jointly learning a dictionary and a small set of linear combinations. The size of the dictionary naturally traces a spectrum of trade-offs between efficiency and accuracy. Our experimental results on ImageNet challenge show that LCNN can offer 3.2x speedup while achieving 55.1% top-1 accuracy using AlexNet architecture. Our fastest LCNN offers 37.6x speed up over AlexNet while maintaining 44.3% top-1 accuracy. LCNN not only offers dramatic speed ups at inference, but it also enables efficient training. In this paper, we show the benefits of LCNN in few-shot learning and few-iteration learning, two crucial aspects of on-device training of deep learning models.
+
+### (2018, MobileNetV2) (count=1)
+
+* [[The Power of Sparsity in Convolutional Neural Networks](https://arxiv.org/abs/1702.06257)]
+    [[pdf](https://arxiv.org/pdf/1702.06257.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1702.06257/)]
+    * Title: The Power of Sparsity in Convolutional Neural Networks
+    * Year: 21 Feb `2017`
+    * Authors: Soravit Changpinyo, Mark Sandler, Andrey Zhmoginov
+    * Institusion: [University of Southern California, Los Angeles]
+    * Abstract: Deep convolutional networks are well-known for their high computational and memory demands. Given limited resources, how does one design a network that balances its size, training time, and prediction accuracy? A surprisingly effective approach to trade accuracy for size and speed is to simply reduce the number of channels in each convolutional layer by a fixed fraction and retrain the network. In many cases this leads to significantly smaller networks with only minimal changes to accuracy. In this paper, we take a step further by empirically examining a strategy for deactivating connections between filters in convolutional layers in a way that allows us to harvest savings both in run-time and memory for many network architectures. More specifically, we generalize 2D convolution to use a channel-wise sparse connection structure and show that this leads to significantly better results than the baseline approach for large networks including VGG and Inception V3.
 
 ## Expressive Power (2019, EfficientNetV1) (4)
 
@@ -950,17 +993,6 @@ count: 128
     * Authors: Tom Veniat, Ludovic Denoyer
     * Institutions: [Sorbonne Universités]
     * Abstract: We propose to focus on the problem of discovering neural network architectures efficient in terms of both prediction quality and cost. For instance, our approach is able to solve the following tasks: learn a neural network able to predict well in less than 100 milliseconds or learn an efficient model that fits in a 50 Mb memory. Our contribution is a novel family of models called Budgeted Super Networks (BSN). They are learned using gradient descent techniques applied on a budgeted learning objective function which integrates a maximum authorized cost, while making no assumption on the nature of this cost. We present a set of experiments on computer vision problems and analyze the ability of our technique to deal with three different costs: the computation cost, the memory consumption cost and a distributed computation cost. We particularly show that our model can discover neural network architectures that have a better accuracy than the ResNet and Convolutional Neural Fabrics architectures on CIFAR-10 and CIFAR-100, at a lower cost.
-
-## Sparsity (2018, MobileNetV2) (1)
-
-* [[The Power of Sparsity in Convolutional Neural Networks](https://arxiv.org/abs/1702.06257)]
-    [[pdf](https://arxiv.org/pdf/1702.06257.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1702.06257/)]
-    * Title: The Power of Sparsity in Convolutional Neural Networks
-    * Year: 21 Feb `2017`
-    * Authors: Soravit Changpinyo, Mark Sandler, Andrey Zhmoginov
-    * Institusion: [University of Southern California, Los Angeles]
-    * Abstract: Deep convolutional networks are well-known for their high computational and memory demands. Given limited resources, how does one design a network that balances its size, training time, and prediction accuracy? A surprisingly effective approach to trade accuracy for size and speed is to simply reduce the number of channels in each convolutional layer by a fixed fraction and retrain the network. In many cases this leads to significantly smaller networks with only minimal changes to accuracy. In this paper, we take a step further by empirically examining a strategy for deactivating connections between filters in convolutional layers in a way that allows us to harvest savings both in run-time and memory for many network architectures. More specifically, we generalize 2D convolution to use a channel-wise sparse connection structure and show that this leads to significantly better results than the baseline approach for large networks including VGG and Inception V3.
 
 ## Unclassified (listed in to be read order)
 
