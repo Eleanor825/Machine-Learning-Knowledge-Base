@@ -1,14 +1,42 @@
-# [Papers][Vision] Segmentation
+# [Papers][Vision] Segmentation <!-- omit in toc -->
 
-count: 85
+count=85
 
-## unclassified
+## Table of Contents <!-- omit in toc -->
 
-* [Learning Rich Features from RGB-D Images for Object Detection and Segmentation](https://arxiv.org/abs/1407.5736)
-    * Title: Learning Rich Features from RGB-D Images for Object Detection and Segmentation
-    * Year: 22 Jul `2014`
-    * Author: Saurabh Gupta
-    * Abstract: In this paper we study the problem of object detection for RGB-D images using semantically rich image and depth features. We propose a new geocentric embedding for depth images that encodes height above ground and angle with gravity for each pixel in addition to the horizontal disparity. We demonstrate that this geocentric embedding works better than using raw depth images for learning feature representations with convolutional neural networks. Our final object detection system achieves an average precision of 37.3%, which is a 56% relative improvement over existing methods. We then focus on the task of instance segmentation where we label pixels belonging to object instances found by our detector. For this task, we propose a decision forest approach that classifies pixels in the detection window as foreground or background using a family of unary and binary tests that query shape and geocentric pose features. Finally, we use the output from our object detectors in an existing superpixel classification framework for semantic scene segmentation and achieve a 24% relative improvement over current state-of-the-art for the object categories that we study. We believe advances such as those represented in this paper will facilitate the use of perception in fields like robotics.
+- [Unknown](#unknown)
+- [classify region proposals](#classify-region-proposals)
+- [Superpixels (Learning Hierarchical Features for Scene Labeling, 2013)](#superpixels-learning-hierarchical-features-for-scene-labeling-2013)
+- [Superpixels (LRR, 2016) (2)](#superpixels-lrr-2016-2)
+- [Semantic Segmentation](#semantic-segmentation)
+  - [unclassified](#unclassified)
+  - [Patchwise Training (FCN, 2015) (5)](#patchwise-training-fcn-2015-5)
+  - [Encoder-Decoder Architecture](#encoder-decoder-architecture)
+  - [Increase feature resolution (Panoptic FPN, 2019) (4)](#increase-feature-resolution-panoptic-fpn-2019-4)
+  - [Fully Convolutional Networks (FCN)](#fully-convolutional-networks-fcn)
+  - [FCN based models (Attention to Scale, 2015) (6)](#fcn-based-models-attention-to-scale-2015-6)
+  - [Multi Scale Architectures (Attention to Scale, 2015) (1 + 4 + 1 + 4 + 1)](#multi-scale-architectures-attention-to-scale-2015-1--4--1--4--1)
+  - [Multi-Scale Architectures (2016, PSPNet) (5)](#multi-scale-architectures-2016-pspnet-5)
+  - [Efficiency](#efficiency)
+- [Graphical model networks](#graphical-model-networks)
+  - [Conditional Random Fields (CRF) (DeepLabv1, 2014)](#conditional-random-fields-crf-deeplabv1-2014)
+  - [MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)](#map-and-crf-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-5--5)
+  - [MAP and CRF (SegNet, 2015) (2)](#map-and-crf-segnet-2015-2)
+  - [Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)](#fully-connected-crfs-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-4)
+  - [Fully Connected CRFs (LRR, 2016)](#fully-connected-crfs-lrr-2016)
+  - [Conditional Random Fields - Other](#conditional-random-fields---other)
+  - [DeepLab Family](#deeplab-family)
+- [Transformer Architectures Applied to Segmentation](#transformer-architectures-applied-to-segmentation)
+- [Instance Segmentation](#instance-segmentation)
+- [Multitask Learning (Panoptic Segmentation, 2018) (3)](#multitask-learning-panoptic-segmentation-2018-3)
+- [Panoptic Segmentation](#panoptic-segmentation)
+- [Scene Parsing](#scene-parsing)
+- [weakly supervised (2015, DeconvNet)](#weakly-supervised-2015-deconvnet)
+
+----------------------------------------------------------------------------------------------------
+
+## Unknown
+
 * [Multi-Digit Recognition Using a Space Displacement Neural Network](https://papers.nips.cc/paper/1991/hash/6e2713a6efee97bacb63e52c54f0ada0-Abstract.html)
     * Title: Multi-Digit Recognition Using a Space Displacement Neural Network
     * Year: `1991`
@@ -30,7 +58,6 @@ count: 85
     * Title: Semantic texton forests for image categorization and segmentation
     * Year: Jamie Shotton; Matthew Johnson; Roberto Cipolla
 
-## ----------------------------------------------------------------------------------------------------
 
 ## classify region proposals
 
@@ -77,12 +104,15 @@ count: 85
     * Comments:
         * > Mostajabi et al. [41] classified a superpixel with features extracted at zoom-out spatial levels from a small proximal neighborhood to the whole image region. (Attention to Scale, 2015)
 
-## ----------------------------------------------------------------------------------------------------
 ## Semantic Segmentation
-## ----------------------------------------------------------------------------------------------------
 
 ### unclassified
 
+* [Learning Rich Features from RGB-D Images for Object Detection and Segmentation](https://arxiv.org/abs/1407.5736)
+    * Title: Learning Rich Features from RGB-D Images for Object Detection and Segmentation
+    * Year: 22 Jul `2014`
+    * Author: Saurabh Gupta
+    * Abstract: In this paper we study the problem of object detection for RGB-D images using semantically rich image and depth features. We propose a new geocentric embedding for depth images that encodes height above ground and angle with gravity for each pixel in addition to the horizontal disparity. We demonstrate that this geocentric embedding works better than using raw depth images for learning feature representations with convolutional neural networks. Our final object detection system achieves an average precision of 37.3%, which is a 56% relative improvement over existing methods. We then focus on the task of instance segmentation where we label pixels belonging to object instances found by our detector. For this task, we propose a decision forest approach that classifies pixels in the detection window as foreground or background using a family of unary and binary tests that query shape and geocentric pose features. Finally, we use the output from our object detectors in an existing superpixel classification framework for semantic scene segmentation and achieve a 24% relative improvement over current state-of-the-art for the object categories that we study. We believe advances such as those represented in this paper will facilitate the use of perception in fields like robotics.
 * [[RefineNet](https://arxiv.org/abs/1611.06612)]
     [[pdf](https://arxiv.org/pdf/1611.06612.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1611.06612/)]
@@ -98,7 +128,7 @@ count: 85
     * Year: 15 Apr `2016`
     * Authors: Zifeng Wu, Chunhua Shen, Anton van den Hengel
     * Abstract: We propose a method for high-performance semantic image segmentation (or semantic pixel labelling) based on very deep residual networks, which achieves the state-of-the-art performance. A few design factors are carefully considered to this end. We make the following contributions. (i) First, we evaluate different variations of a fully convolutional residual network so as to find the best configuration, including the number of layers, the resolution of feature maps, and the size of field-of-view. Our experiments show that further enlarging the field-of-view and increasing the resolution of feature maps are typically beneficial, which however inevitably leads to a higher demand for GPU memories. To walk around the limitation, we propose a new method to simulate a high resolution network with a low resolution network, which can be applied during training and/or testing. (ii) Second, we propose an online bootstrapping method for training. We demonstrate that online bootstrapping is critically important for achieving good accuracy. (iii) Third we apply the traditional dropout to some of the residual blocks, which further improves the performance. (iv) Finally, our method achieves the currently best mean intersection-over-union 78.3\% on the PASCAL VOC 2012 dataset, as well as on the recent dataset Cityscapes.
-* [[BiSeNet V1](https://arxiv.org/abs/1808.00897)]
+* [[BiSeNetV1](https://arxiv.org/abs/1808.00897)]
     [[pdf](https://arxiv.org/pdf/1808.00897.pdf)
     [[vanity](https://www.arxiv-vanity.com/papers/1808.00897/)]
     * Title: BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation
@@ -106,7 +136,7 @@ count: 85
     * Authors: Changqian Yu, Jingbo Wang, Chao Peng, Changxin Gao, Gang Yu, Nong Sang
     * Institutions: [National Key Laboratory of Science and Technology on Multispectral Information Processing, School of Automation, Huazhong University of Science & Technology,China], [Key Laboratory of Machine Perception, Peking University, China], [Megvii Inc. (Face++), China]
     * Abstract: Semantic segmentation requires both rich spatial information and sizeable receptive field. However, modern approaches usually compromise spatial resolution to achieve real-time inference speed, which leads to poor performance. In this paper, we address this dilemma with a novel Bilateral Segmentation Network (BiSeNet). We first design a Spatial Path with a small stride to preserve the spatial information and generate high-resolution features. Meanwhile, a Context Path with a fast downsampling strategy is employed to obtain sufficient receptive field. On top of the two paths, we introduce a new Feature Fusion Module to combine features efficiently. The proposed architecture makes a right balance between the speed and segmentation performance on Cityscapes, CamVid, and COCO-Stuff datasets. Specifically, for a 2048x1024 input, we achieve 68.4% Mean IOU on the Cityscapes test dataset with speed of 105 FPS on one NVIDIA Titan XP card, which is significantly faster than the existing methods with comparable performance.
-* [[BiSeNet V2](https://arxiv.org/abs/2004.02147)]
+* [[BiSeNetV2](https://arxiv.org/abs/2004.02147)]
     [[pdf](https://arxiv.org/pdf/2004.02147.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2004.02147/)]
     * Title: BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation
@@ -379,9 +409,7 @@ count: 85
     * Authors: Michael Treml, José Arjona-Medina, Thomas Unterthiner, Rupesh Durgesh, Felix Friedmann, Peter Schuberth, Andreas Mayr, Martin Heusel, Markus Hofmarcher, Michael Widrich, Bernhard Nessler, Sepp Hochreiter
     * Abstract: Deep learning has considerably improved semantic image segmentation. However, its high accuracy is traded against larger computational costs which makes it unsuit- able for embedded devices in self-driving cars. We propose a novel deep network architecture for image segmentation that keeps the high accuracy while being efficient enough for embedded devices. The architecture consists of ELU activation functions, a SqueezeNet-like encoder, followed by parallel dilated convolutions, and a decoder with SharpMask-like refinement modules. On the Cityscapes dataset, the new network achieves higher segmentation accuracy than other networks that are tailored to embedded devices. Simultaneously the frame-rate is still sufficiently high for the deployment in autonomous vehicles.
 
-## ----------------------------------------------------------------------------------------------------
 ## Graphical model networks
-## ----------------------------------------------------------------------------------------------------
 
 ### Conditional Random Fields (CRF) (DeepLabv1, 2014)
 
@@ -562,9 +590,7 @@ count: 85
     * Authors: Chenxi Liu, Liang-Chieh Chen, Florian Schroff, Hartwig Adam, Wei Hua, Alan Yuille, Li Fei-Fei
     * Abstract: Recently, Neural Architecture Search (NAS) has successfully identified neural network architectures that exceed human designed ones on large-scale image classification. In this paper, we study NAS for semantic image segmentation. Existing works often focus on searching the repeatable cell structure, while hand-designing the outer network structure that controls the spatial resolution changes. This choice simplifies the search space, but becomes increasingly problematic for dense image prediction which exhibits a lot more network level architectural variations. Therefore, we propose to search the network level structure in addition to the cell level structure, which forms a hierarchical architecture search space. We present a network level search space that includes many popular designs, and develop a formulation that allows efficient gradient-based architecture search (3 P100 GPU days on Cityscapes images). We demonstrate the effectiveness of the proposed method on the challenging Cityscapes, PASCAL VOC 2012, and ADE20K datasets. Auto-DeepLab, our architecture searched specifically for semantic image segmentation, attains state-of-the-art performance without any ImageNet pretraining.
 
-## ----------------------------------------------------------------------------------------------------
 ## Transformer Architectures Applied to Segmentation
-## ----------------------------------------------------------------------------------------------------
 
 * [[SETR](https://arxiv.org/abs/2012.15840)] <!-- printed -->
     * Title: Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers
@@ -595,9 +621,7 @@ count: 85
     * Title: Cross-Modal Self-Attention Network for Referring Image Segmentation
     * Authors: Linwei Ye, Mrigank Rochan, Zhi Liu, Yang Wang
 
-## ----------------------------------------------------------------------------------------------------
 ## Instance Segmentation
-## ----------------------------------------------------------------------------------------------------
 
 * [[Simultaneous Detection and Segmentation (SDS)](https://arxiv.org/abs/1407.1808)]
     [[pdf](https://arxiv.org/pdf/1407.1808.pdf)]
@@ -682,9 +706,7 @@ count: 85
     * Institutions: [The Robotics Institute, Carnegie Mellon University]
     * Abstract: Multi-task learning in Convolutional Networks has displayed remarkable success in the field of recognition. This success can be largely attributed to learning shared representations from multiple supervisory tasks. However, existing multi-task approaches rely on enumerating multiple network architectures specific to the tasks at hand, that do not generalize. In this paper, we propose a principled approach to learn shared representations in ConvNets using multi-task learning. Specifically, we propose a new sharing unit: "cross-stitch" unit. These units combine the activations from multiple networks and can be trained end-to-end. A network with cross-stitch units can learn an optimal combination of shared and task-specific representations. Our proposed method generalizes across multiple tasks and shows dramatically improved performance over baseline methods for categories with few training examples.
 
-## ----------------------------------------------------------------------------------------------------
 ## Panoptic Segmentation
-## ----------------------------------------------------------------------------------------------------
 
 * [[Panoptic Segmentation](https://arxiv.org/abs/1801.00868)]
     [[pdf](https://arxiv.org/pdf/1801.00868.pdf)]
@@ -705,9 +727,7 @@ count: 85
     * Comments:
         * > (2021, PVT) Kirillov et al. [21] develop a lightweight segmentation head termed Semantic FPN, based on FPN [26].
 
-## ----------------------------------------------------------------------------------------------------
 ## Scene Parsing
-## ----------------------------------------------------------------------------------------------------
 
 * [[Deep Convolutional Networks for Scene Parsing](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.183.8571)]
     [[pdf](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.183.8571&rep=rep1&type=pdf)]
@@ -743,9 +763,7 @@ count: 85
     * Comments:
         * > To increase feature resolution, which is necessary for generating high-quality results, recent top methods [12, 56, 5, 57] rely heavily on the use of dilated convolution [55] (also known as atrous convolution [10]). While effective, such an approach can substantially increase compute and memory, limiting the type of backbone network that can be used. (Panoptic FPN, 2019)
 
-## ----------------------------------------------------------------------------------------------------
 ## weakly supervised (2015, DeconvNet)
-## ----------------------------------------------------------------------------------------------------
 
 * [BoxSup](https://arxiv.org/abs/1503.01640)
     * Title: BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation

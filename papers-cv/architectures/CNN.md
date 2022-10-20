@@ -28,9 +28,9 @@ count=128
   - [EfficientNets (count=3)](#efficientnets-count3)
   - [ShuffleNets (count=2)](#shufflenets-count2)
 - [Model Compression](#model-compression)
-  - [Compressing Convolutional Networks](#compressing-convolutional-networks)
-  - [Compressing Convolutional Networks (ESPNetV1, 2018) (3) + (ESPNetV2, 2018) (2)](#compressing-convolutional-networks-espnetv1-2018-3--espnetv2-2018-2)
-- [Low-bit Networks](#low-bit-networks)
+  - [(2016, RexNeXt) Compressing Convolutional Networks (count=4)](#2016-rexnext-compressing-convolutional-networks-count4)
+  - [(ESPNetV1, 2018) Compressing Convolutional Networks (count=3)](#espnetv1-2018-compressing-convolutional-networks-count3)
+  - [(ESPNetV2, 2018) Compressing Convolutional Networks (count=2)](#espnetv2-2018-compressing-convolutional-networks-count2)
   - [Low-bit Networks (2017, MobileNetV1) (count=3)](#low-bit-networks-2017-mobilenetv1-count3)
   - [Low-bit Networks (2018, ESPNetV1) (4)](#low-bit-networks-2018-espnetv1-4)
   - [Low-bit Networks (2018, ESPNetV2) (3)](#low-bit-networks-2018-espnetv2-3)
@@ -696,18 +696,18 @@ count=128
 
 ## Model Compression
 
-### Compressing Convolutional Networks
+### (2016, RexNeXt) Compressing Convolutional Networks (count=4)
 
 * [[Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation](https://arxiv.org/abs/1404.0736)] <!-- printed -->
     * Title: Exploiting Linear Structure Within Convolutional Networks for Efficient Evaluation
     * Year: 02 Apr `2014`
     * Author: Emily Denton
     * Abstract: We present techniques for speeding up the test-time evaluation of large convolutional networks, designed for object recognition tasks. These models deliver impressive accuracy but each image evaluation requires millions of floating point operations, making their deployment on smartphones and Internet-scale clusters problematic. The computation is dominated by the convolution operations in the lower layers of the model. We exploit the linear structure present within the convolutional filters to derive approximations that significantly reduce the required computation. Using large state-of-the-art models, we demonstrate we demonstrate speedups of convolutional layers on both CPU and GPU by a factor of 2x, while keeping the accuracy within 1% of the original model.
-* Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications
 * Speeding up Convolutional Neural Networks with Low Rank Expansions
+* Compression of Deep Convolutional Neural Networks for Fast and Low Power Mobile Applications
 * Deep roots
 
-### Compressing Convolutional Networks (ESPNetV1, 2018) (3) + (ESPNetV2, 2018) (2)
+### (ESPNetV1, 2018) Compressing Convolutional Networks (count=3)
 
 * [Hashing](https://arxiv.org/abs/1504.04788)
     * Title: Compressing Neural Networks with the Hashing Trick
@@ -725,14 +725,14 @@ count=128
     * Authors: Jiaxiang Wu, Cong Leng, Yuhang Wang, Qinghao Hu, Jian Cheng
     * Abstract: Recently, convolutional neural networks (CNN) have demonstrated impressive performance in various computer vision tasks. However, high performance hardware is typically indispensable for the application of CNN models due to the high computation complexity, which prohibits their further extensions. In this paper, we propose an efficient framework, namely Quantized CNN, to simultaneously speed-up the computation and reduce the storage and memory overhead of CNN models. Both filter kernels in convolutional layers and weighting matrices in fully-connected layers are quantized, aiming at minimizing the estimation error of each layer's response. Extensive experiments on the ILSVRC-12 benchmark demonstrate 4~6x speed-up and 15~20x compression with merely one percentage loss of classification accuracy. With our quantized CNN model, even mobile devices can accurately classify images within one second.
 
+### (ESPNetV2, 2018) Compressing Convolutional Networks (count=2)
+
 * [Constrained Optimization Based Low-Rank Approximation of Deep Neural Networks](https://openaccess.thecvf.com/content_ECCV_2018/html/Chong_Li_Constrained_Optimization_Based_ECCV_2018_paper.html)
     * Title: Constrained Optimization Based Low-Rank Approximation of Deep Neural Networks
     * Year: `2018`
     * Authors: Chong Li, C. J. Richard Shi
     * Abstract: We present COBLA---Constrained Optimization Based Low-rank Approximation---a systematic method of finding an optimal low-rank approximation of a trained convolutional neural network, subject to constraints in the number of multiply-accumulate (MAC) operations and the memory footprint. COBLA optimally allocates the constrained computation resource into each layer of the approximated network. The singular value decomposition of the network weight is computed, then a binary masking variable is introduced to denote whether a particular singular value and the corresponding singular vectors are used in low-rank approximation. With this formulation, the number of the MAC operations and the memory footprint are represented as linear constraints in terms of the binary masking variables. The resulted 0-1 integer programming problem is approximately solved by sequential quadratic programming. COBLA does not introduce any hyperparameter. We empirically demonstrate that COBLA outperforms prior art using the SqueezeNet and VGG-16 architecture on the ImageNet dataset.
 * Learning Structured Sparsity in Deep Neural Networks
-
-## Low-bit Networks
 
 ### Low-bit Networks (2017, MobileNetV1) (count=3)
 
@@ -790,9 +790,11 @@ count=128
     * Author: P. Perona
     * Abstract: Early vision algorithms often have a first stage of linear-filtering that 'extracts' from the image information at multiple scales of resolution and multiple orientations. A common difficulty in the design and implementation of such schemes is that one feels compelled to discretize coarsely the space of scales and orientations in order to reduce computation and storage costs. A technique is presented that allows: 1) computing the best approximation of a given family using linear combinations of a small number of 'basis' functions; and 2) describing all finite-dimensional families, i.e., the families of filters for which a finite dimensional representation is possible with no error. The technique is based on singular value decomposition and may be applied to generating filters in arbitrary dimensions and subject to arbitrary deformations. The relevant functional analysis results are reviewed and precise conditions for the decomposition to be feasible are stated. Experimental results are presented that demonstrate the applicability of the technique to generating multiorientation multi-scale 2D edge-detection kernels. The implementation issues are also discussed.
 * [[A rank minimization heuristic with application to minimum order system approximation](https://ieeexplore.ieee.org/document/945730)] <!-- printed -->
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=945730)]
     * Title: A rank minimization heuristic with application to minimum order system approximation
     * Year: 07 August `2002`
-    * Author: M. Fazel
+    * Authors: M. Fazel; H. Hindi; S.P. Boyd
+    * Institutions: [Stanford University]
     * Abstract: We describe a generalization of the trace heuristic that applies to general nonsymmetric, even non-square, matrices, and reduces to the trace heuristic when the matrix is positive semidefinite. The heuristic is to replace the (nonconvex) rank objective with the sum of the singular values of the matrix, which is the dual of the spectral norm. We show that this problem can be reduced to a semidefinite program, hence efficiently solved. To motivate the heuristic, we, show that the dual spectral norm is the convex envelope of the rank on the set of matrices with norm less than one. We demonstrate the method on the problem of minimum-order system approximation.
 * [Decompositions of a Higher-Order Tensor in Block Terms—Part II: Definitions and Uniqueness](https://epubs.siam.org/doi/10.1137/070690729)
     * Title: Decompositions of a Higher-Order Tensor in Block Terms—Part II: Definitions and Uniqueness
@@ -814,6 +816,7 @@ count=128
     * Authors: Franck Mamalet, Christophe Garcia
     * Abstract: In this paper, we propose different strategies for simplifying filters, used as feature extractors, to be learnt in convolutional neural networks (ConvNets) in order to modify the hypothesis space, and to speed-up learning and processing times. We study two kinds of filters that are known to be computationally efficient in feed-forward processing: fused convolution/sub-sampling filters, and separable filters. We compare the complexity of the back-propagation algorithm on ConvNets based on these different kinds of filters. We show that using these filters allows to reach the same level of recognition performance as with classical ConvNets for handwritten digit recognition, up to 3.3 times faster.
 * [[Learning Separable Filters](https://ieeexplore.ieee.org/document/6619199)] <!-- printed -->
+    [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6619199)]
     * Title: Learning Separable Filters
     * Year: 03 October `2013`
     * Author: Roberto Rigamonti
@@ -821,9 +824,11 @@ count=128
     * Comments:
         * > [24] demonstrates that it is possible to relax the rank-1 constraint and essentially rewrite fi as a linear combination of 1D filters.
 * [[Training CNNs with Low-Rank Filters for Efficient Image Classification](https://arxiv.org/abs/1511.06744)] <!-- printed -->
+    [[pdf](https://arxiv.org/pdf/1511.06744.pdf)]
     * Title: Training CNNs with Low-Rank Filters for Efficient Image Classification
     * Year: 20 Nov `2015`
-    * Author: Yani Ioannou
+    * Authors: Yani Ioannou, Duncan Robertson, Jamie Shotton, Roberto Cipolla, Antonio Criminisi
+    * Institutions: [University of Cambridge], [Microsoft Research]
     * Abstract: We propose a new method for creating computationally efficient convolutional neural networks (CNNs) by using low-rank representations of convolutional filters. Rather than approximating filters in previously-trained networks with more efficient versions, we learn a set of small basis filters from scratch; during training, the network learns to combine these basis filters into more complex filters that are discriminative for image classification. To train such networks, a novel weight initialization scheme is used. This allows effective initialization of connection weights in convolutional layers composed of groups of differently-shaped filters. We validate our approach by applying it to several existing CNN architectures and training these networks from scratch using the CIFAR, ILSVRC and MIT Places datasets. Our results show similar or higher accuracy than conventional CNNs with much less compute. Applying our method to an improved version of VGG-11 network using global max-pooling, we achieve comparable validation accuracy using 41% less compute and only 24% of the original VGG-11 model parameters; another variant of our method gives a 1 percentage point increase in accuracy over our improved VGG-11 model, giving a top-5 center-crop validation accuracy of 89.7% while reducing computation by 16% relative to the original VGG-11 model. Applying our method to the GoogLeNet architecture for ILSVRC, we achieved comparable accuracy with 26% less compute and 41% fewer model parameters. Applying our method to a near state-of-the-art network for CIFAR, we achieved comparable accuracy with 46% less compute and 55% fewer parameters.
     * Comments:
         * > Our approach is connected with that of Ioannou et al. [9] who showed that replacing $3 \times 3 \times c$ filters with linear combinations of filters with smaller spatial extent (e.g. $1 \times 3 \times c$, $3 \times 1 \times c$ filters, see Fig. 3) could reduce the model size and computational complexity of state-of-the-art CNNs, while maintaining or even increasing accuracy. However, that work did not address the channel extent of the filters. (Deep Roots, 2016)
@@ -831,9 +836,11 @@ count=128
 > Various authors have suggested approximating learned convolutional filters using tensor decomposition [11, 13, 18]. 
 
 * [[Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866)] <!-- printed -->
+    [[pdf](https://arxiv.org/pdf/1405.3866.pdf)]
     * Title: Speeding up Convolutional Neural Networks with Low Rank Expansions
     * Year: 15 May `2014`
-    * Author: Max Jaderberg
+    * Authors: Max Jaderberg, Andrea Vedaldi, Andrew Zisserman
+    * Institutions: [Visual Geometry Group, University of Oxford]
     * Abstract: The focus of this paper is speeding up the evaluation of convolutional neural networks. While delivering impressive results across a range of computer vision and machine learning tasks, these networks are computationally demanding, limiting their deployability. Convolutional layers generally consume the bulk of the processing time, and so in this work we present two simple schemes for drastically speeding up these layers. This is achieved by exploiting cross-channel or filter redundancy to construct a low rank basis of filters that are rank-1 in the spatial domain. Our methods are architecture agnostic, and can be easily applied to existing CPU and GPU convolutional frameworks for tuneable speedup performance. We demonstrate this with a real world network designed for scene text character recognition, showing a possible 2.5x speedup with no loss in accuracy, and 4.5x speedup with less than 1% drop in accuracy, still achieving state-of-the-art on standard benchmarks.
     * Comments:
         * > Jaderberg et al. [11] propose approximating the convolutional filters in a trained network with representations that are low-rank both in the spatial and the channel domains. (Deep Roots, 2016)

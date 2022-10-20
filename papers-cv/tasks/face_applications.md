@@ -1,10 +1,20 @@
-# [Papers][Vision] Face Detection and Recognition
+# [Papers][Vision] Face Detection and Recognition <!-- omit in toc -->
 
-count: 0
+count=6
 
-## ----------------------------------------------------------------------------------------------------
+## Table of Contents <!-- omit in toc -->
+
+- [Detection](#detection)
+  - [Unknown](#unknown)
+  - [Knowledge Based](#knowledge-based)
+  - [Feature Based](#feature-based)
+  - [Appearance Based](#appearance-based)
+  - [Template Matching](#template-matching)
+- [Recognition](#recognition)
+
+----------------------------------------------------------------------------------------------------
+
 ## Detection
-## ----------------------------------------------------------------------------------------------------
 
 ### Unknown
 
@@ -38,9 +48,7 @@ count: 0
 
 ### Template Matching
 
-## ----------------------------------------------------------------------------------------------------
 ## Recognition
-## ----------------------------------------------------------------------------------------------------
 
 * [[FaceNet](https://arxiv.org/abs/1503.03832)]
     [[pdf](https://arxiv.org/pdf/1503.03832.pdf)]

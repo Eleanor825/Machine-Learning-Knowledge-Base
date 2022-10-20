@@ -9,8 +9,10 @@
 
 * [Depth Map Prediction from a Single Image using a Multi-Scale Deep Network](https://arxiv.org/abs/1406.2283)
     * Title: Depth Map Prediction from a Single Image using a Multi-Scale Deep Network
+    * Comments:
+        * > (2015, SegNet) The authors in [50] discuss the need for learning to upsample from low resolution feature maps which is the central topic of this paper.
 
-## Optical Flow
+## Optical Flow Estimation
 
 * [FlowNet](https://arxiv.org/abs/1504.06852)
     [[pdf](https://arxiv.org/pdf/1504.06852.pdf)]

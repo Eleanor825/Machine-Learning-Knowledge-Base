@@ -60,3 +60,8 @@
     * Dynamic Filter Networks
 * 2022.10.17 Mon:
     * FitNet
+* 2022.10.18 Tue:
+    * MixNet
+* 2022.10.19 Wed:
+    * Dual Path Networks
+* 2022.10.20 Thu:
