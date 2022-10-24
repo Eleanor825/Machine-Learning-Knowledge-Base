@@ -1,6 +1,7 @@
 import csv
 
-filename = "scripts\extract-paper-info-2.csv"
+
+filename = "scripts/extract-paper-info-3.csv"
 
 
 def abs_to_pdf(url_abs):
@@ -41,27 +42,28 @@ def parse_abstract(abstract):
     return parsed
 
 
-string = ""
+if __name__ == "__main__":
 
-with open(filename, mode='r') as f:
-    reader = csv.reader(f)
-    reader = list(reader)
-    reader = reader[1:]  # skip title line
-    for row in reader:
-        url_abs = row[1]
-        url_pdf = abs_to_pdf(url_abs)
-        title = parse_title(row[2])
-        year = parse_year(row[5])
-        authors = parse_authors(row[3])
-        abstract = parse_abstract(row[4])
-        string += f"* [[{title}]({url_abs})]\n"
-        string += f"    [[pdf]({url_pdf})]\n"
-        string += f"    * Title: {title}\n"
-        string += f"    * Year: {year}\n"
-        string += f"    * Authors: {authors}\n"
-        string += f"    * Abstract: {abstract}\n"
+    string = ""
 
+    with open(filename, mode='r') as f:
+        reader = csv.reader(f)
+        reader = list(reader)
+        reader = reader[1:]  # skip title line
+        for row in reader:
+            url_abs = row[1]
+            url_pdf = abs_to_pdf(url_abs)
+            title = parse_title(row[2])
+            year = parse_year(row[5])
+            authors = parse_authors(row[3])
+            abstract = parse_abstract(row[4])
+            string += f"* [[{title}]({url_abs})]\n"
+            string += f"    [[pdf]({url_pdf})]\n"
+            string += f"    * Title: {title}\n"
+            string += f"    * Year: {year}\n"
+            string += f"    * Authors: {authors}\n"
+            string += f"    * Abstract: {abstract}\n"
 
-with open('scripts/parsed_paper_info.md', 'w') as f:
-    f.write(string)
-print("Parsed markdown string saved to parsed_paper_info.md.")
+    with open('scripts/parsed_paper_info.md', 'w') as f:
+        f.write(string)
+    print("Parsed markdown string saved to parsed_paper_info.md.")
