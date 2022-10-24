@@ -1,9 +1,6 @@
 import csv
 
 
-filename = "scripts/extract-paper-info-3.csv"
-
-
 def abs_to_pdf(url_abs):
     return f"https://arxiv.org/pdf/{url_abs.split('/')[-1]}.pdf"
 
@@ -44,6 +41,7 @@ def parse_abstract(abstract):
 
 if __name__ == "__main__":
 
+    filename = "scripts/extract-paper-info-4.csv"
     string = ""
 
     with open(filename, mode='r') as f:
