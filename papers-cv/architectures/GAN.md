@@ -1,6 +1,6 @@
 # [Papers][Vision] GAN <!-- omit in toc -->
 
-count=6
+count=42
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -57,7 +57,7 @@ count=6
     * Year: 19 Nov `2015`
     * Authors: Alec Radford, Luke Metz, Soumith Chintala
     * Abstract: In recent years, supervised learning with convolutional networks (CNNs) has seen huge adoption in computer vision applications. Comparatively, unsupervised learning with CNNs has received less attention. In this work we hope to help bridge the gap between the success of CNNs for supervised learning and unsupervised learning. We introduce a class of CNNs called deep convolutional generative adversarial networks (DCGANs), that have certain architectural constraints, and demonstrate that they are a strong candidate for unsupervised learning. Training on various image datasets, we show convincing evidence that our deep convolutional adversarial pair learns a hierarchy of representations from object parts to scenes in both the generator and discriminator. Additionally, we use the learned features for novel tasks - demonstrating their applicability as general image representations.
-* [[StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks](https://arxiv.org/abs/1612.03242)]
+* [[StackGAN](https://arxiv.org/abs/1612.03242)]
     [[pdf](https://arxiv.org/pdf/1612.03242.pdf)]
     * Title: StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks
     * Year: 10 Dec `2016`
@@ -179,7 +179,7 @@ count=6
     * Year: 17 Jun `2017`
     * Authors: M. Ehsan Abbasnejad, Qinfeng Shi, Iman Abbasnejad, Anton van den Hengel, Anthony Dick
     * Abstract: Traditional GANs use a deterministic generator function (typically a neural network) to transform a random noise input z to a sample x that the discriminator seeks to distinguish. We propose a new GAN called Bayesian Conditional Generative Adversarial Networks (BC-GANs) that use a random generator function to transform a deterministic input y′ to a sample x. Our BC-GANs extend traditional GANs to a Bayesian framework, and naturally handle unsupervised learning, supervised learning, and semi-supervised learning problems. Experiments show that the proposed BC-GANs outperforms the state-of-the-arts.
-* [[APE-GAN: Adversarial Perturbation Elimination with GAN](https://arxiv.org/abs/1707.05474)]
+* [[APE-GAN](https://arxiv.org/abs/1707.05474)]
     [[pdf](https://arxiv.org/pdf/1707.05474.pdf)]
     * Title: APE-GAN: Adversarial Perturbation Elimination with GAN
     * Year: 18 Jul `2017`
@@ -203,7 +203,7 @@ count=6
     * Year: 18 Nov `2015`
     * Authors: Alireza Makhzani, Jonathon Shlens, Navdeep Jaitly, Ian Goodfellow, Brendan Frey
     * Abstract: In this paper, we propose the "adversarial autoencoder" (AAE), which is a probabilistic autoencoder that uses the recently proposed generative adversarial networks (GAN) to perform variational inference by matching the aggregated posterior of the hidden code vector of the autoencoder with an arbitrary prior distribution. Matching the aggregated posterior to the prior ensures that generating from any part of prior space results in meaningful samples. As a result, the decoder of the adversarial autoencoder learns a deep generative model that maps the imposed prior to the data distribution. We show how the adversarial autoencoder can be used in applications such as semi-supervised classification, disentangling style and content of images, unsupervised clustering, dimensionality reduction and data visualization. We performed experiments on MNIST, Street View House Numbers and Toronto Face datasets and show that adversarial autoencoders achieve competitive results in generative modeling and semi-supervised classification tasks.
-* [[AdaGAN: Boosting Generative Models](https://arxiv.org/abs/1701.02386)]
+* [[AdaGAN](https://arxiv.org/abs/1701.02386)]
     [[pdf](https://arxiv.org/pdf/1701.02386.pdf)]
     * Title: AdaGAN: Boosting Generative Models
     * Year: 09 Jan `2017`

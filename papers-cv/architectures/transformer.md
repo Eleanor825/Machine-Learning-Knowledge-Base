@@ -1,6 +1,36 @@
-# [Papers][Vision] Transformer Architectures
+# [Papers][Vision] Transformer Architectures <!-- omit in toc -->
 
-count: 80
+count=80
+
+## Table of Contents <!-- omit in toc -->
+
+- [Basics](#basics)
+- [Unknown](#unknown)
+- [Self-attention in vision models (4)](#self-attention-in-vision-models-4)
+- [Incorporate Attention Module into CNN (2021, PVT) (count=3)](#incorporate-attention-module-into-cnn-2021-pvt-count3)
+- [Improving self-attention (4 + 3 + 2)](#improving-self-attention-4--3--2)
+- [Scaling up of vision models (3 + 5 + 3)](#scaling-up-of-vision-models-3--5--3)
+- [ResNet-Like Architectures (2020, ViT) (count=3)](#resnet-like-architectures-2020-vit-count3)
+- [Vision Transformer Variants at Relatively Small Scale (11)](#vision-transformer-variants-at-relatively-small-scale-11)
+- [Multi-scale networks (5)](#multi-scale-networks-5)
+- [Locality Prior (5)](#locality-prior-5)
+- [Referenced by Swin Transformer V1](#referenced-by-swin-transformer-v1)
+  - [(2021, Swin Transformer V1) Self-attention based backbone architectures (count=3)](#2021-swin-transformer-v1-self-attention-based-backbone-architectures-count3)
+  - [(2021, Swin Transformer V1) Self-attention/Transformers to complement CNN Backbones (count=6)](#2021-swin-transformer-v1-self-attentiontransformers-to-complement-cnn-backbones-count6)
+  - [(2021, Swin Transformer V1) Self-attention/Transformers to complement CNN heads (count=2)](#2021-swin-transformer-v1-self-attentiontransformers-to-complement-cnn-heads-count2)
+  - [(2021, Swin Transformer V1) Transformer based vision backbones (count=5)](#2021-swin-transformer-v1-transformer-based-vision-backbones-count5)
+- [Combine convolutions and transformers (3 + 1)](#combine-convolutions-and-transformers-3--1)
+- [Improving Transformer-Based Models (MobileViTv2)](#improving-transformer-based-models-mobilevitv2)
+- [Continuous convolution and variants (4)](#continuous-convolution-and-variants-4)
+- [Sliding Window Approaches](#sliding-window-approaches)
+- [Dictionary lookup problem (2021, PVT) (count=5)](#dictionary-lookup-problem-2021-pvt-count5)
+- [Substandard Optimizability is Due to the Lack of Spatial Inductive Biases in ViTs.](#substandard-optimizability-is-due-to-the-lack-of-spatial-inductive-biases-in-vits)
+- [Transformer Architecture Applied to Object Detection and Instance Segmentation (4)](#transformer-architecture-applied-to-object-detection-and-instance-segmentation-4)
+- [MobileViT](#mobilevit)
+- [Swin Transformer](#swin-transformer)
+- [Others](#others)
+
+----------------------------------------------------------------------------------------------------
 
 > (2021, Transformers in Vision) There exist two key ideas that have contributed towards the development of transformer models.
 > (a) The first one is self-supervision, which is used to pre-train transformer models on a large unlabeled corpus, subsequently fine-tuning them to the target task with a small labeled dataset [35, 96, 150].
@@ -338,9 +368,7 @@ count: 80
     * Authors: Kun Yuan, Shaopeng Guo, Ziwei Liu, Aojun Zhou, Fengwei Yu, Wei Wu
     * Abstract: Motivated by the success of Transformers in natural language processing (NLP) tasks, there emerge some attempts (e.g., ViT and DeiT) to apply Transformers to the vision domain. However, pure Transformer architectures often require a large amount of training data or extra supervision to obtain comparable performance with convolutional neural networks (CNNs). To overcome these limitations, we analyze the potential drawbacks when directly borrowing Transformer architectures from NLP. Then we propose a new \textbf{Convolution-enhanced image Transformer (CeiT)} which combines the advantages of CNNs in extracting low-level features, strengthening locality, and the advantages of Transformers in establishing long-range dependencies. Three modifications are made to the original Transformer: \textbf{1)} instead of the straightforward tokenization from raw input images, we design an \textbf{Image-to-Tokens (I2T)} module that extracts patches from generated low-level features; \textbf{2)} the feed-froward network in each encoder block is replaced with a \textbf{Locally-enhanced Feed-Forward (LeFF)} layer that promotes the correlation among neighboring tokens in the spatial dimension; \textbf{3)} a \textbf{Layer-wise Class token Attention (LCA)} is attached at the top of the Transformer that utilizes the multi-level representations. Experimental results on ImageNet and seven downstream tasks show the effectiveness and generalization ability of CeiT compared with previous Transformers and state-of-the-art CNNs, without requiring a large amount of training data and extra CNN teachers. Besides, CeiT models also demonstrate better convergence with 3x fewer training iterations, which can reduce the training cost significantly\footnote{Code and models will be released upon acceptance.}.
 
-## ----------------------------------------------------------------------------------------------------
 ## Referenced by Swin Transformer V1
-## ----------------------------------------------------------------------------------------------------
 
 ### (2021, Swin Transformer V1) Self-attention based backbone architectures (count=3)
 

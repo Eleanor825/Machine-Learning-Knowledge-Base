@@ -1,6 +1,33 @@
-# [Papers][Vision] 2D Object Detection
+# [Papers][Vision] 2D Object Detection <!-- omit in toc -->
 
-count: 88
+count=88
+
+## Table of Contents <!-- omit in toc -->
+
+- [Unclassified](#unclassified)
+- [Localization](#localization)
+- [Sliding-Window Approaches](#sliding-window-approaches)
+- [Object Proposal Approaches (DeepMask, 2015)](#object-proposal-approaches-deepmask-2015)
+- [Region Proposals (2013, R-CNN)](#region-proposals-2013-r-cnn)
+- [Two-Stage Detectors](#two-stage-detectors)
+  - [unclassified](#unclassified-1)
+  - [R-CNN Series](#r-cnn-series)
+  - [Spatial Pyramid Pooling Related](#spatial-pyramid-pooling-related)
+  - [Further Improvements of R-CNN](#further-improvements-of-r-cnn)
+- [Single-Stage Detectors](#single-stage-detectors)
+  - [unclassified](#unclassified-2)
+  - [SSD and its Variants](#ssd-and-its-variants)
+  - [YOLO Series](#yolo-series)
+  - [Methods using multiple layers (2016, FPN)](#methods-using-multiple-layers-2016-fpn)
+  - [Improvements](#improvements)
+  - [Focal Loss](#focal-loss)
+- [Anchor-Free Frameworks](#anchor-free-frameworks)
+- [Neural Architecture Search (EfficientNetV2, 2021)](#neural-architecture-search-efficientnetv2-2021)
+- [Attention Mechanism](#attention-mechanism)
+- [Transformer Architectures Applied to Detection](#transformer-architectures-applied-to-detection)
+- [Weekly-Supervised Learning](#weekly-supervised-learning)
+
+----------------------------------------------------------------------------------------------------
 
 ## Unclassified
 
@@ -153,9 +180,7 @@ superpixel merging
     * Authors: Joao Carreira; Cristian Sminchisescu
     * Abstract: We present a novel framework to generate and rank plausible hypotheses for the spatial extent of objects in images using bottom-up computational processes and mid-level selection cues. The object hypotheses are represented as figure-ground segmentations, and are extracted automatically, without prior knowledge of the properties of individual object classes, by solving a sequence of Constrained Parametric Min-Cut problems (CPMC) on a regular image grid. In a subsequent step, we learn to rank the corresponding segments by training a continuous model to predict how likely they are to exhibit real-world regularities (expressed as putative overlap with ground truth) based on their mid-level region properties, then diversify the estimated overlap score using maximum marginal relevance measures. We show that this algorithm significantly outperforms the state of the art for low-level segmentation in the VOC 2009 and 2010 data sets. In our companion papers [1], [2], we show that the algorithm can be used, successfully, in a segmentation-based visual object category recognition pipeline. This architecture ranked first in the VOC2009 and VOC2010 image segmentation and labeling challenges.
 
-## ----------------------------------------------------------------------------------------------------
 ## Two-Stage Detectors
-## ----------------------------------------------------------------------------------------------------
 
 ### unclassified
 
@@ -287,9 +312,7 @@ superpixel merging
     * Authors: Hongkai Zhang, Hong Chang, Bingpeng Ma, Naiyan Wang, Xilin Chen
     * Abstract: Although two-stage object detectors have continuously advanced the state-of-the-art performance in recent years, the training process itself is far from crystal. In this work, we first point out the inconsistency problem between the fixed network settings and the dynamic training procedure, which greatly affects the performance. For example, the fixed label assignment strategy and regression loss function cannot fit the distribution change of proposals and thus are harmful to training high quality detectors. Consequently, we propose Dynamic R-CNN to adjust the label assignment criteria (IoU threshold) and the shape of regression loss function (parameters of SmoothL1 Loss) automatically based on the statistics of proposals during training. This dynamic design makes better use of the training samples and pushes the detector to fit more high quality samples. Specifically, our method improves upon ResNet-50-FPN baseline with 1.9% AP and 5.5% AP90 on the MS COCO dataset with no extra overhead. Codes and models are available at [this https URL](https://github.com/hkzhang95/DynamicRCNN).
 
-## ----------------------------------------------------------------------------------------------------
 ## Single-Stage Detectors
-## ----------------------------------------------------------------------------------------------------
 
 ### unclassified
 
