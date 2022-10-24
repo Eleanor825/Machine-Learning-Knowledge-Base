@@ -5,9 +5,11 @@ count=6
 ## Table of Contents <!-- omit in toc -->
 
 - [Basics](#basics)
+- [Auto-Regressive Generative Model](#auto-regressive-generative-model)
 - [Unclassified](#unclassified)
 - [Progressive Learning (EfficientNetV2, 2021)](#progressive-learning-efficientnetv2-2021)
 - [Adversarial Learning (EfficientNetV2, 2021)](#adversarial-learning-efficientnetv2-2021)
+- [Text-to-Image Models](#text-to-image-models)
 
 ----------------------------------------------------------------------------------------------------
 
@@ -49,7 +51,7 @@ count=6
     * Year: 26 Jan `2017`
     * Authors: Martin Arjovsky, Soumith Chintala, Léon Bottou
     * Abstract: We introduce a new algorithm named WGAN, an alternative to traditional GAN training. In this new model, we show that we can improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches. Furthermore, we show that the corresponding optimization problem is sound, and provide extensive theoretical work highlighting the deep connections to other distances between distributions.
-* [[Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/abs/1511.06434)]
+* [[Deep Convolutional GAN](https://arxiv.org/abs/1511.06434)]
     [[pdf](https://arxiv.org/pdf/1511.06434.pdf)]
     * Title: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks
     * Year: 19 Nov `2015`
@@ -79,13 +81,13 @@ count=6
     * Year: 16 Feb `2018`
     * Authors: Takeru Miyato, Toshiki Kataoka, Masanori Koyama, Yuichi Yoshida
     * Abstract: One of the challenges in the study of generative adversarial networks is the instability of its training. In this paper, we propose a novel weight normalization technique called spectral normalization to stabilize the training of the discriminator. Our new normalization technique is computationally light and easy to incorporate into existing implementations. We tested the efficacy of spectral normalization on CIFAR10, STL-10, and ILSVRC2012 dataset, and we experimentally confirmed that spectrally normalized GANs (SN-GANs) is capable of generating images of better or equal quality relative to the previous training stabilization techniques.
-* [[Self-Attention Generative Adversarial Networks](https://arxiv.org/abs/1805.08318)]
+* [[Self-Attention GAN](https://arxiv.org/abs/1805.08318)]
     [[pdf](https://arxiv.org/pdf/1805.08318.pdf)]
     * Title: Self-Attention Generative Adversarial Networks
     * Year: 21 May `2018`
     * Authors: Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena
     * Abstract: In this paper, we propose the Self-Attention Generative Adversarial Network (SAGAN) which allows attention-driven, long-range dependency modeling for image generation tasks. Traditional convolutional GANs generate high-resolution details as a function of only spatially local points in lower-resolution feature maps. In SAGAN, details can be generated using cues from all feature locations. Moreover, the discriminator can check that highly detailed features in distant portions of the image are consistent with each other. Furthermore, recent work has shown that generator conditioning affects GAN performance. Leveraging this insight, we apply spectral normalization to the GAN generator and find that this improves training dynamics. The proposed SAGAN achieves the state-of-the-art results, boosting the best published Inception score from 36.8 to 52.52 and reducing Frechet Inception distance from 27.62 to 18.65 on the challenging ImageNet dataset. Visualization of the attention layers shows that the generator leverages neighborhoods that correspond to object shapes rather than local regions of fixed shape.
-* [[BEGAN: Boundary Equilibrium Generative Adversarial Networks](https://arxiv.org/abs/1703.10717)]
+* [[BEGAN](https://arxiv.org/abs/1703.10717)]
     [[pdf](https://arxiv.org/pdf/1703.10717.pdf)]
     * Title: BEGAN: Boundary Equilibrium Generative Adversarial Networks
     * Year: 31 Mar `2017`
@@ -97,12 +99,6 @@ count=6
     * Year: 06 Jun `2019`
     * Authors: Diederik P. Kingma, Max Welling
     * Abstract: Variational autoencoders provide a principled framework for learning deep latent-variable models and corresponding inference models. In this work, we provide an introduction to variational autoencoders and some important extensions.
-* [[Pixel Recurrent Neural Networks](https://arxiv.org/abs/1601.06759)]
-    [[pdf](https://arxiv.org/pdf/1601.06759.pdf)]
-    * Title: Pixel Recurrent Neural Networks
-    * Year: 25 Jan `2016`
-    * Authors: Aaron van den Oord, Nal Kalchbrenner, Koray Kavukcuoglu
-    * Abstract: Modeling the distribution of natural images is a landmark problem in unsupervised learning. This task requires an image model that is at once expressive, tractable and scalable. We present a deep neural network that sequentially predicts the pixels in an image along the two spatial dimensions. Our method models the discrete probability of the raw pixel values and encodes the complete set of dependencies in the image. Architectural novelties include fast two-dimensional recurrent layers and an effective use of residual connections in deep recurrent networks. We achieve log-likelihood scores on natural images that are considerably better than the previous state of the art. Our main results also provide benchmarks on the diverse ImageNet dataset. Samples generated from the model appear crisp, varied and globally coherent.
 * [[Towards the Automatic Anime Characters Creation with Generative Adversarial Networks](https://arxiv.org/abs/1708.05509)]
     [[pdf](https://arxiv.org/pdf/1708.05509.pdf)]
     * Title: Towards the Automatic Anime Characters Creation with Generative Adversarial Networks
@@ -110,9 +106,18 @@ count=6
     * Authors: Yanghua Jin, Jiakai Zhang, Minjun Li, Yingtao Tian, Huachun Zhu, Zhihao Fang
     * Abstract: Automatic generation of facial images has been well studied after the Generative Adversarial Network (GAN) came out. There exists some attempts applying the GAN model to the problem of generating facial images of anime characters, but none of the existing work gives a promising result. In this work, we explore the training of GAN models specialized on an anime facial image dataset. We address the issue from both the data and the model aspect, by collecting a more clean, well-suited dataset and leverage proper, empirical application of DRAGAN. With quantitative analysis and case studies we demonstrate that our efforts lead to a stable and high-quality model. Moreover, to assist people with anime character design, we build a website (http://make.girls.moe) with our pre-trained model available online, which makes the model easily accessible to general public.
 
+## Auto-Regressive Generative Model
+
+* [[Pixel Recurrent Neural Networks](https://arxiv.org/abs/1601.06759)]
+    [[pdf](https://arxiv.org/pdf/1601.06759.pdf)]
+    * Title: Pixel Recurrent Neural Networks
+    * Year: 25 Jan `2016`
+    * Authors: Aaron van den Oord, Nal Kalchbrenner, Koray Kavukcuoglu
+    * Abstract: Modeling the distribution of natural images is a landmark problem in unsupervised learning. This task requires an image model that is at once expressive, tractable and scalable. We present a deep neural network that sequentially predicts the pixels in an image along the two spatial dimensions. Our method models the discrete probability of the raw pixel values and encodes the complete set of dependencies in the image. Architectural novelties include fast two-dimensional recurrent layers and an effective use of residual connections in deep recurrent networks. We achieve log-likelihood scores on natural images that are considerably better than the previous state of the art. Our main results also provide benchmarks on the diverse ImageNet dataset. Samples generated from the model appear crisp, varied and globally coherent.
+
 ## Unclassified
 
-* [[Style GAN](https://arxiv.org/abs/1812.04948)]
+* [[StyleGAN](https://arxiv.org/abs/1812.04948)]
     [[pdf](https://arxiv.org/pdf/1812.04948.pdf)]
     * Title: A Style-Based Generator Architecture for Generative Adversarial Networks
     * Year: 12 Dec `2018`
@@ -210,10 +215,46 @@ count=6
     * Year: 06 Mar `2017`
     * Authors: Zhiming Zhou, Han Cai, Shu Rong, Yuxuan Song, Kan Ren, Weinan Zhang, Yong Yu, Jun Wang
     * Abstract: Class labels have been empirically shown useful in improving the sample quality of generative adversarial nets (GANs). In this paper, we mathematically study the properties of the current variants of GANs that make use of class label information. With class aware gradient and cross-entropy decomposition, we reveal how class labels and associated losses influence GAN's training. Based on that, we propose Activation Maximization Generative Adversarial Networks (AM-GAN) as an advanced solution. Comprehensive experiments have been conducted to validate our analysis and evaluate the effectiveness of our solution, where AM-GAN outperforms other strong baselines and achieves state-of-the-art Inception Score (8.91) on CIFAR-10. In addition, we demonstrate that, with the Inception ImageNet classifier, Inception Score mainly tracks the diversity of the generator, and there is, however, no reliable evidence that it can reflect the true sample quality. We thus propose a new metric, called AM Score, to provide a more accurate estimation of the sample quality. Our proposed model also outperforms the baseline methods in the new metric.
+* [[Least Squares Generative Adversarial Networks](https://arxiv.org/abs/1611.04076)]
+    [[pdf](https://arxiv.org/pdf/1611.04076.pdf)]
+    * Title: Least Squares Generative Adversarial Networks
+    * Year: 13 Nov `2016`
+    * Authors: Xudong Mao, Qing Li, Haoran Xie, Raymond Y.K. Lau, Zhen Wang, Stephen Paul Smolley
+    * Abstract: Unsupervised learning with generative adversarial networks (GANs) has proven hugely successful. Regular GANs hypothesize the discriminator as a classifier with the sigmoid cross entropy loss function. However, we found that this loss function may lead to the vanishing gradients problem during the learning process. To overcome such a problem, we propose in this paper the Least Squares Generative Adversarial Networks (LSGANs) which adopt the least squares loss function for the discriminator. We show that minimizing the objective function of LSGAN yields minimizing the Pearson \chi^2 divergence. There are two benefits of LSGANs over regular GANs. First, LSGANs are able to generate higher quality images than regular GANs. Second, LSGANs perform more stable during the learning process. We evaluate LSGANs on five scene datasets and the experimental results show that the images generated by LSGANs are of better quality than the ones generated by regular GANs. We also conduct two comparison experiments between LSGANs and regular GANs to illustrate the stability of LSGANs.
+* [[Learning to Discover Cross-Domain Relations with Generative Adversarial Networks](https://arxiv.org/abs/1703.05192)]
+    [[pdf](https://arxiv.org/pdf/1703.05192.pdf)]
+    * Title: Learning to Discover Cross-Domain Relations with Generative Adversarial Networks
+    * Year: 15 Mar `2017`
+    * Authors: Taeksoo Kim, Moonsu Cha, Hyunsoo Kim, Jung Kwon Lee, Jiwon Kim
+    * Abstract: While humans easily recognize relations between data from different domains without any supervision, learning to automatically discover them is in general very challenging and needs many ground-truth pairs that illustrate the relations. To avoid costly pairing, we address the task of discovering cross-domain relations given unpaired data. We propose a method based on generative adversarial networks that learns to discover relations between different domains (DiscoGAN). Using the discovered relations, our proposed network successfully transfers style from one domain to another while preserving key attributes such as orientation and face identity. Source code for official implementation is publicly available this https URL
+* [[Conditional Generative Adversarial Nets](https://arxiv.org/abs/1411.1784)]
+    [[pdf](https://arxiv.org/pdf/1411.1784.pdf)]
+    * Title: Conditional Generative Adversarial Nets
+    * Year: 06 Nov `2014`
+    * Authors: Mehdi Mirza, Simon Osindero
+    * Abstract: Generative Adversarial Nets [8] were recently introduced as a novel way to train generative models. In this work we introduce the conditional version of generative adversarial nets, which can be constructed by simply feeding the data, y, we wish to condition on to both the generator and discriminator. We show that this model can generate MNIST digits conditioned on class labels. We also illustrate how this model could be used to learn a multi-modal model, and provide preliminary examples of an application to image tagging in which we demonstrate how this approach can generate descriptive tags which are not part of training labels.
+* [[Are GANs Created Equal? A Large-Scale Study](https://arxiv.org/abs/1711.10337)]
+    [[pdf](https://arxiv.org/pdf/1711.10337.pdf)]
+    * Title: Are GANs Created Equal? A Large-Scale Study
+    * Year: 28 Nov `2017`
+    * Authors: Mario Lucic, Karol Kurach, Marcin Michalski, Sylvain Gelly, Olivier Bousquet
+    * Abstract: Generative adversarial networks (GAN) are a powerful subclass of generative models. Despite a very rich research activity leading to numerous interesting GAN algorithms, it is still very hard to assess which algorithm(s) perform better than others. We conduct a neutral, multi-faceted large-scale empirical study on state-of-the art models and evaluation measures. We find that most models can reach similar scores with enough hyperparameter optimization and random restarts. This suggests that improvements can arise from a higher computational budget and tuning more than fundamental algorithmic changes. To overcome some limitations of the current metrics, we also propose several data sets on which precision and recall can be computed. Our experimental results suggest that future GAN research should be based on more systematic and objective evaluation procedures. Finally, we did not find evidence that any of the tested algorithms consistently outperforms the non-saturating GAN introduced in \cite{goodfellow2014generative}.
+* [[A Neural Algorithm of Artistic Style](https://arxiv.org/abs/1508.06576)]
+    [[pdf](https://arxiv.org/pdf/1508.06576.pdf)]
+    * Title: A Neural Algorithm of Artistic Style
+    * Year: 26 Aug `2015`
+    * Authors: Leon A. Gatys, Alexander S. Ecker, Matthias Bethge
+    * Abstract: In fine art, especially painting, humans have mastered the skill to create unique visual experiences through composing a complex interplay between the content and style of an image. Thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities. However, in other key areas of visual perception such as object and face recognition near-human performance was recently demonstrated by a class of biologically inspired vision models called Deep Neural Networks. Here we introduce an artificial system based on a Deep Neural Network that creates artistic images of high perceptual quality. The system uses neural representations to separate and recombine content and style of arbitrary images, providing a neural algorithm for the creation of artistic images. Moreover, in light of the striking similarities between performance-optimised artificial neural networks and biological vision, our work offers a path forward to an algorithmic understanding of how humans create and perceive artistic imagery.
+* [[Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114)]
+    [[pdf](https://arxiv.org/pdf/1312.6114.pdf)]
+    * Title: Auto-Encoding Variational Bayes
+    * Year: 20 Dec `2013`
+    * Authors: Diederik P Kingma, Max Welling
+    * Abstract: How can we perform efficient inference and learning in directed probabilistic models, in the presence of continuous latent variables with intractable posterior distributions, and large datasets? We introduce a stochastic variational inference and learning algorithm that scales to large datasets and, under some mild differentiability conditions, even works in the intractable case. Our contributions is two-fold. First, we show that a reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient methods. Second, we show that for i.i.d. datasets with continuous latent variables per datapoint, posterior inference can be made especially efficient by fitting an approximate inference model (also called a recognition model) to the intractable posterior using the proposed lower bound estimator. Theoretical advantages are reflected in experimental results.
 
 ## Progressive Learning (EfficientNetV2, 2021)
 
-* [[Progressive Growing of GAN](https://arxiv.org/abs/1710.10196)]
+* [[ProgressiveGAN](https://arxiv.org/abs/1710.10196)]
     [[pdf](https://arxiv.org/pdf/1710.10196.pdf)]
     * Title: Progressive Growing of GANs for Improved Quality, Stability, and Variation
     * Year: 27 Oct `2017`
@@ -227,3 +268,12 @@ count=6
     * Year: 11 Sep `2019`
     * Authors: Hang Yu, Aishan Liu, Xianglong Liu, Gengchao Li, Ping Luo, Ran Cheng, Jichen Yang, Chongzhi Zhang
     * Abstract: Adversarial images are designed to mislead deep neural networks (DNNs), attracting great attention in recent years. Although several defense strategies achieved encouraging robustness against adversarial samples, most of them fail to improve the robustness on common corruptions such as noise, blur, and weather/digital effects (e.g. frost, pixelate). To address this problem, we propose a simple yet effective method, named Progressive Data Augmentation (PDA), which enables general robustness of DNNs by progressively injecting diverse adversarial noises during training. In other words, DNNs trained with PDA are able to obtain more robustness against both adversarial attacks as well as common corruptions than the recent state-of-the-art methods. We also find that PDA is more efficient than prior arts and able to prevent accuracy drop on clean samples without being attacked. Furthermore, we theoretically show that PDA can control the perturbation bound and guarantee better generalization ability than existing work. Extensive experiments on many benchmarks such as CIFAR-10, SVHN, and ImageNet demonstrate that PDA significantly outperforms its counterparts in various experimental setups.
+
+## Text-to-Image Models
+
+* [[Generative Adversarial Text to Image Synthesis](https://arxiv.org/abs/1605.05396)]
+    [[pdf](https://arxiv.org/pdf/1605.05396.pdf)]
+    * Title: Generative Adversarial Text to Image Synthesis
+    * Year: 17 May `2016`
+    * Authors: Scott Reed, Zeynep Akata, Xinchen Yan, Lajanugen Logeswaran, Bernt Schiele, Honglak Lee
+    * Abstract: Automatic synthesis of realistic images from text would be interesting and useful, but current AI systems are still far from this goal. However, in recent years generic and powerful recurrent neural network architectures have been developed to learn discriminative text feature representations. Meanwhile, deep convolutional generative adversarial networks (GANs) have begun to generate highly compelling images of specific categories, such as faces, album covers, and room interiors. In this work, we develop a novel deep architecture and GAN formulation to effectively bridge these advances in text and image model- ing, translating visual concepts from characters to pixels. We demonstrate the capability of our model to generate plausible images of birds and flowers from detailed text descriptions.
