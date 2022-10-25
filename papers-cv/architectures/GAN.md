@@ -1,14 +1,17 @@
 # [Papers][Vision] GAN <!-- omit in toc -->
 
-count=42
+count=48
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Basics](#basics)
+- [StyleGAN Family](#stylegan-family)
+- [Variational Autoencoder Related](#variational-autoencoder-related)
+- [Wasserstein GAN Related](#wasserstein-gan-related)
 - [Auto-Regressive Generative Model](#auto-regressive-generative-model)
 - [Unclassified](#unclassified)
-- [Progressive Learning (EfficientNetV2, 2021)](#progressive-learning-efficientnetv2-2021)
 - [Adversarial Learning (EfficientNetV2, 2021)](#adversarial-learning-efficientnetv2-2021)
+- [Diffusion Models](#diffusion-models)
 - [Text-to-Image Models](#text-to-image-models)
 
 ----------------------------------------------------------------------------------------------------
@@ -39,18 +42,6 @@ count=42
     * Year: 21 Nov `2016`
     * Authors: Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros
     * Abstract: We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from input image to output image, but also learn a loss function to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally would require very different loss formulations. We demonstrate that this approach is effective at synthesizing photos from label maps, reconstructing objects from edge maps, and colorizing images, among other tasks. Indeed, since the release of the pix2pix software associated with this paper, a large number of internet users (many of them artists) have posted their own experiments with our system, further demonstrating its wide applicability and ease of adoption without the need for parameter tweaking. As a community, we no longer hand-engineer our mapping functions, and this work suggests we can achieve reasonable results without hand-engineering our loss functions either.
-* [[Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)]
-    [[pdf](https://arxiv.org/pdf/1704.00028.pdf)]
-    * Title: Improved Training of Wasserstein GANs
-    * Year: 31 Mar `2017`
-    * Authors: Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville
-    * Abstract: Generative Adversarial Networks (GANs) are powerful generative models, but suffer from training instability. The recently proposed Wasserstein GAN (WGAN) makes progress toward stable training of GANs, but sometimes can still generate only low-quality samples or fail to converge. We find that these problems are often due to the use of weight clipping in WGAN to enforce a Lipschitz constraint on the critic, which can lead to undesired behavior. We propose an alternative to clipping weights: penalize the norm of gradient of the critic with respect to its input. Our proposed method performs better than standard WGAN and enables stable training of a wide variety of GAN architectures with almost no hyperparameter tuning, including 101-layer ResNets and language models over discrete data. We also achieve high quality generations on CIFAR-10 and LSUN bedrooms.
-* [[Wasserstein GAN](https://arxiv.org/abs/1701.07875)]
-    [[pdf](https://arxiv.org/pdf/1701.07875.pdf)]
-    * Title: Wasserstein GAN
-    * Year: 26 Jan `2017`
-    * Authors: Martin Arjovsky, Soumith Chintala, Léon Bottou
-    * Abstract: We introduce a new algorithm named WGAN, an alternative to traditional GAN training. In this new model, we show that we can improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches. Furthermore, we show that the corresponding optimization problem is sound, and provide extensive theoretical work highlighting the deep connections to other distances between distributions.
 * [[Deep Convolutional GAN](https://arxiv.org/abs/1511.06434)]
     [[pdf](https://arxiv.org/pdf/1511.06434.pdf)]
     * Title: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks
@@ -93,18 +84,86 @@ count=42
     * Year: 31 Mar `2017`
     * Authors: David Berthelot, Thomas Schumm, Luke Metz
     * Abstract: We propose a new equilibrium enforcing method paired with a loss derived from the Wasserstein distance for training auto-encoder based Generative Adversarial Networks. This method balances the generator and discriminator during training. Additionally, it provides a new approximate convergence measure, fast and stable training and high visual quality. We also derive a way of controlling the trade-off between image diversity and visual quality. We focus on the image generation task, setting a new milestone in visual quality, even at higher resolutions. This is achieved while using a relatively simple model architecture and a standard training procedure.
-* [[An Introduction to Variational Autoencoders](https://arxiv.org/abs/1906.02691)]
-    [[pdf](https://arxiv.org/pdf/1906.02691.pdf)]
-    * Title: An Introduction to Variational Autoencoders
-    * Year: 06 Jun `2019`
-    * Authors: Diederik P. Kingma, Max Welling
-    * Abstract: Variational autoencoders provide a principled framework for learning deep latent-variable models and corresponding inference models. In this work, we provide an introduction to variational autoencoders and some important extensions.
 * [[Towards the Automatic Anime Characters Creation with Generative Adversarial Networks](https://arxiv.org/abs/1708.05509)]
     [[pdf](https://arxiv.org/pdf/1708.05509.pdf)]
     * Title: Towards the Automatic Anime Characters Creation with Generative Adversarial Networks
     * Year: 18 Aug `2017`
     * Authors: Yanghua Jin, Jiakai Zhang, Minjun Li, Yingtao Tian, Huachun Zhu, Zhihao Fang
     * Abstract: Automatic generation of facial images has been well studied after the Generative Adversarial Network (GAN) came out. There exists some attempts applying the GAN model to the problem of generating facial images of anime characters, but none of the existing work gives a promising result. In this work, we explore the training of GAN models specialized on an anime facial image dataset. We address the issue from both the data and the model aspect, by collecting a more clean, well-suited dataset and leverage proper, empirical application of DRAGAN. With quantitative analysis and case studies we demonstrate that our efforts lead to a stable and high-quality model. Moreover, to assist people with anime character design, we build a website (http://make.girls.moe) with our pre-trained model available online, which makes the model easily accessible to general public.
+
+## StyleGAN Family
+
+* [[ProgressiveGAN](https://arxiv.org/abs/1710.10196)]
+    [[pdf](https://arxiv.org/pdf/1710.10196.pdf)]
+    * Title: Progressive Growing of GANs for Improved Quality, Stability, and Variation
+    * Year: 27 Oct `2017`
+    * Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
+    * Abstract: We describe a new training methodology for generative adversarial networks. The key idea is to grow both the generator and discriminator progressively: starting from a low resolution, we add new layers that model increasingly fine details as training progresses. This both speeds the training up and greatly stabilizes it, allowing us to produce images of unprecedented quality, e.g., CelebA images at 1024^2. We also propose a simple way to increase the variation in generated images, and achieve a record inception score of 8.80 in unsupervised CIFAR10. Additionally, we describe several implementation details that are important for discouraging unhealthy competition between the generator and discriminator. Finally, we suggest a new metric for evaluating GAN results, both in terms of image quality and variation. As an additional contribution, we construct a higher-quality version of the CelebA dataset.
+* [[StyleGANv1](https://arxiv.org/abs/1812.04948)]
+    [[pdf](https://arxiv.org/pdf/1812.04948.pdf)]
+    * Title: A Style-Based Generator Architecture for Generative Adversarial Networks
+    * Year: 12 Dec `2018`
+    * Authors: Tero Karras, Samuli Laine, Timo Aila
+    * Abstract: We propose an alternative generator architecture for generative adversarial networks, borrowing from style transfer literature. The new architecture leads to an automatically learned, unsupervised separation of high-level attributes (e.g., pose and identity when trained on human faces) and stochastic variation in the generated images (e.g., freckles, hair), and it enables intuitive, scale-specific control of the synthesis. The new generator improves the state-of-the-art in terms of traditional distribution quality metrics, leads to demonstrably better interpolation properties, and also better disentangles the latent factors of variation. To quantify interpolation quality and disentanglement, we propose two new, automated methods that are applicable to any generator architecture. Finally, we introduce a new, highly varied and high-quality dataset of human faces.
+* [[StyleGANv2](https://arxiv.org/abs/1912.04958)]
+    * Title: Analyzing and Improving the Image Quality of StyleGAN
+    * Year: 03 Dec `2019`
+    * Author: Tero Karras
+    * Abstract: The style-based GAN architecture (StyleGAN) yields state-of-the-art results in data-driven unconditional generative image modeling. We expose and analyze several of its characteristic artifacts, and propose changes in both model architecture and training methods to address them. In particular, we redesign the generator normalization, revisit progressive growing, and regularize the generator to encourage good conditioning in the mapping from latent codes to images. In addition to improving image quality, this path length regularizer yields the additional benefit that the generator becomes significantly easier to invert. This makes it possible to reliably attribute a generated image to a particular network. We furthermore visualize how well the generator utilizes its output resolution, and identify a capacity problem, motivating us to train larger models for additional quality improvements. Overall, our improved model redefines the state of the art in unconditional image modeling, both in terms of existing distribution quality metrics as well as perceived image quality.
+* [[StyleGAN-XL: Scaling StyleGAN to Large Diverse Datasets](https://arxiv.org/abs/2202.00273)]
+    [[pdf](https://arxiv.org/pdf/2202.00273.pdf)]
+    * Title: StyleGAN-XL: Scaling StyleGAN to Large Diverse Datasets
+    * Year: 01 Feb `2022`
+    * Authors: Axel Sauer, Katja Schwarz, Andreas Geiger
+    * Abstract: Computer graphics has experienced a recent surge of data-centric approaches for photorealistic and controllable content creation. StyleGAN in particular sets new standards for generative modeling regarding image quality and controllability. However, StyleGAN's performance severely degrades on large unstructured datasets such as ImageNet. StyleGAN was designed for controllability; hence, prior works suspect its restrictive design to be unsuitable for diverse datasets. In contrast, we find the main limiting factor to be the current training strategy. Following the recently introduced Projected GAN paradigm, we leverage powerful neural network priors and a progressive growing strategy to successfully train the latest StyleGAN3 generator on ImageNet. Our final model, StyleGAN-XL, sets a new state-of-the-art on large-scale image synthesis and is the first to generate images at a resolution of 10242 at such a dataset scale. We demonstrate that this model can invert and edit images beyond the narrow domain of portraits or specific object classes.
+
+## Variational Autoencoder Related
+
+* [[An Introduction to Variational Autoencoders](https://arxiv.org/abs/1906.02691)]
+    [[pdf](https://arxiv.org/pdf/1906.02691.pdf)]
+    * Title: An Introduction to Variational Autoencoders
+    * Year: 06 Jun `2019`
+    * Authors: Diederik P. Kingma, Max Welling
+    * Abstract: Variational autoencoders provide a principled framework for learning deep latent-variable models and corresponding inference models. In this work, we provide an introduction to variational autoencoders and some important extensions.
+* [[Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114)]
+    [[pdf](https://arxiv.org/pdf/1312.6114.pdf)]
+    * Title: Auto-Encoding Variational Bayes
+    * Year: 20 Dec `2013`
+    * Authors: Diederik P Kingma, Max Welling
+    * Abstract: How can we perform efficient inference and learning in directed probabilistic models, in the presence of continuous latent variables with intractable posterior distributions, and large datasets? We introduce a stochastic variational inference and learning algorithm that scales to large datasets and, under some mild differentiability conditions, even works in the intractable case. Our contributions is two-fold. First, we show that a reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient methods. Second, we show that for i.i.d. datasets with continuous latent variables per datapoint, posterior inference can be made especially efficient by fitting an approximate inference model (also called a recognition model) to the intractable posterior using the proposed lower bound estimator. Theoretical advantages are reflected in experimental results.
+* [[A Contrastive Learning Approach for Training Variational Autoencoder Priors](https://arxiv.org/abs/2010.02917)]
+    [[pdf](https://arxiv.org/pdf/2010.02917.pdf)]
+    * Title: A Contrastive Learning Approach for Training Variational Autoencoder Priors
+    * Year: 06 Oct `2020`
+    * Authors: Jyoti Aneja, Alexander Schwing, Jan Kautz, Arash Vahdat
+    * Abstract: Variational autoencoders (VAEs) are one of the powerful likelihood-based generative models with applications in many domains. However, they struggle to generate high-quality images, especially when samples are obtained from the prior without any tempering. One explanation for VAEs' poor generative quality is the prior hole problem: the prior distribution fails to match the aggregate approximate posterior. Due to this mismatch, there exist areas in the latent space with high density under the prior that do not correspond to any encoded image. Samples from those areas are decoded to corrupted images. To tackle this issue, we propose an energy-based prior defined by the product of a base prior distribution and a reweighting factor, designed to bring the base closer to the aggregate posterior. We train the reweighting factor by noise contrastive estimation, and we generalize it to hierarchical VAEs with many latent variable groups. Our experiments confirm that the proposed noise contrastive priors improve the generative performance of state-of-the-art VAEs by a large margin on the MNIST, CIFAR-10, CelebA 64, and CelebA HQ 256 datasets. Our method is simple and can be applied to a wide variety of VAEs to improve the expressivity of their prior distribution.
+* [[Very Deep VAEs Generalize Autoregressive Models and Can Outperform Them on Images](https://arxiv.org/abs/2011.10650)]
+    [[pdf](https://arxiv.org/pdf/2011.10650.pdf)]
+    * Title: Very Deep VAEs Generalize Autoregressive Models and Can Outperform Them on Images
+    * Year: 20 Nov `2020`
+    * Authors: Rewon Child
+    * Abstract: We present a hierarchical VAE that, for the first time, generates samples quickly while outperforming the PixelCNN in log-likelihood on all natural image benchmarks. We begin by observing that, in theory, VAEs can actually represent autoregressive models, as well as faster, better models if they exist, when made sufficiently deep. Despite this, autoregressive models have historically outperformed VAEs in log-likelihood. We test if insufficient depth explains why by scaling a VAE to greater stochastic depth than previously explored and evaluating it CIFAR-10, ImageNet, and FFHQ. In comparison to the PixelCNN, these very deep VAEs achieve higher likelihoods, use fewer parameters, generate samples thousands of times faster, and are more easily applied to high-resolution images. Qualitative studies suggest this is because the VAE learns efficient hierarchical visual representations. We release our source code and models at this https URL.
+
+## Wasserstein GAN Related
+
+* [[Wasserstein GAN](https://arxiv.org/abs/1701.07875)]
+    [[pdf](https://arxiv.org/pdf/1701.07875.pdf)]
+    * Title: Wasserstein GAN
+    * Year: 26 Jan `2017`
+    * Authors: Martin Arjovsky, Soumith Chintala, Léon Bottou
+    * Abstract: We introduce a new algorithm named WGAN, an alternative to traditional GAN training. In this new model, we show that we can improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches. Furthermore, we show that the corresponding optimization problem is sound, and provide extensive theoretical work highlighting the deep connections to other distances between distributions.
+* [[Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)]
+    [[pdf](https://arxiv.org/pdf/1704.00028.pdf)]
+    * Title: Improved Training of Wasserstein GANs
+    * Year: 31 Mar `2017`
+    * Authors: Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville
+    * Abstract: Generative Adversarial Networks (GANs) are powerful generative models, but suffer from training instability. The recently proposed Wasserstein GAN (WGAN) makes progress toward stable training of GANs, but sometimes can still generate only low-quality samples or fail to converge. We find that these problems are often due to the use of weight clipping in WGAN to enforce a Lipschitz constraint on the critic, which can lead to undesired behavior. We propose an alternative to clipping weights: penalize the norm of gradient of the critic with respect to its input. Our proposed method performs better than standard WGAN and enables stable training of a wide variety of GAN architectures with almost no hyperparameter tuning, including 101-layer ResNets and language models over discrete data. We also achieve high quality generations on CIFAR-10 and LSUN bedrooms.
+* [[On the regularization of Wasserstein GANs](https://arxiv.org/abs/1709.08894)]
+    [[pdf](https://arxiv.org/pdf/1709.08894.pdf)]
+    * Title: On the regularization of Wasserstein GANs
+    * Year: 26 Sep `2017`
+    * Authors: Henning Petzka, Asja Fischer, Denis Lukovnicov
+    * Abstract: Since their invention, generative adversarial networks (GANs) have become a popular approach for learning to model a distribution of real (unlabeled) data. Convergence problems during training are overcome by Wasserstein GANs which minimize the distance between the model and the empirical distribution in terms of a different metric, but thereby introduce a Lipschitz constraint into the optimization problem. A simple way to enforce the Lipschitz constraint on the class of functions, which can be modeled by the neural network, is weight clipping. It was proposed that training can be improved by instead augmenting the loss by a regularization term that penalizes the deviation of the gradient of the critic (as a function of the network's input) from one. We present theoretical arguments why using a weaker regularization term enforcing the Lipschitz constraint is preferable. These arguments are supported by experimental results on toy data sets.
 
 ## Auto-Regressive Generative Model
 
@@ -117,17 +176,12 @@ count=42
 
 ## Unclassified
 
-* [[StyleGAN](https://arxiv.org/abs/1812.04948)]
-    [[pdf](https://arxiv.org/pdf/1812.04948.pdf)]
-    * Title: A Style-Based Generator Architecture for Generative Adversarial Networks
-    * Year: 12 Dec `2018`
-    * Authors: Tero Karras, Samuli Laine, Timo Aila
-    * Abstract: We propose an alternative generator architecture for generative adversarial networks, borrowing from style transfer literature. The new architecture leads to an automatically learned, unsupervised separation of high-level attributes (e.g., pose and identity when trained on human faces) and stochastic variation in the generated images (e.g., freckles, hair), and it enables intuitive, scale-specific control of the synthesis. The new generator improves the state-of-the-art in terms of traditional distribution quality metrics, leads to demonstrably better interpolation properties, and also better disentangles the latent factors of variation. To quantify interpolation quality and disentanglement, we propose two new, automated methods that are applicable to any generator architecture. Finally, we introduce a new, highly varied and high-quality dataset of human faces.
-* [StyleGANv2](https://arxiv.org/abs/1912.04958)
-    * Title: Analyzing and Improving the Image Quality of StyleGAN
-    * Year: 03 Dec `2019`
-    * Author: Tero Karras
-    * Abstract: The style-based GAN architecture (StyleGAN) yields state-of-the-art results in data-driven unconditional generative image modeling. We expose and analyze several of its characteristic artifacts, and propose changes in both model architecture and training methods to address them. In particular, we redesign the generator normalization, revisit progressive growing, and regularize the generator to encourage good conditioning in the mapping from latent codes to images. In addition to improving image quality, this path length regularizer yields the additional benefit that the generator becomes significantly easier to invert. This makes it possible to reliably attribute a generated image to a particular network. We furthermore visualize how well the generator utilizes its output resolution, and identify a capacity problem, motivating us to train larger models for additional quality improvements. Overall, our improved model redefines the state of the art in unconditional image modeling, both in terms of existing distribution quality metrics as well as perceived image quality.
+* [[Alias-Free Generative Adversarial Networks](https://arxiv.org/abs/2106.12423)]
+    [[pdf](https://arxiv.org/pdf/2106.12423.pdf)]
+    * Title: Alias-Free Generative Adversarial Networks
+    * Year: 23 Jun `2021`
+    * Authors: Tero Karras, Miika Aittala, Samuli Laine, Erik Härkönen, Janne Hellsten, Jaakko Lehtinen, Timo Aila
+    * Abstract: We observe that despite their hierarchical convolutional nature, the synthesis process of typical generative adversarial networks depends on absolute pixel coordinates in an unhealthy manner. This manifests itself as, e.g., detail appearing to be glued to image coordinates instead of the surfaces of depicted objects. We trace the root cause to careless signal processing that causes aliasing in the generator network. Interpreting all signals in the network as continuous, we derive generally applicable, small architectural changes that guarantee that unwanted information cannot leak into the hierarchical synthesis process. The resulting networks match the FID of StyleGAN2 but differ dramatically in their internal representations, and they are fully equivariant to translation and rotation even at subpixel scales. Our results pave the way for generative models better suited for video and animation.
 * [DualStyleGAN](https://arxiv.org/abs/2203.13248)
     * Title: Pastiche Master: Exemplar-Based High-Resolution Portrait Style Transfer
     * Year: 24 Mar `2022`
@@ -245,21 +299,6 @@ count=42
     * Year: 26 Aug `2015`
     * Authors: Leon A. Gatys, Alexander S. Ecker, Matthias Bethge
     * Abstract: In fine art, especially painting, humans have mastered the skill to create unique visual experiences through composing a complex interplay between the content and style of an image. Thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities. However, in other key areas of visual perception such as object and face recognition near-human performance was recently demonstrated by a class of biologically inspired vision models called Deep Neural Networks. Here we introduce an artificial system based on a Deep Neural Network that creates artistic images of high perceptual quality. The system uses neural representations to separate and recombine content and style of arbitrary images, providing a neural algorithm for the creation of artistic images. Moreover, in light of the striking similarities between performance-optimised artificial neural networks and biological vision, our work offers a path forward to an algorithmic understanding of how humans create and perceive artistic imagery.
-* [[Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114)]
-    [[pdf](https://arxiv.org/pdf/1312.6114.pdf)]
-    * Title: Auto-Encoding Variational Bayes
-    * Year: 20 Dec `2013`
-    * Authors: Diederik P Kingma, Max Welling
-    * Abstract: How can we perform efficient inference and learning in directed probabilistic models, in the presence of continuous latent variables with intractable posterior distributions, and large datasets? We introduce a stochastic variational inference and learning algorithm that scales to large datasets and, under some mild differentiability conditions, even works in the intractable case. Our contributions is two-fold. First, we show that a reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient methods. Second, we show that for i.i.d. datasets with continuous latent variables per datapoint, posterior inference can be made especially efficient by fitting an approximate inference model (also called a recognition model) to the intractable posterior using the proposed lower bound estimator. Theoretical advantages are reflected in experimental results.
-
-## Progressive Learning (EfficientNetV2, 2021)
-
-* [[ProgressiveGAN](https://arxiv.org/abs/1710.10196)]
-    [[pdf](https://arxiv.org/pdf/1710.10196.pdf)]
-    * Title: Progressive Growing of GANs for Improved Quality, Stability, and Variation
-    * Year: 27 Oct `2017`
-    * Authors: Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen
-    * Abstract: We describe a new training methodology for generative adversarial networks. The key idea is to grow both the generator and discriminator progressively: starting from a low resolution, we add new layers that model increasingly fine details as training progresses. This both speeds the training up and greatly stabilizes it, allowing us to produce images of unprecedented quality, e.g., CelebA images at 1024^2. We also propose a simple way to increase the variation in generated images, and achieve a record inception score of 8.80 in unsupervised CIFAR10. Additionally, we describe several implementation details that are important for discouraging unhealthy competition between the generator and discriminator. Finally, we suggest a new metric for evaluating GAN results, both in terms of image quality and variation. As an additional contribution, we construct a higher-quality version of the CelebA dataset.
 
 ## Adversarial Learning (EfficientNetV2, 2021)
 
@@ -268,6 +307,15 @@ count=42
     * Year: 11 Sep `2019`
     * Authors: Hang Yu, Aishan Liu, Xianglong Liu, Gengchao Li, Ping Luo, Ran Cheng, Jichen Yang, Chongzhi Zhang
     * Abstract: Adversarial images are designed to mislead deep neural networks (DNNs), attracting great attention in recent years. Although several defense strategies achieved encouraging robustness against adversarial samples, most of them fail to improve the robustness on common corruptions such as noise, blur, and weather/digital effects (e.g. frost, pixelate). To address this problem, we propose a simple yet effective method, named Progressive Data Augmentation (PDA), which enables general robustness of DNNs by progressively injecting diverse adversarial noises during training. In other words, DNNs trained with PDA are able to obtain more robustness against both adversarial attacks as well as common corruptions than the recent state-of-the-art methods. We also find that PDA is more efficient than prior arts and able to prevent accuracy drop on clean samples without being attacked. Furthermore, we theoretically show that PDA can control the perturbation bound and guarantee better generalization ability than existing work. Extensive experiments on many benchmarks such as CIFAR-10, SVHN, and ImageNet demonstrate that PDA significantly outperforms its counterparts in various experimental setups.
+
+## Diffusion Models
+
+* [[Diffusion-GAN: Training GANs with Diffusion](https://arxiv.org/abs/2206.02262)]
+    [[pdf](https://arxiv.org/pdf/2206.02262.pdf)]
+    * Title: Diffusion-GAN: Training GANs with Diffusion
+    * Year: 05 Jun `2022`
+    * Authors: Zhendong Wang, Huangjie Zheng, Pengcheng He, Weizhu Chen, Mingyuan Zhou
+    * Abstract: Generative adversarial networks (GANs) are challenging to train stably, and a promising remedy of injecting instance noise into the discriminator input has not been very effective in practice. In this paper, we propose Diffusion-GAN, a novel GAN framework that leverages a forward diffusion chain to generate Gaussian-mixture distributed instance noise. Diffusion-GAN consists of three components, including an adaptive diffusion process, a diffusion timestep-dependent discriminator, and a generator. Both the observed and generated data are diffused by the same adaptive diffusion process. At each diffusion timestep, there is a different noise-to-data ratio and the timestep-dependent discriminator learns to distinguish the diffused real data from the diffused generated data. The generator learns from the discriminator's feedback by backpropagating through the forward diffusion chain, whose length is adaptively adjusted to balance the noise and data levels. We theoretically show that the discriminator's timestep-dependent strategy gives consistent and helpful guidance to the generator, enabling it to match the true data distribution. We demonstrate the advantages of Diffusion-GAN over strong GAN baselines on various datasets, showing that it can produce more realistic images with higher stability and data efficiency than state-of-the-art GANs.
 
 ## Text-to-Image Models
 
