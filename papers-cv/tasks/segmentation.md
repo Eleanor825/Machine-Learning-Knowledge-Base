@@ -210,6 +210,7 @@ count=85
     * Institutions: [Computer Science Department and BIOSS Centre for Biological Signalling Studies, University of Freiburg, Germany]
     * Abstract: There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at this http URL .
     * Comments:
+        * > (2016, RefineNet) The method Seg-Net [2] and U-Net [40] apply skip-connections in the deconvolution architecture to exploit the features from middle layers.
         * > (2021, PVT) Inspired by FCN, U-Net [37] is proposed for especially the medical image segmentation domain, which bridges the information flow between corresponding low-level and high-level feature maps with the same spatial sizes.
 * [[DeconvNet](https://arxiv.org/abs/1505.04366)]
     [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
@@ -250,8 +251,9 @@ count=85
     * Institutions: [Machine Intelligence Lab, Department of Engineering, University of Cambridge, UK]
     * Abstract: We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. This core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer. The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network. The role of the decoder network is to map the low resolution encoder feature maps to full input resolution feature maps for pixel-wise classification. The novelty of SegNet lies is in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference. It is also significantly smaller in the number of trainable parameters than other competing architectures. We also performed a controlled benchmark of SegNet and other architectures on both road scenes and SUN RGB-D indoor scene segmentation tasks. We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures. We also provide a Caffe implementation of SegNet and a web demo at this http URL.
     * Comments:
-        * > Inspired by probabilistic auto-encoders ranzato07 ; ngiam11 , encoder-decoder network architecture has been introduced in SegNet-basic badrinarayanan15basic , and further improved in SegNet badrinarayanan15 . (ENet, 2016)
-        * > SegNet is a very symmetric architecture, as the encoder is an exact mirror of the encoder. (ENet, 2016)
+        * > (2016, ENet) Inspired by probabilistic auto-encoders ranzato07 ; ngiam11 , encoder-decoder network architecture has been introduced in SegNet-basic badrinarayanan15basic , and further improved in SegNet badrinarayanan15 .
+        * > (2016, ENet) SegNet is a very symmetric architecture, as the encoder is an exact mirror of the encoder.
+        * > (2016, RefineNet) The method Seg-Net [2] and U-Net [40] apply skip-connections in the deconvolution architecture to exploit the features from middle layers.
 * [[ENet](https://arxiv.org/abs/1606.02147)]
     [[pdf](https://arxiv.org/pdf/1606.02147.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1606.02147/)]
@@ -337,13 +339,14 @@ count=85
         * > (2015, U-Net) The main idea in [9] is to supplement a usual contracting network by successive layers, where pooling operators are replaced by upsampling operators. Hence, these layers increase the resolution of the output. In order to localize, high resolution features from the contracting path are combined with the upsampled output. A successive convolution layer can then learn to assemble a more precise output based on this information.
         * > (2015, SegNet) Each decoder in the Fully Convolutional Network (FCN) architecture [2] learns to upsample its input feature map(s) and combines them with the corresponding encoder feature map to produce the input to the next decoder.
         * > (2016, FPN) FCN [24] sums partial scores for each category over multiple scales to compute semantic segmentations.
+        * > (2016, RefineNet) The FCN method in [36] adds prediction layers to middle layers to generate prediction scores at multiple resolutions. They average the multi-resolution scores to generate the final prediction mask.
         * > (2021, PVT) In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size.
         * skip connections??? where?
 
 ### FCN based models (Attention to Scale, 2015) (6)
 
-* Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs (DeepLabv1)
-* BoxSup: Exploiting Bounding Boxes to Supervise Convolutional Networks for Semantic Segmentation
+* DeepLabV1
+* BoxSup
 * Semantic image segmentation via deep parsing network
 * Learning Deconvolution Network for Semantic Segmentation
 * Conditional Random Fields as Recurrent Neural Networks
@@ -443,6 +446,8 @@ count=85
     * Authors: Philipp Krähenbühl, Vladlen Koltun
     * Institutions: [Computer Science Department Stanford University]
     * Abstract: Most state-of-the-art techniques for multi-class image segmentation and labeling use conditional random fields defined over pixels or image regions. While region-level models often feature dense pairwise connectivity, pixel-level models are considerably larger and have only permitted sparse graph structures. In this paper, we consider fully connected CRF models defined on the complete set of pixels in an image. The resulting graphs have billions of edges, making traditional inference algorithms impractical. Our main contribution is a highly efficient approximate inference algorithm for fully connected CRF models in which the pairwise edge potentials are defined by a linear combination of Gaussian kernels. Our experiments demonstrate that dense connectivity at the pixel level substantially improves segmentation and labeling accuracy.
+    * Comments:
+        * > (2016, RefineNet) The atrous convolution based approach DeepLab-CRF in [5] directly output a middle-resolution score map then applies the dense CRF method [27] to refine boundaries by leveraging color contrast information.
 * [[Combining the Best of Graphical Models and ConvNets for Semantic Segmentation](https://arxiv.org/abs/1412.4313)]
     [[pdf](https://arxiv.org/pdf/1412.4313.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1412.4313/)]
@@ -452,7 +457,7 @@ count=85
     * Abstract: We present a two-module approach to semantic segmentation that incorporates Convolutional Networks (CNNs) and Graphical Models. Graphical models are used to generate a small (5-30) set of diverse segmentations proposals, such that this set has high recall. Since the number of required proposals is so low, we can extract fairly complex features to rank them. Our complex feature of choice is a novel CNN called SegNet, which directly outputs a (coarse) semantic segmentation. Importantly, SegNet is specifically trained to optimize the corpus-level PASCAL IOU loss function. To the best of our knowledge, this is the first CNN specifically designed for semantic segmentation. This two-module approach achieves $52.5\%$ on the PASCAL 2012 segmentation challenge.
     * Comments:
         * > Cogswell et al. (2014) use CRFs as a proposal mechanism for a DCNN-based reranking system. (DeepLabv1, 2014)
-* [[Conditional Random Fields as Recurrent Neural Networks](https://arxiv.org/abs/1502.03240)]
+* [[CRF-RNN](https://arxiv.org/abs/1502.03240)]
     [[pdf](https://arxiv.org/pdf/1502.03240.pdf)]
     [vanity]
     * Title: Conditional Random Fields as Recurrent Neural Networks
@@ -593,9 +598,10 @@ count=85
     * Abstract: Deep Convolutional Neural Networks (DCNNs) have recently shown state of the art performance in high level vision tasks, such as image classification and object detection. This work brings together methods from DCNNs and probabilistic graphical models for addressing the task of pixel-level classification (also called "semantic image segmentation"). We show that responses at the final layer of DCNNs are not sufficiently localized for accurate object segmentation. This is due to the very invariance properties that make DCNNs good for high level tasks. We overcome this poor localization property of deep networks by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF). Qualitatively, our "DeepLab" system is able to localize segment boundaries at a level of accuracy which is beyond previous methods. Quantitatively, our method sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 71.6% IOU accuracy in the test set. We show how these results can be obtained efficiently: Careful network re-purposing and a novel application of the 'hole' algorithm from the wavelet community allow dense computation of neural net responses at 8 frames per second on a modern GPU.
     * Comments:
         * DeepLab is a variant of FCNs.
-        * > Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015). (Dilated Convolutions, 2015)
-        * > The method of [3] also use the feature maps of the classification network with an independent CRF post-processing technique to perform segmentation. (SegNet, 2015)
-        * > Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 . (ENet, 2016)
+        * > (2015, Dilated Convolutions) Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015).
+        * > (2015, SegNet) The method of [3] also use the feature maps of the classification network with an independent CRF post-processing technique to perform segmentation.
+        * > (2016, ENet) Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 .
+        * > (2016, RefineNet) The atrous convolution based approach DeepLab-CRF in [5] directly output a middle-resolution score map then applies the dense CRF method [27] to refine boundaries by leveraging color contrast information.
 * [[DeepLabv2](https://arxiv.org/abs/1606.00915)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1606.00915.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1606.00915/)]
@@ -604,7 +610,8 @@ count=85
     * Authors: Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, Alan L. Yuille
     * Abstract: In this work we address the task of semantic image segmentation with Deep Learning and make three main contributions that are experimentally shown to have substantial practical merit. First, we highlight convolution with upsampled filters, or 'atrous convolution', as a powerful tool in dense prediction tasks. Atrous convolution allows us to explicitly control the resolution at which feature responses are computed within Deep Convolutional Neural Networks. It also allows us to effectively enlarge the field of view of filters to incorporate larger context without increasing the number of parameters or the amount of computation. Second, we propose atrous spatial pyramid pooling (ASPP) to robustly segment objects at multiple scales. ASPP probes an incoming convolutional feature layer with filters at multiple sampling rates and effective fields-of-views, thus capturing objects as well as image context at multiple scales. Third, we improve the localization of object boundaries by combining methods from DCNNs and probabilistic graphical models. The commonly deployed combination of max-pooling and downsampling in DCNNs achieves invariance but has a toll on localization accuracy. We overcome this by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF), which is shown both qualitatively and quantitatively to improve localization performance. Our proposed "DeepLab" system sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 79.7% mIOU in the test set, and advances the results on three other datasets: PASCAL-Context, PASCAL-Person-Part, and Cityscapes. All of our code is made publicly available online.
     * Comments:
-        * > The work in [8] (DeepLab2) combines a ResNet-101 with spatial pyramid pooling and CRF to reach state-of-the-art segmentation accuracy. (2017, ERFNet)
+        * > (2016, RefineNet) The method DeepLab recently proposed by Chen et al. [6] employs atrous (or dilated) convolutions to account for larger receptive fields without downscaling the image.
+        * > (2017, ERFNet) The work in [8] (DeepLab2) combines a ResNet-101 with spatial pyramid pooling and CRF to reach state-of-the-art segmentation accuracy.
         * > (2018, ESPNetV1) An ASP module [3], shown in Fig. 3e, is built on the principle of split-transform-merge. The ASP module involves branching with each branch learning kernel at a different receptive field (using dilated convolutions).
 * [[DeepLabv3](https://arxiv.org/abs/1706.05587)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1706.05587.pdf)]
@@ -702,9 +709,10 @@ count=85
     * Institutions: [University of California, Berkeley], [Universidad de los Andes, Colombia], [Microsoft Research, Redmond]
     * Abstract: Recognition algorithms based on convolutional networks (CNNs) typically use the output of the last layer as feature representation. However, the information in this layer may be too coarse to allow precise localization. On the contrary, earlier layers may be precise in localization but will not capture semantics. To get the best of both worlds, we define the hypercolumn at a pixel as the vector of activations of all CNN units above that pixel. Using hypercolumns as pixel descriptors, we show results on three fine-grained localization tasks: simultaneous detection and segmentation[22], where we improve state-of-the-art from 49.7[22] mean AP^r to 60.0, keypoint localization, where we get a 3.3 point boost over[20] and part labeling, where we show a 6.6 point gain over a strong baseline.
     * Comments:
-        * > More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification. (DeepLabv1, 2014)
-        * > More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers. (U-Net, 2015)
-        * > Hariharan et al. [27] classified a pixel with hypercolumn representation (i.e., concatenation of features from intermediate layers). (Attention to Scale, 2015)
+        * > (2014, DeepLabv1) More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification.
+        * > (2015, U-Net) More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers.
+        * > (2015, Attention to Scale) Hariharan et al. [27] classified a pixel with hypercolumn representation (i.e., concatenation of features from intermediate layers).
+        * > (2016, RefineNet) The method Hypercolumn [22] merges features from middle layers and learns dense classification layers.
 * [[DeepMask](https://arxiv.org/abs/1506.06204)]
     [[pdf](https://arxiv.org/pdf/1506.06204.pdf)]
     [vanity]
