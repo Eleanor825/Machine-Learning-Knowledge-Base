@@ -51,7 +51,7 @@ def scrape_single(url: str):
 
 
 def main(url_list, src_filepath, dst_filepath):
-    if url_list is None:
+    if url_list is None or len(url_list) == 0:
         print(f"[INFO] url_list not provided, extracting urls from {src_filepath}.")
         url_list = get_all_urls(src_filepath)
     with open(dst_filepath, mode='w', encoding='utf8') as f:
@@ -65,11 +65,7 @@ def main(url_list, src_filepath, dst_filepath):
 if __name__ == "__main__":
     main(
         url_list=[
-            "https://arxiv.org/abs/1502.07411",
-            "https://arxiv.org/abs/1411.6387",
-            "https://arxiv.org/abs/1411.4734",
-            "https://arxiv.org/abs/1406.2283",
         ],
-        src_filepath="papers-cv/architectures/CNN.md",
-        dst_filepath="scripts/scrape-paper-info/raw_CNN.md",
+        src_filepath="papers-cv/architectures/transformer.md",
+        dst_filepath="scripts/scrape-paper-info/raw_transformer.md",
     )
