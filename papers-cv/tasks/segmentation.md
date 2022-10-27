@@ -602,7 +602,7 @@ count=85
         * > (2015, SegNet) The method of [3] also use the feature maps of the classification network with an independent CRF post-processing technique to perform segmentation.
         * > (2016, ENet) Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 .
         * > (2016, RefineNet) The atrous convolution based approach DeepLab-CRF in [5] directly output a middle-resolution score map then applies the dense CRF method [27] to refine boundaries by leveraging color contrast information.
-* [[DeepLabv2](https://arxiv.org/abs/1606.00915)] <!-- printed -->
+* [[DeepLabV2](https://arxiv.org/abs/1606.00915)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1606.00915.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1606.00915/)]
     * Title: DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
