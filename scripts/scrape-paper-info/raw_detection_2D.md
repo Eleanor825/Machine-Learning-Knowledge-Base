@@ -45,7 +45,7 @@
     [[vanity](https://www.arxiv-vanity.com/papers/1904.07850/)]
     * Title: Objects as Points
     * Year: 16 Apr `2019`
-    * Authors: Xingyi Zhou, Dequan Wang, Philipp Kr‰henb¸hl
+    * Authors: Xingyi Zhou, Dequan Wang, Philipp Kr√§henb√ºhl
     * Abstract: Detection identifies objects as axis-aligned boxes in an image. Most successful object detectors enumerate a nearly exhaustive list of potential object locations and classify each. This is wasteful, inefficient, and requires additional post-processing. In this paper, we take a different approach. We model an object as a single point --- the center point of its bounding box. Our detector uses keypoint estimation to find center points and regresses to all other object properties, such as size, 3D location, orientation, and even pose. Our center point based approach, CenterNet, is end-to-end differentiable, simpler, faster, and more accurate than corresponding bounding box based detectors. CenterNet achieves the best speed-accuracy trade-off on the MS COCO dataset, with 28.1% AP at 142 FPS, 37.4% AP at 52 FPS, and 45.1% AP with multi-scale testing at 1.4 FPS. We use the same approach to estimate 3D bounding box in the KITTI benchmark and human pose on the COCO keypoint dataset. Our method performs competitively with sophisticated multi-stage methods and runs in real-time.
 * [[DetectoRS: Detecting Objects with Recursive Feature Pyramid and Switchable Atrous Convolution](https://arxiv.org/abs/2006.02334)]
     [[pdf](https://arxiv.org/pdf/2006.02334.pdf)]
@@ -108,7 +108,7 @@
     [[vanity](https://www.arxiv-vanity.com/papers/1502.05082/)]
     * Title: What makes for effective detection proposals?
     * Year: 17 Feb `2015`
-    * Authors: Jan Hosang, Rodrigo Benenson, Piotr Doll·r, Bernt Schiele
+    * Authors: Jan Hosang, Rodrigo Benenson, Piotr Doll√°r, Bernt Schiele
     * Abstract: Current top performing object detectors employ detection proposals to guide the search for objects, thereby avoiding exhaustive sliding window search across images. Despite the popularity and widespread use of detection proposals, it is unclear which trade-offs are made when using them during object detection. We provide an in-depth analysis of twelve proposal methods along with four baselines regarding proposal repeatability, ground truth annotation recall on PASCAL, ImageNet, and MS COCO, and their impact on DPM, R-CNN, and Fast R-CNN detection performance. Our analysis shows that for object detection improving proposal localisation accuracy is as important as improving recall. We introduce a novel metric, the average recall (AR), which rewards both high recall and good localisation and correlates surprisingly well with detection performance. Our findings show common strengths and weaknesses of existing methods, and provide insights and metrics for selecting and tuning proposal methods.
 * [[Multiscale Combinatorial Grouping for Image Segmentation and Object Proposal Generation](https://arxiv.org/abs/1503.00848)]
     [[pdf](https://arxiv.org/pdf/1503.00848.pdf)]
@@ -192,7 +192,7 @@
     [[vanity](https://www.arxiv-vanity.com/papers/1703.06870/)]
     * Title: Mask R-CNN
     * Year: 20 Mar `2017`
-    * Authors: Kaiming He, Georgia Gkioxari, Piotr Doll·r, Ross Girshick
+    * Authors: Kaiming He, Georgia Gkioxari, Piotr Doll√°r, Ross Girshick
     * Abstract: We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: this https URL
 * [[Cascade R-CNN: Delving into High Quality Object Detection](https://arxiv.org/abs/1712.00726)]
     [[pdf](https://arxiv.org/pdf/1712.00726.pdf)]
@@ -353,7 +353,7 @@
     [[vanity](https://www.arxiv-vanity.com/papers/1612.03144/)]
     * Title: Feature Pyramid Networks for Object Detection
     * Year: 09 Dec `2016`
-    * Authors: Tsung-Yi Lin, Piotr Doll·r, Ross Girshick, Kaiming He, Bharath Hariharan, Serge Belongie
+    * Authors: Tsung-Yi Lin, Piotr Doll√°r, Ross Girshick, Kaiming He, Bharath Hariharan, Serge Belongie
     * Abstract: Feature pyramids are a basic component in recognition systems for detecting objects at different scales. But recent deep learning object detectors have avoided pyramid representations, in part because they are compute and memory intensive. In this paper, we exploit the inherent multi-scale, pyramidal hierarchy of deep convolutional networks to construct feature pyramids with marginal extra cost. A top-down architecture with lateral connections is developed for building high-level semantic feature maps at all scales. This architecture, called a Feature Pyramid Network (FPN), shows significant improvement as a generic feature extractor in several applications. Using FPN in a basic Faster R-CNN system, our method achieves state-of-the-art single-model results on the COCO detection benchmark without bells and whistles, surpassing all existing single-model entries including those from the COCO 2016 challenge winners. In addition, our method can run at 5 FPS on a GPU and thus is a practical and accurate solution to multi-scale object detection. Code will be made publicly available.
 * [[Training Region-based Object Detectors with Online Hard Example Mining](https://arxiv.org/abs/1604.03540)]
     [[pdf](https://arxiv.org/pdf/1604.03540.pdf)]
@@ -395,7 +395,7 @@
     [[vanity](https://www.arxiv-vanity.com/papers/1708.02002/)]
     * Title: Focal Loss for Dense Object Detection
     * Year: 07 Aug `2017`
-    * Authors: Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Doll·r
+    * Authors: Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Doll√°r
     * Abstract: The highest accuracy object detectors to date are based on a two-stage approach popularized by R-CNN, where a classifier is applied to a sparse set of candidate object locations. In contrast, one-stage detectors that are applied over a regular, dense sampling of possible object locations have the potential to be faster and simpler, but have trailed the accuracy of two-stage detectors thus far. In this paper, we investigate why this is the case. We discover that the extreme foreground-background class imbalance encountered during training of dense detectors is the central cause. We propose to address this class imbalance by reshaping the standard cross entropy loss such that it down-weights the loss assigned to well-classified examples. Our novel Focal Loss focuses training on a sparse set of hard examples and prevents the vast number of easy negatives from overwhelming the detector during training. To evaluate the effectiveness of our loss, we design and train a simple dense detector we call RetinaNet. Our results show that when trained with the focal loss, RetinaNet is able to match the speed of previous one-stage detectors while surpassing the accuracy of all existing state-of-the-art two-stage detectors. Code is at: this https URL.
 * [[Generalized Focal Loss: Learning Qualified and Distributed Bounding Boxes for Dense Object Detection](https://arxiv.org/abs/2006.04388)]
     [[pdf](https://arxiv.org/pdf/2006.04388.pdf)]
@@ -437,7 +437,7 @@
     [[vanity](https://www.arxiv-vanity.com/papers/1901.08043/)]
     * Title: Bottom-up Object Detection by Grouping Extreme and Center Points
     * Year: 23 Jan `2019`
-    * Authors: Xingyi Zhou, Jiacheng Zhuo, Philipp Kr‰henb¸hl
+    * Authors: Xingyi Zhou, Jiacheng Zhuo, Philipp Kr√§henb√ºhl
     * Abstract: With the advent of deep learning, object detection drifted from a bottom-up to a top-down recognition problem. State of the art algorithms enumerate a near-exhaustive list of object locations and classify each into: object or not. In this paper, we show that bottom-up approaches still perform competitively. We detect four extreme points (top-most, left-most, bottom-most, right-most) and one center point of objects using a standard keypoint estimation network. We group the five keypoints into a bounding box if they are geometrically aligned. Object detection is then a purely appearance-based keypoint estimation problem, without region classification or implicit feature learning. The proposed method performs on-par with the state-of-the-art region based detection methods, with a bounding box AP of 43.2% on COCO test-dev. In addition, our estimated extreme points directly span a coarse octagonal mask, with a COCO Mask AP of 18.9%, much better than the Mask AP of vanilla bounding boxes. Extreme point guided segmentation further improves this to 34.6% Mask AP.
 * [[FCOS: Fully Convolutional One-Stage Object Detection](https://arxiv.org/abs/1904.01355)]
     [[pdf](https://arxiv.org/pdf/1904.01355.pdf)]

@@ -51,9 +51,20 @@ def scrape_single(url: str):
 
 
 def main(url_list, src_filepath, dst_filepath):
+    """
+    Arguments:
+        url_list (list): a list of urls to be scrapped.
+        src_filepath (str):
+        dst_filepath (str): will be replaced to "scripts/scrape-paper-info/temp.md"
+            if url_list is not None.
+    """
     if url_list is None or len(url_list) == 0:
-        print(f"[INFO] url_list not provided, extracting urls from {src_filepath}.")
+        print(f"[INFO] Argument `url_list` not provided. Extracting urls from {src_filepath}.")
         url_list = get_all_urls(src_filepath)
+    else:
+        assert type(url_list) == list and len(url_list)
+        print(f"[INFO] Argument `dst_filepath` suppressed. Using temp.md.")
+        dst_filepath = "scripts/scrape-paper-info/temp.md"
     with open(dst_filepath, mode='w', encoding='utf8') as f:
         print(f"[INFO] {len(url_list)} papers in total.")
         for url in url_list:
@@ -65,7 +76,8 @@ def main(url_list, src_filepath, dst_filepath):
 if __name__ == "__main__":
     main(
         url_list=[
+            "https://arxiv.org/abs/2007.05779",
         ],
-        src_filepath="papers-cv/architectures/transformer.md",
-        dst_filepath="scripts/scrape-paper-info/raw_transformer.md",
+        src_filepath="papers-cv/tasks/detection_2D.md",
+        dst_filepath="scripts/scrape-paper-info/raw_detection_2D.md",
     )

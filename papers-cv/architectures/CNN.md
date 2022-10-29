@@ -1,6 +1,6 @@
 # [Papers][Vision] CNN Architectures <!-- omit in toc -->
 
-count=128
+count=129
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -394,13 +394,16 @@ count=128
 
 ### InceptionNet Series
 
+Overview:
+
 > The Inception models have evolved over time, but an important common property is a *split-transform-merge* strategy. In an Inception module, the input is split into a few lower-dimensional embeddings (by $1 \times 1$ convolutions), transformed by a set of specialized filters ($3 \times 3$, $5 \times 5$, etc.), and merged by concatenation. It can be shown that the solution space of this architecture is a strict subspace of the solution space of a single large layer (e.g., $5 \times 5$) operating on a high-dimensional embedding. The split-transform-merge behavior of Inception modules is expected to approach the representational power of large and dense layers, but at a considerably lower computational complexity. (ResNeXt, 2016)
 
 > The Inception models are successful multi-branch architectures where each branch is carefully customized. ResNets can be thought of as two-branch networks where one branch is the identity mapping. Deep neural decision forests are tree-patterned multi-branch networks with learned splitting functions. (ResNeXt, 2016)
 
-> Inception itself was inspired by the earlier NetworkIn-Network architecture [11]. (Xception, 2016)
-
-> A convolution layer attempts to learn filters in a 3D space, with 2 spatial dimensions (width and height) and a channel dimension; thus a single convolution kernel is tasked with simultaneously mapping cross-channel correlations and spatial correlations. This idea behind the Inception module is to make this process easier and more efficient by explicitly factoring it into a series of operations that would independently look at cross-channel correlations and at spatial correlations. ... In effect, the fundamental hypothesis behind Inception is that cross-channel correlations and spatial correlations are sufficiently decoupled that it is preferable not to map them jointly. (Xception, 2016)
+* Comments from the Xception Network
+    * > (2016, Xception) Inception itself was inspired by the earlier Network-In-Network architecture [11].
+    * > (2016, Xception) The fundamental building block of Inception-style models is the Inception module, of which several different versions exist. In figure 1 we show the canonical form of an Inception module, as found in the Inception V3 architecture. An Inception model can be understood as a stack of such modules. This is a departure from earlier VGG-style networks which were stacks of simple convolution layers.
+    * > (2016, Xception) In effect, the fundamental hypothesis behind Inception is that cross-channel correlations and spatial correlations are sufficiently decoupled that it is preferable not to map them jointly.
 
 > More flexible compositions of operators can be achieved with multi-branch convolutions [5], [6], [20], [21], which can be viewed as a natural extension of the grouping operator. (SENet, 2017)
 
@@ -1219,3 +1222,10 @@ count=128
     * Authors: Sanjeev Arora, Aditya Bhaskara, Rong Ge, Tengyu Ma
     * Institutions: [Princeton University, Computer Science Department and Center for Computational Intractability], [Google Research NYC], [Microsoft Research, New England]
     * Abstract: We give algorithms with provable guarantees that learn a class of deep nets in the generative model view popularized by Hinton and others. Our generative model is an $n$ node multilayer neural net that has degree at most $n^{\gamma}$ for some $\gamma <1$ and each edge has a random edge weight in $[-1,1]$. Our algorithm learns {\em almost all} networks in this class with polynomial running time. The sample complexity is quadratic or cubic depending upon the details of the model. The algorithm uses layerwise learning. It is based upon a novel idea of observing correlations among features and using these to infer the underlying edge structure via a global graph recovery procedure. The analysis of the algorithm reveals interesting structure of neural networks with random edge weights.
+* [[Exploit the potential of Multi-column architecture for Crowd Counting](https://arxiv.org/abs/2007.05779)]
+    [[pdf](https://arxiv.org/pdf/2007.05779.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2007.05779/)]
+    * Title: Exploit the potential of Multi-column architecture for Crowd Counting
+    * Year: 11 Jul `2020`
+    * Authors: Junhao Cheng, Zhuojun Chen, XinYu Zhang, Yizhou Li, Xiaoyuan Jing
+    * Abstract: Crowd counting is an important yet challenging task in computer vision due to serious occlusions, complex background and large scale variations, etc. Multi-column architecture is widely adopted to overcome these challenges, yielding state-of-the-art performance in many public benchmarks. However, there still are two issues in such design: scale limitation and feature similarity. Further performance improvements are thus restricted. In this paper, we propose a novel crowd counting framework called Pyramid Scale Network (PSNet) to explicitly address these issues. Specifically, for scale limitation, we adopt three Pyramid Scale Modules (PSM) to efficiently capture multi-scale features, which integrate a message passing mechanism and an attention mechanism into multi-column architecture. Moreover, for feature similarity, a novel loss function named Multi-column variance loss is introduced to make the features learned by each column in PSM appropriately different from each other. To the best of our knowledge, PSNet is the first work to explicitly address scale limitation and feature similarity in multi-column design. Extensive experiments on five benchmark datasets demonstrate the effectiveness of the proposed innovations as well as the superior performance over the state-of-the-art. Our code is publicly available at: this https URL

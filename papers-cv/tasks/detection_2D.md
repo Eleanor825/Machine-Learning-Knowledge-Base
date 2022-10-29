@@ -31,7 +31,9 @@ count=88
 
 ## Unclassified
 
-* [Multi-Stage Features](https://arxiv.org/abs/1212.0142)
+* [[Multi-Stage Features](https://arxiv.org/abs/1212.0142)]
+    [[pdf](https://arxiv.org/pdf/1212.0142.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1212.0142/)]
     * Title: Pedestrian Detection with Unsupervised Multi-Stage Feature Learning
     * Year: 01 Dec `2012`
     * Authors: Pierre Sermanet, Koray Kavukcuoglu, Soumith Chintala, Yann LeCun
@@ -74,7 +76,7 @@ count=88
     [[vanity](https://www.arxiv-vanity.com/papers/1904.07850/)]
     * Title: Objects as Points
     * Year: 16 Apr `2019`
-    * Authors: Xingyi Zhou, Dequan Wang, Philipp Kr�henb�hl
+    * Authors: Xingyi Zhou, Dequan Wang, Philipp Krähenbühl
     * Abstract: Detection identifies objects as axis-aligned boxes in an image. Most successful object detectors enumerate a nearly exhaustive list of potential object locations and classify each. This is wasteful, inefficient, and requires additional post-processing. In this paper, we take a different approach. We model an object as a single point --- the center point of its bounding box. Our detector uses keypoint estimation to find center points and regresses to all other object properties, such as size, 3D location, orientation, and even pose. Our center point based approach, CenterNet, is end-to-end differentiable, simpler, faster, and more accurate than corresponding bounding box based detectors. CenterNet achieves the best speed-accuracy trade-off on the MS COCO dataset, with 28.1% AP at 142 FPS, 37.4% AP at 52 FPS, and 45.1% AP with multi-scale testing at 1.4 FPS. We use the same approach to estimate 3D bounding box in the KITTI benchmark and human pose on the COCO keypoint dataset. Our method performs competitively with sophisticated multi-stage methods and runs in real-time.
 * [[DetectoRS](https://arxiv.org/abs/2006.02334)]
     [[pdf](https://arxiv.org/pdf/2006.02334.pdf)]
@@ -231,7 +233,7 @@ superpixel merging
 
 ### unclassified
 
-* [MultiBox](https://arxiv.org/abs/1312.2249)
+* [[MultiBox](https://arxiv.org/abs/1312.2249)]
     [[pdf](https://arxiv.org/pdf/1312.2249.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1312.2249/)]
     * Title: Scalable Object Detection using Deep Neural Networks
@@ -350,7 +352,7 @@ superpixel merging
     [[vanity](https://www.arxiv-vanity.com/papers/1703.06870/)]
     * Title: Mask R-CNN
     * Year: 20 Mar `2017`
-    * Authors: Kaiming He, Georgia Gkioxari, Piotr Doll�r, Ross Girshick
+    * Authors: Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick
     * Abstract: We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: this https URL
 * [[Cascade R-CNN](https://arxiv.org/abs/1712.00726)]
     [[pdf](https://arxiv.org/pdf/1712.00726.pdf)]
@@ -425,7 +427,7 @@ superpixel merging
     [[vanity](https://www.arxiv-vanity.com/papers/1701.06659/)]
     * Title: DSSD : Deconvolutional Single Shot Detector
     * Year: 23 Jan `2017`
-    * Author: Cheng-Yang Fu
+    * Authors: Cheng-Yang Fu, Wei Liu, Ananth Ranga, Ambrish Tyagi, Alexander C. Berg
     * Abstract: The main contribution of this paper is an approach for introducing additional context into state-of-the-art general object detection. To achieve this we first combine a state-of-the-art classifier (Residual-101[14]) with a fast detection framework (SSD[18]). We then augment SSD+Residual-101 with deconvolution layers to introduce additional large-scale context in object detection and improve accuracy, especially for small objects, calling our resulting system DSSD for deconvolutional single shot detector. While these two contributions are easily described at a high-level, a naive implementation does not succeed. Instead we show that carefully adding additional stages of learned transformations, specifically a module for feed-forward connections in deconvolution and a new output module, enables this new approach and forms a potential way forward for further detection research. Results are shown on both PASCAL VOC and COCO detection. Our DSSD with $513 \times 513$ input achieves 81.5% mAP on VOC2007 test, 80.0% mAP on VOC2012 test, and 33.2% mAP on COCO, outperforming a state-of-the-art method R-FCN[3] on each dataset.
 * [[FSSD](https://arxiv.org/abs/1712.00960)]
     [[pdf](https://arxiv.org/pdf/1712.00960.pdf)]
@@ -619,7 +621,7 @@ superpixel merging
     * Year: 12 Jun `2017`
     * Authors: Xinggang Wang, Kaibing Chen, Zilong Huang, Cong Yao, Wenyu Liu
     * Abstract: Object detection is a core problem in computer vision. With the development of deep ConvNets, the performance of object detectors has been dramatically improved. The deep ConvNets based object detectors mainly focus on regressing the coordinates of bounding box, e.g., Faster-R-CNN, YOLO and SSD. Different from these methods that considering bounding box as a whole, we propose a novel object bounding box representation using points and links and implemented using deep ConvNets, termed as Point Linking Network (PLN). Specifically, we regress the corner/center points of bounding-box and their links using a fully convolutional network; then we map the corner points and their links back to multiple bounding boxes; finally an object detection result is obtained by fusing the multiple bounding boxes. PLN is naturally robust to object occlusion and flexible to object scale variation and aspect ratio variation. In the experiments, PLN with the Inception-v2 model achieves state-of-the-art single-model and single-scale results on the PASCAL VOC 2007, the PASCAL VOC 2012 and the COCO detection benchmarks without bells and whistles. The source code will be released.
-* [CornerNet](https://arxiv.org/abs/1808.01244)
+* [[CornerNet](https://arxiv.org/abs/1808.01244)]
     [[pdf](https://arxiv.org/pdf/1808.01244.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1808.01244/)]
     * Title: CornerNet: Detecting Objects as Paired Keypoints
@@ -631,7 +633,7 @@ superpixel merging
     [[vanity](https://www.arxiv-vanity.com/papers/1901.08043/)]
     * Title: Bottom-up Object Detection by Grouping Extreme and Center Points
     * Year: 23 Jan `2019`
-    * Authors: Xingyi Zhou, Jiacheng Zhuo, Philipp Kr�henb�hl
+    * Authors: Xingyi Zhou, Jiacheng Zhuo, Philipp Krähenbühl
     * Abstract: With the advent of deep learning, object detection drifted from a bottom-up to a top-down recognition problem. State of the art algorithms enumerate a near-exhaustive list of object locations and classify each into: object or not. In this paper, we show that bottom-up approaches still perform competitively. We detect four extreme points (top-most, left-most, bottom-most, right-most) and one center point of objects using a standard keypoint estimation network. We group the five keypoints into a bounding box if they are geometrically aligned. Object detection is then a purely appearance-based keypoint estimation problem, without region classification or implicit feature learning. The proposed method performs on-par with the state-of-the-art region based detection methods, with a bounding box AP of 43.2% on COCO test-dev. In addition, our estimated extreme points directly span a coarse octagonal mask, with a COCO Mask AP of 18.9%, much better than the Mask AP of vanilla bounding boxes. Extreme point guided segmentation further improves this to 34.6% Mask AP.
 * [FCOS](https://arxiv.org/abs/1904.01355)
     [[pdf](https://arxiv.org/pdf/1904.01355.pdf)]

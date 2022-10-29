@@ -131,6 +131,20 @@ count=80
     * Abstract: The recently developed vision transformer (ViT) has achieved promising results on image classification compared to convolutional neural networks. Inspired by this, in this paper, we study how to learn multi-scale feature representations in transformer models for image classification. To this end, we propose a dual-branch transformer to combine image patches (i.e., tokens in a transformer) of different sizes to produce stronger image features. Our approach processes small-patch and large-patch tokens with two separate branches of different computational complexity and these tokens are then fused purely by attention multiple times to complement each other. Furthermore, to reduce computation, we develop a simple yet effective token fusion module based on cross attention, which uses a single token for each branch as a query to exchange information with other branches. Our proposed cross-attention only requires linear time for both computational and memory complexity instead of quadratic time otherwise. Extensive experiments demonstrate that our approach performs better than or on par with several concurrent works on vision transformer, in addition to efficient CNN models. For example, on the ImageNet1K dataset, with some architectural changes, our approach outperforms the recent DeiT by a large margin of 2\% with a small to moderate increase in FLOPs and model parameters. Our source codes and models are available at \url{this https URL}.
     * Comments:
         * > (2022, Recent Advances) Chen et al. (2021a) introduced dual-branch ViT to extract multi-scale feature representations and developed a cross-attention-based token-fusion mechanism, which is linear in terms of memory and computation to combine features at different scales.
+* [[AANet](https://arxiv.org/abs/1904.09925)]
+    [[pdf](https://arxiv.org/pdf/1904.09925.pdf)]
+    [vanity]
+    * Title: Attention Augmented Convolutional Networks
+    * Year: 22 Apr `2019`
+    * Authors: Irwan Bello, Barret Zoph, Ashish Vaswani, Jonathon Shlens, Quoc V. Le
+    * Abstract: Convolutional networks have been the paradigm of choice in many computer vision applications. The convolution operation however has a significant weakness in that it only operates on a local neighborhood, thus missing global information. Self-attention, on the other hand, has emerged as a recent advance to capture long range interactions, but has mostly been applied to sequence modeling and generative modeling tasks. In this paper, we consider the use of self-attention for discriminative visual tasks as an alternative to convolutions. We introduce a novel two-dimensional relative self-attention mechanism that proves competitive in replacing convolutions as a stand-alone computational primitive for image classification. We find in control experiments that the best results are obtained when combining both convolutions and self-attention. We therefore propose to augment convolutional operators with this self-attention mechanism by concatenating convolutional feature maps with a set of feature maps produced via self-attention. Extensive experiments show that Attention Augmentation leads to consistent improvements in image classification on ImageNet and object detection on COCO across many different models and scales, including ResNets and a state-of-the art mobile constrained network, while keeping the number of parameters similar. In particular, our method achieves a $1.3\%$ top-1 accuracy improvement on ImageNet classification over a ResNet50 baseline and outperforms other attention mechanisms for images such as Squeeze-and-Excitation. It also achieves an improvement of 1.4 mAP in COCO Object Detection on top of a RetinaNet baseline.
+* [[EAANet: Efficient Attention Augmented Convolutional Networks](https://arxiv.org/abs/2206.01821)]
+    [[pdf](https://arxiv.org/pdf/2206.01821.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2206.01821/)]
+    * Title: EAANet: Efficient Attention Augmented Convolutional Networks
+    * Year: 03 Jun `2022`
+    * Authors: Runqing Zhang, Tianshu Zhu
+    * Abstract: Humans can effectively find salient regions in complex scenes. Self-attention mechanisms were introduced into Computer Vision (CV) to achieve this. Attention Augmented Convolutional Network (AANet) is a mixture of convolution and self-attention, which increases the accuracy of a typical ResNet. However, The complexity of self-attention is O(n2) in terms of computation and memory usage with respect to the number of input tokens. In this project, we propose EAANet: Efficient Attention Augmented Convolutional Networks, which incorporates efficient self-attention mechanisms in a convolution and self-attention hybrid architecture to reduce the model's memory footprint. Our best model show performance improvement over AA-Net and ResNet18. We also explore different methods to augment Convolutional Network with self-attention mechanisms and show the difficulty of training those methods compared to ResNet. Finally, we show that augmenting efficient self-attention mechanisms with ResNet scales better with input size than normal self-attention mechanisms. Therefore, our EAANet is more capable of working with high-resolution images.
 
 ## Self-attention in vision models (4)
 
@@ -464,7 +478,7 @@ count=80
 
 ### (2021, Swin Transformer V1) Self-attention/Transformers to complement CNN Backbones (count=6)
 
-> Another line of work is to augment a standard CNN architecture with self-attention ayers or Transformers. The self-attention layers can complement backbones or head networks by providing the capability to encode distant dependencies or heterogeneous interactions. (Swin Transformer V1, 2021)
+> (2021, Swin Transformer V1) Another line of work is to augment a standard CNN architecture with self-attention layers or Transformers. The self-attention layers can complement backbones [64, 6, 68, 22, 71, 54] or head networks [31, 26] by providing the capability to encode distant dependencies or heterogeneous interactions.
 
 * Non-local Neural Networks
 * [GCNet](https://ieeexplore.ieee.org/document/9022134)
@@ -502,15 +516,9 @@ count=80
         * > Lambda Networks (Bello, 2021) and BotNet (Srinivas et al., 2021) improve training speed by using attention layers in ConvNets. (EfficientNetV2, 2021)
         * > Lambda Networks (Bello, 2021), NFNets (Brock et al., 2021), BoTNets (Srinivas et al., 2021), ResNet-RS (Bello et al., 2021) focus on TPU training speed. (EfficientNetV2, 2021)
 
-* [[AANet](https://arxiv.org/abs/1904.09925)]
-    [[pdf](https://arxiv.org/pdf/1904.09925.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1904.09925/)]
-    * Title: Attention Augmented Convolutional Networks
-    * Year: 22 Apr `2019`
-    * Authors: Irwan Bello, Barret Zoph, Ashish Vaswani, Jonathon Shlens, Quoc V. Le
-    * Abstract: Convolutional networks have been the paradigm of choice in many computer vision applications. The convolution operation however has a significant weakness in that it only operates on a local neighborhood, thus missing global information. Self-attention, on the other hand, has emerged as a recent advance to capture long range interactions, but has mostly been applied to sequence modeling and generative modeling tasks. In this paper, we consider the use of self-attention for discriminative visual tasks as an alternative to convolutions. We introduce a novel two-dimensional relative self-attention mechanism that proves competitive in replacing convolutions as a stand-alone computational primitive for image classification. We find in control experiments that the best results are obtained when combining both convolutions and self-attention. We therefore propose to augment convolutional operators with this self-attention mechanism by concatenating convolutional feature maps with a set of feature maps produced via self-attention. Extensive experiments show that Attention Augmentation leads to consistent improvements in image classification on ImageNet and object detection on COCO across many different models and scales, including ResNets and a state-of-the art mobile constrained network, while keeping the number of parameters similar. In particular, our method achieves a $1.3\%$ top-1 accuracy improvement on ImageNet classification over a ResNet50 baseline and outperforms other attention mechanisms for images such as Squeeze-and-Excitation. It also achieves an improvement of 1.4 mAP in COCO Object Detection on top of a RetinaNet baseline.
-
 ### (2021, Swin Transformer V1) Self-attention/Transformers to complement CNN heads (count=2)
+
+> (2021, Swin Transformer V1) Another line of work is to augment a standard CNN architecture with self-attention layers or Transformers. The self-attention layers can complement backbones [64, 6, 68, 22, 71, 54] or head networks [31, 26] by providing the capability to encode distant dependencies or heterogeneous interactions.
 
 * [[Relation Networks for Object Detection](https://arxiv.org/abs/1711.11575)]
     [[pdf](https://arxiv.org/pdf/1711.11575.pdf)]
