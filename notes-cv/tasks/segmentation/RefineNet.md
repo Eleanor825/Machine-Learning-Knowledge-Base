@@ -135,6 +135,8 @@
 
 ## References
 
+* Lin, Guosheng, et al. "Refinenet: Multi-path refinement networks for high-resolution semantic segmentation." *Proceedings of the IEEE conference on computer vision and pattern recognition*. 2017.
+
 ## Further Reading
 
 * [2] [SegNet](https://zhuanlan.zhihu.com/p/568804052)
