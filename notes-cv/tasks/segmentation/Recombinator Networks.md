@@ -88,8 +88,8 @@ $$\mathcal{L}(\textbf{W}) := \frac{1}{N}\sum_{n=1}^{N}\underbrace{\sum_{k=1}^{K}
 ## Further Reading
 
 * [13] Hypercolumn
-* [16] AlexNet
+* [16] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [17] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [19] U-Net
-* [24] VGG
-* [29] Inception-v1/GoogLeNet
+* [24] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [29] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)

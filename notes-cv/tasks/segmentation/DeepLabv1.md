@@ -1,4 +1,4 @@
-# [Notes][Vision][Segmentation] DeepLabv1
+# [Notes][Vision][Segmentation] DeepLabV1
 
 * url: https://arxiv.org/abs/1412.7062
 * Title: Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
@@ -29,6 +29,6 @@
 
 * [Simonyan & Zisserman, 2014] VGG
 * [Sermanet et al., 2013] OverFeat
-* [Szegedy et al., 2014] Inception-v1/GoogLeNet
+* [Szegedy et al., 2014] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [Girshick et al., 2014] R-CNN
 * [Long et al., 2014] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)

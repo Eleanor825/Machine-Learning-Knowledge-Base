@@ -161,7 +161,7 @@ $$\operatorname{Attention}(Q, K, V) = \operatorname{SoftMax}(\frac{QK^{\top}}{\s
 
 * [17] Deformable Convnets v1
 * [19] [Vision Transformer (ViT)](https://zhuanlan.zhihu.com/p/566567383)
-* [29] ResNet
+* [29] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [33] DenseNet
 * [38] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [41] Feature Pyramid Networks (FPN)

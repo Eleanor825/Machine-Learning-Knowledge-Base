@@ -163,9 +163,9 @@ Table 3: Size and training speed comparison.
 * [4] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [7] InceptionNetV2
 * [9] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
-* [11] Network In Network (NIN)
+* [11] NIN
 * [18] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [19] InceptionNetV4
+* [19] [InceptionNetV4](https://zhuanlan.zhihu.com/p/568801341)
 * [20] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [21] InceptionNetV3
 * [25] ZFNet

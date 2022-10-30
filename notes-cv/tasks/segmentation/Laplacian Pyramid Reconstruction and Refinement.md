@@ -38,7 +38,7 @@
 ## Further Reading
 
 * [15] Hypercolumns
-* [16] ResNet
+* [16] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [17] Identity Mappings
 * [24] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [26] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)

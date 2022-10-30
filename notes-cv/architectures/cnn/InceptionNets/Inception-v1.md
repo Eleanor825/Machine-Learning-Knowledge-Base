@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/564141144
-# [Notes][Vision][CNN] Inception-v1/GoogLeNet
+# [Notes][Vision][CNN] InceptionNetV1/GoogLeNet
 
 * url: https://arxiv.org/abs/1409.4842
 * Title: Going Deeper with Convolutions
@@ -86,7 +86,7 @@ Auxiliary Networks
 ## Further Reading
 
 * [6] R-CNN
-* [9] AlexNet
+* [9] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [10] LeNet
 * [12] Network In Network (NIN)
 * [14] OverFeat

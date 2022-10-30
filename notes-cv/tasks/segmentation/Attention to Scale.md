@@ -29,8 +29,8 @@
 
 * [24] R-CNN
 * [28] Spatial Pyramid Pooling (SPP)
-* [31] AlexNet
+* [31] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [38] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [47] OverFeat
-* [49] VGG
-* [50] Inception-v1/GoogLeNet
+* [49] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [50] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)

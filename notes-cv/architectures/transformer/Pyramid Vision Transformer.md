@@ -93,15 +93,15 @@ $$\operatorname{Reshape}(R_{i}): \mathbb{R}^{H_{i} \times W_{i} \times C_{i}} \t
 
 * [4] DETR
 * [10] ViT
-* [15] ResNet
+* [15] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [16] SENet
 * [18] DenseNet
-* [22] AlexNet
+* [22] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [24] SKNet
 * [25] Generalized Focal Loss (GFL)
 * [27] RetinaNet
 * [30] SSD
-* [41] VGGNet
+* [41] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [46] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [48] EfficientNetV1
 * [51] Attention Is All You Need

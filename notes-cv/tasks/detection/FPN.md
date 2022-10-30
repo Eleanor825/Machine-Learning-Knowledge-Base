@@ -115,10 +115,10 @@ Extra layers
 * [11] Fast R-CNN
 * [13] Hypercolumns
 * [15] Spatial Pyramid Pooling (SPP)
-* [16] ResNet
+* [16] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [17] Recombinator Networks
 * [18] HyperNet
-* [19] AlexNet
+* [19] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [22] SSD
 * [23] ParseNet
 * [24] FCN

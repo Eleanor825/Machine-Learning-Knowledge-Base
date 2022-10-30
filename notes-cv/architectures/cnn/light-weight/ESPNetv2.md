@@ -49,7 +49,7 @@ Notations:
 * Define $n_{r} := (n-1) \cdot r + 1$.
 
 | Convolution Type             | Parameters          | Effective Receptive Field |
-|------------------------------|---------------------|---------------------------|
+| ---------------------------- | ------------------- | ------------------------- |
 | Standard                     | $n^{2}c\hat{c}$     | $n \times n$              |
 | Group                        | $n^{2}c\hat{c}/g$   | $n \times n$              |
 | Depth-wise separable         | $n^{2}c + c\hat{c}$ | $n \times n$              |
@@ -94,15 +94,15 @@ $$n_{d}^{l}(Z^{l}) := 5 + \frac{Z^{l}}{7}, \quad Z^{l} \in \{H^{l}, W^{l}\}$$
 
 * [5] DeepLabv2
 * [15] PReLU
-* [16] ResNet
+* [16] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [17] MobileNetV1
 * [18] CondenseNet
 * [21] Inception-v2/Batch Normalization
-* [22] AlexNet
+* [22] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [29] ShuffleNet V2
 * [32] [ESPNetv1](https://zhuanlan.zhihu.com/p/556122258)
 * [44] MobileNetV2
-* [51] Inception-v1/GoogLeNet
+* [51] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [52] MnasNet
 * [60] ShuffleNet V1
 * [63] PSPNet

@@ -110,5 +110,5 @@ Hard Negative Mining
 
 ## Further Reading
 
-* [12] AlexNet
+* [12] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [34] OverFeat

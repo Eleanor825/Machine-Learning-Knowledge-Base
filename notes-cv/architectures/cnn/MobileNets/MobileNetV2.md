@@ -126,9 +126,9 @@ Different choices of the expansion ratio:
 
 ## Further Reading
 
-* [1] ResNet
-* [5] AlexNet
-* [6] VGGNet
+* [1] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
+* [5] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
+* [6] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [7] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [19] ShuffleNet
 * [22] NASNet

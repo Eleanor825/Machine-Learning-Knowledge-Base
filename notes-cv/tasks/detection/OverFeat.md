@@ -45,4 +45,4 @@
 
 ## Further Reading
 
-* [15] AlexNet
+* [15] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)

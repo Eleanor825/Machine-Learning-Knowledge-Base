@@ -82,7 +82,7 @@ Advantages of Fast R-CNN
 
 * [9] R-CNN
 * [11] Spatial Pyramid Pooling (SPP)
-* [14] AlexNet
+* [14] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [15] Spatial Pyramid Matching
 * [19] OverFeat
 * [25] segDeepM

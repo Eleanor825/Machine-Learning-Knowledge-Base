@@ -129,9 +129,9 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 * [12] R-CNN
 * [16] Simultaneous Detection and Segmentation (SDS)
 * [17] Spatial Pyramid Pooling (SPP)
-* [19] AlexNet
+* [19] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [21] LeNet
 * [29] OverFeat
-* [31] VGG
-* [32] Inception-v1/GoogLeNet
+* [31] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [32] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [36] DropConnect

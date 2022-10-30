@@ -77,15 +77,15 @@
 
 * [3] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
 * [5] R-CNN
-* [9] ResNet
+* [9] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [10] Identity Mappings in Deep Residual Networks
 * [12] MobileNetV1
 * [13] SENet
 * [14] SqueezeNet
-* [21] AlexNet
+* [21] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [24] FCN
 * [28] Faster R-CNN
-* [30] VGGNet
+* [30] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [32] Inception-v4
 * [33] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [34] Inception-v3

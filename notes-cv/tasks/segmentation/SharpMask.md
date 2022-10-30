@@ -110,5 +110,5 @@ Inference
 * [25] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [26] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [27] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
-* [28] ResNet
+* [28] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [29] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)

@@ -140,6 +140,6 @@ $$merge(t_{1}, ..., t_{K}) := \operatorname{Concat}(\{\sum_{i=1}^{k}t_{i}: k \in
 * [18] [Dilated Convolutions](https://zhuanlan.zhihu.com/p/555834549)
 * [19] Dilated Residual Networks
 * [22] Flattened Networks
-* [47] ResNet
+* [47] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [50] PReLU
 * [ESPNetv2](https://zhuanlan.zhihu.com/p/556330935)

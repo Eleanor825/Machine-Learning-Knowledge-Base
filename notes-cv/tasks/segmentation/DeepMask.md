@@ -127,10 +127,10 @@ $$\mathcal{L}(\theta) := \sum_{k}\bigg[\mathcal{L}_{\text{seg}}(x^{(k)}, m^{(k)}
 * [10] R-CNN
 * [11] Hypercolumns
 * [15] Spatial Pyramid Pooling (SPP)
-* [18] AlexNet
+* [18] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [25] Faster R-CNN
 * [26] OverFeat
-* [27] VGG
+* [27] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [28] Dropout
-* [29] Inception-v1/GoogLeNet
+* [29] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [30] MSC-MultiBox

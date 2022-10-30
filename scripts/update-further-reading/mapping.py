@@ -1,0 +1,16 @@
+mapping = {
+    "AlexNet": "https://zhuanlan.zhihu.com/p/565285454",
+    # "ZFNet": "temp",
+    "VGGNet": "https://zhuanlan.zhihu.com/p/563314926",
+    "ResNet": "https://zhuanlan.zhihu.com/p/570072614",
+    "InceptionNetV1": "https://zhuanlan.zhihu.com/p/564141144",
+    "InceptionNetV1/GoogLeNet": "https://zhuanlan.zhihu.com/p/564141144",
+    "Inception-v1": "https://zhuanlan.zhihu.com/p/564141144",
+    "Inception-v1/GoogLeNet": "https://zhuanlan.zhihu.com/p/564141144",
+    "GoogLeNet": "https://zhuanlan.zhihu.com/p/564141144",
+    # "InceptionNetV2": "temp",
+    # "InceptionNetV3": "temp",
+    "InceptionNetV4": "https://zhuanlan.zhihu.com/p/568801341",
+    "Xception": "https://zhuanlan.zhihu.com/p/556794897",
+    # "NIN": "temp",
+}

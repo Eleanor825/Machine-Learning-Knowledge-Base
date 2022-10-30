@@ -39,9 +39,9 @@
 
 ## Further Reading
 
-* [4] AlexNet
+* [4] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [5] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
-* [6] ResNet
+* [6] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [7] Wide Residual Networks (WRN)
 * [8] DeepLabv2
 * [9] RefineNet

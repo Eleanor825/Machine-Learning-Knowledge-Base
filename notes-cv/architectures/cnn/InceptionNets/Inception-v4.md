@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/568801341
-# [Notes][Vision][CNN] Inception-v4/Inception-ResNet
+# [Notes][Vision][CNN] InceptionNetV4 and Inception-ResNet
 
 * url: https://arxiv.org/abs/1602.07261
 * Title: Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning
@@ -12,7 +12,7 @@
 
 ## Summary of Main Contributions
 
-* New models: Inception-v4, Inception-ResNet-v1, Inception-ResNet-v2.
+* New models: InceptionNetV4, Inception-ResNet-v1, Inception-ResNet-v2.
 * New ideas: Scaling of the Residuals.
 
 ----------------------------------------------------------------------------------------------------
@@ -66,7 +66,7 @@
 ## Further Reading
 
 * [4] R-CNN
-* [5] ResNet
+* [5] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [6] Inception-v2/Batch Normalization
 * [8] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [9] Network In Network (NIN)

@@ -51,5 +51,5 @@
 
 * [12] Learning Hierarchical Features
 * [16] R-CNN
-* [21] AlexNet
+* [21] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [28] OverFeat

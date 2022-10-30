@@ -148,7 +148,7 @@ $$\begin{aligned}
 * [He et al., 2016] ResNet
 * [Zagoruyko & Komodakis, 2016] Wide Residual Networks
 * [Huang et al., 2017] DenseNet
-* [Szegedy et al., 2015] Inception-v1/GoogLeNet
+* [Szegedy et al., 2015] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
 * [Ioffe & Szegedy, 2015] Inception-v2/Batch Normalization
 * [Szegedy et al., 2016] Inception-v3
 * [Szegedy et al., 2017] Inception-v4
