@@ -45,4 +45,4 @@
 * [18] R-CNN
 * [22] Simultaneous Detection and Segmentation (SDS)
 * [28] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
-* [36] VGGNet
+* [36] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)

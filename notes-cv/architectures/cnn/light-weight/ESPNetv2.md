@@ -92,7 +92,7 @@ $$n_{d}^{l}(Z^{l}) := 5 + \frac{Z^{l}}{7}, \quad Z^{l} \in \{H^{l}, W^{l}\}$$
 
 ## Further Reading
 
-* [5] DeepLabv2
+* [5] DeepLabV2
 * [15] PReLU
 * [16] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [17] MobileNetV1
@@ -100,9 +100,9 @@ $$n_{d}^{l}(Z^{l}) := 5 + \frac{Z^{l}}{7}, \quad Z^{l} \in \{H^{l}, W^{l}\}$$
 * [21] Inception-v2/Batch Normalization
 * [22] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [29] ShuffleNet V2
-* [32] [ESPNetv1](https://zhuanlan.zhihu.com/p/556122258)
+* [32] [ESPNetV1](https://zhuanlan.zhihu.com/p/556122258)
 * [44] MobileNetV2
-* [51] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [51] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [52] MnasNet
 * [60] ShuffleNet V1
 * [63] PSPNet

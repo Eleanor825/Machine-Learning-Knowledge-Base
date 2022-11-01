@@ -44,10 +44,10 @@
 * [6] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [7] Wide Residual Networks (WRN)
 * [8] DeepLabv2
-* [9] RefineNet
+* [9] [RefineNet](https://zhuanlan.zhihu.com/p/577767167)
 * [11] ENet
-* [15] VGG
+* [15] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [16] SegNet-Basic
-* [17] DeepLabv1
+* [17] DeepLabV1
 * [19] Laplacian Pyramid Reconstruction and Refinement (LRR)
 * [25] PReLU

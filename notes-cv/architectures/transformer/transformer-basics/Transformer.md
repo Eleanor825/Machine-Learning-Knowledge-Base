@@ -212,6 +212,6 @@ $$\operatorname{AttentionDropout}(Q, K, V) = \operatorname{dropout}\bigg(\operat
 
 ## Further Reading
 
-* [6] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
+* [6] [XceptionNet](https://zhuanlan.zhihu.com/p/556794897)
 * [33] Dropout
 * [36] Inception-v3

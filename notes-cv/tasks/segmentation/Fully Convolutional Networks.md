@@ -133,5 +133,5 @@ $$f_{ks} \circ g_{k's'} = (f \circ g)_{k'+(k-1)s', ss'}.$$
 * [21] LeNet
 * [29] OverFeat
 * [31] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [32] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [32] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [36] DropConnect

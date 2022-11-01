@@ -129,12 +129,12 @@ $$merge(t_{1}, ..., t_{K}) := \operatorname{Concat}(\{\sum_{i=1}^{k}t_{i}: k \in
 ## Further Reading
 
 * [1] PSPNet
-* [3] DeepLabv2
-* [11] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [3] DeepLabV2
+* [11] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [12] Inception-v3
 * [13] Inception-v4
 * [14] ResNeXt
-* [15] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
+* [15] [XceptionNet](https://zhuanlan.zhihu.com/p/556794897)
 * [16] MobileNetV1
 * [17] ShuffleNet V1
 * [18] [Dilated Convolutions](https://zhuanlan.zhihu.com/p/555834549)

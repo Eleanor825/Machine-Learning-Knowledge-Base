@@ -101,4 +101,4 @@ $$\mathcal{F}(x) := \operatorname{Concatenate}\bigg(\{x\} \cup \bigg\{\mathcal{U
 * [26] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [30] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [33] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [34] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [34] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)

@@ -119,9 +119,9 @@ Classifier
 
 * [1] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [2] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
-* [3] DeepLabv1
+* [3] DeepLabV1
 * [4] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
-* [5] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [5] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [6] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [15] Dilated Convolutions
 * [16] [U-Net](https://zhuanlan.zhihu.com/p/568803926)

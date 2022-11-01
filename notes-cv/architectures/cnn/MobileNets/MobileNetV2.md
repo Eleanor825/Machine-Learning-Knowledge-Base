@@ -129,9 +129,9 @@ Different choices of the expansion ratio:
 * [1] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [5] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [6] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [7] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [7] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [19] ShuffleNet
 * [22] NASNet
 * [26] MobileNetV1
-* [27] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
+* [27] [XceptionNet](https://zhuanlan.zhihu.com/p/556794897)
 * [28] ResNeXt

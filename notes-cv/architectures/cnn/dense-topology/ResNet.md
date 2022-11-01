@@ -134,4 +134,4 @@ So don't use the third one.
 * [40] OverFeat
 * [41] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [42] [Highway Networks](https://zhuanlan.zhihu.com/p/554615809)
-* [44] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [44] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)

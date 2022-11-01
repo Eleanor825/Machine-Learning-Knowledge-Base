@@ -69,7 +69,7 @@ network can learn to utilize all of its layers, while for simpler problems like 
 
 ## Further Reading
 
-* [20] [Maxout Networks](https://zhuanlan.zhihu.com/p/555110412)
+* [20] Maxout Networks
 * [24] Deeply-Supervised Nets (DSN)
 * [25] FitNets
 * [35] Network in Network (NIN)

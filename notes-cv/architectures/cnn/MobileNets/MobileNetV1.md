@@ -139,7 +139,7 @@ Then the number of parameters in different kinds of layers are:
 
 ## Further Reading
 
-* [3] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
+* [3] [XceptionNet](https://zhuanlan.zhihu.com/p/556794897)
 * [8] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [12] SqueezeNet
 * [13] Inception-v2/Batch Normalization
@@ -149,6 +149,6 @@ Then the number of parameters in different kinds of layers are:
 * [23] Faster R-CNN
 * [27] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [29] Inception-v4/Inception-ResNet
-* [30] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [30] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [31] Inception-v3
 * [34] Factorized Networks

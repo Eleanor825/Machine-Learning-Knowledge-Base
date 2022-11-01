@@ -33,4 +33,4 @@
 * [38] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [47] OverFeat
 * [49] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [50] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [50] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)

@@ -75,7 +75,7 @@
 
 ## Further Reading
 
-* [3] [Xception Networks](https://zhuanlan.zhihu.com/p/556794897)
+* [3] [XceptionNet](https://zhuanlan.zhihu.com/p/556794897)
 * [5] R-CNN
 * [9] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [10] Identity Mappings in Deep Residual Networks
@@ -87,7 +87,7 @@
 * [28] Faster R-CNN
 * [30] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [32] Inception-v4
-* [33] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [33] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [34] Inception-v3
 * [40] ResNeXt
 * [46] NASNet

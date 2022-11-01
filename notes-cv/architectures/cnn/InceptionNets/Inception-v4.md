@@ -72,6 +72,6 @@
 * [9] Network In Network (NIN)
 * [10] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [12] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [14] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [14] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [15] Inception-v3
 * [17] DeepPose

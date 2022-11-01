@@ -126,6 +126,6 @@ Extra layers
 * [27] DeepMask
 * [28] SharpMask
 * [29] Faster R-CNN
-* [31] U-Net
-* [36] VGG
+* [31] [U-Net](https://zhuanlan.zhihu.com/p/568803926)
+* [36] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [37] Selective Search

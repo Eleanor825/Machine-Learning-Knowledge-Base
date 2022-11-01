@@ -21,7 +21,7 @@
 
 ## Further Reading
 
-* [2] SegNet
+* [2] [SegNet](https://zhuanlan.zhihu.com/p/568804052)
 * [7] Cascade R-CNN
 * [12] DeepLabv3+
 * [15] Deformable ConvNets v1
@@ -33,6 +33,6 @@
 * [29] Panoptic Segmentation
 * [34] Feature Pyramid Networks
 * [46] Faster R-CNN
-* [47] U-Net
+* [47] [U-Net](https://zhuanlan.zhihu.com/p/568803926)
 * [53] ResNeXt
 * [55] Dilated Convolutions

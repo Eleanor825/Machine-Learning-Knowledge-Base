@@ -102,8 +102,8 @@ $$\operatorname{Reshape}(R_{i}): \mathbb{R}^{H_{i} \times W_{i} \times C_{i}} \t
 * [27] RetinaNet
 * [30] SSD
 * [41] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [46] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
-* [48] EfficientNetV1
+* [46] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
+* [48] [EfficientNetV1](https://zhuanlan.zhihu.com/p/557565000)
 * [51] Attention Is All You Need
 * [56] ResNeXt
-* [57] Dilated Convolutions
+* [57] [Dilated Convolutions](https://zhuanlan.zhihu.com/p/555834549)

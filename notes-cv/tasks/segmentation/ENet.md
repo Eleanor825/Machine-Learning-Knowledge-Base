@@ -145,4 +145,4 @@ Details:
 * [11] [SegNet](https://zhuanlan.zhihu.com/p/568804052)
 * [12] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [13] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [24] ResNet
+* [24] [ResNet](https://zhuanlan.zhihu.com/p/570072614)

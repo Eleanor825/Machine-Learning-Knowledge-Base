@@ -103,12 +103,12 @@ Inference
 * [6] Fast R-CNN
 * [7] Faster R-CNN
 * [8] Inside-Outside Net (ION)
-* [17] DeepLabv1
+* [17] DeepLabV1
 * [19] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [22] DeepMask
 * [24] Hypercolumns
 * [25] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [26] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [27] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [27] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [28] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [29] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)

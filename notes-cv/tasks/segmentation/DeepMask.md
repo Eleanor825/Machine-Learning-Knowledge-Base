@@ -121,7 +121,7 @@ $$\mathcal{L}(\theta) := \sum_{k}\bigg[\mathcal{L}_{\text{seg}}(x^{(k)}, m^{(k)}
 
 ## Further Reading
 
-* [3] DeepLabv1
+* [3] DeepLabV1
 * [6] MultiBox
 * [9] Fast R-CNN
 * [10] R-CNN
@@ -132,5 +132,5 @@ $$\mathcal{L}(\theta) := \sum_{k}\bigg[\mathcal{L}_{\text{seg}}(x^{(k)}, m^{(k)}
 * [26] OverFeat
 * [27] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [28] Dropout
-* [29] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [29] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [30] MSC-MultiBox

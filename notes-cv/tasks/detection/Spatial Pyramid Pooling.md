@@ -39,4 +39,4 @@
 
 * [5] OverFeat
 * [31] Network In Network (NIN)
-* [32] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [32] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)

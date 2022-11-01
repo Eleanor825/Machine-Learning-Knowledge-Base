@@ -165,9 +165,9 @@ $$\operatorname{Attention}(Q, K, V) = \operatorname{SoftMax}(\frac{QK^{\top}}{\s
 * [33] DenseNet
 * [38] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
 * [41] Feature Pyramid Networks (FPN)
-* [50] U-Net
+* [50] [U-Net](https://zhuanlan.zhihu.com/p/568803926)
 * [51] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [56] [Inception-v1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
+* [56] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [57] [EfficientNetV1](https://zhuanlan.zhihu.com/p/557565000)
 * [60] DeiT
 * [61] [Transformer](https://zhuanlan.zhihu.com/p/566630656)
