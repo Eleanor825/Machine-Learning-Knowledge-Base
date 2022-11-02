@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/556330935
-# [Notes][Vision][CNN] ESPNetv2
+# [Notes][Vision][CNN] ESPNetV2
 
 * url: https://arxiv.org/abs/1811.11431
 * Title: ESPNetv2: A Light-weight, Power Efficient, and General Purpose Convolutional Neural Network
@@ -99,10 +99,10 @@ $$n_{d}^{l}(Z^{l}) := 5 + \frac{Z^{l}}{7}, \quad Z^{l} \in \{H^{l}, W^{l}\}$$
 * [18] CondenseNet
 * [21] Inception-v2/Batch Normalization
 * [22] [AlexNet](https://zhuanlan.zhihu.com/p/565285454)
-* [29] ShuffleNet V2
+* [29] ShuffleNetV2
 * [32] [ESPNetV1](https://zhuanlan.zhihu.com/p/556122258)
 * [44] MobileNetV2
 * [51] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [52] MnasNet
-* [60] ShuffleNet V1
+* [60] ShuffleNetV1
 * [63] PSPNet

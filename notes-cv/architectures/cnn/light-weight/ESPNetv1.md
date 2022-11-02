@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/556122258
-# [Notes][Vision][CNN] ESPNetv1
+# [Notes][Vision][CNN] ESPNetV1
 
 * url: https://arxiv.org/abs/1803.06815
 * Title: ESPNet: Efficient Spatial Pyramid of Dilated Convolutions for Semantic Segmentation
@@ -131,15 +131,15 @@ $$merge(t_{1}, ..., t_{K}) := \operatorname{Concat}(\{\sum_{i=1}^{k}t_{i}: k \in
 * [1] PSPNet
 * [3] DeepLabV2
 * [11] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
-* [12] Inception-v3
-* [13] Inception-v4
+* [12] InceptionNetV3
+* [13] [InceptionNetV4](https://zhuanlan.zhihu.com/p/568801341)
 * [14] ResNeXt
 * [15] [XceptionNet](https://zhuanlan.zhihu.com/p/556794897)
 * [16] MobileNetV1
-* [17] ShuffleNet V1
+* [17] ShuffleNetV1
 * [18] [Dilated Convolutions](https://zhuanlan.zhihu.com/p/555834549)
 * [19] Dilated Residual Networks
 * [22] Flattened Networks
 * [47] [ResNet](https://zhuanlan.zhihu.com/p/570072614)
 * [50] PReLU
-* [ESPNetv2](https://zhuanlan.zhihu.com/p/556330935)
+* [ESPNetV2](https://zhuanlan.zhihu.com/p/556330935)

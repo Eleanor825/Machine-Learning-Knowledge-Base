@@ -19,9 +19,9 @@ count=85
   - [Multi-Scale Architectures (2016, PSPNet) (5)](#multi-scale-architectures-2016-pspnet-5)
   - [Efficiency](#efficiency)
 - [Graphical model networks](#graphical-model-networks)
-  - [Conditional Random Fields (CRF) (DeepLabv1, 2014)](#conditional-random-fields-crf-deeplabv1-2014)
+  - [(2014, DeepLabV1) Conditional Random Fields (CRF)](#2014-deeplabv1-conditional-random-fields-crf)
   - [MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)](#map-and-crf-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-5--5)
-  - [MAP and CRF (SegNet, 2015) (2)](#map-and-crf-segnet-2015-2)
+  - [(2015, SegNet) MAP and CRF (count=2)](#2015-segnet-map-and-crf-count2)
   - [Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)](#fully-connected-crfs-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-4)
   - [Fully Connected CRFs (LRR, 2016)](#fully-connected-crfs-lrr-2016)
   - [Conditional Random Fields - Other](#conditional-random-fields---other)
@@ -196,6 +196,7 @@ count=85
     * Year: 25 Jun `2014`
     * Authors: Yaroslav Ganin, Victor Lempitsky
     * Abstract: We propose a new architecture for difficult image processing operations, such as natural edge detection or thin object segmentation. The architecture is based on a simple combination of convolutional neural networks with the nearest neighbor search. We focus our attention on the situations when the desired image transformation is too hard for a neural network to learn explicitly. We show that in such situations, the use of the nearest neighbor search on top of the network output allows to improve the results considerably and to account for the underfitting effect during the neural network training. The approach is validated on three challenging benchmarks, where the performance of the proposed architecture matches or exceeds the state-of-the-art.
+* [[](https://ieeexplore.ieee.org/document/6126219)]
 
 ### Encoder-Decoder Architecture
 
@@ -329,7 +330,7 @@ count=85
     * Institutions: [UC Berkeley]
     * Abstract: Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, exceed the state-of-the-art in semantic segmentation. Our key insight is to build "fully convolutional" networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet, the VGG net, and GoogLeNet) into fully convolutional networks and transfer their learned representations by fine-tuning to the segmentation task. We then define a novel architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. Our fully convolutional network achieves state-of-the-art segmentation of PASCAL VOC (20% relative improvement to 62.2% mean IU on 2012), NYUDv2, and SIFT Flow, while inference takes one third of a second for a typical image.
     * Comments:
-        * > (2014, DeepLabv1) More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN.
+        * > (2014, DeepLabV1) More recently, the segmentation-free techniques of (Long et al., 2014; Eigen & Fergus, 2014) directly apply DCNNs to the whole image in a sliding window fashion, replacing the last fully connected layers of a DCNN by convolutional layers. In order to deal with the spatial localization issues outlined in the beginning of the introduction, Long et al. (2014) upsample and concatenate the scores from inter-mediate feature maps, while Eigen & Fergus (2014) refine the prediction result from coarse to fine by propagating the coarse results to another DCNN.
         * > (2015, Dilated Convolutions) Long et al. (2015) showed that convolutional network architectures that had originally been developed for image classification can be successfully repurposed for dense prediction.
         * > (2015, Dilated Convolutions) In recent work on convolutional networks for semantic segmentation, Long et al. (2015) analyzed filter dilation but chose not to use it.
         * > (2015, DeconvNet) The main advantage of the methods based on FCN is that the network accepts a whole image as an input and performs fast and accurate inference.
@@ -338,6 +339,7 @@ count=85
         * > (2015, Attention to Scale) FCN-8s [38] gradually learns finer-scale prediction from lower layers (initialized with coarser-scale prediction).
         * > (2015, U-Net) The main idea in [9] is to supplement a usual contracting network by successive layers, where pooling operators are replaced by upsampling operators. Hence, these layers increase the resolution of the output. In order to localize, high resolution features from the contracting path are combined with the upsampled output. A successive convolution layer can then learn to assemble a more precise output based on this information.
         * > (2015, SegNet) Each decoder in the Fully Convolutional Network (FCN) architecture [2] learns to upsample its input feature map(s) and combines them with the corresponding encoder feature map to produce the input to the next decoder.
+        * > (2015, ParseNet) The FCN approach can be thought of as sliding an classification network around an input image, and processes each sliding window area independently. In particular, FCN disregards global information about an image, thus ignoring potentially useful scene-level semantic context.
         * > (2016, FPN) FCN [24] sums partial scores for each category over multiple scales to compute semantic segmentations.
         * > (2016, RefineNet) The FCN method in [36] adds prediction layers to middle layers to generate prediction scores at multiple resolutions. They average the multi-resolution scores to generate the final prediction mask.
         * > (2021, PVT) In the early stages, FCN introduced a fully convolutional architecture to generate a spatial segmentation map for a given image of any size.
@@ -436,7 +438,7 @@ count=85
 
 ## Graphical model networks
 
-### Conditional Random Fields (CRF) (DeepLabv1, 2014)
+### (2014, DeepLabV1) Conditional Random Fields (CRF)
 
 * [[Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials](https://arxiv.org/abs/1210.5644)]
     [[pdf](https://arxiv.org/pdf/1210.5644.pdf)]
@@ -466,6 +468,7 @@ count=85
     * Abstract: Pixel-level labelling tasks, such as semantic segmentation, play a central role in image understanding. Recent approaches have attempted to harness the capabilities of deep learning techniques for image recognition to tackle pixel-level labelling tasks. One central issue in this methodology is the limited capacity of deep learning techniques to delineate visual objects. To solve this problem, we introduce a new form of convolutional neural network that combines the strengths of Convolutional Neural Networks (CNNs) and Conditional Random Fields (CRFs)-based probabilistic graphical modelling. To this end, we formulate mean-field approximate inference for the Conditional Random Fields with Gaussian pairwise potentials as Recurrent Neural Networks. This network, called CRF-RNN, is then plugged in as a part of a CNN to obtain a deep network that has desirable properties of both CNNs and CRFs. Importantly, our system fully integrates CRF modelling with CNNs, making it possible to train the whole deep network end-to-end with the usual back-propagation algorithm, avoiding offline post-processing methods for object delineation. We apply the proposed method to the problem of semantic image segmentation, obtaining top results on the challenging Pascal VOC 2012 segmentation benchmark.
     * Comments:
         * > The predictive performance of FCN has been improved further by appending the FCN with a recurrent neural network (RNN) [10] and fine-tuning them on large datasets [21],[42]. The RNN layers mimic the sharp boundary delineation capabilities of CRFs while exploiting the feature representation power of FCN’s. (SegNet, 2015)
+        * > (2015, ParseNet) Zheng et al. (2015) convert CRF learning to recurrent neural network (RNN) and use message passing to do the learning and inference.
 
 ### MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)
 
@@ -524,7 +527,7 @@ count=85
     * Institutions: [Oxford Brookes], [Microsoft Research]
     * Abstract: Markov and Conditional random fields (CRFs) used in computer vision typically model only local interactions between variables, as this is computationally tractable. In this paper we consider a class of global potentials defined over all variables in the CRF. We show how they can be readily optimised using standard graph cut algorithms at little extra expense compared to a standard pairwise field. This result can be directly used for the problem of class based image segmentation which has seen increasing recent interest within computer vision. Here the aim is to assign a label to each pixel of a given image from a set of possible object classes. Typically these methods use random fields to model local interactions between pixels or super-pixels. One of the cues that helps recognition is global object co-occurrence statistics, a measure of which classes (such as chair or motorbike) are likely to occur in the same image together. There have been several approaches proposed to exploit this property, but all of them suffer from different limitations and typically carry a high computational cost, preventing their application on large images. We find that the new model we propose produces an improvement in the labelling compared to just using a pairwise model.
 
-### MAP and CRF (SegNet, 2015) (2)
+### (2015, SegNet) MAP and CRF (count=2)
 
 * [[Fully Connected Deep Structured Networks](https://arxiv.org/abs/1503.02351)]
     [[pdf](https://arxiv.org/pdf/1503.02351.pdf)]
@@ -533,6 +536,8 @@ count=85
     * Year: 09 Mar `2015`
     * Authors: Alexander G. Schwing, Raquel Urtasun
     * Abstract: Convolutional neural networks with many layers have recently been shown to achieve excellent results on many high-level tasks such as image classification, object detection and more recently also semantic segmentation. Particularly for semantic segmentation, a two-stage procedure is often employed. Hereby, convolutional networks are trained to provide good local pixel-wise features for the second step being traditionally a more global graphical model. In this work we unify this two-stage process into a single joint training algorithm. We demonstrate our method on the semantic image segmentation task and show encouraging results on the challenging PASCAL VOC 2012 dataset.
+    * Comments:
+        * > (2015, ParseNet) Schwing & Urtasun (2015) propagates the marginals computed from the structured loss to update the network parameters.
 * [[Efficient piecewise training of deep structured models for semantic segmentation](https://arxiv.org/abs/1504.01013)]
     [[pdf](https://arxiv.org/pdf/1504.01013.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1504.01013/)]
@@ -542,6 +547,7 @@ count=85
     * Abstract: Recent advances in semantic image segmentation have mostly been achieved by training deep convolutional neural networks (CNNs). We show how to improve semantic segmentation through the use of contextual information; specifically, we explore 'patch-patch' context between image regions, and 'patch-background' context. For learning from the patch-patch context, we formulate Conditional Random Fields (CRFs) with CNN-based pairwise potential functions to capture semantic correlations between neighboring patches. Efficient piecewise training of the proposed deep structured model is then applied to avoid repeated expensive CRF inference for back propagation. For capturing the patch-background context, we show that a network design with traditional multi-scale image input and sliding pyramid pooling is effective for improving performance. Our experimental results set new state-of-the-art performance on a number of popular semantic segmentation datasets, including NYUDv2, PASCAL VOC 2012, PASCAL-Context, and SIFT-flow. In particular, we achieve an intersection-over-union score of 78.0 on the challenging PASCAL VOC 2012 dataset.
     * Comments:
         * > Lin et al. [34] resized the input image for three scales and concatenated the resulting three-scale features to generate the unary and pairwise potentials of a Conditional Random Field (CRF). (Attention to Scale, 2015)
+        * > (2015, ParseNet) Lin et al. (2015) uses piece-wise training to make learning more efficient by adding a few extra piece-wise networks.
 
 ### Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)
 
@@ -600,6 +606,7 @@ count=85
         * DeepLab is a variant of FCNs.
         * > (2015, Dilated Convolutions) Chen et al. (2015a) used dilation to simplify the architecture of Long et al. (2015).
         * > (2015, SegNet) The method of [3] also use the feature maps of the classification network with an independent CRF post-processing technique to perform segmentation.
+        * > (2015, ParseNet) Chen et al. (2014) first uses a FCN to estimate the unary potential, then applies a fully connected CRF to smooth the predictions spatially.
         * > (2016, ENet) Other existing architectures use simpler classifiers and then cascade them with Conditional Random Field (CRF) as a post-processing step liang14 ; sturgess09 .
         * > (2016, RefineNet) The atrous convolution based approach DeepLab-CRF in [5] directly output a middle-resolution score map then applies the dense CRF method [27] to refine boundaries by leveraging color contrast information.
 * [[DeepLabV2](https://arxiv.org/abs/1606.00915)] <!-- printed -->
@@ -709,7 +716,7 @@ count=85
     * Institutions: [University of California, Berkeley], [Universidad de los Andes, Colombia], [Microsoft Research, Redmond]
     * Abstract: Recognition algorithms based on convolutional networks (CNNs) typically use the output of the last layer as feature representation. However, the information in this layer may be too coarse to allow precise localization. On the contrary, earlier layers may be precise in localization but will not capture semantics. To get the best of both worlds, we define the hypercolumn at a pixel as the vector of activations of all CNN units above that pixel. Using hypercolumns as pixel descriptors, we show results on three fine-grained localization tasks: simultaneous detection and segmentation[22], where we improve state-of-the-art from 49.7[22] mean AP^r to 60.0, keypoint localization, where we get a 3.3 point boost over[20] and part labeling, where we show a 6.6 point gain over a strong baseline.
     * Comments:
-        * > (2014, DeepLabv1) More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification.
+        * > (2014, DeepLabV1) More recently, Hariharan et al. (2014a) propose to concatenate the computed inter-mediate feature maps within the DCNNs for pixel classification.
         * > (2015, U-Net) More recent approaches [11,4] proposed a classifier output that takes into account the features from multiple layers.
         * > (2015, Attention to Scale) Hariharan et al. [27] classified a pixel with hypercolumn representation (i.e., concatenation of features from intermediate layers).
         * > (2016, RefineNet) The method Hypercolumn [22] merges features from middle layers and learns dense classification layers.

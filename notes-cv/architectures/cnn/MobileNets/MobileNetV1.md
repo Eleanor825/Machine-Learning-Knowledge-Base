@@ -150,5 +150,5 @@ Then the number of parameters in different kinds of layers are:
 * [27] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [29] Inception-v4/Inception-ResNet
 * [30] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
-* [31] Inception-v3
+* [31] InceptionNetV3
 * [34] Factorized Networks

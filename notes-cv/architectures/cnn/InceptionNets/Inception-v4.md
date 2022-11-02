@@ -73,5 +73,5 @@
 * [10] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
 * [12] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
 * [14] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
-* [15] Inception-v3
+* [15] InceptionNetV3
 * [17] DeepPose

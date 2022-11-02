@@ -66,9 +66,18 @@
     * Dual Path Networks
 * 2022.10.20 Thu:
 
-* 2022.10.24 Mon [CNN]: Xception Networks
+<!-- week 08 -->
+
+* 2022.10.24 Mon [CNN]: XceptionNet
 * 2022.10.25 Tue [Detection]: CoupleNet
 * 2022.10.26 Wed [Segmentation]: RefineNet
 * 2022.10.27 Thu [Transformer]: AANet
 * 2022.10.28 Fri [GAN]: 
 
+<!-- week 09 -->
+
+* 2022.10.31 Mon [CNN]:
+* 2022.11.01 Tue [Detection]:
+* 2022.11.02 Wed [Segmentation]: ParseNet
+* 2022.11.03 Thu [Transformer]:
+* 2022.11.04 Fri [GAN]:

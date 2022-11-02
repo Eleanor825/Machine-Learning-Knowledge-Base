@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/557179729
-# [Notes][Vision][CNN] ShuffleNet V1
+# [Notes][Vision][CNN] ShuffleNetV1
 
 * url: https://arxiv.org/abs/1707.01083
 * Title: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
@@ -86,8 +86,8 @@
 * [24] FCN
 * [28] Faster R-CNN
 * [30] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
-* [32] Inception-v4
+* [32] [InceptionNetV4](https://zhuanlan.zhihu.com/p/568801341)
 * [33] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
-* [34] Inception-v3
+* [34] InceptionNetV3
 * [40] ResNeXt
 * [46] NASNet
