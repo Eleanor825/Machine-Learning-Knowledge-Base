@@ -90,6 +90,8 @@ count: 10
     * Year: 01 Sep `2014`
     * Author: Dzmitry Bahdanau
     * Abstract: Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. The models proposed recently for neural machine translation often belong to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation. In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder-decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. With this new approach, we achieve a translation performance comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation. Furthermore, qualitative analysis reveals that the (soft-)alignments found by the model agree well with our intuition.
+    * Comments:
+        * > (2019, AANet) Most notably, Bahdanau et al. [2] first proposed to combine attention with a Recurrent Neural Network [15] for alignment in Machine Translation.
 * [Effective Approaches to Attention-based Neural Machine Translation](https://arxiv.org/abs/1508.04025)
     * Title: Effective Approaches to Attention-based Neural Machine Translation
     * Year: 17 Aug `2015`

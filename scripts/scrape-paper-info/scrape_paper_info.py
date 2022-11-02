@@ -77,6 +77,20 @@ if __name__ == "__main__":
     main(
         url_list=[
             "https://arxiv.org/abs/2007.05779",
+            "https://arxiv.org/abs/1809.04184",
+            "https://arxiv.org/abs/1805.08974",
+            "https://arxiv.org/abs/1707.07012",
+            "https://arxiv.org/abs/1904.03107",
+            "https://arxiv.org/abs/1804.09541",
+            "https://arxiv.org/abs/1901.11117",
+            "https://arxiv.org/abs/1810.12348",
+            "https://arxiv.org/abs/1810.11579",
+            "https://arxiv.org/abs/1807.06521",
+            "https://arxiv.org/abs/1803.02155",  # Self-attention with relative position representations
+            "https://arxiv.org/abs/1807.06514",
+            "https://arxiv.org/abs/1807.03247",
+            "https://arxiv.org/abs/1809.04281",  # Music Transformer
+            "https://arxiv.org/abs/1805.08819",  # Learning what and where to attend
         ],
         src_filepath="papers-cv/tasks/detection_2D.md",
         dst_filepath="scripts/scrape-paper-info/raw_detection_2D.md",
