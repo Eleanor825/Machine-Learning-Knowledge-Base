@@ -1,5 +1,5 @@
 mapping = {
-    # CNN architectures
+    # Convolutional Neural Networks
     "AlexNet": "https://zhuanlan.zhihu.com/p/565285454",
     "VGGNet": "https://zhuanlan.zhihu.com/p/563314926",
     "ResNet": "https://zhuanlan.zhihu.com/p/570072614",
@@ -19,8 +19,10 @@ mapping = {
     "RefineNet": "https://zhuanlan.zhihu.com/p/577767167",
     "DeconvNet": "https://zhuanlan.zhihu.com/p/558646271",
     "ParseNet": "https://zhuanlan.zhihu.com/p/579897223",
-    # Transformer architectures
+    # Transformers
     "Transformer": "https://zhuanlan.zhihu.com/p/566630656",
+    # Generative Adversarial Networks
+    "GAN": "https://zhuanlan.zhihu.com/p/580591950",
 }
 
 aliases = {
