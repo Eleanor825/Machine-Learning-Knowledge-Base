@@ -68,16 +68,22 @@
 
 <!-- week 08 -->
 
-* 2022.10.24 Mon [C]: XceptionNet
-* 2022.10.25 Tue [D]: CoupleNet
-* 2022.10.26 Wed [S]: RefineNet
-* 2022.10.27 Thu [T]: AANet
-* 2022.10.28 Fri [G]: 
+* 2022.10.24 Mon [CNN]: XceptionNet
+* 2022.10.25 Tue [DET]: CoupleNet
+* 2022.10.26 Wed [SEG]: RefineNet
+* 2022.10.27 Thu [TSF]: AANet
+* 2022.10.28 Fri [GAN]: 
 
 <!-- week 09 -->
 
-* 2022.10.31 Mon [C]:
-* 2022.11.01 Tue [D]:
-* 2022.11.02 Wed [S]: ParseNet
-* 2022.11.03 Thu [T]:
-* 2022.11.04 Fri [G]: GAN
+* 2022.10.31 Mon [CNN]:
+* 2022.11.01 Tue [DET]:
+* 2022.11.02 Wed [SEG]: ParseNet
+* 2022.11.03 Thu [TSF]:
+* 2022.11.04 Fri [GAN]: Generative Adversarial Networks
+
+<!-- week 10 -->
+
+* 2022.11.07 Mon [CNN]:
+* 2022.11.08 Tue [DET]: (HyperNet)
+* 2022.11.09 Wed [SEG]: (SegNeXt)

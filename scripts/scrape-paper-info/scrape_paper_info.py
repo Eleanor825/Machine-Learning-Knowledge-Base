@@ -62,7 +62,7 @@ def main(url_lists, src_filepath, dst_filepath):
         url_lists = get_all_urls(src_filepath)
     else:
         assert type(url_lists) == dict, type(url_list)
-        print(f"[INFO] Argument `dst_filepath` suppressed. Using temp.md.")
+        print(f"[INFO] Argument `dst_filepath` suppressed. Using temp files.")
     for group in url_lists:
         print(f"[INFO] Processing {group}." + (
             " Nothing given." if len(url_lists[group]) == 0 else f" {len(url_lists[group])} urls found."))
@@ -76,16 +76,26 @@ def main(url_lists, src_filepath, dst_filepath):
 
 if __name__ == "__main__":
     main(url_lists={
-        'C': [
+        'CNN': [
         ],
-        'D': [
+        'DET': [
         ],
-        'S': [
+        'SEG': [  # not yet scraped.
+            "https://arxiv.org/abs/2112.11010",
+            "https://arxiv.org/abs/1703.02719",
+            "https://arxiv.org/abs/2004.07684",
+            "https://arxiv.org/abs/1511.02674",
+            "https://arxiv.org/abs/2109.02974",
+            "https://arxiv.org/abs/2203.16194",
+            "https://arxiv.org/abs/1406.6247",
+            "https://arxiv.org/abs/2012.09688",
+            "https://arxiv.org/abs/1803.08904",
         ],
-        'T': [
+        'TSF': [
         ],
-        'G': [
-            "https://arxiv.org/abs/1406.2661",
+        'GAN': [
+        ],
+        'NLP': [
         ],
     },
         src_filepath="papers-cv/tasks/detection_2D.md",

@@ -1,6 +1,6 @@
 # [Papers][Vision] CNN Architectures <!-- omit in toc -->
 
-count=129
+count=144
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -20,6 +20,10 @@ count=129
   - [Adaptive Kernels](#adaptive-kernels)
   - [Cross-Channel Correlations](#cross-channel-correlations)
 - [Research on Attention Mechanism](#research-on-attention-mechanism)
+  - [Survey](#survey)
+  - [Unknown](#unknown)
+  - [Spatial Attention](#spatial-attention)
+  - [(2022, SegNeXt) Channel Attention (count=3)](#2022-segnext-channel-attention-count3)
 - [Light-Weight Networks](#light-weight-networks)
   - [Light-Weight Networks (Others)](#light-weight-networks-others)
   - [(2017, MobileNetV1) Light-Weight Networks (count=7)](#2017-mobilenetv1-light-weight-networks-count7)
@@ -42,6 +46,7 @@ count=129
   - [(2018, ESPNetV1) (count=3)](#2018-espnetv1-count3)
   - [(2018, MobileNetV2) (count=1)](#2018-mobilenetv2-count1)
 - [Expressive Power (2019, EfficientNetV1) (4)](#expressive-power-2019-efficientnetv1-4)
+- [Reparameterization](#reparameterization)
 - [Regularization Techniques](#regularization-techniques)
 - [Data Augmentation](#data-augmentation)
 - [Progressive Learning](#progressive-learning)
@@ -484,14 +489,14 @@ Overview:
 
 ### Deformable Kernels
 
-* [[Deformable ConvNets v1](https://arxiv.org/abs/1703.06211)] <!-- printed -->
+* [[DeformableNetV1](https://arxiv.org/abs/1703.06211)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1703.06211.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1703.06211/)]
     * Title: Deformable Convolutional Networks
     * Year: 17 Mar `2017`
     * Authors: Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi Li, Guodong Zhang, Han Hu, Yichen Wei
     * Abstract: Convolutional neural networks (CNNs) are inherently limited to model geometric transformations due to the fixed geometric structures in its building modules. In this work, we introduce two new modules to enhance the transformation modeling capacity of CNNs, namely, deformable convolution and deformable RoI pooling. Both are based on the idea of augmenting the spatial sampling locations in the modules with additional offsets and learning the offsets from target tasks, without additional supervision. The new modules can readily replace their plain counterparts in existing CNNs and can be easily trained end-to-end by standard back-propagation, giving rise to deformable convolutional networks. Extensive experiments validate the effectiveness of our approach on sophisticated vision tasks of object detection and semantic segmentation. The code would be released.
-* [[Deformable ConvNets v2](https://arxiv.org/abs/1811.11168)] <!-- printed -->
+* [[DeformableNetV2](https://arxiv.org/abs/1811.11168)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1811.11168.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1811.11168/)]
     * Title: Deformable ConvNets v2: More Deformable, Better Results
@@ -560,13 +565,18 @@ Overview:
 
 ## Research on Attention Mechanism
 
-* [[SENet](https://arxiv.org/abs/1709.01507)] <!-- printed -->
-    [[pdf](https://arxiv.org/pdf/1709.01507.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1709.01507/)]
-    * Title: Squeeze-and-Excitation Networks
-    * Year: 05 Sep `2017`
-    * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
-    * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at this https URL.
+### Survey
+
+* [[Attention Mechanisms in Computer Vision: A Survey](https://arxiv.org/abs/2111.07624)]
+    [[pdf](https://arxiv.org/pdf/2111.07624.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2111.07624/)]
+    * Title: Attention Mechanisms in Computer Vision: A Survey
+    * Year: 15 Nov `2021`
+    * Authors: Meng-Hao Guo, Tian-Xing Xu, Jiang-Jiang Liu, Zheng-Ning Liu, Peng-Tao Jiang, Tai-Jiang Mu, Song-Hai Zhang, Ralph R. Martin, Ming-Ming Cheng, Shi-Min Hu
+    * Abstract: Humans can naturally and effectively find salient regions in complex scenes. Motivated by this observation, attention mechanisms were introduced into computer vision with the aim of imitating this aspect of the human visual system. Such an attention mechanism can be regarded as a dynamic weight adjustment process based on features of the input image. Attention mechanisms have achieved great success in many visual tasks, including image classification, object detection, semantic segmentation, video understanding, image generation, 3D vision, multi-modal tasks and self-supervised learning. In this survey, we provide a comprehensive review of various attention mechanisms in computer vision and categorize them according to approach, such as channel attention, spatial attention, temporal attention and branch attention; a related repository this https URL is dedicated to collecting related work. We also suggest future directions for attention mechanism research.
+
+### Unknown
+
 * [[Gather-Excite](https://arxiv.org/abs/1810.12348)]
     [[pdf](https://arxiv.org/pdf/1810.12348.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1810.12348/)]
@@ -638,6 +648,44 @@ Overview:
     * Year: 05 Apr `2019`
     * Authors: Baosong Yang, Longyue Wang, Derek Wong, Lidia S. Chao, Zhaopeng Tu
     * Abstract: Self-attention networks (SANs) have drawn increasing interest due to their high parallelization in computation and flexibility in modeling dependencies. SANs can be further enhanced with multi-head attention by allowing the model to attend to information from different representation subspaces. In this work, we propose novel convolutional self-attention networks, which offer SANs the abilities to 1) strengthen dependencies among neighboring elements, and 2) model the interaction between features extracted by multiple attention heads. Experimental results of machine translation on different language pairs and model settings show that our approach outperforms both the strong Transformer baseline and other existing models on enhancing the locality of SANs. Comparing with prior studies, the proposed model is parameter free in terms of introducing no more parameters.
+* [[ConvNeXt](https://arxiv.org/abs/2201.03545)]
+    [[pdf](https://arxiv.org/pdf/2201.03545.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2201.03545/)]
+    * Title: A ConvNet for the 2020s
+    * Year: 10 Jan `2022`
+    * Authors: Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, Saining Xie
+    * Abstract: The "Roaring 20s" of visual recognition began with the introduction of Vision Transformers (ViTs), which quickly superseded ConvNets as the state-of-the-art image classification model. A vanilla ViT, on the other hand, faces difficulties when applied to general computer vision tasks such as object detection and semantic segmentation. It is the hierarchical Transformers (e.g., Swin Transformers) that reintroduced several ConvNet priors, making Transformers practically viable as a generic vision backbone and demonstrating remarkable performance on a wide variety of vision tasks. However, the effectiveness of such hybrid approaches is still largely credited to the intrinsic superiority of Transformers, rather than the inherent inductive biases of convolutions. In this work, we reexamine the design spaces and test the limits of what a pure ConvNet can achieve. We gradually "modernize" a standard ResNet toward the design of a vision Transformer, and discover several key components that contribute to the performance difference along the way. The outcome of this exploration is a family of pure ConvNet models dubbed ConvNeXt. Constructed entirely from standard ConvNet modules, ConvNeXts compete favorably with Transformers in terms of accuracy and scalability, achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, while maintaining the simplicity and efficiency of standard ConvNets.
+
+### Spatial Attention
+
+* DeformableNet
+* Vision Transformer
+* Point Cloud Transformer
+* Swin Transformer
+
+### (2022, SegNeXt) Channel Attention (count=3)
+
+* [[SENet](https://arxiv.org/abs/1709.01507)] <!-- printed -->
+    [[pdf](https://arxiv.org/pdf/1709.01507.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1709.01507/)]
+    * Title: Squeeze-and-Excitation Networks
+    * Year: 05 Sep `2017`
+    * Authors: Jie Hu, Li Shen, Samuel Albanie, Gang Sun, Enhua Wu
+    * Abstract: The central building block of convolutional neural networks (CNNs) is the convolution operator, which enables networks to construct informative features by fusing both spatial and channel-wise information within local receptive fields at each layer. A broad range of prior research has investigated the spatial component of this relationship, seeking to strengthen the representational power of a CNN by enhancing the quality of spatial encodings throughout its feature hierarchy. In this work, we focus instead on the channel relationship and propose a novel architectural unit, which we term the "Squeeze-and-Excitation" (SE) block, that adaptively recalibrates channel-wise feature responses by explicitly modelling interdependencies between channels. We show that these blocks can be stacked together to form SENet architectures that generalise extremely effectively across different datasets. We further demonstrate that SE blocks bring significant improvements in performance for existing state-of-the-art CNNs at slight additional computational cost. Squeeze-and-Excitation Networks formed the foundation of our ILSVRC 2017 classification submission which won first place and reduced the top-5 error to 2.251%, surpassing the winning entry of 2016 by a relative improvement of ~25%. Models and code are available at this https URL.
+* [[SCANet](https://arxiv.org/abs/1611.05594)]
+    [[pdf](https://arxiv.org/pdf/1611.05594.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1611.05594/)]
+    * Title: SCA-CNN: Spatial and Channel-wise Attention in Convolutional Networks for Image Captioning
+    * Year: 17 Nov `2016`
+    * Authors: Long Chen, Hanwang Zhang, Jun Xiao, Liqiang Nie, Jian Shao, Wei Liu, Tat-Seng Chua
+    * Abstract: Visual attention has been successfully applied in structural prediction tasks such as visual captioning and question answering. Existing visual attention models are generally spatial, i.e., the attention is modeled as spatial probabilities that re-weight the last conv-layer feature map of a CNN encoding an input image. However, we argue that such spatial attention does not necessarily conform to the attention mechanism --- a dynamic feature extractor that combines contextual fixations over time, as CNN features are naturally spatial, channel-wise and multi-layer. In this paper, we introduce a novel convolutional neural network dubbed SCA-CNN that incorporates Spatial and Channel-wise Attentions in a CNN. In the task of image captioning, SCA-CNN dynamically modulates the sentence generation context in multi-layer feature maps, encoding where (i.e., attentive spatial locations at multiple layers) and what (i.e., attentive channels) the visual attention is. We evaluate the proposed SCA-CNN architecture on three benchmark image captioning datasets: Flickr8K, Flickr30K, and MSCOCO. It is consistently observed that SCA-CNN significantly outperforms state-of-the-art visual attention-based image captioning methods.
+* [[ECANet](https://arxiv.org/abs/1910.03151)]
+    [[pdf](https://arxiv.org/pdf/1910.03151.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1910.03151/)]
+    * Title: ECA-Net: Efficient Channel Attention for Deep Convolutional Neural Networks
+    * Year: 08 Oct `2019`
+    * Authors: Qilong Wang, Banggu Wu, Pengfei Zhu, Peihua Li, Wangmeng Zuo, Qinghua Hu
+    * Abstract: Recently, channel attention mechanism has demonstrated to offer great potential in improving the performance of deep convolutional neural networks (CNNs). However, most existing methods dedicate to developing more sophisticated attention modules for achieving better performance, which inevitably increase model complexity. To overcome the paradox of performance and complexity trade-off, this paper proposes an Efficient Channel Attention (ECA) module, which only involves a handful of parameters while bringing clear performance gain. By dissecting the channel attention module in SENet, we empirically show avoiding dimensionality reduction is important for learning channel attention, and appropriate cross-channel interaction can preserve performance while significantly decreasing model complexity. Therefore, we propose a local cross-channel interaction strategy without dimensionality reduction, which can be efficiently implemented via $1D$ convolution. Furthermore, we develop a method to adaptively select kernel size of $1D$ convolution, determining coverage of local cross-channel interaction. The proposed ECA module is efficient yet effective, e.g., the parameters and computations of our modules against backbone of ResNet50 are 80 vs. 24.37M and 4.7e-4 GFLOPs vs. 3.86 GFLOPs, respectively, and the performance boost is more than 2% in terms of Top-1 accuracy. We extensively evaluate our ECA module on image classification, object detection and instance segmentation with backbones of ResNets and MobileNetV2. The experimental results show our module is more efficient while performing favorably against its counterparts.
 
 ## Light-Weight Networks
 
@@ -709,7 +757,7 @@ Overview:
     * Authors: Forrest N. Iandola, Song Han, Matthew W. Moskewicz, Khalid Ashraf, William J. Dally, Kurt Keutzer
     * Abstract: Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributed training. (2) Smaller DNNs require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy on FPGAs and other hardware with limited memory. To provide all of these advantages, we propose a small DNN architecture called SqueezeNet. SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. Additionally, with model compression techniques we are able to compress SqueezeNet to less than 0.5MB (510x smaller than AlexNet). The SqueezeNet architecture is available for download here: this https URL
     * Comments:
-        * (2017, MobileNetV1) Another small network is Squeezenet [12] which uses a bottleneck approach to design a very small network.
+        * > (2017, MobileNetV1) Another small network is Squeezenet [12] which uses a bottleneck approach to design a very small network.
 * [[Structured Transform Networks](https://arxiv.org/abs/1510.01722)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1510.01722.pdf)]
     [vanity]
@@ -1100,6 +1148,30 @@ Overview:
     * Authors: Hongzhou Lin, Stefanie Jegelka
     * Abstract: We demonstrate that a very deep ResNet with stacked modules with one neuron per hidden layer and ReLU activation functions can uniformly approximate any Lebesgue integrable function in $d$ dimensions, i.e. $\ell_1(\mathbb{R}^d)$. Because of the identity mapping inherent to ResNets, our network has alternating layers of dimension one and $d$. This stands in sharp contrast to fully connected networks, which are not universal approximators if their width is the input dimension $d$ [Lu et al, 2017; Hanin and Sellke, 2017]. Hence, our result implies an increase in representational power for narrow deep networks by the ResNet architecture.
 
+## Reparameterization
+
+* [[RepLKNet](https://arxiv.org/abs/2203.06717)]
+    [[pdf](https://arxiv.org/pdf/2203.06717.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2203.06717/)]
+    * Title: Scaling Up Your Kernels to 31x31: Revisiting Large Kernel Design in CNNs
+    * Year: 13 Mar `2022`
+    * Authors: Xiaohan Ding, Xiangyu Zhang, Yizhuang Zhou, Jungong Han, Guiguang Ding, Jian Sun
+    * Abstract: We revisit large kernel design in modern convolutional neural networks (CNNs). Inspired by recent advances in vision transformers (ViTs), in this paper, we demonstrate that using a few large convolutional kernels instead of a stack of small kernels could be a more powerful paradigm. We suggested five guidelines, e.g., applying re-parameterized large depth-wise convolutions, to design efficient high-performance large-kernel CNNs. Following the guidelines, we propose RepLKNet, a pure CNN architecture whose kernel size is as large as 31x31, in contrast to commonly used 3x3. RepLKNet greatly closes the performance gap between CNNs and ViTs, e.g., achieving comparable or superior results than Swin Transformer on ImageNet and a few typical downstream tasks, with lower latency. RepLKNet also shows nice scalability to big data and large models, obtaining 87.8% top-1 accuracy on ImageNet and 56.0% mIoU on ADE20K, which is very competitive among the state-of-the-arts with similar model sizes. Our study further reveals that, in contrast to small-kernel CNNs, large-kernel CNNs have much larger effective receptive fields and higher shape bias rather than texture bias. Code & models at this https URL.
+* [[RepMLP](https://arxiv.org/abs/2105.01883)]
+    [[pdf](https://arxiv.org/pdf/2105.01883.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2105.01883/)]
+    * Title: RepMLP: Re-parameterizing Convolutions into Fully-connected Layers for Image Recognition
+    * Year: 05 May `2021`
+    * Authors: Xiaohan Ding, Chunlong Xia, Xiangyu Zhang, Xiaojie Chu, Jungong Han, Guiguang Ding
+    * Abstract: We propose RepMLP, a multi-layer-perceptron-style neural network building block for image recognition, which is composed of a series of fully-connected (FC) layers. Compared to convolutional layers, FC layers are more efficient, better at modeling the long-range dependencies and positional patterns, but worse at capturing the local structures, hence usually less favored for image recognition. We propose a structural re-parameterization technique that adds local prior into an FC to make it powerful for image recognition. Specifically, we construct convolutional layers inside a RepMLP during training and merge them into the FC for inference. On CIFAR, a simple pure-MLP model shows performance very close to CNN. By inserting RepMLP in traditional CNN, we improve ResNets by 1.8% accuracy on ImageNet, 2.9% for face recognition, and 2.3% mIoU on Cityscapes with lower FLOPs. Our intriguing findings highlight that combining the global representational capacity and positional perception of FC with the local prior of convolution can improve the performance of neural network with faster speed on both the tasks with translation invariance (e.g., semantic segmentation) and those with aligned images and positional patterns (e.g., face recognition). The code and models are available at this https URL.
+* [[RepVGG](https://arxiv.org/abs/2101.03697)]
+    [[pdf](https://arxiv.org/pdf/2101.03697.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2101.03697/)]
+    * Title: RepVGG: Making VGG-style ConvNets Great Again
+    * Year: 11 Jan `2021`
+    * Authors: Xiaohan Ding, Xiangyu Zhang, Ningning Ma, Jungong Han, Guiguang Ding, Jian Sun
+    * Abstract: We present a simple but powerful architecture of convolutional neural network, which has a VGG-like inference-time body composed of nothing but a stack of 3x3 convolution and ReLU, while the training-time model has a multi-branch topology. Such decoupling of the training-time and inference-time architecture is realized by a structural re-parameterization technique so that the model is named RepVGG. On ImageNet, RepVGG reaches over 80% top-1 accuracy, which is the first time for a plain model, to the best of our knowledge. On NVIDIA 1080Ti GPU, RepVGG models run 83% faster than ResNet-50 or 101% faster than ResNet-101 with higher accuracy and show favorable accuracy-speed trade-off compared to the state-of-the-art models like EfficientNet and RegNet. The code and trained models are available at this https URL.
+
 ## Regularization Techniques
 
 * [[Dropout](https://arxiv.org/abs/1207.0580)]
@@ -1231,13 +1303,6 @@ Overview:
     * Year: 30 May `2019`
     * Authors: Ilija Radosavovic, Justin Johnson, Saining Xie, Wan-Yen Lo, Piotr Dollár
     * Abstract: Over the past several years progress in designing better neural network architectures for visual recognition has been substantial. To help sustain this rate of progress, in this work we propose to reexamine the methodology for comparing network architectures. In particular, we introduce a new comparison paradigm of distribution estimates, in which network design spaces are compared by applying statistical techniques to populations of sampled models, while controlling for confounding factors like network complexity. Compared to current methodologies of comparing point and curve estimates of model families, distribution estimates paint a more complete picture of the entire design landscape. As a case study, we examine design spaces used in neural architecture search (NAS). We find significant statistical differences between recent NAS design space variants that have been largely overlooked. Furthermore, our analysis reveals that the design spaces for standard model families like ResNeXt can be comparable to the more complex ones used in recent NAS work. We hope these insights into distribution analysis will enable more robust progress toward discovering better networks for visual recognition.
-* [ConvNeXt](https://arxiv.org/abs/2201.03545)
-    [[pdf](https://arxiv.org/pdf/2201.03545.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2201.03545/)]
-    * Title: A ConvNet for the 2020s
-    * Year: 10 Jan `2022`
-    * Authors: Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, Saining Xie
-    * Abstract: The "Roaring 20s" of visual recognition began with the introduction of Vision Transformers (ViTs), which quickly superseded ConvNets as the state-of-the-art image classification model. A vanilla ViT, on the other hand, faces difficulties when applied to general computer vision tasks such as object detection and semantic segmentation. It is the hierarchical Transformers (e.g., Swin Transformers) that reintroduced several ConvNet priors, making Transformers practically viable as a generic vision backbone and demonstrating remarkable performance on a wide variety of vision tasks. However, the effectiveness of such hybrid approaches is still largely credited to the intrinsic superiority of Transformers, rather than the inherent inductive biases of convolutions. In this work, we reexamine the design spaces and test the limits of what a pure ConvNet can achieve. We gradually "modernize" a standard ResNet toward the design of a vision Transformer, and discover several key components that contribute to the performance difference along the way. The outcome of this exploration is a family of pure ConvNet models dubbed ConvNeXt. Constructed entirely from standard ConvNet modules, ConvNeXts compete favorably with Transformers in terms of accuracy and scalability, achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, while maintaining the simplicity and efficiency of standard ConvNets.
 * [Flexible, high performance convolutional neural networks for image classification](https://dl.acm.org/doi/10.5555/2283516.2283603)
     * Title: Flexible, high performance convolutional neural networks for image classification
     * Year: 16 July `2011`

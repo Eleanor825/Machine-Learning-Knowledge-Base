@@ -9,7 +9,7 @@ count=85
 - [Superpixels (Learning Hierarchical Features for Scene Labeling, 2013)](#superpixels-learning-hierarchical-features-for-scene-labeling-2013)
 - [Superpixels (LRR, 2016) (2)](#superpixels-lrr-2016-2)
 - [Semantic Segmentation](#semantic-segmentation)
-  - [unclassified](#unclassified)
+  - [Unknown](#unknown-1)
   - [Patchwise Training (FCN, 2015) (5)](#patchwise-training-fcn-2015-5)
   - [Encoder-Decoder Architecture](#encoder-decoder-architecture)
   - [Increase feature resolution (Panoptic FPN, 2019) (4)](#increase-feature-resolution-panoptic-fpn-2019-4)
@@ -26,7 +26,11 @@ count=85
   - [Fully Connected CRFs (LRR, 2016)](#fully-connected-crfs-lrr-2016)
   - [Conditional Random Fields - Other](#conditional-random-fields---other)
   - [DeepLab Family](#deeplab-family)
-- [Transformer Architectures Applied to Segmentation](#transformer-architectures-applied-to-segmentation)
+- [Attention Machenism](#attention-machenism)
+  - [(2022, SegNeXt) (count=6)](#2022-segnext-count6)
+- [Transformer Architectures](#transformer-architectures)
+  - [(2022, SegNeXt) (count=8)](#2022-segnext-count8)
+  - [Others](#others)
 - [Instance Segmentation](#instance-segmentation)
 - [Multitask Learning (Panoptic Segmentation, 2018) (3)](#multitask-learning-panoptic-segmentation-2018-3)
 - [Panoptic Segmentation](#panoptic-segmentation)
@@ -111,8 +115,15 @@ count=85
 
 ## Semantic Segmentation
 
-### unclassified
+### Unknown
 
+* [[GFF](https://arxiv.org/abs/1904.01803)]
+    [[pdf](https://arxiv.org/pdf/1904.01803.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1904.01803/)]
+    * Title: GFF: Gated Fully Fusion for Semantic Segmentation
+    * Year: 03 Apr `2019`
+    * Authors: Xiangtai Li, Houlong Zhao, Lei Han, Yunhai Tong, Kuiyuan Yang
+    * Abstract: Semantic segmentation generates comprehensive understanding of scenes through densely predicting the category for each pixel. High-level features from Deep Convolutional Neural Networks already demonstrate their effectiveness in semantic segmentation tasks, however the coarse resolution of high-level features often leads to inferior results for small/thin objects where detailed information is important. It is natural to consider importing low level features to compensate for the lost detailed information in high-level features.Unfortunately, simply combining multi-level features suffers from the semantic gap among them. In this paper, we propose a new architecture, named Gated Fully Fusion (GFF), to selectively fuse features from multiple levels using gates in a fully connected way. Specifically, features at each level are enhanced by higher-level features with stronger semantics and lower-level features with more details, and gates are used to control the propagation of useful information which significantly reduces the noises during fusion. We achieve the state of the art results on four challenging scene parsing datasets including Cityscapes, Pascal Context, COCO-stuff and ADE20K.
 * [[Learning Rich Features from RGB-D Images for Object Detection and Segmentation](https://arxiv.org/abs/1407.5736)]
     [[pdf](https://arxiv.org/pdf/1407.5736.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1407.5736/)]
@@ -153,6 +164,13 @@ count=85
     * Authors: Changqian Yu, Changxin Gao, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang
     * Institutions: [National Key Laboratory of Science and Technology on Multispectral Information Processing, School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan, China], [The University of Adelaide, Australia], [The Chinese University of Hong Kong], [Tencent]
     * Abstract: The low-level details and high-level semantics are both essential to the semantic segmentation task. However, to speed up the model inference, current approaches almost always sacrifice the low-level details, which leads to a considerable accuracy decrease. We propose to treat these spatial details and categorical semantics separately to achieve high accuracy and high efficiency for realtime semantic segmentation. To this end, we propose an efficient and effective architecture with a good trade-off between speed and accuracy, termed Bilateral Segmentation Network (BiSeNet V2). This architecture involves: (i) a Detail Branch, with wide channels and shallow layers to capture low-level details and generate high-resolution feature representation; (ii) a Semantic Branch, with narrow channels and deep layers to obtain high-level semantic context. The Semantic Branch is lightweight due to reducing the channel capacity and a fast-downsampling strategy. Furthermore, we design a Guided Aggregation Layer to enhance mutual connections and fuse both types of feature representation. Besides, a booster training strategy is designed to improve the segmentation performance without any extra inference cost. Extensive quantitative and qualitative evaluations demonstrate that the proposed architecture performs favourably against a few state-of-the-art real-time semantic segmentation approaches. Specifically, for a 2,048x1,024 input, we achieve 72.6% Mean IoU on the Cityscapes test set with a speed of 156 FPS on one NVIDIA GeForce GTX 1080 Ti card, which is significantly faster than existing methods, yet we achieve better segmentation accuracy.
+* [[LinkNet](https://arxiv.org/abs/1707.03718)]
+    [[pdf](https://arxiv.org/pdf/1707.03718.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1707.03718/)]
+    * Title: LinkNet: Exploiting Encoder Representations for Efficient Semantic Segmentation
+    * Year: 14 Jun `2017`
+    * Authors: Abhishek Chaurasia, Eugenio Culurciello
+    * Abstract: Pixel-wise semantic segmentation for visual scene understanding not only needs to be accurate, but also efficient in order to find any use in real-time application. Existing algorithms even though are accurate but they do not focus on utilizing the parameters of neural network efficiently. As a result they are huge in terms of parameters and number of operations; hence slow too. In this paper, we propose a novel deep neural network architecture which allows it to learn without any significant increase in number of parameters. Our network uses only 11.5 million parameters and 21.2 GFLOPs for processing an image of resolution 3x640x360. It gives state-of-the-art performance on CamVid and comparable results on Cityscapes dataset. We also compare our networks processing time on NVIDIA GPU and embedded system device with existing state-of-the-art architectures for different image resolutions.
 
 ### Patchwise Training (FCN, 2015) (5)
 
@@ -213,6 +231,13 @@ count=85
     * Comments:
         * > (2016, RefineNet) The method Seg-Net [2] and U-Net [40] apply skip-connections in the deconvolution architecture to exploit the features from middle layers.
         * > (2021, PVT) Inspired by FCN, U-Net [37] is proposed for especially the medical image segmentation domain, which bridges the information flow between corresponding low-level and high-level feature maps with the same spatial sizes.
+* [[UNet++](https://arxiv.org/abs/1807.10165)]
+    [[pdf](https://arxiv.org/pdf/1807.10165.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1807.10165/)]
+    * Title: UNet++: A Nested U-Net Architecture for Medical Image Segmentation
+    * Year: 18 Jul `2018`
+    * Authors: Zongwei Zhou, Md Mahfuzur Rahman Siddiquee, Nima Tajbakhsh, Jianming Liang
+    * Abstract: In this paper, we present UNet++, a new, more powerful architecture for medical image segmentation. Our architecture is essentially a deeply-supervised encoder-decoder network where the encoder and decoder sub-networks are connected through a series of nested, dense skip pathways. The re-designed skip pathways aim at reducing the semantic gap between the feature maps of the encoder and decoder sub-networks. We argue that the optimizer would deal with an easier learning task when the feature maps from the decoder and encoder networks are semantically similar. We have evaluated UNet++ in comparison with U-Net and wide U-Net architectures across multiple medical image segmentation tasks: nodule segmentation in the low-dose CT scans of chest, nuclei segmentation in the microscopy images, liver segmentation in abdominal CT scans, and polyp segmentation in colonoscopy videos. Our experiments demonstrate that UNet++ with deep supervision achieves an average IoU gain of 3.9 and 3.4 points over U-Net and wide U-Net, respectively.
 * [[DeconvNet](https://arxiv.org/abs/1505.04366)]
     [[pdf](https://arxiv.org/pdf/1505.04366.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.04366/)]
@@ -255,6 +280,14 @@ count=85
         * > (2016, ENet) Inspired by probabilistic auto-encoders ranzato07 ; ngiam11 , encoder-decoder network architecture has been introduced in SegNet-basic badrinarayanan15basic , and further improved in SegNet badrinarayanan15 .
         * > (2016, ENet) SegNet is a very symmetric architecture, as the encoder is an exact mirror of the encoder.
         * > (2016, RefineNet) The method Seg-Net [2] and U-Net [40] apply skip-connections in the deconvolution architecture to exploit the features from middle layers.
+* [[SegNeXt](https://arxiv.org/abs/2209.08575)]
+    [[pdf](https://arxiv.org/pdf/2209.08575.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2209.08575/)]
+    * Title: SegNeXt: Rethinking Convolutional Attention Design for Semantic Segmentation
+    * Year: 18 Sep `2022`
+    * Authors: Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, Shi-Min Hu
+    * Institutions: [Tsinghua University], [Nankai University], [Fitten Tech, Beijing, China]
+    * Abstract: We present SegNeXt, a simple convolutional network architecture for semantic segmentation. Recent transformer-based models have dominated the field of semantic segmentation due to the efficiency of self-attention in encoding spatial information. In this paper, we show that convolutional attention is a more efficient and effective way to encode contextual information than the self-attention mechanism in transformers. By re-examining the characteristics owned by successful segmentation models, we discover several key components leading to the performance improvement of segmentation models. This motivates us to design a novel convolutional attention network that uses cheap convolutional operations. Without bells and whistles, our SegNeXt significantly improves the performance of previous state-of-the-art methods on popular benchmarks, including ADE20K, Cityscapes, COCO-Stuff, Pascal VOC, Pascal Context, and iSAID. Notably, SegNeXt outperforms EfficientNet-L2 w/ NAS-FPN and achieves 90.6% mIoU on the Pascal VOC 2012 test leaderboard using only 1/10 parameters of it. On average, SegNeXt achieves about 2.0% mIoU improvements compared to the state-of-the-art methods on the ADE20K datasets with the same or fewer computations. Code is available at this https URL (Jittor) and this https URL (Pytorch).
 * [[ENet](https://arxiv.org/abs/1606.02147)]
     [[pdf](https://arxiv.org/pdf/1606.02147.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1606.02147/)]
@@ -407,7 +440,7 @@ count=85
 
 * Fully Convolutional Networks for Semantic Segmentation
 * Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
-* [[Attention to Scale: Scale-aware Semantic Image Segmentation](https://arxiv.org/abs/1511.03339)]
+* [[Attention to Scale](https://arxiv.org/abs/1511.03339)]
     [[pdf](https://arxiv.org/pdf/1511.03339.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1511.03339/)]
     * Title: Attention to Scale: Scale-aware Semantic Image Segmentation
@@ -594,7 +627,7 @@ count=85
 
 ### DeepLab Family
 
-* [[DeepLabv1](https://arxiv.org/abs/1412.7062)] <!-- printed -->
+* [[DeepLabV1](https://arxiv.org/abs/1412.7062)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1412.7062.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1412.7062/)]
     * Title: Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs
@@ -620,14 +653,14 @@ count=85
         * > (2016, RefineNet) The method DeepLab recently proposed by Chen et al. [6] employs atrous (or dilated) convolutions to account for larger receptive fields without downscaling the image.
         * > (2017, ERFNet) The work in [8] (DeepLab2) combines a ResNet-101 with spatial pyramid pooling and CRF to reach state-of-the-art segmentation accuracy.
         * > (2018, ESPNetV1) An ASP module [3], shown in Fig. 3e, is built on the principle of split-transform-merge. The ASP module involves branching with each branch learning kernel at a different receptive field (using dilated convolutions).
-* [[DeepLabv3](https://arxiv.org/abs/1706.05587)] <!-- printed -->
+* [[DeepLabV3](https://arxiv.org/abs/1706.05587)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1706.05587.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1706.05587/)]
     * Title: Rethinking Atrous Convolution for Semantic Image Segmentation
     * Year: 17 Jun `2017`
     * Authors: Liang-Chieh Chen, George Papandreou, Florian Schroff, Hartwig Adam
     * Abstract: In this work, we revisit atrous convolution, a powerful tool to explicitly adjust filter's field-of-view as well as control the resolution of feature responses computed by Deep Convolutional Neural Networks, in the application of semantic image segmentation. To handle the problem of segmenting objects at multiple scales, we design modules which employ atrous convolution in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates. Furthermore, we propose to augment our previously proposed Atrous Spatial Pyramid Pooling module, which probes convolutional features at multiple scales, with image-level features encoding global context and further boost performance. We also elaborate on implementation details and share our experience on training our system. The proposed `DeepLabv3' system significantly improves over our previous DeepLab versions without DenseCRF post-processing and attains comparable performance with other state-of-art models on the PASCAL VOC 2012 semantic image segmentation benchmark.
-* [[DeepLabv3+](https://arxiv.org/abs/1802.02611)] <!-- printed -->
+* [[DeepLabV3+](https://arxiv.org/abs/1802.02611)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1802.02611.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1802.02611/)]
     * Title: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation
@@ -644,7 +677,52 @@ count=85
     * Authors: Chenxi Liu, Liang-Chieh Chen, Florian Schroff, Hartwig Adam, Wei Hua, Alan Yuille, Li Fei-Fei
     * Abstract: Recently, Neural Architecture Search (NAS) has successfully identified neural network architectures that exceed human designed ones on large-scale image classification. In this paper, we study NAS for semantic image segmentation. Existing works often focus on searching the repeatable cell structure, while hand-designing the outer network structure that controls the spatial resolution changes. This choice simplifies the search space, but becomes increasingly problematic for dense image prediction which exhibits a lot more network level architectural variations. Therefore, we propose to search the network level structure in addition to the cell level structure, which forms a hierarchical architecture search space. We present a network level search space that includes many popular designs, and develop a formulation that allows efficient gradient-based architecture search (3 P100 GPU days on Cityscapes images). We demonstrate the effectiveness of the proposed method on the challenging Cityscapes, PASCAL VOC 2012, and ADE20K datasets. Auto-DeepLab, our architecture searched specifically for semantic image segmentation, attains state-of-the-art performance without any ImageNet pretraining.
 
-## Transformer Architectures Applied to Segmentation
+## Attention Machenism
+
+### (2022, SegNeXt) (count=6)
+
+* [[DANet](https://ieeexplore.ieee.org/document/8953974)]
+    * Title: Dual Attention Network for Scene Segmentation
+    * Year: 09 January `2020`
+    * Author: Jun Fu
+    * Abstract: In this paper, we address the scene segmentation task by capturing rich contextual dependencies based on the self-attention mechanism. Unlike previous works that capture contexts by multi-scale features fusion, we propose a Dual Attention Networks (DANet) to adaptively integrate local features with their global dependencies. Specifically, we append two types of attention modules on top of traditional dilated FCN, which model the semantic interdependencies in spatial and channel dimensions respectively. The position attention module selectively aggregates the features at each position by a weighted sum of the features at all positions. Similar features would be related to each other regardless of their distances. Meanwhile, the channel attention module selectively emphasizes interdependent channel maps by integrating associated features among all channel maps. We sum the outputs of the two attention modules to further improve feature representation which contributes to more precise segmentation results. We achieve new state-of-the-art segmentation performance on three challenging scene segmentation datasets, i.e., Cityscapes, PASCAL Context and COCO Stuff dataset. In particular, a Mean IoU score of 81.5% on Cityscapes test set is achieved without using coarse data.
+* [[CCNet](https://arxiv.org/abs/1811.11721)]
+    [[pdf](https://arxiv.org/pdf/1811.11721.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1811.11721/)]
+    * Title: CCNet: Criss-Cross Attention for Semantic Segmentation
+    * Year: 28 Nov `2018`
+    * Authors: Zilong Huang, Xinggang Wang, Yunchao Wei, Lichao Huang, Humphrey Shi, Wenyu Liu, Thomas S. Huang
+    * Abstract: Contextual information is vital in visual understanding problems, such as semantic segmentation and object detection. We propose a Criss-Cross Network (CCNet) for obtaining full-image contextual information in a very effective and efficient way. Concretely, for each pixel, a novel criss-cross attention module harvests the contextual information of all the pixels on its criss-cross path. By taking a further recurrent operation, each pixel can finally capture the full-image dependencies. Besides, a category consistent loss is proposed to enforce the criss-cross attention module to produce more discriminative features. Overall, CCNet is with the following merits: 1) GPU memory friendly. Compared with the non-local block, the proposed recurrent criss-cross attention module requires 11x less GPU memory usage. 2) High computational efficiency. The recurrent criss-cross attention significantly reduces FLOPs by about 85% of the non-local block. 3) The state-of-the-art performance. We conduct extensive experiments on semantic segmentation benchmarks including Cityscapes, ADE20K, human parsing benchmark LIP, instance segmentation benchmark COCO, video segmentation benchmark CamVid. In particular, our CCNet achieves the mIoU scores of 81.9%, 45.76% and 55.47% on the Cityscapes test set, the ADE20K validation set and the LIP validation set respectively, which are the new state-of-the-art results. The source codes are available at \url{this https URL}.
+* [[OCNet](https://arxiv.org/abs/1809.00916)]
+    [[pdf](https://arxiv.org/pdf/1809.00916.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1809.00916/)]
+    * Title: OCNet: Object Context Network for Scene Parsing
+    * Year: 04 Sep `2018`
+    * Authors: Yuhui Yuan, Lang Huang, Jianyuan Guo, Chao Zhang, Xilin Chen, Jingdong Wang
+    * Abstract: In this paper, we address the semantic segmentation task with a new context aggregation scheme named \emph{object context}, which focuses on enhancing the role of object information. Motivated by the fact that the category of each pixel is inherited from the object it belongs to, we define the object context for each pixel as the set of pixels that belong to the same category as the given pixel in the image. We use a binary relation matrix to represent the relationship between all pixels, where the value one indicates the two selected pixels belong to the same category and zero otherwise. We propose to use a dense relation matrix to serve as a surrogate for the binary relation matrix. The dense relation matrix is capable to emphasize the contribution of object information as the relation scores tend to be larger on the object pixels than the other pixels. Considering that the dense relation matrix estimation requires quadratic computation overhead and memory consumption w.r.t. the input size, we propose an efficient interlaced sparse self-attention scheme to model the dense relations between any two of all pixels via the combination of two sparse relation matrices. To capture richer context information, we further combine our interlaced sparse self-attention scheme with the conventional multi-scale context schemes including pyramid pooling~\citep{zhao2017pyramid} and atrous spatial pyramid pooling~\citep{chen2018deeplab}. We empirically show the advantages of our approach with competitive performances on five challenging benchmarks including: Cityscapes, ADE20K, LIP, PASCAL-Context and COCO-Stuff
+* [[EMANet](https://arxiv.org/abs/1907.13426)]
+    [[pdf](https://arxiv.org/pdf/1907.13426.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1907.13426/)]
+    * Title: Expectation-Maximization Attention Networks for Semantic Segmentation
+    * Year: 31 Jul `2019`
+    * Authors: Xia Li, Zhisheng Zhong, Jianlong Wu, Yibo Yang, Zhouchen Lin, Hong Liu
+    * Abstract: Self-attention mechanism has been widely used for various tasks. It is designed to compute the representation of each position by a weighted sum of the features at all positions. Thus, it can capture long-range relations for computer vision tasks. However, it is computationally consuming. Since the attention maps are computed w.r.t all other positions. In this paper, we formulate the attention mechanism into an expectation-maximization manner and iteratively estimate a much more compact set of bases upon which the attention maps are computed. By a weighted summation upon these bases, the resulting representation is low-rank and deprecates noisy information from the input. The proposed Expectation-Maximization Attention (EMA) module is robust to the variance of input and is also friendly in memory and computation. Moreover, we set up the bases maintenance and normalization methods to stabilize its training procedure. We conduct extensive experiments on popular semantic segmentation benchmarks including PASCAL VOC, PASCAL Context and COCO Stuff, on which we set new records.
+* [[APCNet](https://ieeexplore.ieee.org/document/8954288)]
+    * Title: Adaptive Pyramid Context Network for Semantic Segmentation
+    * Year: 09 January `2020`
+    * Authors: Junjun He; Zhongying Deng; Lei Zhou; Yali Wang; Yu Qiao
+    * Abstract: Recent studies witnessed that context features can significantly improve the performance of deep semantic segmentation networks. Current context based segmentation methods differ with each other in how to construct context features and perform differently in practice. This paper firstly introduces three desirable properties of context features in segmentation task. Specially, we find that Global-guided Local Affinity (GLA) can play a vital role in constructing effective context features, while this property has been largely ignored in previous works. Based on this analysis, this paper proposes Adaptive Pyramid Context Network (APCNet) for semantic segmentation. APCNet adaptively constructs multi-scale contextual representations with multiple well-designed Adaptive Context Modules (ACMs). Specifically, each ACM leverages a global image representation as a guidance to estimate the local affinity coefficients for each sub-region, and then calculates a context vector with these affinities. We empirically evaluate our APCNet on three semantic segmentation and scene parsing datasets, including PASCAL VOC 2012, Pascal-Context, and ADE20K dataset. Experimental results show that APCNet achieves state-of-the-art performance on all three benchmarks, and obtains a new record 84.2% on PASCAL VOC 2012 test set without MS COCO pre-trained and any post-processing.
+* [[Context Encoding](https://arxiv.org/abs/1803.08904)]
+    [[pdf](https://arxiv.org/pdf/1803.08904.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1803.08904/)]
+    * Title: Context Encoding for Semantic Segmentation
+    * Year: 23 Mar `2018`
+    * Authors: Hang Zhang, Kristin Dana, Jianping Shi, Zhongyue Zhang, Xiaogang Wang, Ambrish Tyagi, Amit Agrawal
+    * Abstract: Recent work has made significant progress in improving spatial resolution for pixelwise labeling with Fully Convolutional Network (FCN) framework by employing Dilated/Atrous convolution, utilizing multi-scale features and refining boundaries. In this paper, we explore the impact of global contextual information in semantic segmentation by introducing the Context Encoding Module, which captures the semantic context of scenes and selectively highlights class-dependent featuremaps. The proposed Context Encoding Module significantly improves semantic segmentation results with only marginal extra computation cost over FCN. Our approach has achieved new state-of-the-art results 51.7% mIoU on PASCAL-Context, 85.9% mIoU on PASCAL VOC 2012. Our single model achieves a final score of 0.5567 on ADE20K test set, which surpass the winning entry of COCO-Place Challenge in 2017. In addition, we also explore how the Context Encoding Module can improve the feature representation of relatively shallow networks for the image classification on CIFAR-10 dataset. Our 14 layer network has achieved an error rate of 3.45%, which is comparable with state-of-the-art approaches with over 10 times more layers. The source code for the complete system are publicly available.
+
+## Transformer Architectures
+
+### (2022, SegNeXt) (count=8)
 
 * [[SETR](https://arxiv.org/abs/2012.15840)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/2012.15840.pdf)]
@@ -655,20 +733,6 @@ count=85
     * Abstract: Most recent semantic segmentation methods adopt a fully-convolutional network (FCN) with an encoder-decoder architecture. The encoder progressively reduces the spatial resolution and learns more abstract/semantic visual concepts with larger receptive fields. Since context modeling is critical for segmentation, the latest efforts have been focused on increasing the receptive field, through either dilated/atrous convolutions or inserting attention modules. However, the encoder-decoder based FCN architecture remains unchanged. In this paper, we aim to provide an alternative perspective by treating semantic segmentation as a sequence-to-sequence prediction task. Specifically, we deploy a pure transformer (ie, without convolution and resolution reduction) to encode an image as a sequence of patches. With the global context modeled in every layer of the transformer, this encoder can be combined with a simple decoder to provide a powerful segmentation model, termed SEgmentation TRansformer (SETR). Extensive experiments show that SETR achieves new state of the art on ADE20K (50.28% mIoU), Pascal Context (55.83% mIoU) and competitive results on Cityscapes. Particularly, we achieve the first position in the highly competitive ADE20K test server leaderboard on the day of submission.
     * Comments:
         * > (2022, Recent Advances) Zheng et al. (2021) introduced a sequence-to-sequence approach and replaced the conv-encoder with a pure transformer.
-* [[Vision Transformers for Dense Prediction](https://arxiv.org/abs/2103.13413)]
-    [[pdf](https://arxiv.org/pdf/2103.13413.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2103.13413/)]
-    * Title: Vision Transformers for Dense Prediction
-    * Year: 24 Mar `2021`
-    * Authors: René Ranftl, Alexey Bochkovskiy, Vladlen Koltun
-    * Abstract: We introduce dense vision transformers, an architecture that leverages vision transformers in place of convolutional networks as a backbone for dense prediction tasks. We assemble tokens from various stages of the vision transformer into image-like representations at various resolutions and progressively combine them into full-resolution predictions using a convolutional decoder. The transformer backbone processes representations at a constant and relatively high resolution and has a global receptive field at every stage. These properties allow the dense vision transformer to provide finer-grained and more globally coherent predictions when compared to fully-convolutional networks. Our experiments show that this architecture yields substantial improvements on dense prediction tasks, especially when a large amount of training data is available. For monocular depth estimation, we observe an improvement of up to 28% in relative performance when compared to a state-of-the-art fully-convolutional network. When applied to semantic segmentation, dense vision transformers set a new state of the art on ADE20K with 49.02% mIoU. We further show that the architecture can be fine-tuned on smaller datasets such as NYUv2, KITTI, and Pascal Context where it also sets the new state of the art. Our models are available at this https URL.
-* [Segmenter](https://arxiv.org/abs/2105.05633)
-    [[pdf](https://arxiv.org/pdf/2105.05633.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2105.05633/)]
-    * Title: Segmenter: Transformer for Semantic Segmentation
-    * Year: 12 May `2021`
-    * Authors: Robin Strudel, Ricardo Garcia, Ivan Laptev, Cordelia Schmid
-    * Abstract: Image segmentation is often ambiguous at the level of individual image patches and requires contextual information to reach label consensus. In this paper we introduce Segmenter, a transformer model for semantic segmentation. In contrast to convolution-based methods, our approach allows to model global context already at the first layer and throughout the network. We build on the recent Vision Transformer (ViT) and extend it to semantic segmentation. To do so, we rely on the output embeddings corresponding to image patches and obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder. We leverage models pre-trained for image classification and show that we can fine-tune them on moderate sized datasets available for semantic segmentation. The linear decoder allows to obtain excellent results already, but the performance can be further improved by a mask transformer generating class masks. We conduct an extensive ablation study to show the impact of the different parameters, in particular the performance is better for large models and small patch sizes. Segmenter attains excellent results for semantic segmentation. It outperforms the state of the art on both ADE20K and Pascal Context datasets and is competitive on Cityscapes.
 * [[SegFormer](https://arxiv.org/abs/2105.15203)]
     [[pdf](https://arxiv.org/pdf/2105.15203.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2105.15203/)]
@@ -678,6 +742,51 @@ count=85
     * Abstract: We present SegFormer, a simple, efficient yet powerful semantic segmentation framework which unifies Transformers with lightweight multilayer perception (MLP) decoders. SegFormer has two appealing features: 1) SegFormer comprises a novel hierarchically structured Transformer encoder which outputs multiscale features. It does not need positional encoding, thereby avoiding the interpolation of positional codes which leads to decreased performance when the testing resolution differs from training. 2) SegFormer avoids complex decoders. The proposed MLP decoder aggregates information from different layers, and thus combining both local attention and global attention to render powerful representations. We show that this simple and lightweight design is the key to efficient segmentation on Transformers. We scale our approach up to obtain a series of models from SegFormer-B0 to SegFormer-B5, reaching significantly better performance and efficiency than previous counterparts. For example, SegFormer-B4 achieves 50.3% mIoU on ADE20K with 64M parameters, being 5x smaller and 2.2% better than the previous best method. Our best model, SegFormer-B5, achieves 84.0% mIoU on Cityscapes validation set and shows excellent zero-shot robustness on Cityscapes-C. Code will be released at: this http URL.
     * Comments:
         * > (2022, Recent Advances) Xie et al. (2021) presented SegFormer, a simple yet powerful method with lightweight MLP decoders. An encoder is based on a hierarchical structure that gives multi-scale features and does not require any positional encoding scheme. SegFormer gets rid of complex decoders combining local attention and global attention to gender representation.
+* [[HRFormer](https://arxiv.org/abs/2110.09408)]
+    [[pdf](https://arxiv.org/pdf/2110.09408.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2110.09408/)]
+    * Title: HRFormer: High-Resolution Transformer for Dense Prediction
+    * Year: 18 Oct `2021`
+    * Authors: Yuhui Yuan, Rao Fu, Lang Huang, Weihong Lin, Chao Zhang, Xilin Chen, Jingdong Wang
+    * Abstract: We present a High-Resolution Transformer (HRFormer) that learns high-resolution representations for dense prediction tasks, in contrast to the original Vision Transformer that produces low-resolution representations and has high memory and computational cost. We take advantage of the multi-resolution parallel design introduced in high-resolution convolutional networks (HRNet), along with local-window self-attention that performs self-attention over small non-overlapping image windows, for improving the memory and computation efficiency. In addition, we introduce a convolution into the FFN to exchange information across the disconnected image windows. We demonstrate the effectiveness of the High-Resolution Transformer on both human pose estimation and semantic segmentation tasks, e.g., HRFormer outperforms Swin transformer by $1.3$ AP on COCO pose estimation with $50\%$ fewer parameters and $30\%$ fewer FLOPs. Code is available at: this https URL.
+* [[Segmenter](https://arxiv.org/abs/2105.05633)]
+    [[pdf](https://arxiv.org/pdf/2105.05633.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2105.05633/)]
+    * Title: Segmenter: Transformer for Semantic Segmentation
+    * Year: 12 May `2021`
+    * Authors: Robin Strudel, Ricardo Garcia, Ivan Laptev, Cordelia Schmid
+    * Abstract: Image segmentation is often ambiguous at the level of individual image patches and requires contextual information to reach label consensus. In this paper we introduce Segmenter, a transformer model for semantic segmentation. In contrast to convolution-based methods, our approach allows to model global context already at the first layer and throughout the network. We build on the recent Vision Transformer (ViT) and extend it to semantic segmentation. To do so, we rely on the output embeddings corresponding to image patches and obtain class labels from these embeddings with a point-wise linear decoder or a mask transformer decoder. We leverage models pre-trained for image classification and show that we can fine-tune them on moderate sized datasets available for semantic segmentation. The linear decoder allows to obtain excellent results already, but the performance can be further improved by a mask transformer generating class masks. We conduct an extensive ablation study to show the impact of the different parameters, in particular the performance is better for large models and small patch sizes. Segmenter attains excellent results for semantic segmentation. It outperforms the state of the art on both ADE20K and Pascal Context datasets and is competitive on Cityscapes.
+* [[DPT](https://arxiv.org/abs/2103.13413)]
+    [[pdf](https://arxiv.org/pdf/2103.13413.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2103.13413/)]
+    * Title: Vision Transformers for Dense Prediction
+    * Year: 24 Mar `2021`
+    * Authors: René Ranftl, Alexey Bochkovskiy, Vladlen Koltun
+    * Abstract: We introduce dense vision transformers, an architecture that leverages vision transformers in place of convolutional networks as a backbone for dense prediction tasks. We assemble tokens from various stages of the vision transformer into image-like representations at various resolutions and progressively combine them into full-resolution predictions using a convolutional decoder. The transformer backbone processes representations at a constant and relatively high resolution and has a global receptive field at every stage. These properties allow the dense vision transformer to provide finer-grained and more globally coherent predictions when compared to fully-convolutional networks. Our experiments show that this architecture yields substantial improvements on dense prediction tasks, especially when a large amount of training data is available. For monocular depth estimation, we observe an improvement of up to 28% in relative performance when compared to a state-of-the-art fully-convolutional network. When applied to semantic segmentation, dense vision transformers set a new state of the art on ADE20K with 49.02% mIoU. We further show that the architecture can be fine-tuned on smaller datasets such as NYUv2, KITTI, and Pascal Context where it also sets the new state of the art. Our models are available at this https URL.
+* [[Video K-Net](https://arxiv.org/abs/2204.04656)]
+    [[pdf](https://arxiv.org/pdf/2204.04656.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2204.04656/)]
+    * Title: Video K-Net: A Simple, Strong, and Unified Baseline for Video Segmentation
+    * Year: 10 Apr `2022`
+    * Authors: Xiangtai Li, Wenwei Zhang, Jiangmiao Pang, Kai Chen, Guangliang Cheng, Yunhai Tong, Chen Change Loy
+    * Abstract: This paper presents Video K-Net, a simple, strong, and unified framework for fully end-to-end video panoptic segmentation. The method is built upon K-Net, a method that unifies image segmentation via a group of learnable kernels. We observe that these learnable kernels from K-Net, which encode object appearances and contexts, can naturally associate identical instances across video frames. Motivated by this observation, Video K-Net learns to simultaneously segment and track "things" and "stuff" in a video with simple kernel-based appearance modeling and cross-temporal kernel interaction. Despite the simplicity, it achieves state-of-the-art video panoptic segmentation results on Citscapes-VPS, KITTI-STEP, and VIPSeg without bells and whistles. In particular, on KITTI-STEP, the simple method can boost almost 12\% relative improvements over previous methods. On VIPSeg, Video K-Net boosts almost 15\% relative improvements and results in 39.8 % VPQ. We also validate its generalization on video semantic segmentation, where we boost various baselines by 2\% on the VSPW dataset. Moreover, we extend K-Net into clip-level video framework for video instance segmentation, where we obtain 40.5% mAP for ResNet50 backbone and 54.1% mAP for Swin-base on YouTube-2019 validation set. We hope this simple, yet effective method can serve as a new, flexible baseline in unified video segmentation design. Both code and models are released at this https URL.
+* [[MaskFormer](https://arxiv.org/abs/2107.06278)]
+    [[pdf](https://arxiv.org/pdf/2107.06278.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2107.06278/)]
+    * Title: Per-Pixel Classification is Not All You Need for Semantic Segmentation
+    * Year: 13 Jul `2021`
+    * Authors: Bowen Cheng, Alexander G. Schwing, Alexander Kirillov
+    * Abstract: Modern approaches typically formulate semantic segmentation as a per-pixel classification task, while instance-level segmentation is handled with an alternative mask classification. Our key insight: mask classification is sufficiently general to solve both semantic- and instance-level segmentation tasks in a unified manner using the exact same model, loss, and training procedure. Following this observation, we propose MaskFormer, a simple mask classification model which predicts a set of binary masks, each associated with a single global class label prediction. Overall, the proposed mask classification-based method simplifies the landscape of effective approaches to semantic and panoptic segmentation tasks and shows excellent empirical results. In particular, we observe that MaskFormer outperforms per-pixel classification baselines when the number of classes is large. Our mask classification-based method outperforms both current state-of-the-art semantic (55.6 mIoU on ADE20K) and panoptic segmentation (52.7 PQ on COCO) models.
+* [[Mask2Former](https://arxiv.org/abs/2112.01527)]
+    [[pdf](https://arxiv.org/pdf/2112.01527.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2112.01527/)]
+    * Title: Masked-attention Mask Transformer for Universal Image Segmentation
+    * Year: 02 Dec `2021`
+    * Authors: Bowen Cheng, Ishan Misra, Alexander G. Schwing, Alexander Kirillov, Rohit Girdhar
+    * Abstract: Image segmentation is about grouping pixels with different semantics, e.g., category or instance membership, where each choice of semantics defines a task. While only the semantics of each task differ, current research focuses on designing specialized architectures for each task. We present Masked-attention Mask Transformer (Mask2Former), a new architecture capable of addressing any image segmentation task (panoptic, instance or semantic). Its key components include masked attention, which extracts localized features by constraining cross-attention within predicted mask regions. In addition to reducing the research effort by at least three times, it outperforms the best specialized architectures by a significant margin on four popular datasets. Most notably, Mask2Former sets a new state-of-the-art for panoptic segmentation (57.8 PQ on COCO), instance segmentation (50.1 AP on COCO) and semantic segmentation (57.7 mIoU on ADE20K).
+
+### Others
+
 * [[Fully Transformer Networks for Semantic Image Segmentation](https://arxiv.org/abs/2106.04108)]
     [[pdf](https://arxiv.org/pdf/2106.04108.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2106.04108/)]
@@ -694,6 +803,13 @@ count=85
     * Year: 09 Apr `2019`
     * Authors: Linwei Ye, Mrigank Rochan, Zhi Liu, Yang Wang
     * Abstract: We consider the problem of referring image segmentation. Given an input image and a natural language expression, the goal is to segment the object referred by the language expression in the image. Existing works in this area treat the language expression and the input image separately in their representations. They do not sufficiently capture long-range correlations between these two modalities. In this paper, we propose a cross-modal self-attention (CMSA) module that effectively captures the long-range dependencies between linguistic and visual features. Our model can adaptively focus on informative words in the referring expression and important regions in the input image. In addition, we propose a gated multi-level fusion module to selectively integrate self-attentive cross-modal features corresponding to different levels in the image. This module controls the information flow of features at different levels. We validate the proposed approach on four evaluation datasets. Our proposed approach consistently outperforms existing state-of-the-art methods.
+* [[OCRNet](https://arxiv.org/abs/1909.11065)]
+    [[pdf](https://arxiv.org/pdf/1909.11065.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1909.11065/)]
+    * Title: Segmentation Transformer: Object-Contextual Representations for Semantic Segmentation
+    * Year: 24 Sep `2019`
+    * Authors: Yuhui Yuan, Xiaokang Chen, Xilin Chen, Jingdong Wang
+    * Abstract: In this paper, we address the semantic segmentation problem with a focus on the context aggregation strategy. Our motivation is that the label of a pixel is the category of the object that the pixel belongs to. We present a simple yet effective approach, object-contextual representations, characterizing a pixel by exploiting the representation of the corresponding object class. First, we learn object regions under the supervision of ground-truth segmentation. Second, we compute the object region representation by aggregating the representations of the pixels lying in the object region. Last, % the representation similarity we compute the relation between each pixel and each object region and augment the representation of each pixel with the object-contextual representation which is a weighted aggregation of all the object region representations according to their relations with the pixel. We empirically demonstrate that the proposed approach achieves competitive performance on various challenging semantic segmentation benchmarks: Cityscapes, ADE20K, LIP, PASCAL-Context, and COCO-Stuff. Cityscapes, ADE20K, LIP, PASCAL-Context, and COCO-Stuff. Our submission "HRNet + OCR + SegFix" achieves 1-st place on the Cityscapes leaderboard by the time of submission. Code is available at: this https URL and this https URL. We rephrase the object-contextual representation scheme using the Transformer encoder-decoder framework. The details are presented in~Section3.3.
 
 ## Instance Segmentation
 
