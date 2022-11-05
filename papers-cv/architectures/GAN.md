@@ -9,17 +9,18 @@ count=48
 - [Variational Autoencoder Related](#variational-autoencoder-related)
 - [Wasserstein GAN Related](#wasserstein-gan-related)
 - [Auto-Regressive Generative Model](#auto-regressive-generative-model)
-- [Unclassified](#unclassified)
 - [Adversarial Learning (EfficientNetV2, 2021)](#adversarial-learning-efficientnetv2-2021)
 - [Diffusion Models](#diffusion-models)
 - [Text-to-Image Models](#text-to-image-models)
+- [Unclassified](#unclassified)
 
 ----------------------------------------------------------------------------------------------------
 
 ## Basics
 
-* [[GAN](https://arxiv.org/abs/1406.2661)]
+* [[Generative Adversarial Networks](https://arxiv.org/abs/1406.2661)]
     [[pdf](https://arxiv.org/pdf/1406.2661.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1406.2661/)]
     * Title: Generative Adversarial Networks
     * Year: 10 Jun `2014`
     * Authors: Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio
@@ -174,6 +175,32 @@ count=48
     * Authors: Aaron van den Oord, Nal Kalchbrenner, Koray Kavukcuoglu
     * Abstract: Modeling the distribution of natural images is a landmark problem in unsupervised learning. This task requires an image model that is at once expressive, tractable and scalable. We present a deep neural network that sequentially predicts the pixels in an image along the two spatial dimensions. Our method models the discrete probability of the raw pixel values and encodes the complete set of dependencies in the image. Architectural novelties include fast two-dimensional recurrent layers and an effective use of residual connections in deep recurrent networks. We achieve log-likelihood scores on natural images that are considerably better than the previous state of the art. Our main results also provide benchmarks on the diverse ImageNet dataset. Samples generated from the model appear crisp, varied and globally coherent.
 
+## Adversarial Learning (EfficientNetV2, 2021)
+
+* [PDA](https://arxiv.org/abs/1909.04839)
+    * Title: PDA: Progressive Data Augmentation for General Robustness of Deep Neural Networks
+    * Year: 11 Sep `2019`
+    * Authors: Hang Yu, Aishan Liu, Xianglong Liu, Gengchao Li, Ping Luo, Ran Cheng, Jichen Yang, Chongzhi Zhang
+    * Abstract: Adversarial images are designed to mislead deep neural networks (DNNs), attracting great attention in recent years. Although several defense strategies achieved encouraging robustness against adversarial samples, most of them fail to improve the robustness on common corruptions such as noise, blur, and weather/digital effects (e.g. frost, pixelate). To address this problem, we propose a simple yet effective method, named Progressive Data Augmentation (PDA), which enables general robustness of DNNs by progressively injecting diverse adversarial noises during training. In other words, DNNs trained with PDA are able to obtain more robustness against both adversarial attacks as well as common corruptions than the recent state-of-the-art methods. We also find that PDA is more efficient than prior arts and able to prevent accuracy drop on clean samples without being attacked. Furthermore, we theoretically show that PDA can control the perturbation bound and guarantee better generalization ability than existing work. Extensive experiments on many benchmarks such as CIFAR-10, SVHN, and ImageNet demonstrate that PDA significantly outperforms its counterparts in various experimental setups.
+
+## Diffusion Models
+
+* [[Diffusion-GAN: Training GANs with Diffusion](https://arxiv.org/abs/2206.02262)]
+    [[pdf](https://arxiv.org/pdf/2206.02262.pdf)]
+    * Title: Diffusion-GAN: Training GANs with Diffusion
+    * Year: 05 Jun `2022`
+    * Authors: Zhendong Wang, Huangjie Zheng, Pengcheng He, Weizhu Chen, Mingyuan Zhou
+    * Abstract: Generative adversarial networks (GANs) are challenging to train stably, and a promising remedy of injecting instance noise into the discriminator input has not been very effective in practice. In this paper, we propose Diffusion-GAN, a novel GAN framework that leverages a forward diffusion chain to generate Gaussian-mixture distributed instance noise. Diffusion-GAN consists of three components, including an adaptive diffusion process, a diffusion timestep-dependent discriminator, and a generator. Both the observed and generated data are diffused by the same adaptive diffusion process. At each diffusion timestep, there is a different noise-to-data ratio and the timestep-dependent discriminator learns to distinguish the diffused real data from the diffused generated data. The generator learns from the discriminator's feedback by backpropagating through the forward diffusion chain, whose length is adaptively adjusted to balance the noise and data levels. We theoretically show that the discriminator's timestep-dependent strategy gives consistent and helpful guidance to the generator, enabling it to match the true data distribution. We demonstrate the advantages of Diffusion-GAN over strong GAN baselines on various datasets, showing that it can produce more realistic images with higher stability and data efficiency than state-of-the-art GANs.
+
+## Text-to-Image Models
+
+* [[Generative Adversarial Text to Image Synthesis](https://arxiv.org/abs/1605.05396)]
+    [[pdf](https://arxiv.org/pdf/1605.05396.pdf)]
+    * Title: Generative Adversarial Text to Image Synthesis
+    * Year: 17 May `2016`
+    * Authors: Scott Reed, Zeynep Akata, Xinchen Yan, Lajanugen Logeswaran, Bernt Schiele, Honglak Lee
+    * Abstract: Automatic synthesis of realistic images from text would be interesting and useful, but current AI systems are still far from this goal. However, in recent years generic and powerful recurrent neural network architectures have been developed to learn discriminative text feature representations. Meanwhile, deep convolutional generative adversarial networks (GANs) have begun to generate highly compelling images of specific categories, such as faces, album covers, and room interiors. In this work, we develop a novel deep architecture and GAN formulation to effectively bridge these advances in text and image model- ing, translating visual concepts from characters to pixels. We demonstrate the capability of our model to generate plausible images of birds and flowers from detailed text descriptions.
+
 ## Unclassified
 
 * [[Alias-Free Generative Adversarial Networks](https://arxiv.org/abs/2106.12423)]
@@ -299,29 +326,3 @@ count=48
     * Year: 26 Aug `2015`
     * Authors: Leon A. Gatys, Alexander S. Ecker, Matthias Bethge
     * Abstract: In fine art, especially painting, humans have mastered the skill to create unique visual experiences through composing a complex interplay between the content and style of an image. Thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities. However, in other key areas of visual perception such as object and face recognition near-human performance was recently demonstrated by a class of biologically inspired vision models called Deep Neural Networks. Here we introduce an artificial system based on a Deep Neural Network that creates artistic images of high perceptual quality. The system uses neural representations to separate and recombine content and style of arbitrary images, providing a neural algorithm for the creation of artistic images. Moreover, in light of the striking similarities between performance-optimised artificial neural networks and biological vision, our work offers a path forward to an algorithmic understanding of how humans create and perceive artistic imagery.
-
-## Adversarial Learning (EfficientNetV2, 2021)
-
-* [PDA](https://arxiv.org/abs/1909.04839)
-    * Title: PDA: Progressive Data Augmentation for General Robustness of Deep Neural Networks
-    * Year: 11 Sep `2019`
-    * Authors: Hang Yu, Aishan Liu, Xianglong Liu, Gengchao Li, Ping Luo, Ran Cheng, Jichen Yang, Chongzhi Zhang
-    * Abstract: Adversarial images are designed to mislead deep neural networks (DNNs), attracting great attention in recent years. Although several defense strategies achieved encouraging robustness against adversarial samples, most of them fail to improve the robustness on common corruptions such as noise, blur, and weather/digital effects (e.g. frost, pixelate). To address this problem, we propose a simple yet effective method, named Progressive Data Augmentation (PDA), which enables general robustness of DNNs by progressively injecting diverse adversarial noises during training. In other words, DNNs trained with PDA are able to obtain more robustness against both adversarial attacks as well as common corruptions than the recent state-of-the-art methods. We also find that PDA is more efficient than prior arts and able to prevent accuracy drop on clean samples without being attacked. Furthermore, we theoretically show that PDA can control the perturbation bound and guarantee better generalization ability than existing work. Extensive experiments on many benchmarks such as CIFAR-10, SVHN, and ImageNet demonstrate that PDA significantly outperforms its counterparts in various experimental setups.
-
-## Diffusion Models
-
-* [[Diffusion-GAN: Training GANs with Diffusion](https://arxiv.org/abs/2206.02262)]
-    [[pdf](https://arxiv.org/pdf/2206.02262.pdf)]
-    * Title: Diffusion-GAN: Training GANs with Diffusion
-    * Year: 05 Jun `2022`
-    * Authors: Zhendong Wang, Huangjie Zheng, Pengcheng He, Weizhu Chen, Mingyuan Zhou
-    * Abstract: Generative adversarial networks (GANs) are challenging to train stably, and a promising remedy of injecting instance noise into the discriminator input has not been very effective in practice. In this paper, we propose Diffusion-GAN, a novel GAN framework that leverages a forward diffusion chain to generate Gaussian-mixture distributed instance noise. Diffusion-GAN consists of three components, including an adaptive diffusion process, a diffusion timestep-dependent discriminator, and a generator. Both the observed and generated data are diffused by the same adaptive diffusion process. At each diffusion timestep, there is a different noise-to-data ratio and the timestep-dependent discriminator learns to distinguish the diffused real data from the diffused generated data. The generator learns from the discriminator's feedback by backpropagating through the forward diffusion chain, whose length is adaptively adjusted to balance the noise and data levels. We theoretically show that the discriminator's timestep-dependent strategy gives consistent and helpful guidance to the generator, enabling it to match the true data distribution. We demonstrate the advantages of Diffusion-GAN over strong GAN baselines on various datasets, showing that it can produce more realistic images with higher stability and data efficiency than state-of-the-art GANs.
-
-## Text-to-Image Models
-
-* [[Generative Adversarial Text to Image Synthesis](https://arxiv.org/abs/1605.05396)]
-    [[pdf](https://arxiv.org/pdf/1605.05396.pdf)]
-    * Title: Generative Adversarial Text to Image Synthesis
-    * Year: 17 May `2016`
-    * Authors: Scott Reed, Zeynep Akata, Xinchen Yan, Lajanugen Logeswaran, Bernt Schiele, Honglak Lee
-    * Abstract: Automatic synthesis of realistic images from text would be interesting and useful, but current AI systems are still far from this goal. However, in recent years generic and powerful recurrent neural network architectures have been developed to learn discriminative text feature representations. Meanwhile, deep convolutional generative adversarial networks (GANs) have begun to generate highly compelling images of specific categories, such as faces, album covers, and room interiors. In this work, we develop a novel deep architecture and GAN formulation to effectively bridge these advances in text and image model- ing, translating visual concepts from characters to pixels. We demonstrate the capability of our model to generate plausible images of birds and flowers from detailed text descriptions.

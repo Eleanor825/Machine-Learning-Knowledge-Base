@@ -1,9 +1,0 @@
-__pycache__
-.DS_Store
-.vscode
-datasets
-# virtual environment
-env
-old-repo
-*.tex
-*.pdf

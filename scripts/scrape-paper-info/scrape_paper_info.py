@@ -50,48 +50,44 @@ def scrape_single(url: str):
     return string
 
 
-def main(url_list, src_filepath, dst_filepath):
+def main(url_lists, src_filepath, dst_filepath):
     """
     Arguments:
-        url_list (list): a list of urls to be scrapped.
+        url_lists (dict): five lists of urls to be scrapped.
         src_filepath (str):
-        dst_filepath (str): will be replaced to "scripts/scrape-paper-info/temp.md"
-            if url_list is not None.
+        dst_filepath (str): will be replaced with temp files if url_lists is not None.
     """
-    if url_list is None or len(url_list) == 0:
-        print(f"[INFO] Argument `url_list` not provided. Extracting urls from {src_filepath}.")
-        url_list = get_all_urls(src_filepath)
+    if url_lists is None:
+        print(f"[INFO] Argument `url_lists` not provided. Extracting urls from {src_filepath}.")
+        url_lists = get_all_urls(src_filepath)
     else:
-        assert type(url_list) == list and len(url_list)
+        assert type(url_lists) == dict, type(url_list)
         print(f"[INFO] Argument `dst_filepath` suppressed. Using temp.md.")
-        dst_filepath = "scripts/scrape-paper-info/temp.md"
-    with open(dst_filepath, mode='w', encoding='utf8') as f:
-        print(f"[INFO] {len(url_list)} papers in total.")
-        for url in url_list:
-            print(f"[INFO] Scraping {url}")
-            f.write(scrape_single(url))
-        print(f"[INFO] All results saved to {dst_filepath}.")
+    for group in url_lists:
+        print(f"[INFO] Processing {group}." + (
+            " Nothing given." if len(url_lists[group]) == 0 else f" {len(url_lists[group])} urls found."))
+        dst_filepath = f"scripts/scrape-paper-info/temp_{group}.md"
+        with open(dst_filepath, mode='w', encoding='utf8') as f:
+            for url in url_lists[group]:
+                print(f"[INFO] Scraping {url}")
+                f.write(scrape_single(url))
+    print(f"[INFO] Process terminated.")
 
 
 if __name__ == "__main__":
-    main(
-        url_list=[
-            "https://arxiv.org/abs/2007.05779",
-            "https://arxiv.org/abs/1809.04184",
-            "https://arxiv.org/abs/1805.08974",
-            "https://arxiv.org/abs/1707.07012",
-            "https://arxiv.org/abs/1904.03107",
-            "https://arxiv.org/abs/1804.09541",
-            "https://arxiv.org/abs/1901.11117",
-            "https://arxiv.org/abs/1810.12348",
-            "https://arxiv.org/abs/1810.11579",
-            "https://arxiv.org/abs/1807.06521",
-            "https://arxiv.org/abs/1803.02155",  # Self-attention with relative position representations
-            "https://arxiv.org/abs/1807.06514",
-            "https://arxiv.org/abs/1807.03247",
-            "https://arxiv.org/abs/1809.04281",  # Music Transformer
-            "https://arxiv.org/abs/1805.08819",  # Learning what and where to attend
+    main(url_lists={
+        'C': [
         ],
+        'D': [
+        ],
+        'S': [
+        ],
+        'T': [
+        ],
+        'G': [
+            "https://arxiv.org/abs/1406.2661",
+        ],
+    },
         src_filepath="papers-cv/tasks/detection_2D.md",
         dst_filepath="scripts/scrape-paper-info/raw_detection_2D.md",
     )

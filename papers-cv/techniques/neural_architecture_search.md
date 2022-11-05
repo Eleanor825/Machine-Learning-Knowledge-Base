@@ -1,6 +1,21 @@
-# [Papers][Vision] Network Architecture Search (NAS)
+# [Papers][Vision] Network Architecture Search (NAS) <!-- omit in toc -->
 
-count: 9
+count=13
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Survey](#survey)
+- [Architecture Search (2018, MobileNetV2) (count=4)](#architecture-search-2018-mobilenetv2-count4)
+- [Reinforcement Learning Based (MobileNetV3, 2019) (5)](#reinforcement-learning-based-mobilenetv3-2019-5)
+- [Block-Level Hierarchical Search (MobileNetV3, 2019) (1)](#block-level-hierarchical-search-mobilenetv3-2019-1)
+- [Differentiable Architecture Search Frameworks (MobileNetV3, 2019) (3)](#differentiable-architecture-search-frameworks-mobilenetv3-2019-3)
+- [Network Simplification Algorithms (MobileNetV3, 2019) (3)](#network-simplification-algorithms-mobilenetv3-2019-3)
+- [(2019, EfficientNetV1)](#2019-efficientnetv1)
+- [Improving inference efficiency (EfficientNetV2, 2021)](#improving-inference-efficiency-efficientnetv2-2021)
+- [Unknown](#unknown)
+
+----------------------------------------------------------------------------------------------------
 
 ## Survey
 
@@ -14,7 +29,9 @@ count: 9
 
 > (2018, MobileNetV2) Recently, [22, 23, 24, 25], opened up a new direction of bringing optimization methods including genetic algorithms and reinforcement learning to architectural search. However one drawback is that the resulting networks end up very complex.
 
-* [NASNet](https://arxiv.org/abs/1707.07012)
+* [[NASNet](https://arxiv.org/abs/1707.07012)]
+    [[pdf](https://arxiv.org/pdf/1707.07012.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1707.07012/)]
     * Title: Learning Transferable Architectures for Scalable Image Recognition
     * Year: 21 Jul `2017`
     * Authors: Barret Zoph, Vijay Vasudevan, Jonathon Shlens, Quoc V. Le
@@ -96,3 +113,13 @@ count: 9
     * Authors: Bichen Wu, Xiaoliang Dai, Peizhao Zhang, Yanghan Wang, Fei Sun, Yiming Wu, Yuandong Tian, Peter Vajda, Yangqing Jia, Kurt Keutzer
     * Abstract: Designing accurate and efficient ConvNets for mobile devices is challenging because the design space is combinatorially large. Due to this, previous neural architecture search (NAS) methods are computationally expensive. ConvNet architecture optimality depends on factors such as input resolution and target devices. However, existing approaches are too expensive for case-by-case redesigns. Also, previous work focuses primarily on reducing FLOPs, but FLOP count does not always reflect actual latency. To address these, we propose a differentiable neural architecture search (DNAS) framework that uses gradient-based methods to optimize ConvNet architectures, avoiding enumerating and training individual architectures separately as in previous methods. FBNets, a family of models discovered by DNAS surpass state-of-the-art models both designed manually and generated automatically. FBNet-B achieves 74.1% top-1 accuracy on ImageNet with 295M FLOPs and 23.1 ms latency on a Samsung S8 phone, 2.4x smaller and 1.5x faster than MobileNetV2-1.3 with similar accuracy. Despite higher accuracy and lower latency than MnasNet, we estimate FBNet-B's search cost is 420x smaller than MnasNet's, at only 216 GPU-hours. Searched for different resolutions and channel sizes, FBNets achieve 1.5% to 6.4% higher accuracy than MobileNetV2. The smallest FBNet achieves 50.2% accuracy and 2.9 ms latency (345 frames per second) on a Samsung S8. Over a Samsung-optimized FBNet, the iPhone-X-optimized model achieves a 1.4x speedup on an iPhone X.
 * Searching for Fast Model Families on Datacenter Accelerators (See CNN.md)
+
+## Unknown
+
+* [[Searching for Efficient Multi-Scale Architectures for Dense Image Prediction](https://arxiv.org/abs/1809.04184)]
+    [[pdf](https://arxiv.org/pdf/1809.04184.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1809.04184/)]
+    * Title: Searching for Efficient Multi-Scale Architectures for Dense Image Prediction
+    * Year: 11 Sep `2018`
+    * Authors: Liang-Chieh Chen, Maxwell D. Collins, Yukun Zhu, George Papandreou, Barret Zoph, Florian Schroff, Hartwig Adam, Jonathon Shlens
+    * Abstract: The design of neural network architectures is an important component for achieving state-of-the-art performance with machine learning systems across a broad array of tasks. Much work has endeavored to design and build architectures automatically through clever construction of a search space paired with simple learning algorithms. Recent progress has demonstrated that such meta-learning methods may exceed scalable human-invented architectures on image classification tasks. An open question is the degree to which such methods may generalize to new domains. In this work we explore the construction of meta-learning techniques for dense image prediction focused on the tasks of scene parsing, person-part segmentation, and semantic image segmentation. Constructing viable search spaces in this domain is challenging because of the multi-scale representation of visual information and the necessity to operate on high resolution imagery. Based on a survey of techniques in dense image prediction, we construct a recursive search space and demonstrate that even with efficient random search, we can identify architectures that outperform human-invented architectures and achieve state-of-the-art performance on three dense prediction tasks including 82.7\% on Cityscapes (street scene parsing), 71.3\% on PASCAL-Person-Part (person-part segmentation), and 87.9\% on PASCAL VOC 2012 (semantic image segmentation). Additionally, the resulting architecture is more computationally efficient, requiring half the parameters and half the computational cost as previous state of the art systems.
