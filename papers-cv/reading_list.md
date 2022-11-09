@@ -72,7 +72,7 @@
 * 2022.10.25 Tue [DET]: CoupleNet
 * 2022.10.26 Wed [SEG]: RefineNet
 * 2022.10.27 Thu [TSF]: AANet
-* 2022.10.28 Fri [GAN]: 
+* 2022.10.28 Fri [GAN]:
 
 <!-- week 09 -->
 
@@ -86,4 +86,15 @@
 
 * 2022.11.07 Mon [CNN]:
 * 2022.11.08 Tue [DET]: (HyperNet)
-* 2022.11.09 Wed [SEG]: (SegNeXt)
+* 2022.11.09 Wed [SEG]: SegNeXt
+* 2022.11.10 Thu [TSF]:
+* 2022.11.11 Fri [GAN]:
+
+<!-- week 11 -->
+
+* 2022.11.12 Mon [CNN]:
+* 2022.11.13 Tue [DET]:
+* 2022.11.14 Wed [SEG]: DANet
+* 2022.11.15 Thu [TSF]:
+* 2022.11.16 Fri [GAN]:
+

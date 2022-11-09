@@ -18,17 +18,16 @@ count=85
   - [Multi Scale Architectures (Attention to Scale, 2015) (1 + 4 + 1 + 4 + 1)](#multi-scale-architectures-attention-to-scale-2015-1--4--1--4--1)
   - [Multi-Scale Architectures (2016, PSPNet) (5)](#multi-scale-architectures-2016-pspnet-5)
   - [Efficiency](#efficiency)
-- [Graphical model networks](#graphical-model-networks)
-  - [(2014, DeepLabV1) Conditional Random Fields (CRF)](#2014-deeplabv1-conditional-random-fields-crf)
-  - [MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)](#map-and-crf-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-5--5)
+- [Graphical-Model-Based Approaches](#graphical-model-based-approaches)
+  - [Unknown](#unknown-2)
+  - [(2014, DeepLabV1) Conditional Random Fields (CRF) (count=3)](#2014-deeplabv1-conditional-random-fields-crf-count3)
+  - [MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (count=5+5)](#map-and-crf-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-count55)
   - [(2015, SegNet) MAP and CRF (count=2)](#2015-segnet-map-and-crf-count2)
-  - [Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)](#fully-connected-crfs-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-4)
-  - [Fully Connected CRFs (LRR, 2016)](#fully-connected-crfs-lrr-2016)
-  - [Conditional Random Fields - Other](#conditional-random-fields---other)
+  - [Fully Connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)](#fully-connected-crfs-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-4)
   - [DeepLab Family](#deeplab-family)
 - [Attention Machenism](#attention-machenism)
   - [(2022, SegNeXt) (count=6)](#2022-segnext-count6)
-- [Transformer Architectures](#transformer-architectures)
+- [Transformer-Architectures-Based Approaches](#transformer-architectures-based-approaches)
   - [(2022, SegNeXt) (count=8)](#2022-segnext-count8)
   - [Others](#others)
 - [Instance Segmentation](#instance-segmentation)
@@ -282,7 +281,7 @@ count=85
         * > (2016, RefineNet) The method Seg-Net [2] and U-Net [40] apply skip-connections in the deconvolution architecture to exploit the features from middle layers.
 * [[SegNeXt](https://arxiv.org/abs/2209.08575)]
     [[pdf](https://arxiv.org/pdf/2209.08575.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2209.08575/)]
+    [vanity]
     * Title: SegNeXt: Rethinking Convolutional Attention Design for Semantic Segmentation
     * Year: 18 Sep `2022`
     * Authors: Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, Shi-Min Hu
@@ -469,9 +468,26 @@ count=85
     * Authors: Michael Treml, José Arjona-Medina, Thomas Unterthiner, Rupesh Durgesh, Felix Friedmann, Peter Schuberth, Andreas Mayr, Martin Heusel, Markus Hofmarcher, Michael Widrich, Bernhard Nessler, Sepp Hochreiter
     * Abstract: Deep learning has considerably improved semantic image segmentation. However, its high accuracy is traded against larger computational costs which makes it unsuit- able for embedded devices in self-driving cars. We propose a novel deep network architecture for image segmentation that keeps the high accuracy while being efficient enough for embedded devices. The architecture consists of ELU activation functions, a SqueezeNet-like encoder, followed by parallel dilated convolutions, and a decoder with SharpMask-like refinement modules. On the Cityscapes dataset, the new network achieves higher segmentation accuracy than other networks that are tailored to embedded devices. Simultaneously the frame-rate is still sufficiently high for the deployment in autonomous vehicles.
 
-## Graphical model networks
+## Graphical-Model-Based Approaches
 
-### (2014, DeepLabV1) Conditional Random Fields (CRF)
+### Unknown
+
+* [[Conditional random fields: Probabilistic models for segmenting and labeling sequence data](https://dl.acm.org/doi/10.5555/645530.655813)]
+    [[pdf](https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&context=cis_papers)]
+    * Title: Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data
+    * Year: 28 June `2001`
+    * Authors: John D. Lafferty, Andrew McCallum, Fernando C. N. Pereira
+    * Institutions: [Carnegie Mellon University], [WhizBang! Labs], [University of Pennsylvania]
+    * Abstract: We present conditional random fields, a framework for building probabilistic models to segment and label sequence data. Conditional random fields offer several advantages over hidden Markov models and stochastic grammars for such tasks, including the ability to relax strong independence assumptions made in those models. Conditional random fields also avoid a fundamental limitation of maximum entropy Markov models (MEMMs) and other discriminative Markov models based on directed graphical models, which can be biased towards states with few successor states. We present iterative parameter estimation algorithms for conditional random fields and compare the performance of the resulting models to HMMs and MEMMs on synthetic and natural-language data.
+* [[Semantic Image Segmentation via Deep Parsing Network](https://arxiv.org/abs/1509.02634)]
+    [[pdf](https://arxiv.org/pdf/1509.02634.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1509.02634/)]
+    * Title: Semantic Image Segmentation via Deep Parsing Network
+    * Year: 09 Sep `2015`
+    * Authors: Ziwei Liu, Xiaoxiao Li, Ping Luo, Chen Change Loy, Xiaoou Tang
+    * Abstract: This paper addresses semantic image segmentation by incorporating rich information into Markov Random Field (MRF), including high-order relations and mixture of label contexts. Unlike previous works that optimized MRFs using iterative algorithm, we solve MRF by proposing a Convolutional Neural Network (CNN), namely Deep Parsing Network (DPN), which enables deterministic end-to-end computation in a single forward pass. Specifically, DPN extends a contemporary CNN architecture to model unary terms and additional layers are carefully devised to approximate the mean field algorithm (MF) for pairwise terms. It has several appealing properties. First, different from the recent works that combined CNN and MRF, where many iterations of MF were required for each training image during back-propagation, DPN is able to achieve high performance by approximating one iteration of MF. Second, DPN represents various types of pairwise terms, making many existing works as its special cases. Third, DPN makes MF easier to be parallelized and speeded up in Graphical Processing Unit (GPU). DPN is thoroughly evaluated on the PASCAL VOC 2012 dataset, where a single DPN model yields a new state-of-the-art segmentation accuracy.
+
+### (2014, DeepLabV1) Conditional Random Fields (CRF) (count=3)
 
 * [[Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials](https://arxiv.org/abs/1210.5644)]
     [[pdf](https://arxiv.org/pdf/1210.5644.pdf)]
@@ -503,7 +519,7 @@ count=85
         * > The predictive performance of FCN has been improved further by appending the FCN with a recurrent neural network (RNN) [10] and fine-tuning them on large datasets [21],[42]. The RNN layers mimic the sharp boundary delineation capabilities of CRFs while exploiting the feature representation power of FCN’s. (SegNet, 2015)
         * > (2015, ParseNet) Zheng et al. (2015) convert CRF learning to recurrent neural network (RNN) and use message passing to do the learning and inference.
 
-### MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (5 + 5)
+### MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (count=5+5)
 
 * [[Multiscale conditional random fields for image labeling](https://ieeexplore.ieee.org/document/1315232)]
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1315232)]
@@ -582,7 +598,7 @@ count=85
         * > Lin et al. [34] resized the input image for three scales and concatenated the resulting three-scale features to generate the unary and pairwise potentials of a Conditional Random Field (CRF). (Attention to Scale, 2015)
         * > (2015, ParseNet) Lin et al. (2015) uses piece-wise training to make learning more efficient by adding a few extra piece-wise networks.
 
-### Fully connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)
+### Fully Connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)
 
 * Objects in Context
 * [[Random Field Model for Integration of Local Information and Global Information](https://ieeexplore.ieee.org/document/4497207)]
@@ -603,27 +619,6 @@ count=85
     * Year: `2010`
     * Authors: Nadia Payet, Sinisa Todorovic
     * Abstract: We combine random forest (RF) and conditional random field (CRF) into a new computational framework, called random forest random field (RF)^2. Inference of (RF)^2 uses the Swendsen-Wang cut algorithm, characterized by Metropolis-Hastings jumps. A jump from one state to another depends on the ratio of the proposal distributions, and on the ratio of the posterior distributions of the two states. Prior work typically resorts to a parametric estimation of these four distributions, and then computes their ratio. Our key idea is to instead directly estimate these ratios using RF. RF collects in leaf nodes of each decision tree the class histograms of training examples. We use these class histograms for a non-parametric estimation of the distribution ratios. We derive the theoretical error bounds of a two-class (RF)^2. (RF)^2 is applied to a challenging task of multiclass object recognition and segmentation over a random field of input image regions. In our empirical evaluation, we use only the visual information provided by image regions (e.g., color, texture, spatial layout), whereas the competing methods additionally use higher-level cues about the horizon location and 3D layout of surfaces in the scene. Nevertheless, (RF)^2 outperforms the state of the art on benchmark datasets, in terms of accuracy and computation time.
-
-### Fully Connected CRFs (LRR, 2016)
-
-* Efficient inference in fully connected crfs with gaussian edge potentials
-
-### Conditional Random Fields - Other
-
-* [[Conditional random fields: Probabilistic models for segmenting and labeling sequence data](https://dl.acm.org/doi/10.5555/645530.655813)]
-    [[pdf](https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&context=cis_papers)]
-    * Title: Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data
-    * Year: 28 June `2001`
-    * Authors: John D. Lafferty, Andrew McCallum, Fernando C. N. Pereira
-    * Institutions: [Carnegie Mellon University], [WhizBang! Labs], [University of Pennsylvania]
-    * Abstract: We present conditional random fields, a framework for building probabilistic models to segment and label sequence data. Conditional random fields offer several advantages over hidden Markov models and stochastic grammars for such tasks, including the ability to relax strong independence assumptions made in those models. Conditional random fields also avoid a fundamental limitation of maximum entropy Markov models (MEMMs) and other discriminative Markov models based on directed graphical models, which can be biased towards states with few successor states. We present iterative parameter estimation algorithms for conditional random fields and compare the performance of the resulting models to HMMs and MEMMs on synthetic and natural-language data.
-* [[Semantic Image Segmentation via Deep Parsing Network](https://arxiv.org/abs/1509.02634)]
-    [[pdf](https://arxiv.org/pdf/1509.02634.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/1509.02634/)]
-    * Title: Semantic Image Segmentation via Deep Parsing Network
-    * Year: 09 Sep `2015`
-    * Authors: Ziwei Liu, Xiaoxiao Li, Ping Luo, Chen Change Loy, Xiaoou Tang
-    * Abstract: This paper addresses semantic image segmentation by incorporating rich information into Markov Random Field (MRF), including high-order relations and mixture of label contexts. Unlike previous works that optimized MRFs using iterative algorithm, we solve MRF by proposing a Convolutional Neural Network (CNN), namely Deep Parsing Network (DPN), which enables deterministic end-to-end computation in a single forward pass. Specifically, DPN extends a contemporary CNN architecture to model unary terms and additional layers are carefully devised to approximate the mean field algorithm (MF) for pairwise terms. It has several appealing properties. First, different from the recent works that combined CNN and MRF, where many iterations of MF were required for each training image during back-propagation, DPN is able to achieve high performance by approximating one iteration of MF. Second, DPN represents various types of pairwise terms, making many existing works as its special cases. Third, DPN makes MF easier to be parallelized and speeded up in Graphical Processing Unit (GPU). DPN is thoroughly evaluated on the PASCAL VOC 2012 dataset, where a single DPN model yields a new state-of-the-art segmentation accuracy.
 
 ### DeepLab Family
 
@@ -720,7 +715,7 @@ count=85
     * Authors: Hang Zhang, Kristin Dana, Jianping Shi, Zhongyue Zhang, Xiaogang Wang, Ambrish Tyagi, Amit Agrawal
     * Abstract: Recent work has made significant progress in improving spatial resolution for pixelwise labeling with Fully Convolutional Network (FCN) framework by employing Dilated/Atrous convolution, utilizing multi-scale features and refining boundaries. In this paper, we explore the impact of global contextual information in semantic segmentation by introducing the Context Encoding Module, which captures the semantic context of scenes and selectively highlights class-dependent featuremaps. The proposed Context Encoding Module significantly improves semantic segmentation results with only marginal extra computation cost over FCN. Our approach has achieved new state-of-the-art results 51.7% mIoU on PASCAL-Context, 85.9% mIoU on PASCAL VOC 2012. Our single model achieves a final score of 0.5567 on ADE20K test set, which surpass the winning entry of COCO-Place Challenge in 2017. In addition, we also explore how the Context Encoding Module can improve the feature representation of relatively shallow networks for the image classification on CIFAR-10 dataset. Our 14 layer network has achieved an error rate of 3.45%, which is comparable with state-of-the-art approaches with over 10 times more layers. The source code for the complete system are publicly available.
 
-## Transformer Architectures
+## Transformer-Architectures-Based Approaches
 
 ### (2022, SegNeXt) (count=8)
 
