@@ -24,9 +24,9 @@ class Resize(object):
             new_h = image.shape[-3] * self.scale[0]
             new_w = image.shape[-2] * self.scale[1]
         image = tf.image.resize(image, size=(new_h, new_w))
-        if tf.rank(label) == 0:
+        if len(label.shape) == 0:
             pass
-        elif tf.rank(label) == 2 and label.shape == image.shape[:2]:
+        elif len(label.shape) == 2 and label.shape == image.shape[:2]:
             label = tf.image.resize(label, size=(new_h, new_w))
         else:
             raise ValueError(f"[ERROR] Argument \'label\' shape out of control. Got {label.shape}.")

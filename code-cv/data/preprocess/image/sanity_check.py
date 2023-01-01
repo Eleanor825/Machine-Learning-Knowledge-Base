@@ -7,7 +7,7 @@ def sanity_check_classification(image, label):
     * label is a 0-D tensorflow tensor of dtype tf.int64.
     """
     # check image
-    assert tf.rank(image) == 3, f"{image.shape=}"
+    assert len(image.shape) == 3, f"{image.shape=}"
     assert image.dtype == tf.float32, f"{image.dtype=}"
     # check label
     assert label.dtype == tf.int64, f"{label.dtype=}"
@@ -19,7 +19,7 @@ def sanity_check_segmentation(image, label):
     * label is a 2-D tensorflow tensor of shape (H, W) and dtype tf.int64.
     """
     # check image
-    assert tf.rank(image) == 3, f"{image.shape=}"
+    assert len(image.shape) == 3, f"{image.shape=}"
     assert image.dtype == tf.float32, f"{image.dtype=}"
     # check label
     assert label.dtype == tf.int64, f"{label.dtype=}"
@@ -27,10 +27,10 @@ def sanity_check_segmentation(image, label):
 
 def sanity_check(image, label):
     assert isinstance(image, tf.Tensor) and isinstance(label, tf.Tensor)
-    if tf.rank(label) == 0:
+    if len(label.shape) == 0:
         # for classification task
         sanity_check_classification(image, label)
-    elif tf.rank(label) == 2 and label.shape == image.shape[:2]:
+    elif len(label.shape) == 2 and label.shape == image.shape[:2]:
         # for segmentation task
         sanity_check_segmentation(image, label)
     else:
