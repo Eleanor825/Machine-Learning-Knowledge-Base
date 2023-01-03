@@ -1,5 +1,7 @@
-# Machine Learning Collection
+# Machine Learning Knowledge Base
 
-The repository hosts collections of research papers in the areas of Computer Vision (CV) and Natural Language Processing (NLP) and markdown notes and TensorFlow implementations of some of the results. I have been continuously building this repository since Spring 2021 and more than happy to take any critical feedback and/or constructive advice.
+The repository hosts collections of research papers in the areas of Computer Vision (CV) and Natural Language Processing (NLP) and markdown notes. I have been continuously building this repository since Spring 2021 and more than happy to take any critical feedback and/or constructive advice.
 
-Last update of this `README.md`: Fri Dec 02, 2022.
+See also: [Computer-Vision-TensorFlow](https://github.com/danielmao2019/Computer-Vision-TensorFlow)
+
+Last update of this `README.md`: Tue Jan 03, 2023.
