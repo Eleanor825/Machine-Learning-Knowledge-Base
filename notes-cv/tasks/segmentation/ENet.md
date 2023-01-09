@@ -1,7 +1,9 @@
 #! https://zhuanlan.zhihu.com/p/559338022
 # [Notes][Vision][Segmentation] ENet
 
-* url: https://arxiv.org/abs/1606.02147
+* urls: [[abs](https://arxiv.org/abs/1606.02147)]
+    [[pdf](https://arxiv.org/pdf/1606.02147.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1606.02147/)]
 * Title: ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation
 * Year: 07 Jun `2016`
 * Authors: Adam Paszke, Abhishek Chaurasia, Sangpil Kim, Eugenio Culurciello
@@ -38,12 +40,17 @@ Post-Processing
 
 ## 3 Network architecture
 
-<p align="center">
+<figure align="center">
     <img src="ENet_figure_2a.png">
     <img src="ENet_figure_2b.png">
-</p>
+    <figcaption>
+        Figure 2: (a) ENet initial block. MaxPooling is performed with non-overlapping 2x2 windows, and the convolution has 13 filters, which sums up to 16 feature maps after concatenation. This is heavily inspired by szegedy2015rethinking . (b) ENet bottleneck module. conv is either a regular, dilated, or full convolution (also known as deconvolution) with 3x3 filters, or a 5x5 convolution decomposed into two asymmetric ones.
+    </figcaption>
+</figure>
 
-> We adopt a view of ResNets he2015resnet that describes them as having a single main branch and extensions with convolutional filters that separate from it, and then merge back with an element-wise addition, as shown in Figure 1(b).
+**The ENet Module**
+
+> We adopt a view of ResNets he2015resnet that describes them as having a single main branch and extensions with convolutional filters that separate from it, and then merge back with an element-wise addition, as shown in Figure 2(b).
 
 > Each block consists of three convolutional layers:
 > * a 1x1 `projection` that reduces the dimensionality,
@@ -52,21 +59,31 @@ Post-Processing
 
 > We place `Batch Normalization` ioffe2015batchnorm and `PReLU` he2015 between all convolutions.
 
-Types of the main convolution:
+> We did not use bias terms in any of the projections, in order to reduce the number of kernel calls and overall memory operations, as cuDNN chetlur2014cudnn uses separate kernels for convolution and bias addition. This choice didn’t have any impact on the accuracy.
 
-> If the bottleneck is `downsampling`, a max pooling layer is added to the main branch. Also, the first 1x1 projection is replaced with a 2x2 convolution with stride 2 in both dimensions. We zero pad the activations, to match the number of feature maps.
+> For the regularizer, we use Spatial Dropout tompson15 , with $p=0.01$ before bottleneck2.0, and $p=0.1$ afterwards.
+
+**Main Convolution**
 
 > conv is either a regular, `dilated` or full convolution (also known as `deconvolution` or fractionally strided convolution) with 3x3 filters.
 
 > Sometimes we replace it with `asymmetric` convolution i.e. a sequence of 5x1 and 1x5 convolutions.
 
-Details:
+**Downsampling Block**
 
-> For the regularizer, we use Spatial Dropout tompson15 , with p=0.01 before bottleneck2.0, and p=0.1 afterwards.
+> If the bottleneck is `downsampling`, a max pooling layer is added to the main branch.
 
-> These three first stages are the encoder. Stage 4 and 5 belong to the decoder.
+> Also, the first 1x1 projection is replaced with a 2x2 convolution with stride 2 in both dimensions.
+
+> We zero pad the activations, to match the number of feature maps.
+
+**Upsampling Block**
 
 > In the decoder max pooling is replaced with max unpooling, and padding is replaced with spatial convolution without bias.
+
+**Overall Architecture**
+
+> These three first stages are the encoder. Stage 4 and 5 belong to the decoder.
 
 ## 4 Design choices
 
@@ -83,6 +100,8 @@ Details:
 **Early downsampling**
 
 > ENet first two blocks heavily reduce the input size, and use only a small set of feature maps. The idea behind it, is that visual information is highly spatially redundant, and thus can be compressed into a more efficient representation.
+
+> Also, our intuition is that the initial network layers should not directly contribute to classification. Instead, they should rather act as good feature extractors and only preprocess the input for later portions of the network.
 
 **Decoder size**
 
@@ -127,6 +146,15 @@ Details:
 > We placed Spatial Dropout at the end of convolutional branches, right before the addition, and it turned out to work much better than stochastic depth.
 
 ## 5 Results
+
+### 5.2 Benchmarks
+
+| Model  | Class IoU | Class iIoU | Category IoU | Category iIoU |
+| ------ | --------- | ---------- | ------------ | ------------- |
+| SegNet | 56.1      | 34.2       | 79.8         | 66.4          |
+| ENet   | 58.3      | 34.4       | 80.4         | 64.0          |
+
+Table 4: Cityscapes test set results
 
 ## 6 Conclusion
 
