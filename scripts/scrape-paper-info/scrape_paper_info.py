@@ -2,6 +2,12 @@ import re
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+import logging
+logging.basicConfig(format='%(asctime)s [%(levelname)s] %(message)s', level=logging.DEBUG)
+
+
+INDENT = "    "
+
 
 def get_all_urls(src_filepath):
     with open(src_filepath, mode='r', encoding='utf8') as f:
@@ -10,8 +16,7 @@ def get_all_urls(src_filepath):
     return url_list
 
 
-def scrape_single(url: str):
-    INDENT = "    "
+def scrape_arxiv(url):
     page = urlopen(url)
     html = page.read().decode("utf-8")
     soup = BeautifulSoup(html, "html.parser")
@@ -50,53 +55,67 @@ def scrape_single(url: str):
     return string
 
 
+def scrape_single(url):
+    if url.startswith("https://arxiv.org"):
+        return scrape_arxiv(url)
+    else:
+        raise NotImplementedError("[ERROR] Scraper for ieeexplore not implemented.")
+
+
 def main(url_lists, src_filepath, dst_filepath):
     """
     Arguments:
-        url_lists (dict): five lists of urls to be scrapped.
+        url_lists (dict): lists of urls to be scrapped.
         src_filepath (str):
         dst_filepath (str): will be replaced with temp files if url_lists is not None.
     """
     if url_lists is None:
-        print(f"[INFO] Argument `url_lists` not provided. Extracting urls from {src_filepath}.")
+        logging.info(f"Argument `url_lists` not provided. Extracting urls from {src_filepath}.")
         url_lists = get_all_urls(src_filepath)
     else:
-        assert type(url_lists) == dict, type(url_list)
-        print(f"[INFO] Argument `dst_filepath` suppressed. Using temp files.")
+        assert type(url_lists) == dict, f"{type(url_lists)=}"
+        logging.info(f"Argument `dst_filepath` suppressed. Using temp files.")
     for group in url_lists:
-        print(f"[INFO] Processing {group}." + (
+        logging.info(f"Processing {group}." + (
             " Nothing given." if len(url_lists[group]) == 0 else f" {len(url_lists[group])} urls found."))
         dst_filepath = f"scripts/scrape-paper-info/temp_{group}.md"
         with open(dst_filepath, mode='w', encoding='utf8') as f:
             for url in url_lists[group]:
-                print(f"[INFO] Scraping {url}")
+                logging.info(f"Scraping {url}")
                 f.write(scrape_single(url))
-    print(f"[INFO] Process terminated.")
+    logging.info(f"Process terminated.")
 
 
 if __name__ == "__main__":
     main(url_lists={
-        'CNN': [
-        ],
-        'DET': [
-        ],
-        'SEG': [  # not yet scraped.
-            "https://arxiv.org/abs/2112.11010",
-            "https://arxiv.org/abs/1703.02719",
-            "https://arxiv.org/abs/2004.07684",
-            "https://arxiv.org/abs/1511.02674",
-            "https://arxiv.org/abs/2109.02974",
-            "https://arxiv.org/abs/2203.16194",
-            "https://arxiv.org/abs/1406.6247",
-            "https://arxiv.org/abs/2012.09688",
-            "https://arxiv.org/abs/1803.08904",
-        ],
-        'TSF': [
-        ],
-        'GAN': [
-        ],
-        'NLP': [
-        ],
+        # 'CNN': [
+        # ],
+        # 'object_detection': [
+        # ],
+        # 'semantic_segmentation': [  # not yet scraped.
+        #     "https://arxiv.org/abs/2112.11010",
+        #     "https://arxiv.org/abs/1703.02719",
+        #     "https://arxiv.org/abs/2004.07684",
+        #     "https://arxiv.org/abs/1511.02674",
+        #     "https://arxiv.org/abs/2109.02974",
+        #     "https://arxiv.org/abs/2203.16194",
+        #     "https://arxiv.org/abs/1406.6247",
+        #     "https://arxiv.org/abs/2012.09688",
+        #     "https://arxiv.org/abs/1803.08904",
+        # ],
+        # 'instance_segmentation': [
+        # ],
+        # 'transformers': [
+        # ],
+        # 'GAN': [
+        #     "https://arxiv.org/abs/1603.08155",
+        #     "https://arxiv.org/abs/1603.03417",
+        #     "https://arxiv.org/abs/1606.05897",
+        # ],
+        # 'NLP': [
+        # ],
+        # 'explainability': [
+        # ],
     },
         src_filepath="papers-cv/tasks/detection_2D.md",
         dst_filepath="scripts/scrape-paper-info/raw_detection_2D.md",
