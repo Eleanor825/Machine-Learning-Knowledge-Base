@@ -31,6 +31,8 @@ count=85
   - [(2022, SegNeXt) (count=8)](#2022-segnext-count8)
   - [Others](#others)
 - [Instance Segmentation](#instance-segmentation)
+  - [Segment Proposals](#segment-proposals)
+  - [Fully Convolutional Instance Segmentation (FCIS) Systems](#fully-convolutional-instance-segmentation-fcis-systems)
 - [Multitask Learning (Panoptic Segmentation, 2018) (3)](#multitask-learning-panoptic-segmentation-2018-3)
 - [Panoptic Segmentation](#panoptic-segmentation)
 - [Scene Parsing](#scene-parsing)
@@ -808,6 +810,8 @@ count=85
 
 ## Instance Segmentation
 
+### Segment Proposals
+
 * [[Simultaneous Detection and Segmentation (SDS)](https://arxiv.org/abs/1407.1808)]
     [[pdf](https://arxiv.org/pdf/1407.1808.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1407.1808/)]
@@ -859,6 +863,16 @@ count=85
     * Year: 14 Dec `2015`
     * Authors: Jifeng Dai, Kaiming He, Jian Sun
     * Abstract: Semantic segmentation research has recently witnessed rapid progress, but many leading methods are unable to identify object instances. In this paper, we present Multi-task Network Cascades for instance-aware semantic segmentation. Our model consists of three networks, respectively differentiating instances, estimating masks, and categorizing objects. These networks form a cascaded structure, and are designed to share their convolutional features. We develop an algorithm for the nontrivial end-to-end training of this causal, cascaded structure. Our solution is a clean, single-step training framework and can be generalized to cascades that have more stages. We demonstrate state-of-the-art instance-aware semantic segmentation accuracy on PASCAL VOC. Meanwhile, our method takes only 360ms testing an image using VGG-16, which is two orders of magnitude faster than previous systems for this challenging problem. As a by product, our method also achieves compelling object detection results which surpass the competitive Fast/Faster R-CNN systems. The method described in this paper is the foundation of our submissions to the MS COCO 2015 segmentation competition, where we won the 1st place.
+
+### Fully Convolutional Instance Segmentation (FCIS) Systems
+
+* [[Instance-sensitive Fully Convolutional Networks](https://arxiv.org/abs/1603.08678)]
+    [[pdf](https://arxiv.org/pdf/1603.08678.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1603.08678/)]
+    * Title: Instance-sensitive Fully Convolutional Networks
+    * Year: 29 Mar `2016`
+    * Authors: Jifeng Dai, Kaiming He, Yi Li, Shaoqing Ren, Jian Sun
+    * Abstract: Fully convolutional networks (FCNs) have been proven very successful for semantic segmentation, but the FCN outputs are unaware of object instances. In this paper, we develop FCNs that are capable of proposing instance-level segment candidates. In contrast to the previous FCN that generates one score map, our FCN is designed to compute a small set of instance-sensitive score maps, each of which is the outcome of a pixel-wise classifier of a relative position to instances. On top of these instance-sensitive score maps, a simple assembling module is able to output instance candidate at each position. In contrast to the recent DeepMask method for segmenting instances, our method does not have any high-dimensional layer related to the mask resolution, but instead exploits image local coherence for estimating instances. We present competitive results of instance segment proposal on both PASCAL VOC and MS COCO.
 * [[Fully Convolutional Instance-aware Semantic Segmentation](https://arxiv.org/abs/1611.07709)]
     [[pdf](https://arxiv.org/pdf/1611.07709.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1611.07709/)]
