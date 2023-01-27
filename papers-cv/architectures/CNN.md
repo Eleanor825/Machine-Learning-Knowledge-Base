@@ -189,7 +189,7 @@ count=144
     * Abstract: Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce "companion objective" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN).
     * Comments:
         * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
-        * > (2015, Inception-v3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
+        * > (2015, InceptionNetV3) Lee et al[11] argues that auxiliary classifiers promote more stable learning and better convergence.
         * > (2016, DenseNet) In Deeply Supervised Network (DSN) [20], internal layers are directly supervised by auxiliary classifiers, which can strengthen the gradients received by earlier layers.
 * [[Deeply-Fused Networks (DFN)](https://arxiv.org/abs/1605.07716)]
     [[pdf](https://arxiv.org/pdf/1605.07716.pdf)]
@@ -239,7 +239,7 @@ count=144
     * Abstract: Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
     * Comments:
         * > (2016, DenseNet) ResNets [11] and Highway Networks [33] bypass signal from one layer to the next via identity connections.
-        * > (2016, Inception-v4) In [5], it is argued that residual connections are of inherent importance for training very deep architectures.
+        * > (2016, InceptionNetV4) In [5], it is argued that residual connections are of inherent importance for training very deep architectures.
         * > (2016, PSPNet) Although theoretically the receptive field of ResNet [13] is already larger than the input image, it is shown by Zhou et al. [42] that the empirical receptive field of CNN is much smaller than the theoretical one especially on high-level layers.
         * > (2017, DPN) By revealing the equivalence of the state-of-the-art Residual Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework, we find that ResNet enables feature re-usage while DenseNet enables new features exploration which are both important for learning good representations.
         * > (2017, DPN) Although the width of the densely connected path increases linearly as it goes deeper, causing the number of parameters to grow quadratically, DenseNet provides higher parameter efficiency compared with ResNet.
@@ -414,7 +414,7 @@ Overview:
 
 > Inception modules [11–13] are built on the principle of split-reduce-transform-merge. These modules are usually heterogeneous in number of channels and kernel size (e.g. some of the modules are composed of standard and factored convolutions). (ESPNetV1, 2018)
 
-* [[Inception-v1/GoogLeNet](https://arxiv.org/abs/1409.4842)] <!-- printed -->
+* [[InceptionNetV1/GoogLeNet](https://arxiv.org/abs/1409.4842)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1409.4842.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1409.4842/)]
     * Title: Going Deeper with Convolutions
@@ -426,10 +426,10 @@ Overview:
         * > (2014, VGGNet) The spatial resolution of the feature maps is reduced more aggressively in the first layers to decrease the amount of computation.
         * > (2015, ResNet) In [44, 24], a few intermediate layers are directly connected to auxiliary classifiers for addressing vanishing/exploding gradients.
         * > (2015, ResNet) In [44], an "inception" layer is composed of a shortcut branch and a few deeper branches.
-        * > (2015, Inception-v3) Much of the original gains of the GoogLeNet network [20] arise from a very generous use of dimension reduction. This can be viewed as a special case of factorizing convolutions in a computationally efficient manner.
-        * > (2015, Inception-v3) [20] has introduced the notion of auxiliary classifiers to improve the convergence of very deep networks. The original motivation was to push useful gradients to the lower layers to make them immediately useful and improve the convergence during training by combating the vanishing gradient problem in very deep networks.
-        * > (2016, Inception-v4) Later the architecture was improved by additional factorization ideas in the third iteration [15] which will be referred to as Inception-v3 in this report.
-* [[Inception-v2/Batch Normalization](https://arxiv.org/abs/1502.03167)] <!-- printed -->
+        * > (2015, InceptionNetV3) Much of the original gains of the GoogLeNet network [20] arise from a very generous use of dimension reduction. This can be viewed as a special case of factorizing convolutions in a computationally efficient manner.
+        * > (2015, InceptionNetV3) [20] has introduced the notion of auxiliary classifiers to improve the convergence of very deep networks. The original motivation was to push useful gradients to the lower layers to make them immediately useful and improve the convergence during training by combating the vanishing gradient problem in very deep networks.
+        * > (2016, InceptionNetV4) Later the architecture was improved by additional factorization ideas in the third iteration [15] which will be referred to as Inception-v3 in this report.
+* [[InceptionNetV2/Batch Normalization](https://arxiv.org/abs/1502.03167)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1502.03167.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1502.03167/)]
     * Title: Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
@@ -447,7 +447,7 @@ Overview:
     * Authors: Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, Zbigniew Wojna
     * Institutions: [Google Inc.], [University College London]
     * Abstract: Convolutional networks are at the core of most state-of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we explore ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21.2% top-1 and 5.6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3.5% top-5 error on the validation set (3.6% error on the test set) and 17.3% top-1 error on the validation set.
-* [[Inception-v4/Inception-ResNet](https://arxiv.org/abs/1602.07261)] <!-- printed -->
+* [[InceptionNetV4/Inception-ResNet](https://arxiv.org/abs/1602.07261)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1602.07261.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1602.07261/)]
     * Title: Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning

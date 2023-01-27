@@ -1,4 +1,4 @@
-# [Papers][Vision] Segmentation <!-- omit in toc -->
+# [Papers][Vision] 2D Segmentation <!-- omit in toc -->
 
 count=85
 
@@ -10,8 +10,8 @@ count=85
 - [Superpixels (LRR, 2016) (2)](#superpixels-lrr-2016-2)
 - [Semantic Segmentation](#semantic-segmentation)
   - [Unknown](#unknown-1)
-  - [Patchwise Training (FCN, 2015) (5)](#patchwise-training-fcn-2015-5)
-  - [Encoder-Decoder Architecture](#encoder-decoder-architecture)
+  - [(2015, FCN) Patchwise Training (count=5)](#2015-fcn-patchwise-training-count5)
+  - [Encoder-Decoder Architectures](#encoder-decoder-architectures)
   - [Increase feature resolution (Panoptic FPN, 2019) (4)](#increase-feature-resolution-panoptic-fpn-2019-4)
   - [Fully Convolutional Networks (FCN)](#fully-convolutional-networks-fcn)
   - [FCN based models (Attention to Scale, 2015) (6)](#fcn-based-models-attention-to-scale-2015-6)
@@ -25,7 +25,7 @@ count=85
   - [(2015, SegNet) MAP and CRF (count=2)](#2015-segnet-map-and-crf-count2)
   - [Fully Connected CRFs (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (4)](#fully-connected-crfs-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-4)
   - [DeepLab Family](#deeplab-family)
-- [Attention Machenism](#attention-machenism)
+- [Attention Mechanism](#attention-mechanism)
   - [(2022, SegNeXt) (count=6)](#2022-segnext-count6)
 - [Transformer-Architectures-Based Approaches](#transformer-architectures-based-approaches)
   - [(2022, SegNeXt) (count=8)](#2022-segnext-count8)
@@ -173,9 +173,9 @@ count=85
     * Authors: Abhishek Chaurasia, Eugenio Culurciello
     * Abstract: Pixel-wise semantic segmentation for visual scene understanding not only needs to be accurate, but also efficient in order to find any use in real-time application. Existing algorithms even though are accurate but they do not focus on utilizing the parameters of neural network efficiently. As a result they are huge in terms of parameters and number of operations; hence slow too. In this paper, we propose a novel deep neural network architecture which allows it to learn without any significant increase in number of parameters. Our network uses only 11.5 million parameters and 21.2 GFLOPs for processing an image of resolution 3x640x360. It gives state-of-the-art performance on CamVid and comparable results on Cityscapes dataset. We also compare our networks processing time on NVIDIA GPU and embedded system device with existing state-of-the-art architectures for different image resolutions.
 
-### Patchwise Training (FCN, 2015) (5)
+### (2015, FCN) Patchwise Training (count=5)
 
-* [Toward automatic phenotyping of developing embryos from videos](https://ieeexplore.ieee.org/document/1495508)
+* [[Toward automatic phenotyping of developing embryos from videos](https://ieeexplore.ieee.org/document/1495508)]
     * Title: Toward automatic phenotyping of developing embryos from videos
     * Year: `2005`
     * Author: Feng Ning
@@ -217,9 +217,9 @@ count=85
     * Abstract: We propose a new architecture for difficult image processing operations, such as natural edge detection or thin object segmentation. The architecture is based on a simple combination of convolutional neural networks with the nearest neighbor search. We focus our attention on the situations when the desired image transformation is too hard for a neural network to learn explicitly. We show that in such situations, the use of the nearest neighbor search on top of the network output allows to improve the results considerably and to account for the underfitting effect during the neural network training. The approach is validated on three challenging benchmarks, where the performance of the proposed architecture matches or exceeds the state-of-the-art.
 * [[](https://ieeexplore.ieee.org/document/6126219)]
 
-### Encoder-Decoder Architecture
+### Encoder-Decoder Architectures
 
-> Newer deep architectures [2, 4, 13, 18, 10] particularly designed for segmentation have advanced the state-of-the-art by learning to decode or map low resolution image representations to pixel-wise predictions. (SegNet, 2015)
+> (2015, SegNet) Newer deep architectures [2, 4, 13, 18, 10] particularly designed for segmentation have advanced the state-of-the-art by learning to decode or map low resolution image representations to pixel-wise predictions.
 
 * [[U-Net](https://arxiv.org/abs/1505.04597)] <!-- printed -->
     [[pdf](https://arxiv.org/pdf/1505.04597.pdf)]
@@ -230,6 +230,7 @@ count=85
     * Institutions: [Computer Science Department and BIOSS Centre for Biological Signalling Studies, University of Freiburg, Germany]
     * Abstract: There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at this http URL .
     * Comments:
+        * > (2015, SegNet) As compared to SegNet, U-Net [16] (proposed for the medical imaging community) does not reuse pooling indices but instead transfers the entire feature map (at the cost of more memory) to the corresponding decoders and concatenates them to upsampled (via deconvolution) decoder feature maps.
         * > (2016, RefineNet) The method Seg-Net [2] and U-Net [40] apply skip-connections in the deconvolution architecture to exploit the features from middle layers.
         * > (2021, PVT) Inspired by FCN, U-Net [37] is proposed for especially the medical image segmentation domain, which bridges the information flow between corresponding low-level and high-level feature maps with the same spatial sizes.
 * [[UNet++](https://arxiv.org/abs/1807.10165)]
@@ -249,9 +250,10 @@ count=85
     * Abstract: We propose a novel semantic segmentation algorithm by learning a deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixel-wise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction; our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained with no external data through ensemble with the fully convolutional network.
     * Comments:
         * > Recent work has studied two approaches to dealing with the conflicting demands of multi-scale reasoning and full-resolution dense prediction. One approach involves repeated up-convolutions that aim to recover lost resolution while carrying over the global perspective from downsampled layers (Noh et al., 2015; Fischer et al., 2015). (Dilated Convolutions, 2015)
-        * > The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network. (SegNet, 2015)
-        * > Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask. (2016, PSPNet)
-* [[Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation](https://arxiv.org/abs/1506.04924)]
+        * > (2015, SegNet) The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network.
+        * > (2015, SegNet) DeconvNet has a much larger parameterization, needs more computational resources and is harder to train end-to-end (Table VI), primarily due to the use of fully connected layers (albeit in a convolutional manner).
+        * > (2016, PSPNet) Noh et al. [30] proposed a coarse-to-fine structure with deconvolution network to learn the segmentation mask.
+* [[DecoupledNet](https://arxiv.org/abs/1506.04924)]
     [[pdf](https://arxiv.org/pdf/1506.04924.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1506.04924/)]
     * Title: Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation
@@ -259,8 +261,8 @@ count=85
     * Authors: Seunghoon Hong, Hyeonwoo Noh, Bohyung Han
     * Abstract: We propose a novel deep neural network architecture for semi-supervised semantic segmentation using heterogeneous annotations. Contrary to existing approaches posing semantic segmentation as a single task of region-based classification, our algorithm decouples classification and segmentation, and learns a separate network for each task. In this architecture, labels associated with an image are identified by classification network, and binary segmentation is subsequently performed for each identified label in segmentation network. The decoupled architecture enables us to learn classification and segmentation networks separately based on the training data with image-level and pixel-wise class labels, respectively. It facilitates to reduce search space for segmentation effectively by exploiting class-specific activation maps obtained from bridging layers. Our algorithm shows outstanding performance compared to other semi-supervised approaches even with much less training images with strong annotations in PASCAL VOC dataset.
     * Comments:
-        * Semi-supervised variant of the DeconvNet. (SegNet, 2015)
-        * > The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network. (SegNet, 2015)
+        * Semi-supervised variant of the DeconvNet. (2015, SegNet)
+        * > The recently proposed Deconvolutional Network [4] and its semi-supervised variant the Decoupled network [18] use the max locations of the encoder feature maps (pooling indices) to perform non-linear upsampling in the decoder network. (2015, SegNet)
 * [[SegNet-Basic](https://arxiv.org/abs/1505.07293)]
     [[pdf](https://arxiv.org/pdf/1505.07293.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1505.07293/)]
@@ -316,7 +318,7 @@ count=85
 
 ### Increase feature resolution (Panoptic FPN, 2019) (4)
 
-> As an alternative to dilation, an encoder-decoder [2] or ‘U-Net’ [47] architecture can be used to increase feature resolution [25, 42, 19, 45]. (Panoptic FPN, 2019)
+> As an alternative to dilation, an encoder-decoder [2] or 'U-Net' [47] architecture can be used to increase feature resolution [25, 42, 19, 45]. (Panoptic FPN, 2019)
 
 * [[Recombinator Networks (RCN)](https://arxiv.org/abs/1511.07356)]
     [[pdf](https://arxiv.org/pdf/1511.07356.pdf)]
@@ -416,7 +418,7 @@ count=85
     * Abstract: We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at this https URL .
     * Comments:
         * > (2015, Attention to Scale) ParseNet [36] aggregated features over the whole image to provide global contextual information.
-        * FCN is the core of ParseNet (SegNet, 2015)
+        * FCN is the core of ParseNet (2015, SegNet)
         * > (2016, PSPNet) Liu et al. [24] proved that global average pooling with FCN can improve semantic segmentation results.
         * > (2016, FPN) Several other approaches (HyperNet [18], ParseNet [23], and ION [2]) concatenate features of multiple layers before computing predictions, which is equivalent to summing transformed features.
 
@@ -518,7 +520,7 @@ count=85
     * Authors: Shuai Zheng, Sadeep Jayasumana, Bernardino Romera-Paredes, Vibhav Vineet, Zhizhong Su, Dalong Du, Chang Huang, Philip H. S. Torr
     * Abstract: Pixel-level labelling tasks, such as semantic segmentation, play a central role in image understanding. Recent approaches have attempted to harness the capabilities of deep learning techniques for image recognition to tackle pixel-level labelling tasks. One central issue in this methodology is the limited capacity of deep learning techniques to delineate visual objects. To solve this problem, we introduce a new form of convolutional neural network that combines the strengths of Convolutional Neural Networks (CNNs) and Conditional Random Fields (CRFs)-based probabilistic graphical modelling. To this end, we formulate mean-field approximate inference for the Conditional Random Fields with Gaussian pairwise potentials as Recurrent Neural Networks. This network, called CRF-RNN, is then plugged in as a part of a CNN to obtain a deep network that has desirable properties of both CNNs and CRFs. Importantly, our system fully integrates CRF modelling with CNNs, making it possible to train the whole deep network end-to-end with the usual back-propagation algorithm, avoiding offline post-processing methods for object delineation. We apply the proposed method to the problem of semantic image segmentation, obtaining top results on the challenging Pascal VOC 2012 segmentation benchmark.
     * Comments:
-        * > The predictive performance of FCN has been improved further by appending the FCN with a recurrent neural network (RNN) [10] and fine-tuning them on large datasets [21],[42]. The RNN layers mimic the sharp boundary delineation capabilities of CRFs while exploiting the feature representation power of FCN’s. (SegNet, 2015)
+        * > The predictive performance of FCN has been improved further by appending the FCN with a recurrent neural network (RNN) [10] and fine-tuning them on large datasets [21],[42]. The RNN layers mimic the sharp boundary delineation capabilities of CRFs while exploiting the feature representation power of FCN's. (2015, SegNet)
         * > (2015, ParseNet) Zheng et al. (2015) convert CRF learning to recurrent neural network (RNN) and use message passing to do the learning and inference.
 
 ### MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (count=5+5)
@@ -674,7 +676,7 @@ count=85
     * Authors: Chenxi Liu, Liang-Chieh Chen, Florian Schroff, Hartwig Adam, Wei Hua, Alan Yuille, Li Fei-Fei
     * Abstract: Recently, Neural Architecture Search (NAS) has successfully identified neural network architectures that exceed human designed ones on large-scale image classification. In this paper, we study NAS for semantic image segmentation. Existing works often focus on searching the repeatable cell structure, while hand-designing the outer network structure that controls the spatial resolution changes. This choice simplifies the search space, but becomes increasingly problematic for dense image prediction which exhibits a lot more network level architectural variations. Therefore, we propose to search the network level structure in addition to the cell level structure, which forms a hierarchical architecture search space. We present a network level search space that includes many popular designs, and develop a formulation that allows efficient gradient-based architecture search (3 P100 GPU days on Cityscapes images). We demonstrate the effectiveness of the proposed method on the challenging Cityscapes, PASCAL VOC 2012, and ADE20K datasets. Auto-DeepLab, our architecture searched specifically for semantic image segmentation, attains state-of-the-art performance without any ImageNet pretraining.
 
-## Attention Machenism
+## Attention Mechanism
 
 ### (2022, SegNeXt) (count=6)
 
@@ -892,9 +894,9 @@ count=85
     * Authors: Iasonas Kokkinos
     * Institutions: CentraleSupélec - INRIA
     * Abstract: In this work we introduce a convolutional neural network (CNN) that jointly handles low-, mid-, and high-level vision tasks in a unified architecture that is trained end-to-end. Such a universal network can act like a `swiss knife' for vision tasks; we call this architecture an UberNet to indicate its overarching nature. We address two main technical challenges that emerge when broadening up the range of tasks handled by a single CNN: (i) training a deep architecture while relying on diverse training sets and (ii) training many (potentially unlimited) tasks with a limited memory budget. Properly addressing these two problems allows us to train accurate predictors for a host of tasks, without compromising accuracy. Through these advances we train in an end-to-end manner a CNN that simultaneously addresses (a) boundary detection (b) normal estimation (c) saliency estimation (d) semantic segmentation (e) human part segmentation (f) semantic boundary detection, (g) region proposal generation and object detection. We obtain competitive performance while jointly addressing all of these tasks in 0.7 seconds per frame on a single GPU. A demonstration of this system can be found at this http URL.
-* [[The three R’s of computer vision: Recognition, reconstruction and reorganization](https://www.sciencedirect.com/science/article/pii/S0167865516000313#:~:text=The%20three%20R's%20of%20computer%20vision%3A%20Recognition%2C%20reconstruction%20and%20reorganization%E2%98%86)]
+* [[The three R's of computer vision: Recognition, reconstruction and reorganization](https://www.sciencedirect.com/science/article/pii/S0167865516000313#:~:text=The%20three%20R's%20of%20computer%20vision%3A%20Recognition%2C%20reconstruction%20and%20reorganization%E2%98%86)]
     [[pdf](https://pdf.sciencedirectassets.com/271524/1-s2.0-S0167865516X00050/1-s2.0-S0167865516000313/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEcaCXVzLWVhc3QtMSJIMEYCIQCGiTYkl8Mxv0WCS%2FiGMO%2FEe7PNyAcZtmHR5lV4ekMHEwIhANBhC0q3cwI%2FC8KHuig64KzNlYtluIjE8pOzLNodsgpgKtsECMD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQBRoMMDU5MDAzNTQ2ODY1Igz7NVJSw%2Fgy99oMSb4qrwS5mLne6JqoJmtmvcuBr7nIrrMKnd4ZR1EQnUvgBzJYPf9l%2FUqtVAcqZAqNiPpDWfViXBkbUPmAasB6f3t400A88TKaxIJnNgz%2FwvpP8IK4NoGCzrlUYYi8m0E9Ju1LeR2%2B6iAXNfug4Lxh03IkrTtpXypsUCaTKh5UExEZNHSjBi8SvNcWVapFh5UeFKq4AbvBO2OhS5Ijp2Osb512abzI0YROW9%2FRQ%2FSHyLlrbJBzRYWVEOYer%2Bqe3OglEdfuhwsV9cjXcZKCsZU7HDBYIjRVMcmhvY7KyFZA74DxiJgDW%2FvFAaSh%2Bp4KB%2BU%2FOCgBhJCAJF%2BrAeySyBC30whIQR4sBigXop5dMavarsViSh%2FBHbovejxlza%2Bj5j%2Fi62qxcA2yTVKiDCCKrtyhxzX8z%2F3If1Qsanht1QUZ%2FdTTX3d6P15nEYSKncMJ8GikfsXb7TZTmoe9AdZEWOU%2FG1fMaNXyveE4cuBsDBrj9d78TSTMUYbsASdMXLcFk6L88b2ZSQ%2BHGlyduNwW96aDMix6WbiSsaBflpr6wV%2Bsbmjv9gu0mD%2FovjzkS%2F3WMmWgum5eUjKChkkvgZCwmbTSXhEZvfnqMlR%2B0AvTCsUaEogbGlvwK4P5b2HICPJSuRcCp86NFuFVG7%2B6u9td9NVsMnSP0Tm%2Bm1wehGrObx3N62QKYNeuGgBxCkUeSdH95hRM5Mqlk%2F%2Fx%2FErwn88nUZWPAY4AF3CVolmBaF1fkxwatpyUUiUGMJKSnpgGOqgBTm3SCoeihiNFQfe4jSh94q%2B4ATOKqK7kw74Xp9NOoG3J8Pjq6JW84Y4wAYhRvGaGPr7vtncX%2FbQdq1v1%2FN%2FdgHfm0lYe1YXCHX2XrTlPMNEXSOsR0FoD7UmSYRooVNp7f8%2FjVoZOfqe3gr9hPvrjbjrBvGOJmBDl2prfxtwPOu6uMY9DpZgQ43seCL6Z2AfU0zkOSPPE4f0HxWHAzsKc71OyNvso7gA5&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220825T154849Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY2RO2MC73%2F20220825%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=5c5f1475a6c2a82e24a5d914fb0f86d56b98768aa13147f9fdc96486b0db52b1&hash=6622a043fc37276619ed095b5b2e06e3ca76767da78e589ef75b5ad313b9130b&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0167865516000313&tid=spdf-e1153792-4079-43b2-98a0-827714bebb86&sid=943da4f77804714c1b2a006928b3096a7eeegxrqa&type=client&ua=4d52555a555b55500603&rr=74057960ef153ffd)]
-    * Title: The three R’s of computer vision: Recognition, reconstruction and reorganization
+    * Title: The three R's of computer vision: Recognition, reconstruction and reorganization
     * Year: 29 June `2015`
     * Authors: J. Malik, P. Arbeláez, J. Carreira, K. Fragkiadaki, R. Girshick, G. Gkioxari, S. Gupta, B. Hariharan, A. Kar, and S. Tulsiani
     * Institutions: [EECS, UC Berkeley, Berkeley], [Universidad de los Andes], [Facebook]
