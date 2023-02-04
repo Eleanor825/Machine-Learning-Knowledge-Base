@@ -1,0 +1,16 @@
+mapping = {
+    "UniTune: Text-Driven Image Editing by Fine Tuning an Image Generation Model on a Single Image": "UniTune",
+    "ILVR: Conditioning Method for Denoising Diffusion Probabilistic Models": "ILVR",
+    "DiffEdit: Diffusion-based semantic image editing with mask guidance": "DiffEdit",
+    "RePaint: Inpainting using Denoising Diffusion Probabilistic Models": "RePaint",
+    "DiffusionCLIP: Text-Guided Diffusion Models for Robust Image Manipulation": "DiffusionCLIP",
+    "Imagic: Text-Based Real Image Editing with Diffusion Models": "Imagic",
+    "SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations": "SDEdit",
+    "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization": "Grad-CAM",
+    "Multimodal Explanations: Justifying Decisions and Pointing to the Evidence": "Multimodal Explanations",
+    "DeepVoting: A Robust and Explainable Deep Network for Semantic Part Detection under Partial Occlusion": "DeepVoting",
+    "Diffusion Models already have a Semantic Latent Space": "ASYRP",
+    "Denoising Diffusion Probabilistic Models": "DDPM",
+    "Denoising Diffusion Implicit Models": "DDIM",
+    "UnitBox: An Advanced Object Detection Network": "UnitBox",
+}
