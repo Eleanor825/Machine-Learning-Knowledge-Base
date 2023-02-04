@@ -1,11 +1,27 @@
 #! https://zhuanlan.zhihu.com/p/555834549
-# [Notes][Vision][CNN] Dilated Convolutions
+# [Notes][Vision][CNN] Dilated Convolutions <!-- omit in toc -->
 
-* url: https://arxiv.org/abs/1511.07122
+* urls: [[abs](https://arxiv.org/abs/1511.07122)]
+    [[pdf](https://arxiv.org/pdf/1511.07122.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.07122/)]
 * Title: Multi-Scale Context Aggregation by Dilated Convolutions
 * Year: 23 Nov `2015`
 * Authors: Fisher Yu, Vladlen Koltun
+* Institution: [Princeton University], [Intel Labs]
 * Abstract: State-of-the-art models for semantic segmentation are based on adaptations of convolutional networks that had originally been designed for image classification. However, dense prediction and image classification are structurally different. In this work, we develop a new convolutional network module that is specifically designed for dense prediction. The presented module uses dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. The architecture is based on the fact that dilated convolutions support exponential expansion of the receptive field without loss of resolution or coverage. We show that the presented context module increases the accuracy of state-of-the-art semantic segmentation systems. In addition, we examine the adaptation of image classification networks to dense prediction and show that simplifying the adapted network can increase accuracy.
+
+## Table of Contents <!-- omit in toc -->
+
+- [Summary of Main Contributions](#summary-of-main-contributions)
+- [1 Introduction](#1-introduction)
+- [2 Dilated Convolutions](#2-dilated-convolutions)
+- [3 Multi-Scale Context Aggregation](#3-multi-scale-context-aggregation)
+- [References](#references)
+- [Further Reading](#further-reading)
+
+----------------------------------------------------------------------------------------------------
+
+## Summary of Main Contributions
 
 ----------------------------------------------------------------------------------------------------
 
