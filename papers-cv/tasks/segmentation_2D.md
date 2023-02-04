@@ -9,7 +9,7 @@ count=85
 - [Superpixels (Learning Hierarchical Features for Scene Labeling, 2013)](#superpixels-learning-hierarchical-features-for-scene-labeling-2013)
 - [Superpixels (LRR, 2016) (2)](#superpixels-lrr-2016-2)
 - [Semantic Segmentation](#semantic-segmentation)
-  - [Unknown](#unknown-1)
+  - [Unclassified](#unclassified)
   - [(2015, FCN) Patchwise Training (count=5)](#2015-fcn-patchwise-training-count5)
   - [Encoder-Decoder Architectures](#encoder-decoder-architectures)
   - [Increase feature resolution (Panoptic FPN, 2019) (4)](#increase-feature-resolution-panoptic-fpn-2019-4)
@@ -19,7 +19,7 @@ count=85
   - [Multi-Scale Architectures (2016, PSPNet) (5)](#multi-scale-architectures-2016-pspnet-5)
   - [Efficiency](#efficiency)
 - [Graphical-Model-Based Approaches](#graphical-model-based-approaches)
-  - [Unknown](#unknown-2)
+  - [Unknown](#unknown-1)
   - [(2014, DeepLabV1) Conditional Random Fields (CRF) (count=3)](#2014-deeplabv1-conditional-random-fields-crf-count3)
   - [MAP and CRF (Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials, 2012) (count=5+5)](#map-and-crf-efficient-inference-in-fully-connected-crfs-with-gaussian-edge-potentials-2012-count55)
   - [(2015, SegNet) MAP and CRF (count=2)](#2015-segnet-map-and-crf-count2)
@@ -116,7 +116,7 @@ count=85
 
 ## Semantic Segmentation
 
-### Unknown
+### Unclassified
 
 * [[GFF](https://arxiv.org/abs/1904.01803)]
     [[pdf](https://arxiv.org/pdf/1904.01803.pdf)]
@@ -172,6 +172,62 @@ count=85
     * Year: 14 Jun `2017`
     * Authors: Abhishek Chaurasia, Eugenio Culurciello
     * Abstract: Pixel-wise semantic segmentation for visual scene understanding not only needs to be accurate, but also efficient in order to find any use in real-time application. Existing algorithms even though are accurate but they do not focus on utilizing the parameters of neural network efficiently. As a result they are huge in terms of parameters and number of operations; hence slow too. In this paper, we propose a novel deep neural network architecture which allows it to learn without any significant increase in number of parameters. Our network uses only 11.5 million parameters and 21.2 GFLOPs for processing an image of resolution 3x640x360. It gives state-of-the-art performance on CamVid and comparable results on Cityscapes dataset. We also compare our networks processing time on NVIDIA GPU and embedded system device with existing state-of-the-art architectures for different image resolutions.
+* [[FlowFormer: A Transformer Architecture for Optical Flow](https://arxiv.org/abs/2203.16194)]
+    [[pdf](https://arxiv.org/pdf/2203.16194.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2203.16194/)]
+    * Title: FlowFormer: A Transformer Architecture for Optical Flow
+    * Year: 30 Mar `2022`
+    * Authors: Zhaoyang Huang, Xiaoyu Shi, Chao Zhang, Qiang Wang, Ka Chun Cheung, Hongwei Qin, Jifeng Dai, Hongsheng Li
+    * Abstract: We introduce optical Flow transFormer, dubbed as FlowFormer, a transformer-based neural network architecture for learning optical flow. FlowFormer tokenizes the 4D cost volume built from an image pair, encodes the cost tokens into a cost memory with alternate-group transformer (AGT) layers in a novel latent space, and decodes the cost memory via a recurrent transformer decoder with dynamic positional cost queries. On the Sintel benchmark, FlowFormer achieves 1.159 and 2.088 average end-point-error (AEPE) on the clean and final pass, a 16.5% and 15.5% error reduction from the best published result (1.388 and 2.47). Besides, FlowFormer also achieves strong generalization performance. Without being trained on Sintel, FlowFormer achieves 1.01 AEPE on the clean pass of Sintel training set, outperforming the best published result (1.29) by 21.7%.
+* [[Recurrent Models of Visual Attention](https://arxiv.org/abs/1406.6247)]
+    [[pdf](https://arxiv.org/pdf/1406.6247.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1406.6247/)]
+    * Title: Recurrent Models of Visual Attention
+    * Year: 24 Jun `2014`
+    * Authors: Volodymyr Mnih, Nicolas Heess, Alex Graves, Koray Kavukcuoglu
+    * Abstract: Applying convolutional neural networks to large images is computationally expensive because the amount of computation scales linearly with the number of image pixels. We present a novel recurrent neural network model that is capable of extracting information from an image or video by adaptively selecting a sequence of regions or locations and only processing the selected regions at high resolution. Like convolutional neural networks, the proposed model has a degree of translation invariance built-in, but the amount of computation it performs can be controlled independently of the input image size. While the model is non-differentiable, it can be trained using reinforcement learning methods to learn task-specific policies. We evaluate our model on several image classification tasks, where it significantly outperforms a convolutional neural network baseline on cluttered images, and on a dynamic visual control problem, where it learns to track a simple object without an explicit training signal for doing so.
+* [[Large Kernel Matters -- Improve Semantic Segmentation by Global Convolutional Network](https://arxiv.org/abs/1703.02719)]
+    [[pdf](https://arxiv.org/pdf/1703.02719.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1703.02719/)]
+    * Title: Large Kernel Matters -- Improve Semantic Segmentation by Global Convolutional Network
+    * Year: 08 Mar `2017`
+    * Authors: Chao Peng, Xiangyu Zhang, Gang Yu, Guiming Luo, Jian Sun
+    * Abstract: One of recent trends [30, 31, 14] in network architec- ture design is stacking small filters (e.g., 1x1 or 3x3) in the entire network because the stacked small filters is more ef- ficient than a large kernel, given the same computational complexity. However, in the field of semantic segmenta- tion, where we need to perform dense per-pixel prediction, we find that the large kernel (and effective receptive field) plays an important role when we have to perform the clas- sification and localization tasks simultaneously. Following our design principle, we propose a Global Convolutional Network to address both the classification and localization issues for the semantic segmentation. We also suggest a residual-based boundary refinement to further refine the ob- ject boundaries. Our approach achieves state-of-art perfor- mance on two public benchmarks and significantly outper- forms previous results, 82.2% (vs 80.2%) on PASCAL VOC 2012 dataset and 76.9% (vs 71.8%) on Cityscapes dataset.
+* [[MPViT: Multi-Path Vision Transformer for Dense Prediction](https://arxiv.org/abs/2112.11010)]
+    [[pdf](https://arxiv.org/pdf/2112.11010.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2112.11010/)]
+    * Title: MPViT: Multi-Path Vision Transformer for Dense Prediction
+    * Year: 21 Dec `2021`
+    * Authors: Youngwan Lee, Jonghee Kim, Jeff Willette, Sung Ju Hwang
+    * Abstract: Dense computer vision tasks such as object detection and segmentation require effective multi-scale feature representation for detecting or classifying objects or regions with varying sizes. While Convolutional Neural Networks (CNNs) have been the dominant architectures for such tasks, recently introduced Vision Transformers (ViTs) aim to replace them as a backbone. Similar to CNNs, ViTs build a simple multi-stage structure (i.e., fine-to-coarse) for multi-scale representation with single-scale patches. In this work, with a different perspective from existing Transformers, we explore multi-scale patch embedding and multi-path structure, constructing the Multi-Path Vision Transformer (MPViT). MPViT embeds features of the same size~(i.e., sequence length) with patches of different scales simultaneously by using overlapping convolutional patch embedding. Tokens of different scales are then independently fed into the Transformer encoders via multiple paths and the resulting features are aggregated, enabling both fine and coarse feature representations at the same feature level. Thanks to the diverse, multi-scale feature representations, our MPViTs scaling from tiny~(5M) to base~(73M) consistently achieve superior performance over state-of-the-art Vision Transformers on ImageNet classification, object detection, instance segmentation, and semantic segmentation. These extensive results demonstrate that MPViT can serve as a versatile backbone network for various vision tasks. Code will be made publicly available at \url{this https URL}.
+* [[Semantic Segmentation with Boundary Neural Fields](https://arxiv.org/abs/1511.02674)]
+    [[pdf](https://arxiv.org/pdf/1511.02674.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1511.02674/)]
+    * Title: Semantic Segmentation with Boundary Neural Fields
+    * Year: 09 Nov `2015`
+    * Authors: Gedas Bertasius, Jianbo Shi, Lorenzo Torresani
+    * Abstract: The state-of-the-art in semantic segmentation is currently represented by fully convolutional networks (FCNs). However, FCNs use large receptive fields and many pooling layers, both of which cause blurring and low spatial resolution in the deep layers. As a result FCNs tend to produce segmentations that are poorly localized around object boundaries. Prior work has attempted to address this issue in post-processing steps, for example using a color-based CRF on top of the FCN predictions. However, these approaches require additional parameters and low-level features that are difficult to tune and integrate into the original network architecture. Additionally, most CRFs use color-based pixel affinities, which are not well suited for semantic segmentation and lead to spatially disjoint predictions. To overcome these problems, we introduce a Boundary Neural Field (BNF), which is a global energy model integrating FCN predictions with boundary cues. The boundary information is used to enhance semantic segment coherence and to improve object localization. Specifically, we first show that the convolutional filters of semantic FCNs provide good features for boundary detection. We then employ the predicted boundaries to define pairwise potentials in our energy. Finally, we show that our energy decomposes semantic segmentation into multiple binary problems, which can be relaxed for efficient global optimization. We report extensive experiments demonstrating that minimization of our global boundary-based energy yields results superior to prior globalization methods, both quantitatively as well as qualitatively.
+* [[PCT: Point cloud transformer](https://arxiv.org/abs/2012.09688)]
+    [[pdf](https://arxiv.org/pdf/2012.09688.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2012.09688/)]
+    * Title: PCT: Point cloud transformer
+    * Year: 17 Dec `2020`
+    * Authors: Meng-Hao Guo, Jun-Xiong Cai, Zheng-Ning Liu, Tai-Jiang Mu, Ralph R. Martin, Shi-Min Hu
+    * Abstract: The irregular domain and lack of ordering make it challenging to design deep neural networks for point cloud processing. This paper presents a novel framework named Point Cloud Transformer(PCT) for point cloud learning. PCT is based on Transformer, which achieves huge success in natural language processing and displays great potential in image processing. It is inherently permutation invariant for processing a sequence of points, making it well-suited for point cloud learning. To better capture local context within the point cloud, we enhance input embedding with the support of farthest point sampling and nearest neighbor search. Extensive experiments demonstrate that the PCT achieves the state-of-the-art performance on shape classification, part segmentation and normal estimation tasks.
+* [[Joint Semantic Segmentation and Boundary Detection using Iterative Pyramid Contexts](https://arxiv.org/abs/2004.07684)]
+    [[pdf](https://arxiv.org/pdf/2004.07684.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2004.07684/)]
+    * Title: Joint Semantic Segmentation and Boundary Detection using Iterative Pyramid Contexts
+    * Year: 16 Apr `2020`
+    * Authors: Mingmin Zhen, Jinglu Wang, Lei Zhou, Shiwei Li, Tianwei Shen, Jiaxiang Shang, Tian Fang, Quan Long
+    * Abstract: In this paper, we present a joint multi-task learning framework for semantic segmentation and boundary detection. The critical component in the framework is the iterative pyramid context module (PCM), which couples two tasks and stores the shared latent semantics to interact between the two tasks. For semantic boundary detection, we propose the novel spatial gradient fusion to suppress nonsemantic edges. As semantic boundary detection is the dual task of semantic segmentation, we introduce a loss function with boundary consistency constraint to improve the boundary pixel accuracy for semantic segmentation. Our extensive experiments demonstrate superior performance over state-of-the-art works, not only in semantic segmentation but also in semantic boundary detection. In particular, a mean IoU score of 81:8% on Cityscapes test set is achieved without using coarse data or any external data for semantic segmentation. For semantic boundary detection, we improve over previous state-of-the-art works by 9.9% in terms of AP and 6:8% in terms of MF(ODS).
+* [[FuseFormer: Fusing Fine-Grained Information in Transformers for Video Inpainting](https://arxiv.org/abs/2109.02974)]
+    [[pdf](https://arxiv.org/pdf/2109.02974.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2109.02974/)]
+    * Title: FuseFormer: Fusing Fine-Grained Information in Transformers for Video Inpainting
+    * Year: 07 Sep `2021`
+    * Authors: Rui Liu, Hanming Deng, Yangyi Huang, Xiaoyu Shi, Lewei Lu, Wenxiu Sun, Xiaogang Wang, Jifeng Dai, Hongsheng Li
+    * Abstract: Transformer, as a strong and flexible architecture for modelling long-range relations, has been widely explored in vision tasks. However, when used in video inpainting that requires fine-grained representation, existed method still suffers from yielding blurry edges in detail due to the hard patch splitting. Here we aim to tackle this problem by proposing FuseFormer, a Transformer model designed for video inpainting via fine-grained feature fusion based on novel Soft Split and Soft Composition operations. The soft split divides feature map into many patches with given overlapping interval. On the contrary, the soft composition operates by stitching different patches into a whole feature map where pixels in overlapping regions are summed up. These two modules are first used in tokenization before Transformer layers and de-tokenization after Transformer layers, for effective mapping between tokens and features. Therefore, sub-patch level information interaction is enabled for more effective feature propagation between neighboring patches, resulting in synthesizing vivid content for hole regions in videos. Moreover, in FuseFormer, we elaborately insert the soft composition and soft split into the feed-forward network, enabling the 1D linear layers to have the capability of modelling 2D structure. And, the sub-patch level feature fusion ability is further enhanced. In both quantitative and qualitative evaluations, our proposed FuseFormer surpasses state-of-the-art methods. We also conduct detailed analysis to examine its superiority.
 
 ### (2015, FCN) Patchwise Training (count=5)
 
@@ -939,6 +995,13 @@ count=85
     * Year: `2009`
     * Authors: David Grangier , Léon Bottou , Ronan Collobert
     * Abstract: We propose a deep learning strategy for scene parsing, i.e. to asssign a class label to each pixel of an image. We investigate the use of deep convolutional network for modeling the complex scene label structures, relying on a supervised greedy learning strategy. Compared to standard approaches based on CRFs, our strategy does not need hand-crafted features, allows modeling more complex spatial dependencies and has a lower inference cost. Experiments over the MSRC benchmark and the LabelMe dataset show the effectiveness of our approach.
+* [[Deep Deconvolutional Networks for Scene Parsing](https://arxiv.org/abs/1411.4101)]
+    [[pdf](https://arxiv.org/pdf/1411.4101.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1411.4101/)]
+    * Title: Deep Deconvolutional Networks for Scene Parsing
+    * Year: 15 Nov `2014`
+    * Authors: Rahul Mohan
+    * Abstract: Scene parsing is an important and challenging prob- lem in computer vision. It requires labeling each pixel in an image with the category it belongs to. Tradition- ally, it has been approached with hand-engineered features from color information in images. Recently convolutional neural networks (CNNs), which automatically learn hierar- chies of features, have achieved record performance on the task. These approaches typically include a post-processing technique, such as superpixels, to produce the final label- ing. In this paper, we propose a novel network architecture that combines deep deconvolutional neural networks with CNNs. Our experiments show that deconvolutional neu- ral networks are capable of learning higher order image structure beyond edge primitives in comparison to CNNs. The new network architecture is employed for multi-patch training, introduced as part of this work. Multi-patch train- ing makes it possible to effectively learn spatial priors from scenes. The proposed approach yields state-of-the-art per- formance on four scene parsing datasets, namely Stanford Background, SIFT Flow, CamVid, and KITTI. In addition, our system has the added advantage of having a training system that can be completely automated end-to-end with- out requiring any post-processing.
 * [Scene Parsing with Object Instances and Occlusion Ordering](https://ieeexplore.ieee.org/document/6909874)
     [[pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6909874)]
     * Title: Scene Parsing with Object Instances and Occlusion Ordering
