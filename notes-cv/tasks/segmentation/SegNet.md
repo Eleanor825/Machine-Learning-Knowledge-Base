@@ -60,7 +60,7 @@ Others
 
 ## 3 ARCHITECTURE
 
-Overview
+**Overview**
 
 > SegNet has an encoder network and a corresponding decoder network, followed by a final pixelwise classification layer.
 
@@ -70,7 +70,7 @@ Overview
 
 > The final decoder output is fed to a multi-class soft-max classifier to produce class probabilities for each pixel independently.
 
-Encoder
+**Encoder**
 
 > Each encoder in the `encoder network` performs convolution with a filter bank to produce a set of feature maps.
 
@@ -83,7 +83,7 @@ Encoder
 
 > The increasingly lossy (boundary detail) image representation is not beneficial for segmentation where boundary delineation is vital. Therefore, it is necessary to capture and store boundary information in the encoder feature maps before sub-sampling is performed.
 
-Decoder
+**Decoder**
 
 > The appropriate decoder in the `decoder network` upsamples its input feature map(s) using the memorized max-pooling indices from the corresponding encoder feature map(s).
 
@@ -93,9 +93,9 @@ Decoder
 
 > Note that the decoder corresponding to the first encoder (closest to the input image) produces a multi-channel feature map, although its encoder input has 3 channels (RGB). This is unlike the other decoders in the network which produce feature maps with the same number of size and channels as their encoder inputs.
 
-Classifier
+**Classifier**
 
-> The output of the soft-max classifier is a K channel image of probabilities where K is the number of classes.
+> The output of the soft-max classifier is a $K$ channel image of probabilities where K is the number of classes.
 
 ### 3.1 Decoder Variants
 
@@ -123,8 +123,10 @@ Classifier
 * [4] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [5] [InceptionNetV1](https://zhuanlan.zhihu.com/p/564141144)
 * [6] [VGGNet](https://zhuanlan.zhihu.com/p/563314926)
+* [12] SegNet-Basic
 * [15] Dilated Convolutions
 * [16] [U-Net](https://zhuanlan.zhihu.com/p/568803926)
+* [18] DecoupledNet
 * [51] Inception-v2/Batch Normalization
 * [53] [DeconvNet](https://zhuanlan.zhihu.com/p/558646271)
 * [58] [Fully Convolutional Networks (FCN)](https://zhuanlan.zhihu.com/p/561031110)
