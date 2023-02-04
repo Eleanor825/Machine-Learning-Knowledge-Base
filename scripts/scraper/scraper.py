@@ -7,6 +7,7 @@ import argparse
 from code_names_mapping import mapping
 from papers_old_list import old_list
 from papers_diffusion import diffusion
+from papers_NERF import NERF
 
 
 import logging
