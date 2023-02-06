@@ -46,11 +46,11 @@ Reparameterization:
 $$x_{t} = \sqrt{\alpha_{t}}x_{0} + \sqrt{1-\alpha_{t}}\epsilon \text{ where } \epsilon \sim \mathcal{N}(0, I).$$
 
 Reverse the process using Bayes' Theorem:
-\begin{aligned}
+> $$\begin{align*}
     & q(x_{t-1}|x_{t}) = \mathcal{N}(\tilde{\mu}_{t}, \tilde{\beta}_{t}I) \text{ where } \\
     & \tilde{\mu}_{t} = \tilde{\mu}_{t}(x_{t}, x_{0}) := \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_{t}}{1-\bar{\alpha}_{t}}x_{0} + \frac{\sqrt{\alpha_{t}}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_{t}}x_{t} \text{ and } \\
     & \tilde{\beta}_{t} := \frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\beta_{t}.
-\end{aligned}
+    \end{align*}$$
 We aim to model this using
 $$p_{\theta}(x_{t-1}|x_{t}) = \mathcal{N}(x_{t-1}; \mu_{\theta}(x_{t}, t), \Sigma_{\theta}(x_{t}, t)).$$
 
