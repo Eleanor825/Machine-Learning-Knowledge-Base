@@ -45,6 +45,7 @@ count=144
 - [Sparsity](#sparsity)
   - [(2018, ESPNetV1) (count=3)](#2018-espnetv1-count3)
   - [(2018, MobileNetV2) (count=1)](#2018-mobilenetv2-count1)
+  - [Depth Completion](#depth-completion)
 - [Expressive Power (2019, EfficientNetV1) (4)](#expressive-power-2019-efficientnetv1-4)
 - [Reparameterization](#reparameterization)
 - [Regularization Techniques](#regularization-techniques)
@@ -320,7 +321,7 @@ count=144
     * Comments:
         * > ResNet-RS (Bello et al., 2021) improves training efficiency by optimizing scaling hyperparameters. (EfficientNetV2, 2021)
         * > Lambda Networks (Bello, 2021), NFNets (Brock et al., 2021), BoTNets (Srinivas et al., 2021), ResNet-RS (Bello et al., 2021) focus on TPU training speed. (EfficientNetV2, 2021)
-* [NFNet](https://arxiv.org/abs/2102.06171)
+* [[NFNet](https://arxiv.org/abs/2102.06171)]
     [[pdf](https://arxiv.org/pdf/2102.06171.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2102.06171/)]
     * Title: High-Performance Large-Scale Image Recognition Without Normalization
@@ -330,7 +331,7 @@ count=144
     * Comments:
         * > (2021, EfficientNetV2) NFNets (Brock et al., 2021) aim to improve training efficiency by removing the expensive batch normalization.
         * > (2021, EfficientNetV2) Lambda Networks (Bello, 2021), NFNets (Brock et al., 2021), BoTNets (Srinivas et al., 2021), ResNet-RS (Bello et al., 2021) focus on TPU training speed.
-* [TResNet](https://arxiv.org/abs/2003.13630)
+* [[TResNet](https://arxiv.org/abs/2003.13630)]
     [[pdf](https://arxiv.org/pdf/2003.13630.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2003.13630/)]
     * Title: TResNet: High Performance GPU-Dedicated Architecture
@@ -884,7 +885,6 @@ Overview:
     [[pdf](https://arxiv.org/pdf/1807.11164.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1807.11164/)]
     * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
-    * Title: ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
     * Year: 30 Jul `2018`
     * Authors: Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun
     * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
@@ -1082,7 +1082,7 @@ Overview:
 
 ### (2018, ESPNetV1) (count=3)
 
-* [Sparse Decomposition](https://openaccess.thecvf.com/content_cvpr_2015/html/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.html)
+* [[Sparse Decomposition](https://openaccess.thecvf.com/content_cvpr_2015/html/Liu_Sparse_Convolutional_Neural_2015_CVPR_paper.html)]
     * Title: Sparse Convolutional Neural Networks
     * Year: `2015`
     * Authors: Baoyuan Liu, Min Wang, Hassan Foroosh, Marshall Tappen, Marianna Pensky
@@ -1112,6 +1112,35 @@ Overview:
     * Authors: Soravit Changpinyo, Mark Sandler, Andrey Zhmoginov
     * Institusion: [University of Southern California, Los Angeles]
     * Abstract: Deep convolutional networks are well-known for their high computational and memory demands. Given limited resources, how does one design a network that balances its size, training time, and prediction accuracy? A surprisingly effective approach to trade accuracy for size and speed is to simply reduce the number of channels in each convolutional layer by a fixed fraction and retrain the network. In many cases this leads to significantly smaller networks with only minimal changes to accuracy. In this paper, we take a step further by empirically examining a strategy for deactivating connections between filters in convolutional layers in a way that allows us to harvest savings both in run-time and memory for many network architectures. More specifically, we generalize 2D convolution to use a channel-wise sparse connection structure and show that this leads to significantly better results than the baseline approach for large networks including VGG and Inception V3.
+
+### Depth Completion
+
+* [[HMS-Net: Hierarchical Multi-scale Sparsity-invariant Network for Sparse Depth Completion](https://arxiv.org/abs/1808.08685)]
+    [[pdf](https://arxiv.org/pdf/1808.08685.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1808.08685/)]
+    * Title: HMS-Net: Hierarchical Multi-scale Sparsity-invariant Network for Sparse Depth Completion
+    * Year: 27 Aug `2018`
+    * Authors: Zixuan Huang, Junming Fan, Shenggan Cheng, Shuai Yi, Xiaogang Wang, Hongsheng Li
+    * Abstract: Dense depth cues are important and have wide applications in various computer vision tasks. In autonomous driving, LIDAR sensors are adopted to acquire depth measurements around the vehicle to perceive the surrounding environments. However, depth maps obtained by LIDAR are generally sparse because of its hardware limitation. The task of depth completion attracts increasing attention, which aims at generating a dense depth map from an input sparse depth map. To effectively utilize multi-scale features, we propose three novel sparsity-invariant operations, based on which, a sparsity-invariant multi-scale encoder-decoder network (HMS-Net) for handling sparse inputs and sparse feature maps is also proposed. Additional RGB features could be incorporated to further improve the depth completion performance. Our extensive experiments and component analysis on two public benchmarks, KITTI depth completion benchmark and NYU-depth-v2 dataset, demonstrate the effectiveness of the proposed approach. As of Aug. 12th, 2018, on KITTI depth completion leaderboard, our proposed model without RGB guidance ranks first among all peer-reviewed methods without using RGB information, and our model with RGB guidance ranks second among all RGB-guided methods.
+* [[Sparse and Dense Data with CNNs: Depth Completion and Semantic Segmentation](https://arxiv.org/abs/1808.00769)]
+    [[pdf](https://arxiv.org/pdf/1808.00769.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1808.00769/)]
+    * Title: Sparse and Dense Data with CNNs: Depth Completion and Semantic Segmentation
+    * Year: 02 Aug `2018`
+    * Authors: Maximilian Jaritz, Raoul de Charette, Emilie Wirbel, Xavier Perrotton, Fawzi Nashashibi
+    * Abstract: Convolutional neural networks are designed for dense data, but vision data is often sparse (stereo depth, point clouds, pen stroke, etc.). We present a method to handle sparse depth data with optional dense RGB, and accomplish depth completion and semantic segmentation changing only the last layer. Our proposal efficiently learns sparse features without the need of an additional validity mask. We show how to ensure network robustness to varying input sparsities. Our method even works with densities as low as 0.8% (8 layer lidar), and outperforms all published state-of-the-art on the Kitti depth completion benchmark.
+* [[Sparsity Invariant CNNs](https://arxiv.org/abs/1708.06500)]
+    [[pdf](https://arxiv.org/pdf/1708.06500.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1708.06500/)]
+    * Title: Sparsity Invariant CNNs
+    * Year: 22 Aug `2017`
+    * Authors: Jonas Uhrig, Nick Schneider, Lukas Schneider, Uwe Franke, Thomas Brox, Andreas Geiger
+    * Abstract: In this paper, we consider convolutional neural networks operating on sparse inputs with an application to depth upsampling from sparse laser scan data. First, we show that traditional convolutional networks perform poorly when applied to sparse data even when the location of missing data is provided to the network. To overcome this problem, we propose a simple yet effective sparse convolution layer which explicitly considers the location of missing data during the convolution operation. We demonstrate the benefits of the proposed network architecture in synthetic and real experiments with respect to various baseline approaches. Compared to dense baselines, the proposed sparse convolution network generalizes well to novel datasets and is invariant to the level of sparsity in the data. For our evaluation, we derive a novel dataset from the KITTI benchmark, comprising 93k depth annotated RGB images. Our dataset allows for training and evaluating depth upsampling and depth prediction techniques in challenging real-world settings and will be made available upon publication.
+* [[Revisiting Sparsity Invariant Convolution: A Network for Image Guided Depth Completion](https://ieeexplore.ieee.org/document/9138427)]
+    * Title: Revisiting Sparsity Invariant Convolution: A Network for Image Guided Depth Completion
+    * Year: 10 Jul `2020`
+    * Authors: Lin Yan; Kai Liu; Evgeny Belyaev
+    * Abstract: The limitation of LiDAR (Light Detection And Ranging) sensor causes the general sparsity of produced depth measurement. However, the sparse representation of the world is insufficient for applications such as 3D reconstruction. Thus, depth completion is an important computer vision task in which a synchronized RGB image is commonly available. In this paper, we propose a deep neural network to tackle this image guided depth completion problem. By revisiting the sparsity invariant convolution and revealing how it can be used in a novel approach, we propose three mask aware operations to process, downscale, and fuse sparse features. These operations explicitly consider the observation mask of its corresponding feature map. In addition, the structure of this network follows a novel scheme in which data from image and depth domain are processed by these proposed operations independently. Our proposed model achieves state-of-the-art performance on the KITTI depth completion benchmark. Furthermore, it presents a strong robustness for bearing input sparsity under different densities and patterns.
 
 ## Expressive Power (2019, EfficientNetV1) (4)
 
@@ -1319,7 +1348,7 @@ Overview:
     * Abstract: While depth tends to improve network performances, it also makes gradient-based training more difficult since deeper networks tend to be more non-linear. The recently proposed knowledge distillation approach is aimed at obtaining small and fast-to-execute models, and it has shown that a student network could imitate the soft output of a larger teacher network or ensemble of networks. In this paper, we extend this idea to allow the training of a student that is deeper and thinner than the teacher, using not only the outputs but also the intermediate representations learned by the teacher as hints to improve the training process and final performance of the student. Because the student intermediate hidden layer will generally be smaller than the teacher's intermediate hidden layer, additional parameters are introduced to map the student hidden layer to the prediction of the teacher hidden layer. This allows one to train deeper students that can generalize better or run faster, a trade-off that is controlled by the chosen student capacity. For example, on CIFAR-10, a deep student network with almost 10.4 times less parameters outperforms a larger, state-of-the-art teacher network.
     * Comments:
         * > A related recent technique is based on using soft targets from a shallow teacher network to aid in training deeper student networks in multiple stages [25], similar to the neural history compressor for sequences, where a slowly ticking teacher recurrent net is "distilled" into a quickly ticking student recurrent net by forcing the latter to predict the hidden units of the former [26]. (Training Very Deep Networks, 2015)
-* [RegNet](https://arxiv.org/abs/2003.13678)
+* [[RegNet](https://arxiv.org/abs/2003.13678)]
     [[pdf](https://arxiv.org/pdf/2003.13678.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2003.13678/)]
     * Title: Designing Network Design Spaces
