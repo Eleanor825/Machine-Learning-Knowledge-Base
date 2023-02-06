@@ -10,6 +10,7 @@ count=28
 - [Image Denoising](#image-denoising)
 - [Unclassified](#unclassified)
   - [Mon Jan 23, 2023 Readings](#mon-jan-23-2023-readings)
+  - [Mon Feb 06, 2023 Readings](#mon-feb-06-2023-readings)
 
 ----------------------------------------------------------------------------------------------------
 
@@ -229,3 +230,13 @@ count=28
 * Denoising Diffusion Probabilistic Models
 * High-Resolution Image Synthesis with Latent Diffusion Models
 * Diffusion Models: A Comprehensive Survey of Methods and Applications
+
+### Mon Feb 06, 2023 Readings
+
+* [[An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion](https://arxiv.org/abs/2208.01618)]
+    [[pdf](https://arxiv.org/pdf/2208.01618.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2208.01618/)]
+    * Title: An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion
+    * Year: 02 Aug `2022`
+    * Authors: Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik, Amit H. Bermano, Gal Chechik, Daniel Cohen-Or
+    * Abstract: Text-to-image models offer unprecedented freedom to guide creation through natural language. Yet, it is unclear how such freedom can be exercised to generate images of specific unique concepts, modify their appearance, or compose them in new roles and novel scenes. In other words, we ask: how can we use language-guided models to turn our cat into a painting, or imagine a new product based on our favorite toy? Here we present a simple approach that allows such creative freedom. Using only 3-5 images of a user-provided concept, like an object or a style, we learn to represent it through new "words" in the embedding space of a frozen text-to-image model. These "words" can be composed into natural language sentences, guiding personalized creation in an intuitive way. Notably, we find evidence that a single word embedding is sufficient for capturing unique and varied concepts. We compare our approach to a wide range of baselines, and demonstrate that it can more faithfully portray the concepts across a range of applications and tasks. Our code, data and new words will be available at: this https URL
