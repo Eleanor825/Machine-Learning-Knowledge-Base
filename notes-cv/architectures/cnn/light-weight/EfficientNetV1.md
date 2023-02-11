@@ -11,9 +11,9 @@
 
 ## 1. Introduction
 
-> `Scaling` up ConvNets is widely used to achieve better `accuracy`.
+> **Scaling** up ConvNets is widely used to achieve better **accuracy**.
 
-> The most common way is to scale up ConvNets by their `depth` (He et al., 2016) or `width` (Zagoruyko & Komodakis, 2016). Another less common, but increasingly popular, method is to scale up models by image `resolution` (Huang et al., 2018). In previous work, it is common to scale only one of the three dimensions – depth, width, and image size.
+> The most common way is to scale up ConvNets by their **depth** (He et al., 2016) or **width** (Zagoruyko & Komodakis, 2016). Another less common, but increasingly popular, method is to scale up models by image **resolution** (Huang et al., 2018). In previous work, it is common to scale only one of the three dimensions – depth, width, and image size.
 
 > Though it is possible to scale two or three dimensions arbitrarily, arbitrary scaling requires tedious manual tuning and still often yields sub-optimal accuracy and efficiency.
 
@@ -23,7 +23,7 @@
 
 > Intuitively, the compound scaling method makes sense because if the input image is bigger, then the network needs more layers to increase the receptive field and more channels to capture more fine-grained patterns on the bigger image.
 
-> Notably, the effectiveness of model scaling heavily depends on the `baseline network`; to go even further, we use neural architecture search (Zoph & Le, 2017; Tan et al., 2019) to develop a new baseline network, and scale it up to obtain a family of models, called `EfficientNets`.
+> Notably, the effectiveness of model scaling heavily depends on the **baseline network**; to go even further, we use neural architecture search (Zoph & Le, 2017; Tan et al., 2019) to develop a new baseline network, and scale it up to obtain a family of models, called `EfficientNets`.
 
 ## 2. Related Work
 
@@ -34,11 +34,11 @@
 **Model Scaling**
 
 > There are many ways to scale a ConvNet for different resource constraints:
-> 1. ResNet (He et al., 2016) can be scaled down (e.g., ResNet-18) or up (e.g., ResNet-200) by adjusting `network depth` (#layers),
-> 2. while WideResNet (Zagoruyko & Komodakis, 2016) and MobileNets (Howard et al., 2017) can be scaled by `network width` (#channels).
+> 1. `ResNet` (He et al., 2016) can be scaled down (e.g., ResNet-18) or up (e.g., ResNet-200) by adjusting **network depth** (#layers),
+> 2. while `WideResNet` (Zagoruyko & Komodakis, 2016) and MobileNets (Howard et al., 2017) can be scaled by **network width** (#channels).
 > 3. It is also well-recognized that bigger input image size will help accuracy with the overhead of more FLOPS.
 
-> Our work systematically and empirically studies ConvNet scaling for all three dimensions of network `width`, `depth`, and `resolutions`.
+> Our work systematically and empirically studies ConvNet scaling for all three dimensions of network **width**, **depth**, and **resolutions**.
 
 ## 3. Compound Model Scaling
 
@@ -61,8 +61,8 @@ $$\begin{aligned}
     \max_{d, w, r \in \mathbb{Z}_{++}} & \operatorname{Accuracy}(\mathcal{N}(d, w, r)) \\
     \text{subject to:} & \quad
     \begin{aligned}
-        & \operatorname{Memory}(\mathcal{N}(d, w, r)) \leq \text{target\_memory} \\
-        & \operatorname{FLOPS}(\mathcal{N}(d, w, r)) \leq \text{target\_flops}
+        & \operatorname{Memory}(\mathcal{N}(d, w, r)) \leq \texttt{target\_memory} \\
+        & \operatorname{FLOPS}(\mathcal{N}(d, w, r)) \leq \texttt{target\_flops}
     \end{aligned}
 \end{aligned}$$
 
@@ -142,16 +142,16 @@ $$\begin{aligned}
 
 * Tan, Mingxing, and Quoc Le. "Efficientnet: Rethinking model scaling for convolutional neural networks." *International conference on machine learning*. PMLR, 2019.
 
-## Further Reading
+## See Also
 
 * [Krizhevsky et al., 2012] AlexNet
 * [He et al., 2016] ResNet
-* [Zagoruyko & Komodakis, 2016] Wide Residual Networks
+* [Zagoruyko & Komodakis, 2016] Wide Residual Networks (WRN)
 * [Huang et al., 2017] DenseNet
 * [Szegedy et al., 2015] [InceptionNetV1/GoogLeNet](https://zhuanlan.zhihu.com/p/564141144)
-* [Ioffe & Szegedy, 2015] Inception-v2/Batch Normalization
-* [Szegedy et al., 2016] Inception-v3
-* [Szegedy et al., 2017] Inception-v4
+* [Ioffe & Szegedy, 2015] InceptionNetV2/Batch Normalization
+* [Szegedy et al., 2016] InceptionNetV3
+* [Szegedy et al., 2017] InceptionNetV4
 * [Huang et al., 2018] GPipe
 * [Howard et al., 2017] MobileNetV1
 * [Sandler et al., 2018] MobileNetV2
