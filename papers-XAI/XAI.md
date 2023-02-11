@@ -1,11 +1,11 @@
 # [Papers] Explainable AI <!-- omit in toc -->
 
-count=20
+count=21
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Surveys](#surveys)
-- [Gradient-Based Methods](#gradient-based-methods)
+- [Class Activation Maps](#class-activation-maps)
 - [Saliency Map](#saliency-map)
 - [Attention Mechanism](#attention-mechanism)
 - [From the VoG Paper](#from-the-vog-paper)
@@ -28,8 +28,15 @@ count=20
     * Authors: Amina Adadi; Mohammed Berrada
     * Abstract: At the dawn of the fourth industrial revolution, we are witnessing a fast and widespread adoption of artificial intelligence (AI) in our daily life, which contributes to accelerating the shift towards a more algorithmic society. However, even with such unprecedented advancements, a key impediment to the use of AI-based systems is that they often lack transparency. Indeed, the black-box nature of these systems allows powerful predictions, but it cannot be directly explained. This issue has triggered a new debate on explainable AI (XAI). A research field holds substantial promise for improving trust and transparency of AI-based systems. It is recognized as the sine qua non for AI to continue making steady progress without disruption. This survey provides an entry point for interested researchers and practitioners to learn key aspects of the young and rapidly growing body of research related to XAI. Through the lens of the literature, we review the existing approaches regarding the topic, discuss trends surrounding its sphere, and present major research trajectories.
 
-## Gradient-Based Methods
+## Class Activation Maps
 
+* [[CAM](https://arxiv.org/abs/1512.04150)]
+    [[pdf](https://arxiv.org/pdf/1512.04150.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1512.04150/)]
+    * Title: Learning Deep Features for Discriminative Localization
+    * Year: 14 Dec `2015`
+    * Authors: Bolei Zhou, Aditya Khosla, Agata Lapedriza, Aude Oliva, Antonio Torralba
+    * Abstract: In this work, we revisit the global average pooling layer proposed in [13], and shed light on how it explicitly enables the convolutional neural network to have remarkable localization ability despite being trained on image-level labels. While this technique was previously proposed as a means for regularizing training, we find that it actually builds a generic localizable deep representation that can be applied to a variety of tasks. Despite the apparent simplicity of global average pooling, we are able to achieve 37.1% top-5 error for object localization on ILSVRC 2014, which is remarkably close to the 34.2% top-5 error achieved by a fully supervised CNN approach. We demonstrate that our network is able to localize the discriminative image regions on a variety of tasks despite not being trained for them
 * [[Grad-CAM](https://arxiv.org/abs/1610.02391)]
     [[pdf](https://arxiv.org/pdf/1610.02391.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/1610.02391/)]
