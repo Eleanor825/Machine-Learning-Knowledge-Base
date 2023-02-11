@@ -1,6 +1,6 @@
 # [Papers][Vision] CNN Architectures <!-- omit in toc -->
 
-count=144
+count=149
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -31,6 +31,7 @@ count=144
   - [MobileNet Series (count=3+2)](#mobilenet-series-count32)
   - [EfficientNets (count=3)](#efficientnets-count3)
   - [ShuffleNets (count=2)](#shufflenets-count2)
+- [Information Bottleneck](#information-bottleneck)
 - [Model Compression](#model-compression)
   - [(2016, RexNeXt) Compressing Convolutional Networks (count=4)](#2016-rexnext-compressing-convolutional-networks-count4)
   - [(ESPNetV1, 2018) Compressing Convolutional Networks (count=3)](#espnetv1-2018-compressing-convolutional-networks-count3)
@@ -890,6 +891,30 @@ Overview:
     * Abstract: Currently, the neural network architecture design is mostly guided by the \emph{indirect} metric of computation complexity, i.e., FLOPs. However, the \emph{direct} metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments, this work derives several practical \emph{guidelines} for efficient network design. Accordingly, a new architecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablation experiments verify that our model is the state-of-the-art in terms of speed and accuracy tradeoff.
     * Comments:
         * > (2018, ESPNetV2) In addition to convolutional factorization, a network's efficiency and accuracy can be further improved using methods such as channel shuffle [29] and channel split [29].
+
+## Information Bottleneck
+
+* [[Deep VIB](https://arxiv.org/abs/1612.00410)]
+    [[pdf](https://arxiv.org/pdf/1612.00410.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1612.00410/)]
+    * Title: Deep Variational Information Bottleneck
+    * Year: 01 Dec `2016`
+    * Authors: Alexander A. Alemi, Ian Fischer, Joshua V. Dillon, Kevin Murphy
+    * Abstract: We present a variational approximation to the information bottleneck of Tishby et al. (1999). This variational approach allows us to parameterize the information bottleneck model using a neural network and leverage the reparameterization trick for efficient training. We call this method "Deep Variational Information Bottleneck", or Deep VIB. We show that models trained with the VIB objective outperform those that are trained with other forms of regularization, in terms of generalization performance and robustness to adversarial attack.
+* [[Relevant sparse codes with variational information bottleneck](https://arxiv.org/abs/1605.07332)]
+    [[pdf](https://arxiv.org/pdf/1605.07332.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1605.07332/)]
+    * Title: Relevant sparse codes with variational information bottleneck
+    * Year: 24 May `2016`
+    * Authors: Matthew Chalk, Olivier Marre, Gasper Tkacik
+    * Abstract: In many applications, it is desirable to extract only the relevant aspects of data. A principled way to do this is the information bottleneck (IB) method, where one seeks a code that maximizes information about a 'relevance' variable, Y, while constraining the information encoded about the original data, X. Unfortunately however, the IB method is computationally demanding when data are high-dimensional and/or non-gaussian. Here we propose an approximate variational scheme for maximizing a lower bound on the IB objective, analogous to variational EM. Using this method, we derive an IB algorithm to recover features that are both relevant and sparse. Finally, we demonstrate how kernelized versions of the algorithm can be used to address a broad range of problems with non-linear relation between X and Y.
+* [[InfoBot](https://arxiv.org/abs/1901.10902)]
+    [[pdf](https://arxiv.org/pdf/1901.10902.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/1901.10902/)]
+    * Title: InfoBot: Transfer and Exploration via the Information Bottleneck
+    * Year: 30 Jan `2019`
+    * Authors: Anirudh Goyal, Riashat Islam, Daniel Strouse, Zafarali Ahmed, Matthew Botvinick, Hugo Larochelle, Yoshua Bengio, Sergey Levine
+    * Abstract: A central challenge in reinforcement learning is discovering effective policies for tasks where rewards are sparsely distributed. We postulate that in the absence of useful reward signals, an effective exploration strategy should seek out {\it decision states}. These states lie at critical junctions in the state space from where the agent can transition to new, potentially unexplored regions. We propose to learn about decision states from prior experience. By training a goal-conditioned policy with an information bottleneck, we can identify decision states by examining where the model actually leverages the goal state. We find that this simple mechanism effectively identifies decision states, even in partially observed settings. In effect, the model learns the sensory cues that correlate with potential subgoals. In new environments, this model can then identify novel subgoals for further exploration, guiding the agent through a sequence of potential decision states and through new regions of the state space.
 
 ## Model Compression
 
