@@ -1,11 +1,10 @@
-# Machine Learning Knowledge Base <!-- omit in toc-->
+# Machine Learning Knowledge Base <!-- omit in toc -->
 
 ## Table of Contents <!-- omit in toc -->
 
-- [Machine Learning Knowledge Base ](#machine-learning-knowledge-base-)
-  - [General info](#general-info)
-  - [Contributors](#contributors)
-  - [See also](#see-also)
+- [General info](#general-info)
+- [Contributors](#contributors)
+- [See also](#see-also)
 
 ## General info
 
