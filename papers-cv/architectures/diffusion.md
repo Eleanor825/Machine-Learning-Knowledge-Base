@@ -193,6 +193,41 @@ count=28
     * Year: 06 Aug `2021`
     * Authors: Jooyoung Choi, Sungwon Kim, Yonghyun Jeong, Youngjune Gwon, Sungroh Yoon
     * Abstract: Denoising diffusion probabilistic models (DDPM) have shown remarkable performance in unconditional image generation. However, due to the stochasticity of the generative process in DDPM, it is challenging to generate images with the desired semantics. In this work, we propose Iterative Latent Variable Refinement (ILVR), a method to guide the generative process in DDPM to generate high-quality images based on a given reference image. Here, the refinement of the generative process in DDPM enables a single DDPM to sample images from various sets directed by the reference image.
+* [[Improved DDPM](https://arxiv.org/abs/2102.09672)]
+    [[pdf](https://arxiv.org/pdf/2102.09672.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2102.09672/)]
+    * Title: Improved Denoising Diffusion Probabilistic Models
+    * Year: 18 Feb `2021`
+    * Authors: Alex Nichol, Prafulla Dhariwal
+    * Abstract: Denoising diffusion probabilistic models (DDPM) are a class of generative models which have recently been shown to produce excellent samples. We show that with a few simple modifications, DDPMs can also achieve competitive log-likelihoods while maintaining high sample quality. Additionally, we find that learning variances of the reverse diffusion process allows sampling with an order of magnitude fewer forward passes with a negligible difference in sample quality, which is important for the practical deployment of these models. We additionally use precision and recall to compare how well DDPMs and GANs cover the target distribution. Finally, we show that the sample quality and likelihood of these models scale smoothly with model capacity and training compute, making them easily scalable. We release our code at this https URL
+* [[Pyramidal DDPM](https://arxiv.org/abs/2208.01864)]
+    [[pdf](https://arxiv.org/pdf/2208.01864.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2208.01864/)]
+    * Title: Pyramidal Denoising Diffusion Probabilistic Models
+    * Year: 03 Aug `2022`
+    * Authors: Dohoon Ryu, Jong Chul Ye
+    * Abstract: Recently, diffusion model have demonstrated impressive image generation performances, and have been extensively studied in various computer vision tasks. Unfortunately, training and evaluating diffusion models consume a lot of time and computational resources. To address this problem, here we present a novel pyramidal diffusion model that can generate high resolution images starting from much coarser resolution images using a {\em single} score function trained with a positional embedding. This enables a neural network to be much lighter and also enables time-efficient image generation without compromising its performances. Furthermore, we show that the proposed approach can be also efficiently used for multi-scale super-resolution problem using a single score function.
+* [[AT-DDPM](https://arxiv.org/abs/2208.11284)]
+    [[pdf](https://arxiv.org/pdf/2208.11284.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2208.11284/)]
+    * Title: AT-DDPM: Restoring Faces degraded by Atmospheric Turbulence using Denoising Diffusion Probabilistic Models
+    * Year: 24 Aug `2022`
+    * Authors: Nithin Gopalakrishnan Nair, Kangfu Mei, Vishal M.Patel
+    * Abstract: Although many long-range imaging systems are designed to support extended vision applications, a natural obstacle to their operation is degradation due to atmospheric turbulence. Atmospheric turbulence causes significant degradation to image quality by introducing blur and geometric distortion. In recent years, various deep learning-based single image atmospheric turbulence mitigation methods, including CNN-based and GAN inversion-based, have been proposed in the literature which attempt to remove the distortion in the image. However, some of these methods are difficult to train and often fail to reconstruct facial features and produce unrealistic results especially in the case of high turbulence. Denoising Diffusion Probabilistic Models (DDPMs) have recently gained some traction because of their stable training process and their ability to generate high quality images. In this paper, we propose the first DDPM-based solution for the problem of atmospheric turbulence mitigation. We also propose a fast sampling technique for reducing the inference times for conditional DDPMs. Extensive experiments are conducted on synthetic and real-world data to show the significance of our model. To facilitate further research, all codes and pretrained models are publically available at this http URL
+* [[T2V-DDPM](https://arxiv.org/abs/2209.08814)]
+    [[pdf](https://arxiv.org/pdf/2209.08814.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2209.08814/)]
+    * Title: T2V-DDPM: Thermal to Visible Face Translation using Denoising Diffusion Probabilistic Models
+    * Year: 19 Sep `2022`
+    * Authors: Nithin Gopalakrishnan Nair, Vishal M. Patel
+    * Abstract: Modern-day surveillance systems perform person recognition using deep learning-based face verification networks. Most state-of-the-art facial verification systems are trained using visible spectrum images. But, acquiring images in the visible spectrum is impractical in scenarios of low-light and nighttime conditions, and often images are captured in an alternate domain such as the thermal infrared domain. Facial verification in thermal images is often performed after retrieving the corresponding visible domain images. This is a well-established problem often known as the Thermal-to-Visible (T2V) image translation. In this paper, we propose a Denoising Diffusion Probabilistic Model (DDPM) based solution for T2V translation specifically for facial images. During training, the model learns the conditional distribution of visible facial images given their corresponding thermal image through the diffusion process. During inference, the visible domain image is obtained by starting from Gaussian noise and performing denoising repeatedly. The existing inference process for DDPMs is stochastic and time-consuming. Hence, we propose a novel inference strategy for speeding up the inference time of DDPMs, specifically for the problem of T2V image translation. We achieve the state-of-the-art results on multiple datasets. The code and pretrained models are publically available at this http URL
+* [[Strong-Lensing Source Reconstruction with Denoising Diffusion Restoration Models](https://arxiv.org/abs/2211.04365)]
+    [[pdf](https://arxiv.org/pdf/2211.04365.pdf)]
+    [[vanity](https://www.arxiv-vanity.com/papers/2211.04365/)]
+    * Title: Strong-Lensing Source Reconstruction with Denoising Diffusion Restoration Models
+    * Year: 08 Nov `2022`
+    * Authors: Konstantin Karchev, Noemi Anau Montel, Adam Coogan, Christoph Weniger
+    * Abstract: Analysis of galaxy--galaxy strong lensing systems is strongly dependent on any prior assumptions made about the appearance of the source. Here we present a method of imposing a data-driven prior / regularisation for source galaxies based on denoising diffusion probabilistic models (DDPMs). We use a pre-trained model for galaxy images, AstroDDPM, and a chain of conditional reconstruction steps called denoising diffusion reconstruction model (DDRM) to obtain samples consistent both with the noisy observation and with the distribution of training data for AstroDDPM. We show that these samples have the qualitative properties associated with the posterior for the source model: in a low-to-medium noise scenario they closely resemble the observation, while reconstructions from uncertain data show greater variability, consistent with the distribution encoded in the generative model used as prior.
 
 ## Unclassified
 
@@ -233,7 +268,7 @@ count=28
 
 ### Mon Feb 06, 2023 Readings
 
-* [[An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion](https://arxiv.org/abs/2208.01618)]
+* [[An Image is Worth One Word](https://arxiv.org/abs/2208.01618)]
     [[pdf](https://arxiv.org/pdf/2208.01618.pdf)]
     [[vanity](https://www.arxiv-vanity.com/papers/2208.01618/)]
     * Title: An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion
