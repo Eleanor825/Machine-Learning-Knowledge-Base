@@ -4,7 +4,6 @@ count=28
 
 ## Table of Contents <!-- omit in toc -->
 
-- [Surveys](#surveys)
 - [Image Synthesis](#image-synthesis)
 - [Image Editing](#image-editing)
 - [Image Denoising](#image-denoising)
@@ -13,44 +12,6 @@ count=28
   - [Mon Feb 06, 2023 Readings](#mon-feb-06-2023-readings)
 
 ----------------------------------------------------------------------------------------------------
-
-## Surveys
-
-* [[Diffusion Models: A Comprehensive Survey of Methods and Applications](https://arxiv.org/abs/2209.00796)]
-    [[pdf](https://arxiv.org/pdf/2209.00796.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2209.00796/)]
-    * Title: Diffusion Models: A Comprehensive Survey of Methods and Applications
-    * Year: 02 Sep `2022`
-    * Authors: Ling Yang, Zhilong Zhang, Yang Song, Shenda Hong, Runsheng Xu, Yue Zhao, Yingxia Shao, Wentao Zhang, Bin Cui, Ming-Hsuan Yang
-    * Abstract: Diffusion models have emerged as a powerful new family of deep generative models with record-breaking performance in many applications, including image synthesis, video generation, and molecule design. In this survey, we provide an overview of the rapidly expanding body of work on diffusion models, categorizing the research into three key areas: efficient sampling, improved likelihood estimation, and handling data with special structures. We also discuss the potential for combining diffusion models with other generative models for enhanced results. We further review the wide-ranging applications of diffusion models in fields spanning from computer vision, natural language processing, temporal data modeling, to interdisciplinary applications in other scientific disciplines. This survey aims to provide a contextualized, in-depth look at the state of diffusion models, identifying the key areas of focus and pointing to potential areas for further exploration. Github: this https URL.
-* [[Efficient Diffusion Models for Vision: A Survey](https://arxiv.org/abs/2210.09292)]
-    [[pdf](https://arxiv.org/pdf/2210.09292.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2210.09292/)]
-    * Title: Efficient Diffusion Models for Vision: A Survey
-    * Year: 07 Oct `2022`
-    * Authors: Anwaar Ulhaq, Naveed Akhtar, Ganna Pogrebna
-    * Abstract: Diffusion Models (DMs) have demonstrated state-of-the-art performance in content generation without requiring adversarial training. These models are trained using a two-step process. First, a forward - diffusion - process gradually adds noise to a datum (usually an image). Then, a backward - reverse diffusion - process gradually removes the noise to turn it into a sample of the target distribution being modelled. DMs are inspired by non-equilibrium thermodynamics and have inherent high computational complexity. Due to the frequent function evaluations and gradient calculations in high-dimensional spaces, these models incur considerable computational overhead during both training and inference stages. This can not only preclude the democratization of diffusion-based modelling, but also hinder the adaption of diffusion models in real-life applications. Not to mention, the efficiency of computational models is fast becoming a significant concern due to excessive energy consumption and environmental scares. These factors have led to multiple contributions in the literature that focus on devising computationally efficient DMs. In this review, we present the most recent advances in diffusion models for vision, specifically focusing on the important design aspects that affect the computational efficiency of DMs. In particular, we emphasize the recently proposed design choices that have led to more efficient DMs. Unlike the other recent reviews, which discuss diffusion models from a broad perspective, this survey is aimed at pushing this research direction forward by highlighting the design strategies in the literature that are resulting in practicable models for the broader research community. We also provide a future outlook of diffusion models in vision from their computational efficiency viewpoint.
-* [[Diffusion Models in Vision: A Survey](https://arxiv.org/abs/2209.04747)]
-    [[pdf](https://arxiv.org/pdf/2209.04747.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2209.04747/)]
-    * Title: Diffusion Models in Vision: A Survey
-    * Year: 10 Sep `2022`
-    * Authors: Florinel-Alin Croitoru, Vlad Hondru, Radu Tudor Ionescu, Mubarak Shah
-    * Abstract: Denoising diffusion models represent a recent emerging topic in computer vision, demonstrating remarkable results in the area of generative modeling. A diffusion model is a deep generative model that is based on two stages, a forward diffusion stage and a reverse diffusion stage. In the forward diffusion stage, the input data is gradually perturbed over several steps by adding Gaussian noise. In the reverse stage, a model is tasked at recovering the original input data by learning to gradually reverse the diffusion process, step by step. Diffusion models are widely appreciated for the quality and diversity of the generated samples, despite their known computational burdens, i.e. low speeds due to the high number of steps involved during sampling. In this survey, we provide a comprehensive review of articles on denoising diffusion models applied in vision, comprising both theoretical and practical contributions in the field. First, we identify and present three generic diffusion modeling frameworks, which are based on denoising diffusion probabilistic models, noise conditioned score networks, and stochastic differential equations. We further discuss the relations between diffusion models and other deep generative models, including variational auto-encoders, generative adversarial networks, energy-based models, autoregressive models and normalizing flows. Then, we introduce a multi-perspective categorization of diffusion models applied in computer vision. Finally, we illustrate the current limitations of diffusion models and envision some interesting directions for future research.
-* [[A Survey on Generative Diffusion Model](https://arxiv.org/abs/2209.02646)]
-    [[pdf](https://arxiv.org/pdf/2209.02646.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2209.02646/)]
-    * Title: A Survey on Generative Diffusion Model
-    * Year: 06 Sep `2022`
-    * Authors: Hanqun Cao, Cheng Tan, Zhangyang Gao, Guangyong Chen, Pheng-Ann Heng, Stan Z. Li
-    * Abstract: Deep learning shows excellent potential in generation tasks thanks to deep latent representation. Generative models are classes of models that can generate observations randomly concerning certain implied parameters. Recently, the diffusion Model has become a rising class of generative models by its power-generating ability. Nowadays, great achievements have been reached. More applications except for computer vision, speech generation, bioinformatics, and natural language processing are to be explored in this field. However, the diffusion model has its genuine drawback of a slow generation process, single data types, low likelihood, and the inability for dimension reduction. They are leading to many enhanced works. This survey makes a summary of the field of the diffusion model. We first state the main problem with two landmark works -- DDPM and DSM, and a unified landmark work -- Score SDE. Then, we present improved techniques for existing problems in the diffusion-based model field, including speed-up improvement For model speed-up improvement, data structure diversification, likelihood optimization, and dimension reduction. Regarding existing models, we also provide a benchmark of FID score, IS, and NLL according to specific NFE. Moreover, applications with diffusion models are introduced including computer vision, sequence modeling, audio, and AI for science. Finally, there is a summarization of this field together with limitations \& further directions. The summation of existing well-classified methods is in our Github:this https URL.
-* [[Diffusion Models for Medical Image Analysis: A Comprehensive Survey](https://arxiv.org/abs/2211.07804)]
-    [[pdf](https://arxiv.org/pdf/2211.07804.pdf)]
-    [[vanity](https://www.arxiv-vanity.com/papers/2211.07804/)]
-    * Title: Diffusion Models for Medical Image Analysis: A Comprehensive Survey
-    * Year: 14 Nov `2022`
-    * Authors: Amirhossein Kazerouni, Ehsan Khodapanah Aghdam, Moein Heidari, Reza Azad, Mohsen Fayyaz, Ilker Hacihaliloglu, Dorit Merhof
-    * Abstract: Denoising diffusion models, a class of generative models, have garnered immense interest lately in various deep-learning problems. A diffusion probabilistic model defines a forward diffusion stage where the input data is gradually perturbed over several steps by adding Gaussian noise and then learns to reverse the diffusion process to retrieve the desired noise-free data from noisy data samples. Diffusion models are widely appreciated for their strong mode coverage and quality of the generated samples despite their known computational burdens. Capitalizing on the advances in computer vision, the field of medical imaging has also observed a growing interest in diffusion models. To help the researcher navigate this profusion, this survey intends to provide a comprehensive overview of diffusion models in the discipline of medical image analysis. Specifically, we introduce the solid theoretical foundation and fundamental concepts behind diffusion models and the three generic diffusion modelling frameworks: diffusion probabilistic models, noise-conditioned score networks, and stochastic differential equations. Then, we provide a systematic taxonomy of diffusion models in the medical domain and propose a multi-perspective categorization based on their application, imaging modality, organ of interest, and algorithms. To this end, we cover extensive applications of diffusion models in the medical domain. Furthermore, we emphasize the practical use case of some selected approaches, and then we discuss the limitations of the diffusion models in the medical domain and propose several directions to fulfill the demands of this field. Finally, we gather the overviewed studies with their available open-source implementations at this https URL.
 
 ## Image Synthesis
 
